@@ -2,15 +2,14 @@
 
 <div align="center">
   <img width="100px" alt="logo" src="https://raw.githubusercontent.com/OpenListTeam/Logo/main/logo.svg"/></a>
-  <p><em>OpenList</em></p>
-<div>
+</div>
 
 [English](./README.md) | 中文
 
 [![License](https://img.shields.io/github/license/OpenListTeam/OpenList-Docs)](https://github.com/OpenListTeam/OpenList-Docs/blob/main/LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/OpenListTeam/OpenList-Docs)](https://github.com/OpenListTeam/OpenList-Docs)
 
-这是 [OpenList](https://github.com/OpenListTeam/OpenList) 的官方文档站点 - 一个支持多种存储后端的文件列表程序，使用 Gin 和 SolidJS 构建。
+> 这是 [OpenList](https://github.com/OpenListTeam/OpenList) 的官方文档站点 - 一个更可信、可持续的 AList 开源替代方案，防范未来可能的闭源、黑箱或不可信变更。
 
 ## 🚀 关于 OpenList
 
@@ -23,7 +22,7 @@ OpenList 是一个现代化的基于 Web 的文件管理解决方案，具有以
 
 ## 📖 文档
 
-这是 OpenList 的新文档（重构中）。使用 Valaxy 构建。对于旧文档（基于 Alist Docs），请访问 [OpenList Docs Legacy](https://github.com/OpenListTeam/docs)。
+这是 OpenList 的新文档。使用 Valaxy 构建。对于旧文档（基于 Alist Docs），请访问 [OpenList Docs Legacy](https://github.com/OpenListTeam/docs)。
 
 
 ## 🛠️ 开发

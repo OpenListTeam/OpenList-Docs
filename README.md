@@ -2,15 +2,14 @@
 
 <div align="center">
   <img width="100px" alt="logo" src="https://raw.githubusercontent.com/OpenListTeam/Logo/main/logo.svg"/></a>
-  <p><em>OpenList</em></p>
-<div>
+</div>
 
 English | [中文](./README.cn.md)
 
 [![License](https://img.shields.io/github/license/OpenListTeam/OpenList-Docs)](https://github.com/OpenListTeam/OpenList-Docs/blob/main/LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/OpenListTeam/OpenList-Docs)](https://github.com/OpenListTeam/OpenList-Docs)
 
-This is the official new documentation site for [OpenList](https://github.com/OpenListTeam/OpenList) - a file list program that supports multiple storage backends, powered by Gin and SolidJS.
+> This is the official new documentation site for [OpenList](https://github.com/OpenListTeam/OpenList) - A Drop-in replacement for AList with long-term governance, no hidden risks, and full transparency, built to defend open source against trust-based attacks.
 
 ## 🚀 About OpenList
 
