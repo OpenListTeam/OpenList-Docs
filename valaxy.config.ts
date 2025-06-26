@@ -105,6 +105,11 @@ export default defineValaxyConfig<PressTheme.Config>({
 
   vite: {
     base: VITE_BASE,
+    resolve: {
+      alias: {
+        'valaxy/client/components/builtin/ValaxyMermaid.vue': './components/ValaxyMermaid.vue',
+      },
+    },
   },
   unocss: {
     safelist,
