@@ -34,6 +34,7 @@ declare module 'vue-router/auto-routes' {
     '/guide/configuration': RouteRecordInfo<'/guide/configuration', '/guide/configuration', Record<never, never>, Record<never, never>>,
     '/guide/drivers/': RouteRecordInfo<'/guide/drivers/', '/guide/drivers', Record<never, never>, Record<never, never>>,
     '/guide/drivers/_example': RouteRecordInfo<'/guide/drivers/_example', '/guide/drivers/_example', Record<never, never>, Record<never, never>>,
+    '/guide/drivers/aliyundrive_open': RouteRecordInfo<'/guide/drivers/aliyundrive_open', '/guide/drivers/aliyundrive_open', Record<never, never>, Record<never, never>>,
     '/guide/drivers/local': RouteRecordInfo<'/guide/drivers/local', '/guide/drivers/local', Record<never, never>, Record<never, never>>,
     '/guide/installation/': RouteRecordInfo<'/guide/installation/', '/guide/installation', Record<never, never>, Record<never, never>>,
     '/guide/installation/containerized': RouteRecordInfo<'/guide/installation/containerized', '/guide/installation/containerized', Record<never, never>, Record<never, never>>,
