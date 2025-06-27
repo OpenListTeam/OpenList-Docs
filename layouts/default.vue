@@ -4,6 +4,7 @@
   import { useSiteConfig, useFrontmatter } from 'valaxy'
   import { computed } from 'vue'
   import { useDark } from '@vueuse/core'
+  import AutoLanguageDetector from '../components/AutoLanguageDetector.vue'
 
   const { t, locale } = useI18n()
   const siteConfig = useSiteConfig()
@@ -36,6 +37,8 @@
 
 <template>
   <Layout>
+    <AutoLanguageDetector />
+
     <RouterView v-slot="{ Component }">
       <component :is="Component">
         <template #default>
