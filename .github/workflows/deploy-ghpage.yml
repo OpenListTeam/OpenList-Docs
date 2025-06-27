@@ -8,7 +8,7 @@ on:
     paths:
       - '.github/workflows/deploy-ghpage.yml'
 env:
-  REPO_NAME: ${{ github.event.repository.name }}
+  VITE_BASE: ${{ github.event.repository.name }}
   DEPLOY_PLATFORM: 'github'
 jobs:
   deploy-gh-pages:
