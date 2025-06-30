@@ -4,22 +4,28 @@ search:
 
 # ! Navigation menu
 nav:
-  guide: Guide
-  config: Config
+  configuration: Configuration
+  guide: User Guide
+  faq: FAQ
+  pricing: Pricing
+  community: Community
+  github: GitHub
 
 # ! Category titles (setting `title` in index.md's frontmatter will not work)
 category:
+  configuration: Configuration
   # User Guide
   guide: User Guide
   installation: Installation
+  advanced: Advanced
   drivers: Storage Setup
   # FAQ
   faq: FAQ
   # Migration
   migration: Migration
   # Developer Guide
-  developer: Developer Guide
   api: API Documentation
+  admin: admin
   # Changelog
   changelog: Changelog
 
