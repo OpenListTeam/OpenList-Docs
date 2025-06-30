@@ -6,8 +6,14 @@
 
 <!-- This overwrites the default home layout -->
 
+<script setup lang="ts">
+  import AutoLanguageDetector from '../components/AutoLanguageDetector.vue'
+</script>
+
 <template>
   <Layout>
+    <AutoLanguageDetector />
+
     <PressHome />
   </Layout>
 </template>

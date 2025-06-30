@@ -67,19 +67,38 @@ export default defineValaxyConfig<PressTheme.Config>({
   theme: 'press',
   themeConfig: {
     logo: '/logo.svg',
-    sidebar: [
-      'guide',
-      'installation',
-      'drivers',
-      'advanced',
-      'developer',
-      'api',
-      'configuration',
-      'faq',
-      'migration',
-    ],
+    sidebar: ['guide', 'configuration', 'faq', 'api', 'migration'],
     socialLinks: [{ icon: 'i-ri-github-line', link: 'https://github.com/OpenListTeam/OpenList' }],
     nav: [
+      {
+        text: 'nav.guide',
+        link: '/guide',
+      },
+      {
+        text: 'nav.configuration',
+        link: '/configuration',
+      },
+      {
+        text: 'nav.faq',
+        link: '/faq',
+      },
+      {
+        text: 'nav.pricing',
+        link: '/pricing',
+      },
+      {
+        text: 'nav.community',
+        items: [
+          {
+            text: 'Discussions',
+            link: 'https://github.com/OpenListTeam/OpenList/discussions',
+          },
+          {
+            text: 'Telegram',
+            link: 'https://t.me/+BYuDkV2f-ds2ODE1',
+          },
+        ],
+      },
       {
         text: COMMIT_TAG,
         items: [
