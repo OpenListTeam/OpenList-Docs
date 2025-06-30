@@ -1,5 +1,5 @@
 ---
-title: 115Open
+title: 115 Open
 title_zh-CN: 115 开放平台
 categories:
   - guide
