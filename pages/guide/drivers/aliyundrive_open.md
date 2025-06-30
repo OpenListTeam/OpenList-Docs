@@ -1,5 +1,5 @@
 ---
-title: Aliyun Drive Open
+title: Aliyundrive Open
 title_zh-CN: 阿里云盘 Open
 categories:
   - guide
