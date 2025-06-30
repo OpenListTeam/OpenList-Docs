@@ -4,22 +4,28 @@ search:
 
 # ! Navigation menu
 nav:
-  guide: Guide
-  config: Config
-
+  configuration: 配置
+  guide: 用户指南
+  faq: FAQ
+  pricing: 定价
+  community: 社区
+  github: GitHub
 # ! Category titles (setting `title` in index.md's frontmatter will not work)
 category:
   # User Guide
+  configuration: 配置
   guide: 用户指南
   installation: 安装
+  advanced: 高级
   drivers: 添加存储
   # FAQ
   faq: FAQ
   # Migration
   migration: 迁移
   # Developer Guide
-  developer: Developer Guide
-  api: API Documentation
+  developer: 开发指引
+  api: API 文档
+  admin: admin
   # Changelog
   changelog: Changelog
 
