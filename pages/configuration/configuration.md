@@ -164,23 +164,25 @@ URL 链接结尾请勿携带 `/` ，参照如下示例，否则也将无法使�
 
 ### **cdn**
 
+::: warning
+请注意，beta版本的OpenList目前尚无可用的CDN,如需使用CDN,请使用正式版本
+:::
+
 CDN 地址，如果要使用 CDN，可以设置该字段，`$version` 会被替换为 `openlist-frontend` 的实际版本
 这是动态的。 现有的 dist 资源托管在 npm 和 GitHub 上，它们的位置是：
 
-- https://www.npmjs.com/package/openlist-frontend
-- https://github.com/OpenListTeam/web-dist
+- https://www.npmjs.com/package/@openlist-frontend/openlist-frontend
+- https://github.com/OpenListTeam/OpenList-Frontend
 
 所以你可以使用任何 npm 或 GitHub CDN 作为路径，例如：
 
-- https://registry.npmmirror.com/openlist-frontend/$version/files/dist/
-- https://cdn.jsdelivr.net/npm/openlist-frontend@$version/dist/
-- https://unpkg.com/openlist-frontend@$version/dist/
-- https://cdn.jsdelivr.net/gh/OpenListTeam/web-dist@$version/dist/
-- https://cdn1.tianli0.top/npm/openlist-frontend@$version/dist/
-- https://cdn1.tianli0.top/gh/OpenListTeam/web-dist@$version/dist/
-- https://npm.elemecdn.com/openlist-frontend@$version/dist/
-- https://jsd.onmicrosoft.cn/npm/openlist-frontend@$version/dist/
-- https://jsd.onmicrosoft.cn/gh/OpenListTeam/web-dist@$version/dist/
+- https://registry.npmmirror.com/@openlist-frontend/openlist-frontend/$version/files/dist/
+- https://cdn.jsdelivr.net/npm/@openlist-frontend/openlist-frontend@$version/dist/
+- https://unpkg.com/@openlist-frontend/openlist-frontend@$version/dist/
+- ~~ https://cdn.jsdelivr.net/gh/OpenListTeam/OpenList-Frontend@$version/dist/ ~~
+- ~~ https://npm.elemecdn.com/@openlist-frontend/openlist-frontend@$version/dist/ ~~
+- ~~ https://jsd.onmicrosoft.cn/npm/@openlist-frontend/openlist-frontend@$version/dist/ ~~
+- ~~ https://jsd.onmicrosoft.cn/gh/OpenListTeam/OpenList-Frontend@$version/dist/ ~~
 
 您也可以将其设置为空以使用本地 dist。
 
