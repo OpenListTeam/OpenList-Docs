@@ -13,7 +13,7 @@ dist-ssr
 node_modules
 .idea/
 *.log
-
+.valaxy/typed-router.d.ts
 components.d.ts
 
 # valaxy fuse
