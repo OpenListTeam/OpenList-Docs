@@ -19,6 +19,11 @@ sticky: true
 star: false
 ---
 
+::: en
 本 API 现已移至`/api/task`，`/api/admin/task`仅出于兼容目的保留
-
+另见[/api/task](/guide/api/task.html)
+:::
+::: zh-CN
+本 API 现已移至`/api/task`，`/api/admin/task`仅出于兼容目的保留
 另见[/api/task](/zh/guide/api/task.html)
+:::
