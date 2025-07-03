@@ -52,6 +52,26 @@
 
 <style scoped>
   .back-to-top-btn {
+    --back-to-top-bg: var(--pr-c-bg-soft, var(--va-c-bg-soft));
+    --back-to-top-bg-hover: var(--pr-c-bg, var(--va-c-bg));
+    --back-to-top-color: var(--pr-c-text-2, var(--va-c-text-2));
+    --back-to-top-color-hover: var(--pr-c-text-1, var(--va-c-text-1));
+    --back-to-top-border: var(--pr-c-divider-light, var(--va-c-divider-light));
+    --back-to-top-border-hover: var(--pr-c-brand, var(--va-c-brand));
+    --back-to-top-shadow: var(
+      --pr-shadow-2,
+      var(--va-shadow-2, var(--pr-c-shadow, var(--va-c-shadow)))
+    );
+    --back-to-top-shadow-hover: var(
+      --pr-shadow-3,
+      var(--va-shadow-3, var(--pr-c-shadow-strong, var(--va-c-shadow-strong)))
+    );
+    --back-to-top-shadow-active: var(
+      --pr-shadow-1,
+      var(--va-shadow-1, var(--pr-c-shadow-light, var(--va-c-shadow-light)))
+    );
+    --back-to-top-blur: var(--pr-backdrop-blur, var(--va-backdrop-blur, 8px));
+
     position: fixed;
     bottom: 2rem;
     right: 2rem;
@@ -59,38 +79,29 @@
     width: 3rem;
     height: 3rem;
     border-radius: 50%;
-    border: none;
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(8px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: 1px solid var(--back-to-top-border);
+    background: var(--back-to-top-bg);
+    backdrop-filter: blur(var(--back-to-top-blur));
+    box-shadow: var(--back-to-top-shadow);
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
-    color: #666;
+    color: var(--back-to-top-color);
   }
 
   .back-to-top-btn:hover {
-    background: rgba(255, 255, 255, 1);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    background: var(--back-to-top-bg-hover);
+    box-shadow: var(--back-to-top-shadow-hover);
     transform: translateY(-2px);
-    color: #333;
+    color: var(--back-to-top-color-hover);
+    border-color: var(--back-to-top-border-hover);
   }
 
   .back-to-top-btn:active {
     transform: translateY(0);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  }
-
-  .dark .back-to-top-btn {
-    background: rgba(36, 36, 36, 0.9);
-    color: #ccc;
-  }
-
-  .dark .back-to-top-btn:hover {
-    background: rgba(48, 48, 48, 1);
-    color: #fff;
+    box-shadow: var(--back-to-top-shadow-active);
   }
 
   .back-to-top-btn .i-ri-arrow-up-line {
@@ -133,7 +144,7 @@
 
   @media (min-width: 1200px) {
     .back-to-top-btn {
-      right: calc((100vw - 1200px) / 2 + 2rem);
+      right: 2rem;
     }
   }
 </style>
