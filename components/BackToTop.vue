@@ -52,56 +52,33 @@
 
 <style scoped>
   .back-to-top-btn {
-    --back-to-top-bg: var(--pr-c-bg-soft, var(--va-c-bg-soft));
-    --back-to-top-bg-hover: var(--pr-c-bg, var(--va-c-bg));
-    --back-to-top-color: var(--pr-c-text-2, var(--va-c-text-2));
-    --back-to-top-color-hover: var(--pr-c-text-1, var(--va-c-text-1));
-    --back-to-top-border: var(--pr-c-divider-light, var(--va-c-divider-light));
-    --back-to-top-border-hover: var(--pr-c-brand, var(--va-c-brand));
-    --back-to-top-shadow: var(
-      --pr-shadow-2,
-      var(--va-shadow-2, var(--pr-c-shadow, var(--va-c-shadow)))
-    );
-    --back-to-top-shadow-hover: var(
-      --pr-shadow-3,
-      var(--va-shadow-3, var(--pr-c-shadow-strong, var(--va-c-shadow-strong)))
-    );
-    --back-to-top-shadow-active: var(
-      --pr-shadow-1,
-      var(--va-shadow-1, var(--pr-c-shadow-light, var(--va-c-shadow-light)))
-    );
-    --back-to-top-blur: var(--pr-backdrop-blur, var(--va-backdrop-blur, 8px));
-
     position: fixed;
     bottom: 2rem;
     right: 2rem;
-    z-index: 1000;
+    z-index: var(--pr-z-nav);
     width: 3rem;
     height: 3rem;
     border-radius: 50%;
-    border: 1px solid var(--back-to-top-border);
-    background: var(--back-to-top-bg);
-    backdrop-filter: blur(var(--back-to-top-blur));
-    box-shadow: var(--back-to-top-shadow);
+    border: 1px solid var(--pr-c-divider-light);
+    background: var(--pr-c-bg-soft);
+    backdrop-filter: blur(8px);
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
-    color: var(--back-to-top-color);
+    color: var(--pr-c-text-2);
   }
 
   .back-to-top-btn:hover {
-    background: var(--back-to-top-bg-hover);
-    box-shadow: var(--back-to-top-shadow-hover);
+    background: var(--pr-c-bg);
     transform: translateY(-2px);
-    color: var(--back-to-top-color-hover);
-    border-color: var(--back-to-top-border-hover);
+    color: var(--pr-c-text-1);
+    border-color: var(--pr-c-brand);
   }
 
   .back-to-top-btn:active {
     transform: translateY(0);
-    box-shadow: var(--back-to-top-shadow-active);
   }
 
   .back-to-top-btn .i-ri-arrow-up-line {
