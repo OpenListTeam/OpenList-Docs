@@ -6,12 +6,15 @@ on:
       - main
   pull_request:
     paths:
-      - '.github/workflows/deploy-ghpage.yml'
+      - '.github/workflows/gh-pages.yml'
+permissions:
+  contents: write
 env:
-  VITE_BASE: ${{ github.event.repository.name }}
   DEPLOY_PLATFORM: 'github'
+  VITE_BASE: ${{ github.event.repository.name }}
+  SITE_URL: https://${{github.actor}}.github.io
 jobs:
-  deploy-gh-pages:
+  gh-pages:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -42,19 +45,9 @@ jobs:
         run: |-
           pnpm run build
 
-      - name: Upload Build Artifacts
-        if: github.event_name == 'pull_request'
-        uses: actions/upload-artifact@v4
-        with:
-          path: ./dist
-
-      - name: Deploy
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           force_orphan: true
-
-permissions:
-  contents: write
