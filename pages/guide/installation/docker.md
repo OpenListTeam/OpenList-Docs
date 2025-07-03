@@ -10,13 +10,6 @@ categories:
   - installation
 ---
 
-::: en
-Note: The official OpenList Docker image has not yet been released. The Docker image address here has not been updated.
-:::
-::: zh-CN
-注意：OpenList 官方 Docker 镜像尚未发布。此处 Docker 镜像地址尚未更新。
-:::
-
 ## Install { lang="en" }
 
 ## **安装** { lang="zh-CN" }
