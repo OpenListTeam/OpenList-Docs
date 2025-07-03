@@ -151,20 +151,20 @@ flowchart LR
 @tab cloudflare workers
 可以使用 Cloudflare Workers 做代理，这里填写 Workers 地址即可。
 
-Workers 代码可以在 https://github.com/OpenListTeam/alist-proxy/blob/main/alist-proxy.js 找到，实际使用时需要替换其中的这两个变量：
+Workers 代码可以在 https://github.com/OpenListTeam/OpenList-Proxy/blob/main/openlist-proxy.js 找到，实际使用时需要替换其中的这两个变量：
 
-- ADDRESS: 你的 OpenList 地址，必须加上协议头，后面不能跟 `/`。如 `https://pan.example.com`；
-- TOKEN: 在 OpenList 管理页面中进入“其他设置”得到；
-- WORKER_ADDRESS: 你的 Worker 地址，通常与 **下载代理URL** 相同。
+- `ADDRESS`: 你的 OpenList 地址，必须加上协议头，后面不能跟 `/`。如 `https://pan.example.com`；
+- `TOKEN`: 即管理员账户的 [Token](../../configuration/other.md#token)，可在 OpenList 管理页面中进入“其他设置”得到；
+- `WORKER_ADDRESS`: 你的 Worker 地址，通常与 **下载代理URL** 相同。
 
-:warning: Cloudflare Workers 免费CDN支持兼容(不论国内还是国外)的只有 **http80端口** 和 **https443端口**，来自群友测试
+:warning: Cloudflare Workers 免费 CDN 支持兼容(不论国内还是国外)的只有 **http80端口** 和 **https443端口**，来自群友测试
 
-- 在Alist后台挂载配置时 填写 **下载代理URL** 时候的 链接结尾 不可以带 `/`
+- 在 OpenList 后台挂载配置时 填写 **下载代理URL** 时候的 链接结尾 不可以带 `/`
 
 若看不懂[**有拆解详细**](https://anwen-anyi.github.io/index/11-durl.html)的教程
 
 @tab 通用二进制
-也可以使用另一台机器进行代理，在 https://github.com/alist-org/alist-proxy/releases 下载程序并通过 `./alist-proxy -help` 查看使用方法。
+也可以使用另一台机器进行代理，在 https://github.com/OpenListTeam/OpenList-Proxy/releases 下载程序并通过 `./openlist-proxy -help` 查看使用方法。
 
 如果不懂有详细[**视频教程**](https://www.bilibili.com/video/BV17N411S7fg/)
 
@@ -173,7 +173,7 @@ Workers 代码可以在 https://github.com/OpenListTeam/alist-proxy/blob/main/al
 你甚至可以开发自己的代理程序，一般步骤是：
 
 - 下载时会请求 `PROXY_URL/path?sign=sign_value`
-- 在代理程序中验证 sign，sign 的计算方法为：
+- 在代理程序中验证 `sign`，`sign` 的计算方法为：
 
 ```js
 const to_sign = `${path}:${expireTimeStamp}`
@@ -181,7 +181,7 @@ const _sign = safeBase64(hmac_sha256(to_sign, TOKEN))
 const sign = `${_sign}:${expireTimeStamp}`
 ```
 
-`TOKEN`即管理员账户的[token](../../config/other.md#token).
+`TOKEN` 即管理员账户的 [Token](../../configuration/other.md#token)，可在 OpenList 管理页面中进入“其他设置”得到。
 
 - 验证签名正确后，请求 `HOST/api/fs/link`，可以得到文件的 URL 和要携带的请求头
 - 使用信息请求和返回
