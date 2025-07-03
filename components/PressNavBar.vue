@@ -7,6 +7,7 @@
 <script lang="ts" setup>
   import { useSidebar, useSiteConfig } from 'valaxy'
   import { useThemeConfig } from 'valaxy-theme-press/composables/config.ts'
+  import { useI18n } from 'vue-i18n'
 
   defineProps<{
     isScreenOpen?: boolean
@@ -16,6 +17,7 @@
     (e: 'toggleScreen'): void
   }>()
 
+  const { t } = useI18n()
   const { hasSidebar } = useSidebar()
 
   const siteConfig = useSiteConfig()
@@ -33,7 +35,7 @@
       :aria-label="siteConfig.title"
     >
       <img v-if="themeConfig.logo" class="logo" :src="themeConfig.logo" alt="LOGO" />
-      <span class="inline-flex">{{ siteConfig.title }}</span>
+      <span class="inline-flex">{{ t('nav.title') }}</span>
     </RouterLink>
     <div class="self-stretch flex justify-center items-center text-sm leading-5">
       <PressNavBarSearch p="x-2" />

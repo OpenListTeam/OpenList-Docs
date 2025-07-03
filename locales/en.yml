@@ -4,6 +4,7 @@ search:
 
 # ! Navigation menu
 nav:
+  title: OpenList Docs
   configuration: Configuration
   guide: User Guide
   faq: FAQ
