@@ -13,3 +13,50 @@
 }
 
 // override
+
+// Main Color
+:root {
+  --vp-c-brand-1: hsl(196, 55%, 45%);
+  --vp-c-brand-2: hsl(196, 59%, 51%);
+  --vp-c-brand-3: hsl(196, 54%, 57%);
+  --vp-c-brand-soft: hsla(196, 100%, 70%, 0.14);
+
+  --va-c-brand: var(--vp-c-brand-1);
+  --va-c-brand-1: var(--vp-c-brand-1);
+  --va-c-brand-2: var(--vp-c-brand-2);
+  --va-c-brand-3: var(--vp-c-brand-3);
+  --va-c-brand-soft: var(--vp-c-brand-soft);
+}
+
+.dark {
+  --vp-c-brand-1: hsl(196, 100%, 83%);
+  --vp-c-brand-2: hsl(196, 74%, 63%);
+  --vp-c-brand-3: hsl(196, 70%, 55%);
+  --vp-c-brand-soft: hsla(196, 100%, 70%, 0.16);
+}
+
+// Background
+html.dark {
+  --va-c-bg: hsl(196, 5%, 11%);
+  --va-c-bg-light: hsl(196, 10%, 14%);
+  --va-c-bg-alt: hsl(196, 4%, 9%);
+  --va-c-bg-soft: hsl(196, 10%, 14%);
+  --va-c-bg-mute: hsl(0, 0%, 18%);
+}
+
+.dark {
+  --vp-c-bg: hsl(196, 7%, 11%);
+  --vp-c-bg-alt: hsl(196, 4%, 9%);
+  --vp-c-bg-elv: hsl(196, 10%, 14%);
+  --vp-c-bg-soft: hsl(196, 10%, 14%);
+}
+
+
+// Link
+:root {
+  --va-c-link: var(--vp-c-brand-1);
+}
+
+html.dark {
+  --va-c-link: var(--vp-c-brand-1);
+}
