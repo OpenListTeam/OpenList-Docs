@@ -5,6 +5,7 @@
   import { computed } from 'vue'
   import { useDark } from '@vueuse/core'
   import AutoLanguageDetector from '../components/AutoLanguageDetector.vue'
+  import BackToTop from '../components/BackToTop.vue'
 
   const { t, locale } = useI18n()
   const siteConfig = useSiteConfig()
@@ -74,6 +75,8 @@
         </template>
       </component>
     </RouterView>
+
+    <BackToTop />
   </Layout>
 </template>
 

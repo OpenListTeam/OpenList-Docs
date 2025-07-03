@@ -8,6 +8,7 @@
 
 <script setup lang="ts">
   import AutoLanguageDetector from '../components/AutoLanguageDetector.vue'
+  import BackToTop from '../components/BackToTop.vue'
 </script>
 
 <template>
@@ -15,5 +16,7 @@
     <AutoLanguageDetector />
 
     <PressHome />
+
+    <BackToTop />
   </Layout>
 </template>

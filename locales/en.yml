@@ -46,6 +46,7 @@ wip: WIP, please stay tuned
 tooltip:
   # Reserved and used by valaxy-theme-press
   edit_this_page: Edit this page on GitHub
+  back_to_top: Back to Top
 
 post:
   # Reserved and used by valaxy-theme-press

@@ -14,7 +14,7 @@ const DOCS_BUILT_DATE = new Date().toISOString()
 const SITE_URL = process.env.SITE_URL || 'https://example.com'
 const VITE_BASE = process.env.VITE_BASE || '/'
 
-const safelist = ['i-ri-home-line', 'i-ri-github-line']
+const safelist = ['i-ri-home-line', 'i-ri-github-line', 'i-ri-arrow-up-line']
 
 export default defineValaxyConfig<PressTheme.Config>({
   siteConfig: {

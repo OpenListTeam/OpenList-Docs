@@ -46,6 +46,7 @@ wip: 编写中，敬请期待
 tooltip:
   # Reserved and used by valaxy-theme-press
   edit_this_page: 在 GitHub 上编辑此页
+  back_to_top: 回到顶部
 
 post:
   # Reserved and used by valaxy-theme-press
