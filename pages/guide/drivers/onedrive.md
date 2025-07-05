@@ -26,52 +26,41 @@ If your account does not support the API, (for example, the school account has n
 如果你的账号不支持 API，（比如学校账号没有验证管理员，或者管理员禁用了 API），那么你也可以通过 WebDAV 挂载。 有关详细信息，请参阅 [WebDAV 页面](webdav.md)
 :::
 
-## **Personal OneDrive mount** { lang="en" }
+## **OneDrive mount** { lang="en" }
 
-## **个人 OneDrive 挂载** { lang="zh-CN" }
+## **正常 OneDrive 挂载** { lang="zh-CN" }
 
-:::en
-First, open https://api.oplist.org/
-Select OD personal account, check the option to use parameters provided by Openlist, and you can obtain the refresh token after authorizing your Microsoft account through the redirect.
-  ![Token acquisition tool](/img/drivers/OneDrive/online_api.png)
-On Openlist, select the OneDrive driver, check the option to use online API and fill in the refresh token obtained in the previous step.
-  ![Storage configuration](/img/drivers/OneDrive/online_api_config.png)
+::: en
+::: tip
+If your account does not support the API, (for example, the school account has not verified the administrator, or the administrator has disabled the API), then you can also mount it through webdav. For details, see [webdav](webdav.md)
 :::
-:::zh-CN
+::: en
+First open https://api.oplist.org/
+:::
+::: zh-CN
+::: tip
+如果你的账号不支持 API，（比如学校账号没有验证管理员，或者管理员禁用了 API），那么你也可以通过 WebDAV 挂载。 有关详细信息，请参阅 [WebDAV 页面](webdav.md)
+:::
+::: zh-CN
 首先打开 https://api.oplist.org/
-选择OD的个人账户，勾选使用Openlist提供的参数，转跳授权微软账户后即可或的刷新令牌。
-  ![token获取工具](/img/drivers/OneDrive/online_api.png)
-在Openlist上选择OneDrive驱动，勾选使用在线api和填写上一步获取的刷新令牌即可
-  ![存储配置](/img/drivers/OneDrive/online_api_config.png)
 :::
 
 ### **Create an application** { lang="en" }
+
 ### **创建应用** { lang="zh-CN" }
-:::en
-> You can also choose to skip this step and use the client provided by default, but requires the approval of the organization administrator.
 
-- On the page that opens, select the region and click Create Application
-- After logging in, select `Register Application`, enter `Name`, and select `Accounts and Individuals in Any Organization Directory` (note that you don't look at the location selection but the text here. Some people may be the middle option, don't select a single Tenant or other options, otherwise it will cause problems when logging in), enter the redirect URL as <https://api.oplist.org/onedrive/callback>, `register`, and then you can get client_id
-  ![client_id](/img/drivers/onedrive-register-app.png)
-- After registering the application, select `Certificate and Password`, click `New Client Password`, enter a string of passwords, select the one with the longest time, and click `Add`
-  (Note: The password entered after adding will disappear, please record the value of client_secret)
-  ![client_secret](/img/drivers/onedrive-new-password.png)
-- Select `API Permissions`, click `MicroSoft Graph`, enter file in the `Select Permissions`, and check `Files.read` (Note: Files.read is a read-only minimum permission. The permission in the figure is larger, and the same can be done ), click `Update Permission`
-  ![api](/img/drivers/onedrive-update-permission.png)
-:::
-:::zh-CN
-> 你也可以选择跳过此步，使用默认提供的client，但是需要组织管理员批准。
+::: en
 
 > You can also choose to skip this step and use the client provided by default, but requires the approval of the organization administrator.
 
 - On the page that opens, select the region and click Create Application
 - After logging in, select `Register Application`, enter `Name`, and select `Accounts and Individuals in Any Organization Directory` (note that you don't look at the location selection but the text here. Some people may be the middle option, don't select a single Tenant or other options, otherwise it will cause problems when logging in), enter the redirect URL as <https://api.oplist.org/onedrive/callback>, `register`, and then you can get client_id
-  ![client_id](/img/drivers/onedrive-register-app.png)
+  ![client_id](/img/drivers/OneDrive/onedrive-register-app.png)
 - After registering the application, select `Certificate and Password`, click `New Client Password`, enter a string of passwords, select the one with the longest time, and click `Add`
   (Note: The password entered after adding will disappear, please record the value of client_secret)
-  ![client_secret](/img/drivers/onedrive-new-password.png)
+  ![client_secret](/img/drivers/OneDrive/onedrive-new-password.png)
 - Select `API Permissions`, click `MicroSoft Graph`, enter file in the `Select Permissions`, and check `Files.read` (Note: Files.read is a read-only minimum permission. The permission in the figure is larger, and the same can be done ), click `Update Permission`
-  ![api](/img/drivers/onedrive-update-permission.png)
+  ![api](/img/drivers/OneDrive/onedrive-update-permission.png)
   :::
   ::: zh-CN
   > 你也可以选择跳过此步，使用默认提供的client，但是需要组织管理员批准。
@@ -83,61 +72,58 @@ On Openlist, select the OneDrive driver, check the option to use online API and 
   ![client_secret](/img/drivers/OneDrive/onedrive-new-password.png)
 - 选择 "API 权限"，点击 "Microsoft Graph"，在"选择权限"中输入 `file`，勾选 `Files.read`（注：Files.read 是只读最小权限，图中权限较大，也同样可以），点击"确定"
   ![api](/img/drivers/OneDrive/onedrive-update-permission.png)
-:::
+  :::
+
 ### **Get refresh token** { lang="en" }
+
 ### **获取刷新令牌** { lang="zh-CN" }
-:::en
-Fill in the client_id and client_secret obtained in the previous step into the 填入 https://api.oplist.org/ page, click Get Refresh Token, you can get the refresh token
+
+::: en
+Fill in the client_id and client_secret obtained in the previous step into the https://alist.example.com/tool/onedrive/request page, click Get Refresh Token, you can get the refresh token
 :::
-:::zh-CN
-将上一步骤中获得的 `client_id` 和 `client_secret` 填入 https://api.oplist.org/ ，点击"获取刷新令牌"即可
+::: zh-CN
+将上一步骤中获得的 `client_id` 和 `client_secret` 填入 https://alist.example.com/tool/onedrive/request ，点击"获取刷新令牌"即可
 :::
-### **获取 SharePoint site_id**
-:::en
+
+### **Get Sharepoint site_id** { lang="en" }
+
+### **获取 SharePoint site_id** { lang="zh-CN" }
+
+::: en
 If you need to mount Sharepoint, after completing the previous step, an input site address will appear on the interface that displays the refresh token. After entering the site address, click Get site_id.
 :::
-:::zh-CN
+::: zh-CN
 如果需要挂载 SharePoint，完成上一步后，在显示刷新令牌的界面会出现一个输入站点地址，输入站点地址后点击获取 `site_id` 即可。
 :::
 
-### **添加账号**
-:::en
+### **Add storage** { lang="en" }
+
+### **添加账号** { lang="zh-CN" }
+
+::: en
 Fill in the values ​​obtained in the above process one by one.
 :::
-:::zh-CN
+::: zh-CN
 将上述过程中获取得到的值依次填入即可。
 :::
 
-### **根文件夹ID**
-:::en
+### **Root folder path** { lang="en" }
+
+### **根文件夹ID** { lang="zh-CN" }
+
+::: en
 The default is `/`, if you need to customize, just fill in the path, starting from the root path, the same as the local path, such as `/test`
 :::
-:::zh-CN
+::: zh-CN
 默认为 `/`，如果需要自定义，就填路径就行，从根路径开始，和本地路径一样，比如 `/test`
 :::
 
-#### **默认使用的下载方式**
-:::en
-```mermaid
----
-title: Which download method is used by default?
----
-flowchart TB
-    style a1 fill:#bbf,stroke:#f66,stroke-width:2px,color:#fff
-    style a2 fill:#ff7575,stroke:#333,stroke-width:4px
-    subgraph ide1 [ ]
-    a1
-    end
-    a1[302]:::someclass====|default|a2[user equipment]
-    classDef someclass fill:#f96
-    c1[local proxy]-.alternative.->a2[user equipment]
-    b1[Download proxy URL]-.alternative.->a2[user equipment]
-    click a1 "../drivers/common.html#webdav-policy"
-    click b1 "../drivers/common.html#webdav-policy"
-    click c1 "../drivers/common.html#webdav-policy"
-```
-:::
-:::zh-CN
+#### **The default download method used** { lang="en" }
+
+#### **默认使用的下载方式** { lang="zh-CN" }
+
+::: en
+
 ```mermaid
 ---
 title: Which download method is used by default?
@@ -178,8 +164,6 @@ flowchart TB
     click b1 "../drivers/common.html#webdav-策略"
     click c1 "../drivers/common.html#webdav-策略"
 ```
-:::
-
 <br/>
 :::
 
@@ -212,7 +196,7 @@ If it is OneDrive personal version, it will not work. The link is as follows
 ```html
 https://onedrive.live.com/?cid=64EA5FCC7735E8C6&id=64EA5FCC7735E8C6%2117289
 ```
-:::
+
 <br/>
 :::
 ::: zh-CN
