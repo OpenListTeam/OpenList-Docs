@@ -61,9 +61,13 @@ First open https://api.oplist.org/
   ![client_secret](/img/drivers/OneDrive/onedrive-new-password.png)
 - Select `API Permissions`, click `MicroSoft Graph`, enter file in the `Select Permissions`, and check `Files.read` (Note: Files.read is a read-only minimum permission. The permission in the figure is larger, and the same can be done ), click `Update Permission`
   ![api](/img/drivers/OneDrive/onedrive-update-permission.png)
-  :::
-  ::: zh-CN
-  > 你也可以选择跳过此步，使用默认提供的client，但是需要组织管理员批准。
+
+:::
+
+::: zh-CN
+
+> 你也可以选择跳过此步，使用默认提供的client，但是需要组织管理员批准。
+
 - 在打开的页面，选择所在区域，点击创建应用
 - 登陆后选择"注册应用程序"，输入"名称"，选择"任何组织目录中的账户和个人"（注意这里不要看位置选择而是看文字，部分人可能是中间那个选项，不要选成单一租户或者其他选项，否则会导致登陆时出现问题），输入重定向 URL 为 <https://api.oplist.org/onedrive/callback> ，点击注册即可，然后可以得到 `client_id`
   ![client_id](/img/drivers/OneDrive/onedrive-register-app.png)
@@ -72,7 +76,8 @@ First open https://api.oplist.org/
   ![client_secret](/img/drivers/OneDrive/onedrive-new-password.png)
 - 选择 "API 权限"，点击 "Microsoft Graph"，在"选择权限"中输入 `file`，勾选 `Files.read`（注：Files.read 是只读最小权限，图中权限较大，也同样可以），点击"确定"
   ![api](/img/drivers/OneDrive/onedrive-update-permission.png)
-  :::
+
+:::
 
 ### **Get refresh token** { lang="en" }
 
