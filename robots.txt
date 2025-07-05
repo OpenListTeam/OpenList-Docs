@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dezhishen.github.io/sitemap.xml
