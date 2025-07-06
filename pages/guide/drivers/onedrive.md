@@ -19,13 +19,13 @@ categories:
 
 :::en
 :::tip
-If you have global administrator permissions for a non-home edition, it is recommended to use the OneDrive APP driver. 
-If your account does not support the API, (for example, the school account has not verified the administrator, or the administrator has disabled the API), then you can also mount it through webdav. For details, see [webdav](webdav.md)
+- If you have global administrator permissions for a non-home edition, it is recommended to use the OneDrive APP driver. 
+- If your account does not support the API, (for example, the school account has not verified the administrator, or the administrator has disabled the API), then you can also mount it through webdav. For details, see [webdav](webdav.md)
 :::
 :::zh-CN
 :::tip
-如果你拥有非家庭版的全局管理员权限，建议使用OneDrive APP驱动
-如果你的账号不支持 API，（比如学校账号没有验证管理员，或者管理员禁用了 API），那么你也可以通过 WebDAV 挂载。 有关详细信息，请参阅 [WebDAV 页面](webdav.md)
+- 如果你拥有非家庭版的全局管理员权限，建议使用OneDrive APP驱动
+- 如果你的账号不支持 API，（比如学校账号没有验证管理员，或者管理员禁用了 API），那么你也可以通过 WebDAV 挂载。 有关详细信息，请参阅 [WebDAV 页面](webdav.md)
 :::
 
 ## **OnlineAPI OneDrive mount** { lang="en" }
@@ -33,23 +33,23 @@ If your account does not support the API, (for example, the school account has n
 ## **在线API OneDrive 挂载** { lang="zh-CN" }
 
 ::: en
-- First, open https://api.oplist.org/ and select the corresponding OneDrive version according to your account.
+- First, open [this](https://api.oplist.org/) and select the corresponding OneDrive version according to your account.
 - Check "Use parameters provided by OpenList", click "Get Token", then log in to the OneDrive account you want to mount. After authorization, return to the page to get the refresh token.
  ![Online Token Acquisition Tool](/img/drivers/OneDrive/online_api.png)
 - Go to the storage management interface of OpenList, select the OneDrive driver, check "Use online API", fill in the refresh token and you can mount it.
  ![Backend Configuration Interface](/img/drivers/OneDrive/online_api_config.png)
 :::
 ::: zh-CN
-- 首先打开 https://api.oplist.org/，根据自己的账户选择对应的Onedrive版本。
+- 首先打开 [这里](https://api.oplist.org/)，根据自己的账户选择对应的Onedrive版本。
 - 勾选“使用 OpenList 提供的参数”，点击“获取Token”后登录需要挂载的OneDrive账号，授权后返回页面即可获得刷新令牌。
  ![在线Token获取工具](/img/drivers/OneDrive/online_api.png)
 - 前往Openlist的存储管理界面选择OneDrive驱动，勾选使用在线api，填入刷新令牌后即可挂载
  ![后端配置界面](/img/drivers/OneDrive/online_api_config.png)
 :::
 
-### **Create an application** { lang="en" }
+## **Create an application** { lang="en" }
 
-### **创建应用** { lang="zh-CN" }
+## **创建应用** { lang="zh-CN" }
 
 ::: en
 
@@ -86,10 +86,10 @@ If your account does not support the API, (for example, the school account has n
 ### **获取刷新令牌** { lang="zh-CN" }
 
 ::: en
-Fill in the client_id and client_secret obtained in the previous step into the https://alist.example.com/tool/onedrive/request page, click Get Refresh Token, you can get the refresh token
+Fill in the client_id and client_secret obtained in the previous step into [this](https://api.oplist.org/) page, click Get Refresh Token, you can get the refresh token
 :::
 ::: zh-CN
-将上一步骤中获得的 `client_id` 和 `client_secret` 填入 https://alist.example.com/tool/onedrive/request ，点击"获取刷新令牌"即可
+将上一步骤中获得的 `client_id` 和 `client_secret` 填入 [这里](https://api.oplist.org/) ，点击"获取Token"即可
 :::
 
 ### **Get Sharepoint site_id** { lang="en" }
@@ -100,7 +100,7 @@ Fill in the client_id and client_secret obtained in the previous step into the h
 If you need to mount Sharepoint, after completing the previous step, an input site address will appear on the interface that displays the refresh token. After entering the site address, click Get site_id.
 :::
 ::: zh-CN
-如果需要挂载 SharePoint，完成上一步后，在显示刷新令牌的界面会出现一个输入站点地址，输入站点地址后点击获取 `site_id` 即可。
+如果需要挂载 SharePoint，完成上一步后，在显示刷新令牌的界面的下面有输入站点地址，输入站点地址后点击获取 `site_id` 即可。
 :::
 
 ### **Add storage** { lang="en" }
@@ -125,9 +125,9 @@ The default is `/`, if you need to customize, just fill in the path, starting fr
 默认为 `/`，如果需要自定义，就填路径就行，从根路径开始，和本地路径一样，比如 `/test`
 :::
 
-#### **The default download method used** { lang="en" }
+## **The default download method used** { lang="en" }
 
-#### **默认使用的下载方式** { lang="zh-CN" }
+## **默认使用的下载方式** { lang="zh-CN" }
 
 ::: en
 
