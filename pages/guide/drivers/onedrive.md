@@ -19,30 +19,32 @@ categories:
 
 :::en
 :::tip
+If you have global administrator permissions for a non-home edition, it is recommended to use the OneDrive APP driver. 
 If your account does not support the API, (for example, the school account has not verified the administrator, or the administrator has disabled the API), then you can also mount it through webdav. For details, see [webdav](webdav.md)
 :::
 :::zh-CN
 :::tip
+如果你拥有非家庭版的全局管理员权限，建议使用OneDrive APP驱动
 如果你的账号不支持 API，（比如学校账号没有验证管理员，或者管理员禁用了 API），那么你也可以通过 WebDAV 挂载。 有关详细信息，请参阅 [WebDAV 页面](webdav.md)
 :::
 
-## **OneDrive mount** { lang="en" }
+## **OnlineAPI OneDrive mount** { lang="en" }
 
-## **正常 OneDrive 挂载** { lang="zh-CN" }
+## **在线API OneDrive 挂载** { lang="zh-CN" }
 
 ::: en
-::: tip
-If your account does not support the API, (for example, the school account has not verified the administrator, or the administrator has disabled the API), then you can also mount it through webdav. For details, see [webdav](webdav.md)
-:::
-::: en
-First open https://api.oplist.org/
-:::
-::: zh-CN
-::: tip
-如果你的账号不支持 API，（比如学校账号没有验证管理员，或者管理员禁用了 API），那么你也可以通过 WebDAV 挂载。 有关详细信息，请参阅 [WebDAV 页面](webdav.md)
+- First, open https://api.oplist.org/ and select the corresponding OneDrive version according to your account.
+- Check "Use parameters provided by OpenList", click "Get Token", then log in to the OneDrive account you want to mount. After authorization, return to the page to get the refresh token.
+ ![Online Token Acquisition Tool](/img/drivers/OneDrive/online_api.png)
+- Go to the storage management interface of OpenList, select the OneDrive driver, check "Use online API", fill in the refresh token and you can mount it.
+ ![Backend Configuration Interface](/img/drivers/OneDrive/online_api_config.png)
 :::
 ::: zh-CN
-首先打开 https://api.oplist.org/
+- 首先打开 https://api.oplist.org/，根据自己的账户选择对应的Onedrive版本。
+- 勾选“使用 OpenList 提供的参数”，点击“获取Token”后登录需要挂载的OneDrive账号，授权后返回页面即可获得刷新令牌。
+ ![在线Token获取工具](/img/drivers/OneDrive/online_api.png)
+- 前往Openlist的存储管理界面选择OneDrive驱动，勾选使用在线api，填入刷新令牌后即可挂载
+ ![后端配置界面](/img/drivers/OneDrive/online_api_config.png)
 :::
 
 ### **Create an application** { lang="en" }
