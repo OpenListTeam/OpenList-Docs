@@ -60,3 +60,56 @@ html.dark {
 html.dark {
   --va-c-link: var(--vp-c-brand-1);
 }
+
+// Theme image
+.theme-image-container {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+}
+
+.theme-image-light,
+.theme-image-dark,
+img[src$="#light"],
+img[src$="#dark"] {
+  max-width: 100%;
+  height: auto;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.theme-image-container .theme-image-light {
+  display: block;
+}
+
+.theme-image-container .theme-image-dark {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.dark .theme-image-container .theme-image-light {
+  display: none;
+}
+
+.dark .theme-image-container .theme-image-dark {
+  display: block;
+}
+
+
+img[src$="#light"] {
+  display: block;
+}
+
+img[src$="#dark"] {
+  display: none;
+}
+
+.dark img[src$="#light"] {
+  display: none;
+}
+
+.dark img[src$="#dark"] {
+  display: block;
+}

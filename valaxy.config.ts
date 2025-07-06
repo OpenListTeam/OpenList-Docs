@@ -6,6 +6,7 @@ import { addonComponents } from 'valaxy-addon-components'
 import { addonGitLog } from 'valaxy-addon-git-log'
 
 import { localIconLoader } from 'vitepress-plugin-group-icons'
+import { markdownThemeImagePlugin } from './utils/markdown-theme-image'
 
 const COMMIT_TAG = process.env.COMMIT_TAG || 'dev'
 const DOCS_COMMIT_SHA = process.env.CF_PAGES_COMMIT_SHA || process.env.DOCS_COMMIT_SHA
@@ -159,6 +160,9 @@ export default defineValaxyConfig<PressTheme.Config>({
       },
     ],
     // theme: 'material-theme-palenight',
+    config: md => {
+      md.use(markdownThemeImagePlugin)
+    },
   },
 
   groupIcons: {
