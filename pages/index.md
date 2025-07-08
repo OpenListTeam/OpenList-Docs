@@ -25,6 +25,10 @@ hero:
       external: true
       text: hero.actions.privacy
       link: /privacy
+    - theme: alt
+      external: true
+      text: hero.actions.terms
+      link: /terms
 # todo, rewrite with valaxy
 # features:
 ---

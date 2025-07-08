@@ -41,6 +41,7 @@ hero:
     view-github: View Github
     disclaimer: Disclaimer
     privacy: Privacy Policy
+    terms: Terms of Service
 
 # ! components/WorkInProgress.vue
 wip: WIP, please stay tuned
