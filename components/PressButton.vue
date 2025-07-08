@@ -5,6 +5,7 @@
 
   const props = defineProps<{
     theme: 'brand' | 'alt'
+    external?: boolean
     link: string
     text: string
   }>()
@@ -22,6 +23,7 @@
 
 <template>
   <AppLink
+    :external="external"
     :to="link"
     m="2"
     :class="classes"

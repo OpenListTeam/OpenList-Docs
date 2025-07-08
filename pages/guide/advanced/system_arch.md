@@ -113,19 +113,33 @@ top: 10
 ## **Android 安装 OpenList** { lang="zh-CN" }
 
 ::: en
-There are two ways to choose based on your needs
+::: tip
+OpenList follows the AGPL 3.0 open-source license, assumes no responsibility for any downstream derivative projects, and reserves the right to pursue their compliance with the same license.
+:::
+
+::: zh-CN
+::: tip
+OpenList 遵循 AGPL 3.0 开源协议，对任何下游衍生项目概不负责，且保留追究其同样遵守该协议的权利。
+:::
+
+::: en
+There are three ways to choose based on your needs
 
 1. Using **https://github.com/jing332/AListFlutter**
-2. Use `termux` to run
+2. Using **https://github.com/LeoHaoVIP/AListLiteAndroid**
+3. Use `termux` to run
 
 - Reference: **https://anwen-anyi.github.io/index/14-android_install.html**
   <i class="fa-solid fa-seal-exclamation fa-beat" style="color: #ff0000;"></i> Note: Remember to authorize the APP, set the background running and battery saving policy to unlimited, otherwise it may be killed in the background, causing it to be suddenly interrupted and unusable during background use.
-  :::
-  ::: zh-CN
-  有两种办法根据自己的需求选择
+
+:::
+::: zh-CN
+有三种办法根据自己的需求选择
 
 1. 使用 **https://github.com/jing332/AListFlutter**
-2. 使用 `termux` 运行
+2. 使用 **https://github.com/LeoHaoVIP/AListLiteAndroid**
+3. 使用 `termux` 运行
    - 参考：**https://anwen-anyi.github.io/index/14-android_install.html**
      <i class="fa-solid fa-seal-exclamation fa-beat" style="color: #ff0000;"></i> 注意事项：记得给APP授权，后台运行、电池省电策略设置为无限制，否则可能会被杀后台导致挂在后台使用期间突然中断无法使用
-     :::
+
+:::

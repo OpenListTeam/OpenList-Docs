@@ -39,7 +39,13 @@
         :link="action.link"
         :text="action.text"
       />
-      <PressButton v-else :theme="action.theme" :link="action.link" :text="action.text" />
+      <PressButton
+        v-else
+        :theme="action.theme"
+        :external="action.external"
+        :link="action.link"
+        :text="action.text"
+      />
     </template>
   </div>
 
