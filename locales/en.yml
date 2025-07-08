@@ -40,6 +40,7 @@ hero:
     get-started: Get Started
     view-github: View Github
     disclaimer: Disclaimer
+    privacy: Privacy Policy
 
 # ! components/WorkInProgress.vue
 wip: WIP, please stay tuned

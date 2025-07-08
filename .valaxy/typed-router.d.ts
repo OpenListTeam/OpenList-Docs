@@ -130,5 +130,6 @@ declare module 'vue-router/auto-routes' {
     '/guide/installation/source': RouteRecordInfo<'/guide/installation/source', '/guide/installation/source', Record<never, never>, Record<never, never>>,
     '/migration/': RouteRecordInfo<'/migration/', '/migration', Record<never, never>, Record<never, never>>,
     '/migration/alist-v3': RouteRecordInfo<'/migration/alist-v3', '/migration/alist-v3', Record<never, never>, Record<never, never>>,
+    '/privacy': RouteRecordInfo<'/privacy', '/privacy', Record<never, never>, Record<never, never>>,
   }
 }
