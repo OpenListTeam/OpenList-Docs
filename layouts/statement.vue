@@ -250,9 +250,7 @@
   }
 </style>
 
-<!-- This overwrites the default home layout -->
 <template>
-  <AutoLanguageDetector />
   <router-view />
   <BackToTop />
 </template>
