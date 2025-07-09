@@ -31,22 +31,41 @@
     {{ t('hero.banner') }}
   </h2>
 
-  <div p="2" text="center" class="flex justify-center items-center">
-    <template v-for="action in fm.hero.actions" :key="action.link">
-      <PressGetStarted
-        v-if="action.type === 'fly'"
-        :theme="action.theme"
-        :link="action.link"
-        :text="action.text"
-      />
-      <PressButton
-        v-else
-        :theme="action.theme"
-        :external="action.external"
-        :link="action.link"
-        :text="action.text"
-      />
-    </template>
+  <div p="2" text="center">
+    <div class="flex justify-center items-center mb-2">
+      <template v-for="(action, idx) in fm.hero.actions.slice(0, 2)" :key="action.link">
+        <PressGetStarted
+          v-if="action.type === 'fly'"
+          :theme="action.theme"
+          :link="action.link"
+          :text="action.text"
+        />
+        <PressButton
+          v-else
+          :theme="action.theme"
+          :external="action.external"
+          :link="action.link"
+          :text="action.text"
+        />
+      </template>
+    </div>
+    <div class="flex justify-center items-center">
+      <template v-for="(action, idx) in fm.hero.actions.slice(2)" :key="action.link">
+        <PressGetStarted
+          v-if="action.type === 'fly'"
+          :theme="action.theme"
+          :link="action.link"
+          :text="action.text"
+        />
+        <PressButton
+          v-else
+          :theme="action.theme"
+          :external="action.external"
+          :link="action.link"
+          :text="action.text"
+        />
+      </template>
+    </div>
   </div>
 
   <br />

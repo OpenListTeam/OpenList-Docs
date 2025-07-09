@@ -20,15 +20,15 @@ hero:
     - theme: alt
       external: true
       text: hero.actions.disclaimer
-      link: /disclaimer
-    - theme: alt
-      external: true
-      text: hero.actions.privacy
-      link: /privacy
+      link: /terms#disclaimer
     - theme: alt
       external: true
       text: hero.actions.terms
       link: /terms
+    - theme: alt
+      external: true
+      text: hero.actions.privacy
+      link: /privacy
 # todo, rewrite with valaxy
 # features:
 ---

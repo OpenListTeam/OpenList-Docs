@@ -42,7 +42,6 @@ declare module 'vue-router/auto-routes' {
     '/configuration/side': RouteRecordInfo<'/configuration/side', '/configuration/side', Record<never, never>, Record<never, never>>,
     '/configuration/site': RouteRecordInfo<'/configuration/site', '/configuration/site', Record<never, never>, Record<never, never>>,
     '/configuration/style': RouteRecordInfo<'/configuration/style', '/configuration/style', Record<never, never>, Record<never, never>>,
-    '/disclaimer': RouteRecordInfo<'/disclaimer', '/disclaimer', Record<never, never>, Record<never, never>>,
     '/faq/': RouteRecordInfo<'/faq/', '/faq', Record<never, never>, Record<never, never>>,
     '/faq/_example': RouteRecordInfo<'/faq/_example', '/faq/_example', Record<never, never>, Record<never, never>>,
     '/faq/error': RouteRecordInfo<'/faq/error', '/faq/error', Record<never, never>, Record<never, never>>,
