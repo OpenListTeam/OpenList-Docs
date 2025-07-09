@@ -50,16 +50,11 @@ This software is licensed under the [GNU Affero General Public License v3.0 (AGP
 
 :::
 
-## 免责声明 { lang="zh-CN" }
+## 免责声明 { #disclaimer lang="zh-CN" }
 
 ::: zh-CN
 
 - OpenList 项目基于上游 Alist 项目分叉开发，由 OpenListTeam 负责维护，并在 GNU Affero General Public License 3.0（AGPL 3.0） 协议下开源发布。本项目不对其功能、可用性或适用性作出任何明示或暗示的担保。
-
--
-
--
-
 - OpenList 项目为免费开源软件，基于上游 Alist 项目分叉开发，由 OpenListTeam 负责维护。
 - 本软件按“原样”提供，不附带任何明示或暗示的担保，包括但不限于适销性或特定用途的适用性。
 - 本软件受 [GNU Affero General Public License v3.0 (AGPL-3.0)](https://www.gnu.org/licenses/agpl-3.0.html) 许可协议保护。您可以自由使用、修改和分发本软件，但必须遵守 AGPL-3.0 的相关条款，包括在分发和提供服务时公开源代码。详情请参阅上述链接。
