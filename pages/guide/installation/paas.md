@@ -31,11 +31,11 @@ The documentation may not be updated in a timely manner. Please make adjustments
 ### 一键部署 { lang="zh-CN" }
 
 ::: en
-Click the button below to deploy to Claw Cloud. It can also be found in App Launchpad.
+Click the button below to [deploy to Claw Cloud](https://template.run.claw.cloud/?openapp=system-fastdeploy%3FtemplateName%3Dopenlist). It can also be found in App Launchpad.
 :::
 
 ::: zh-CN
-点击下方按钮部署到 Claw Cloud。亦可在 App Launchpad 中找到。
+点击下方按钮[部署到 Claw Cloud](https://template.run.claw.cloud/?openapp=system-fastdeploy%3FtemplateName%3Dopenlist)。亦可在 App Launchpad 中找到。
 :::
 
 [![Run on CLAWCLOUD](/img/guide/installation/clawcloud-run.svg)](https://template.run.claw.cloud/?openapp=system-fastdeploy%3FtemplateName%3Dopenlist)
