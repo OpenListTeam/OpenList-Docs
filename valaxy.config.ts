@@ -84,6 +84,10 @@ export default defineValaxyConfig<PressTheme.Config>({
         link: '/faq',
       },
       {
+        text: 'nav.ecosystem',
+        link: '/ecosystem',
+      },
+      {
         text: 'nav.community.title',
         items: [
           {
