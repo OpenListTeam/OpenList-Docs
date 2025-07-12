@@ -14,6 +14,7 @@ nav:
     telegram: Telegram
     telegram_channel: Telegram Channel
   github: GitHub
+  ecosystem: Ecosystem
 
 # ! Category titles (setting `title` in index.md's frontmatter will not work)
 category:
