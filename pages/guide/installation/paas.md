@@ -26,9 +26,27 @@ The documentation may not be updated in a timely manner. Please make adjustments
 
 ## 爪云 { lang="zh-CN" }
 
-### 关键信息 { lang="zh-CN" }
+### One-click deployment { lang="en" }
 
-### Key Information { lang="en" }
+### 一键部署 { lang="zh-CN" }
+
+::: en
+Click the button below to deploy to Claw Cloud. It can also be found in App Launchpad.
+:::
+
+::: zh-CN
+点击下方按钮部署到 Claw Cloud。亦可在 App Launchpad 中找到。
+:::
+
+[![Run on CLAWCLOUD](/img/guide/installation/clawcloud-run.svg)](https://template.run.claw.cloud/?openapp=system-fastdeploy%3FtemplateName%3Dopenlist)
+
+### Manual deployment { lang="en" }
+
+### 手动部署 { lang="zh-CN" }
+
+#### 关键信息 { lang="zh-CN" }
+
+#### Key Information { lang="en" }
 
 ::: en
 Name|Value|Description
@@ -61,9 +79,9 @@ Local Storage|-|持久卷
 -- Mount Path|/opt/openlist/data|配置映射的目录，如果你没有修改启动命令或者配置，则为`/opt/openlist/data`
 :::
 
-### 参考图示 { lang="zh-CN" }
+#### 参考图示 { lang="zh-CN" }
 
-### Reference Diagram { lang="en" }
+#### Reference Diagram { lang="en" }
 
 ![](/img/guide/installation/clawcloud-01.png)
 
