@@ -48,8 +48,8 @@ Dropbox官网：https://www.dropbox.com/
   - Finally, go to the permissions configuration page to set the app's permissions.
     ![Permission configuration](/img/drivers/dropbox/4.png)
   - [Click here](https://api.oplist.org/) to enter the token acquisition tool. Select Dropbox, fill in your id and secret, and after authorization you can get the refresh token.
-  - In the Openlist configuration page, enter the refresh token, id, and secret to use. Note that the refresh token is about 40-50 characters long.
-    ![Openlist configuration](/img/drivers/dropbox/5.png)
+  - In the OpenList configuration page, enter the refresh token, id, and secret to use. Note that the refresh token is about 40-50 characters long.
+    ![OpenList configuration](/img/drivers/dropbox/5.png)
   - If you are highly privacy-conscious, Dropbox supports local callback. You can use the following script provided by GPT to quickly implement it, communicating only with Dropbox servers.
   - **Note: Since the callback address is local and you have not set up a real local callback server, please manually copy the authorization code from the browser address bar.**
   - **Please resolve Python environment issues yourself, or use the callback server provided above.**
@@ -106,7 +106,7 @@ Dropbox官网：https://www.dropbox.com/
   - 最后，进入权限配置界面，配置app的权限
     ![权限配置](/img/drivers/dropbox/4.png)
   - [点击这里](https://api.oplist.org/)进入token获取工具，选择dropbox后填入自己的id和secret，完成授权后可以获得刷新令牌。
-  - 在Openlist配置界面，填入刷新令牌、id和secret即可使用，注意刷新令牌的长度大致为40-50个字符。
+  - 在OpenList配置界面，填入刷新令牌、id和secret即可使用，注意刷新令牌的长度大致为40-50个字符。
     ![openlist配置](/img/drivers/dropbox/5.png)
   - 如果你有强烈的隐私意识，dropbox支持本地回调，可以使用以下全程由GPT提供的脚本快速实现，只和dropbox的服务器进行通信。
   - **注意：由于回调地址是本地，而你并没有建立真正的本地回调服务器，所以请自己从浏览器地址栏获取返回的权限码**

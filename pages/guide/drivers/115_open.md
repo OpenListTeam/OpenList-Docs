@@ -209,10 +209,10 @@ The `root folder ID` of this folder is `249163533602609229`.
 
 ```mermaid
 sequenceDiagram
-  participant  Openlist
+  participant  OpenList
   participant  115服务器
-  Openlist->>115服务器: 提供刷新令牌+内置的客户端ID和密钥
-  115服务器->>Openlist: 返回新的访问令牌+刷新令牌
+  OpenList->>115服务器: 提供刷新令牌+内置的客户端ID和密钥
+  115服务器->>OpenList: 返回新的访问令牌+刷新令牌
 ```
 
 :::
@@ -220,10 +220,10 @@ sequenceDiagram
 
 ```mermaid
 sequenceDiagram
-  participant  Openlist
+  participant  OpenList
   participant  115服务器
-  Openlist->>115服务器: 提供刷新令牌+内置的客户端ID和密钥
-  115服务器->>Openlist: 返回新的访问令牌+刷新令牌
+  OpenList->>115服务器: 提供刷新令牌+内置的客户端ID和密钥
+  115服务器->>OpenList: 返回新的访问令牌+刷新令牌
 ```
 
 :::
@@ -239,13 +239,13 @@ sequenceDiagram
 title: 如何通过OnlineAPI刷新AccessToken？
 ---
 sequenceDiagram
-  participant  Openlist
+  participant  OpenList
   participant  OnlineAPI
   participant  115服务器
-  Openlist->>OnlineAPI: 提供刷新令牌
+  OpenList->>OnlineAPI: 提供刷新令牌
   OnlineAPI->>115服务器: 提供刷新令牌+内置的客户端ID和密钥
   115服务器->>OnlineAPI: 返回新的访问令牌+刷新令牌
-  OnlineAPI->>Openlist: 返回新的访问令牌+刷新令牌
+  OnlineAPI->>OpenList: 返回新的访问令牌+刷新令牌
 ```
 
 :::
@@ -256,13 +256,13 @@ sequenceDiagram
 title: 如何通过OnlineAPI刷新AccessToken？
 ---
 sequenceDiagram
-  participant  Openlist
+  participant  OpenList
   participant  OnlineAPI
   participant  115服务器
-  Openlist->>OnlineAPI: 提供刷新令牌
+  OpenList->>OnlineAPI: 提供刷新令牌
   OnlineAPI->>115服务器: 提供刷新令牌+内置的客户端ID和密钥
   115服务器->>OnlineAPI: 返回新的访问令牌+刷新令牌
-  OnlineAPI->>Openlist: 返回新的访问令牌+刷新令牌
+  OnlineAPI->>OpenList: 返回新的访问令牌+刷新令牌
 ```
 
 :::

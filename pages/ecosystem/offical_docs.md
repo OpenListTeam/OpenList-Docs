@@ -1,6 +1,6 @@
 ---
-title: Openlist docs
-title_zh-CN: Openlist docs
+title: OpenList docs
+title_zh-CN: OpenList docs
 categories:
   - ecosystem
   - offical

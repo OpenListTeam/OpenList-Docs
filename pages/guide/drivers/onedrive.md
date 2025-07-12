@@ -43,7 +43,7 @@ categories:
 - 首先打开 [这里](https://api.oplist.org/)，根据自己的账户选择对应的Onedrive版本。
 - 勾选“使用 OpenList 提供的参数”，点击“获取Token”后登录需要挂载的OneDrive账号，授权后返回页面即可获得刷新令牌。
  ![在线Token获取工具](/img/drivers/OneDrive/online_api.png)
-- 前往Openlist的存储管理界面选择OneDrive驱动，勾选使用在线api，填入刷新令牌后即可挂载
+- 前往OpenList的存储管理界面选择OneDrive驱动，勾选使用在线api，填入刷新令牌后即可挂载
  ![后端配置界面](/img/drivers/OneDrive/online_api_config.png)
 :::
 

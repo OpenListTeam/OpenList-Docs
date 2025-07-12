@@ -426,5 +426,5 @@ openlist restart
 Download the new version of OpenList and replace the previous one.
 :::
 ::: zh-CN
-下载新版Openlist，把之前的替换了即可。
+下载新版OpenList，把之前的替换了即可。
 :::

@@ -14,7 +14,7 @@ top: 10
 ## **Aria2** { lang="zh-CN" }
 
 ::: en
-Set Aria2 uri and Aria2 for offline download. Aria2 needs to be installed on the same server(container if use docker) as Openlist.
+Set Aria2 uri and Aria2 for offline download. Aria2 needs to be installed on the same server(container if use docker) as OpenList.
 <br/>
 :::
 ::: zh-CN

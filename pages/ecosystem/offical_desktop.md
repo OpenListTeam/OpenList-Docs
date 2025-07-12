@@ -1,6 +1,6 @@
 ---
-title: Openlist Desktop
-title_zh-CN: Openlist Desktop
+title: OpenList Desktop
+title_zh-CN: OpenList Desktop
 categories:
   - ecosystem
   - offical

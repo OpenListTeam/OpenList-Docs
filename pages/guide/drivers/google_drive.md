@@ -130,10 +130,10 @@ categories:
 
 ```mermaid
 sequenceDiagram
-  participant  Openlist
+  participant  OpenList
   participant  GoogleDrive
-  Openlist->>GoogleDrive: 提供刷新令牌+内置的客户端ID和密钥
-  GoogleDrive->>Openlist: 返回新的访问令牌+刷新令牌
+  OpenList->>GoogleDrive: 提供刷新令牌+内置的客户端ID和密钥
+  GoogleDrive->>OpenList: 返回新的访问令牌+刷新令牌
 
 ```
 
@@ -144,13 +144,13 @@ sequenceDiagram
 title: 如何通过OnlineAPI刷新AccessToken？
 ---
 sequenceDiagram
-  participant  Openlist
+  participant  OpenList
   participant  OnlineAPI
   participant  GoogleDrive
-  Openlist->>OnlineAPI: 提供刷新令牌
+  OpenList->>OnlineAPI: 提供刷新令牌
   OnlineAPI->>GoogleDrive: 提供刷新令牌+内置的客户端ID和密钥
   GoogleDrive->>OnlineAPI: 返回新的访问令牌+刷新令牌
-  OnlineAPI->>Openlist: 返回新的访问令牌+刷新令牌
+  OnlineAPI->>OpenList: 返回新的访问令牌+刷新令牌
 ```
 
 ## 5.默认使用的哪种下载方式？
