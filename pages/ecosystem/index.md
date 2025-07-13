@@ -57,8 +57,6 @@ OpenList traffic proxy program, which can use another server to proxy OpenList t
 OpenList流量代理程序，可以利用另一台服务器代理OpenList的流量
 :::
 
----
-
 ## Third-Party Open Source Projects { lang="en" }
 
 ## 第三方开源项目 { lang="zh-CN" }
@@ -87,8 +85,6 @@ Free and Open Source Software licensed under the MIT License.
 自由开源软件，MIT协议
 :::
 
----
-
 ## Third-Party Proprietary Software { lang="en" }
 
 ## 第三方专有软件 { lang="zh-CN" }
@@ -107,7 +103,7 @@ Any actions of these software products—including their naming conventions, fea
 上述软件的任何行为（包括其名称中对 OpenList 的引用、功能设计、内容及宣传方式）均**不代表** OpenList 项目的立场。软件功能、使用后果及相关法律责任完全由其开发者或发布方承担，OpenList 项目概不负责。
 :::
 
-### [Myqnap`s OpenList ↗](https://www.myqnap.org/product/openlist/)
+### [MY QNAP`s OpenList ↗](https://www.myqnap.org/product/openlist/)
 ::: en
 ::: danger
 The third-party closed-source QPKG version of OpenList is available under a paid license.
@@ -128,4 +124,3 @@ OpenList的第三方闭源qpkg版本，为付费授权。
 争议问题：没有开放源码，违反AGPLv3许可证、违反OpenList LOGO的CC BY-NC-SA 4.0许可。
 :::
 
----
