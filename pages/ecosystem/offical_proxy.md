@@ -1,10 +1,10 @@
 ---
-title: OpenList Docs
-title_zh-CN: OpenList Docs
+title: OpenList Proxy
+title_zh-CN: OpenList Proxy
 categories:
   - ecosystem
   - offical
-top: 990
+top: 960
 ---
 
 <WorkInProgress />
