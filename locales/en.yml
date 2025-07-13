@@ -55,3 +55,10 @@ tooltip:
 post:
   # Reserved and used by valaxy-theme-press
   contributors: Contributors
+
+# ! components/OpenListDownload.vue
+download:
+  os: Operating System
+  cpu: CPU Architecture
+  download: Download
+  gh_proxy: GhProxy
