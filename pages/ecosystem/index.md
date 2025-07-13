@@ -68,7 +68,7 @@ Third-party open source projects are based on community open-source security. Th
 
 ::: zh-CN
 ::: tip
-第三方开源项目基于社区开源安全，以下项目均与OpenListTeam无关，在部署到生产环境前请自行评估相关风险。
+以下第三方开源项目均由社区开发并保持开源，与 OpenListTeam 无直接关联。在部署到生产环境前，请自行评估相关风险。
 :::
 
 ### [luci-app-openlist ↗](https://github.com/sbwml/luci-app-openlist)
