@@ -12,9 +12,9 @@ categories:
 # A page can have multiple tags
 ---
 
-### **How to add password for a file/folder?** { lang="en" }
+## How to add password for a file/folder? { lang="en" }
 
-###  **如何为文件/文件夹添加密码？** { lang="zh-CN" }
+## 如何为文件/文件夹添加密码？ { lang="zh-CN" }
 
 :::en
 Add a [meta](../guide/advanced/meta.md) record.
@@ -22,12 +22,14 @@ Add a [meta](../guide/advanced/meta.md) record.
 :::zh-CN
 添加[元信息](../guide/advanced/meta.md)
 :::
-### **How to reverse proxy with sub directory?** { lang="en" }
 
-### **如何对子目录进行反向代理？**  { lang="zh-CN" }
+## How to reverse proxy with sub directory? { lang="en" }
+
+## 如何对子目录进行反向代理？ { lang="zh-CN" }
 
 :::en
 An example of using nginx to reverse proxy to https://example.com/openlist:
+
 - Normal installation
 - Set [site_url](../config/configuration.md#site_url) to `https://example.com/openlist` or just `/openlist` then restart openlist
 - Add a reverse proxy record in nginx
@@ -46,6 +48,7 @@ location /openlist/ {
     client_max_body_size 20000m;
 }
 ```
+
 :::
 :::zh-CN
 使用 nginx 反向代理到 https://example.com/openlist 的示例：
@@ -68,11 +71,12 @@ location /openlist/ {
     client_max_body_size 20000m;
 }
 ```
+
 :::
 
-### **How to get password if i forget it?** { lang="en" }
+## How to get password if i forget it? { lang="en" }
 
-###  **忘记密码怎么办？** { lang="zh-CN" }
+## 忘记密码怎么办？ { lang="zh-CN" }
 
 :::en
 If you are the owner of the site, you can get the admin's info by run `./openlist admin` in the terminal.
@@ -93,17 +97,17 @@ You need to stop openlist server first if the version of your openlist is v3.9.0
 如果你使用v3.9.0及以上版本，你需要先停止alist服务因为这个pr: https://github.com/alist-org/alist/pull/3074
 :::
 
-#### **Lower than v3.25.0** { lang="en" }
+### Lower than v3.25.0{ lang="en" }
 
-####  **低于v3.25.0版本** { lang="zh-CN" }
+### 低于v3.25.0版本 { lang="zh-CN" }
 
 ```bash
 ./openlist admin
 ```
 
-#### **Higher than v3.25.0** { lang="en" }
+### Higher than v3.25.0 { lang="en" }
 
-#### **高于v3.25.0版本**  { lang="zh-CN" }
+### 高于v3.25.0版本 { lang="zh-CN" }
 
 :::en
 Versions above 3.25.0 change the password to an encrypted hash value, and the password cannot be calculated directly. If the password is forgotten, it can only be re-**`randomly generated`** or **`manually set`**
@@ -114,6 +118,7 @@ Versions above 3.25.0 change the password to an encrypted hash value, and the pa
 # Manually set a password, `NEW_PASSWORD` refers to the password you need to set
 ./openlist admin set NEW_PASSWORD
 ```
+
 :::
 :::zh-CN
 3.25.0以上版本将密码改成加密方式存储的hash值，无法直接反算出密码，如果忘记了密码只能通过重新 **`随机生成`** 或者 **`手动设置`**
@@ -124,11 +129,12 @@ Versions above 3.25.0 change the password to an encrypted hash value, and the pa
 # 手动设置一个密码,`NEW_PASSWORD`是指你需要设置的密码
 ./openlist admin set NEW_PASSWORD
 ```
+
 :::
 
-### **How to modify the listening port​** { lang="en" }
+## How to modify the listening port​ { lang="en" }
 
-### **如何修改监听端口​**  { lang="zh-CN" }
+## 如何修改监听端口​ { lang="zh-CN" }
 
 :::en
 Refer to [config](../config/configuration.md#port)
@@ -137,35 +143,35 @@ Refer to [config](../config/configuration.md#port)
 参考[config](../config/configuration.md#port)
 :::
 
-### **How to upgrade** { lang="en" }
+## How to upgrade { lang="en" }
 
-### **如何更新**  { lang="zh-CN" }
+## 如何更新 { lang="zh-CN" }
 
 :::en
 Except for the incompatible version marked in the changelog, you can directly replace the binary file to upgrade.
 
-For docker user, just remove the old container and pull the new image then run it.
+For Docker user, just remove the old container and pull the new image then run it.
 :::
 :::zh-CN
-除了 changelog 中标注的不兼容版本，通常可以直接替换二进制文件进行更新。
+除了 Changelog 中标注的不兼容版本，通常可以直接替换二进制文件进行更新。
 
-对于 docker 用户，只需删除旧的容器并拉取新的docker image，然后运行它即可。
+对于 Docker 用户，只需删除旧的容器并拉取新的 Docker 镜像，然后运行它即可。
 :::
 
-### **How to allow guest to upload files** { lang="en" }
+## How to allow guest to upload files { lang="en" }
 
-###  **如何允许访客上传文件** { lang="zh-CN" }
+## 如何允许访客上传文件 { lang="zh-CN" }
 
 :::en
 Add a [meta](../guide/advanced/meta.md) record, and open `write` field.
 :::
 :::zh-CN
-添加[元信息](../guide/advanced/meta.md)，并启用"写入"
+添加[元信息](../guide/advanced/meta.md)，并启用 `写入`。
 :::
 
-### **How to remove `powered_by Alist` at the bottom?​** { lang="en" }
+## How to remove `powered_by Alist` at the bottom?​ { lang="en" }
 
-###  **如何去掉底部的"由 OpenList 驱动"？​** { lang="zh-CN" }
+## 如何去掉底部的"由 OpenList 驱动"？​ { lang="zh-CN" }
 
 :::en
 According to our open source license:
@@ -176,9 +182,9 @@ Permissions of this strongest copyleft license are conditioned on making availab
 此最强copyleft许可的权限以在同一许可下提供许可作品和修改的完整源代码为条件，其中包括使用许可作品的较大作品。**版权和许可声明必须保留** 贡献者明确授予专利权。当使用修改后的版本通过网络提供服务时，必须提供修改后版本的完整源代码。
 :::
 
-### **When adding a 189Cloud storage: the device ID does not exist, and a secondary device verification is required​** { lang="en" }
+## When adding a 189Cloud storage: the device ID does not exist, and a secondary device verification is required​ { lang="en" }
 
-###  **添加 189 云存储时：设备 ID 不存在，需要二次设备验证 ​** { lang="zh-CN" }
+## 添加 189 云存储时：设备 ID 不存在，需要二次设备验证 ​ { lang="zh-CN" }
 
 :::en
 It may be that the risk detection system has been triggered. Please changing the password, then, add it again.
@@ -187,18 +193,30 @@ It may be that the risk detection system has been triggered. Please changing the
 可能是触发了风控。更改密码后，再次添加即可。
 :::
 
-### **When adding Tianyi cloud disk client storage: prompt need img validate code: verification code** { lang="en" }
+## When adding Tianyi cloud disk client storage: prompt need img validate code: verification code { lang="en" }
 
-###  **添加 天翼云盘客户端 存储时：提示 need img validate code: 验证码** { lang="zh-CN" }
+## 添加 天翼云盘客户端 存储时：提示 need img validate code: 验证码 { lang="zh-CN" }
+
+:::en
 
 - Click Edit, write the verification code you just saw into the configuration and click Save
 - Click Edit and turn on the Do not use OCR button
 - Or build it yourself [**Ocr interface**](../config/global.md#ocr-api)
-- **189 Cloud** Driver has been replaced with sliding verification code because web login has been replaced.**No longer supports OCR and manual input**, if the verification code needs to be used, please use the addition of `Cookie to log in` or use the `189 Cloud PC` Driver, ^Note_that_it_is_189_Cloud_driver_is_not_189_Cloud_PC^
+- **189 Cloud** Driver has been replaced with sliding verification code because web login has been replaced.**No longer supports OCR and manual input**, if the verification code needs to be used, please use the addition of `Cookie to log in` or use the `189 Cloud PC` Driver. Note_that_it_is_189_Cloud_driver_is_not_189_Cloud_PC.
 
-### **TLS handshake timeout? / read: connection reset by peer? / dns lookup failed? / connect: connection refused / Client.Timeout exceeded while awaiting headers? / no such host?** { lang="en" }
+:::
+:::zh-CN
 
-### **TLS handshake timeout? / read: connection reset by peer? / dns lookup failed? / connect: connection refused / Client.Timeout exceeded while awaiting headers?  / no such host?**  { lang="zh-CN" }
+- 点击编辑，将刚才看到的验证码输入配置中，并点击保存。
+- 点击编辑并开启“不使用 OCR”按钮。
+- 或者自行搭建 [**OCR 接口**](../config/global.md#ocr-api)。
+- **天翼云盘** 驱动已被滑动验证码取代，因为网页登录方式已更改。**不再支持 OCR 和手动输入**，如果需要使用验证码，请使用 `Cookie 登录` 或者使用 `天翼云盘客户端` 驱动。注意：天翼云盘 驱动与 天翼云盘客户端 驱动不同。
+
+:::
+
+## TLS handshake timeout? / read: connection reset by peer? / dns lookup failed? / connect: connection refused / Client.Timeout exceeded while awaiting headers? / no such host? { lang="en" }
+
+## TLS handshake timeout? / read: connection reset by peer? / dns lookup failed? / connect: connection refused / Client.Timeout exceeded while awaiting headers? / no such host? { lang="zh-CN" }
 
 :::en
 For network problems such as these, please troubleshoot and solve them yourself.Don't create any issues for this.
@@ -207,9 +225,9 @@ For network problems such as these, please troubleshoot and solve them yourself.
 诸如此类的网络问题，请自行排查解决。不要为此提出任何的issue
 :::
 
-### **How to add epub reading** { lang="en" }
+## How to add epub reading { lang="en" }
 
-###  **怎么添加epub阅读** { lang="zh-CN" }
+## 怎么添加epub阅读器 { lang="zh-CN" }
 
 :::en
 Background --> Settings --> Preview --> Iframe preview, written behind the PDF
@@ -238,15 +256,16 @@ If the secondary directory reverse generation is set, please add the correspondi
   }
 ```
 
-3.7.x 版本及更高的版本已经支持  ".epub" 阅读
+3.7.x 版本及更高的版本已经支持 ".epub" 阅读
 但是需要自己手动添加(因为已经创建过数据库了 不好给你覆盖会出错)
 如果是第一次安装启动（3.7.x版本及更高的版本）不用手动添加
 如果设置了二级目录反代，请在[site_url](../config/configuration.md#site-url)中自行添加相应前缀，然后重启OpenList才会生效
 :::
 
-### **How to quickly locate bugs** { lang="en" }
+### How to quickly locate bugs { lang="en" }
 
-###  **如何快速定位Bug** { lang="zh-CN" }
+### 如何快速定位Bug { lang="zh-CN" }
+
 :::en
 If you find a bug, but the `log.log` log is not detailed, you can try to add the `--debug` parameter to start
 
@@ -270,18 +289,20 @@ When using the `--debug` parameter to start, there will be some sensitive data s
 :::
 
 :::en
+
 - **Windows**：`openlist.exe server --debug`
 - **Linux**：`./openlist server --debug`
 - **Mac**: Temporarily unknown, maybe it is started with the `--debug` parameter
 - **Docker**：`docker exec -it openlist ./openlist server --debug`
 
-How to stop the relevant logs after startup? `Ctrl+c` can stop the program (or simply close the program directly)
+How to stop the relevant logs after startup? `Ctrl+C` can stop the program (or simply close the program directly)
 :::
 :::zh-CN
+
 - **Windows**：`openlist.exe server --debug`
 - **Linux**：`./openlist server --debug`
 - **Mac**：暂时未知，可能也是可以加 `--debug` 参数启动
 - **Docker**：`docker exec -it openlist ./openlist server --debug`
 
-启动后拿到相关日志，如何停止?  `Ctrl+c` 可以使程序停止运行（或者简单粗暴直接关闭程序）
+启动后拿到相关日志，如何停止? `Ctrl+C` 可以使程序停止运行（或者简单粗暴直接关闭程序）
 :::
