@@ -87,40 +87,42 @@ Free and Open Source Software licensed under the MIT License.
 
 ## Third-Party Proprietary Software { lang="en" }
 
-## 第三方专有软件 { lang="zh-CN" }
+## 其他第三方项目 { lang="zh-CN" }
 
 ::: en
 ::: danger
-The following lists third-party proprietary software derived from OpenList. These products, for various reasons (including AGPL violations), have not publicly released or licensed their source code and are not governed by any open-source license.
+The following lists several other third-party projects derived from OpenList that do not fall into the above categories.
 
-Any actions of these software products—including their naming conventions, features, content, or promotional references to OpenList—do **not** represent the views of the OpenList project. Functionality, usage consequences, and all associated legal liabilities rest solely with their respective developers or publishers. The OpenList project bears no responsibility.
+Any actions of these software/projects (including references to OpenList in their names, functionality design, content, or promotional methods) do not represent the stance of the OpenList project. The functionality, consequences of use, and related legal responsibilities are entirely borne by their respective developers or publishers, and the OpenList project assumes no responsibility.
 :::
 
 ::: zh-CN
 ::: danger
-以下列出若干基于 OpenList 衍生的第三方专有软件。因各类原因（包括违反 AGPL 条款），其未公开或许可源代码，亦不受任何开源协议约束。
+以下列出若干基于 OpenList 衍生的其他不符合上述分类的的第三方项目。
 
-上述软件的任何行为（包括其名称中对 OpenList 的引用、功能设计、内容及宣传方式）均**不代表** OpenList 项目的立场。软件功能、使用后果及相关法律责任完全由其开发者或发布方承担，OpenList 项目概不负责。
+以下软件/项目的任何行为（包括其名称中对 OpenList 的引用、功能设计、内容及宣传方式）均**不代表** OpenList 项目的立场。软件功能、使用后果及相关法律责任完全由其开发者或发布方承担，OpenList 项目概不负责。
 :::
 
 ### [MY QNAP's OpenList ↗](https://www.myqnap.org/product/openlist/)
 ::: en
 ::: danger
-The third-party closed-source QPKG version of OpenList is available under a paid license.
-</br>[Archived on 2025-7-13](https://web.archive.org/web/20250713005135/https://www.myqnap.org/product/openlist/)
+The third-party closed-source QPKG version of OpenList.
+
+[Archived on 2025-7-13](https://web.archive.org/web/20250713005135/https://www.myqnap.org/product/openlist/)
 
 Proprietary software, paid license.
 
-Controversial issues: The source code is not open, violating the AGPLv3 license and the OpenList logo's CC BY-NC-SA 4.0 license.
+Note: The source code is not open, violating the AGPLv3 license and the OpenList logo's CC BY-NC-SA 4.0 license.
 :::
 
 ::: zh-CN
 ::: danger
-OpenList的第三方闭源qpkg版本，为付费授权。
-</br>[存档于2025-7-13](https://web.archive.org/web/20250713005135/https://www.myqnap.org/product/openlist/)
+OpenList的第三方闭源qpkg版本。
+
+[存档于2025-7-13](https://web.archive.org/web/20250713005135/https://www.myqnap.org/product/openlist/)
 
 专有软件，付费授权
 
-争议问题：没有开放源码，违反AGPLv3许可证、违反OpenList LOGO的CC BY-NC-SA 4.0许可。
+注意：因没有开放源码，违反AGPLv3许可证、违反OpenList LOGO的CC BY-NC-SA 4.0许可。
 :::
 
