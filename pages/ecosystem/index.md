@@ -103,7 +103,7 @@ Any actions of these software products—including their naming conventions, fea
 上述软件的任何行为（包括其名称中对 OpenList 的引用、功能设计、内容及宣传方式）均**不代表** OpenList 项目的立场。软件功能、使用后果及相关法律责任完全由其开发者或发布方承担，OpenList 项目概不负责。
 :::
 
-### [MY QNAP`s OpenList ↗](https://www.myqnap.org/product/openlist/)
+### [MY QNAP's OpenList ↗](https://www.myqnap.org/product/openlist/)
 ::: en
 ::: danger
 The third-party closed-source QPKG version of OpenList is available under a paid license.
