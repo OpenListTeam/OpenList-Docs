@@ -1,6 +1,7 @@
 ---
-title: Baidu Netdisk
-title_zh-CN: 百度网盘
+title:
+  en: Baidu Netdisk
+  zh-CN: 百度网盘
 icon: iconfont icon-state
 # This control sidebar order
 top: 410

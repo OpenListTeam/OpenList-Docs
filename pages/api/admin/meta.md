@@ -1,6 +1,7 @@
 ---
-title: meta
-title_zh-CN: meta
+title:
+  en: meta
+  zh-CN: meta
 icon: iconfont icon-token
 # This control sidebar order
 top: 140

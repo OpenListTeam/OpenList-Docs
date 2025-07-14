@@ -1,6 +1,7 @@
 ---
-title: LoadLoad balancing
-title_zh-CN: 负载均衡
+title:
+  en: LoadLoad balancing
+  zh-CN: 负载均衡
 categories:
   - guide
   - advanced

@@ -1,6 +1,7 @@
 ---
-title: driver
-title_zh-CN: driver
+title:
+  en: driver
+  zh-CN: driver
 icon: iconfont icon-file
 # This control sidebar order
 top: 130

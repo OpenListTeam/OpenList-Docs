@@ -1,6 +1,7 @@
 ---
-title: storage
-title_zh-CN: storage
+title:
+  en: storage
+  zh-CN: storage
 icon: iconfont icon-folder
 # This control sidebar order
 top: 120

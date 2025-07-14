@@ -1,6 +1,7 @@
 ---
-title: LanZou Cloud
-title_zh-CN: 蓝奏云盘
+title:
+  en: LanZou Cloud
+  zh-CN: 蓝奏云盘
 icon: iconfont icon-state
 # This control sidebar order
 top: 390

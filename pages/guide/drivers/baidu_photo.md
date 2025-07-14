@@ -1,6 +1,7 @@
 ---
-title: Moment album
-title_zh-CN: 一刻相册
+title:
+  en: Moment album
+  zh-CN: 一刻相册
 icon: iconfont icon-state
 # This control sidebar order
 top: 400

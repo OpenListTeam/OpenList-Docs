@@ -1,6 +1,7 @@
 ---
-title: GitHub Releases
-title_zh-CN: GitHub Releases
+title:
+  en: GitHub Releases
+  zh-CN: GitHub Releases
 icon: iconfont icon-state
 # This control sidebar order
 top: 20

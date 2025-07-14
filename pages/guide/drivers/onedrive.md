@@ -1,6 +1,7 @@
 ---
-title: OneDrive / Share
-title_zh-CN: OneDrive / 分享
+title:
+  en: OneDrive / Share
+  zh-CN: OneDrive / 分享
 icon: iconfont icon-state
 # This control sidebar order
 top: 470

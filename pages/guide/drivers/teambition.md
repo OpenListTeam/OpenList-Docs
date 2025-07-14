@@ -1,6 +1,7 @@
 ---
-title: Teambition
-title_zh-CN: Teambition
+title:
+  en: Teambition
+  zh-CN: Teambition
 icon: iconfont icon-state
 # This control sidebar order
 top: 300

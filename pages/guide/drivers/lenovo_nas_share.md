@@ -1,6 +1,7 @@
 ---
-title: LenovoNasShare
-title_zh-CN: 联想家庭储存链接分享
+title:
+  en: LenovoNasShare
+  zh-CN: 联想家庭储存链接分享
 icon: iconfont icon-state
 # This control sidebar order
 top: 260

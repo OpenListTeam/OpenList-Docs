@@ -1,6 +1,7 @@
 ---
-title: Style Configuration
-title_zh-CN: 样式设置
+title:
+  en: Style Configuration
+  zh-CN: 样式设置
 # This is the icon of the page
 icon: iconfont icon-style
 # This control sidebar order

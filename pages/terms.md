@@ -1,6 +1,7 @@
 ---
-title: Terms of Service
-title_zh-CN: 使用条款
+title:
+  en: Terms of Service
+  zh-CN: 使用条款
 # This is the icon of the page
 nav: false
 hide: true

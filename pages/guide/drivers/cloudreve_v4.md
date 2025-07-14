@@ -1,6 +1,7 @@
 ---
-title: Cloudreve V4 / Share
-title_zh-CN: Cloudreve V4 / 分享
+title:
+  en: Cloudreve V4 / Share
+  zh-CN: Cloudreve V4 / 分享
 icon: iconfont icon-state
 # This control sidebar order
 top: 60

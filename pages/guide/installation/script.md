@@ -1,8 +1,9 @@
 ---
 # This is the title of the article
 # title: One-click Script
-title: One-click Script
-title_zh-CN: 一键脚本
+title:
+  en: One-click Script
+  zh-CN: 一键脚本
 icon: iconfont icon-script
 # This control sidebar order
 top: 70

@@ -1,6 +1,7 @@
 ---
-title: online tool
-title_zh-CN: 在线调试
+title:
+  en: online tool
+  zh-CN: 在线调试
 icon: iconfont icon-setting
 # This control sidebar order
 top: 50

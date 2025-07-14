@@ -1,6 +1,7 @@
 ---
-title: Thunder Cloud Disk
-title_zh-CN: 迅雷云盘 / X / 浏览器
+title:
+  en: Thunder Cloud Disk
+  zh-CN: 迅雷云盘 / X / 浏览器
 icon: iconfont icon-state
 # This control sidebar order
 top: 270

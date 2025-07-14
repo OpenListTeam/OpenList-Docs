@@ -1,6 +1,7 @@
 ---
-title: UrlTree
-title_zh-CN: 地址树
+title:
+  en: UrlTree
+  zh-CN: 地址树
 icon: iconfont icon-state
 # This control sidebar order
 top: 220

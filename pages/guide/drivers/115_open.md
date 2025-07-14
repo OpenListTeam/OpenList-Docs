@@ -1,6 +1,7 @@
 ---
-title: 115 Open
-title_zh-CN: 115 开放平台
+title:
+  en: 115 Open
+  zh-CN: 115 开放平台
 # This is the icon of the page
 icon: iconfont icon-state
 # This control sidebar order

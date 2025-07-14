@@ -1,6 +1,7 @@
 ---
-title: SFTP
-title_zh-CN: SFTP
+title:
+  en: SFTP
+  zh-CN: SFTP
 icon: iconfont icon-state
 # This control sidebar order
 top: 170

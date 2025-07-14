@@ -1,6 +1,7 @@
 ---
-title: Global Configuration
-title_zh-CN: 全局设置
+title:
+  en: Global Configuration
+  zh-CN: 全局设置
 # This is the icon of the page
 icon: iconfont icon-chrome
 # This control sidebar order

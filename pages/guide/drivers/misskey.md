@@ -1,6 +1,7 @@
 ---
-title: Misskey Drive
-title_zh-CN: Misskey Drive
+title:
+  en: Misskey Drive
+  zh-CN: Misskey Drive
 icon: iconfont icon-state
 # This control sidebar order
 top: 50

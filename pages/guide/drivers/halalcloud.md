@@ -1,6 +1,7 @@
 ---
-title: halalcloud
-title_zh-CN: 6盘
+title:
+  en: halalcloud
+  zh-CN: 6盘
 icon: iconfont icon-state
 # This control sidebar order
 top: 200

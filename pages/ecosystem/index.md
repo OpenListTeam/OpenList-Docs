@@ -1,6 +1,7 @@
 ---
-title: OpenList Ecosystem
-title_zh-CH: OpenList 生态项目
+title:
+  en: OpenList Ecosystem
+  zh-CN: OpenList 生态项目
 ---
 
 :::en

@@ -1,6 +1,7 @@
 ---
-title: Tencent weiyun
-title_zh-CN: 腾讯微云
+title:
+  en: Tencent weiyun
+  zh-CN: 腾讯微云
 icon: iconfont icon-state
 # This control sidebar order
 top: 310

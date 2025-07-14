@@ -1,6 +1,7 @@
 ---
-title: Google Drive
-title_zh-CN: 谷歌云盘
+title:
+  en: Google Drive
+  zh-CN: 谷歌云盘
 icon: iconfont icon-state
 # This control sidebar order
 top: 330

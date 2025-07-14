@@ -1,6 +1,7 @@
 ---
-title: OpenList Proxy
-title_zh-CN: OpenList Proxy
+title:
+  en: OpenList Proxy
+  zh-CN: OpenList Proxy
 categories:
   - ecosystem
   - offical

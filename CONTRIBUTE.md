@@ -4,8 +4,9 @@
 
 ```md
 ---
-title: example
-title_zh-CN: 示例
+ title:
+   en: example
+   zh-CN: 示例
 categories:
   - example-category
 top: 1000

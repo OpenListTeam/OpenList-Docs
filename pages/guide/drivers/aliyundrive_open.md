@@ -1,6 +1,7 @@
 ---
-title: Aliyundrive Open
-title_zh-CN: 阿里云盘 Open
+title:
+  en: Aliyundrive Open
+  zh-CN: 阿里云盘 Open
 icon: iconfont icon-state
 # This control sidebar order
 top: 510

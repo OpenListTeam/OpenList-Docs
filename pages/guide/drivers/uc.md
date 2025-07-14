@@ -1,6 +1,7 @@
 ---
-title: UC / TV
-title_zh-CN: UC / TV
+title:
+  en: UC / TV
+  zh-CN: UC / TV
 icon: iconfont icon-state
 # This control sidebar order
 top: 230

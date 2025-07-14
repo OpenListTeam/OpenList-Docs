@@ -1,6 +1,7 @@
 ---
-title: GitHub API
-title_zh-CN: GitHub API
+title:
+  en: GitHub API
+  zh-CN: GitHub API
 icon: iconfont icon-state
 # This control sidebar order
 top: 30

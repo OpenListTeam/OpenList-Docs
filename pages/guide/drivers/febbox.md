@@ -1,6 +1,7 @@
 ---
-title: FebBox
-title_zh-CN: FebBox
+title:
+  en: FebBox
+  zh-CN: FebBox
 icon: iconfont icon-state
 # This control sidebar order
 top: 140

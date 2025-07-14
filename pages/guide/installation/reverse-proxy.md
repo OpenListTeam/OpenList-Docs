@@ -1,8 +1,9 @@
 ---
 # This is the title of the article
 # title: One-click Script
-title: Reverse proxy
-title_zh-CN: 反向代理
+title:
+  en: Reverse proxy
+  zh-CN: 反向代理
 icon: iconfont icon-page
 # This control sidebar order
 top: 10

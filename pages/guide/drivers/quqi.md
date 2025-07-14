@@ -1,6 +1,7 @@
 ---
-title: todo
-title_zh-CN: 曲奇云盘
+title:
+  en: todo
+  zh-CN: 曲奇云盘
 icon: iconfont icon-state
 # This control sidebar order
 top: 121

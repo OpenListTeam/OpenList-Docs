@@ -1,6 +1,7 @@
 ---
-title: Common
-title_zh-CN: 通用项
+title:
+  en: Common
+  zh-CN: 通用项
 icon: iconfont icon-state
 # This control sidebar order
 top: 530

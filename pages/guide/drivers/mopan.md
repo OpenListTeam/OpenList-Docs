@@ -1,6 +1,7 @@
 ---
-title: MoPan
-title_zh-CN: 四川电信魔盘
+title:
+  en: MoPan
+  zh-CN: 四川电信魔盘
 icon: iconfont icon-state
 # This control sidebar order
 top: 430

@@ -1,6 +1,7 @@
 ---
-title: user
-title_zh-CN: user
+title:
+  en: user
+  zh-CN: user
 icon: iconfont icon-people
 # This control sidebar order
 top: 150

@@ -1,6 +1,7 @@
 ---
-title: KodBox
-title_zh-CN: 可道云
+title:
+  en: KodBox
+  zh-CN: 可道云
 icon: iconfont icon-state
 # This control sidebar order
 top: 130

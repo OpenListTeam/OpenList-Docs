@@ -1,6 +1,7 @@
 ---
-title: Privacy Policy
-title_zh-CN: 隐私政策
+title:
+  en: Privacy Policy
+  zh-CN: 隐私政策
 # This is the icon of the page
 nav: false
 hide: true

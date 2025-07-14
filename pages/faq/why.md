@@ -1,7 +1,8 @@
 ---
 # This is the title of the article
-title: Why
-title_zh-CN: 为什么
+title:
+  en: Why
+  zh-CN: 为什么
 # This is the icon of the page
 icon: iconfont icon-state
 # This control sidebar order

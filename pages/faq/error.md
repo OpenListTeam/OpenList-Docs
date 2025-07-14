@@ -1,7 +1,8 @@
 ---
 # This is the title of the article
-title: OpenList Error-Code
-title_zh-CN: OpenList 错误码
+title:
+  en: OpenList Error-Code
+  zh-CN: OpenList 错误码
 # This is the icon of the page
 icon: iconfont icon-state
 # This control sidebar order

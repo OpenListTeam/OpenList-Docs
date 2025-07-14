@@ -1,6 +1,7 @@
 ---
-title: Alias
-title_zh-CN: 别名
+title:
+  en: Alias
+  zh-CN: 别名
 categories:
   - guide
   - advanced

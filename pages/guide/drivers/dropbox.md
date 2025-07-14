@@ -1,6 +1,7 @@
 ---
-title: Dropbox
-title_zh-CN: Dropbox
+title:
+  en: Dropbox
+  zh-CN: Dropbox
 icon: iconfont icon-state
 # This control sidebar order
 top: 100

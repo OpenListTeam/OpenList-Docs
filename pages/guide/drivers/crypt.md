@@ -1,6 +1,7 @@
 ---
-title: Crypt
-title_zh-CN: Crypt(加密)
+title:
+  en: Crypt
+  zh-CN: Crypt(加密)
 icon: iconfont icon-state
 # This control sidebar order
 top: 360

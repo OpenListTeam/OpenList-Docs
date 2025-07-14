@@ -1,6 +1,7 @@
 ---
-title: Desktop
-title_zh-CN: 桌面版
+title:
+  en: Desktop
+  zh-CN: 桌面版
 icon: iconfont icon-computer
 # This control sidebar order
 top: 40

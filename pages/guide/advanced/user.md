@@ -1,6 +1,7 @@
 ---
-title: User
-title_zh-CN: 用户
+title:
+  en: User
+  zh-CN: 用户
 categories:
   - guide
   - advanced

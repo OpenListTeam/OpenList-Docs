@@ -1,6 +1,7 @@
 ---
-title: Contribute new storage driver
-title_zh-CN: 贡献新存储驱动
+title:
+  en: Contribute new storage driver
+  zh-CN: 贡献新存储驱动
 icon: iconfont icon-code
 # This control sidebar order
 top: 10

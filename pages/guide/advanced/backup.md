@@ -1,6 +1,7 @@
 ---
-title: Backup&Restore
-title_zh-CN: 备份&恢复
+title:
+  en: Backup&Restore
+  zh-CN: 备份&恢复
 categories:
   - guide
   - advanced

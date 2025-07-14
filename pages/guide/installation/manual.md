@@ -1,6 +1,7 @@
 ---
-title: Manual installation
-title_zh-CN: 手动安装
+title:
+  en: Manual installation
+  zh-CN: 手动安装
 icon: iconfont icon-interact
 # This control sidebar order
 top: 60

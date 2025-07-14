@@ -1,6 +1,7 @@
 ---
-title: FTP
-title_zh-CN: FTP
+title:
+  en: FTP
+  zh-CN: FTP
 icon: iconfont icon-state
 # This control sidebar order
 top: 180

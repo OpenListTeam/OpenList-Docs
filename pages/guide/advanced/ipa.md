@@ -1,6 +1,7 @@
 ---
-title: IPA install
-title_zh-CN: IPA 安装
+title:
+  en: IPA install
+  zh-CN: IPA 安装
 categories:
   - guide
   - advanced

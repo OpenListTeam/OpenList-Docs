@@ -1,6 +1,7 @@
 ---
-title: Rapid upload
-title_zh-CN: 秒传
+title:
+  en: Rapid upload
+  zh-CN: 秒传
 categories:
   - guide
   - advanced

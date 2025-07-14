@@ -1,6 +1,7 @@
 ---
-title: Offline download
-title_zh-CN: 离线下载
+title:
+  en: Offline download
+  zh-CN: 离线下载
 categories:
   - guide
   - advanced

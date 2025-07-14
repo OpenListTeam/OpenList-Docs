@@ -1,6 +1,7 @@
 ---
-title: Local storage
-title_zh-CN: 本机存储
+title:
+  en: Local storage
+  zh-CN: 本机存储
 icon: iconfont icon-state
 # This control sidebar order
 top: 520

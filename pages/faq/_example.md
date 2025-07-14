@@ -1,6 +1,7 @@
 ---
-# title: FAQ
-# title_zh-CN: FAQ
+# title:
+#   en: FAQ
+#   zh-CN: FAQ
 # categories:
 #   - faq
 # top: 100

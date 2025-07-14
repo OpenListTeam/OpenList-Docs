@@ -1,6 +1,7 @@
 ---
-title: Terabox
-title_zh-CN: Terabox(海外百度)
+title:
+  en: Terabox
+  zh-CN: Terabox(海外百度)
 icon: iconfont icon-state
 # This control sidebar order
 top: 40

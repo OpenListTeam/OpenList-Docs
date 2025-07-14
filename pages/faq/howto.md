@@ -1,7 +1,8 @@
 ---
 # This is the title of the article
-title: How to
-title_zh-CN: 怎么做
+title:
+  en: How to
+  zh-CN: 怎么做
 # This is the icon of the page
 icon: iconfont icon-state
 # This control sidebar order

@@ -1,6 +1,7 @@
 ---
-title: Use Docker
-title_zh-CN: 使用 Docker
+title:
+  en: Use Docker
+  zh-CN: 使用 Docker
 icon: iconfont icon-geometry
 # This control sidebar order
 top: 50

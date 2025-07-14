@@ -1,6 +1,7 @@
 ---
-title: todo
-title_zh-CN: 百度分享
+title:
+  en: todo
+  zh-CN: 百度分享
 icon: iconfont icon-state
 # This control sidebar order
 top: 405

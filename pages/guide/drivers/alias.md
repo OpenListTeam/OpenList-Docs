@@ -1,6 +1,7 @@
 ---
-title: alias
-title_zh-CN: 别名（alias）
+title:
+  en: alias
+  zh-CN: 别名（alias）
 icon: iconfont icon-state
 # This control sidebar order
 top: 90

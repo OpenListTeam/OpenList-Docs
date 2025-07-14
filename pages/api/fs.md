@@ -1,6 +1,7 @@
 ---
-title: todo
-title_zh-CN: fs
+title:
+  en: todo
+  zh-CN: fs
 icon: iconfont icon-file
 # This control sidebar order
 top: 30

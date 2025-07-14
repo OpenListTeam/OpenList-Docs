@@ -1,6 +1,7 @@
 ---
-title: FeiJi Cloud
-title_zh-CN: 小飞机网盘
+title:
+  en: FeiJi Cloud
+  zh-CN: 小飞机网盘
 icon: iconfont icon-state
 # This control sidebar order
 top: 370

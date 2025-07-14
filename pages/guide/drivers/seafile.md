@@ -1,6 +1,7 @@
 ---
-title: Seafile
-title_zh-CN: Seafile
+title:
+  en: Seafile
+  zh-CN: Seafile
 icon: iconfont icon-state
 # This control sidebar order
 top: 150

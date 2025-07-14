@@ -1,6 +1,7 @@
 ---
-title: NewLanZou Cloud
-title_zh-CN: 蓝奏云优享版
+title:
+  en: NewLanZou Cloud
+  zh-CN: 蓝奏云优享版
 icon: iconfont icon-state
 # This control sidebar order
 top: 380

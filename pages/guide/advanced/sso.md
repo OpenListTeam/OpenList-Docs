@@ -1,6 +1,7 @@
 ---
-title: Third-party single sign-on
-title_zh-CN: 单点登录
+title:
+  en: Third-party single sign-on
+  zh-CN: 单点登录
 categories:
   - guide
   - advanced

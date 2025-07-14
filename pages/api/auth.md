@@ -1,6 +1,7 @@
 ---
-title: auth
-title_zh-CN: auth
+title:
+  en: auth
+  zh-CN: auth
 icon: iconfont icon-token
 # This control sidebar order
 top: 40

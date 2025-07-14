@@ -1,6 +1,7 @@
 ---
-title: ChaoxingxingGroupCloud
-title_zh-CN: 超星星小组盘
+title:
+  en: ChaoxingxingGroupCloud
+  zh-CN: 超星星小组盘
 icon: iconfont icon-state
 # This control sidebar order
 top: 280

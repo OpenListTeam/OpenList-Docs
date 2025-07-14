@@ -1,6 +1,7 @@
 ---
-title: Search
-title_zh-CN: 搜索/索引
+title:
+  en: Search
+  zh-CN: 搜索/索引
 categories:
   - guide
   - advanced

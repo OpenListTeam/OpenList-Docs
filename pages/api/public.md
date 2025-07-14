@@ -1,6 +1,7 @@
 ---
-title: public
-title_zh-CN: public
+title:
+  en: public
+  zh-CN: public
 icon: iconfont icon-token
 # This control sidebar order
 top: 20

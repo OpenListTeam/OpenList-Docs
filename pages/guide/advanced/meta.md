@@ -1,6 +1,7 @@
 ---
-title: Meta
-title_zh-CN: 元信息
+title:
+  en: Meta
+  zh-CN: 元信息
 categories:
   - guide
   - advanced

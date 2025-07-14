@@ -1,6 +1,7 @@
 ---
-title: FTP / SFTP
-title_zh-CN: FTP / SFTP
+title:
+  en: FTP / SFTP
+  zh-CN: FTP / SFTP
 categories:
   - guide
   - advanced

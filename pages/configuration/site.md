@@ -1,6 +1,7 @@
 ---
-title: Site Configuration
-title_zh-CN: 网站设置
+title:
+  en: Site Configuration
+  zh-CN: 网站设置
 # This is the icon of the page
 icon: iconfont icon-tab
 # A page can have multiple categories

@@ -1,6 +1,7 @@
 ---
-title: Configuration
-title_zh-CN: 配置
+title:
+  en: Configuration
+  zh-CN: 配置
 ---
 
 ---

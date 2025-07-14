@@ -1,6 +1,7 @@
 ---
-title: SMB
-title_zh-CN: SMB
+title:
+  en: SMB
+  zh-CN: SMB
 icon: iconfont icon-state
 # This control sidebar order
 top: 190

@@ -1,6 +1,7 @@
 ---
-title: Download
-title_zh-CN: 下载
+title:
+  en: Download
+  zh-CN: 下载
 categories:
   - guide
   - installation

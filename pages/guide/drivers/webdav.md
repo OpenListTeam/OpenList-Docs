@@ -1,6 +1,7 @@
 ---
-title: WebDav
-title_zh-CN: WebDAV
+title:
+  en: WebDav
+  zh-CN: WebDAV
 icon: iconfont icon-state
 # This control sidebar order
 top: 110

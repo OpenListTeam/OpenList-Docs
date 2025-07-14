@@ -1,6 +1,7 @@
 ---
-title: 2Fa
-title_zh-CN: 双因素身份验证
+title:
+  en: 2Fa
+  zh-CN: 双因素身份验证
 categories:
   - guide
   - advanced

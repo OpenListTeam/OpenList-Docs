@@ -1,6 +1,7 @@
 ---
-title: 163 Music Drive
-title_zh-CN: 网易云音乐云盘
+title:
+  en: 163 Music Drive
+  zh-CN: 网易云音乐云盘
 icon: iconfont icon-state
 # This control sidebar order
 top: 250

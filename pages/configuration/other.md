@@ -1,6 +1,7 @@
 ---
-title: Other Configuration
-title_zh-CN: 其他设置
+title:
+  en: Other Configuration
+  zh-CN: 其他设置
 # This is the icon of the page
 icon: iconfont icon-snow
 categories:

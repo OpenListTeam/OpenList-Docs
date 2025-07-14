@@ -1,8 +1,9 @@
 ---
 # This is the title of the article
 # title: One-click Script
-title: PaaS
-title_zh-CN: PaaS
+title:
+  en: PaaS
+  zh-CN: PaaS
 icon: iconfont icon-module
 # This control sidebar order
 top: 30

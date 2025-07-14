@@ -1,6 +1,7 @@
 ---
-title: Side Configuration
-title_zh-CN: 侧边栏设置
+title:
+  en: Side Configuration
+  zh-CN: 侧边栏设置
 # This is the icon of the page
 icon: fa-regular fa-sidebar-flip
 categories:

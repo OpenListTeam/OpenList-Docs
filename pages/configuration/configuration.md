@@ -1,6 +1,7 @@
 ---
-title: Configuration
-title_zh-CN: 配置文件
+title:
+  en: Configuration
+  zh-CN: 配置文件
 categories:
   - configuration
 # A page can have multiple tags

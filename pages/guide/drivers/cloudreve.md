@@ -1,6 +1,7 @@
 ---
-title: Cloudreve V3
-title_zh-CN: Cloudreve V3
+title:
+  en: Cloudreve V3
+  zh-CN: Cloudreve V3
 icon: iconfont icon-state
 # This control sidebar order
 top: 70

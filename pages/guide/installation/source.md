@@ -1,8 +1,9 @@
 ---
 # This is the title of the article
 # title: One-click Script
-title: Run from source
-title_zh-CN: 从源码运行
+title:
+  en: Run from source
+  zh-CN: 从源码运行
 icon: iconfont icon-code
 # This control sidebar order
 top: 20

@@ -1,6 +1,7 @@
 ---
-title: MEGA Disk
-title_zh-CN: MEGA Disk
+title:
+  en: MEGA Disk
+  zh-CN: MEGA Disk
 icon: iconfont icon-state
 # This control sidebar order
 top: 160

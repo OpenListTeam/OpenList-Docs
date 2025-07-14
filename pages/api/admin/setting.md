@@ -1,6 +1,7 @@
 ---
-title: setting
-title_zh-CN: setting
+title:
+  en: setting
+  zh-CN: setting
 icon: iconfont icon-setting
 # This control sidebar order
 top: 110

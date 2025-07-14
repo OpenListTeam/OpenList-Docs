@@ -1,6 +1,7 @@
 ---
-title: OpenList APIpage
-title_zh-CN: OpenList APIpage
+title:
+  en: OpenList APIpage
+  zh-CN: OpenList APIpage
 categories:
   - ecosystem
   - offical

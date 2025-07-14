@@ -1,6 +1,7 @@
 ---
-title: Preview Configuration
-title_zh-CN: 预览设置
+title:
+  en: Preview Configuration
+  zh-CN: 预览设置
 # This is the icon of the page
 icon: iconfont icon-preview
 # This control sidebar order

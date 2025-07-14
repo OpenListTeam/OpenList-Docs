@@ -1,6 +1,7 @@
 ---
-title: PikPak / Share
-title_zh-CN: PikPak / 分享
+title:
+  en: PikPak / Share
+  zh-CN: PikPak / 分享
 icon: iconfont icon-state
 # This control sidebar order
 top: 290

@@ -1,6 +1,7 @@
 ---
-title: OneDrive APP
-title_zh-CN: OneDrive APP
+title:
+  en: OneDrive APP
+  zh-CN: OneDrive APP
 icon: iconfont icon-state
 # This control sidebar order
 top: 480

@@ -1,6 +1,7 @@
 ---
-title: Yandex Disk
-title_zh-CN: Yandex云盘
+title:
+  en: Yandex Disk
+  zh-CN: Yandex云盘
 icon: iconfont icon-state
 # This control sidebar order
 top: 80

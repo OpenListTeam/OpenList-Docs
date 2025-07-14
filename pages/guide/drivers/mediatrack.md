@@ -1,6 +1,7 @@
 ---
-title: Mediatrack
-title_zh-CN: 分秒帧
+title:
+  en: Mediatrack
+  zh-CN: 分秒帧
 icon: fa-solid fa-x
 # This control sidebar order
 top: 210

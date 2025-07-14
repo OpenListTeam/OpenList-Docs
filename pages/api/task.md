@@ -1,6 +1,7 @@
 ---
-title: task
-title_zh-CN: task
+title:
+  en: task
+  zh-CN: task
 icon: iconfont icon-file
 # This control sidebar order
 top: 10
