@@ -13,7 +13,7 @@ top: 130
 
 ::: en
 **Rapid upload** means that files between two cloud disks can be uploaded to each other quickly without waiting. Here is an introduction to what can be mutually Rapid uploaded
-==There is a premise that the files required for Rapid upload in network disk A are already available in network disk B, so that Rapid upload can be performed, otherwise it will be uploaded normally==
+**There is a premise that the files required for Rapid upload in network disk A are already available in network disk B, so that Rapid upload can be performed, otherwise it will be uploaded normally**
 ::: en
 ::: tip
 **The left side** is the source Network Disk、**The top side** is the target Network Disk

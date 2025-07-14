@@ -669,7 +669,7 @@ Configuration for background task threads.
 
 A new **transmission** configuration path is added to the background configuration: `/@manage/settings/traffic`
 
-- Supports limiting the number of threads and transmission uplink and downlink rates of ==6 tasks==
+- Supports limiting the number of threads and transmission uplink and downlink rates of **6 tasks**
 - **https://github.com/AlistGo/alist/pull/7948**
   Operation principle: If `settings/traffic` does not have a thread number field (first run or just upgraded from an old version), `settings/traffic` will be initialized with the value of the config configuration file. If `settings/traffic` has a value, the thread configuration information of config will be ignored
 - **https://github.com/AlistGo/alist/pull/7948#issuecomment-2775174617**
@@ -738,7 +738,7 @@ A new **transmission** configuration path is added to the background configurati
 
 在后台配置中新增一个 **Transmission** 配置路径：`/@manage/settings/traffic`
 
-- 支持限制 ==6 种任务== 的线程数和传输上下行速率
+- 支持限制 **6 种任务** 的线程数和传输上下行速率
 - **https://github.com/AlistGo/alist/pull/7948**
   运行原理：如果 `settings/traffic` 没有线程数字段（第一次运行或者刚从旧版本升级），会用config配置文件的值初始化 `settings/traffic`，如果 `settings/traffic` 有值就会忽略config的线程配置信息
 - **https://github.com/AlistGo/alist/pull/7948#issuecomment-2775174617**

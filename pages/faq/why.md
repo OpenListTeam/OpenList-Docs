@@ -499,7 +499,7 @@ It should be repaired harmoniously, but the interface discoverer said to wait fo
 two ways
 
 1. Mount a local storage, select the folder is empty
-2. Select virtual storage and directly change =="number of files" "number of folders"== to 0, save and then ignore the pop-up interface
+2. Select virtual storage and directly change **"number of files" "number of folders"** to 0, save and then ignore the pop-up interface
    - What does **Virtual Storage** do? It is generally used during testing. Don’t use it indiscriminately if you don’t understand the normal production environment....
 
 How to add **`Readme`** instructions to an empty folder
@@ -513,7 +513,7 @@ What is the use of creating this blank folder? It can be used in conjunction wit
 两种方法
 
 1. 挂载一个本地存储，选择文件夹里面是空的就可以
-2. 选择虚拟存储直接将 =="文件数量" "文件夹数量"== 改成0 保存即可弹出的界面直接忽略
+2. 选择虚拟存储直接将 **"文件数量" "文件夹数量"** 改成0 保存即可弹出的界面直接忽略
    - **虚拟存储**是做什么的？一般是测试的时候用的 正常生产环境不懂别乱用....
 
 空文件夹怎么加 **`Readme`** 说明

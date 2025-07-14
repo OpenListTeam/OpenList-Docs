@@ -139,7 +139,7 @@ In the upper right corner, first select `New Application`, select `H5 Micro Appl
 Click on the new application and we will see the application credentials option, where `AppKey` is the client ID, and `AppSecret` is the client secret key
 
 - Just fill in the corresponding parameters in the OpenList background single sign-on
-  Go to the left column and find `Login and Share` ==Fill in the callback parameters **`http://127.0.0.1:5234/api/auth/sso_callback`**==
+  Go to the left column and find `Login and Share` \*\*Fill in the callback parameters `http://127.0.0.1:5234/api/auth/sso_callback`
 
 ```bash title="Callback" parameter example
 http://127.0.0.1:5244/api/auth/sso_callback
@@ -165,7 +165,7 @@ http://127.0.0.1:5244/api/auth/sso_callback
 
 - 填写到OpenList后台单点登录内对应的参数即可
 
-  来到左侧栏找到 `登录与分享` ==填写回调参数 **`http://127.0.0.1:5234/api/auth/sso_callback`**==
+  来到左侧栏找到 `登录与分享` **填写回调参数 **`http://127.0.0.1:5234/api/auth/sso_callback`\*\*\*\*
 
 ```bash title="回调参数示例"
 http://127.0.0.1:5244/api/auth/sso_callback
@@ -556,7 +556,7 @@ https://your.openlist.domain/api/auth/sso_callback\?method=get_sso_id
 
 ::: en
 
-- ==OpenList Version > **v3.22.1** New Features==
+- **OpenList Version > **v3.22.1** New Features**
   Before using single sign-on to register as an OpenList account, we need to bind the single sign-on of OpenList first, the binding method is explained above
 - Supports the `five` single sign-on methods mentioned above
 - Do not use the default organization (**app-built-in**) directly, because all users in this organization are global administrator accounts
@@ -565,7 +565,7 @@ https://your.openlist.domain/api/auth/sso_callback\?method=get_sso_id
 :::
 ::: zh-CN
 
-- ==OpenList 版本 > **v3.22.1** 新增功能==
+- **OpenList 版本 > **v3.22.1** 新增功能**
   在使用单点登录注册为OpenList帐号前，我们需要先将OpenList的单点登录进行绑定，绑定方法在上面有说明
 - 支持上述提到的`五个`单点登录方法
 - 如果使用`Casdoor`,请勿直接使用默认组织(**app-built-in**),因为这个组织内的用户都是全局管理员帐号

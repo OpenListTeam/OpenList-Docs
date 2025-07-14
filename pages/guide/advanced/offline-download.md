@@ -17,7 +17,7 @@ There are two kinds of software with offline download function
 
 The two usages are the same, and the software configuration is set in advance (see the following instructions for specific configuration),
 
-Then go back to the front-end interface, ==find the folder you want to upload offline files to, and you can manually enter the folder==
+Then go back to the front-end interface, **find the folder you want to upload offline files to, and you can manually enter the folder**
 
 Then find the offline download button in the lower right corner, and choose to use Aria2 download or qBittorrent download (>v 3.11.0)
 
@@ -33,7 +33,7 @@ If you use **docker**, please map the following two default paths by yourself. (
 
 两款用法都一样，提前设置好软件配置(具体配置看下面说明)，
 
-然后回到前端界面， ==找到你想把离线文件上传到哪个文件夹，你就手动进入到该文件夹==
+然后回到前端界面， **找到你想把离线文件上传到哪个文件夹，你就手动进入到该文件夹**
 
 然后再右下角找到离线下载按钮，自行选择使用 Aria2下载还是qBittorrent下载(＞v 3.11.0)
 
@@ -111,7 +111,7 @@ According to [source code](https://github.com/alist-org/alist/blob/main/internal
 
 - Modification location: **OpenList background** --> **Settings** --> **Qbittorrent seedtime** option, set the time you need to configure, the unit is `minute`, after the set seeding time is reached, it will automatically delete
 
-5.  ==We can also customize, instead of using the default presets==
+5.  **We can also customize, instead of using the default presets**
 
 - Modification location: **OpenList Manage** --> **Settings** --> **Qbittorrent url** option, just follow the modification
   ![Offline download](/img/advanced/offline-download.png)
@@ -140,7 +140,7 @@ According to [source code](https://github.com/alist-org/alist/blob/main/internal
 
 - 修改位置：**OpenList后台** --> **设置** --> **Qbittorrent 做种时间** 选项，设置你自己需要配置的时间单位是`分钟`，到了设置的做种时间后会自动删除
 
-5.  ==我们也可以自定义，不使用默认的预设值==
+5.  **我们也可以自定义，不使用默认的预设值**
 
 - 修改位置：**OpenList后台** --> **设置** --> **Qbittorrent url** 选项，照着修改即可
   ![Offline download](/img/advanced/offline-download.png)

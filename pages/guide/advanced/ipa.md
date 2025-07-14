@@ -47,7 +47,7 @@ But for **ios>=16**, you need to name the ipa file: `original file name@bundle-i
 
   <iframe src="//player.bilibili.com/player.html?autoplay=0&isOutside=true&aid=352328428&bvid=BV1kX4y1X7vo&cid=1019947621&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
 
-**Installation Demo**: Deploy **HTTPS** and **IPA files** are signed prerequisites, if ==IOS16 rename by yourself== If you can’t install it yourself, please check the problem yourself
+**Installation Demo**: Deploy **HTTPS** and **IPA files** are signed prerequisites, if **IOS16 rename by yourself** If you can’t install it yourself, please check the problem yourself
 
 - **Installation demo environment**: IOS15.4.1 iPhone12PM, personal certificate, HTTPS
 
@@ -67,7 +67,7 @@ But for **ios>=16**, you need to name the ipa file: `original file name@bundle-i
 
   <iframe src="//player.bilibili.com/player.html?autoplay=0&isOutside=true&aid=352328428&bvid=BV1kX4y1X7vo&cid=1019947621&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
 
-**安装演示**：部署**HTTPS**和**IPA文件**已签名前提，如果是 ==IOS16自行改名== 若自己无法安装请自行排查问题所在
+**安装演示**：部署**HTTPS**和**IPA文件**已签名前提，如果是 **IOS16自行改名** 若自己无法安装请自行排查问题所在
 
 - **安装演示使用环境**： IOS15.4.1 iPhone12PM，个人证书，HTTPS
 
@@ -80,7 +80,7 @@ But for **ios>=16**, you need to name the ipa file: `original file name@bundle-i
 ## 2. TrollStore(巨魔)安装 { lang="zh-CN" }
 
 ::: en
-==Requires OpenList version ≥ 3.12.2 and above==，Devices that support the installation of TrollStore (jailbroken devices are not explained here)
+**Requires OpenList version ≥ 3.12.2 and above**，Devices that support the installation of TrollStore (jailbroken devices are not explained here)
 
 For more devices, please see the table below. The content of the chart comes from [**TrollStore**](https://github.com/opa334/TrollStore)
 
@@ -110,7 +110,7 @@ Chart information update is uncertain, you can go to view <i class="fa-regular f
 
 ::: zh-CN
 
-==需要OpenList版本 ≥ 3.12.2 及以上==，支持安装TrollStore(巨魔)的设备（不含越狱设备）
+**需要OpenList版本 ≥ 3.12.2 及以上**，支持安装TrollStore(巨魔)的设备（不含越狱设备）
 
 已经支持更多设备请查看下方表格，图表内容来自 [**TrollStore**](https://github.com/opa334/TrollStore)
 
