@@ -1,3 +1,8 @@
+onlyBuiltDependencies:
+  - '@parcel/watcher'
+  - esbuild
+  - vue-demi
+
 patchedDependencies:
-  valaxy@0.23.5: patches/valaxy@0.23.5.patch
-  valaxy-theme-press@0.23.5: patches/valaxy-theme-press@0.23.5.patch
+  valaxy@0.25.4: patches/valaxy@0.25.4.patch
+  valaxy-theme-press@0.25.4: patches/valaxy-theme-press@0.25.4.patch

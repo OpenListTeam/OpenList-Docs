@@ -1,8 +1,8 @@
 diff --git a/components/PressCategory.vue b/components/PressCategory.vue
-index 6c998c4ef964a5bb05ba687e942efd3ce3077241..d925cb8ea75877d38b8f62aaeb378ca8fa93adb7 100644
+index b2ffedd2e205ffca4545bb355735463114d95088..b30ce35243b0eb6d727aa35d464a811eaec194f3 100644
 --- a/components/PressCategory.vue
 +++ b/components/PressCategory.vue
-@@ -63,7 +63,15 @@ function getTitle(post: Post | any) {
+@@ -58,7 +58,15 @@ const { $tO } = useValaxyI18n()
          </RouterLink>
        </template>
  
