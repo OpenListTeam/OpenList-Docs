@@ -9,7 +9,7 @@ patchedDependencies:
     hash: a6c7859cddc4d023eca0c3ca0820314f6456487482af67a4b4ba28719d385f3d
     path: patches/valaxy-theme-press@0.25.4.patch
   valaxy@0.25.4:
-    hash: cf355c8edf4b440555984f4f407db6a23fcecb4ed0d7817585417c1b5a73e39e
+    hash: 4e8a0c516f0006cdaf6f1333cca04b01a402f6dc55935ae6f485f932da77c611
     path: patches/valaxy@0.25.4.patch
 
 importers:
@@ -33,16 +33,16 @@ importers:
         version: 1.2.23
       valaxy:
         specifier: 0.25.4
-        version: 0.25.4(patch_hash=cf355c8edf4b440555984f4f407db6a23fcecb4ed0d7817585417c1b5a73e39e)(@babel/parser@7.28.0)(@types/markdown-it@14.1.2)(@types/node@24.0.13)(@vue/compiler-dom@3.5.17)(@vue/compiler-sfc@3.5.17)(axios@1.10.0)(eslint@9.29.0(jiti@2.4.2))(focus-trap@7.6.5)(postcss@8.5.6)(prettier@3.6.2)(rollup@4.45.0)(terser@5.43.1)(typescript@5.8.3)(yaml@2.8.0)
+        version: 0.25.4(patch_hash=4e8a0c516f0006cdaf6f1333cca04b01a402f6dc55935ae6f485f932da77c611)(@babel/parser@7.28.0)(@types/markdown-it@14.1.2)(@types/node@24.0.13)(@vue/compiler-dom@3.5.17)(@vue/compiler-sfc@3.5.17)(axios@1.10.0)(eslint@9.29.0(jiti@2.4.2))(focus-trap@7.6.5)(postcss@8.5.6)(prettier@3.6.2)(rollup@4.45.0)(terser@5.43.1)(typescript@5.8.3)(yaml@2.8.0)
       valaxy-addon-algolia:
         specifier: 0.2.0
-        version: 0.2.0(@algolia/client-search@5.32.0)(search-insights@2.17.3)(valaxy@0.25.4(patch_hash=cf355c8edf4b440555984f4f407db6a23fcecb4ed0d7817585417c1b5a73e39e)(@babel/parser@7.28.0)(@types/markdown-it@14.1.2)(@types/node@24.0.13)(@vue/compiler-dom@3.5.17)(@vue/compiler-sfc@3.5.17)(axios@1.10.0)(eslint@9.29.0(jiti@2.4.2))(focus-trap@7.6.5)(postcss@8.5.6)(prettier@3.6.2)(rollup@4.45.0)(terser@5.43.1)(typescript@5.8.3)(yaml@2.8.0))
+        version: 0.2.0(@algolia/client-search@5.32.0)(search-insights@2.17.3)(valaxy@0.25.4(patch_hash=4e8a0c516f0006cdaf6f1333cca04b01a402f6dc55935ae6f485f932da77c611)(@babel/parser@7.28.0)(@types/markdown-it@14.1.2)(@types/node@24.0.13)(@vue/compiler-dom@3.5.17)(@vue/compiler-sfc@3.5.17)(axios@1.10.0)(eslint@9.29.0(jiti@2.4.2))(focus-trap@7.6.5)(postcss@8.5.6)(prettier@3.6.2)(rollup@4.45.0)(terser@5.43.1)(typescript@5.8.3)(yaml@2.8.0))
       valaxy-addon-components:
         specifier: 0.1.0
         version: 0.1.0
       valaxy-addon-git-log:
         specifier: 0.3.2
-        version: 0.3.2(valaxy@0.25.4(patch_hash=cf355c8edf4b440555984f4f407db6a23fcecb4ed0d7817585417c1b5a73e39e)(@babel/parser@7.28.0)(@types/markdown-it@14.1.2)(@types/node@24.0.13)(@vue/compiler-dom@3.5.17)(@vue/compiler-sfc@3.5.17)(axios@1.10.0)(eslint@9.29.0(jiti@2.4.2))(focus-trap@7.6.5)(postcss@8.5.6)(prettier@3.6.2)(rollup@4.45.0)(terser@5.43.1)(typescript@5.8.3)(yaml@2.8.0))
+        version: 0.3.2(valaxy@0.25.4(patch_hash=4e8a0c516f0006cdaf6f1333cca04b01a402f6dc55935ae6f485f932da77c611)(@babel/parser@7.28.0)(@types/markdown-it@14.1.2)(@types/node@24.0.13)(@vue/compiler-dom@3.5.17)(@vue/compiler-sfc@3.5.17)(axios@1.10.0)(eslint@9.29.0(jiti@2.4.2))(focus-trap@7.6.5)(postcss@8.5.6)(prettier@3.6.2)(rollup@4.45.0)(terser@5.43.1)(typescript@5.8.3)(yaml@2.8.0))
       valaxy-theme-press:
         specifier: 0.25.4
         version: 0.25.4(patch_hash=a6c7859cddc4d023eca0c3ca0820314f6456487482af67a4b4ba28719d385f3d)(@algolia/client-search@5.32.0)(search-insights@2.17.3)
@@ -74,6 +74,9 @@ importers:
       prettier:
         specifier: ^3.6.2
         version: 3.6.2
+      simple-git:
+        specifier: ^3.28.0
+        version: 3.28.0
       vite:
         specifier: 6.3.5
         version: 6.3.5(@types/node@24.0.13)(jiti@2.4.2)(sass@1.89.2)(terser@5.43.1)(yaml@2.8.0)
@@ -8391,11 +8394,11 @@ snapshots:
 
   uuid@11.1.0: {}
 
-  valaxy-addon-algolia@0.2.0(@algolia/client-search@5.32.0)(search-insights@2.17.3)(valaxy@0.25.4(patch_hash=cf355c8edf4b440555984f4f407db6a23fcecb4ed0d7817585417c1b5a73e39e)(@babel/parser@7.28.0)(@types/markdown-it@14.1.2)(@types/node@24.0.13)(@vue/compiler-dom@3.5.17)(@vue/compiler-sfc@3.5.17)(axios@1.10.0)(eslint@9.29.0(jiti@2.4.2))(focus-trap@7.6.5)(postcss@8.5.6)(prettier@3.6.2)(rollup@4.45.0)(terser@5.43.1)(typescript@5.8.3)(yaml@2.8.0)):
+  valaxy-addon-algolia@0.2.0(@algolia/client-search@5.32.0)(search-insights@2.17.3)(valaxy@0.25.4(patch_hash=4e8a0c516f0006cdaf6f1333cca04b01a402f6dc55935ae6f485f932da77c611)(@babel/parser@7.28.0)(@types/markdown-it@14.1.2)(@types/node@24.0.13)(@vue/compiler-dom@3.5.17)(@vue/compiler-sfc@3.5.17)(axios@1.10.0)(eslint@9.29.0(jiti@2.4.2))(focus-trap@7.6.5)(postcss@8.5.6)(prettier@3.6.2)(rollup@4.45.0)(terser@5.43.1)(typescript@5.8.3)(yaml@2.8.0)):
     dependencies:
       '@docsearch/css': 3.9.0
       '@docsearch/js': 3.9.0(@algolia/client-search@5.32.0)(search-insights@2.17.3)
-      valaxy: 0.25.4(patch_hash=cf355c8edf4b440555984f4f407db6a23fcecb4ed0d7817585417c1b5a73e39e)(@babel/parser@7.28.0)(@types/markdown-it@14.1.2)(@types/node@24.0.13)(@vue/compiler-dom@3.5.17)(@vue/compiler-sfc@3.5.17)(axios@1.10.0)(eslint@9.29.0(jiti@2.4.2))(focus-trap@7.6.5)(postcss@8.5.6)(prettier@3.6.2)(rollup@4.45.0)(terser@5.43.1)(typescript@5.8.3)(yaml@2.8.0)
+      valaxy: 0.25.4(patch_hash=4e8a0c516f0006cdaf6f1333cca04b01a402f6dc55935ae6f485f932da77c611)(@babel/parser@7.28.0)(@types/markdown-it@14.1.2)(@types/node@24.0.13)(@vue/compiler-dom@3.5.17)(@vue/compiler-sfc@3.5.17)(axios@1.10.0)(eslint@9.29.0(jiti@2.4.2))(focus-trap@7.6.5)(postcss@8.5.6)(prettier@3.6.2)(rollup@4.45.0)(terser@5.43.1)(typescript@5.8.3)(yaml@2.8.0)
     transitivePeerDependencies:
       - '@algolia/client-search'
       - '@types/react'
@@ -8405,14 +8408,14 @@ snapshots:
 
   valaxy-addon-components@0.1.0: {}
 
-  valaxy-addon-git-log@0.3.2(valaxy@0.25.4(patch_hash=cf355c8edf4b440555984f4f407db6a23fcecb4ed0d7817585417c1b5a73e39e)(@babel/parser@7.28.0)(@types/markdown-it@14.1.2)(@types/node@24.0.13)(@vue/compiler-dom@3.5.17)(@vue/compiler-sfc@3.5.17)(axios@1.10.0)(eslint@9.29.0(jiti@2.4.2))(focus-trap@7.6.5)(postcss@8.5.6)(prettier@3.6.2)(rollup@4.45.0)(terser@5.43.1)(typescript@5.8.3)(yaml@2.8.0)):
+  valaxy-addon-git-log@0.3.2(valaxy@0.25.4(patch_hash=4e8a0c516f0006cdaf6f1333cca04b01a402f6dc55935ae6f485f932da77c611)(@babel/parser@7.28.0)(@types/markdown-it@14.1.2)(@types/node@24.0.13)(@vue/compiler-dom@3.5.17)(@vue/compiler-sfc@3.5.17)(axios@1.10.0)(eslint@9.29.0(jiti@2.4.2))(focus-trap@7.6.5)(postcss@8.5.6)(prettier@3.6.2)(rollup@4.45.0)(terser@5.43.1)(typescript@5.8.3)(yaml@2.8.0)):
     dependencies:
       '@octokit/rest': 21.1.1
       fs-extra: 11.3.0
       gravatar: 1.8.2
       md5: 2.3.0
       simple-git: 3.28.0
-      valaxy: 0.25.4(patch_hash=cf355c8edf4b440555984f4f407db6a23fcecb4ed0d7817585417c1b5a73e39e)(@babel/parser@7.28.0)(@types/markdown-it@14.1.2)(@types/node@24.0.13)(@vue/compiler-dom@3.5.17)(@vue/compiler-sfc@3.5.17)(axios@1.10.0)(eslint@9.29.0(jiti@2.4.2))(focus-trap@7.6.5)(postcss@8.5.6)(prettier@3.6.2)(rollup@4.45.0)(terser@5.43.1)(typescript@5.8.3)(yaml@2.8.0)
+      valaxy: 0.25.4(patch_hash=4e8a0c516f0006cdaf6f1333cca04b01a402f6dc55935ae6f485f932da77c611)(@babel/parser@7.28.0)(@types/markdown-it@14.1.2)(@types/node@24.0.13)(@vue/compiler-dom@3.5.17)(@vue/compiler-sfc@3.5.17)(axios@1.10.0)(eslint@9.29.0(jiti@2.4.2))(focus-trap@7.6.5)(postcss@8.5.6)(prettier@3.6.2)(rollup@4.45.0)(terser@5.43.1)(typescript@5.8.3)(yaml@2.8.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -8427,7 +8430,7 @@ snapshots:
       - react-dom
       - search-insights
 
-  valaxy@0.25.4(patch_hash=cf355c8edf4b440555984f4f407db6a23fcecb4ed0d7817585417c1b5a73e39e)(@babel/parser@7.28.0)(@types/markdown-it@14.1.2)(@types/node@24.0.13)(@vue/compiler-dom@3.5.17)(@vue/compiler-sfc@3.5.17)(axios@1.10.0)(eslint@9.29.0(jiti@2.4.2))(focus-trap@7.6.5)(postcss@8.5.6)(prettier@3.6.2)(rollup@4.45.0)(terser@5.43.1)(typescript@5.8.3)(yaml@2.8.0):
+  valaxy@0.25.4(patch_hash=4e8a0c516f0006cdaf6f1333cca04b01a402f6dc55935ae6f485f932da77c611)(@babel/parser@7.28.0)(@types/markdown-it@14.1.2)(@types/node@24.0.13)(@vue/compiler-dom@3.5.17)(@vue/compiler-sfc@3.5.17)(axios@1.10.0)(eslint@9.29.0(jiti@2.4.2))(focus-trap@7.6.5)(postcss@8.5.6)(prettier@3.6.2)(rollup@4.45.0)(terser@5.43.1)(typescript@5.8.3)(yaml@2.8.0):
     dependencies:
       '@antfu/install-pkg': 1.1.0
       '@antfu/utils': 9.2.0

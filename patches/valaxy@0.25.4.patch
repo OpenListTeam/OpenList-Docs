@@ -7,7 +7,7 @@ index 47642a6f17c4dff71dca9306a669bfd748cd197a..900ecd0ef88cffb1b45ee5de4949a105
      }
  
 +    posts.sort((a, b) => {
-+      console.log(a.top, b.top, 'sort post list')
++      // console.log(a.top, b.top, 'sort post list')
 +      return (b.top || 0) - (a.top || 0)
 +    })
 +

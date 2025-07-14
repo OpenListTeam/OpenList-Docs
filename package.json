@@ -5,7 +5,7 @@
   "packageManager": "pnpm@10.12.1",
   "license": "AGPL-3.0",
   "scripts": {
-    "build": "npm run build:ssg",
+    "build": "node utils/ensure-full-git.js && npm run build:ssg",
     "build:spa": "valaxy build",
     "build:ssg": "valaxy build --ssg",
     "dev": "valaxy",
@@ -40,6 +40,7 @@
     "lint-staged": "^16.1.2",
     "nodemon": "^3.1.10",
     "prettier": "^3.6.2",
+    "simple-git": "^3.28.0",
     "vite": "6.3.5",
     "vitepress": "1.1.4",
     "vue": "^3.5.17",
