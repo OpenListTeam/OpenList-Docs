@@ -32,9 +32,294 @@ You can download the corresponding binary executable file for the deployment sys
 
 [![latest version](https://img.shields.io/github/release/OpenListTeam/OpenList)](https://github.com/OpenListTeam/OpenList/releases)
 
+## Install using package manager { lang="en" }
+
+## 使用包管理器安装 { lang="zh-CN" }
+
+### Linux
+
+::: en
+Debian/Ubuntu can be installed from OpenList's APT repository and PPA repository, and the service (daemon) will be automatically configured.
+:::
+::: zh-CN
+Debian / Ubuntu 可以从 OpenList 的 APT 仓库和 PPA 仓库安装，且会自动配置好服务（守护进程）。
+:::
+
+#### APT Repository { lang="en" }
+
+#### APT 仓库 { lang="zh-CN" }
+
+::: en
+Recommended - Automatic GPG Setup
+
+```bash
+# One-line install with automatic GPG key setup
+curl -fsSL https://github.com/OpenListTeam/OpenList-APT/releases/latest/download/install-apt.sh | bash
+
+# Then install OpenList
+sudo apt install openlist -y
+```
+
+Manual APT Setup with GPG Verification (Modern systems - Ubuntu 22.04+/Debian 12+)
+
+```bash
+# Download and install GPG keyring
+curl -fsSL https://github.com/OpenListTeam/OpenList-APT/releases/latest/download/openlist-archive-keyring.gpg | \
+  sudo tee /usr/share/keyrings/openlist-archive-keyring.gpg > /dev/null
+
+# Add repository with GPG verification
+echo "Types: deb
+URIs: https://github.com/OpenListTeam/OpenList-APT/releases/latest/download/
+Suites: ./
+Signed-By: /usr/share/keyrings/openlist-archive-keyring.gpg" | \
+  sudo tee /etc/apt/sources.list.d/openlist.sources
+
+# Update and install
+sudo apt update && sudo apt install openlist -y
+```
+
+Manual APT Setup without GPG Verification (Not Recommended)
+
+```bash
+# Modern systems (Ubuntu 22.04+/Debian 12+)
+echo "Types: deb
+URIs: https://github.com/OpenListTeam/OpenList-APT/releases/latest/download/
+Suites: ./
+Trusted: yes" | sudo tee /etc/apt/sources.list.d/openlist.sources
+
+# Legacy systems (Ubuntu <22.04/Debian <12)
+echo "deb [trusted=yes] https://github.com/OpenListTeam/OpenList-APT/releases/latest/download/ ./" | \
+  sudo tee /etc/apt/sources.list.d/openlist.list
+
+# Update and install
+sudo apt update && sudo apt install openlist -y
+```
+
+:::
+::: zh-CN
+推荐 - 自动 GPG 设置
+
+```bash
+# 一行命令安装并自动设置 GPG 密钥
+curl -fsSL https://github.com/OpenListTeam/OpenList-APT/releases/latest/download/install-apt.sh | bash
+
+# 然后安装 OpenList
+sudo apt install openlist -y
+```
+
+手动 APT 设置与 GPG 验证（现代系统 - Ubuntu 22.04+/Debian 12+）
+
+```bash
+# 下载并安装 GPG 密钥环
+curl -fsSL https://github.com/OpenListTeam/OpenList-APT/releases/latest/download/openlist-archive-keyring.gpg | \
+  sudo tee /usr/share/keyrings/openlist-archive-keyring.gpg > /dev/null
+
+# 添加带 GPG 验证的仓库
+echo "Types: deb
+URIs: https://github.com/OpenListTeam/OpenList-APT/releases/latest/download/
+Suites: ./
+Signed-By: /usr/share/keyrings/openlist-archive-keyring.gpg" | \
+  sudo tee /etc/apt/sources.list.d/openlist.sources
+
+# 更新并安装
+sudo apt update && sudo apt install openlist -y
+```
+
+手动 APT 设置（没有 GPG 验证， 不推荐）
+
+```bash
+# 现代系统（Ubuntu 22.04+/Debian 12+）
+echo "Types: deb
+URIs: https://github.com/OpenListTeam/OpenList-APT/releases/latest/download/
+Suites: ./
+Trusted: yes" | sudo tee /etc/apt/sources.list.d/openlist.sources
+
+# 旧版系统（Ubuntu <22.04/Debian <12）
+echo "deb [trusted=yes] https://github.com/OpenListTeam/OpenList-APT/releases/latest/download/ ./" | \
+  sudo tee /etc/apt/sources.list.d/openlist.list
+
+# 更新并安装
+sudo apt update && sudo apt install openlist -y
+```
+
+:::
+
+#### PPA Repository { lang="en" }
+
+#### PPA 仓库 { lang="zh-CN" }
+
+::: en
+Alternative - Launchpad
+
+```bash
+# Add PPA repository
+sudo add-apt-repository ppa:openlist/server
+sudo apt update
+
+# Install OpenList
+sudo apt install openlist -y
+```
+
+:::
+::: zh-CN
+备用方法 - Launchpad
+
+```bash
+# 添加 PPA 仓库
+sudo add-apt-repository ppa:openlist/server
+sudo apt update
+
+# 安装 OpenList
+sudo apt install openlist -y
+```
+
+:::
+
+### Windows
+
+::: en
+OpenList can be installed from package managers Scoop main and WinGet on Windows.
+:::
+::: zh-CN
+Windows 可以从 Scoop main 和 WinGet 安装。
+:::
+
+#### Scoop
+
+[![Scoop package](https://repology.org/badge/version-for-repo/scoop/openlist.svg)](https://repology.org/project/openlist/versions)
+
+```powershell
+scoop install openlist
+openlist server
+```
+
+#### WinGet
+
+[![winget package](https://repology.org/badge/version-for-repo/winget/openlist.svg)](https://repology.org/project/openlist/versions)
+
+```powershell
+winget install OpenListTeam.OpenList
+openlist server
+```
+
+### Android
+
+::: en
+::: tip
+OpenList follows the AGPL 3.0 open-source license, assumes no responsibility for any downstream derivative projects, and reserves the right to pursue their compliance with the same license.
+:::
+
+::: zh-CN
+::: tip
+OpenList 遵循 AGPL 3.0 开源协议，对任何下游衍生项目概不负责，且保留追究其同样遵守该协议的权利。
+:::
+
+::: en
+There are three ways to choose based on your needs
+
+1. Using **https://github.com/jing332/AListFlutter**
+2. Using **https://github.com/LeoHaoVIP/AListLiteAndroid**
+3. Use `termux` to run
+
+   - Reference: **https://anwen-anyi.github.io/index/14-android_install.html**
+   - Note: Remember to authorize the APP, set the background running and battery saving policy to unlimited, otherwise it may be killed in the background, causing it to be suddenly interrupted and unusable during background use.
+
+:::
+::: zh-CN
+有三种办法根据自己的需求选择
+
+1. 使用 **https://github.com/jing332/AListFlutter**
+2. 使用 **https://github.com/LeoHaoVIP/AListLiteAndroid**
+3. 使用 `termux` 运行
+
+   - 参考：**https://anwen-anyi.github.io/index/14-android_install.html**
+   - 注意事项：记得给APP授权，后台运行、电池省电策略设置为无限制，否则可能会被杀后台导致挂在后台使用期间突然中断无法使用
+
+:::
+
+#### Termux
+
+[![Termux package](https://repology.org/badge/version-for-repo/termux/openlist.svg)](https://repology.org/project/openlist/versions)
+
+```bash
+pkg update
+pkg install openlist
+openlist server
+```
+
 ## Running { lang="en" }
 
 ## 手动运行 { lang="zh-CN" }
+
+::: en
+
+```bash
+Usage:
+  openlist [command]
+
+Available Commands:
+  admin       Show admin user's info and some operations about admin user's password
+  cancel2fa   Delete 2FA of admin user
+  completion  Generate the autocompletion script for the specified shell
+  crypt       Encrypt or decrypt local file or dir
+  help        Help about any command
+  kill        Force kill openlist server process by daemon/pid file
+  lang        Generate language json file
+  restart     Restart openlist server by daemon/pid file
+  server      Start the server at the specified address
+  start       Silent start openlist server with `--force-bin-dir`
+  stop        Same as the kill command
+  storage     Manage storage
+  version     Show current version of OpenList
+
+Flags:
+      --data string     data folder (default "data")
+      --debug           start with debug mode
+      --dev             start with dev mode
+      --force-bin-dir   Force to use the directory where the binary file is located as data directory
+  -h, --help            help for openlist
+      --log-std         Force to log to std
+      --no-prefix       disable env prefix
+
+Use "openlist [command] --help" for more information about a command.
+```
+
+:::
+
+::: zh-CN
+
+```bash
+使用方法：
+  openlist [命令]
+
+可用命令：
+  admin      显示管理员用户的信息及管理员用户密码相关操作
+  cancel2fa  删除管理员用户的 2FA
+  completion 生成指定 shell 的自动补全脚本
+  crypt      加密或解密本地文件或目录
+  help       显示命令帮助
+  kill       强制通过守护进程/进程 ID 文件终止 openlist 服务器进程
+  lang       生成语言 JSON 文件
+  restart    通过守护进程/进程 ID 文件重启 openlist 服务器
+  server     启动指定地址的服务器
+  start      静默启动 openlist 服务器，使用 `--force-bin-dir`
+  stop       与 kill 命令相同
+  storage    管理存储
+  version    显示当前 OpenList 版本
+
+标志参数：
+  --data string   数据文件夹（默认值 "data"）
+  --debug         启动时使用调试模式
+  --dev           启动时使用开发模式
+  --force-bin-dir 强制使用二进制文件所在目录作为数据目录
+  -h, --help      显示 openlist 命令帮助
+  --log-std       强制日志输出到标准输出
+  --no-prefix     禁用环境前缀
+
+使用 "openlist [命令] --help" 获取更多命令信息。
+```
+
+:::
 
 ::: en
 ::: tip
@@ -111,69 +396,6 @@ Expand-Archive .\openlist-xxxx.zip
 .\openlist.exe admin set NEW_PASSWORD
 ```
 
-#### Scoop
-
-[![Scoop package](https://repology.org/badge/version-for-repo/scoop/openlist.svg)](https://repology.org/project/openlist/versions)
-
-```powershell
-scoop install openlist
-openlist server
-```
-
-#### WinGet
-
-[![winget package](https://repology.org/badge/version-for-repo/winget/openlist.svg)](https://repology.org/project/openlist/versions)
-
-```powershell
-winget install OpenListTeam.OpenList
-openlist server
-```
-
-### Android
-
-::: en
-::: tip
-OpenList follows the AGPL 3.0 open-source license, assumes no responsibility for any downstream derivative projects, and reserves the right to pursue their compliance with the same license.
-:::
-
-::: zh-CN
-::: tip
-OpenList 遵循 AGPL 3.0 开源协议，对任何下游衍生项目概不负责，且保留追究其同样遵守该协议的权利。
-:::
-
-::: en
-There are three ways to choose based on your needs
-
-1. Using **https://github.com/jing332/AListFlutter**
-2. Using **https://github.com/LeoHaoVIP/AListLiteAndroid**
-3. Use `termux` to run
-
-   - Reference: **https://anwen-anyi.github.io/index/14-android_install.html**
-   - Note: Remember to authorize the APP, set the background running and battery saving policy to unlimited, otherwise it may be killed in the background, causing it to be suddenly interrupted and unusable during background use.
-
-:::
-::: zh-CN
-有三种办法根据自己的需求选择
-
-1. 使用 **https://github.com/jing332/AListFlutter**
-2. 使用 **https://github.com/LeoHaoVIP/AListLiteAndroid**
-3. 使用 `termux` 运行
-
-   - 参考：**https://anwen-anyi.github.io/index/14-android_install.html**
-   - 注意事项：记得给APP授权，后台运行、电池省电策略设置为无限制，否则可能会被杀后台导致挂在后台使用期间突然中断无法使用
-
-:::
-
-#### Termux
-
-[![Termux package](https://repology.org/badge/version-for-repo/termux/openlist.svg)](https://repology.org/project/openlist/versions)
-
-```bash
-pkg update
-pkg install openlist
-openlist server
-```
-
 ## Daemon { lang="en" }
 
 ## 守护进程 { lang="zh-CN" }
@@ -183,7 +405,6 @@ openlist server
 ::: en
 `vim /usr/lib/systemd/system/openlist.service` add the following content, where `path_openlist` is the path where openlist is located:
 :::
-
 ::: zh-CN
 使用任意方式编辑 `/usr/lib/systemd/system/openlist.service` 并添加如下内容，其中 `path_openlist` 为 OpenList 所在的路径：
 :::
@@ -210,7 +431,8 @@ Then `systemctl daemon-reload`, now you can use these commands to manage the pro
 - Cancel Self-start: `systemctl disable openlist`
 - Status: `systemctl status openlist`
 - Restart: `systemctl restart openlist`
-  Daemon will not use? [**Video Tutorial**](https://www.bilibili.com/video/BV1rF41197Qv?t=187.0)
+
+Can't configure daemon? [**Video Tutorial**](https://www.bilibili.com/video/BV1rF41197Qv?t=187.0)
 
 :::
 
@@ -223,18 +445,19 @@ Then `systemctl daemon-reload`, now you can use these commands to manage the pro
 - 取消开机自启: `systemctl disable openlist`
 - 状态: `systemctl status openlist`
 - 重启: `systemctl restart openlist`
-  守护进程不配置? [**视频教程**](https://www.bilibili.com/video/BV1rF41197Qv?t=187.0)
+
+守护进程不会配置? [**视频教程**](https://www.bilibili.com/video/BV1rF41197Qv?t=187.0)
 
 :::
 
 ### macOS
 
 ::: en
-Edit `~/Library/LaunchAgents/ci.nn.openlist.plist` in any way and add the following content, modify `path_openlist` to be the path where OpenList is located, and `path/to/working/dir` to be the working path of OpenList:
+Edit `~/Library/LaunchAgents/org.openlist.plist` in any way and add the following content, modify `path_openlist` to be the path where OpenList is located, and `path/to/working/dir` to be the working path of OpenList:
 :::
 
 ::: zh-CN
-使用任意方式编辑 `~/Library/LaunchAgents/ci.nn.openlist.plist` 并添加如下内容，修改 `path_openlist` 为 OpenList 所在的路径，`path/to/working/dir` 为 OpenList的工作路径:
+使用任意方式编辑 `~/Library/LaunchAgents/org.openlist.plist` 并添加如下内容，修改 `path_openlist` 为 OpenList 所在的路径，`path/to/working/dir` 为 OpenList的工作路径:
 :::
 
 ```xml
@@ -243,7 +466,7 @@ Edit `~/Library/LaunchAgents/ci.nn.openlist.plist` in any way and add the follow
 <plist version="1.0">
      <dict>
          <key>Label</key>
-         <string>ci.nn.openlist</string>
+         <string>org.openlist</string>
          <key>KeepAlive</key>
          <true/>
          <key>ProcessType</key>
@@ -262,20 +485,20 @@ Edit `~/Library/LaunchAgents/ci.nn.openlist.plist` in any way and add the follow
 ```
 
 ::: en
-Then, execute `launchctl load ~/Library/LaunchAgents/ci.nn.openlist.plist` to load the configuration, now you can use these commands to manage the program:
+Then, execute `launchctl load ~/Library/LaunchAgents/org.openlist.plist` to load the configuration, now you can use these commands to manage the program:
 
-- Start: `launchctl start ~/Library/LaunchAgents/ci.nn.openlist.plist`
-- Close: `launchctl stop ~/Library/LaunchAgents/ci.nn.openlist.plist`
-- Unload configuration: `launchctl unload ~/Library/LaunchAgents/ci.nn.openlist.plist`
+- Start: `launchctl start ~/Library/LaunchAgents/org.openlist.plist`
+- Close: `launchctl stop ~/Library/LaunchAgents/org.openlist.plist`
+- Unload configuration: `launchctl unload ~/Library/LaunchAgents/org.openlist.plist`
 
 :::
 
 ::: zh-CN
-然后，执行 `launchctl load ~/Library/LaunchAgents/ci.nn.openlist.plist` 加载配置，现在你可以使用这些命令来管理程序：
+然后，执行 `launchctl load ~/Library/LaunchAgents/org.openlist.plist` 加载配置，现在你可以使用这些命令来管理程序：
 
-- 开启: `launchctl start ~/Library/LaunchAgents/ci.nn.openlist.plist`
-- 关闭: `launchctl stop ~/Library/LaunchAgents/ci.nn.openlist.plist`
-- 卸载配置: `launchctl unload ~/Library/LaunchAgents/ci.nn.openlist.plist`
+- 开启: `launchctl start ~/Library/LaunchAgents/org.openlist.plist`
+- 关闭: `launchctl stop ~/Library/LaunchAgents/org.openlist.plist`
+- 卸载配置: `launchctl unload ~/Library/LaunchAgents/org.openlist.plist`
 
 :::
 

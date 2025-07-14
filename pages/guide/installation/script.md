@@ -17,15 +17,18 @@ Requirements:
 
 - Linux with systemd
 - Root privileges for installation
-- curl, tar
-- x86_64 or arm64 架构
-  :::
-  ::: zh-CN
-  要求:
-- Linux with systemd
+- `curl`, `tar` installed
+- `x86_64` or `arm64` architecture
+
+:::
+
+::: zh-CN
+要求：
+
+- 使用 systemd 的 Linux 系统
 - Root 权限
-- 已安装curl, tar
-- x86_64 or arm64 architecture
+- 已安装 `curl`, `tar`
+- `x86_64` 或 `arm64` 架构
 
 :::
 
@@ -33,9 +36,9 @@ Requirements:
 
 ## 正式版 { lang="zh-CN" }
 
-### **Install** { lang="en" }
+### Install { lang="en" }
 
-### **安装** { lang="zh-CN" }
+### 安装 { lang="zh-CN" }
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/OpenListTeam/OpenList-Resource/refs/heads/main/script/v4.sh > install-openlist-v4.sh && sudo bash install-openlist-v4.sh
@@ -71,9 +74,9 @@ curl -fsSL https://raw.githubusercontent.com/OpenListTeam/OpenList-Resource/refs
 
 根据界面提示，输入`1`即可安装
 
-### **openlist-manager** { lang="en" }
+### openlist-manager { lang="en" }
 
-### **面板管理命令** { lang="zh-CN" }
+### 面板管理命令 { lang="zh-CN" }
 
 ::: zh-CN
 ::: tip
