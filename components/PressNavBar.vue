@@ -35,7 +35,7 @@
       :aria-label="siteConfig.title"
     >
       <img v-if="themeConfig.logo" class="logo" :src="themeConfig.logo" alt="LOGO" />
-      <span class="inline-flex">{{ t('nav.title') }}</span>
+      <span class="inline-flex">{{ t('siteConfig.title') }}</span>
     </RouterLink>
     <div class="self-stretch flex justify-center items-center text-sm leading-5">
       <PressNavBarSearch p="x-2" />

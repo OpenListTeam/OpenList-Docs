@@ -1,10 +1,13 @@
+siteConfig:
+  title: OpenList Docs
+  discription: Docs site for OpenList
+
 # ! Navigation bar search entry
 search:
   tip: search
 
 # ! Navigation menu
 nav:
-  title: OpenList Docs
   configuration: Configuration
   guide: User Guide
   faq: FAQ

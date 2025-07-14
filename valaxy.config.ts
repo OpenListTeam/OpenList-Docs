@@ -1,6 +1,6 @@
 import type { PressTheme } from 'valaxy-theme-press'
 import process from 'node:process'
-import { defineValaxyConfig } from 'valaxy'
+import { $t, defineValaxyConfig } from 'valaxy'
 import { addonAlgolia } from 'valaxy-addon-algolia'
 import { addonComponents } from 'valaxy-addon-components'
 import { addonGitLog } from 'valaxy-addon-git-log'
@@ -19,9 +19,9 @@ const safelist = ['i-ri-home-line', 'i-ri-github-line', 'i-ri-arrow-up-line']
 
 export default defineValaxyConfig<PressTheme.Config>({
   siteConfig: {
-    title: 'OpenList Docs',
+    title: $t('siteConfig.title'),
     url: SITE_URL,
-    description: 'Docs site for OpenList',
+    description: $t('siteConfig.description'),
 
     comment: {
       enable: true,
