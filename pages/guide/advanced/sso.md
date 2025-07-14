@@ -122,10 +122,7 @@ Open **https://github.com/settings/developers** Click **`New OAuth App`**
 
 #### 3.1.3. GitHub视频教程 { lang="zh-CN" }
 
-::: en
-
-<iframe src="//player.bilibili.com/player.html?autoplay=0&isOutside=true&aid=309867705&bvid=BV1KA41117m5&cid=1020539643&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
-:::
+<BiliBili bvid="BV1KA41117m5" ratio="16:9" />
 
 ### 3.2.Dingtalk { lang="en" }
 
@@ -154,8 +151,6 @@ http://127.0.0.1:5244/api/auth/sso_callback
 :::
 
 ::: zh-CN
-
-<iframe src="//player.bilibili.com/player.html?autoplay=0&isOutside=true&aid=309867705&bvid=BV1KA41117m5&cid=1020539643&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
 
 首先打开 **https://open-dev.dingtalk.com/fe/app#/corp/app**
 

@@ -167,7 +167,7 @@ According to [source code](https://github.com/alist-org/alist/blob/main/internal
    - 3 and 4 are not mentioned in the video.
      **qBittorrent** Video Tutorials
 
-     <iframe src="//player.bilibili.com/player.html?autoplay=0&isOutside=true&aid=482544390&bvid=BV1NT411q7EN&cid=1027592229&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+     <BiliBili bvid="BV1NT411q7EN" ratio="16:9" />
 
      **If the video fails, you can watch it here: https://b23.tv/J34qDiG**
 
@@ -188,7 +188,7 @@ According to [source code](https://github.com/alist-org/alist/blob/main/internal
    - 3 和 4 是视频中没有提到的.
      **qBittorrent**视频教程
 
-     <iframe src="//player.bilibili.com/player.html?autoplay=0&isOutside=true&aid=482544390&bvid=BV1NT411q7EN&cid=1027592229&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+     <BiliBili bvid="BV1NT411q7EN" ratio="16:9" />
 
      **视频若失效可以前往观看：https://b23.tv/J34qDiG**
 

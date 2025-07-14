@@ -41,11 +41,11 @@ But for **ios>=16**, you need to name the ipa file: `original file name@bundle-i
 
   - How to change the name of the computer version
 
-  <iframe src="//player.bilibili.com/player.html?autoplay=0&isOutside=true&aid=473457046&bvid=BV1bT411N7tT&cid=845006329&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+    <BiliBili bvid="BV1bT411N7tT" ratio="16:9" low-quality no-danmaku />
 
   - How to change the name of the IOS 16 mobile phone
 
-  <iframe src="//player.bilibili.com/player.html?autoplay=0&isOutside=true&aid=352328428&bvid=BV1kX4y1X7vo&cid=1019947621&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+    <BiliBili bvid="BV1kX4y1X7vo"/>
 
 **Installation Demo**: Deploy **HTTPS** and **IPA files** are signed prerequisites, if **IOS16 rename by yourself** If you can’t install it yourself, please check the problem yourself
 
@@ -61,11 +61,11 @@ But for **ios>=16**, you need to name the ipa file: `original file name@bundle-i
 
   - 电脑版如何改名
 
-  <iframe src="//player.bilibili.com/player.html?autoplay=0&isOutside=true&aid=473457046&bvid=BV1bT411N7tT&cid=845006329&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+    <BiliBili bvid="BV1bT411N7tT" ratio="16:9" low-quality no-danmaku />
 
   - IOS 16手机如何改名
 
-  <iframe src="//player.bilibili.com/player.html?autoplay=0&isOutside=true&aid=352328428&bvid=BV1kX4y1X7vo&cid=1019947621&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+    <BiliBili bvid="BV1kX4y1X7vo"/>
 
 **安装演示**：部署**HTTPS**和**IPA文件**已签名前提，如果是 **IOS16自行改名** 若自己无法安装请自行排查问题所在
 
