@@ -1,6 +1,6 @@
 siteConfig:
   title: OpenList Docs
-  discription: Docs site for OpenList
+  description: Docs site for OpenList
 
 # ! Navigation bar search entry
 search:
