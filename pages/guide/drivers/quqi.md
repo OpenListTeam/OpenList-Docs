@@ -1,6 +1,6 @@
 ---
 title:
-  en: todo
+  en: Quqi Cloud
   zh-CN: 曲奇云盘
 icon: iconfont icon-state
 # This control sidebar order
