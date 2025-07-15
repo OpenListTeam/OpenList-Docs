@@ -11,7 +11,7 @@ async function checkAndRestoreHistory() {
   try {
     // Check if current directory is a Git repository
     if (!existsSync('.git')) {
-      throw 'Not a Git repository.'
+      throw new Error('Not a Git repository.')
     }
 
     // Detect if repository is a shallow clone
