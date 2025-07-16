@@ -131,7 +131,6 @@ export default defineValaxyConfig<PressTheme.Config>({
     base: VITE_BASE,
     resolve: {
       alias: {
-        'valaxy/client/components/builtin/ValaxyMermaid.vue': './components/ValaxyMermaid.vue',
         'valaxy-theme-press/components/PressNavScreenMenuLink.vue':
           './components/PressNavScreenMenuLink.vue',
       },
