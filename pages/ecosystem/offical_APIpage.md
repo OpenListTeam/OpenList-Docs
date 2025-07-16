@@ -80,7 +80,7 @@ The frontend part of APIpage also solves the following problems:
 - 中转服务器将访问令牌发送回OpenList客户端。
 上述描述的中转服务器，就是在线API服务器/Online API 服务器/APIpage的后端部分功能，其工作原理如下：
 
-```mermaid
+```mermaid {scale: 2}
 sequenceDiagram
     participant OpenList
     participant OnlineAPI as Online API服务器
