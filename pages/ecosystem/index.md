@@ -2,6 +2,9 @@
 title:
   en: OpenList Ecosystem
   zh-CN: OpenList 生态项目
+categories:
+  - ecosystem
+top: 1000
 ---
 
 :::en
