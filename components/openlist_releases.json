@@ -339,16 +339,16 @@
     "filename": "openlist-linux-musl-loong64-lite.tar.gz",
     "os": "Linux (musl)",
     "cpu": "LoongArch 64",
-    "desc": "Lite version for LoongArch 64 Linux systems with musl libc",
-    "desc_cn": "龙芯LoongArch 64 musl libc Linux系统的精简版",
+    "desc": "Lite version for LoongArch 64 Linux systems with musl libc and ABI2.0",
+    "desc_cn": "龙芯LoongArch 64 musl libc Linux ABI2.0 系统的精简版",
     "link": "https://github.com/OpenListTeam/OpenList/releases/latest/download/openlist-linux-musl-loong64-lite.tar.gz"
   },
   {
     "filename": "openlist-linux-musl-loong64.tar.gz",
     "os": "Linux (musl)",
     "cpu": "LoongArch 64",
-    "desc": "For LoongArch 64 Linux systems with musl libc",
-    "desc_cn": "用于龙芯LoongArch 64 musl libc Linux系统",
+    "desc": "For LoongArch 64 Linux systems with musl libc and ABI2.0",
+    "desc_cn": "用于龙芯LoongArch 64 musl libc Linux ABI2.0 系统",
     "link": "https://github.com/OpenListTeam/OpenList/releases/latest/download/openlist-linux-musl-loong64.tar.gz"
   },
   {
