@@ -172,7 +172,7 @@ The following servers are built and provided by community volunteers. Once used,
 :::
 
 - [api.oplist.org](https://api.oplist.org/)
-- [api.oplist.org](https://api.oplist.org.cn/)
+- [api.oplist.org.cn](https://api.oplist.org.cn/)
 
 ......
 
