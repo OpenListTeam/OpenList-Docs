@@ -10,6 +10,7 @@ import { markdownThemeImagePlugin } from './utils/markdown-theme-image'
 
 const COMMIT_TAG = process.env.COMMIT_TAG || 'dev'
 const DOCS_COMMIT_SHA = process.env.CF_PAGES_COMMIT_SHA || process.env.DOCS_COMMIT_SHA
+const DOCS_ICP = process.env.DOCS_ICP || ''
 const DOCS_BUILT_DATE = new Date().toISOString()
 // Must have SITE_URL or build fails
 const SITE_URL = process.env.SITE_URL || 'https://example.com'
@@ -68,7 +69,7 @@ export default defineValaxyConfig<PressTheme.Config>({
   theme: 'press',
   themeConfig: {
     logo: VITE_BASE.endsWith('/') ? `${VITE_BASE}logo.svg` : `/${VITE_BASE}/logo.svg`,
-    sidebar: ['guide', 'configuration', 'faq', 'api', 'migration','ecosystem'],
+    sidebar: ['guide', 'configuration', 'faq', 'api', 'migration', 'ecosystem'],
     socialLinks: [{ icon: 'i-ri-github-line', link: 'https://github.com/OpenListTeam/OpenList' }],
     nav: [
       {
@@ -122,8 +123,7 @@ export default defineValaxyConfig<PressTheme.Config>({
 
     footer: {
       message: `Commit <a href="https://github.com/OpenListTeam/OpenList-Docs/commit/${DOCS_COMMIT_SHA}">${DOCS_COMMIT_SHA?.slice(0, 8)}</a> built at ${DOCS_BUILT_DATE}`,
-      copyright:
-        'AGPL-3.0 Licensed |  © 2022-present <a href="https://github.com/OpenListTeam" target="_blank">The OpenList Projects Contributors</a>',
+      copyright: `AGPL-3.0 Licensed | © 2022-${new Date().getFullYear()} <a href="https://github.com/OpenListTeam" target="_blank">The OpenList Projects Contributors</a>${DOCS_ICP ? ' | <a href="https://beian.miit.gov.cn" target="_blank">' + DOCS_ICP + '</a>' : ''}`,
     },
   },
 
