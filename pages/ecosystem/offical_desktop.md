@@ -4,7 +4,7 @@ title:
   zh-CN: OpenList Desktop
 categories:
   - ecosystem
-  - offical
+  - eco_offical
 top: 980
 ---
 

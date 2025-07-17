@@ -36,6 +36,9 @@ category:
   admin: admin
   # Changelog
   changelog: Changelog
+  # Ecosystem
+  ecosystem: Ecosystem
+  eco_offical: Official Ecosystem
 
 # ! Index page (layout: hero)
 hero:

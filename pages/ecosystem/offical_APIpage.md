@@ -4,7 +4,7 @@ title:
   zh-CN: OpenList APIpage
 categories:
   - ecosystem
-  - offical
+  - eco_offical
 top: 970
 ---
 
