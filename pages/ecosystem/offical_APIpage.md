@@ -152,31 +152,61 @@ If you choose not to use community-provided servers or deploy your own server, p
 ### APIPage Deployment Tutorial { lang="en"}
 ### APIPage的部署教程 { lang="zh-CN" }
 
+#### One-Click Deployment { lang="en"}
+#### 一键部署 { lang="zh-CN" }
+
+:::en
+- EdgeOne Functions International
+<a href="https://edgeone.ai/pages/new?project-name=oplist-api&repository-url=https://github.com/OpenListTeam/OpenList-APIPages&build-command=npm%20run%20build-eo&install-command=npm%20install&output-directory=public&root-directory=./&env=MAIN_URLS" target="_blank" class="inline-block hover:scale-105 transition-all duration-200">
+  <img src="https://cdnstatic.tencentcs.com/edgeone/pages/deploy.svg" alt="Deploy with EdgeOne Pages" class="pointer-events-none">
+</a>
+
+After deployment, please log in to the [EdgeOne Functions console](https://console.tencentcloud.com/edgeone/pages) to modify environment variables. Please refer to the [Variable Description](#variable-description) section.
+
+- EdgeOne Functions China
+<a href="https://console.cloud.tencent.com/edgeone/pages/new?project-name=oplist-api&repository-url=https://github.com/OpenListTeam/OpenList-APIPages&build-command=npm%20run%20build-eo&install-command=npm%20install&output-directory=public&root-directory=./&env=MAIN_URLS" target="_blank" class="inline-block hover:scale-105 transition-all duration-200">
+  <img src="https://cdnstatic.tencentcs.com/edgeone/pages/deploy.svg" alt="Deploy with EdgeOne Pages" class="pointer-events-none">
+</a>
+
+After deployment, please log in to the [EdgeOne Functions console](https://console.cloud.tencent.com/edgeone/pages) to modify environment variables. Please refer to the [Variable Description](#variable-description) section.
+
+- Cloudflare Workers Global
+<a href="https://deploy.workers.cloudflare.com/?url=https://github.com/OpenListTeam/OpenList-APIPages" target="_blank" class="inline-block hover:scale-105 transition-all duration-200">
+  <img src="https://deploy.workers.cloudflare.com/button" alt="Deploy to Cloudflare Workers" class="pointer-events-none">
+</a>
+
+After deployment, please log in to the [Cloudflare Workers console](https://dash.cloudflare.com/) to modify environment variables. Please refer to the [Variable Description](#variable-description) section.
+
 :::
 :::zh-CN
-
-### 一键部署
-
-#### EdgeOne Functions 国际站
-[![使用 EdgeOne Pages 部署](https://cdnstatic.tencentcs.com/edgeone/pages/deploy.svg)](https://edgeone.ai/pages/new?project-name=oplist-api&repository-url=https://github.com/OpenListTeam/OpenList-APIPages&build-command=npm%20run%20build-eo&install-command=npm%20install&output-directory=public&root-directory=./&env=MAIN_URLS)
+- EdgeOne Functions 国际站
+<a href="https://edgeone.ai/pages/new?project-name=oplist-api&repository-url=https://github.com/OpenListTeam/OpenList-APIPages&build-command=npm%20run%20build-eo&install-command=npm%20install&output-directory=public&root-directory=./&env=MAIN_URLS" target="_blank" class="inline-block hover:scale-105 transition-all duration-200">
+  <img src="https://cdnstatic.tencentcs.com/edgeone/pages/deploy.svg" alt="使用 EdgeOne Pages 部署" class="pointer-events-none">
+</a>
 
 部署完成后，请登录[EdgeOne Functions后台](https://console.tencentcloud.com/edgeone/pages)，修改环境变量，请参考[变量说明](#变量说明)部分
 
-
-#### EdgeOne Functions 中国站
-[![使用 EdgeOne Pages 部署](https://cdnstatic.tencentcs.com/edgeone/pages/deploy.svg)](https://console.cloud.tencent.com/edgeone/pages/new?project-name=oplist-api&repository-url=https://github.com/OpenListTeam/OpenList-APIPages&build-command=npm%20run%20build-eo&install-command=npm%20install&output-directory=public&root-directory=./&env=MAIN_URLS)
+- EdgeOne Functions 中国站
+<a href="https://console.cloud.tencent.com/edgeone/pages/new?project-name=oplist-api&repository-url=https://github.com/OpenListTeam/OpenList-APIPages&build-command=npm%20run%20build-eo&install-command=npm%20install&output-directory=public&root-directory=./&env=MAIN_URLS" target="_blank" class="inline-block hover:scale-105 transition-all duration-200">
+  <img src="https://cdnstatic.tencentcs.com/edgeone/pages/deploy.svg" alt="使用 EdgeOne Pages 部署" class="pointer-events-none">
+</a>
 
 部署完成后，请登录[EdgeOne Functions后台](https://console.cloud.tencent.com/edgeone/pages)，修改环境变量，请参考[变量说明](#变量说明)部分
 
-
-#### Cloudflare Worker 全球站
-[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/OpenListTeam/OpenList-APIPages)
+- Cloudflare Worker 全球站
+<a href="https://deploy.workers.cloudflare.com/?url=https://github.com/OpenListTeam/OpenList-APIPages" target="_blank" class="inline-block hover:scale-105 transition-all duration-200">
+  <img src="https://deploy.workers.cloudflare.com/button" alt="Deploy to Cloudflare Workers" class="pointer-events-none">
+</a>
 
 部署完成后，请登录[Cloudflare Worker后台](https://dash.cloudflare.com/)，修改环境变量，请参考[变量说明](#变量说明)部分
 
+:::
 
-### 容器部署
-#### 拉取镜像
+#### Container Deployment { lang="en" }
+#### 容器部署 { lang="zh-CN" }
+
+:::en
+- Pull image
 ```
 docker pull openlistteam/openlist_api_server
 ```
@@ -184,7 +214,74 @@ or
 ```
 docker pull ghcr.io/openlistteam/openlist_api_server:latest
 ```
-#### 启动项目
+- Start project
+```
+docker run -d --name oplist-api-server \
+  -p 3000:3000 \
+  -e OPLIST_MAIN_URLS="api.example.com" \
+  -e OPLIST_PROXY_API="gts.example.com" \
+  -e OPLIST_ONEDRIVE_UID= `#optional` \
+  -e OPLIST_ONEDRIVE_KEY= `#optional` \
+  -e OPLIST_ALICLOUD_UID= `#optional` \
+  -e OPLIST_ALICLOUD_KEY= `#optional` \
+  -e OPLIST_BAIDUYUN_UID= `#optional` \
+  -e OPLIST_BAIDUYUN_KEY= `#optional` \
+  -e OPLIST_BAIDUYUN_EXT= `#optional` \
+  -e OPLIST_CLOUD115_UID= `#optional` \
+  -e OPLIST_CLOUD115_KEY= `#optional` \
+  -e OPLIST_GOOGLEUI_UID= `#optional` \
+  -e OPLIST_GOOGLEUI_KEY= `#optional` \
+  -e OPLIST_YANDEXUI_UID= `#optional` \
+  -e OPLIST_YANDEXUI_KEY= `#optional` \
+  -e OPLIST_DROPBOXS_UID= `#optional` \
+  -e OPLIST_DROPBOXS_KEY= `#optional` \
+  -e OPLIST_QUARKPAN_UID= `#optional` \
+  -e OPLIST_QUARKPAN_KEY= `#optional` \
+  openlistteam/openlist_api_server:latest 
+```
+
+- You can replace the image with ghcr:
+  ```
+  ghcr.io/openlistteam/openlist_api_server:latest
+  ```
+
+- **Please make sure to modify your environment variables according to the environment variables below**
+
+- Environment Variable Description
+
+| Variable Name       | Required | Variable Type | Variable Description                     |
+| -------------- | ---- | -------- |--------------------------|
+| `OPLIST_MAIN_URLS`    | Yes   | string   | Bind main domain, example: api.example.com |
+| `OPLIST_PROXY_API`    | No   | string   | Nodes deployed in mainland China need to specify Google proxy  |
+| `OPLIST_ONEDRIVE_UID` | No   | string   | OneDrive Client ID           |
+| `OPLIST_ONEDRIVE_KEY` | No   | string   | OneDrive Client Secret           |
+| `OPLIST_ALICLOUD_UID` | No   | string   | AliCloud Drive Developer AppID             |
+| `OPLIST_ALICLOUD_KEY` | No   | string   | AliCloud Drive Developer AppKey            |
+| `OPLIST_BAIDUYUN_UID` | No   | string   | Baidu NetDisk Application UID                |
+| `OPLIST_BAIDUYUN_KEY` | No   | string   | Baidu NetDisk Application Secret AppKey           |
+| `OPLIST_BAIDUYUN_EXT` | No   | string   | Baidu NetDisk Application SecretKey          |
+| `OPLIST_CLOUD115_UID` | No   | string   | 115 NetDisk Application ID                |
+| `OPLIST_CLOUD115_KEY` | No   | string   | 115 NetDisk Application Secret                |
+| `OPLIST_GOOGLEUI_UID` | No   | string   | Google Client ID                  |
+| `OPLIST_GOOGLEUI_KEY` | No   | string   | Google Global API Key              |
+| `OPLIST_YANDEXUI_UID` | No   | string   | Yandex Application ID               |
+| `OPLIST_YANDEXUI_KEY` | No   | string   | Yandex Application Secret               |
+| `OPLIST_DROPBOXS_UID` | No   | string   | Dropbox Application ID             |
+| `OPLIST_DROPBOXS_KEY` | No   | string   | Dropbox Application Secret              |
+| `OPLIST_QUARKPAN_UID` | No   | string   | QuarkPan Application ID                |
+| `OPLIST_QUARKPAN_KEY` | No   | string   | QuarkPan Application Secret                 |
+
+:::
+:::zh-CN
+- 拉取镜像
+```
+docker pull openlistteam/openlist_api_server
+```
+或者
+```
+docker pull ghcr.io/openlistteam/openlist_api_server:latest
+```
+- 启动项目
 ```
 docker run -d --name oplist-api-server \
   -p 3000:3000 \
@@ -215,7 +312,7 @@ docker run -d --name oplist-api-server \
   ```
 - **请务必根据下面的环境变量，修改你使用的环境变量**
 
-#### 环境变量说明
+- 环境变量说明
 
 | 变量名称       | 必要 | 变量类型 | 变量说明                     |
 | -------------- | ---- | -------- |--------------------------|
@@ -239,16 +336,91 @@ docker run -d --name oplist-api-server \
 | `OPLIST_QUARKPAN_UID` | 否   | string   | 夸克云盘x应用ID                |
 | `OPLIST_QUARKPAN_KEY` | 否   | string   | 夸克云盘应用密钥                 |
 
+:::
 
-### 边缘部署
+#### Edge Deployment { lang="en" }
+#### 边缘部署 { lang="zh-CN" }
 
-#### 克隆代码
+:::en
+- Clone code
 
 ```shell
 git clone https://github.com/OpenListTeam/OpenList-APIPages.git
 ```
 
-#### 修改配置 (CloudFlare才需要)
+- Modify configuration (CloudFlare only)
+
+Create and modify `wrangler.jsonc`
+
+```shell
+cp wrangler.example.jsonc wrangler.encrypt.jsonc
+```
+
+Modify variable information:
+ - MAIN_URLS: Domain name for deployment callback address
+ - Other parameters: Application information for each cloud storage service
+```
+  "vars": {
+    "MAIN_URLS": "api.example.com",
+    "PROXY_API": "gts.example.com",
+    "onedrive_uid": "*****************************",
+    "onedrive_key": "*****************************",
+    "alicloud_uid": "*****************************",
+    "alicloud_key": "*****************************",
+    "baiduyun_uid": "*****************************",
+    "baiduyun_key": "*****************************",
+    "baiduyun_ext": "*****************************",
+    "cloud115_uid": "*****************************",
+    "cloud115_key": "*****************************",
+    "googleui_uid": "*****************************",
+    "googleui_key": "*****************************",
+    "yandexui_uid": "*****************************",
+    "yandexui_key": "*****************************",
+    "dropboxs_uid": "*****************************",
+    "dropboxs_key": "*****************************",
+    "quarkpan_uid": "*****************************",
+    "quarkpan_key": "*****************************"
+  },
+```
+
+- Test code
+
+```shell
+npm install
+
+# Run in Cloudflare Worker environment 
+npm run dev-cf
+
+# Run in Edgeone Functions environment 
+npm run dev-eo
+
+# Run in Node Service Work environment 
+npm run dev-js
+
+```
+
+- Deploy project
+
+```shell
+# Deploy in Cloudflare Worker environment
+npm run deploy-cf
+
+# Deploy in Edgeone Functions environment 
+npm run deploy-eo 
+
+# Run locally in Node Service Work
+npm build-js && npm deploy-js
+```
+
+:::
+:::zh-CN
+- 克隆代码
+
+```shell
+git clone https://github.com/OpenListTeam/OpenList-APIPages.git
+```
+
+- 修改配置 (CloudFlare才需要)
 
 创建并修改`wrangler.jsonc`
 
@@ -283,8 +455,65 @@ cp wrangler.example.jsonc wrangler.encrypt.jsonc
   },
 ```
 
-### 变量说明
+- 测试代码
 
+```shell
+npm install
+
+# 以Cloudflare Worker环境运行 
+npm run dev-cf
+
+# 以Edgeone Functions环境运行 
+npm run dev-eo
+
+# 以Node Service Work环境运行 
+npm run dev-js
+
+```
+
+- 部署项目
+
+```shell
+# 以Cloudflare Worker环境部署
+npm run deploy-cf
+
+# 以Edgeone Functions环境部署 
+npm run deploy-eo 
+
+# 以Node Service Work本地运行
+npm build-js && npm deploy-js
+```
+
+:::
+
+#### Variable Description { lang="en" }
+#### 变量说明 { lang="zh-CN" }
+
+:::en
+| Variable Name       | Required | Variable Type | Variable Description                     |
+| -------------- | ---- | -------- |-------------------|
+| `MAIN_URLS`    | Yes   | string   | Bind main domain, example: api.example.com |
+| `PROXY_API`    | No   | string   | Nodes deployed in mainland China need to specify Google proxy  |
+| `onedrive_uid` | No   | string   | OneDrive Client ID           |
+| `onedrive_key` | No   | string   | OneDrive Client Secret           |
+| `alicloud_uid` | No   | string   | AliCloud Drive Developer AppID             |
+| `alicloud_key` | No   | string   | AliCloud Drive Developer AppKey            |
+| `baiduyun_uid` | No   | string   | Baidu NetDisk Application ID                |
+| `baiduyun_key` | No   | string   | Baidu NetDisk Application Secret AppKey        |
+| `baiduyun_ext` | No   | string   | Baidu NetDisk Application SecretKey        |
+| `cloud115_uid` | No   | string   | 115 NetDisk Application ID                |
+| `cloud115_key` | No   | string   | 115 NetDisk Application Secret                |
+| `googleui_uid` | No   | string   | Google Client ID                  |
+| `googleui_key` | No   | string   | Google Global API Key              |
+| `yandexui_uid` | No   | string   | Yandex Application ID               |
+| `yandexui_key` | No   | string   | Yandex Application Secret               |
+| `dropboxs_uid` | No   | string   | Dropbox Application ID             |
+| `dropboxs_key` | No   | string   | Dropbox Application Secret              |
+| `quarkpan_uid` | No   | string   | QuarkPan Application ID                |
+| `quarkpan_key` | No   | string   | QuarkPan Application Secret                 |
+
+:::
+:::zh-CN
 | 变量名称       | 必要 | 变量类型 | 变量说明              |
 | -------------- | ---- | -------- |-------------------|
 | `MAIN_URLS`    | 是   | string   | 绑定主域名，示例：api.example.com |
@@ -307,42 +536,7 @@ cp wrangler.example.jsonc wrangler.encrypt.jsonc
 | `quarkpan_uid` | 否   | string   | 夸克云盘x应用ID                |
 | `quarkpan_key` | 否   | string   | 夸克云盘应用密钥                 |
 
-
-#### 测试代码
-
-```shell
-npm install
-
-# 以Cloudflare Worker环境运行 
-npm run dev-cf
-
-# 以Edgeone Functions环境运行 
-npm run dev-eo
-
-# 以Node Service Work环境运行 
-npm run dev-js
-
-```
-
-#### 部署项目
-
-```shell
-# 以Cloudflare Worker环境部署
-npm run deploy-cf
-
-# 以Edgeone Functions环境部署 
-npm run deploy-eo 
-
-# 以Node Service Work本地运行
-npm build-js && npm deploy-js
-```
 :::
-
-:::
-:::en
-
-:::
-
 ## Community APIpage { lang="en"}
 ## 社区APIpage { lang="zh-CN" }
 
