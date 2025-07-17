@@ -1,8 +1,6 @@
 #!/usr/bin/env node
+import { execSync } from 'child_process'
 import { existsSync } from 'fs'
-import simpleGit from 'simple-git'
-
-const git = simpleGit()
 
 /**
  * Restores complete Git history for shallow clones to fix contributor tracking issues.
@@ -15,17 +13,16 @@ async function checkAndRestoreHistory() {
     }
 
     // Detect if repository is a shallow clone
-    const isShallow = await git.raw('rev-parse', '--is-shallow-repository')
+    const isShallow = execSync('git rev-parse --is-shallow-repository').toString().trim() === 'true'
 
-    if (isShallow.trim() === 'true') {
+    if (isShallow) {
       console.log('➤ Detected shallow clone. Trying to fetch full history for current branch...')
 
       // Get current branch name
-      const branch = await git.branch()
-      const currentBranch = branch.current
+      const currentBranch = execSync('git rev-parse --abbrev-ref HEAD').toString().trim()
 
       // Fetch complete history for current branch only
-      await git.raw('fetch', '--unshallow', 'origin', currentBranch)
+      execSync(`git fetch --unshallow origin ${currentBranch}`, { stdio: 'inherit' })
       console.log(`✓ Full history restored for branch: ${currentBranch}`)
     } else {
       console.log('✓ Repository already has complete history')

@@ -74,9 +74,6 @@ importers:
       prettier:
         specifier: ^3.6.2
         version: 3.6.2
-      simple-git:
-        specifier: ^3.28.0
-        version: 3.28.0
       vite:
         specifier: 6.3.5
         version: 6.3.5(@types/node@24.0.13)(jiti@2.4.2)(sass@1.89.2)(terser@5.43.1)(yaml@2.8.0)
