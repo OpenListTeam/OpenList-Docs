@@ -7,7 +7,7 @@
   "scripts": {
     "build": "node utils/ensure-full-git.js && npm run build:ssg",
     "build:spa": "valaxy build",
-    "build:ssg": "valaxy build --ssg",
+    "build:ssg": "NODE_OPTIONS='--max-old-space-size=8192' valaxy build --ssg",
     "dev": "valaxy",
     "rss": "valaxy rss",
     "serve": "vite preview",
