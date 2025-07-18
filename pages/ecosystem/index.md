@@ -41,7 +41,7 @@ A cross-platform GUI management interface integrating OpenList and rclone, offer
 
 ---
 
-### [OpenList APIPage ↗](./ecosystem/offical_APIpage)
+### [OpenList APIPages ↗](./ecosystem/offical_APIpage)
 
 :::en
 An open-source implementation of the online API functionality in OpenList, deployable on various servers, providing stable and privacy-protected API authentication services for cloud storage users.
@@ -204,6 +204,7 @@ Any actions of these software/projects (including references to OpenList in thei
 :::
 
 ### [MY QNAP's OpenList ↗](https://www.myqnap.org/product/openlist/)
+
 ::: en
 ::: danger
 The third-party closed-source QPKG version of OpenList.
@@ -225,4 +226,3 @@ OpenList的第三方闭源qpkg版本。
 
 注意：因没有开放源码，违反AGPLv3许可证、违反OpenList LOGO的CC BY-NC-SA 4.0许可。
 :::
-

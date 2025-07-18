@@ -1,14 +1,14 @@
 ---
 title:
-  en: OpenList APIpage
-  zh-CN: OpenList APIpage
+  en: OpenList APIPages
+  zh-CN: OpenList APIPages
 categories:
   - ecosystem
   - eco_offical
 top: 970
 ---
 
-## Why the APIpage is needed { lang="en"}
+## Why the APIPages is needed { lang="en"}
 
 ## APIpage是什么 { lang="zh-CN" }
 
@@ -148,14 +148,14 @@ If you choose not to use community-provided servers or deploy your own server, p
 - 2.完整阅读了对应网盘的提供的开放API开发文档。
 - 3.可以阅读并理解项目代码，并有一定的debug能力，能看懂对应的日志及其报错。
 - 4.完全理解AGPLv3授予您的权力和我们应该负责的部分。
-- 5.可以使用GitHub的基本功能，知道如何**正确的**向我们提交issue/pull request.
+- 5.可以使用GitHub的基本功能，知道如何**正确的**向我们提交Issue/Pull Request。
 - 6.请记住，我们没有任何办法可以解决您遇到的网络问题。
 
 :::
 
-## APIPage Deployment Tutorial { lang="en"}
+## APIPages Deployment Tutorial { lang="en"}
 
-## APIPage的部署教程 { lang="zh-CN" }
+## APIPages 的部署教程 { lang="zh-CN" }
 
 ### One-Click Deployment { lang="en"}
 
