@@ -20,44 +20,35 @@ sticky: true
 star: true
 ---
 
-::: en
-FeiJi Cloud：https://feijipan.com/ ( v3.31.0)
-:::
-::: zh-CN
-小飞机网盘：https://feijipan.com/ ( v3.31.0)
-:::
+**https://feijipan.com/**
 
-## **Root folder ID** { lang="en" }
+## Root folder ID { lang="en" }
 
-## **根文件夹ID** { lang="zh-CN" }
+## 根文件夹ID { lang="zh-CN" }
 
 ::: en
 root folder ID the default is `0`，Other directory ID View the figure below obtaining method
-<img src="/img/drivers/feiji/feiji.png" alt="FeiJi folder_id" />
-<br/>
+![](/img/drivers/feiji/feiji.png)
 :::
 ::: zh-CN
 根目录ID，默认为`0`，其它目录ID查看下图获取方式
-<img src="/img/drivers/feiji/feiji.png" alt="FeiJi folder_id" />
-<br/>
+![](/img/drivers/feiji/feiji.png)
 :::
 
-## **username、password** { lang="en" }
+## username、password { lang="en" }
 
-## **账户、密码** { lang="zh-CN" }
+## 账户、密码 { lang="zh-CN" }
 
 ::: en
 Just fill in your own Feiji Cloud Account Password
-<br/>
 :::
 ::: zh-CN
 填写自己的小飞机网盘帐号密码
-<br/>
 :::
 
-### **The default download method used** { lang="en" }
+### The default download method used { lang="en" }
 
-### **默认使用的下载方式** { lang="zh-CN" }
+### 默认使用的下载方式 { lang="zh-CN" }
 
 ::: en
 

@@ -22,15 +22,11 @@ star: true
 
 曲奇云盘官网：https://quqi.com ( v3.31.0)
 
-<br/>
-
-### **手机号、密码**
+### 手机号、密码
 
 登录手机号和密码，建议使用 [Cookie](#cookie)方式登录
 
-<br/>
-
-### **Cookie**
+### Cookie
 
 使用Cookie登录 **可保持多终端同时在线使用**，如果使用 `手机号、密码`进行挂载会顶掉其它终端登录状态
 
@@ -38,23 +34,17 @@ star: true
 
 ![cookie](/img/drivers/quqi/quqi_cookie.png)
 
-<br/>
-
-### **根文件夹ID**
+### 根文件夹ID
 
 根文件夹ID为 `0`，其它子文件夹ID参考下图
 
 ![folder_id](/img/drivers/quqi/quqi_folder_id.png)
 
-<br/>
-
-### **CDN**
+### CDN
 
 提升VIP用户单连接下载速度，解决非VIP用户下载连接数限制问题，**CDN内容需要解密，会占用一些计算资源**
 
-<br/>
-
-### **默认使用的下载方式**
+### 默认使用的下载方式
 
 ```mermaid
 ---

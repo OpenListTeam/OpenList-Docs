@@ -9,63 +9,84 @@ top: 120
 ---
 
 ::: en
-Let's look at a schematic:
+
+**Alias** is a feature that allows multiple different cloud drives or storage paths to be merged into a unified directory. By combining paths, content from different cloud drives or folders can be displayed in the same interface, simplifying access and management.
+
+Except for the **`Download Preview (Read-Only)`** operation, other actions such as **Copy, Delete, Rename, Offline Download, and Upload** are not supported.
+
+For example: Cloud Drive Account 1 and Cloud Drive Account 2 both contain a folder named `Movies`, but the contents of these folders may not be identical.
+
+- **Previously (Virtual Path)**:
+
+  You could only mount them to two different paths separately, like:
+  - `Cloud Drive 1/Movies`, `Cloud Drive 2/Movies`
+  - `Movies/Cloud Drive 1`, `Movies/Cloud Drive 2`
+
+- **Now (Alias)**:
+
+  An aggregated folder (Movies) is provided, which can contain content from both Cloud Drive 1 and Cloud Drive 2 simultaneously.
+
+**Display Rules for Folder Content:**
+
+1. **Same-name Merging**: Files (or folders) with the same name will be automatically merged into one.
+2. **Same-name Priority**: When accessing resources, the file (or folder) at the top (earlier) position in the path will be accessed.
+   - If files with the same name are merged, when you click **`Play` or `Download`**, the file at the top of the path list (the one using the 302 mode) will be prioritized.
+
+Next, let's explain the **`Same-name Priority²`** access rule. It’s highly recommended to check out the examples.
+
+Let's start with a diagram:
 
 ![alias](/img/drivers/alias/alias.png)
 
-We see that two different folders are merged into one folder, and the file folders with the same name are also merged together, and the unique ones are displayed separately
+In the diagram, we can see that two different folders are merged into one. Files and folders with the same name are also combined, and unique ones are displayed separately.
 
-- Example 1 `riluo.jpg` is unique to local 1, shown above
-- Example 2 Two folders have a `video` folder, but the content inside will also be merged, and the subfolders also apply to the display rules of `merging with the same name`
-  - There are two videos in each of the two folders, but one of them has the same name. Finally, according to the display rules of `merging with the same name`, it becomes `3` files for display after merging
+Example explanations:
 
-What are `alias`? `alias` is a function for path merging
-
-Except **`download preview (read-only)`** operations ^(copy, delete, rename, offline download, upload)^ are not allowed
-
-For example: cloud disk account 1 and cloud disk account 2 both have the folder `Movies`, but the contents may not (all) overlap
-
-**`Previously (virtual path)`**: can only be mounted to two different paths (cloud disk 1/movie, cloud disk 2/movie) or (movie\cloud disk 1, movie\cloud disk 2 )
-**`Now(alias)`**: Provide an aggregated folder (movie) which can contain the contents of cloud disk 1 and cloud disk 2 at the same time
-The folder content rules when displaying are as follows
-
-1. Merge with the same name: the same files (folders) are automatically merged into one
-2. Priority of the same name: When accessing resources, the path file (folder) at the top (front) when filling in the path for each fixed access
-   - If the files with the same name are merged, click **` to play, and when downloading`**, it will be called first. When filling in `Paths`, the file with the 302 mode path will be used first.
-     Let me explain **`same name first²`** access rules
+- **Example 1**: `riluo.jpg` is unique to Cloud Drive 1, so it is shown separately.
+- **Example 2**: Both folders contain a `video` folder, but the contents of these folders will be merged. Subfolders also follow the **same-name merging** display rule.
+  - Both folders contain two videos, but one of them has the same name. After merging according to the **same-name merging** rule, three video files will be displayed in total.
 
 :::
 ::: zh-CN
+
+**别名（Alias）** 是一种将多个不同云盘或存储路径合并为一个统一目录的功能。通过路径合并，来自不同云盘或文件夹的内容可以在同一界面中展示，从而简化访问和管理。
+
+除了 **`下载预览（只读）`** 操作外，其他操作如 **复制、删除、重命名、离线下载、上传** 均不支持。
+
+例如：云盘账号1和云盘账号2中都包含一个名为`电影`的文件夹，但两者的内容未必完全相同。
+
+- **`以前（虚拟路径）`**：
+
+  在此模式下，您只能将文件夹分别挂载在不同的路径上，例如：
+  - `云盘1/电影`、`云盘2/电影`
+  - `电影/云盘1`、`电影/云盘2`
+
+- **`现在（别名）`**：
+
+  现在通过 **Alias**，可以创建一个聚合的文件夹（如`电影`），其中同时包含来自云盘1和云盘2的内容。
+
+**展示时文件夹内容规则如下：**
+
+1. **同名合并**：同名的文件夹或文件会自动合并为一个。
+2. **同名优先**：在访问时，如果多个文件夹包含同名文件，系统将优先访问路径列表中排在前面的文件夹。
+   - 当您点击 **`播放` 或 `下载`** 时，系统会优先调用路径列表中最前面使用302模式的文件。
+
+为了更清楚理解 **`同名优先²`** 规则，建议查看以下示例。
+
 我们先看一张示意图：
 
 ![alias](/img/drivers/alias/alias.png)
 
-我们看到两个不同的文件夹合并在一个文件夹里面了，名字一样的文件文件夹也都合并在一起了，独有的单独显示了。
+在图中，两个不同的文件夹被合并为一个文件夹。同名的文件和文件夹会自动合并，而独有的文件则单独展示。
 
-- 例1 `riluo.jpg` 是本地1 独有的，在上面显示了
-- 例2 两个文件夹都有`video`文件夹，但是里面的内容也会进行合并，子文件夹也同样适用于`同名合并`的展示规则
-  - 两个文件夹分别有两个视频，但是有一个是同名的，最后根据 `同名合并` 的展示规则 合并后 变成了`3`个文件进行展示
+**示例说明：**
 
-`别名-alias`是什么？ `别名-alias`是路径合并的功能。
+- **例1**：`riluo.jpg` 仅存在于云盘1中，因此显示为独有文件。
+- **例2**：两个文件夹都有一个名为`video`的子文件夹。合并后，两个`video`文件夹的内容会合并展示。若其中有同名文件（例如`movie.mp4`），合并后最终展示3个视频文件。
 
-除了 **`下载预览(只读)`** 操作之外 ^(复制,删除,重命名,离线下载,上传)^ 均不可以。
-
-举个例子：云盘账号1、云盘账号2 里面均有`电影`这个文件夹，但内容未必(全部)重合。
-
-**`以前(虚拟路径)`**：只能分别挂载到两个不同的路径上（云盘1/电影 ，云盘2/电影）或者（电影\云盘1，电影\云盘2）
-
-**`现在(alias)`**：提供一个聚合的文件夹 （电影）里面可以同时包含云盘1和云盘2的内容
-
-展示时文件夹内容规则如下：
-
-1. 同名合并：文件(夹)一样的自动合并成一个
-2. 同名优先：访问资源时，每次固定访问填写路径时顶部(靠前)的那个路径文件(夹)
-   - 若同名文件合并后，点击 **`播放，下载`** 时优先调用填写 `Paths` 时最靠前使用302模式路径的文件
-
-下面解释一下 **`同名优先²`** 访问规则，强烈建议查看个举例都查看
 :::
 
-## How to fill in { lang="en" }
+## Filling Method { lang="en" }
 
 ## 填写方式 { lang="zh-CN" }
 
@@ -79,7 +100,6 @@ There are two ways to fill in:
    /file2/localb
    ```
 2. The second is to directly mount the root folder path, using the `renaming` method, it is strongly recommended to use :heavy_check_mark:
-
    - Paths filling example:
 
    ```
@@ -106,7 +126,6 @@ According to the second method, we can `merge` and display different folders, wh
      /目录2/目录b
      ```
 2. 第二种是可以直接挂载根文件夹ID，利用`重命名`的方式，强烈推荐使用 :heavy_check_mark:
-
    - `路径`填写示例：
 
      ```
@@ -153,12 +172,10 @@ local: /localtest/local4
 ```
 
 1. 一个视频 1 2 3 4 都有的话每次访问的是 `1`
-
-- 如果1 3 4 使用的本地代理，2 使用的`302`，优先调用 2
+   - 如果1 3 4 使用的本地代理，2 使用的`302`，优先调用 2
 
 2. 一个视频 3 4 有 那么每次访问的都是`3`
-
-- 如果 3 使用的本地代理，4 使用的`302`，优先调用 4
+   - 如果 3 使用的本地代理，4 使用的`302`，优先调用 4
 
 :::
 
@@ -176,12 +193,10 @@ local: /localtest/local1
 ```
 
 1. if a video has 1 2 3 4, each visit is `4`
-
-- If 1 3 4 uses the local proxy and 2 uses `302`, call 2 first
+   - If 1 3 4 uses the local proxy and 2 uses `302`, call 2 first
 
 2. a video 3 4 has then every visit is `4`
-
-- If 4 uses a local proxy and 2 uses `302`, call 2 first
+   - If 4 uses a local proxy and 2 uses `302`, call 2 first
 
 :::
 
@@ -196,12 +211,10 @@ local: /localtest/local1
 ```
 
 1. 一个视频 1 2 3 4 都有的话每次访问的是 `4`
-
-- 如果1 3 4 使用的本地代理，2 使用的`302`，优先调用 2
+   - 如果1 3 4 使用的本地代理，2 使用的`302`，优先调用 2
 
 2. 一个视频 2 4 有 那么每次访问的都是`4`
-
-- 如果 4 使用的本地代理，2 使用的`302`，优先调用 2
+   - 如果 4 使用的本地代理，2 使用的`302`，优先调用 2
 
 :::
 
@@ -220,10 +233,9 @@ Test other:/test4/video/tv
 ```
 
 1. local1 local2 merged together
+   - If 2 uses a local proxy and 1 uses `302`, call 2 first
 
-- If 2 uses a local proxy and 1 uses `302`, call 2 first
-
-2.  Test 3 and Test 4 merged together
+2. Test 3 and Test 4 merged together
 
 - If 3 uses a local proxy and 4 uses `302`, call 4 first
 
@@ -247,12 +259,10 @@ Test other:/test4/video/tv
 ```
 
 1. 本地1 本地2 合并在一起了
-
-- 如果2 使用的本地代理，1 使用的`302`，优先调用 2
+   - 如果2 使用的本地代理，1 使用的`302`，优先调用 2
 
 2. 测试3 测试4 合并在一起了
-
-- 如果3 使用的本地代理，4 使用的`302`，优先调用 4
+   - 如果3 使用的本地代理，4 使用的`302`，优先调用 4
 
 3. 以上两种情况会出现两个不同的文件夹来展示，会如下展示，不会互相干扰
 

@@ -21,39 +21,49 @@ star: true
 ---
 
 ::: en
-::: tip
-Lanzuo Network Disk has three types of **modes (types)**, which are **accounts, Cookie** and **Url**
+Lanzuo Network Disk has three types of **modes (types)**, which are **Accounts**, **Cookie** and **Url**
 
-- **Account** : You can display all the files of your own cloud disk, you only need to fill in the account password, which will automatically help you refresh the cookie
-- **cookie** : All files in the network disk can be displayed, but the cookie of the network disk needs to be provided
-- **Url** : only display the content in the link (you can mount it without providing a cookie)
-  :warning: It is recommended to use the **Account** method to mount：
+- **Account**: You can display all the files of your own cloud disk, you only need to fill in the account password, which will automatically help you refresh the cookie
+
+- **Cookie**: All files in the network disk can be displayed, but the cookie of the network disk needs to be provided
+
+- **Url**: only display the content in the link (you can mount it without providing a cookie)
+
+::: tip
+
+It is recommended to use the **Account** method to mount
+
 - Cookie mode needs to manually update Cookie
-- Using the Url mode will always cause convulsions. I don’t know what’s going on and suddenly prompts
-  :::
+
+:::
 
 ::: zh-CN
-::: tip
-蓝奏网盘挂载有三种**模式（类型）**，分别是 **账户，cookie** 和 **链接**
+蓝奏网盘挂载有三种**模式（类型）**，分别是 **账户**，**Cookie** 和 **链接**
 
 - **账户**：可以显示自己网盘所有文件，只需要填写帐号密码，会自动帮你刷新cookie
-- **cookie**：可以显示自己网盘所有文件，但是需要提供网盘的cookie
+
+- **Cookie**：可以显示自己网盘所有文件，但是需要提供网盘的cookie
+
 - **链接**：只能显示链接里面的内容（不需要提供cookie就可以挂载）
-  :warning: 推荐使用**账户**的方式挂载：
-- cookie模式需要手动更换cookie
-- 用链接模式总是会抽风不知道怎么回事
-  :::
 
-## **root folder ID** { lang="en" }
+::: tip
+推荐使用**账户**的方式挂载：
 
-## **根文件夹ID** { lang="zh-CN" }
+- Cookie模式需要手动更换Cookie
+
+:::
+
+## root folder ID { lang="en" }
+
+## 根文件夹 ID { lang="zh-CN" }
 
 ::: en
 Lanzuo cloud disk root directory ID, the default is `-1`，If you use `Url`Type to mount the root folder ID, please see the third item of [Fill in instructions](#fill-in-instructions)
 
 - **Additional Folder ID**
   - Two ways to obtain (see the picture below)
-  - <img src="/img/drivers/lanzou/lanzou2.gif" alt="LanZou folder_id" style="zoom:50%;" />
+
+    ![](/img/drivers/lanzou/lanzou2.gif)
 
 :::
 
@@ -62,13 +72,14 @@ Lanzuo cloud disk root directory ID, the default is `-1`，If you use `Url`Type 
 
 - **其他文件夹ID**
   - 两种获取方式（看下图即可）
-  - <img src="/img/drivers/lanzou/lanzou2.gif" alt="LanZou folder_id" style="zoom:50%;" />
+
+    ![](/img/drivers/lanzou/lanzou2.gif)
 
 :::
 
-## **Account** { lang="en" }
+## Account { lang="en" }
 
-## **账户** { lang="zh-CN" }
+## 账户 { lang="zh-CN" }
 
 ::: en
 Just fill in your own Lanzou Cloud Account Password
@@ -77,9 +88,9 @@ Just fill in your own Lanzou Cloud Account Password
 只需要填写自己的蓝奏云帐号密码
 :::
 
-## **Cooike** { lang="en" }
+## Cooike { lang="en" }
 
-## **Cookie** { lang="zh-CN" }
+## Cookie { lang="zh-CN" }
 
 ::: en
 Log in to your [**Lanzuo Cloud Disk**](https://pc.woozooo.com/) account, then F12 to open the developer mode, you can find `Cookie`, there is no specific one, such as the left side of the picture Just click one and there will be `Cookie` in the blue part of the right picture.
@@ -90,25 +101,28 @@ Log in to your [**Lanzuo Cloud Disk**](https://pc.woozooo.com/) account, then F1
 ![lanzou](/img/drivers/lanzou/lanzou1.png)
 :::
 
-## **Share link and share password** { lang="en" }
+## Share link and share password { lang="en" }
 
-## **分享链接和分享密码** { lang="zh-CN" }
+## 分享链接和分享密码 { lang="zh-CN" }
 
 ::: en
 
 - **Share link**: Randomly generate a share link in the Lanzuo cloud disk
   - Small tip: **lanzouX** in the link, the last default **X** content sometimes cannot be opened in some areas, you can try to change it yourself, for example, change to i, x, u, t, etc. Anyway, try it out for yourself.
 - **Share password**: the password for the link
-  :::
-  ::: zh-CN
+
+:::
+::: zh-CN
+
 - **分享链接**：在蓝奏云盘内随便生成一个分享链接
   - 小提示 ：链接里面的 **lanzouX**，最后这个默认的 **X**内容有时候有些地区打不开，可以自己更换一下试试看比如换成 i,x,u,t 等等等反正好多自己试试看就行.
 - **分享密码** ：链接的密码
-  :::
 
-## **Repair file info** { lang="en" }
+:::
 
-## **修复文件信息** { lang="zh-CN" }
+## Repair file info { lang="en" }
+
+## 修复文件信息 { lang="zh-CN" }
 
 ::: en
 If you need **WebDav** service, you need to open it
@@ -117,9 +131,9 @@ If you need **WebDav** service, you need to open it
 需要 **WebDav** 服务的，需要打开它
 :::
 
-## **error message** { lang="en" }
+## error message { lang="en" }
 
-## **错误信息** { lang="zh-CN" }
+## 错误信息 { lang="zh-CN" }
 
 ::: en
 Use cookie type or account type to add prompt `not find file page param` error because lanzou changed the domain name
@@ -139,9 +153,9 @@ Use cookie type or account type to add prompt `not find file page param` error b
 
 :::
 
-## **Fill in instructions** { lang="en" }
+## Fill in instructions { lang="en" }
 
-## **填写说明** { lang="zh-CN" }
+## 填写说明 { lang="zh-CN" }
 
 ::: en
 
@@ -156,19 +170,22 @@ Use cookie type or account type to add prompt `not find file page param` error b
 
 :::
 
-::: zh-CN 4. **账户模式**：类型选择`账户`，填写`账户`和`密码`选项，以及`根文件夹ID`(选填,默认为根目录全部文件) 5. **Cookie模式**：类型选择`Cookie`，填写`Cookie`，以及`根文件夹ID`(选填,默认为根目录全部文件) 6. **链接模式**：类型选择`链接`，填写`分享链接`和`根文件夹ID`以及 `分享密码(如果有密码)`两个选项就可以
+::: zh-CN
 
-- 分享链接是 :point_right: https://xxx.lanzou.com/aaabbbccc :point_left: 这种格式的
-- 在`分享链接`填写：https://xxx.lanzou.com
-- 在`根文件夹ID`填写：aaabbbccc
-- 在`分享密码`填写：有密码就写没有就不用写
-  ![lanzou](/img/drivers/lanzou/lanzou_add.png)
+1. **账户模式**：类型选择`账户`，填写`账户`和`密码`选项，以及`根文件夹ID`(选填,默认为根目录全部文件)
+2. **Cookie模式**：类型选择`Cookie`，填写`Cookie`，以及`根文件夹ID`(选填,默认为根目录全部文件)
+3. **链接模式**：类型选择`链接`，填写`分享链接`和`根文件夹ID`以及 `分享密码(如果有密码)`两个选项就可以
+   - 分享链接是 :point_right: https://xxx.lanzou.com/aaabbbccc :point_left: 这种格式的
+   - 在`分享链接`填写：https://xxx.lanzou.com
+   - 在`根文件夹ID`填写：aaabbbccc
+   - 在`分享密码`填写：有密码就写没有就不用写
+     ![lanzou](/img/drivers/lanzou/lanzou_add.png)
 
 :::
 
-### **The default download method used** { lang="en" }
+## The default download method used { lang="en" }
 
-### **默认使用的下载方式** { lang="zh-CN" }
+## 默认使用的下载方式 { lang="zh-CN" }
 
 ::: en
 
