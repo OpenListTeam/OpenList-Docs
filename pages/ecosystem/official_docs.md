@@ -24,27 +24,6 @@ top: 990
 
 :::
 
-## Why OpenList Docs is needed { lang="en" }
-
-## 为什么需要 OpenList Docs { lang="zh-CN" }
-
-:::en
-Documentation Background:
-
-- Provide a centralized, well-organized documentation website
-- Offer both beginner-friendly guides and advanced technical references
-- Enable community contributions through GitHub-based workflow
-
-:::
-
-:::zh-CN
-
-- 提供一个集中的、组织良好的文档网站
-- 提供适合初学者的指南和高级技术参考
-- 通过基于 GitHub 的工作流程支持社区贡献
-
-:::
-
 ## How to use OpenList Docs { lang="en" }
 
 ## 如何使用 OpenList Docs { lang="zh-CN" }
@@ -53,9 +32,9 @@ Documentation Background:
 
 You can directly access [doc.oplist.org.cn](https://doc.oplist.org.cn/) to view the documentation.
 
-### Local Development
+## Local Development
 
-#### Prerequisites
+### Prerequisites
 
 - **Node.js**: Required for running the development environment
 - **pnpm**: Recommended package manager
