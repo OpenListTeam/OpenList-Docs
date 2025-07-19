@@ -1,317 +1,461 @@
 ---
 title:
   en: Crypt
-  zh-CN: Crypt(加密)
+  zh-CN: Crypt（加密）
 icon: iconfont icon-state
-# This control sidebar order
 top: 360
-# A page can have multiple categories
 categories:
   - guide
   - drivers
-# A page can have multiple tags
 tag:
   - Storage
   - Guide
-  - '本地代理'
-# this page is sticky in article list
 sticky: true
-# this page will appear in starred articles
 star: true
 ---
 
-## **introduce** { lang="en" }
-
-## **介绍** { lang="zh-CN" }
-
 ::: en
-What is `Crypt`?
-In simple words, it's a two-password-protected safe. No one can open it without the key. The password and the salt in the configuration form the key.
-::: en
-::: tip
+The Crypt driver provides secure encryption for your files and folders, acting as a two-password-protected vault. Only users with the correct password and salt can access the encrypted content.
 
-1. If you don’t know how to use this encryption/decryption driver, please read this guide carefully
-2. Please test it locally to understand it fully before use in the production environment.
-3. The data loss is 100% caused by configuration change. If data has been stored within Crypt, change configuration won't re-encrypt data, those data will be inaccessible to Crypt!
-   ==Remind again, please read the document carefully, otherwise the data may be lost！==
-   :::
+**Key Features:**
 
-::: zh-CN
-`Crypt`是什么？
-相当于一个两层密码的保险箱加密了，除了你自己有钥匙能打开别人谁也打不开，配置中的密码和盐值相当于钥匙
-当然还有密码和盐值你自己也要保管好，如果丢失了你自己也打不开，除非你自己穷举或者猜出正确密码。
-::: zh-CN
-::: tip 使用提醒
-
-1. 如果你不了解想要使用本 加/解密 驱动请仔细查看一下每个文字
-2. 请先在本地使用了解一下再搬到生产环境中部署使用，否则数据丢失自行承担！
-3. 数据丢失100%的因为修改了配置文件导致的，如果已经上传了文件请勿再修改配置文件，否则数据丢失自行承担！
-   ==再次提醒请仔细阅读文档使用，否则数据丢失自行承担！==
-   :::
-
-## **Instruction** { lang="en" }
-
-## **使用说明** { lang="zh-CN" }
-
-::: en
-We need to build a new **empty folder** in the driver (network disk) that has been mounted now.
-Then fill in the name of our new empty folder to the `Remote path` `Crypt` driver configuration
-E.g:
-
-- Our original driving path was `/123`, we built a new `air` empty folder in the '123' directory
-- Fill `Remote Path` option in `Crypt` config page with `/123/air`
-- To encrypt files, you need to upload them to the newly created "Crypt" drive. Encryption will only be applied when files are uploaded to this driver.
-  - Encrypted files are stored in **`remote path`** , and they can't be opened normally due to the encryption
-  - If you want to open them, you need to view them in the `Crypt` Driver Folder
+- File and folder encryption with multiple security levels
+- Password and salt-based protection
+- Compatible with rclone crypt
+- Supports various encryption modes for filenames and directories
 
 :::
 
 ::: zh-CN
-我们只需要在现在已经挂载的驱动(网盘)中新建一个**空白文件夹**，名称随意，准备给加密(Crypt)驱动使用
-然后把我们新建的空白文件夹名称填写到我们新建的`Crypt`驱动配置中的`加密后文件存储路径`选项
-例如：
+Crypt 驱动为您的文件和文件夹提供安全加密，相当于一个双重密码保护的保险库。只有拥有正确密码和盐值的用户才能访问加密内容。
 
-- 我们原本的驱动路径是`/123`，我们在123这个目录下新建了一个`air空白文件夹`
-- 我们就要在`Crypt`驱动的`加密后文件存储路径`选项填写`/123/air`
-- 我们上传文件需要在 新建的`Crypt`驱动目录进行上传文件才会进行加密
-  - 加密文件我们去 **`加密后文件存储路径`** 查看会看到加密后的文件，无法正常打开查看
-  - 如果要打开查看，我们需要在挂载的`Crypt`驱动文件夹查看
+**主要特性：**
+
+- 文件和文件夹加密，支持多种安全级别
+- 基于密码和盐值的保护机制
+- 与 rclone crypt 完全兼容
+- 支持多种文件名和目录加密模式
 
 :::
 
-## **Config Example** { lang="en" }
+::: en
+::: warning Important Security Notice
 
-## **填写示例** { lang="zh-CN" }
+1. Read this guide thoroughly before using the Crypt driver
+2. Test the configuration in a local environment before production deployment
+3. **Never modify the configuration after storing encrypted data** - this will make data lost
+4. Keep your password and salt values secure - losing them means losing access to your data
+
+Again, please read the documentation carefully; otherwise, any data loss will be at your own risk!
+:::
+
+::: zh-CN
+::: warning 重要安全提醒
+
+1. 使用 Crypt 驱动前请仔细阅读本指南
+2. 在生产环境部署前请先在本地测试配置，否则数据丢失自行承担！
+3. **存储加密数据后绝不能修改配置** - 这会100%导致现有数据丢失
+4. 请妥善保管您的密码和盐值 - 丢失它们将无法访问您的数据
+
+**再次提醒请仔细阅读文档使用，否则数据丢失自行承担！**
+:::
+
+## Setup Instructions { lang="en" }
+
+## 设置说明 { lang="zh-CN" }
 
 ::: en
-If you don’t know how to configure, you can use the simpler default configuration as follows. The role of each configuration will be explained in detail below
-![image-20230721230425597](/img/drivers/crypt/crypt-demo1.png)
-:::danger Please read carefully --- very important
-Once the configuration is set and started using, do not modify it, do not modify it, do not modify it!
-The original [**Password**](#password) and [**Salt**](#salt) should be kept in other places. These two options will be encrypted and can't be reveled after saving.
 
-- **If you forget the password before uploading any file, you can modify and re-fill in the password configuration**
+1. **Create Storage Location**
+
+   Create an **empty folder** in your existing mounted drive to store encrypted files.
+
+2. **Configure Remote Path**
+
+   Enter the path of the empty folder in the `Remote path` field of your Crypt driver configuration.
+
+   **Example Configuration:**
+   - Original driver path: `/123`
+   - New empty folder: `/123/encrypted_storage`
+   - Remote path setting: `/123/encrypted_storage`
+
+3. **Upload Files**
+
+   Upload files to the newly created Crypt driver mount point. Only files uploaded through the Crypt driver will be encrypted.
+
+   **File Access:**
+   - **Encrypted files**: Located in the remote path, appear scrambled and cannot be opened directly
+   - **Decrypted access**: View and access files normally through the Crypt driver mount point
+
+:::
+
+::: zh-CN
+
+1. **创建存储位置**
+
+   在现有已挂载的驱动中创建一个**空文件夹**，用于存储加密后的文件。
+
+2. **配置远程路径**
+
+   在 Crypt 驱动配置的`远程路径`字段中填入空文件夹的路径。
+
+   **配置示例：**
+   - 原驱动路径：`/123`
+   - 新建空文件夹：`/123/encrypted_storage`
+   - 远程路径设置：`/123/encrypted_storage`
+
+3. **上传文件**
+
+   将文件上传到新创建的 Crypt 驱动挂载点。只有通过 Crypt 驱动上传的文件才会被加密。
+
+   **文件访问方式：**
+   - **加密文件**：位于远程路径中，显示为加密状态，无法直接打开
+   - **解密访问**：通过 Crypt 驱动挂载点正常查看和访问文件
+
+:::
+
+### Basic Configuration Example { lang="en" }
+
+### 基础配置示例 { lang="zh-CN" }
+
+::: en
+For users new to encryption, use the following default configuration:
+
+![Crypt Configuration Example](/img/drivers/crypt/crypt-demo1.png)
+:::
+
+::: zh-CN
+对于首次使用加密的新手用户，建议使用以下默认配置：
+
+![Crypt 配置示例](/img/drivers/crypt/crypt-demo1.png)
+:::
+
+::: en
+::: danger Please make sure to read the following important notes carefully to ensure understanding!
+
+**Important Declaration:**
+
+- **Do not modify the configuration! Do not modify the configuration! Do not modify the configuration!** Once the configuration is saved, do not modify it again!!! This is repeated for emphasis!
+- **Password** and **Salt** must be remembered! After clicking save, they will be encrypted and cannot be displayed in plain text (the plain text in the image shows the state before saving).
+
+> [**Password Configuration Instructions**](#password)
+>
+> [**Salt Configuration Instructions**](#salt)
 
 ---
 
-If you have not uploaded any file in the Crypt, you may modify the configuration, otherwise do not modify it!!!
-If you have data in Crypt, and changed the configuration, `Crypt` will try to filter out illegal files/folders, but the illegal data still exist in the remote storage
+- **If you have not yet uploaded files within the Crypt driver**, you can modify the password and configuration. **Otherwise, do not modify!**
+- After modifying the configuration, Crypt will attempt to filter illegal files/directories, but illegal data will not be automatically deleted.
+  - **Illegal files/directories** refer to encrypted data generated with a different configuration.
 
-- **Illegal means data that is encrypted by another config**
-  ::: en
-  ::: warning
-  There are 5 methods for the encryption combination, (in fact 6 types) Because only the **folder encryption is turned on, the file name is not encrypted** and the configuration does not take effect (the first one of the example below)
+:::
 
-1. <Badge text="invalid" color="red" vertical="middle" /> Filename `Off`，Directory `true`
-2. <Badge text="valid" type="tip" vertical="middle" /> Filename `Off`，Directory `false`
-3. <Badge text="valid" type="tip" vertical="middle" /> Filename `Standard`，Directory `false`
-4. <Badge text="valid" type="tip" vertical="middle" /> Filename `Standard`，Directory `true`
-5. <Badge text="valid" type="tip" vertical="middle" /> Filename `Obfuscate`，Directory `false`
-6. <Badge text="valid" type="tip" vertical="middle" /> Filename `Obfuscate`，Directory `true`
-   :::
-   ::: en
-   <br/>
-   :::
-   ::: zh-CN
-   如果你不懂如何配置，可以使用如下最简单默认的配置，具体每个配置的作用会在下方详细说明
-   ![image-20230721230425597](/img/drivers/crypt/crypt-demo1.png)
-   :::danger 请仔细阅读注意事项 --- 非常重要
-   再次重申一下请勿嫌啰嗦
-   在配置中一经填写保存后，请勿修改，请勿修改，请勿修改！！！重要的事情说三遍
-   [**密码**](#密码) 和 [**盐值**](#盐值) 请必须记住，点击保存后这两个选项就会进行加密无法明文显示（上图明文显示是因为还未保存）
+::: zh-CN
+::: danger 请务必仔细阅读以下注意事项，确保理解！
 
-- **如果在没有上传文件之前密码忘记了可以重新填写密码配置**
+**重要声明：**
+
+- **请勿修改配置！请勿修改配置！请勿修改配置！** 配置一旦保存后，请不要再进行修改！！！重要的事情重复三遍！
+- **密码** 和 **盐值** 必须牢记！点击保存后，它们将被加密，无法以明文显示（图中的明文是尚未保存前的状态）。
+
+> [**密码配置说明**](#密码)
+>
+> [**盐值配置说明**](#盐值)
 
 ---
 
-如果你还没有在Crypt驱动內上传文件，可以修改配置，否则请勿修改！！
-如果在已有数据的情况下更改配置，`Crypt`尽力过滤非法文件/目录，但非法数据不会被删除
+- **如果你还没有再 Crypt 驱动内上传文件**，可以修改密码和配置。**否则请勿修改！**
+- 修改配置后，Crypt 会尽量过滤非法文件/目录，但非法数据不会被自动删除。
+  - **非法文件/目录** 是指由不同配置生成的加密数据。
 
-- **非法文件/目录指的是另一种配置生成的加密数据**
-  ::: zh-CN
-  ::: warning
-  关于加密组合一共有5种方式，（实际上是6种）因为只开启**文件夹加密，文件名不加密**这样的配置不生效（下面举例的第一种）
-
-1. <Badge text="无效" color="red" vertical="middle" /> 文件名 `Off`，文件夹 `true`
-2. <Badge text="有效" type="tip" vertical="middle" /> 文件名 `Off`，文件夹 `false`
-3. <Badge text="有效" type="tip" vertical="middle" /> 文件名 `标准`，文件夹 `false`
-4. <Badge text="有效" type="tip" vertical="middle" /> 文件名 `标准`，文件夹 `true`
-5. <Badge text="有效" type="tip" vertical="middle" /> 文件名 `混淆`，文件夹 `false`
-6. <Badge text="有效" type="tip" vertical="middle" /> 文件名 `混淆`，文件夹 `true`
-   :::
-   ::: zh-CN
-   <br/>
-   :::
-
-### <i class="fa-solid fa-files" style="color: #409eff;"></i> **Filename encryption** { lang="en" }
-
-### <i class="fa-solid fa-files" style="color: #409eff;"></i> **文件名加密** { lang="zh-CN" }
+:::
 
 ::: en
-If you don’t understand, you can use the default configuration
+::: warning
+Regarding encryption combinations, there are 5 options available (actually 6), but it’s important to note that if only folder encryption is enabled without encrypting the file names, the configuration will not take effect (as shown in the first example below).
 
-- 1.**The default is `off` state**
-  - Whether the file name needs to be encrypted, and the file name is encrypted after uploading
-- 2.**Standard Encryption**
-  - Standard encryption safety level high^(recommended)^
-- 3.**Simple Obfuscate**
-  - The security level is very low, but friendly to long file name. Note: for the Chinese file name, special characters will be generated. Some network disk storage may not support them
-- The left side of the figure below is encrypted [**Remote path**](#remote-path)，On the right is the decrypted 'crypt` driver to view the file
-  - If not enabled <Badge text="Filename" type="tip" vertical="middle" /> encryption，It will be like <Badge text="Upper left corner pic" color="rgb(216,100,69)" vertical="middle" /> A new encrypted suffix is added behind the source file（xxxxx\.xxx **.bin** ）(The suffix name can be customized)
-  - If you enabled <Badge text="Filename" type="tip" vertical="middle" /> encryption，It will be like <Badge text="Lower left corner pic" color="rgb(78,130,184)" vertical="middle" /> In this way, the file name is also confused with encryption, no suffix and the original file name，others can't know what it is, but it can be viewed in `crypt`（<Badge text="The folder displayed on the right" color="rgb(0.0.0.0)" vertical="middle" />）
-    ![image-20230721230425597](/img/drivers/crypt/crypt-demo2.png)
-    <br/>
+| Filename Encryption | Directory Encryption | Status     |
+| ------------------- | -------------------- | ---------- |
+| `Off`               | `Enabled`            | ❌ Invalid |
+| `Off`               | `Disabled`           | ✅ Valid   |
+| `Standard`          | `Disabled`           | ✅ Valid   |
+| `Standard`          | `Enabled`            | ✅ Valid   |
+| `Obfuscate`         | `Disabled`           | ✅ Valid   |
+| `Obfuscate`         | `Enabled`            | ✅ Valid   |
 
 :::
 
 ::: zh-CN
-如果看不懂可以使用默认配置
+::: warning
+关于加密组合，共有5种方式可供选择（实际上是6种），但需要注意的是，如果只启用文件夹加密而不加密文件名的配置将不会生效（例如下面举例的第1种情况）。
 
-- 1.**默认为 `Off关闭`状态**
-  - 文件名是否加密，作用于上传后文件名进行加密
-- 2.**标准加密**
-  - 标准加密安全等级高^(荐)^
-- 3.**简单混淆**
-  - 安全等级很低 ，对长文件名友好，但是对于中文文件名会生成特殊字符，某些网盘存储不支持特殊字符。
-- 下图中左侧的加密了的 [**加密后文件存储路径**](#加密后文件存储路径)，右侧是解密后的`Crypt`驱动可以查看文件
-  - 如果不开启<Badge text="文件名" type="tip" vertical="middle" />加密，就会显示<Badge text="左上角" color="rgb(216,100,69)" vertical="middle" />那样的是源文件后面新增一个加密的后缀（xxxxx\.xxx **.bin** ）(后缀名可以自定义不一定是.bin)
-  - 如果开启<Badge text="文件名" type="tip" vertical="middle" />加密，就会显示<Badge text="左下角" color="rgb(78,130,184)" vertical="middle" />那样将文件名也进行了加密混淆没有了后缀和原文件名，别人就无法知道是什么了，但是可以在`Crypt`驱动（<Badge text="右侧展示的文件夹" color="rgb(0.0.0.0)" vertical="middle" />）中看到真实文件名
-    ![image-20230721230425597](/img/drivers/crypt/crypt-demo2.png)
-    <br/>
+| 文件名加密          | 目录加密 | 状态    |
+| ------------------- | -------- | ------- |
+| `Off（关闭）`       | `启用`   | ❌ 无效 |
+| `Off（关闭）`       | `禁用`   | ✅ 有效 |
+| `Standard（标准）`  | `禁用`   | ✅ 有效 |
+| `Standard（标准）`  | `启用`   | ✅ 有效 |
+| `Obfuscate（混淆）` | `禁用`   | ✅ 有效 |
+| `Obfuscate（混淆）` | `启用`   | ✅ 有效 |
 
 :::
 
-### <i class="fa-solid fa-folder-open" style="color: #409eff;"></i> **Directory name encryption** { lang="en" }
+## Configuration Options { lang="en" }
 
-### <i class="fa-solid fa-folder-open" style="color: #409eff;"></i> **文件夹名加密** { lang="zh-CN" }
+## 配置选项 { lang="zh-CN" }
+
+### Filename Encryption { lang="en" }
+
+### 文件名加密 { lang="zh-CN" }
 
 ::: en
-default is `false`, i.e disabled. don't use it if you don't understand below description
-When you turn on the folder encryption, you must select a **filename encryption** type. Otherwise, the folder encryption will not take effect
+**Default:** `Disabled`
 
-- The left side of the figure below is encrypted [**Remote path**](#remote-path)，On the right is the decrypted 'crypt` driver to view the file
-  - If disabled <Badge text="Directory" type="tip" vertical="middle" /> encryption，It will be like<Badge text="Upper left corner pic" color="rgb(216,100,69)" vertical="middle" /> No change to folder name
-  - If enabled <Badge text="Directory" type="tip" vertical="middle" /> encryption，It will be displayed<Badge text="Lower left corner pic" color="rgb(78,130,184)" vertical="middle" /> folder name is encrypted
-    ![image-20230721230425597](/img/drivers/crypt/crypt-demo2.png)
-    <br/>
+**Available Options:**
+
+| Mode        | Security Level | Description                                                                   |
+| ----------- | -------------- | ----------------------------------------------------------------------------- |
+| `Off`       | None           | Files keep original names with encrypted suffix (e.g., `file.txt.bin`)        |
+| `Standard`  | High           | **Recommended** - Strong encryption with good security                        |
+| `Obfuscate` | Low            | Simple obfuscation, supports long filenames but may create special characters |
+
+---
+
+In the image below, the left side shows file **name encryption** and folder **name encryption** enabled, while the right side shows the decrypted Crypt driver where files can be viewed.
+
+- **File name encryption not enabled**: Original name + encrypted suffix, as shown in the top left corner
+- **File name encryption enabled**: Fully encrypted file name, content cannot be recognized, as shown in the bottom left corner
+
+![Filename Encryption Comparison](/img/drivers/crypt/crypt-demo2.png)
+:::
+
+::: zh-CN
+**默认值：** `禁用`
+
+**可用选项：**
+
+| 模式                | 安全级别 | 说明                                               |
+| ------------------- | -------- | -------------------------------------------------- |
+| `Off（关闭）`       | 无       | 文件保持原名称并添加加密后缀（如：`file.txt.bin`） |
+| `Standard（标准）`  | 高       | **推荐** - 强加密，具有良好的安全性                |
+| `Obfuscate（混淆）` | 低       | 简单混淆，支持长文件名但可能产生特殊字符           |
+
+---
+
+下图中左侧开启了**文件名加密**和**文件夹名称加密**，右侧为解密后的Crypt驱动可以查看文件
+
+- **未启用文件名加密**：原始名称 + 加密后缀，如左上角
+- **启用文件名加密**：完全加密的文件名，无法识别内容，如左下角
+
+![文件名加密对比](/img/drivers/crypt/crypt-demo2.png)
+:::
+
+### Directory Name Encryption { lang="en" }
+
+### 文件夹名称加密 { lang="zh-CN" }
+
+::: en
+**Default:** `Disabled`
+
+Directory encryption requires filename encryption to be enabled. When activated, folder names are also encrypted for enhanced security.
+
+**Configuration Combinations:**
+
+| Filename Encryption | Directory Encryption | Status     |
+| ------------------- | -------------------- | ---------- |
+| `Off`               | `Enabled`            | ❌ Invalid |
+| `Off`               | `Disabled`           | ✅ Valid   |
+| `Standard`          | `Disabled`           | ✅ Valid   |
+| `Standard`          | `Enabled`            | ✅ Valid   |
+| `Obfuscate`         | `Disabled`           | ✅ Valid   |
+| `Obfuscate`         | `Enabled`            | ✅ Valid   |
 
 :::
 
 ::: zh-CN
-使用启用文件夹加密，默认为 `false` 未启用，看不懂可以不启用，
-开启文件夹加密的同时必须选择一项**文件名加密**否则单独只开文件夹加密不生效
+**默认值：** `禁用`
 
-- 下图中左侧的加密了的 [**加密后文件存储路径**](#加密后文件存储路径)，右侧是解密后的`crypt`驱动可以查看文件
-  - 如果不开启<Badge text="文件夹" type="tip" vertical="middle" />加密，就会显示<Badge text="左上角" color="rgb(216,100,69)" vertical="middle" />那样的没有任何变化的文件夹
-  - 如果开启<Badge text="文件夹" type="tip" vertical="middle" />加密，就会显示<Badge text="左下角" color="rgb(78,130,184)" vertical="middle" />那样将文件夹名字也进行了加密混淆
-    ![image-20230721230425597](/img/drivers/crypt/crypt-demo2.png)
-    <br/>
+目录加密需要先启用文件名加密。激活后，文件夹名称也会被加密以增强安全性。
+
+**配置组合：**
+
+| 文件名加密          | 目录加密 | 状态    |
+| ------------------- | -------- | ------- |
+| `Off（关闭）`       | `启用`   | ❌ 无效 |
+| `Off（关闭）`       | `禁用`   | ✅ 有效 |
+| `Standard（标准）`  | `禁用`   | ✅ 有效 |
+| `Standard（标准）`  | `启用`   | ✅ 有效 |
+| `Obfuscate（混淆）` | `禁用`   | ✅ 有效 |
+| `Obfuscate（混淆）` | `启用`   | ✅ 有效 |
 
 :::
 
-### <i class="fa-solid fa-cloud-binary" style="color: #409eff;"></i> **Remote path** { lang="en" }
+### Remote Path { lang="en" }
 
-### <i class="fa-solid fa-cloud-binary" style="color: #409eff;"></i> **加密后文件存储路径** { lang="zh-CN" }
+### 加密后文件存储路径 { lang="zh-CN" }
 
 ::: en
-It is the storage and encrypted file, which can be any driver in the driver that can be mounted
-<br/>
+The storage location for encrypted files. Can be any mountable drive supported by OpenList.
 :::
 ::: zh-CN
-也就是存储加密后的文件，可以是OpenList能挂载的驱动里面任意一款驱动
-<br/>
+加密文件的存储位置。可以是 OpenList 支持的任何可挂载驱动。
 :::
 
-### <i class="fa-solid fa-lock-keyhole" style="color: #409eff;"></i> **Password** { lang="en" }
+### Security Parameters { lang="en" }
 
-### <i class="fa-solid fa-lock-keyhole" style="color: #409eff;"></i> **密码** { lang="zh-CN" }
+### 安全参数 { lang="zh-CN" }
 
 ::: en
-Just literally meaning password
+::: danger
+After saving the configuration, both password and salt values are encrypted and cannot be displayed in plain text. Store them securely in a separate location.
 :::
 ::: zh-CN
-就是字面意思密码
+::: danger
+保存配置后，密码和盐值都会被加密，无法以明文显示。请在其他地方安全存储这些值。
 :::
 
-### <i class="fa-solid fa-lock-keyhole" style="color: #409eff;"></i> **Salt** { lang="en" }
+#### Password { lang="en" }
 
-### <i class="fa-solid fa-lock-keyhole" style="color: #409eff;"></i> **盐值** { lang="zh-CN" }
+#### 密码 { lang="zh-CN" }
 
 ::: en
-It can be treated as the second password if you don't understand it
-<br/>
+Primary encryption key. **Must be remembered** - cannot be recovered if lost.
 :::
 ::: zh-CN
-也可以理解为第二个密码
-<br/>
+主要加密密钥。**必须牢记** - 丢失后无法恢复。
 :::
 
-### **Encrypted suffix** { lang="en" }
+#### Salt { lang="en" }
 
-### **加密后缀** { lang="zh-CN" }
+#### 盐值 { lang="zh-CN" }
 
 ::: en
-Advanced options,The default is `.bin`, the custom must start with` .`, such as .abc .aaa .Psd.
-If the file name is encrypted, the encryption suffix `will not be used
-<br/>
+Secondary encryption key, acts as an additional password layer. **Must be remembered** - cannot be recovered if lost.
+
+If you don't know what is salt, treat it as a second password. Optional but recommended
+
 :::
 ::: zh-CN
-高级选项，默认为`.bin`，可自定义必须要以`.`开头，例如 .abc .aaa .psd 这样的后缀
-如果开启了文件名加密`加密后缀`就不会显示
-<br/>
+辅助加密密钥，相当于第二层密码保护。**必须牢记** - 丢失后无法恢复。
+
+如果您不知道什么是加盐，可以视为第二个密码。可选，推荐。
 :::
 
-### **Filename encoding** { lang="en" }
+### Advanced Options { lang="en" }
 
-### **文件名编码** { lang="zh-CN" }
+### 高级选项 { lang="zh-CN" }
+
+#### Encrypted Suffix { lang="en" }
+
+#### 加密后缀 { lang="zh-CN" }
 
 ::: en
-Advanced options, non -professionals, please do not modify it. The default is **`base64`**, but the options other than **`base64`** are not tested. If you encounter problems, you need to solve it yourself.
--Dy reference [#5109](https://github.com/alist-org/alist/issues/5109)，[#5080](https://github.com/alist-org/alist/issues/5080)
-<br/>
+**Default:** `.bin`
+
+Custom suffix for encrypted files (only used when filename encryption is disabled). Must start with a dot (e.g., `.abc`, `.encrypted`).
 :::
+
 ::: zh-CN
-高级选项，非专业人士请勿修改，默认为 **`Base64`**，但是除了 **`Base64`** 之外的选项并没有测试，遇到问题需要自己解决。
+**默认值：** `.bin`
 
-- 参考[#5109](https://github.com/alist-org/alist/issues/5109)，[#5080](https://github.com/alist-org/alist/issues/5080)
-  <br/>
-  :::
+加密文件的自定义后缀（仅在文件名加密禁用时使用）。必须以点开头（例如：`.abc`、`.encrypted`）。
+:::
 
-## **Advanced usage** { lang="en" }
+#### Filename Encoding { lang="en" }
 
-## **高级用法** { lang="zh-CN" }
+#### 文件名编码 { lang="zh-CN" }
 
 ::: en
-Advanced usage is only applicable to those who know about **`rclone`**
-If you know the **`rclone`** very well, you can check :point_right: [**rclone crypt document**](https://rclone.org/crypt) Currently fully compatible
-Note: `Alist Crypt` used `filename_encoding = base64` in default. If you want to use Rclone, please config it in the advanced config. (Reason: more friendly to long filename)
-Since Alist does not consider any case-insensitive internally, you may encounter problems when remote storage is case-insensitive. e.g.: use alist local driver on Windows, then use Crypt on it.
-<br/>
+**Default:** `base64`
+
+**Warning:** Only modify if you understand the implications. Other encoding options are not thoroughly tested and may cause compatibility issues.
+
+For rclone compatibility, configure this setting in advanced options.
 :::
+
 ::: zh-CN
-高级用法仅适用于对 **`Rclone`** 了解的人
-如果你对 **`Rclone`** 很了解可以看 :point_right: [**Rclone Crypt 文档**](https://rclone.org/crypt) 目前完全兼容
-注意，`Alist Crypt`驱动默认使用了 `filename_encoding = base64` ,如果使用Rclone请在高级设置中配置此条。（理由：对长文件名更友好一些）
-因为alist内部并没有对大小写**不敏感**提供支持，所以如果使用了大小写不敏感的文件系统可能会出问题，例如：windows上使用本地存储驱动，再使用Crypt
-<br/>
+**默认值：** `base64`
+
+**警告：** 仅在了解其影响时才修改此设置。其他编码选项未经充分测试，可能导致兼容性问题。
+
+为了与 rclone 兼容，请在高级选项中配置此设置。
 :::
 
-## **Precautions** { lang="en" }
+## Advanced Usage { lang="en" }
 
-## **注意事项** { lang="zh-CN" }
+## 高级用法 { lang="zh-CN" }
+
+### Rclone Compatibility { lang="en" }
+
+### Rclone 兼容性 { lang="zh-CN" }
 
 ::: en
-When starting alist, I found that the Crypt prompts errors because Crypt can not find the relevant path when starting, You can fill in the Crypt [order](common.md#order) to make Crypt start slowly
-<br/>
+The Crypt driver is fully compatible with [rclone crypt](https://rclone.org/crypt).
+
+**Important Notes:**
+
+- OpenList Crypt uses `filename_encoding = base64` by default for better long filename support, configure this setting in advanced options when using with rclone
+- Case-insensitive filesystems (e.g., Windows with local storage) may cause issues
+
 :::
+
 ::: zh-CN
-启动OpenList时发现Crypt提示错误，是因为Crypt靠前启动时候找不到相关路径，可以通过给Crypt驱动填写[序号](common.md#序号)让Crypt启动靠后
-<br/>
+Crypt 驱动与 [rclone crypt](https://rclone.org/crypt) 目前完全兼容。
+
+**重要说明：**
+
+- OpenList Crypt 默认使用 `filename_encoding = base64` 以更好地支持长文件名，与 rclone 一起使用时请在高级选项中配置此设置
+- 大小写不敏感的文件系统（如 Windows 本地存储）可能会出现问题
+
 :::
 
-## **The default download method used** { lang="en" }
+## Troubleshooting { lang="en" }
 
-## **默认使用的下载方式** { lang="zh-CN" }
+## 故障排除 { lang="zh-CN" }
+
+### Startup Errors { lang="en" }
+
+### 启动错误 { lang="zh-CN" }
+
+::: en
+If Crypt shows errors during OpenList startup, it's likely because Crypt starts before its target path is available.
+
+**Solution:** Set a higher [order number](./common.md#order) for the Crypt driver to delay its initialization.
+:::
+
+::: zh-CN
+如果 Crypt 在 OpenList 启动时显示错误，可能是因为 Crypt 在其目标路径可用之前就启动了。
+
+**解决方案：** 为 Crypt 驱动设置更高的[序号](./common.md#序号)以延迟其初始化。
+:::
+
+### Data Access Issues { lang="en" }
+
+### 数据访问问题 { lang="zh-CN" }
+
+::: en
+If you cannot access previously encrypted data:
+
+1. Verify that the password and salt values are correct
+2. Ensure the configuration hasn't been modified
+3. Check that the remote path is accessible
+4. Confirm the filename encoding setting matches your original configuration
+
+:::
+
+::: zh-CN
+如果无法访问之前加密的数据：
+
+1. 验证密码和盐值是否正确
+2. 确保配置未被修改
+3. 检查远程路径是否可访问
+4. 确认文件名编码设置与原始配置匹配
+
+:::
+
+## The default download method used { lang="en" }
+
+## 默认使用的下载方式 { lang="zh-CN" }
 
 ::: en
 

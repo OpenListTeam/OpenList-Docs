@@ -20,9 +20,9 @@ sticky: true
 star: true
 ---
 
-## **refresh token** { lang="en" }
+## Refresh Token { lang="en" }
 
-## **刷新令牌** { lang="zh-CN" }
+## 刷新令牌 { lang="zh-CN" }
 
 ::: en
 ~~[**Click here to log in**](https://www.terabox.com/) to obtain a refresh token~~
@@ -41,9 +41,9 @@ Then enter https://www.terabox.com in the address bar of this tab to enter the w
 <br/>
 :::
 
-## **Download api** { lang="en" }
+## Download Api { lang="en" }
 
-## **下载接口** { lang="zh-CN" }
+## 下载接口 { lang="zh-CN" }
 
 ::: en
 **Download api needs to choose ==`Crack`==** ，before you can use ^(v3.29)^
@@ -54,9 +54,9 @@ Then enter https://www.terabox.com in the address bar of this tab to enter the w
 <br/>
 :::
 
-## **Root folder id** { lang="en" }
+## Root folder id { lang="en" }
 
-## **根文件夹ID** { lang="zh-CN" }
+## 根文件夹ID { lang="zh-CN" }
 
 ::: en
 
@@ -76,9 +76,9 @@ Then enter https://www.terabox.com in the address bar of this tab to enter the w
 
 :::
 
-## **Download error using Proxy Url link** { lang="en" }
+## Download error using Proxy Url link { lang="en" }
 
-## **使用Proxy Url链接下载错误** { lang="zh-CN" }
+## 使用Proxy Url链接下载错误 { lang="zh-CN" }
 
 ::: en
 Using [**Proxy Url**](common.md#download-proxy-url) to download error
@@ -107,9 +107,9 @@ View specific reasons：**[https://github.com/alist-org/alist/issues/6508](https
 <br/>
 :::
 
-### **The default download method used** { lang="en" }
+## The default download method used { lang="en" }
 
-### **默认使用的下载方式** { lang="zh-CN" }
+## 默认使用的下载方式 { lang="zh-CN" }
 
 ::: en
 

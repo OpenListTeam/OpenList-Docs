@@ -1,6 +1,6 @@
 ---
 title:
-  en: NewLanZou Cloud
+  en: iLanZou
   zh-CN: 蓝奏云优享版
 icon: iconfont icon-state
 # This control sidebar order
@@ -20,44 +20,35 @@ sticky: true
 star: true
 ---
 
-::: en
-ilanzou：https://ilanzou.com
-:::
-::: zh-CN
-蓝奏云优享版：https://ilanzou.com
-:::
+**https://ilanzou.com**
 
-## **Root folder ID** { lang="en" }
+## Root folder ID { lang="en" }
 
-## **根文件夹ID** { lang="zh-CN" }
+## 根文件夹ID { lang="zh-CN" }
 
 ::: en
 root folder ID the default is `0`，Other directory ID View the figure below obtaining method
-<img src="/img/drivers/lanzou/ilanzou_folder.png" alt="LanZou folder_id" />
-<br/>
+![LanZoufolder_id](/img/drivers/lanzou/ilanzou_folder.png)
 :::
 ::: zh-CN
 根目录ID，默认为`0`，其它目录ID查看下图获取方式
-<img src="/img/drivers/lanzou/ilanzou_folder.png" alt="LanZou folder_id"/>
-<br/>
+![LanZoufolder_id](/img/drivers/lanzou/ilanzou_folder.png)
 :::
 
-## **username、password** { lang="en" }
+## username、password { lang="en" }
 
-## **账户、密码** { lang="zh-CN" }
+## 账户、密码 { lang="zh-CN" }
 
 ::: en
 Just fill in your own NewLanzou Cloud Account Password
-<br/>
 :::
 ::: zh-CN
 填写自己的蓝奏云优享版帐号密码
-<br/>
 :::
 
-### **The default download method used** { lang="en" }
+### The default download method used { lang="en" }
 
-### **默认使用的下载方式** { lang="zh-CN" }
+### 默认使用的下载方式 { lang="zh-CN" }
 
 ::: en
 

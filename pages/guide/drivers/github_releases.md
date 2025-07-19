@@ -1,131 +1,179 @@
 ---
 title:
   en: GitHub Releases
-  zh-CN: GitHub Releases
+  zh-CN: GitHub 发行版
 icon: iconfont icon-state
-# This control sidebar order
 top: 20
-# A page can have multiple categories
 categories:
   - guide
   - drivers
-# A page can have multiple tags
 tag:
   - Storage
   - Guide
   - '302'
   - '官方'
-# this page is sticky in article list
 sticky: true
-# this page will appear in starred articles
 star: true
 ---
 
+## Overview { lang="en" }
+
+## 概述 { lang="zh-CN" }
+
 ::: en
-::: tip
-GitHub API rate limits: The primary rate limit for unauthenticated requests is 60 requests per hour. Making API requests using a personal access token counts toward your personal rate limit of 5,000 requests per hour.
+GitHub Releases driver allows you to mount GitHub repository releases as a file system, enabling direct access to release assets through a familiar directory structure.
 :::
 
 ::: zh-CN
-::: tip
-GitHub API 速率限制：未经身份验证的请求的主要速率限制为每小时 60 个请求。使用个人访问令牌发出 API 请求计入您每小时 5000 个请求的个人速率限制。
+GitHub Releases 驱动允许您将 GitHub 仓库的发布版本挂载为文件系统，通过熟悉的目录结构直接访问发布资源。
 :::
 
-## Repo Structure { lang="en" }
+## API Rate Limits { lang="en" }
 
-## 仓库结构 { lang="zh-CN" }
-
-tabs#UrlTree
-@tab 1
-The simplest usage is to directly write `owner/repository`, only one can be filled in.
-:::
-tabs#UrlTree
-@tab 1
-最简单的用法，直接写 `所有者/仓库`，只能填一个
-:::
-
-##### Input { lang="en" }
-
-##### 输入 { lang="zh-CN" }
+## API 速率限制 { lang="zh-CN" }
 
 ::: en
+::: warning Rate Limits
 
-```
-OpenListTeam/OpenList
-```
+- **Unauthenticated requests**: 60 requests per hour
+- **Authenticated requests** (with token): 5,000 requests per hour
 
-The effect is the same as the following:
-
-```
-/:openlistteam/openlist
-```
-
-@tab 2
-Mount to a subdirectory, you can mount multiple repositories
+We recommend using a personal access token to avoid hitting rate limits.
 :::
-::: zh-CN
 
-```
+::: zh-CN
+::: warning 速率限制
+
+- **未认证请求**：每小时 60 次请求
+- **已认证请求**（使用令牌）：每小时 5,000 次请求
+
+建议使用个人访问令牌以避免触及速率限制。
+:::
+
+## Repository Configuration { lang="en" }
+
+## 仓库配置 { lang="zh-CN" }
+
+### Basic Usage { lang="en" }
+
+### 基本用法 { lang="zh-CN" }
+
+::: en
+**Single Repository Mount**
+
+Mount a single repository to the root directory:
+
+```text
 OpenListTeam/OpenList
 ```
 
-与下面的写法效果一致：
+This is equivalent to:
 
-```
+```text
 /:OpenListTeam/OpenList
 ```
 
-@tab 2
-挂载到子目录，可以挂多个仓库
 :::
 
-##### Input { lang="en" }
+::: zh-CN
+**单个仓库挂载**
 
-##### 输入 { lang="zh-CN" }
+将单个仓库挂载到根目录：
+
+```text
+OpenListTeam/OpenList
+```
+
+等价于：
+
+```text
+/:OpenListTeam/OpenList
+```
+
+:::
+
+### Multiple Repositories { lang="en" }
+
+### 多个仓库 { lang="zh-CN" }
 
 ::: en
+**Mount to Subdirectories**
 
-```
+You can mount multiple repositories to different subdirectories:
+
+```text
 /openlist-gh:OpenListTeam/OpenList
 /openlist-frontend-gh:OpenListTeam/OpenList-Frontend
 ```
 
-The leading `/` can be omitted:
+The leading `/` is optional:
 
-```
+```text
 openlist-gh:OpenListTeam/OpenList
-openlist-frontend-gh:openListteam/openlist-frontend
+openlist-frontend-gh:OpenListTeam/OpenList-Frontend
 ```
 
 :::
-::: en
-<br/>
-:::
+
 ::: zh-CN
+**挂载到子目录**
 
+您可以将多个仓库挂载到不同的子目录：
+
+```text
+/openlist-gh:OpenListTeam/OpenList
+/openlist-frontend-gh:OpenListTeam/OpenList-Frontend
 ```
+
+前导的 `/` 可以省略：
+
+```text
 openlist-gh:OpenListTeam/OpenList
-openlist-frontend-gh:openListteam/openlist-frontend
-```
-
-最前面的 `/` 可以省略：
-
-```
-openlist-gh:OpenListTeam/OpenList
-openlist-frontend-gh:openListteam/openlist-frontend
+openlist-frontend-gh:OpenListTeam/OpenList-Frontend
 ```
 
 :::
-::: zh-CN
-<br/>
-:::
 
-## Show README file { lang="en" }
+## Configuration Options { lang="en" }
 
-## 显示 README、LICENSE 文件 { lang="zh-CN" }
+## 配置选项 { lang="zh-CN" }
+
+### Personal Access Token { lang="en" }
+
+### 个人访问令牌 { lang="zh-CN" }
 
 ::: en
-Off switch：
+**When to use:**
+
+- Required for accessing private repositories
+- Recommended to avoid rate limiting issues
+
+**How to get:**
+
+1. Log in to GitHub
+2. Visit: https://github.com/settings/tokens
+3. Generate a new token with appropriate permissions
+   :::
+
+::: zh-CN
+**使用场景：**
+
+- 访问私有仓库时必需
+- 建议使用以避免速率限制问题
+
+**获取方法：**
+
+1. 登录 GitHub
+2. 访问：https://github.com/settings/tokens
+3. 生成具有适当权限的新令牌
+   :::
+
+### Show All Versions { lang="en" }
+
+### 显示所有版本 { lang="zh-CN" }
+
+::: en
+**Disabled (default):**
 
 ```
 openlist/
@@ -133,80 +181,7 @@ openlist/
 └── openlist-windows-amd64.zip
 ```
 
-On switch：
-
-```
-openlist/
-├── v3.41.0/
-│   ├── openlist-linux-amd64.tar.gz
-│   └── openlist-windows-amd64.zip
-├── v3.40.0/
-│   ├── openlist-linux-amd64.tar.gz
-│   └── openlist-windows-amd64.zip
-├── LICENSE
-├── README.md
-└── README_cn.md
-```
-
-If enabled, the total size and modification time of the folder will not be displayed.
-<br/>
-:::
-::: zh-CN
-开启前：
-
-```
-openlist/
-├── openlist-linux-amd64.tar.gz
-└── openlist-windows-amd64.zip
-```
-
-开启后：
-
-```
-openlist/
-├── v3.41.0/
-│   ├── openlist-linux-amd64.tar.gz
-│   └── openlist-windows-amd64.zip
-├── v3.40.0/
-│   ├── openlist-linux-amd64.tar.gz
-│   └── openlist-windows-amd64.zip
-├── LICENSE
-├── README.md
-└── README_cn.md
-```
-
-开启后，不显示文件夹总大小和修改时间。
-<br/>
-:::
-
-## Token { lang="en" }
-
-## 令牌 { lang="zh-CN" }
-
-::: en
-Required when accessing private repositories, and can also reduce the impact of rate limits.
-Log in GitHub and visit: <https://github.com/settings/tokens>
-<br/>
-:::
-::: zh-CN
-访问私有仓库时需要，也可减少速率访问限制的影响。访问：<https://github.com/settings/tokens>
-<br/>
-:::
-
-## Show all version { lang="en" }
-
-## 显示所有版本 { lang="zh-CN" }
-
-::: en
-Off switch:
-
-```
-openlist/
-├── openlist-linux-amd64.tar.gz
-└── openlist-windows-amd64.zip
-```
-
-On switch：
+**Enabled:**
 
 ```
 openlist/
@@ -221,16 +196,20 @@ openlist/
     └── openlist-windows-amd64.zip
 ```
 
-<br/>
+When enabled, all available release versions are displayed in separate directories.
 :::
+
 ::: zh-CN
-开启前：
+**禁用（默认）：**
+
 ```
 openlist/
 ├── openlist-linux-amd64.tar.gz
 └── openlist-windows-amd64.zip
 ```
-开启后：
+
+**启用：**
+
 ```
 openlist/
 ├── v3.41.0/
@@ -243,50 +222,121 @@ openlist/
     ├── openlist-linux-amd64.tar.gz
     └── openlist-windows-amd64.zip
 ```
-<br/>
+
+启用后，所有可用的发布版本都会显示在单独的目录中。
 :::
 
-## **Gh Proxy** { lang="en" }
+### Show README Files { lang="en" }
 
-## **Gh Proxy** { lang="zh-CN" }
+### 显示 README 文件 { lang="zh-CN" }
 
 ::: en
-Used to speed up downloading
+**Disabled (default):**
 
-- Download the content of `Releases` and change it to **https://xxxx.com/https://github.com**
-
-```bash title="Copy"
-https://gh-proxy.com/github.com
+```
+openlist/
+├── openlist-linux-amd64.tar.gz
+└── openlist-windows-amd64.zip
 ```
 
-```bash title="Copy"
-https://ghfast.top/github.com
+**Enabled:**
+
+```
+openlist/
+├── v3.41.0/
+│   ├── openlist-linux-amd64.tar.gz
+│   └── openlist-windows-amd64.zip
+├── v3.40.0/
+│   ├── openlist-linux-amd64.tar.gz
+│   └── openlist-windows-amd64.zip
+├── LICENSE
+├── README.md
+└── README_cn.md
 ```
 
-```bash title="Copy"
-https://ghproxy.net/github.com
-```
-
-<br/>
+::: tip
+When enabled, README and LICENSE files from the repository are displayed alongside releases. However, folder size and modification time information will not be shown.
 :::
+
 ::: zh-CN
-用于加速下载
-- 下载 `Releases` 的内容要改成 **https://xxxx.com/https://github.com**
-```bash title="一键复制"
-https://gh-proxy.com/github.com
+**禁用（默认）：**
+
 ```
-```bash title="一键复制"
-https://ghfast.top/github.com
+openlist/
+├── openlist-linux-amd64.tar.gz
+└── openlist-windows-amd64.zip
 ```
-```bash title="一键复制"
-https://ghproxy.net/github.com
+
+**启用：**
+
 ```
-<br/>
+openlist/
+├── v3.41.0/
+│   ├── openlist-linux-amd64.tar.gz
+│   └── openlist-windows-amd64.zip
+├── v3.40.0/
+│   ├── openlist-linux-amd64.tar.gz
+│   └── openlist-windows-amd64.zip
+├── LICENSE
+├── README.md
+└── README_cn.md
+```
+
+::: tip
+启用后，仓库的 README 和 LICENSE 文件会与发布版本一起显示。但是，不会显示文件夹大小和修改时间信息。
 :::
 
-### **The default download method used** { lang="en" }
+## GitHub Proxy Settings { lang="en" }
 
-### **默认使用的下载方式** { lang="zh-CN" }
+## GitHub 代理设置 { lang="zh-CN" }
+
+::: en
+Use GitHub proxy services to accelerate downloads in regions with limited GitHub access.
+
+**Configuration:**
+Replace the GitHub domain with a proxy service URL:
+
+```text
+https://gh-proxy.com/github.com
+```
+
+**Available Proxy Services:**
+
+| Service  | URL                               |
+| -------- | --------------------------------- |
+| GH-Proxy | `https://gh-proxy.com/github.com` |
+| GHFast   | `https://ghfast.top/github.com`   |
+| GHProxy  | `https://ghproxy.net/github.com`  |
+
+::: warning
+Proxy services are third-party and may have varying availability and performance.
+:::
+
+::: zh-CN
+使用 GitHub 代理服务来加速在 GitHub 访问受限地区的下载。
+
+**配置方法：**
+将 GitHub 域名替换为代理服务 URL：
+
+```text
+https://gh-proxy.com/github.com
+```
+
+**可用代理服务：**
+
+| 服务     | URL                               |
+| -------- | --------------------------------- |
+| GH-Proxy | `https://gh-proxy.com/github.com` |
+| GHFast   | `https://ghfast.top/github.com`   |
+| GHProxy  | `https://ghproxy.net/github.com`  |
+
+::: warning
+代理服务为第三方提供，可用性和性能可能存在差异。
+:::
+
+## The default download method used { lang="en" }
+
+## 默认使用的下载方式 { lang="zh-CN" }
 
 ::: en
 

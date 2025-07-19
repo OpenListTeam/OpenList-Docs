@@ -20,9 +20,9 @@ sticky: true
 star: true
 ---
 
-### **Address** { lang="en" }
+### Address { lang="en" }
 
-## **地址** { lang="zh-CN" }
+## 地址 { lang="zh-CN" }
 
 ::: en
 FTP address, need contains port.
@@ -31,9 +31,9 @@ FTP address, need contains port.
 FTP 地址，需要包含端口。
 :::
 
-### **Username** { lang="en" }
+### Username { lang="en" }
 
-## **用户名** { lang="zh-CN" }
+## 用户名 { lang="zh-CN" }
 
 ::: en
 FTP username
@@ -42,9 +42,9 @@ FTP username
 FTP 用户名
 :::
 
-### **Password** { lang="en" }
+### Password { lang="en" }
 
-## **密码** { lang="zh-CN" }
+## 密码 { lang="zh-CN" }
 
 ::: en
 FTP password
@@ -53,9 +53,9 @@ FTP password
 FTP 密码
 :::
 
-### **Root folder path** { lang="en" }
+### Root folder path { lang="en" }
 
-## **根文件夹ID** { lang="zh-CN" }
+## 根文件夹ID { lang="zh-CN" }
 
 ::: en
 root folder , default `/`, same as local storage.
@@ -64,9 +64,9 @@ root folder , default `/`, same as local storage.
 根文件夹，默认 `/`，同本地存储。
 :::
 
-### **The default download method used** { lang="en" }
+### The default download method used { lang="en" }
 
-### **默认使用的下载方式** { lang="zh-CN" }
+### 默认使用的下载方式 { lang="zh-CN" }
 
 ::: en
 
