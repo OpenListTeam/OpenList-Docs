@@ -42,7 +42,7 @@ Requirements:
 ### 安装 { lang="zh-CN" }
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/OpenListTeam/OpenList-Resource/refs/heads/main/script/v4.sh > install-openlist-v4.sh && sudo bash install-openlist-v4.sh
+curl -fsSL https://res.oplist.org/script/v4.sh > install-openlist-v4.sh && sudo bash install-openlist-v4.sh
 ```
 
 ```bash

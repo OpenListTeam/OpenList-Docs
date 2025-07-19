@@ -1,30 +1,30 @@
 ---
 title:
-  en: OpenList APIpage
-  zh-CN: OpenList APIpage
+  en: OpenList APIPages
+  zh-CN: OpenList APIPages
 categories:
   - ecosystem
-  - eco_offical
+  - eco_official
 top: 970
 ---
 
-## Why the APIpage is needed { lang="en"}
+## What is OpenList APIPages { lang="en"}
 
-## APIpage是什么 { lang="zh-CN" }
+## OpenList APIPages 是什么 { lang="zh-CN" }
 
 ### [OpenListTeam/OpenList-APIPages](https://github.com/OpenListTeam/OpenList-APIPages)
 
 :::en
-[OpenListTeam/OpenList-APIPages](https://github.com/OpenListTeam/OpenList-APIPages) is a utility website led by [@PIKACHUIM](https://github.com/PIKACHUIM) and collaboratively developed with other [main contributors](https://github.com/OpenListTeam/OpenList-APIPages/graphs/contributors). The frontend is primarily used for initial authorization and get refresh token of cloud storage clients, while the backend mainly supports a feature called "Online API", which enables remote
+[OpenListTeam/OpenList-APIPages](https://github.com/OpenListTeam/OpenList-APIPages) is a utility website led by [@PIKACHUIM](https://github.com/PIKACHUIM) and collaboratively developed with other [main contributors](https://github.com/OpenListTeam/OpenList-APIPages/graphs/contributors). The frontend is primarily used for initial authorization and obtaining refresh tokens of cloud storage clients, while the backend mainly supports a feature called "Online API", which enables remote token refresh functionality while protecting developer client secrets.
 :::
 :::zh-CN
-[OpenListTeam/OpenList-APIPages](https://github.com/OpenListTeam/OpenList-APIPages)是一个由 [@PIKACHUIM](https://github.com/PIKACHUIM)牵头，和其他[主要贡献者](https://github.com/OpenListTeam/OpenList-APIPages/graphs/contributors)共同协作完成的工具型网站，前端主要用于实现对网盘客户端的初始授权和刷新令牌，而后端则主要支撑了一个名为“在线API”的功能，可以在保护开发者客户端密钥的前提下，实现对用户令牌的远程刷新功能。
+[OpenListTeam/OpenList-APIPages](https://github.com/OpenListTeam/OpenList-APIPages) 是一个由 [@PIKACHUIM](https://github.com/PIKACHUIM) 牵头，和其他[主要贡献者](https://github.com/OpenListTeam/OpenList-APIPages/graphs/contributors)共同协作完成的工具型网站，前端主要用于实现对网盘客户端的初始授权和刷新令牌，而后端则主要支撑了一个名为“在线API”的功能，可以在保护开发者客户端密钥的前提下，实现对用户令牌的远程刷新功能。
 
 :::
 
-## Why the APIpage is needed { lang="en"}
+## Why OpenList APIPages is needed { lang="en"}
 
-## 为什么需要APIpage { lang="zh-CN" }
+## 为什么需要 OpenList APIPages { lang="zh-CN" }
 
 :::en
 Cloud Storage Background:
@@ -41,7 +41,7 @@ Solution:
 - Periodically send refresh tokens to designated relay servers, which use built-in client keys to refresh access tokens.
 - The relay server sends access tokens back to the OpenList client.
 
-The relay server described above is the backend functionality of the Online API server/APIpage, which works as follows:
+The relay server described above is the backend functionality of the Online API server/APIPages, which works as follows:
 
 ```mermaid
 sequenceDiagram
@@ -57,7 +57,7 @@ sequenceDiagram
     OpenList <<->> Server: Cloud Storage Data
 ```
 
-The frontend part of APIpage also solves the following problems:
+The frontend part of APIPages also solves the following problems:
 
 - Initial authorization verification for different cloud storage services.
 - Authorization while protecting built-in client keys.
@@ -80,7 +80,7 @@ The frontend part of APIpage also solves the following problems:
 - 利用中转服务器，保护客户端密钥。
 - 定期向指定的中转服务器发送刷新令牌，中转服务器利用内置的客户端密钥，刷新访问令牌
 - 中转服务器将访问令牌发送回OpenList客户端。
-  上述描述的中转服务器，就是在线API服务器/Online API 服务器/APIpage的后端部分功能，其工作原理如下：
+  上述描述的中转服务器，就是在线API服务器/Online API 服务器/APIPages的后端部分功能，其工作原理如下：
 
 ```mermaid
 sequenceDiagram
@@ -96,7 +96,7 @@ sequenceDiagram
     OpenList <<->> Server: 网盘数据
 ```
 
-APIpage的前端部分同时解决了如下问题：
+APIPages的前端部分同时解决了如下问题：
 
 - 不同网盘的初始授权验证。
 - 在保护内置客户端密钥的情况下的授权。
@@ -106,15 +106,15 @@ APIpage的前端部分同时解决了如下问题：
 
 :::
 
-## How to use APIpage { lang="en"}
+## How to use OpenList APIPages { lang="en"}
 
-## 如何使用APIpage { lang="zh-CN" }
+## 如何使用 OpenList APIPages { lang="zh-CN" }
 
 <WorkInProgress />
 
-## When the APIpage is not needed { lang="en"}
+## When OpenList APIPages is not needed { lang="en"}
 
-## 什么时候不需要APIpage { lang="zh-CN" }
+## 什么时候不需要 OpenList APIPages { lang="zh-CN" }
 
 :::en
 :::tip
@@ -148,14 +148,14 @@ If you choose not to use community-provided servers or deploy your own server, p
 - 2.完整阅读了对应网盘的提供的开放API开发文档。
 - 3.可以阅读并理解项目代码，并有一定的debug能力，能看懂对应的日志及其报错。
 - 4.完全理解AGPLv3授予您的权力和我们应该负责的部分。
-- 5.可以使用GitHub的基本功能，知道如何**正确的**向我们提交issue/pull request.
+- 5.可以使用GitHub的基本功能，知道如何**正确的**向我们提交Issue/Pull Request。
 - 6.请记住，我们没有任何办法可以解决您遇到的网络问题。
 
 :::
 
-## APIPage Deployment Tutorial { lang="en"}
+## APIPages Deployment Tutorial { lang="en"}
 
-## APIPage的部署教程 { lang="zh-CN" }
+## APIPages 的部署教程 { lang="zh-CN" }
 
 ### One-Click Deployment { lang="en"}
 
@@ -575,9 +575,9 @@ npm build-js && npm deploy-js
 
 :::
 
-## Community APIpage { lang="en"}
+## Community APIPages { lang="en"}
 
-## 社区APIpage { lang="zh-CN" }
+## 社区 APIPages { lang="zh-CN" }
 
 :::en
 :::tip
