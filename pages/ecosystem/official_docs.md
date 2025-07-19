@@ -157,10 +157,13 @@ When writing documentation, please note these important parsing rules:
    The language will automatically switch when encountering `:::en`.
 
 2. **Title Language Specification**: Titles must use `{ lang="en" }` syntax and cannot use language blocks:
+
    ```markdown
    ## Correct Title { lang="en" }
    ```
+
    Do NOT use:
+
    ```markdown
    :::en
 
@@ -168,6 +171,8 @@ When writing documentation, please note these important parsing rules:
 
    :::
    ```
+
+3. **Text Format Convention**: For better readability in plain text environments, please follow the **English first, then Chinese** order when writing bilingual content. This makes it easier to observe and navigate the documentation structure in text editors and version control systems.
    :::
 
 :::zh-CN
@@ -196,10 +201,13 @@ When writing documentation, please note these important parsing rules:
    当遇到 `:::en` 时语言会自动切换。
 
 2. **标题语言指定**：标题必须使用 `{ lang="en" }` 语法，不能使用语言块：
+
    ```markdown
    ## 正确的标题 { lang="zh-CN" }
    ```
+
    不要使用：
+
    ```markdown
    :::zh-CN
 
@@ -207,6 +215,8 @@ When writing documentation, please note these important parsing rules:
 
    :::
    ```
+
+3. **文本格式约定**：为了方便在纯文本环境下的观察起见，在编写双语内容时请遵循**先英文后中文**的顺序。这样可以更容易在文本编辑器和版本控制系统中观察和导航文档结构。
    :::
 
 ## Community & Support { lang="en" }
