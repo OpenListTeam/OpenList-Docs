@@ -8,35 +8,58 @@ categories:
 top: 990
 ---
 
-## About OpenList Docs { lang="en" }
+## What is OpenList Docs { lang="en" }
 
-## 关于 OpenList Docs { lang="zh-CN" }
+## OpenList Docs 是什么 { lang="zh-CN" }
 
 ### [OpenListTeam/OpenList-Docs](https://github.com/OpenListTeam/OpenList-Docs)
 
 :::en
-[OpenListTeam/OpenList-Docs](https://github.com/OpenListTeam/OpenList-Docs) is the official documentation site for OpenList, built to provide comprehensive OpenList documentation.
+[OpenListTeam/OpenList-Docs](https://github.com/OpenListTeam/OpenList-Docs) is the official documentation website for OpenList, led by [@cxw620](https://github.com/cxw620) and collaboratively developed with other [main contributors](https://github.com/OpenListTeam/OpenList-Docs/graphs/contributors). Built with Valaxy framework, it provides comprehensive documentation for OpenList, including installation guides, configuration instructions, API references, and ecosystem information. The documentation supports multiple languages and features real-time builds from the GitHub repository.
 
 :::
 
 :::zh-CN
-[OpenListTeam/OpenList-Docs](https://github.com/OpenListTeam/OpenList-Docs) 是 OpenList 的官方文档站点，提供全面的OpenList文档。
+[OpenListTeam/OpenList-Docs](https://github.com/OpenListTeam/OpenList-Docs) 是 OpenList 的官方文档网站，由 [@cxw620](https://github.com/cxw620) 牵头，和其他[主要贡献者](https://github.com/OpenListTeam/OpenList-Docs/graphs/contributors)共同协作完成。基于 Valaxy 框架构建，为 OpenList 提供全面的文档，包括安装指南、配置说明、API 参考和生态系统信息。文档支持多种语言，并基于 GitHub 仓库实时构建。
 
 :::
 
-## Getting Started { lang="en" }
+## Why OpenList Docs is needed { lang="en" }
 
-## 快速开始 { lang="zh-CN" }
+## 为什么需要 OpenList Docs { lang="zh-CN" }
+
+:::en
+Documentation Background:
+
+- Provide a centralized, well-organized documentation website
+- Offer both beginner-friendly guides and advanced technical references
+- Enable community contributions through GitHub-based workflow
+
+:::
+
+:::zh-CN
+
+- 提供一个集中的、组织良好的文档网站
+- 提供适合初学者的指南和高级技术参考
+- 通过基于 GitHub 的工作流程支持社区贡献
+
+:::
+
+## How to use OpenList Docs { lang="en" }
+
+## 如何使用 OpenList Docs { lang="zh-CN" }
 
 :::en
 
-### Prerequisites
+You can directly access [doc.oplist.org.cn](https://doc.oplist.org.cn/) to view the documentation.
+
+### Local Development
+
+#### Prerequisites
 
 - **Node.js**: Required for running the development environment
 - **pnpm**: Recommended package manager
 - **Git**: For version control and cloning the repository
-
-### Local Development
 
 1. **Clone the repository**
 
@@ -77,13 +100,15 @@ pnpm serve
 
 :::zh-CN
 
-### 环境要求
+可直接在线访问[doc.oplist.org.cn](https://doc.oplist.org.cn/) 查阅文档。
+
+### 本地开发
+
+#### 环境要求
 
 - **Node.js**：运行开发环境所需
 - **pnpm**：推荐的包管理器
 - **Git**：用于版本控制和克隆仓库
-
-### 本地开发
 
 1. **克隆仓库**
 
