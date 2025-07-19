@@ -126,6 +126,89 @@ pnpm serve
 
 :::
 
+### Development Tips { lang="en" }
+
+### 开发提示 { lang="zh-CN" }
+
+:::en
+
+`:::tip` Markdown Parsing Issues
+When writing documentation, please note these important parsing rules:
+
+1. **Language Block Syntax**: For language-specific content blocks, only use one closing `:::` at the end:
+
+   ```markdown
+   :::zh-CN
+   :::tip
+   Content here
+   :::
+   :::
+   ```
+
+   The above should be written as:
+
+   ```markdown
+   :::zh-CN
+   :::tip
+   Content here
+   :::
+   ```
+
+   The language will automatically switch when encountering `:::en`.
+
+2. **Title Language Specification**: Titles must use `{ lang="en" }` syntax and cannot use language blocks:
+   ```markdown
+   ## Correct Title { lang="en" }
+   ```
+   Do NOT use:
+   ```markdown
+   :::en
+
+   ## Wrong Title
+
+   :::
+   ```
+   :::
+
+:::zh-CN
+`:::tip` Markdown 解析问题
+在编写文档时，请注意以下重要的解析规则：
+
+1. **语言块语法**：对于特定语言的内容块，结尾只需要一个 `:::`：
+
+   ```markdown
+   :::zh-CN
+   :::tip
+   这里是内容
+   :::
+   :::
+   ```
+
+   上面的写法应该改为：
+
+   ```markdown
+   :::zh-CN
+   :::tip
+   这里是内容
+   :::
+   ```
+
+   当遇到 `:::en` 时语言会自动切换。
+
+2. **标题语言指定**：标题必须使用 `{ lang="en" }` 语法，不能使用语言块：
+   ```markdown
+   ## 正确的标题 { lang="zh-CN" }
+   ```
+   不要使用：
+   ```markdown
+   :::zh-CN
+
+   ## 错误的标题
+
+   :::
+   ```
+   :::
+
 ## Community & Support { lang="en" }
 
 ## 社区与支持 { lang="zh-CN" }
