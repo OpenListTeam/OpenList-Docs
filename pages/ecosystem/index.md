@@ -19,7 +19,7 @@ This page shows the OpenList ecosystem, including official projects and third-pa
 
 ## 官方项目 { lang="zh-CN" }
 
-### [OpenList Docs ↗](./ecosystem/offical_docs)
+### [OpenList Docs ↗](./ecosystem/official_docs)
 
 :::en
 Documentation based on Valaxy, supporting multiple styles and real-time builds from the GitHub repository.
@@ -30,7 +30,7 @@ Documentation based on Valaxy, supporting multiple styles and real-time builds f
 
 ---
 
-### [OpenList Desktop ↗](./ecosystem/offical_desktop)
+### [OpenList Desktop ↗](./ecosystem/official_desktop)
 
 :::en
 A cross-platform GUI management interface integrating OpenList and rclone, offering graphical configuration, monitoring, and service management features.
@@ -41,7 +41,7 @@ A cross-platform GUI management interface integrating OpenList and rclone, offer
 
 ---
 
-### [OpenList APIPages ↗](./ecosystem/offical_APIpage)
+### [OpenList APIPages ↗](./ecosystem/official_APIpage)
 
 :::en
 An open-source implementation of the online API functionality in OpenList, deployable on various servers, providing stable and privacy-protected API authentication services for cloud storage users.
@@ -52,7 +52,7 @@ OpenList中在线API功能的开源实现，可灵活部署至多种服务器，
 
 ---
 
-### [OpenList Proxy ↗](./ecosystem/offical_proxy)
+### [OpenList Proxy ↗](./ecosystem/official_proxy)
 
 :::en
 OpenList traffic proxy program, which can use another server to proxy OpenList traffic.

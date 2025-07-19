@@ -4,7 +4,7 @@ title:
   zh-CN: OpenList Docs
 categories:
   - ecosystem
-  - eco_offical
+  - eco_official
 top: 990
 ---
 
