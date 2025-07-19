@@ -27,9 +27,9 @@ categories:
 
 :::
 
-## **获取Token** { lang="zh-CN" }
+## 获取Token { lang="zh-CN" }
 
-## **GetToken** { lang="en" }
+## GetToken { lang="en" }
 
 ::: zh-CN
 打开[https://api.oplist.org/](https://api.oplist.org/)
@@ -70,9 +70,9 @@ After clicking, the access token at the bottom of the interface will display `ht
 
 ## Add in OpenList { lang="en" }
 
-### **刷新令牌** { lang="zh-CN" }
+### 刷新令牌 { lang="zh-CN" }
 
-### **RefreshToken** { lang="en" }
+### RefreshToken { lang="en" }
 
 ::: zh-CN
 **留空**
@@ -81,9 +81,9 @@ After clicking, the access token at the bottom of the interface will display `ht
 **keep it empty**
 :::
 
-### **客户端ID** { lang="zh-CN" }
+### 客户端ID { lang="zh-CN" }
 
-### **Client ID** { lang="en" }
+### Client ID { lang="en" }
 
 ::: zh-CN
 填入你的客户端ID
@@ -92,9 +92,9 @@ After clicking, the access token at the bottom of the interface will display `ht
 Enter your client ID
 :::
 
-### **客户端密钥** { lang="zh-CN" }
+### 客户端密钥 { lang="zh-CN" }
 
-### **Client Secret** { lang="en" }
+### Client Secret { lang="en" }
 
 ::: zh-CN
 填入你的客户端密钥
@@ -103,9 +103,9 @@ Enter your client ID
 Enter your client secret
 :::
 
-### **访问令牌** { lang="zh-CN" }
+### 访问令牌 { lang="zh-CN" }
 
-### **AccessToken** { lang="zh-CN" }
+### AccessToken { lang="zh-CN" }
 
 ::: zh-CN
 填入上面获取的访问令牌
@@ -114,9 +114,9 @@ Enter your client secret
 Enter the access token obtained above
 :::
 
-### **Root Folder ID** { lang="en" }
+### Root Folder ID { lang="en" }
 
-### **根文件夹 ID** { lang="zh-CN" }
+### 根文件夹 ID { lang="zh-CN" }
 
 ::: en
 The default root directory ID is: `0`<br/>
@@ -131,9 +131,9 @@ The `root folder ID` of this folder is `123456`.
 这个文件夹的 `根文件夹ID` 即为 `123456`<br/>
 :::
 
-## **The default download method used** { lang="en" }
+## The default download method used { lang="en" }
 
-## **默认使用的下载方式** { lang="zh-CN" }
+## 默认使用的下载方式 { lang="zh-CN" }
 
 ::: en
 

@@ -27,9 +27,9 @@ Teambition project file, supports Chinese server and international server.
 Teambition 工程文件，支持中国服务器和国际服务器。
 :::
 
-### **Cookies** { lang="en" }
+## Cookies { lang="en" }
 
-## **Cookies** { lang="zh-CN" }
+## Cookies { lang="zh-CN" }
 
 ::: en
 After login, the validity period is unknown
@@ -40,9 +40,9 @@ After login, the validity period is unknown
 ![cookie](/img/drivers/teambition-cookie.png)
 :::
 
-### **Project ID and root folder id** { lang="en" }
+## Project ID and root folder id { lang="en" }
 
-## **项目 ID 和根文件夹 ID** { lang="zh-CN" }
+## 项目 ID 和根文件夹 ID { lang="zh-CN" }
 
 ::: en
 Get it from the URL after logging in
@@ -53,9 +53,9 @@ Get it from the URL after logging in
 ![id](/img/drivers/teambition-id.png)
 :::
 
-### **The default download method used** { lang="en" }
+## The default download method used { lang="en" }
 
-### **默认使用的下载方式** { lang="zh-CN" }
+# 默认使用的下载方式 { lang="zh-CN" }
 
 ::: en
 

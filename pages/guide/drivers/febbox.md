@@ -22,87 +22,85 @@ star: true
 
 ::: en
 FebBox：https://www.febbox.com
-<br/>
+
+- The upload function is currently unavailable.
+
 :::
 ::: zh-CN
 FebBox：https://www.febbox.com
 
 - 需要代理，直连似乎无法访问？
-  <br/>
-  :::
+- 目前上传功能不可用
 
-## **Root folder ID** { lang="en" }
+:::
 
-## **根文件夹ID** { lang="zh-CN" }
+## Root folder ID { lang="en" }
+
+## 根文件夹ID { lang="zh-CN" }
 
 ::: en
-Root directory ID, default is `0`
-Other directory IDs can be viewed in the top link address bar after entering the folder
+Root directory ID, default is `0`.
+
+Other directory IDs can be viewed in the top link address bar after entering the folder.
 
 - **https://www.febbox.com/console#/files?parent_id=66889900**
+
   Then the directory ID is `66889900`
-  <br/>
-  :::
-  ::: zh-CN
-  根目录ID，默认为`0`
-  其它目录ID查看进入文件夹后看顶部链接地址栏
+
+:::
+::: zh-CN
+根目录ID，默认为`0`。
+
+其它目录 ID 查看进入文件夹后看顶部链接地址栏。
+
 - **https://www.febbox.com/console#/files?parent_id=66889900**
-  那这个目录ID就是 `66889900`
-  <br/>
-  :::
 
-## **`Client_id`**、**`Client_secret`** { lang="en" }
+  那这个目录 ID 就是 `66889900`
 
-## **客户端ID 和 秘钥** { lang="zh-CN" }
+:::
+
+## `Client_id`、`Client_secret` { lang="en" }
+
+## 客户端 ID 和 秘钥 { lang="zh-CN" }
 
 ::: en
 Generate address：**https://www.febbox.com/open/clients**
 
 - The generated client ID and secret key are filled in in the opposite order to the OpenList, so be careful not to fill them in incorrectly.
-  ![](/img/drivers/febbox/febox.png)
-  <br/>
-  :::
-  ::: zh-CN
-  生成地址：**https://www.febbox.com/open/clients**
-- 生成的客户端ID和秘钥和OpenList填写的顺序是相反的，注意别填错
-  ![](/img/drivers/febbox/febox.png)
-  <br/>
-  :::
 
-### **User IP** { lang="en" }
+  ![](/img/drivers/febbox/febox.png)
 
-### **用户IP** { lang="zh-CN" }
+:::
+::: zh-CN
+生成地址：**https://www.febbox.com/open/clients**
+
+- 生成的客户端 ID 和秘钥和 OpenList 填写的顺序是相反的，注意别填错
+
+  ![](/img/drivers/febbox/febox.png)
+
+:::
+
+## User IP { lang="en" }
+
+## 用户 IP { lang="zh-CN" }
 
 ::: en
 **Optional**, the IP address of the user when downloading, quoting the official description
 
-- IP address, Optional parameter. Supports IPv6 format.After filling in, the best download server suitable for the IP location will be selected. If not filled in, the requested IP will be used.
-  <br/>
-  :::
-  ::: zh-CN
-  **可选** ，用户下载时的IP，引用官方说明
-- IP address, Optional parameter. Supports IPv6 format.After filling in, the best download server suitable for the IP location will be selected. If not filled in, the requested IP will be used.
-- IP地址，可选参数。支持 IPv6 格式。填写后，将选择适合 IP 位置的最佳下载服务器。如果未填写，将使用请求的 IP
-  <br/>
-  :::
+> IP address, Optional parameter. Supports IPv6 format. After filling in, the best download server suitable for the IP location will be selected. If not filled in, the requested IP will be used.
 
-### **Things to note** { lang="en" }
+:::
 
-### **注意事项** { lang="zh-CN" }
+::: zh-CN
+**可选** ，用户下载时的 IP，引用官方说明
 
-::: en
+> IP 地址，可选参数。支持 IPv6 格式。填写后，将选择适合 IP 位置的最佳下载服务器。如果未填写，将使用请求的 IP。
 
-- The upload function is currently unavailable [**alist-org/alist/issues/7293**](https://github.com/alist-org/alist/issues/7293#issuecomment-2395776474)
-  <br/>
-  :::
-  ::: zh-CN
-- 目前上传功能不可用 [**alist-org/alist/issues/7293**](https://github.com/alist-org/alist/issues/7293#issuecomment-2395776474)
-  <br/>
-  :::
+:::
 
-### **The default download method used** { lang="en" }
+## The default download method used { lang="en" }
 
-### **默认使用的下载方式** { lang="zh-CN" }
+## 默认使用的下载方式 { lang="zh-CN" }
 
 ::: en
 

@@ -27,9 +27,9 @@ star: true
 **https://app.mediatrack.cn**
 :::
 
-### **Access token** { lang="en" }
+### Access token { lang="en" }
 
-## **访问令牌** { lang="zh-CN" }
+## 访问令牌 { lang="zh-CN" }
 
 ::: en
 You can get it in request header after logging in
@@ -40,9 +40,9 @@ You can get it in request header after logging in
 ![token](/img/drivers/mediatrack-token.png)
 :::
 
-### **Project id** { lang="en" }
+### Project id { lang="en" }
 
-## **项目编号** { lang="zh-CN" }
+## 项目编号 { lang="zh-CN" }
 
 ::: en
 Get from official website url:
@@ -53,9 +53,9 @@ Get from official website url:
 ![Project id](/img/drivers/mediatrack-projectid.png)
 :::
 
-### **Root folder id** { lang="en" }
+### Root folder id { lang="en" }
 
-## **根文件夹 ID** { lang="zh-CN" }
+## 根文件夹 ID { lang="zh-CN" }
 
 ::: en
 Get it from the request after logging in
@@ -66,9 +66,9 @@ Get it from the request after logging in
 ![id](/img/drivers/mediatrack-rootid.png)
 :::
 
-### **The default download method used** { lang="en" }
+### The default download method used { lang="en" }
 
-### **默认使用的下载方式** { lang="zh-CN" }
+### 默认使用的下载方式 { lang="zh-CN" }
 
 ::: en
 

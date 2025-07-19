@@ -28,9 +28,9 @@ UPYUN Storage Service，refer to as USS，[**Yupyun USS Official Website**](http
 UPYUN 存储服务，简称 USS，[**又拍云USS官网**](https://console.upyun.com/services/file/)
 :::
 
-### **BucKet** { lang="en" }
+### BucKet { lang="en" }
 
-## **存储桶** { lang="zh-CN" }
+## 存储桶 { lang="zh-CN" }
 
 ::: en
 UPYUN Storage Service Name
@@ -39,9 +39,9 @@ UPYUN Storage Service Name
 **UPYUN 存储桶服务名称**
 :::
 
-### **Endpoint** { lang="en" }
+### Endpoint { lang="en" }
 
-## **Endpoint** { lang="zh-CN" }
+## Endpoint { lang="zh-CN" }
 
 ::: en
 Accelerated domain name (default TEST domain or bound domain, not CNAME domain)
@@ -54,9 +54,9 @@ The test domain name provided by upyun is not accessible in some network and doe
 又拍云提供的默认测试域名在部分网络环境下无法访问，且不支持https，建议使用自行绑定的域名
 :::
 
-### **Operator name** { lang="en" }
+### Operator name { lang="en" }
 
-## **操作员名称** { lang="zh-CN" }
+## 操作员名称 { lang="zh-CN" }
 
 ::: en
 Operator name
@@ -65,9 +65,9 @@ Operator name
 操作员名称
 :::
 
-### **Operator password** { lang="en" }
+### Operator password { lang="en" }
 
-## **操作员密码** { lang="zh-CN" }
+## 操作员密码 { lang="zh-CN" }
 
 ::: en
 Operator password
@@ -76,9 +76,9 @@ Operator password
 操作员密码
 :::
 
-### **Root folder path** { lang="en" }
+### Root folder path { lang="en" }
 
-## **根文件夹 ID** { lang="zh-CN" }
+## 根文件夹 ID { lang="zh-CN" }
 
 ::: en
 Root path, if not filled, it defaults to the root directory.
@@ -87,9 +87,9 @@ Root path, if not filled, it defaults to the root directory.
 根路径，不填则默认为根目录。
 :::
 
-### **Sign url expire** { lang="en" }
+### Sign url expire { lang="en" }
 
-## **签名链接有效期** { lang="zh-CN" }
+## 签名链接有效期 { lang="zh-CN" }
 
 ::: en
 The validity period of the signed download address is 4 hours by default.
@@ -98,9 +98,9 @@ The validity period of the signed download address is 4 hours by default.
 签名下载地址的有效期默认为 4 小时。
 :::
 
-## **Example of filling in details** { lang="en" }
+## Example of filling in details { lang="en" }
 
-## **详情填写示意图** { lang="zh-CN" }
+## 详情填写示意图 { lang="zh-CN" }
 
 ::: en
 ::: tip
@@ -122,9 +122,9 @@ permission is turned on by itself, and the read permission must be turned on！
 ![s3](/img/drivers/s3/up.png)
 :::
 
-### **The default download method used** { lang="en" }
+### The default download method used { lang="en" }
 
-### **默认使用的下载方式** { lang="zh-CN" }
+### 默认使用的下载方式 { lang="zh-CN" }
 
 ::: en
 

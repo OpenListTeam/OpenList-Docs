@@ -28,9 +28,9 @@ MEGA official website: **https://mega.nz/login**
 MEGA官网：**https://mega.nz/login**
 :::
 
-### **Mail** { lang="en" }
+### Mail { lang="en" }
 
-### **邮箱** { lang="zh-CN" }
+### 邮箱 { lang="zh-CN" }
 
 ::: en
 MEGA login account
@@ -39,9 +39,9 @@ MEGA login account
 MEGA登录账号
 :::
 
-### **password** { lang="en" }
+### password { lang="en" }
 
-### **密码** { lang="zh-CN" }
+### 密码 { lang="zh-CN" }
 
 ::: en
 login password
@@ -51,9 +51,9 @@ login password
 <br/>
 :::
 
-## **2FA** { lang="en" }
+## 2FA { lang="en" }
 
-## **两步验证** { lang="zh-CN" }
+## 两步验证 { lang="zh-CN" }
 
 ::: en
 Non -filling options,If you open 2FA, you need to fill in it,If you don’t use 2FA, you don’t need to fill in it
@@ -62,9 +62,9 @@ Non -filling options,If you open 2FA, you need to fill in it,If you don’t use 
 非必填选项，如果开启了需要填写，没开启的不需要填写
 :::
 
-### **Two fa secret** { lang="en" }
+### Two fa secret { lang="en" }
 
-### **两步验证秘钥** { lang="zh-CN" }
+### 两步验证秘钥 { lang="zh-CN" }
 
 ::: en
 **https://mega.nz/fm/account/security/two-factor-authentication**
@@ -77,9 +77,9 @@ Click to enable `Enable two-factor authentication (2FA)` and then see a QR code,
 ![](/img/drivers/mega/mega_2fa.png)
 :::
 
-### **Two fa code** { lang="en" }
+### Two fa code { lang="en" }
 
-### **两步验证代码** { lang="zh-CN" }
+### 两步验证代码 { lang="zh-CN" }
 
 ::: en
 To enable 2-factor authentication, you need to install a app that support 2FA (such as [Google Authenticator](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2), [Microsoft Authenticator](https://support.microsoft.com/en-us/account-billing/download-and-install-the-microsoft-authenticator-app-351498fc-850a-45da-b7b6-27e523b8702a)), on your phone.
@@ -97,7 +97,7 @@ Scan the QR appearing on the screen. At the same time, this QR code is also [two
 
 ## Fill in example: { lang="en" }
 
-## **填写示例** { lang="zh-CN" }
+## 填写示例 { lang="zh-CN" }
 
 ::: en
 ![](/img/drivers/mega/mega_add.png)
@@ -108,9 +108,9 @@ Scan the QR appearing on the screen. At the same time, this QR code is also [two
 <br/>
 :::
 
-### **The default download method used** { lang="en" }
+### The default download method used { lang="en" }
 
-### **默认使用的下载方式** { lang="zh-CN" }
+### 默认使用的下载方式 { lang="zh-CN" }
 
 ::: en
 

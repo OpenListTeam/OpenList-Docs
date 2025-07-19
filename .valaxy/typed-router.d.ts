@@ -47,6 +47,7 @@ declare module 'vue-router/auto-routes' {
     '/ecosystem/official_desktop': RouteRecordInfo<'/ecosystem/official_desktop', '/ecosystem/official_desktop', Record<never, never>, Record<never, never>>,
     '/ecosystem/official_docs': RouteRecordInfo<'/ecosystem/official_docs', '/ecosystem/official_docs', Record<never, never>, Record<never, never>>,
     '/ecosystem/official_proxy': RouteRecordInfo<'/ecosystem/official_proxy', '/ecosystem/official_proxy', Record<never, never>, Record<never, never>>,
+
     '/faq/': RouteRecordInfo<'/faq/', '/faq', Record<never, never>, Record<never, never>>,
     '/faq/_example': RouteRecordInfo<'/faq/_example', '/faq/_example', Record<never, never>, Record<never, never>>,
     '/faq/error': RouteRecordInfo<'/faq/error', '/faq/error', Record<never, never>, Record<never, never>>,

@@ -22,7 +22,7 @@ star: true
 
 挂载百度网盘分享链接，可供下载，无上传编辑等功能，api非官方。
 
-## **配置**
+## 配置
 
 百度网盘分享链接：surl，百度网盘分享密码：pwd
 
@@ -41,7 +41,7 @@ BDUSS由cookie中提取
 - 方法2^荐^：
   - <img src="/img/drivers/baidu/BDUSS.png" alt="1" style="zoom:30%;" />
 
-## **根文件夹ID**
+## 根文件夹ID
 
 要挂载的根文件夹，默认为`/`
 
@@ -49,7 +49,7 @@ BDUSS由cookie中提取
 
 ![](/img/drivers/baidu/bd_share_test.png)
 
-## **QA**
+## QA
 
 | 出错配置 | 典型报错                                                                 | 修复说明                                                               |
 | :------: | :----------------------------------------------------------------------- | :--------------------------------------------------------------------- |
@@ -59,7 +59,7 @@ BDUSS由cookie中提取
 |    UA    | `{"error_code":31326,"error_msg":"user is not authorized, hitcode:119"}` | user-agent违反百度限制, 访问端需设置非浏览器UA(如netdisk)或开启Web代理 |
 |   下载   | Failed init storage: 200 OK; {"errno":-130,"                             | 此链接分享内容可能因为涉及侵权、色情、低俗等信息，无法访问！           |
 
-## **开发**
+## 开发
 
 接口来自[github.com/yuantuo666/baiduwp-php](https://github.com/yuantuo666/baiduwp-php)项目，非官方api。
 
@@ -69,11 +69,7 @@ BDUSS由cookie中提取
 
 不能突破速度限制，请合理使用。
 
-<br/>
-
-<!-- @include: baidu.md{133-199} -->
-
-### **默认使用的下载方式**
+### 默认使用的下载方式
 
 ```mermaid
 ---

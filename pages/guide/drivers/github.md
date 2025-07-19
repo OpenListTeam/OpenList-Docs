@@ -24,38 +24,63 @@ star: true
 ::: en
 ::: tip
 GitHub API does not support operating files larger than 100MiB and folders containing more than 100,000 sub-items.
+
 All `.gitkeep` files will be managed by the driver and will be invisible to the user.
+
 Operations on submodules are currently not supported.
 :::
 
 ::: zh-CN
 ::: tip
 GitHub API 不支持操作 100M 或更大的文件，不支持操作含有超过 100,000 个子文件（夹）的文件夹。
+
 本驱动会忽略仓库内的所有`.gitkeep`文件。
+
 本驱动暂不支持操作子模块。
 :::
 
-## **Token** { lang="en" }
+## Token { lang="en" }
 
-## **Token** { lang="zh-CN" }
+## Token { lang="zh-CN" }
 
 ::: en
 
 1. Log in GitHub and visit <https://github.com/settings/tokens>.
-2. ![](/img/drivers/github/1.png)
-3. ![](/img/drivers/github/2.png)
-4. ![](/img/drivers/github/3.png)
-   :::
-   ::: zh-CN
-5. 登录 GitHub，访问<https://github.com/settings/tokens>
-6. ![](/img/drivers/github/1.png)
-7. ![](/img/drivers/github/2.png)
-8. ![](/img/drivers/github/3.png)
-   :::
 
-## **Owner** { lang="en" }
+2. Select `Generate new token (Classic)`
 
-## **所有者** { lang="zh-CN" }
+   ![](/img/drivers/github/1.png)
+
+3. Fill the information. At least, select **repo**. And click `Generate token`.
+
+   ![](/img/drivers/github/2.png)
+
+4. Copy the token and paste it into the `Token` field.
+
+   ![](/img/drivers/github/3.png)
+
+:::
+::: zh-CN
+
+1. 登录 GitHub，访问：<https://github.com/settings/tokens>
+
+2. 选择 `Generate new token (Classic)`
+
+   ![](/img/drivers/github/1.png)
+
+3. 填写信息，至少授予 `repo` 权限，然后点击 `Generate token`
+
+   ![](/img/drivers/github/2.png)
+
+4. 复制生成的 token，并填写到 `Token` 字段中
+
+   ![](/img/drivers/github/3.png)
+
+:::
+
+## Owner { lang="en" }
+
+## 所有者 { lang="zh-CN" }
 
 ::: en
 The owner of the repository. For example, if the URL of the repository is `github.com/AAA/BBB`, fill in `AAA` here.
@@ -64,9 +89,9 @@ The owner of the repository. For example, if the URL of the repository is `githu
 仓库的所有者，比如仓库链接是`github.com/AAA/BBB`，这里就填`AAA`。
 :::
 
-## **Repo** { lang="en" }
+## Repo { lang="en" }
 
-## **仓库** { lang="zh-CN" }
+## 仓库 { lang="zh-CN" }
 
 ::: en
 The name of the repository. For example, if the URL of the repository is `github.com/AAA/BBB`, fill in `BBB` here.
@@ -75,9 +100,9 @@ The name of the repository. For example, if the URL of the repository is `github
 仓库名，比如仓库链接是`github.com/AAA/BBB`，这里就填`BBB`。
 :::
 
-## **Ref** { lang="en" }
+## Ref { lang="en" }
 
-## **引用** { lang="zh-CN" }
+## 引用 { lang="zh-CN" }
 
 ::: en
 A branch, a tag or a commit SHA. Only when a branch name is filled in is the driver writable. It defaults to the default branch if not filled.
@@ -86,50 +111,38 @@ A branch, a tag or a commit SHA. Only when a branch name is filled in is the dri
 分支名、tag或提交SHA，只有在填写分支名的情况下驱动才可写，不填会使用默认分支。
 :::
 
-## **Gh Proxy** { lang="en" }
+## Gh Proxy { lang="en" }
 
-## **Gh Proxy** { lang="zh-CN" }
+## Gh Proxy { lang="zh-CN" }
 
 ::: en
 Used to speed up downloading
 
-- Download the content of `Raw` and `archive` and change it to **https://gh-proxy.com/raw.githubusercontent.com**
-
-```bash title="Copy"
-https://gh-proxy.com/raw.githubusercontent.com
-```
-
-```bash title="Copy"
-https://ghfast.top/raw.githubusercontent.com
-```
-
-```bash title="Copy"
-https://ghproxy.net/raw.githubusercontent.com
-```
+- Download the content of `Raw` and `archive` and change it to `https://gh-proxy.com/raw.githubusercontent.com`
 
 :::
 ::: zh-CN
 用于加速下载
 
-- 下载 `Raw`、`archive` 的内容要改成 **https://gh-proxy.com/raw.githubusercontent.com**
-
-```bash title="一键复制"
-https://gh-proxy.com/raw.githubusercontent.com
-```
-
-```bash title="一键复制"
-https://ghfast.top/raw.githubusercontent.com
-```
-
-```bash title="一键复制"
-https://ghproxy.net/raw.githubusercontent.com
-```
+- 下载 `Raw`、`archive` 的内容要改成 `https://gh-proxy.com/raw.githubusercontent.com`
 
 :::
 
-## **GPG private key** { lang="en" }
+```
+https://gh-proxy.com/raw.githubusercontent.com
+```
 
-## **GPG 私钥** { lang="zh-CN" }
+```
+https://ghfast.top/raw.githubusercontent.com
+```
+
+```
+https://ghproxy.net/raw.githubusercontent.com
+```
+
+## GPG private key { lang="en" }
+
+## GPG 私钥 { lang="zh-CN" }
 
 ::: en
 GPG private key, used to provide commit verifications. Verified commits will be marked with a green "Verified" label on the GitHub webpage. Use the following command to obtain it. Leave blank if verifications are not needed.
@@ -148,9 +161,9 @@ gpg --export-secret-key -a <密钥对ID>
 
 :::
 
-## **GPG key passphrase** { lang="en" }
+## GPG key passphrase { lang="en" }
 
-## **GPG 私钥密码** { lang="zh-CN" }
+## GPG 私钥密码 { lang="zh-CN" }
 
 ::: en
 Passphrase to the GPG private key. Leave blank if there is none.
@@ -159,9 +172,9 @@ Passphrase to the GPG private key. Leave blank if there is none.
 GPG 私钥的密码，没有则留空。
 :::
 
-## **Committer name** { lang="en" }
+## Committer name { lang="en" }
 
-## **提交者名称** { lang="zh-CN" }
+## 提交者名称 { lang="zh-CN" }
 
 ::: en
 Custom committer name, defaulting to the owner's of the token when not filled.
@@ -170,9 +183,9 @@ Custom committer name, defaulting to the owner's of the token when not filled.
 自定义提交者名称，不填会使用 Token 的所有者。
 :::
 
-## **Committer email** { lang="en" }
+## Committer email { lang="en" }
 
-## **提交者邮箱** { lang="zh-CN" }
+## 提交者邮箱 { lang="zh-CN" }
 
 ::: en
 Custom committer name, defaulting to the owner's of the token when not filled.
@@ -183,9 +196,9 @@ Required when "Committer name" is filled. Required to be empty when "Committer n
 填写“提交者名称”时必填，未填写“提交者名称”时必不填。
 :::
 
-## **Author name** { lang="en" }
+## Author name { lang="en" }
 
-## **作者名称** { lang="zh-CN" }
+## 作者名称 { lang="zh-CN" }
 
 ::: en
 Custom author name, defaulting to the owner's of the token when not filled.
@@ -194,9 +207,9 @@ Custom author name, defaulting to the owner's of the token when not filled.
 自定义作者名称，不填会使用 Token 的所有者。
 :::
 
-## **Author email** { lang="en" }
+## Author email { lang="en" }
 
-## **作者邮箱** { lang="zh-CN" }
+## 作者邮箱 { lang="zh-CN" }
 
 ::: en
 Custom author name, defaulting to the owner's of the token when not filled.
@@ -207,9 +220,9 @@ Required when "Author name" is filled. Required to be empty when "Author name" i
 填写“作者名称”时必填，未填写“作者名称”时必不填。
 :::
 
-## **commit message** { lang="en" }
+## commit message { lang="en" }
 
-## **提交信息** { lang="zh-CN" }
+## 提交信息 { lang="zh-CN" }
 
 ::: en
 Custom commit message, supporting the following template variables：
@@ -221,9 +234,12 @@ Custom commit message, supporting the following template variables：
 - `ParentPath`: the path to the parent folder of the file (or the folder) operated.
 - `TargetName`: (when renaming) new name. (when copying and moving) the target folder name.
 - `TargetPath`: (when renaming) new path. (when copying and moving) the target path.
-  :::
-  ::: zh-CN
-  自定义提交信息，支持以下模板变量：
+
+:::
+
+::: zh-CN
+自定义提交信息，支持以下模板变量：
+
 - `UserName`: 发起操作的用户
 - `ObjName`: 被操作文件（夹）的名称
 - `ObjPath`: 被操作文件（夹）的路径
@@ -231,11 +247,12 @@ Custom commit message, supporting the following template variables：
 - `ParentPath`: 被操作文件（夹）的父文件夹路径
 - `TargetName`: （重命名时）新名称（复制、移动时）目标文件夹名称。
 - `TargetPath`: （重命名时）新路径（复制、移动时）目标路径
-  :::
 
-### **The default download method used** { lang="en" }
+:::
 
-### **默认使用的下载方式** { lang="zh-CN" }
+### The default download method used { lang="en" }
+
+### 默认使用的下载方式 { lang="zh-CN" }
 
 ::: en
 

@@ -32,21 +32,24 @@ Cloudreve V4 服务器的地址，如：`https://www.example.com`，最好删掉
 ### 鉴权 { lang="zh-CN" }
 
 ::: en
-Cloudreve V4 supports authentication using Token. This means the mounting authentication methods are divided into:
+Cloudreve V4 supports authentication using Token. The mounting authentication methods are divided into:
 
 1. `Username` + `Password`: Automatically uses the login interface to obtain Access Token and Refresh Token, there might be issues with CAPTCHA.
 2. `Refresh Token` Only: Automatically uses the refresh interface to renew Access Token and Refresh Token, parameters can be found from browser requests or Local Storage.
 3. `Access Token` Only: Can be temporarily used but will expire and cannot be renewed.
 4. None: Anonymous user, suitable for public sharing.
 5. [Reference](../drivers/common.html#reference): Fill in `ref:/{mount path}` in `Remark`: Reference authentication, tokens, etc., from "Mounted Storage".
-   :::
-   ::: zh-CN
-   Cloudreve V4 使用 Token 进行鉴权，这意味着挂载鉴权方式分为：
-6. `用户名`+`密码`：会自动使用登录接口获取 Access Token 和 Refresh Token，存在验证码问题
-7. 仅 `Refresh Token`：会自动使用刷新接口续期 Access Token 和 Refresh Token，参数可从浏览器请求或者 Local Storage 中找到
-8. 仅 `Access Token`：能够临时使用，但会过期，且无法续期
-9. 无：匿名用户，适用于公开分享
-10. [引用](../drivers/common.html#引用)：`备注`填写 `ref:/{挂载路径}`，从 `已挂载的存储` 中引用认证、令牌等
+
+:::
+
+::: zh-CN
+Cloudreve V4 使用 Token 进行鉴权，这意味着挂载鉴权方式分为：
+
+1. `用户名`+`密码`：会自动使用登录接口获取 Access Token 和 Refresh Token，存在验证码问题
+2. 仅 `Refresh Token`：会自动使用刷新接口续期 Access Token 和 Refresh Token，参数可从浏览器请求或者 Local Storage 中找到
+3. 仅 `Access Token`：能够临时使用，但会过期，且无法续期
+4. 无：匿名用户，适用于公开分享
+5. [引用](../drivers/common.html#引用)：`备注`填写 `ref:/{挂载路径}`，从 `已挂载的存储` 中引用认证、令牌等
 
 :::
 
@@ -126,12 +129,16 @@ Supports mounting folder-type shares, the path should be filled as: `cloudreve:/
 
 - ShareID is the parameter after `/s/` in the share link.
 - Currently, Cloudreve V4 does not support creating password-protected shares. However, if the data is migrated from V3, the previously created sharing password will be retained. The URI of the share link with the password (`/s/{shareID}/{sharePassword}`) is `cloudreve://{shareID}:{sharePassword}@share`.
-  :::
-  ::: zh-CN
-  支持挂载文件夹类型的分享，路径填写为：`cloudreve://{分享ID}@share/`。
+
+:::
+
+::: zh-CN
+支持挂载文件夹类型的分享，路径填写为：`cloudreve://{分享ID}@share/`。
+
 - 分享ID为分享链接 `/s/` 后面的参数。
 - 目前 Cloudreve V4 不支持「创建带密码的分享」。但如果数据迁移自 V3，先前创建的分享密码会被保留。带密码的分享链接（`/s/{分享ID}/{分享密码}`），对应的 URI 为 `cloudreve://{分享ID}:{分享密码}@share`。
-  :::
+
+:::
 
 ### Enable Folder Size { lang="en" }
 
@@ -171,10 +178,10 @@ Enable overwrite upload and keep the previous version, which consumes extra spac
 ### 自定义 UA { lang="zh-CN" }
 
 ::: en
-Used to customize the `User-Agent` header information used in requests. Leaving it blank will use Alist default settings.
+Used to customize the `User-Agent` header information used in requests. Leaving it blank will use OpenList default settings.
 :::
 ::: zh-CN
-用于自定义请求使用的 `User-Agent` 头部信息。留空为 Alist 默认。
+用于自定义请求使用的 `User-Agent` 头部信息。留空为 OpenList 默认。
 :::
 
 ### Sorting { lang="en" }
@@ -228,9 +235,9 @@ If upload permissions are enabled for shares, uploads are supported. It requires
 如果分享开启了上传权限，支持上传。需要服务端为用户组勾选「提升匿名用户权限」（需要服务端为 Cloudreve Pro）。
 :::
 
-## **The default download method used** { lang="en" }
+## The default download method used { lang="en" }
 
-## **默认使用的下载方式** { lang="zh-CN" }
+## 默认使用的下载方式 { lang="zh-CN" }
 
 ::: en
 

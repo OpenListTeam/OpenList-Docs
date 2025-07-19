@@ -20,9 +20,9 @@ sticky: true
 star: true
 ---
 
-### **Refresh token** { lang="en" }
+## Refresh token { lang="en" }
 
-### **刷新令牌** { lang="zh-CN" }
+## 刷新令牌 { lang="zh-CN" }
 
 ::: en
 [Click here](https://oauth.yandex.com/authorize?response_type=code&client_id=a78d5a69054042fa936f6c77f9a0ae8b) to get the refresh token.
@@ -31,9 +31,9 @@ star: true
 [点击这里](https://oauth.yandex.com/authorize?response_type=code&client_id=a78d5a69054042fa936f6c77f9a0ae8b) 来获取刷新令牌。
 :::
 
-### **Root folder path** { lang="en" }
+## Root folder path { lang="en" }
 
-### **根文件夹ID** { lang="zh-CN" }
+## 根文件夹ID { lang="zh-CN" }
 
 ::: en
 The root foler to mount, defaults to `/`
@@ -42,9 +42,9 @@ The root foler to mount, defaults to `/`
 要挂载的根文件夹，默认为 `/`
 :::
 
-### **The default download method used** { lang="en" }
+## The default download method used { lang="en" }
 
-### **默认使用的下载方式** { lang="zh-CN" }
+## 默认使用的下载方式 { lang="zh-CN" }
 
 ::: en
 

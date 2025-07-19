@@ -20,9 +20,9 @@ sticky: true
 star: true
 ---
 
-## **Benefits and Precautions** { lang="en" }
+## Benefits and Precautions { lang="en" }
 
-## **好处以及注意事项** { lang="zh-CN" }
+## 好处以及注意事项 { lang="zh-CN" }
 
 ::: en
 
@@ -33,17 +33,6 @@ star: true
    - It is recommended to apply for OneDrive E5 to get better
 
 :::
-
-::: en
-::: tip
-It is not applicable to the home version. If you are in the configuration process, it does not match the options that appear in the tutorial. It may not be supported
-:::
-::: en
-First log in with your personal or organizational account
-**https://entra.microsoft.com/#view/Microsoft_AAD_IAM/TenantOverview.ReactView?Microsoft_AAD_IAM_legacyAADRedirect=true**
-Login to get our<Badge text="tenant ID" type="info" vertical="middle" />
-![onedriveapp](/img/drivers/onedrive_app/onedrive_app0.png)
-:::
 ::: zh-CN
 
 1. 好处是只授权一次管理员登录，后续添加参数时用一样的，在添加时除了邮箱哪里不同，别的都一样
@@ -53,53 +42,73 @@ Login to get our<Badge text="tenant ID" type="info" vertical="middle" />
    - 建议自己申请 OneDrive E5 去好一些
 
 :::
-
+::: en
+::: tip
+It is not applicable to the home version. If you are in the configuration process, it does not match the options that appear in the tutorial. It may not be supported
+:::
 ::: zh-CN
 ::: tip
 不适用于家庭版，如果你在配置过程中，与教程中出现的选项不符可能是不支持
 :::
+::: en
+First log in with your personal or organizational account
+
+<https://entra.microsoft.com/#view/Microsoft_AAD_IAM/TenantOverview.ReactView?Microsoft_AAD_IAM_legacyAADRedirect=true>
+
+Login to get our `tenant ID`
+
+![onedriveapp](/img/drivers/onedrive_app/onedrive_app0.png)
+:::
 ::: zh-CN
 首先使用个人或者组织账号登录
-**https://entra.microsoft.com/#view/Microsoft_AAD_IAM/TenantOverview.ReactView?Microsoft_AAD_IAM_legacyAADRedirect=true**
-登录后获取我们的<Badge text="租户ID" type="info" vertical="middle" />
+
+<https://entra.microsoft.com/#view/Microsoft_AAD_IAM/TenantOverview.ReactView?Microsoft_AAD_IAM_legacyAADRedirect=true>
+
+登录后获取我们的 `租户ID`
+
 ![onedriveapp](/img/drivers/onedrive_app/onedrive_app0.png)
 :::
 
-## **Create process** { lang="en" }
+## Create process { lang="en" }
 
-## **新建过程** { lang="zh-CN" }
+## 新建过程 { lang="zh-CN" }
 
 ::: en
 ::: danger Read the precautions carefully
 Please read carefully the following **`serial numbers , view in sequence`** , if there is any error, please feedback in time
 :::
+::: zh-CN
+::: danger 请仔细阅读注意事项
+请仔细阅读下面的 **`序号，依次查看`** ，如有错误可及时反馈
+:::
+
 ::: en
-tabs#onedrive_app
-@tab 1
 
 1. Register an application, choose the type yourself, it is recommended to choose the third
 2. Redirect URL (callback parameter), select Web as the type, and fill in the parameters **https://entra.microsoft.com/TokenAuthorize** ,Otherwise, it will not be able to authorize later
-3. After filling out, click on the registration below and you can see it after jumping<Badge text="client ID" type="info" vertical="middle" />
+3. After filling out, click on the registration below and you can see it after jumping `client ID`
    ![onedriveapp](/img/drivers/onedrive_app/onedrive_app1.png)
-   @tab 2
-   Let's get a client secret key, just get it as shown in the figure below, remember<Badge text="secret key" type="info" vertical="middle" />save in time, it will only appear once
-   ![onedriveapp](/img/drivers/onedrive_app/onedrive_app3.png)
-   @tab 3
-   Once you have obtained the client secret key, go to authorize the **`API`** to be used, and follow the picture below to get it
-   ![onedriveapp](/img/drivers/onedrive_app/onedrive_app4.png)
-   @tab 4
-   After the API is authorized, we go to authorize the organization application
+
+Let's get a client secret key, just get it as shown in the figure below, remember `secret key` save in time, it will only appear once
+![onedriveapp](/img/drivers/onedrive_app/onedrive_app3.png)
+
+Once you have obtained the client secret key, go to authorize the **`API`** to be used, and follow the picture below to get it
+![onedriveapp](/img/drivers/onedrive_app/onedrive_app4.png)
+
+After the API is authorized, we go to authorize the organization application
 
 - Left sidebar ---> Enterprise applications ---> All applications ---> **{choose which application name we started to create}** ---> Permissions ---> Click for `xxxx `Grant admin consent
   ![onedriveapp](/img/drivers/onedrive_app/onedrive_app5.png)
-  matters needing attention
+
+matters needing attention
+
 - If you start to register the application, the callback parameters are not the same, you may get an error when you click Authorization, remember to write the same
 - How to check whether the authorization is successful. If it is not authorized, the page will prompt `The application has not been found to have the authorization of the administrator's permission`. After the authorization is successful, refresh the page and you will see three API permissions, as shown in the figure below
   - The above is what it looks like when it is not authorized, and the following is what it looks like after authorization (just refresh the page after authorization)
     ![onedriveapp](/img/drivers/onedrive_app/onedrive_app7.png)
-    @tab 5
-    From the beginning to the present, we have obtained the following parameters: tenant ID^1^, registered application^2^, client ID/secret key^3^, authorization API/administrator API^4^
-    Then open the browser and finally authorize it through the following format, which are<Badge text="tenant ID" type="info" vertical="middle" /><Badge text="client ID" type="info" vertical="middle" /><Badge text="Callback URL" type="info" vertical="middle" />Change to your own final login to receive
+
+From the beginning to the present, we have obtained the following parameters: tenant ID^1^, registered application^2^, client ID/secret key^3^, authorization API/administrator API^4^
+Then open the browser and finally authorize it through the following format, which are `tenant ID` `client ID` `Callback URL` Change to your own final login to receive
 
 ```html
 https://login.microsoftonline.com/{tenant ID or common}/adminConsent?client_id={client
@@ -117,36 +126,34 @@ https://entra.microsoft.com/TokenAuthorize?admin_consent=True&tenant={Tenant ID}
 :::
 
 ::: zh-CN
-::: danger 请仔细阅读注意事项
-请仔细阅读下面的 **`序号，依次查看`** ，如有错误可及时反馈
-:::
-::: zh-CN
 tabs#onedrive_app
-@tab 1
 
 1. 注册一个应用，类型自己选，建议选第三吧
 2. 重定向URL(回调参数)，类型选择Web，参数填写： **https://entra.microsoft.com/TokenAuthorize** ，否则后面授权时无法授权
-3. 填好后点击下方的注册 跳转后就可以看到<Badge text="客户端ID" type="info" vertical="middle" />
+3. 填好后点击下方的注册 跳转后就可以看到 `客户端ID`
    ![onedriveapp](/img/drivers/onedrive_app/onedrive_app1.png)
-   @tab 2
-   我们去获取一个客户端秘钥，按照下图获取即可，记得<Badge text="客户端秘钥" type="info" vertical="middle" />要及时保存，只会出现一次
-   ![onedriveapp](/img/drivers/onedrive_app/onedrive_app3.png)
-   @tab 3
-   客户端秘钥拿到了，去授权一下使用的 **`API`**，依旧跟着下图获取即可
-   ![onedriveapp](/img/drivers/onedrive_app/onedrive_app4.png)
-   @tab 4
-   API授权后，我们去授权组织应用
+
+我们去获取一个客户端秘钥，按照下图获取即可，记得 `客户端秘钥` 要及时保存，只会出现一次
+![onedriveapp](/img/drivers/onedrive_app/onedrive_app3.png)
+
+客户端秘钥拿到了，去授权一下使用的 **`API`**，依旧跟着下图获取即可
+![onedriveapp](/img/drivers/onedrive_app/onedrive_app4.png)
+
+API授权后，我们去授权组织应用
 
 - 左侧侧边栏 ---> 企业应用程序 ---> 所有应用程序 ---> **{选择我们开始新建的那个应用名称}** ---> 权限 ---> 点击 代表`xxxx`授予管理员同意
   ![onedriveapp](/img/drivers/onedrive_app/onedrive_app5.png)
-  注意事项
+
+注意事项
+
 - 如果你在开始注册应用时，回调参数不是一样的可能点击授权时会报错，记得写一样的
 - 如何查看是否授权成功，未授权时页面是提示`未发现该应用程序具有管理员许可的授权`，授权成功后刷新一下页面会看到三条API权限如下图所示
   - 上面是未授权时的样子，下面是授权后的样子（授权后刷新页面即可）
     ![onedriveapp](/img/drivers/onedrive_app/onedrive_app7.png)
-    @tab 5
-    通过开始到现在 我们分别拿到了如下参数：租户ID^1^，注册应用^2^，拿到客户端ID/秘钥^3^，授权API/管理员API^4^
-    然后通过下面的格式最终授权一下即可，分别是<Badge text="租户ID" type="info" vertical="middle" /><Badge text="客户端ID" type="info" vertical="middle" /><Badge text="回调参数URL" type="info" vertical="middle" />改成自己的最终登录收取即可
+
+通过开始到现在 我们分别拿到了如下参数：租户ID^1^，注册应用^2^，拿到客户端ID/秘钥^3^，授权API/管理员API^4^
+
+然后通过下面的格式最终授权一下即可，分别是`租户ID`、`客户端ID`、`回调参数URL`改成自己的最终登录收取即可
 
 ```html
 https://login.microsoftonline.com/{租户ID或者common}/adminConsent?client_id={客户端ID}&redirect_uri={注册应用时的回调URL}
@@ -162,24 +169,24 @@ https://entra.microsoft.com/TokenAuthorize?admin_consent=True&tenant={租户ID}#
 ![onedriveapp](/img/drivers/onedrive_app/od_app_ok.png)
 :::
 
-## **Fill in the example** { lang="en" }
+## Fill in the example { lang="en" }
 
-## **填写示例** { lang="zh-CN" }
+## 填写示例 { lang="zh-CN" }
 
 ::: en
 Fill in the values obtained in the above process one by one. If you don’t know which email address it is, you can find it by [**view all users of the organization**](#view-all-users-of-the-organization)
 ![onedriveapp](/img/drivers/onedrive_app/onedrive_app_Denmo.png)
-<BiliBili bvid="BV1Ro4y1s725" ratio="16:9" low-quality no-danmaku />
 :::
 ::: zh-CN
-将上述过程中获取得到的值依次填入即可，如果哪个邮箱你不知道是什么了 可以通过[**查看组织所有用户**](#查看组织所有用户)来查找
+将上述过程中获取得到的值依次填入即可，如果那个邮箱你不知道是什么了，可以通过[**查看组织所有用户**](#查看组织所有用户)来查找
 ![onedriveapp](/img/drivers/onedrive_app/onedrive_app_Denmo.png)
-<BiliBili bvid="BV1Ro4y1s725" ratio="16:9" low-quality no-danmaku />
 :::
 
-## **View all users of the organization** { lang="en" }
+<BiliBili bvid="BV1Ro4y1s725" ratio="16:9" low-quality no-danmaku />
 
-## **查看组织所有用户** { lang="zh-CN" }
+## View all users of the organization { lang="en" }
+
+## 查看组织所有用户 { lang="zh-CN" }
 
 ::: en
 If you don't know how many users there are in your OneDrive organization, you can go to the link below to log in to the `admin` account to view
@@ -192,28 +199,31 @@ If you don't know how many users there are in your OneDrive organization, you ca
 ![onedriveapp](/img/drivers/onedrive_app/onedrive_app_user.png)
 :::
 
-## **Error message** { lang="en" }
+## Error message { lang="en" }
 
-## **错误提示** { lang="zh-CN" }
+## 错误提示 { lang="zh-CN" }
 
 ::: en
 
 - Tips：**Either scp or roles claim need to be present in the token** Error
-  because you didn't do it in step `4` <Badge text="grant xxx administrator consent" type="info" vertical="middle" /> caused by,Pay attention to the tips below the fourth step
+  because you didn't do it in step 4 `grant xxx administrator consent` caused by,Pay attention to the tips below the fourth step
 - Tips：**failed get objs: failed to list objs: Unable to retrieve user's mysite URL** Error
   The newly created `OneDrive` user account does not take effect in real time, Delay takes effect, wait for a few hours and try again [**Case**](https://github.com/alist-org/docs/discussions/189#discussioncomment-5928892)
+
 :::
+
 ::: zh-CN
+
 - 提示：**Either scp or roles claim need to be present in the token** 错误
-  是因为你没有在第`4`步的时候进行 <Badge text="代表xxxx授予管理员同意" type="info" vertical="middle" /> 导致的，注意查看第四步下面的提示
+  是因为你没有在第 4 步的时候进行 `代表xxxx授予管理员同意` 导致的，注意查看第四步下面的提示
 - 提示：**failed get objs: failed to list objs: Unable to retrieve user's mysite URL** 错误
   新建的 `OneDrive`用户账号不是实时生效，会延时生效等待几小时后试试看 [**案例**](https://github.com/alist-org/docs/discussions/189#discussioncomment-5928892)
-  
+
 :::
 
-## **Add OneDrive_App accounts in batches** { lang="en" }
+## Add OneDrive_App accounts in batches { lang="en" }
 
-## **批量添加OneDrive_App账号** { lang="zh-CN" }
+## 批量添加OneDrive_App账号 { lang="zh-CN" }
 
 ::: en
 software used：**https://github.com/yzbtdiy/alist_batch**
@@ -309,9 +319,9 @@ onedrive_app:
 <BiliBili bvid="BV1vc411V78S" ratio="16:9" low-quality no-danmaku />
 :::
 
-### **The default download method used** { lang="en" }
+### The default download method used { lang="en" }
 
-### **默认使用的下载方式** { lang="zh-CN" }
+### 默认使用的下载方式 { lang="zh-CN" }
 
 ::: en
 

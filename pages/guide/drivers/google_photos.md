@@ -20,9 +20,9 @@ categories:
 Due to the adjustments made by Google Photos to its Library API in April this year (https://developers.google.com/photos/support/updates?hl=en), after successfully mounting Google Photos to openlist, you can actually only view the photos uploaded through openlist. You can no longer view the photos uploaded by users via the official Google Photos app or website as you could before.
 :::
 
-## **根文件夹 ID** { lang="zh-CN" }
+## 根文件夹 ID { lang="zh-CN" }
 
-## **Root folder file_id** { lang="en" }
+## Root folder file_id { lang="en" }
 
 ::: en
 The root directory is root, and other directory IDs are unknown (~~It seems that a separate album cannot be mounted~~ It has not been resolved yet [**Reference**](https://github.com/alist-org/alist/discussions/3264#discussioncomment-4874536))
@@ -32,9 +32,9 @@ The root directory is root, and other directory IDs are unknown (~~It seems that
 根目录root，其他目录ID未知( ~~貌似不能挂载单独的相册~~ 已解决下面有介绍)
 :::
 
-## **获取 client_id, client_secret** { lang="zh-CN" }
+## 获取 client_id, client_secret { lang="zh-CN" }
 
-## **Get client_id, client_secret** { lang="en" }
+## Get client_id, client_secret { lang="en" }
 
 ::: en
 
@@ -92,9 +92,9 @@ Remember to enable **`Photos Library API`**
 
 :::
 
-## **挂载单个相册目录** { lang="zh-CN" }
+## 挂载单个相册目录 { lang="zh-CN" }
 
-## **Mount a single album directory** { lang="zh-CN" }
+## Mount a single album directory { lang="zh-CN" }
 
 ::: en
 
@@ -103,8 +103,9 @@ According to [above](https://api.oplist.org) obtained **client ID** and **secret
 We fill in **https://api.oplist.org** to get a single catalog ID for each of our Google Photos
 
 - Root file ID (that is, the album ID): default root, display all, if you only want to display a single album, you can fill in the album ID you want to display
-- After we fill in, there will also be an **`access_token`** below. This can also be filled in the Alist background refresh token option and used. The refresh token obtained at the beginning can be used for both of them- [Explanation](https://github.com/alist-org/alist/discussions/3264#discussioncomment-5051171)
-  :::
+- After we fill in, there will also be an **`access_token`** below. This can also be filled in the OpenList background refresh token option and used. The refresh token obtained at the beginning can be used for both of them- [Explanation](https://github.com/alist-org/alist/discussions/3264#discussioncomment-5051171)
+
+:::
 
 ::: zh-CN
 
@@ -117,9 +118,9 @@ We fill in **https://api.oplist.org** to get a single catalog ID for each of our
 
 :::
 
-## **两个注意事项：** { lang="zh-CN" }
+## 两个注意事项： { lang="zh-CN" }
 
-## **Two notes:** { lang="en" }
+## Two notes: { lang="en" }
 
 ::: en
 
@@ -140,9 +141,9 @@ We fill in **https://api.oplist.org** to get a single catalog ID for each of our
 
 :::
 
-### **默认使用的下载方式** { lang="zh-CN" }
+### 默认使用的下载方式 { lang="zh-CN" }
 
-### **The default download method used** { lang="en" }
+### The default download method used { lang="en" }
 
 ::: en
 
