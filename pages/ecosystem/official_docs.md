@@ -29,12 +29,14 @@ top: 990
 ## 如何使用 OpenList Docs { lang="zh-CN" }
 
 :::en
-
 You can directly access [doc.oplist.org.cn](https://doc.oplist.org.cn/) to view the documentation.
+:::
 
-## Local Development
+## Local Development { lang="en" }
 
-### Prerequisites
+### Prerequisites { lang="en" }
+
+:::en
 
 - **Node.js**: Required for running the development environment
 - **pnpm**: Recommended package manager
@@ -63,8 +65,11 @@ You can directly access [doc.oplist.org.cn](https://doc.oplist.org.cn/) to view 
 
    The documentation site will be available at `http://localhost:4859`
 
-### Building
+:::
 
+### Building { lang="en" }
+
+:::en
 In Windows, you may need to run `npm install -g win-node-env` to solve the `NODE_OPTIONS` environment variable problem.
 
 ```bash
@@ -77,13 +82,12 @@ pnpm serve
 
 :::
 
+## 本地开发 { lang="zh-CN" }
+
+### 环境要求 { lang="zh-CN" }
+
 :::zh-CN
-
 可直接在线访问[doc.oplist.org.cn](https://doc.oplist.org.cn/) 查阅文档。
-
-### 本地开发
-
-#### 环境要求
 
 - **Node.js**：运行开发环境所需
 - **pnpm**：推荐的包管理器
@@ -111,9 +115,11 @@ pnpm serve
 4. **在浏览器中打开**
 
    文档站点将在 `http://localhost:4859` 处可用
+   :::
 
-### 构建
+### 构建 { lang="zh-CN" }
 
+:::zh-CN
 在Windows操作系统下，可能需要运行`npm install -g win-node-env`解决`NODE_OPTIONS`环境变量问题。
 
 ```bash
@@ -128,10 +134,7 @@ pnpm serve
 
 ### Development Tips { lang="en" }
 
-### 开发提示 { lang="zh-CN" }
-
 :::en
-
 `:::tip` Markdown Parsing Issues
 When writing documentation, please note these important parsing rules:
 
@@ -159,6 +162,8 @@ When writing documentation, please note these important parsing rules:
 
 3. **Text Format Convention**: For better readability in plain text environments, please follow the **English first, then Chinese** order when writing bilingual content. This makes it easier to observe and navigate the documentation structure in text editors and version control systems.
    :::
+
+### 开发提示 { lang="zh-CN" }
 
 :::zh-CN
 `:::tip` Markdown 解析问题
@@ -191,23 +196,22 @@ When writing documentation, please note these important parsing rules:
 
 ## Community & Support { lang="en" }
 
-## 社区与支持 { lang="zh-CN" }
+### Getting Help { lang="en" }
 
 :::en
-
-### Getting Help
 
 - **GitHub Discussions**: Ask questions and share ideas in our [discussions forum](https://github.com/OpenListTeam/OpenList/discussions)
 - **GitHub Issues(OpenList)**: Report bugs or request features in the [OpenList repository](https://github.com/OpenListTeam/OpenList/issues)
 - **GitHub Issues(Docs)**: Report bugs or request features of the documentation in the [documentation repository](https://github.com/OpenListTeam/OpenList-Docs/issues)
 - **Telegram**: Join our community chat on [Telegram](https://t.me/OpenListTeam)
 - **Telegram Channel**: Follow updates on our [official channel](https://t.me/OpenListOfficial)
+  :::
 
-:::
+## 社区与支持 { lang="zh-CN" }
+
+### 获取帮助 { lang="zh-CN" }
 
 :::zh-CN
-
-### 获取帮助
 
 - **GitHub 讨论**：在我们的[讨论论坛](https://github.com/OpenListTeam/OpenList/discussions)中提问和分享想法
 - **GitHub Issues(OpenList)**：在[OpenList 仓库](https://github.com/OpenListTeam/OpenList/issues)中报告错误或请求功能
@@ -218,12 +222,9 @@ When writing documentation, please note these important parsing rules:
 
 ## License & Legal { lang="en" }
 
-## 许可证与法律 { lang="zh-CN" }
+### License { lang="en" }
 
 :::en
-
-### License
-
 This documentation project is licensed under the **[GNU Affero General Public License v3.0 (AGPL-3.0)](https://www.gnu.org/licenses/agpl-3.0.en.html)**.
 
 - **Freedom to Use**: You can use, modify, and distribute this documentation
@@ -236,10 +237,11 @@ For the full license text, see the [LICENSE](https://github.com/OpenListTeam/Ope
 By contributing to this project, you agree that your contributions will be licensed under the same AGPL-3.0 license.
 :::
 
+## 许可证与法律 { lang="zh-CN" }
+
+### 许可证 { lang="zh-CN" }
+
 :::zh-CN
-
-### 许可证
-
 本文档项目采用 **[GNU Affero General Public License v3.0 (AGPL-3.0)](https://www.gnu.org/licenses/agpl-3.0.en.html)** 许可证。
 
 - **使用自由**：您可以使用、修改和分发此文档
