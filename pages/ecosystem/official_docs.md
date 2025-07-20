@@ -168,6 +168,28 @@ When writing documentation, please note these important parsing rules:
 
 3. **Text Format Convention**: For better readability in plain text environments, please follow the **English first, then Chinese** order when writing bilingual content. This makes it easier to observe and navigate the documentation structure in text editors and version control systems.
 
+4. **Line Break Before Closing `:::`**: Always add a line break before the closing `:::`, especially when using lists (`li`), otherwise formatting may be corrupted:
+
+   ![Wrong Translate End Line Syntax - Light](/img/dev-tip/wrongtranslateendline-light.png#light)
+   ![Wrong Translate End Line Syntax - Dark](/img/dev-tip/wrongtranslateendline-dark.png#dark)
+
+   The above should be written as:
+
+   ![Correct Translate End Line Syntax - Light](/img/dev-tip/correcttranslateendline-light.png#light)
+   ![Correct Translate End Line Syntax - Dark](/img/dev-tip/correcttranslateendline-dark.png#dark)
+
+5. **Empty Line for Line Breaks**: Content needs an empty line to create line breaks. Without empty lines, content will render as continuous text:
+
+   ![Wrong End Line Syntax - Light](/img/dev-tip/wrongendline-light.png#light)
+   ![Wrong End Line Syntax - Dark](/img/dev-tip/wrongendline-dark.png#dark)
+
+   The above should be written as:
+
+   ![Correct End Line Syntax - Light](/img/dev-tip/correctendline-light.png#light)
+   ![Correct End Line Syntax - Dark](/img/dev-tip/correctendline-dark.png#dark)
+
+   Note: Lists (`li`) are not affected by this issue.
+
 :::
 
 ### 开发提示 { lang="zh-CN" }
@@ -199,6 +221,28 @@ When writing documentation, please note these important parsing rules:
    ![错误标题语法 - Dark](/img/dev-tip/wrongtitle-dark.png#dark)
 
 3. **文本格式约定**：为了方便在纯文本环境下的观察起见，在编写双语内容时请遵循**先英文后中文**的顺序。这样可以更容易在文本编辑器和版本控制系统中观察和导航文档结构。
+
+4. **结束块 `:::` 前换行**：结束块的 `:::` 前最好换行，尤其是使用了列表（`li`），否则会被格式化乱掉：
+
+   ![错误翻译结束行语法 - Light](/img/dev-tip/wrongtranslateendline-light.png#light)
+   ![错误翻译结束行语法 - Dark](/img/dev-tip/wrongtranslateendline-dark.png#dark)
+
+   上面的写法应该改为：
+
+   ![正确翻译结束行语法 - Light](/img/dev-tip/correcttranslateendline-light.png#light)
+   ![正确翻译结束行语法 - Dark](/img/dev-tip/correcttranslateendline-dark.png#dark)
+
+5. **内容换行需要空行**：内容需要空一行才能换行。没有空行的话，内容会渲染成连续的文本：
+
+   ![错误结束行语法 - Light](/img/dev-tip/wrongendline-light.png#light)
+   ![错误结束行语法 - Dark](/img/dev-tip/wrongendline-dark.png#dark)
+
+   上面的写法应该改为：
+
+   ![正确结束行语法 - Light](/img/dev-tip/correctendline-light.png#light)
+   ![正确结束行语法 - Dark](/img/dev-tip/correctendline-dark.png#dark)
+
+   注意：列表（`li`）不涉及这个问题。
 
 :::
 
