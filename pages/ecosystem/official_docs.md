@@ -30,10 +30,12 @@ top: 990
 
 :::en
 You can directly access [doc.oplist.org.cn](https://doc.oplist.org.cn/) to view the documentation.
+
 :::
 
 :::zh-CN
 可直接在线访问[doc.oplist.org.cn](https://doc.oplist.org.cn/) 查阅文档。
+
 :::
 
 ## Local Development { lang="en" }
@@ -118,7 +120,8 @@ pnpm serve
 4. **在浏览器中打开**
 
    文档站点将在 `http://localhost:4859` 处可用
-   :::
+
+:::
 
 ### 构建 { lang="zh-CN" }
 
@@ -164,7 +167,8 @@ When writing documentation, please note these important parsing rules:
    ![Wrong Title Syntax - Dark](/img/dev-tip/wrongtitle-dark.png#dark)
 
 3. **Text Format Convention**: For better readability in plain text environments, please follow the **English first, then Chinese** order when writing bilingual content. This makes it easier to observe and navigate the documentation structure in text editors and version control systems.
-   :::
+
+:::
 
 ### 开发提示 { lang="zh-CN" }
 
@@ -195,33 +199,8 @@ When writing documentation, please note these important parsing rules:
    ![错误标题语法 - Dark](/img/dev-tip/wrongtitle-dark.png#dark)
 
 3. **文本格式约定**：为了方便在纯文本环境下的观察起见，在编写双语内容时请遵循**先英文后中文**的顺序。这样可以更容易在文本编辑器和版本控制系统中观察和导航文档结构。
-   :::
 
-## Community & Support { lang="en" }
-
-### Getting Help { lang="en" }
-
-:::en
-
-- **GitHub Discussions**: Ask questions and share ideas in our [discussions forum](https://github.com/OpenListTeam/OpenList/discussions)
-- **GitHub Issues(OpenList)**: Report bugs or request features in the [OpenList repository](https://github.com/OpenListTeam/OpenList/issues)
-- **GitHub Issues(Docs)**: Report bugs or request features of the documentation in the [documentation repository](https://github.com/OpenListTeam/OpenList-Docs/issues)
-- **Telegram**: Join our community chat on [Telegram](https://t.me/OpenListTeam)
-- **Telegram Channel**: Follow updates on our [official channel](https://t.me/OpenListOfficial)
-  :::
-
-## 社区与支持 { lang="zh-CN" }
-
-### 获取帮助 { lang="zh-CN" }
-
-:::zh-CN
-
-- **GitHub 讨论**：在我们的[讨论论坛](https://github.com/OpenListTeam/OpenList/discussions)中提问和分享想法
-- **GitHub Issues(OpenList)**：在[OpenList 仓库](https://github.com/OpenListTeam/OpenList/issues)中报告错误或请求功能
-- **GitHub Issues(Docs)**：在[文档仓库](https://github.com/OpenListTeam/OpenList-Docs/issues)中报告文档错误或请求文档功能
-- **Telegram**：加入我们在 [Telegram](https://t.me/OpenListTeam) 的社区聊天
-- **Telegram 频道**：在我们的[官方频道](https://t.me/OpenListOfficial)关注更新
-  :::
+:::
 
 ## License & Legal { lang="en" }
 
@@ -238,6 +217,7 @@ This documentation project is licensed under the **[GNU Affero General Public Li
 For the full license text, see the [LICENSE](https://github.com/OpenListTeam/OpenList-Docs/blob/main/LICENSE) file.
 
 By contributing to this project, you agree that your contributions will be licensed under the same AGPL-3.0 license.
+
 :::
 
 ## 许可证与法律 { lang="zh-CN" }
@@ -255,4 +235,5 @@ By contributing to this project, you agree that your contributions will be licen
 完整的许可证文本请参见 [LICENSE](https://github.com/OpenListTeam/OpenList-Docs/blob/main/LICENSE) 文件。
 
 通过为本项目做出贡献，您同意您的贡献将采用相同的 AGPL-3.0 许可证。
+
 :::
