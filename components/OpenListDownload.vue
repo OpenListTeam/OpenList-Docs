@@ -110,6 +110,10 @@
   const filteredDownloads = computed(() => {
     let filtered = releases
 
+    if (selectedVersion.value == 'beta') {
+      filtered = filtered.filter(download => download.lite === false)
+    }
+
     if (selectedOS.value) {
       filtered = filtered.filter(download => download.os === selectedOS.value)
     }

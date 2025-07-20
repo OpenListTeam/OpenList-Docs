@@ -132,8 +132,9 @@ https://pkg.go.dev/github.com/OpenListTeam/OpenList/v4/internal/conf#Config
 ::: en
 
 - Stable version: `openlistteam/openlist:latest` or `openlistteam/openlist:v*.*.*`
-
   - Latest image version tag, please refer to https://hub.docker.com/r/openlistteam/openlist/tags
+
+  - Some PaaS platforms do not support images larger than 100MB. Please use the lightweight image `lite`, for example: `openlistteam/openlist:latest-lite`. Otherwise, you may encounter the following error: `Pod ephemeral local storage usage exceeds the total limit of containers 100Mi.`
 
 - Dev version: `openlistteam/openlist:beta`
 
@@ -169,8 +170,9 @@ The solution is, if the CPU architecture is 64-bit, you can try to manually pull
 ::: zh-CN
 
 - 稳定版：`openlistteam/openlist:latest` or `openlistteam/openlist:v*.*.*`
-
   - 最新镜像版本 Tag，请参阅：https://hub.docker.com/r/openlistteam/openlist/tags
+
+  - 部分容器运行平台不支持大于 100M 的镜像，请使用精简版镜像 `lite`，如：`openlistteam/openlist:latest-lite`，否则可能出现`Pod ephemeral local storage usage exceeds the total limit of containers 100Mi.`
 
 - 开发版：`openlistteam/openlist:beta`
 
