@@ -41,7 +41,7 @@
       <div class="downloads">
         <a
           v-if="locale === 'zh-CN'"
-          :href="`https://ghproxy.cn/${download.link}`"
+          :href="`https://ghproxy.cn/https://github.com/OpenListTeam/OpenList/releases/latest/download/${download.filename}`"
           class="download-button"
           :download="download.filename"
           target="_blank"
@@ -49,7 +49,7 @@
           {{ t('download.gh_proxy') }}
         </a>
         <a
-          :href="download.link"
+          :href="`https://github.com/OpenListTeam/OpenList/releases/latest/download/${download.filename}`"
           class="download-button"
           :download="download.filename"
           target="_blank"
