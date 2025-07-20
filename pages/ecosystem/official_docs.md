@@ -32,6 +32,10 @@ top: 990
 You can directly access [doc.oplist.org.cn](https://doc.oplist.org.cn/) to view the documentation.
 :::
 
+:::zh-CN
+可直接在线访问[doc.oplist.org.cn](https://doc.oplist.org.cn/) 查阅文档。
+:::
+
 ## Local Development { lang="en" }
 
 ### Prerequisites { lang="en" }
@@ -87,7 +91,6 @@ pnpm serve
 ### 环境要求 { lang="zh-CN" }
 
 :::zh-CN
-可直接在线访问[doc.oplist.org.cn](https://doc.oplist.org.cn/) 查阅文档。
 
 - **Node.js**：运行开发环境所需
 - **pnpm**：推荐的包管理器
