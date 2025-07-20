@@ -20,22 +20,22 @@
   },
   "dependencies": {
     "@giscus/vue": "^3.1.1",
-    "@iconify-json/devicon-plain": "^1.2.30",
+    "@iconify-json/devicon-plain": "^1.2.31",
     "@iconify-json/logos": "^1.2.4",
     "@iconify-json/ri": "^1.2.5",
     "@iconify-json/vscode-icons": "^1.2.23",
-    "valaxy": "0.25.4",
+    "valaxy": "0.25.9",
     "valaxy-addon-algolia": "0.2.0",
     "valaxy-addon-components": "0.1.0",
     "valaxy-addon-git-log": "0.3.2",
-    "valaxy-theme-press": "0.25.4",
+    "valaxy-theme-press": "0.25.9",
     "vitepress-plugin-group-icons": "^1.6.1"
   },
   "devDependencies": {
     "@iconify-json/carbon": "1.2.9",
-    "@iconify-json/devicon": "^1.2.30",
+    "@iconify-json/devicon": "^1.2.32",
     "@iconify-json/simple-icons": "1.2.39",
-    "@types/node": "^24.0.13",
+    "@types/node": "^24.0.15",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.2",
     "nodemon": "^3.1.10",
@@ -43,7 +43,7 @@
     "vite": "6.3.5",
     "vitepress": "1.1.4",
     "vue": "^3.5.17",
-    "vue-i18n": "^11.1.9",
+    "vue-i18n": "^11.1.10",
     "vue-tsc": "^2.2.12"
   },
   "lint-staged": {
