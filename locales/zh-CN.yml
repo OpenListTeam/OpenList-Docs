@@ -68,3 +68,4 @@ download:
   cpu: CPU 架构
   download: 下载
   gh_proxy: 加速下载
+  version: 版本

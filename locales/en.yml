@@ -68,3 +68,4 @@ download:
   cpu: CPU Architecture
   download: Download
   gh_proxy: GhProxy
+  version: Version

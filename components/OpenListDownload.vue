@@ -1,4 +1,14 @@
 <template>
+  <p>{{ t('download.version') }}:</p>
+  <div class="filter-buttons">
+    <button :class="{ active: selectedVersion === 'latest' }" @click="selectedVersion = 'latest'">
+      Latest
+    </button>
+    <button :class="{ active: selectedVersion === 'beta' }" @click="selectedVersion = 'beta'">
+      Beta
+    </button>
+  </div>
+
   <p>{{ t('download.os') }}:</p>
   <div class="filter-buttons">
     <button :class="{ active: selectedOS === '' }" @click="selectedOS = ''">All</button>
@@ -30,6 +40,7 @@
       <div class="file-content">
         <h3>{{ download.filename }}</h3>
         <div class="badges">
+          <span class="badge">{{ selectedVersion }}</span>
           <span v-if="download.os" class="badge">{{ download.os }}</span>
           <span v-if="download.cpu" class="badge">{{ download.cpu }}</span>
         </div>
@@ -41,7 +52,7 @@
       <div class="downloads">
         <a
           v-if="locale === 'zh-CN'"
-          :href="`https://ghproxy.cn/https://github.com/OpenListTeam/OpenList/releases/latest/download/${download.filename}`"
+          :href="getGhProxyUrl(download.filename)"
           class="download-button"
           :download="download.filename"
           target="_blank"
@@ -49,7 +60,7 @@
           {{ t('download.gh_proxy') }}
         </a>
         <a
-          :href="`https://github.com/OpenListTeam/OpenList/releases/latest/download/${download.filename}`"
+          :href="getDirectUrl(download.filename)"
           class="download-button"
           :download="download.filename"
           target="_blank"
@@ -66,22 +77,25 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
   import { ref, computed } from 'vue'
   import { useI18n } from 'vue-i18n'
-  import releases from './openlist_releases.json'
+  import releases from './openlist_releases_db.json'
+
+  type VersionType = 'latest' | 'beta'
 
   const { t, locale } = useI18n()
 
-  const selectedOS = ref('')
-  const selectedCPU = ref('')
+  const selectedVersion = ref<VersionType>('latest')
+  const selectedOS = ref<string>('')
+  const selectedCPU = ref<string>('')
 
-  const availableOS = computed(() => {
-    const osSet = new Set(releases.map(d => d.os))
+  const availableOS = computed((): string[] => {
+    const osSet = new Set(releases.map(d => d.os).filter(os => os))
     return Array.from(osSet).sort()
   })
 
-  const availableCPU = computed(() => {
+  const availableCPU = computed((): string[] => {
     let filtered = releases
 
     if (selectedOS.value) {
@@ -106,6 +120,18 @@
 
     return filtered
   })
+
+  const getDirectUrl = (filename: string): string => {
+    const basePath =
+      selectedVersion.value === 'latest' ? 'releases/latest/download' : 'releases/download/beta'
+    return `https://github.com/OpenListTeam/OpenList/${basePath}/${filename}`
+  }
+
+  const getGhProxyUrl = (filename: string): string => {
+    const basePath =
+      selectedVersion.value === 'latest' ? 'releases/latest/download' : 'releases/download/beta'
+    return `https://ghproxy.cn/https://github.com/OpenListTeam/OpenList/${basePath}/${filename}`
+  }
 </script>
 
 <style scoped>
