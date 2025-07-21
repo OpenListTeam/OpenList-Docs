@@ -16,8 +16,10 @@ categories:
 ### **以下资源可能会对您有所帮助** { lang="zh-CN" }
 
 > Third party tutorials and information may be outdated and incorrect, and no warranty of availability is made here.
-> :::en
-> [https://space.bilibili.com/36411485/channel/collectiondetail?sid=686340](https://space.bilibili.com/36411485/channel/collectiondetail?sid=686340)
+
+:::en
+
+https://space.bilibili.com/36411485/channel/collectiondetail?sid=686340](https://space.bilibili.com/36411485/channel/collectiondetail?sid=686340)
 
 [https://anwen-anyi.github.io/](https://anwen-anyi.github.io/index/)
 
