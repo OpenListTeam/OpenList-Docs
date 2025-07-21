@@ -4,9 +4,9 @@
 
 ```md
 ---
- title:
-   en: example
-   zh-CN: 示例
+title:
+  en: example
+  zh-CN: 示例
 categories:
   - example-category
 top: 1000
@@ -21,7 +21,6 @@ top: 1000
   **必须添加类别**, 否则不会显示于侧边栏 (`sidebar`).
 
   可用的类别包括:
-
   - `installation`: 安装教程相关
   - `drivers`: 驱动配置细节相关
   - `advanced`: 高级操作相关
@@ -35,7 +34,6 @@ top: 1000
   应当注意: 类别排序也是先按 `top` 由高到低排列的 (feature?).
 
   预留:
-
   - 10000-9001: 安装教程相关
   - 9000-8001: 驱动配置相关
 

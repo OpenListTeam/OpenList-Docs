@@ -221,7 +221,6 @@ There are three ways to choose based on your needs
 1. Using **https://github.com/jing332/AListFlutter**
 2. Using **https://github.com/LeoHaoVIP/AListLiteAndroid**
 3. Use `termux` to run
-
    - Reference: **https://anwen-anyi.github.io/index/14-android_install.html**
    - Note: Remember to authorize the APP, set the background running and battery saving policy to unlimited, otherwise it may be killed in the background, causing it to be suddenly interrupted and unusable during background use.
 
@@ -232,7 +231,6 @@ There are three ways to choose based on your needs
 1. 使用 **https://github.com/jing332/AListFlutter**
 2. 使用 **https://github.com/LeoHaoVIP/AListLiteAndroid**
 3. 使用 `termux` 运行
-
    - 参考：**https://anwen-anyi.github.io/index/14-android_install.html**
    - 注意事项：记得给APP授权，后台运行、电池省电策略设置为无限制，否则可能会被杀后台导致挂在后台使用期间突然中断无法使用
 

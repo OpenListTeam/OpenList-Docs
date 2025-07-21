@@ -86,7 +86,6 @@ Open **https://github.com/settings/developers** Click **`New OAuth App`**
 - Application description
   - write whatever you want
 - **Authorization callback URL**
-
   - Callback URL address
   - **https://your_domain/api/auth/sso_callback** - Both **http** and **https** can be used
     Remember to get **Client secrets** after filling it out, and then fill it in the OpenList background.
@@ -538,7 +537,6 @@ https://your.openlist.domain/api/auth/sso_callback\?method=get_sso_id
 - **SSO 组织名称：** `user`
 - **SSO 应用程序名称：** `user`
 - **SSO 端点名称：** `https://your.authentik.domain/application/o/openlist/`
-
   - **注意：** 将 \[your.authentik.domain] 替换为你的 Authentik 安装的 FQDN。注意路径末尾的斜杠 `/`。如果你在 Authentik 应用程序设置第 3 步选择了不同的应用程序 slug，请在此处替换
 
 - **SSO JWT 公钥：** 打开在 Authentik 应用程序设置第 3.3 步中下载的证书文件，并将内容粘贴在此处。它以 `-----BEGIN CERTIFICATE-----` 开头

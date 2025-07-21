@@ -45,14 +45,12 @@ top: 100
 - `bleve`: An open source full-text search engine. It will split the words in the name of object and search for the keywords you enter. But its search results may be so strange that you can't get the results you want, and it will take up more resources.
 
 - **sqlite3** is easy to trigger `database is locked` lock library cannot write files
-
   - Solution to `database is locked`:
     - It's because the database is building the index. If you are still in the building process, please wait patiently.
     - If the index has been completed, it is caused by turning on [Automatically update the index](#automatically-update-the-index). Please turn off [Automatically update the index](#automatically-update-the-index). If the problem still occurs, please close and restart OpenList.
     - Or switch the database to MySQL
 
 - `meilisearch`: I haven’t experienced it in depth yet and I don’t know much about the specific differences. It’s for professionals to use or you can check it yourself. [View PR link](https://github.com/alist-org/alist/pull/6060) , the only thing I know is that you have to [build it yourself](https://www.meilisearch.com/docs/learn/getting_started/installation) to use it. It supports many methods, but there is no daemon and other lazy operations, and it does not support the system [ It relies on Linux systems lower than `GLIBC_2.27`](https://github.com/meilisearch/meilisearch/issues/4022) If it is built on this machine, it will be automatically recognized. If it is another device, you can modify the **meilisearch** field content of the configuration file.
-
   - Daemon：If you want to use it, you can create a new daemon process in the same way as manually starting OpenList.
   - Download Url：https://github.com/meilisearch/meilisearch/releases
   - `meilisearch` Docs Url：https://www.meilisearch.com/docs/learn/getting_started/installation
@@ -79,14 +77,12 @@ The following table could help you understand the difference between the two sea
 - `bleve`：一个开源全文搜索引擎。它将分割对象名称中的单词，并搜索您输入的关键字。但它的搜索结果可能很奇怪，你不能得到你想要的结果，而且它会占用更多的资源。
 
 - `sqlite3` 容易触发 `database is locked`锁库无法写入文件
-
   - 解决`database is locked`方案：
     - 是因为数据库在构建索引，如果你还在构建过程中，请耐心等待
     - 如果是已经索引完毕，是因为开启了[自动索引](#自动更新索引)导致的，请关闭使用[自动索引](#自动更新索引)，如果还是这个问题请关闭后重新启动OpenList
     - 或者将数据库切换为MySQL
 
 - `meilisearch`：暂时未深度体验也不太了解具体差异，给予专业人士使用或者自己去查询一翻，[查看PR链接](https://github.com/alist-org/alist/pull/6060)，唯一知道的是得[自己搭建](https://www.meilisearch.com/docs/learn/getting_started/installation)使用，支持很多种方法，但是并没有守护进程等懒人操作、不支持系统[依赖低于`GLIBC_2.27`](https://github.com/meilisearch/meilisearch/issues/4022)以下的Linux系统、如果是本机搭建会自动识别，如果是其它设备可以修改配置文件的**meilisearch**字段内容
-
   - 守护进程：如果要使用可以自己按照手动启动OpenList的办法新建一个守护进程
   - 下载地址：https://github.com/meilisearch/meilisearch/releases
   - `meilisearch` 文档地址：https://www.meilisearch.com/docs/learn/getting_started/installation
@@ -302,7 +298,6 @@ Normal users do not modify the database options. They use the `sqlite` database 
 After turning on the constructive index, the more the number you build, the larger the files. Finally, you accidentally occupy the machine's hard disk, and then click the clear index button. What should I do if the file is still as big?
 
 - This is caused by the cache of `sqlite`, there are two solutions:
-
   1. We use commands or tools to connect to `sqlite` database, input：**`VACUUM;`**
 
   ```sql
@@ -310,7 +305,6 @@ After turning on the constructive index, the more the number you build, the larg
   ```
 
   2. After using the command to clean up, we replace it with `mysql` database before constructing indexes
-
      - Sqlite replaced with mysql database tutorial：**[BV1iV4y1T7kh](https://www.bilibili.com/video/BV1iV4y1T7kh)**
 
      Comparison after cleaning the command: The picture above shows before cleaning up, and the following figure shows that after cleaning, you can execute several commands several times if there is no effect.
@@ -335,7 +329,6 @@ After turning on the constructive index, the more the number you build, the larg
 开启构建索引后，你构建的数量越多文件越大，最后不小心把机器的硬盘占满了，然后就点击了清除索引按钮，文件还是一样大这怎么办？
 
 - 这是因为`sqlite`的缓存导致的(不知道对不对)，我们后面有两种解决方案：
-
   1. 我们使用命令或者工具连接上`sqlite`数据库，输入：**`VACUUM;`**
 
   ```sql
@@ -343,7 +336,6 @@ After turning on the constructive index, the more the number you build, the larg
   ```
 
   2. 在使用命令清理后我们更换为`MySQL`数据库后再来构建索引
-
      - Sqlite如何更换为MySQL数据库教程：**[BV1iV4y1T7kh](https://www.bilibili.com/video/BV1iV4y1T7kh)**
 
      使用命令清理前和使用命令清理后对比：上图为清理前，下图为清理后，如果没效果可以多执行几次命令。

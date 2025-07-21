@@ -165,7 +165,6 @@ sequenceDiagram
 - FTP Passive Transfer Port Mapping
 
   This field consists of a series of "mapping groups" separated by commas (`,`) or newlines. The legal forms for a "mapping group" are as follows:
-
   1. `<port number>`
   2. `<starting port number>-<ending port number (inclusive)>`
   3. `<response port number>:<listening port number>`
@@ -174,19 +173,16 @@ sequenceDiagram
   All port numbers must be between 1024 and 65535 (inclusive), and the starting port number of a range must be less than the ending port number.
 
   For cases where this field is left blank, the server will choose any port between 1024 and 65535 for passive transfer and will not perform any mapping.
-
   - Each "mapping group type 1" specifies a single port to be used for passive transfer, and no mapping will be performed for that port.
   - Each "mapping group type 2" specifies a range of ports, and all ports in that range will be used for passive transfer without any mapping.
   - Each "mapping group type 3" specifies a listening port to be used for passive transfer, and when the server selects this port, it will return the "response port number" to the client.
   - "Mapping group type 4" requires that the two ranges before and after the colon `:` have equal lengths. Each "mapping group type 4" forms a one-to-one pairing of port numbers, where each pair is treated as a "mapping group type 3."
 
   The following are legal formats:
-
   - `1024`
   - `4001-5000,5001-6000:50001-51000<newline>4000:65535`
 
   The following are illegal formats:
-
   - `1023` (less than 1024)
   - `65536` (greater than 65535)
   - `4000, 5000` (space after the comma)
@@ -230,7 +226,6 @@ sequenceDiagram
 - FTP 被动传输端口映射
 
   该字段由一系列以英文逗号`,`或换行符隔开的“映射组”构成，“映射组”的合法形式有以下四种：
-
   1. `<端口号>`
   2. `<端口号区间开始>-<端口号区间结束（含，下同）>`
   3. `<响应端口号>:<监听端口号>`
@@ -249,7 +244,6 @@ sequenceDiagram
   “映射组类型4”要求英文冒号`:`前后两个区间长度相等，每填写一个“映射组类型4”，映射组里的两个区间可以形成一一对应的配对，每一对端口号视为一个“映射组类型3”。
 
   以下这些填写方式是合法的：
-
   - `1024`
   - `4001-5000,5001-6000:50001-51000<换行>4000:65535`
     以下这些填写方式是非法的：

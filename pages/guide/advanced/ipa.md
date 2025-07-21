@@ -39,7 +39,6 @@ But for **ios>=16**, you need to name the ipa file: `original file name@bundle-i
 ::: en
 
 - **.ipa installation requires https and a valid certificate** , not just a package can be installed without a signature
-
   - How to change the name of the computer version
 
     <BiliBili bvid="BV1bT411N7tT" ratio="16:9" low-quality no-danmaku />
@@ -59,7 +58,6 @@ But for **ios>=16**, you need to name the ipa file: `original file name@bundle-i
 
 - **.ipa安装 需要 https 和 有效的证书**，不是随便一个包上传上去没签名就能安装的
 - 爱思助手签名的无法使用在线安装，只能使用爱思助手安装（经群友测试）
-
   - 电脑版如何改名
 
     <BiliBili bvid="BV1bT411N7tT" ratio="16:9" low-quality no-danmaku />

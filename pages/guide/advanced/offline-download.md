@@ -158,13 +158,11 @@ According to [source code](https://github.com/alist-org/alist/blob/main/internal
 2. The torrent can be parsed, but **`The system cannot find the path specified.`** appears when uploading.
 
    The above two methods are most likely caused by the qBittorrent software itself, probably because of the green version and the modified version that have undergone some functional castration modifications. It is recommended to go to the official website to download and install it to restore it (the conclusion drawn by myself after stepping on the pit)
-
    - **qBittorrent** official website: **https://www.qbittorrent.org/**
    - **qBittorrent-Enhanced-Edition** GitHub: **https://github.com/c0re100/qBittorrent-Enhanced-Edition**
 
 3. Because the `v2.8.3` API is used, the minimum version of qBittorrent should be `4.4.0beta2` or `4.3.8` official version
 4. If **qBittorrent** sets the ip where alist is located to be exempt from authentication, you can directly omit the user name and password before `@` (configured on the **qBittorrent** client side)
-
    - 3 and 4 are not mentioned in the video.
      **qBittorrent** Video Tutorials
 
@@ -179,13 +177,11 @@ According to [source code](https://github.com/alist-org/alist/blob/main/internal
 2. 可以解析种子下载，但是在上传的时候出现 **`The system cannot find the path specified.`** 找不到路径
 
    以上两种办法大概率是因为 qBittorrent 软件本体导致的，可能是因为绿色版,修改版 进行了一些功能阉割 修改导致的，建议去官网下载安装即可恢复（由本人亲自踩坑后得出的结论）
-
    - **qBittorrent**官网：**https://www.qbittorrent.org/**
    - **qBittorrent增强版**GitHub：**https://github.com/c0re100/qBittorrent-Enhanced-Edition**
 
 3. 因为用到了 `v2.8.3` 的 API，所以 qBittorrent 的版本最低应该是 `4.4.0beta2` 或者 `4.3.8` 正式版
 4. 如果 **qBittorrent** 设置了 alist 所在的 ip 免验证的话可以直接省略 `@` 前面的用户名和密码（在**qBittorrent**客户端配置）
-
    - 3 和 4 是视频中没有提到的.
      **qBittorrent**视频教程
 

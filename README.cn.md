@@ -24,14 +24,13 @@ OpenList 是一个现代化的基于 Web 的文件管理解决方案，具有以
 
 这是 OpenList 的新文档。使用 Valaxy 构建。对于旧文档（基于 Alist Docs），请访问 [OpenList Docs Legacy](https://github.com/OpenListTeam/docs)。
 
-
 ## 🛠️ 开发
 
 本文档站点使用 [Valaxy](https://github.com/YunYouJun/valaxy) 和 [valaxy-theme-press](https://github.com/YunYouJun/valaxy/tree/main/packages/valaxy-theme-press) 构建。
 
 ### 环境要求
 
-- Node.js 18+ 
+- Node.js 18+
 - pnpm（推荐的包管理器）
 
 ### 本地开发
@@ -63,7 +62,6 @@ pnpm serve
 ## 🤝 贡献
 
 欢迎贡献来改进文档！请阅读我们的[贡献指南](./CONTRIBUTE.md)了解如何提交改进。
-
 
 ## 📝 许可证
 

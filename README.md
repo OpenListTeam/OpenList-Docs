@@ -63,8 +63,6 @@ pnpm serve
 
 Welcome contributions to improve the documentation! Please read our [Contributing Guide](./CONTRIBUTE.md) for details on how to submit improvements.
 
-
-
 ## 📝 License
 
 This project is licensed under the [GNU Affero General Public License v3.0](https://www.gnu.org/licenses/agpl-3.0.html) - see the [LICENSE](./LICENSE) file for details.

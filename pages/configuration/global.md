@@ -218,13 +218,11 @@ Ignore the parameters for forwarding direct links, such as `sign` and `openlist_
 2. **Bind WebAuthn Credentials**: Go to the `Profile` page in the admin panel and click `Add WebAuthn Credential` to bind your credentials.
 
    Supported authentication methods:
-
    - Local PIN code
    - Companion devices (e.g., smart bands, smartwatches)
    - Windows Hello options (e.g., facial recognition, fingerprint recognition)
 
 3. **Log in with WebAuthn**: After binding, you can log in using WebAuthn:
-
    - On the login page, click the login button on the far right.
    - Enter your username.
    - Click login.
@@ -252,7 +250,6 @@ Ignore the parameters for forwarding direct links, such as `sign` and `openlist_
 2. **绑定 WebAuthn 凭据**：导航至后台`个人资料`页面，点击`添加 Webauthn 凭据`进行绑定
 
    支持的验证方式：
-
    - 本机 PIN 码
    - 配套设备（如智能手环、手表）
    - Windows Hello 全部选项（人脸识别、指纹识别等）

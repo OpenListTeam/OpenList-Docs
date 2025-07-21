@@ -51,7 +51,6 @@ html.dark {
   --vp-c-bg-soft: hsl(196, 10%, 14%);
 }
 
-
 // Link
 :root {
   --va-c-link: var(--vp-c-brand-1);
@@ -70,8 +69,8 @@ html.dark {
 
 .theme-image-light,
 .theme-image-dark,
-img[src$="#light"],
-img[src$="#dark"] {
+img[src$='#light'],
+img[src$='#dark'] {
   max-width: 100%;
   height: auto;
   transition: opacity 0.3s ease-in-out;
@@ -97,19 +96,18 @@ img[src$="#dark"] {
   display: block;
 }
 
-
-img[src$="#light"] {
+img[src$='#light'] {
   display: block;
 }
 
-img[src$="#dark"] {
+img[src$='#dark'] {
   display: none;
 }
 
-.dark img[src$="#light"] {
+.dark img[src$='#light'] {
   display: none;
 }
 
-.dark img[src$="#dark"] {
+.dark img[src$='#dark'] {
   display: block;
 }

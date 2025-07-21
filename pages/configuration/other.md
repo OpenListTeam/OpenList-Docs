@@ -77,9 +77,7 @@ The token that can be used to access all APIs of the program. Unlike the token o
 1. When using OpenList, you may notice two Aria2 options. What is the difference between them? [**Click here for detailed explanation**](../faq/why.md#What-are-the-differences-between-the-two-Aria2s)
 
 2. Supports using Aria2 to download folders while preserving the original directory structure.
-
    - **Configure Aria2**: Go to the bottom-right corner, click `Settings` → `Aria2 RPC Link` → Enter the `Aria2 RPC Key` (if available).
-
      - Aria2 will download files locally, so you only need to initiate the download on your local machine. It also supports pushing the download task to another computer, your own server, or other devices in your local network, as long as the target device has Aria2 installed and is connected to either the public internet or the local network.
 
    - **Start downloading**: Check the `Enable checkbox` in the bottom-right corner → Select the files/folders → Click `Download` at the bottom → `Send to Aria2`.
@@ -90,9 +88,7 @@ The token that can be used to access all APIs of the program. Unlike the token o
 
 1. 在使用时发现有两个 Aria2，那它们有什么区别呢？[**点击查看详情说明**](../faq/why.md#两个aria2有什么不同)
 2. 支持使用 Aria2 下载文件夹并保持原有目录结构
-
    - **配置 Aria2**：进入右下角 `设置` → `Aria2 RPC 链接` → 填写 `Aria2 RPC 秘钥`（如果有的话）
-
      - Aria2 会将文件下载到本地，所以只需在本地执行下载。同时，也支持将下载任务推送到他人的电脑、自己的服务器，或局域网内其他设备，前提是目标设备已安装 Aria2 并连接到公网或内网。
 
    - **开启下载**：右下角勾选 `开启复选框` → 选择文件/文件夹 → 点击底部 `下载` → `发送到 Aria2`
