@@ -55,14 +55,16 @@ Example of share link: https://siot-share.lenovo.com.cn/s/#/eb.3N93ZbJsaAjerjdm4
 
 - **Share ID**: Fill in the sharing link and automatically extract the string `eb.3N93ZbJsaAjerjdm4N` at the end of the sharing link
 - **Share Password**: The extraction code `e5eu`
-  :::
+
+:::
 
 ::: zh-CN
 分享链接链接示例：https://siot-share.lenovo.com.cn/s/#/eb.3N93ZbJsaAjerjdm4N 提取码：`e5eu`
 
 - **分享ID**：填写分享链接，自动提取分享链接中末尾的字符串 `eb.3N93ZbJsaAjerjdm4N`
 - **分享密码** ：提取码 `e5eu`
-  :::
+
+:::
 
 ## Host Address { lang="en" }
 
