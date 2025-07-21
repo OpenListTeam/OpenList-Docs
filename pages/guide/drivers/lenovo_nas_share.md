@@ -20,14 +20,12 @@ sticky: true
 star: true
 ---
 
-**https://pc.lenovo.com.cn**
-
 ::: en
-Need to purchase Lenovo devices
+Need to purchase Lenovo devices **https://pc.lenovo.com.cn**
 :::
 
 ::: zh-CN
-需要购买联想设备
+需要购买联想设备 **https://pc.lenovo.com.cn**
 :::
 
 ## Root Folder ID { lang="en" }
@@ -37,13 +35,13 @@ Need to purchase Lenovo devices
 ::: en
 Root Folder ID: Leave it blank
 
-Subfolder ID: Go to the folder where you need to get the subfolder ID, find the request, and obtain the subfolder ID.
+Subfolder ID: Get as shown in the picture
 :::
 
 ::: zh-CN
-根文件夹ID：空着
+根文件夹：留空
 
-子文件夹ID：进入需要获取子文件夹ID的文件夹，找到该请求，获取子文件夹ID
+子文件夹：按图片所示获取
 :::
 
 ![](/img/drivers/lenovonasshare/lenovonasshare_fileid.png)
@@ -53,37 +51,47 @@ Subfolder ID: Go to the folder where you need to get the subfolder ID, find the 
 ## 分享ID和分享密码 { lang="zh-CN" }
 
 ::: en
-Example of share link: https://siot-share.lenovo.com.cn/s/#/Ss.JjMaJJwcgrDT46qhVA Extraction code: `fr0w`
+Example of share link: https://siot-share.lenovo.com.cn/s/#/eb.3N93ZbJsaAjerjdm4N Extraction code: `e5eu`
 
-- **Share ID**: The string at the end of the share link, `Ss.JjMaJJwcgrDT46qhVA`
-- **Share Password**: The extraction code
-
-:::
+- **Share ID**: Fill in the sharing link and automatically extract the string `eb.3N93ZbJsaAjerjdm4N` at the end of the sharing link
+- **Share Password**: The extraction code `e5eu`
+  :::
 
 ::: zh-CN
+分享链接链接示例：https://siot-share.lenovo.com.cn/s/#/eb.3N93ZbJsaAjerjdm4N 提取码：`e5eu`
 
-分享链接链接示例： https://siot-share.lenovo.com.cn/s/#/Ss.JjMaJJwcgrDT46qhVA 提取码：`fr0w`
-
-- **分享ID**：分享链接中末尾的字符串 `Ss.JjMaJJwcgrDT46qhVA`
-- **分享密码** ：提取码
-
-:::
+- **分享ID**：填写分享链接，自动提取分享链接中末尾的字符串 `eb.3N93ZbJsaAjerjdm4N`
+- **分享密码** ：提取码 `e5eu`
+  :::
 
 ## Host Address { lang="en" }
 
-### 主机地址{ lang="zh-CN" }
+## 主机地址{ lang="zh-CN" }
 
 ::: en
 The default uses the public network: **https://siot-share.lenovo.com.cn**
 
-If you are using a local network, you can change it to the internal network address of the Lenovo device: **http://192.168.XX.XX**
+(Not recommended) If you are using a local network, you can change it to the internal network address of the Lenovo device: **http://192.168.XX.XX**
 :::
 
-::: zh-CM
-
+::: zh-CN
 默认使用公网的：**https://siot-share.lenovo.com.cn**
 
-如果你使用局域网的可以改成联想设备内网地址：**http://192.168.XX.XX**
+（不推荐）如果你使用局域网的可以改成联想设备内网地址：**http://192.168.XX.XX**
+:::
+
+## Show Root Folder { lang="en" }
+
+## 显示根文件夹 { lang="zh-CN" }
+
+::: en
+If unchecked and `Share ID` is empty, the folder ID of the first-level folder is automatically filled in.
+Taking the above picture as an example, the contents of the `OpenList` folder are directly displayed without displaying the `OpenList` folder.
+:::
+
+::: zh-CN
+若取消勾选且 `分享ID` 为空，自动填入第一级文件夹的文件夹ID。
+以上图为例，直接显示 `OpenList` 文件夹中的内容，不显示 `OpenList` 文件夹。
 :::
 
 ## The default download method used { lang="en" }
