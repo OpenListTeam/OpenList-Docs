@@ -37,6 +37,7 @@ For OpenList Proxy, we provide two deployment methods:
 
 - cf-worker
 - 二进制文件部署
+
 :::
 
 ### Cloudflare Worker { lang="en" }
