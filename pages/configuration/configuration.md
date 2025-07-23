@@ -204,15 +204,6 @@ URL 链接结尾请勿携带 `/` ，参照如下示例，否则也将无法使�
 ### cdn
 
 ::: en
-::: warning
-Please note that there is currently no available CDN for the beta version of OpenList. If you need to use CDN, please use the official version
-:::
-::: zh-CN
-::: warning
-请注意，目前 OpenList 的 Beta 版本没有可用的 CDN。如果需要使用 CDN，请使用正式版本。
-:::
-
-::: en
 The address of the CDN. Included `$version` values will be dynamically replaced by the version of OpenList. Existing dist resources are hosted on both npm and GitHub, which can be found at:
 :::
 ::: zh-CN
@@ -240,10 +231,186 @@ Thus it is possible to use any npm or ~~GitHub~~ CDN path for this field. For ex
 - ~~`https://jsd.onmicrosoft.cn/gh/OpenListTeam/OpenList-Frontend@$version/dist/`~~
 
 ::: en
-Keep empty to use local dist resources.
+Keep empty to use dist resources embedded in the program.
 :::
 ::: zh-CN
-您也可以将其设置为空以使用本地 dist。
+您也可以将其设置为空以使用程序内置 dist。
+:::
+
+#### CDN for Beta version { lang="en" }
+
+#### Beta 版本使用 CDN { lang="zh-CN" }
+
+::: en
+Since the frontend uses Vite for building, the generated JS files use a hash naming strategy. When code changes occur, the built file names change, making `index.html` files from different versions incompatible with each other.
+
+The OpenList backend needs to load `index.html` into memory for processing, including inserting code and modifying variables. If deployed only through Pages with modified API addresses, it would result in missing functionality and routing failures.
+
+To solve this problem, we've added the ability to fetch `index.html` from CDN for Beta versions and self-built versions, ensuring that JS files and `index.html` are properly matched.
+
+- **Release version**: Static resources are loaded through NPM CDN with fixed versions, so there's no need to request from CDN - the built-in `index.html` can be used directly
+  - Note: Some NPM CDNs (like npmmirror) may prohibit access to HTML files, but Release versions don't depend on CDN's `index.html`, so they're unaffected
+- **Beta version**: Updates frequently, OpenListTeam doesn't upload to NPM, and no CDN is provided for Beta versions
+
+Since Beta versions don't have NPM CDN provided by OpenListTeam, you need to deploy it yourself:
+
+1. **Deploy frontend build artifacts**
+   - Deploy build artifacts to a CDN platform (you can use Cloudflare Pages, EdgeOne Pages, etc.)
+   - Configure necessary CORS headers, for example of `edgeone.json`:
+     ```json
+     {
+       "headers": [
+         {
+           "source": "/*",
+           "headers": [
+             {
+               "key": "Access-Control-Allow-Origin",
+               "value": "*"
+             },
+             {
+               "key": "Access-Control-Allow-Methods",
+               "value": "GET, OPTIONS"
+             },
+             {
+               "key": "Access-Control-Allow-Headers",
+               "value": "Content-Type"
+             }
+           ]
+         },
+         {
+           "source": "/**/*.mjs",
+           "headers": [
+             {
+               "key": "Content-Type",
+               "value": "application/javascript"
+             }
+           ]
+         }
+       ]
+     }
+     ```
+   - Recommend using "copy + overwrite" deployment method, retaining old version resource files to ensure compatibility for versions not rebooted
+
+2. **Configure backend**
+   - Add CDN configuration in `config.json`
+   - The program will automatically fetch the latest `index.html` from CDN when starting
+
+3. **Version updates**
+   - When you need to update the frontend, simply restart the backend program
+
+Here's a diagram for better understanding:
+
+```mermaid
+flowchart TD
+    A[Program Initialization] --> B{CDN Configured?}
+
+    B -->|Yes| D{Version Type?}
+    B -->|No| E{Local dist_dir Configured?}
+
+    E -->|No| F[Use Built-in index.html]
+    E -->|Yes| G[Use index.html from Local dist_dir]
+
+    D -->|Beta Version| H[Fetch index.html from CDN]
+    D -->|Release Version| F
+
+    H --> I{CDN Fetch Successful?}
+    I -->|Success| J[Use CDN-fetched index.html]
+    I -->|Failed| K[Resty Retry 3 Times]
+    K -->|Success| J
+    K -->|Still Failed| L[Program Exit, Wait for Restart]
+
+    F --> M[Replace CDN, Site Info and Other Variables]
+    G --> M
+    J --> M
+    M --> N[Return Page]
+```
+
+:::
+
+::: zh-CN
+由于前端采用 Vite 构建，生成的 JS 文件使用哈希命名策略。当代码发生变更时，构建后的文件名会改变，这导致不同版本间的 `index.html` 文件无法互相兼容。
+
+OpenList 后端需要将 `index.html` 加载到内存中进行处理，包括插入代码、修改变量等操作。如果仅通过 Pages 部署并修改 API 地址，会导致功能缺失和路由失效。
+
+为解决这个问题，我们为 Beta 版本和自构建版本添加了从 CDN 获取 `index.html` 的功能，这样可以确保 JS 文件和 `index.html` 配套。
+
+- **Release 版本**：静态资源通过 NPM CDN 加载，版本固定，因此无需向 CDN 请求，可直接使用内置的 `index.html`
+  - 注意：某些 NPM CDN（如 npmmirror）可能禁止访问 HTML 文件，但 Release 版本不依赖 CDN 的 `index.html`，因此不受影响
+- **Beta 版本**：更新频繁，OpenListTeam 不会上传 NPM，不提供 Beta 版本的 CDN
+
+由于目前 OpenList 的 Beta 版本没有可用的 CDN，您需要自行部署：
+
+1. **部署前端构建产物**
+   - 将构建产物部署到 CDN 平台（可使用 Cloudflare Pages、EdgeOne Pages 等）
+   - 配置必要的 CORS 标头，如下方的 `edgeone.json`
+     ```json
+     {
+       "headers": [
+         {
+           "source": "/*",
+           "headers": [
+             {
+               "key": "Access-Control-Allow-Origin",
+               "value": "*"
+             },
+             {
+               "key": "Access-Control-Allow-Methods",
+               "value": "GET, OPTIONS"
+             },
+             {
+               "key": "Access-Control-Allow-Headers",
+               "value": "Content-Type"
+             }
+           ]
+         },
+         {
+           "source": "/**/*.mjs",
+           "headers": [
+             {
+               "key": "Content-Type",
+               "value": "application/javascript"
+             }
+           ]
+         }
+       ]
+     }
+     ```
+   - 可以使用"复制+覆盖"方式部署，保留旧版本资源文件，确保兼容未重启的版本
+2. **配置后端**
+   - 在 `config.json` 中添加 CDN 配置
+   - 程序启动时会自动从 CDN 获取最新的 `index.html`
+3. **版本更新**
+   - 需要更新前端时，只需重启后端程序即可
+
+可以参考以下流程图便于理解:
+
+```mermaid
+flowchart TD
+    A[程序初始化] --> B{是否配置CDN?}
+
+    B -->|是| D{版本类型?}
+    B -->|否| E{是否配置本地dist_dir?}
+
+
+    E -->|否| F[使用程序内嵌的index.html]
+    E -->|是| G[使用本地dist_dir中的index.html]
+
+
+    D -->|Beta版本| H[从CDN获取index.html]
+    D -->|Release版本| F
+
+    H --> I{CDN获取成功?}
+    I -->|成功| J[使用CDN获取的index.html]
+    I -->|失败| K[Resty重试3次]
+    K -->|成功| J
+    K -->|仍失败| L[程序退出，等待重启]
+
+    F --> M[替换CDN、站点信息等变量]
+    G --> M
+    J --> M
+    M --> N[返回页面]
+```
+
 :::
 
 ### jwt_secret
