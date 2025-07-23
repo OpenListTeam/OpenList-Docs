@@ -329,19 +329,14 @@ Detailed text tutorial: <https://anwen-anyi.github.io/index/11-durl.html>
 ::: zh-CN
 可以使用 Cloudflare Workers 做代理，这里填写您的 Cloudflare Workers 地址即可。
 
-搭建 Workers 代码可以在 https://github.com/OpenListTeam/OpenList-Proxy/blob/main/openlist-proxy.js 找到，实际使用时需要替换其中的这几个变量：
-
-- `ADDRESS`: 你的 OpenList 地址，必须加上协议头，后面不能跟 `/`。如 `https://pan.example.com`；
-
-- `TOKEN`: 即管理员账户的 [Token](../../configuration/other.md#token)，可在 OpenList 管理页面中进入“其他设置”得到；
-
-- `WORKER_ADDRESS`: 你的 Worker 地址，通常与 **下载代理URL** 相同。
-
-  :warning: Cloudflare Workers 免费 CDN 支持兼容（不论国内还是国外）的只有 **http80端口** 和 **https443端口**，来自群友测试
+搭建 Workers 代码可以在 https://github.com/OpenListTeam/OpenList-Proxy/blob/main/openlist-proxy.js 找到，实际使用时需要配置环境变量：
 
 在 OpenList 后台挂载配置时 填写 **下载代理URL** 时候的 链接结尾 不可以带 `/`
 
-详细文字教程：<https://anwen-anyi.github.io/index/11-durl.html>
+更多内容请参考[OpenList Proxy](../../ecosystem/official_proxy)
+
+来自安稳的详细文字教程：<https://anwen-anyi.github.io/index/11-durl.html>
+
 :::
 
 ### 2. Universal Binary { lang="en" }
@@ -357,7 +352,9 @@ Detailed text tutorial: <https://anwen-anyi.github.io/index/11-durl.html>
 ::: zh-CN
 您可以使用另一台机器进行代理，在 https://github.com/OpenListTeam/OpenList-Proxy/releases 下载程序并通过 `./openlist-proxy -help` 查看使用方法。
 
-详细文字教程：<https://anwen-anyi.github.io/index/11-durl.html>
+更多内容请参考[OpenList Proxy](../../ecosystem/official_proxy)
+
+来自安稳的详细文字教程：<https://anwen-anyi.github.io/index/11-durl.html>
 :::
 
 ### 3. Developing on your own { lang="en" }

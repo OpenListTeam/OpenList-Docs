@@ -522,9 +522,9 @@ npm build-js && npm deploy-js
 
 :::
 
-#### Variable Description { lang="en" }
+### Variable Description { lang="en" }
 
-#### 变量说明 { lang="zh-CN" }
+### 变量说明 { lang="zh-CN" }
 
 :::en
 | Variable Name | Required | Variable Type | Variable Description |
