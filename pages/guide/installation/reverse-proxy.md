@@ -22,7 +22,7 @@ star: true
 ---
 
 ::: en
-The program listens to port 5244 by default. If you do `reverse proxy`, recommended you set [site_url](../../config/configuration.md#site_url) so that Openlist can works fine.
+The program listens to port 5244 by default. If you do `reverse proxy`, recommended you set [site_url](../../config/configuration.md#site_url) so that OpenList can works fine.
 
 > If you want to use a sub folder, refer to [reverse proxy with sub folder](../../faq/howto.md#how-to-reverse-proxy-with-sub-directory)
 > :::tip Missing https or port / Can't Play video when reverse-proxy non-standard ports or enable https?
