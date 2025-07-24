@@ -80,7 +80,15 @@ After modifying the configuration file, restart OpenList for changes to take eff
     "max_size": 50,
     "max_backups": 30,
     "max_age": 28,
-    "compress": false
+    "compress": false,
+    "filter": {
+      "enable": false,
+      "filters": [
+        "{\"path\":\"/ping\"}",
+        "{\"method\":\"HEAD\"}",
+        "{\"path\":\"/dav/\",\"method\":\"PROPFIND\"}",
+      ]
+    }
   },
   "delayed_start": 0,
   "max_connections": 0,
@@ -684,13 +692,32 @@ The log configuration. Set this field to save detailed logs of disable.
 ```json
   "log": {
     "enable": true,					// Whether OpenList should store logs
-    "name": "data\\log\\log.log",	//The path and name of the log file
-    "max_size": 10,					//the maximum size of a single log file, in MB. After reaching the specified size, the file will be automatically split.
-    "max_backups": 5,				//the number of log backups to keep. Old backups will be deleted automatically when the limit is exceeded.
-    "max_age": 28,					//The maximum number of days preserved in the log file, the log file that exceeds the number of days will be deleted
-    "compress": false				//Whether to enable log file compression functions. After compression, the file size can be reduced, but you need to decompress when viewing, and the default is to close the state false
+    "name": "data\\log\\log.log",	// The path and name of the log file
+    "max_size": 10,					// the maximum size of a single log file, in MB. After reaching the specified size, the file will be automatically split.
+    "max_backups": 5,				// the number of log backups to keep. Old backups will be deleted automatically when the limit is exceeded.
+    "max_age": 28,					// The maximum number of days preserved in the log file, the log file that exceeds the number of days will be deleted
+    "compress": false,			// Whether to enable log file compression functions. After compression, the file size can be reduced, but you need to decompress when viewing, and the default is to close the state false
+    "filter": {             // skip some logs output, not enable by default
+      "enable": false,
+      "filters": [                // preset example
+        "{\"path\":\"/ping\"}",   // health check
+        "{\"method\":\"HEAD\"}",  // head request
+        "{\"path\":\"/dav/\",\"method\":\"PROPFIND\"}",   // dav metadata
+      ]
   },
 ```
+
+Each filter acts as the following object:
+
+```json
+{
+    "cidr": "",
+    "path": "",
+    "method": ""
+}
+```
+
+Take note of the startup log to confirm the load, as detailed in the source code `server/middlewares/filtered_logger.go`.
 
 :::
 
@@ -699,14 +726,34 @@ The log configuration. Set this field to save detailed logs of disable.
 
 ```json
   "log": {
-    "enable": true,					//开启日志记录功能，默认为开启状态 true
-    "name": "data\\log\\log.log",	//日志文件的路径和名称
-    "max_size": 10,					//单个日志文件的最大大小，单位为 MB。达到指定大小后会自动切分文件
-    "max_backups": 5,				//保留的日志备份数量，超过数量会自动删除旧的备份
-    "max_age": 28,					//日志文件保存的最大天数，超过天数的日志文件会被删除
-    "compress": false				//是否启用日志文件压缩功能。压缩后可以减小文件大小，但查看时需要解压缩，默认为关闭状态 false
+    "enable": true,					// 开启日志记录功能，默认为开启状态 true
+    "name": "data\\log\\log.log",	// 日志文件的路径和名称
+    "max_size": 10,					// 单个日志文件的最大大小，单位为 MB。达到指定大小后会自动切分文件
+    "max_backups": 5,				// 保留的日志备份数量，超过数量会自动删除旧的备份
+    "max_age": 28,					// 日志文件保存的最大天数，超过天数的日志文件会被删除
+    "compress": false,			// 是否启用日志文件压缩功能。压缩后可以减小文件大小，但查看时需要解压缩，默认为关闭状态 false
+    "filter": {             // 按条件过滤日志功能，默认不开启
+      "enable": false,
+      "filters": [                  // 预设例子
+        "{\"path\":\"/ping\"}",     // 健康检查
+        "{\"method\":\"HEAD\"}",    // HEAD 请求
+        "{\"path\":\"/dav/\",\"method\":\"PROPFIND\"}",   // WebDav 元数据
+      ]
+    }
   },
 ```
+
+过滤器每行为如下对象：
+
+```json
+{
+    "cidr": "",
+    "path": "",
+    "method": ""
+}
+```
+
+注意查看启动日志以确认加载情况，具体实现详见源代码 `server/middlewares/filtered_logger.go`.
 
 :::
 
