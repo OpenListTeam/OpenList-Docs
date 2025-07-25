@@ -144,7 +144,7 @@ If HTTP/3 is needed, the corresponding `Host` line should be modified to:
 proxy_set_header Host $host:$server_port;
 ```
 
-This modified configuration will also be compatible with HTTP/2 and lower versions of requests.
+This modified configuration will be compatible with requests using HTTP/2 or lower versions.
 
 :::
 
