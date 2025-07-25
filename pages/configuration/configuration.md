@@ -84,9 +84,21 @@ After modifying the configuration file, restart OpenList for changes to take eff
     "filter": {
       "enable": false,
       "filters": [
-        "{\"path\":\"/ping\"}",
-        "{\"method\":\"HEAD\"}",
-        "{\"path\":\"/dav/\",\"method\":\"PROPFIND\"}",
+        {
+          "cidr": "",
+          "path": "/ping",
+          "method": ""
+        },
+        {
+          "cidr": "",
+          "path": "",
+          "method": "HEAD"
+        },
+        {
+          "cidr": "",
+          "path": "/dav/",
+          "method": "PROPFIND"
+        }
       ]
     }
   },
@@ -699,10 +711,22 @@ The log configuration. Set this field to save detailed logs of disable.
     "compress": false,			// Whether to enable log file compression functions. After compression, the file size can be reduced, but you need to decompress when viewing, and the default is to close the state false
     "filter": {             // skip some logs output, not enable by default
       "enable": false,
-      "filters": [                // preset example
-        "{\"path\":\"/ping\"}",   // health check
-        "{\"method\":\"HEAD\"}",  // head request
-        "{\"path\":\"/dav/\",\"method\":\"PROPFIND\"}",   // dav metadata
+      "filters": [            // preset example
+        {
+          "cidr": "",
+          "path": "/ping",    // Health check
+          "method": ""
+        },
+        {
+          "cidr": "",
+          "path": "",
+          "method": "HEAD"    // HEAD request
+        },
+        {                     // WebDav metadata
+          "cidr": "",
+          "path": "/dav/",
+          "method": "PROPFIND"
+        }
       ]
   },
 ```
@@ -712,8 +736,8 @@ Each filter acts as the following object:
 ```json
 {
     "cidr": "",
-    "path": "",
-    "method": ""
+    "path": "",     // http path，If it starts with“/”, it is an absolute path; if it doesn't start with“/”, it is a relative path
+    "method": ""    // HTTP/webdav method, in uppercase
 }
 ```
 
@@ -734,10 +758,22 @@ Take note of the startup log to confirm the load, as detailed in the source code
     "compress": false,			// 是否启用日志文件压缩功能。压缩后可以减小文件大小，但查看时需要解压缩，默认为关闭状态 false
     "filter": {             // 按条件过滤日志功能，默认不开启
       "enable": false,
-      "filters": [                  // 预设例子
-        "{\"path\":\"/ping\"}",     // 健康检查
-        "{\"method\":\"HEAD\"}",    // HEAD 请求
-        "{\"path\":\"/dav/\",\"method\":\"PROPFIND\"}",   // WebDav 元数据
+      "filters": [            // 预设例子
+        {
+          "cidr": "",
+          "path": "/ping",    // 健康检查
+          "method": ""
+        },
+        {
+          "cidr": "",
+          "path": "",
+          "method": "HEAD"    // HEAD 请求
+        },
+        {                     // WebDav 元数据
+          "cidr": "",
+          "path": "/dav/",
+          "method": "PROPFIND"
+        }
       ]
     }
   },
@@ -748,8 +784,8 @@ Take note of the startup log to confirm the load, as detailed in the source code
 ```json
 {
     "cidr": "",
-    "path": "",
-    "method": ""
+    "path": "",     // http path，如果 / 开头则是绝对路径，没有 / 开头则是相对路径
+    "method": ""    // http/webdav 方法，记得大写
 }
 ```
 
