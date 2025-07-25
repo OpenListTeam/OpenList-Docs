@@ -359,7 +359,7 @@ sequenceDiagram
 
 ## 5. 注意事项 { lang="zh-CN" }
 
-::: zh-CN
+::: en
 ::: warning Handling Method for Token Leakage
 If the Token is accidentally leaked, you can go to the 115 device login management to解除应用授权 (revoke application authorization).
 
