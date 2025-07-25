@@ -341,5 +341,5 @@ Enter the same path of `docker-compose.yml` file and run:
 ```bash
 docker compose pull
 docker compose down
-docker compsoe up -d
+docker compose up -d
 ```
