@@ -31,7 +31,7 @@ If the `Host` header is unavailable, you can use the higher-priority `X-Forwarde
 If you want to use a **sub folder**, you should configure the [site_url](../../configuration/configuration.md#site_url). Refer to [reverse proxy with sub folder](../../faq/howto.md#how-to-reverse-proxy-with-sub-directory).
 
 :::warning
-If you need to proxy to a non-standard port, make sure to pass the `domain:port` information through the `Host` or `X-Forwarded-Host` header, or the port will be lost in URLs!
+If you need to proxy to a non-standard port, make sure to pass the `domain:port` information through the `Host` or `X-Forwarded-Host` header, otherwise the port will be lost in URLs!
 :::
 
 ::: zh-CN
