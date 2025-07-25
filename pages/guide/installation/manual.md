@@ -347,12 +347,12 @@ accept: function not implemented
 
 ::: en
 ::: warning
-Versions above v3.25.0 change the password to an encrypted hash value, and the password cannot be calculated directly. If the password is forgotten, it can only be re-**`randomly generated`** or **`manually set`**.
+The current version only stores the hash value of the password, and the password cannot be calculated directly. If the password is forgotten, it can only be re-**`randomly generated`** or **`manually set`**.
 :::
 
 ::: zh-CN
 ::: warning
-v3.25.0以上版本将密码改成加密方式存储的hash值，无法直接反算出密码，如果忘记了密码只能通过重新 **`随机生成`** 或者 **`手动设置`**。
+当前版本仅存储密码的 hash 值，无法直接反算出密码，如果忘记了密码只能通过重新 **`随机生成`** 或者 **`手动设置`**。
 :::
 
 ::: en
@@ -602,7 +602,7 @@ Wscript.quit
 
 ::: en
 ::: info
-For all platform, you can use follow command to silent start, stop and restart. (v3.4.0 and later)
+For all platform, you can use follow command to silent start, stop and restart. 
 
 ```bash
 openlist start
@@ -614,7 +614,7 @@ openlist restart
 
 ::: zh-CN
 ::: info
-对于所有平台，您可以使用以下命令来静默启动、停止和重新启动。 （v3.4.0 及更高版本）
+对于所有平台，您可以使用以下命令来静默启动、停止和重新启动。
 
 ```bash
 openlist start
