@@ -89,6 +89,51 @@ OpenList版本 ≥ 3.42.0 的查看 [允许所有云盘调用其他云盘的离�
 
 ### qBittorrent
 
+#### Docker Compose
+
+```yaml
+# docker-compose.yml
+services:
+  openlist:
+    image: 'openlistteam/openlist:latest'
+    container_name: openlist
+    volumes:
+      - ./config/openlist:/opt/openlist/data
+      - ./temp/qBittorrent:/opt/openlist/data/temp/qBittorrent
+    ports:
+      - '5244:5244'
+    environment:
+      - PUID=0
+      - PGID=0
+      - UMASK=022
+    restart: unless-stopped
+    networks:
+      openlist:
+        aliases:
+          - openlist
+  qbittorrent:
+    image: lscr.io/linuxserver/qbittorrent:latest
+    container_name: qbittorrent
+    environment:
+      - PUID=0
+      - PGID=0
+      - WEBUI_PORT=8080
+    volumes:
+      - ./config/qbittorrent:/config
+      - ./temp/qBittorrent:/opt/openlist/data/temp/qBittorrent
+    ports:
+      - 8080:8080
+    restart: unless-stopped
+    networks:
+      openlist:
+        aliases:
+          - qbittorrent
+networks:
+  openlist:
+```
+
+#### Windows
+
 ::: en
 (Here we take the Windows side as an example, I don’t know if there is one on the Linux side)
 First of all, we need to configure the default values on the client side of **`qBittorrent`**
@@ -204,14 +249,49 @@ Subsequent supplement
 
 ### Transmission
 
-::: en
-Subsequent supplement
+#### Docker Compose
 
-:::
-::: zh-CN
-后续补充
-
-:::
+```yaml
+# docker-compose.yml
+version: '3'
+services:
+  openlist:
+    image: 'openlistteam/openlist:latest'
+    container_name: openlist
+    volumes:
+      - ./config/openlist:/opt/openlist/data
+      - ./temp/transmission:/opt/openlist/data/temp/Transmission
+    ports:
+      - '5244:5244'
+    environment:
+      - PUID=0
+      - PGID=0
+      - UMASK=022
+    restart: unless-stopped
+    networks:
+      openlist:
+        aliases:
+          - openlist
+  transmission:
+    image: lscr.io/linuxserver/transmission:latest
+    container_name: transmission
+    environment:
+      - PUID=0
+      - PGID=0
+      - TZ=Etc/UTC
+    volumes:
+      - ./config/transmission:/config
+      - ./temp/transmission:/opt/openlist/data/temp/Transmission
+    ports:
+      - 9091:9091
+    restart: unless-stopped
+    networks:
+      openlist:
+        aliases:
+          - transmission
+networks:
+  openlist:
+```
 
 ### 115 Cloud、PikPak、Thunder { lang="en" }
 
