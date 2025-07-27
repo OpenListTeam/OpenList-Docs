@@ -220,27 +220,7 @@ The `root folder ID` of this folder is `249163533602609229`.
 
 6. Enter the obtained `Refresh Token` and `Access Token` in the refresh token (if not obtained, please refer to [2. Preparation for Access](#_2-preparation-for-access)).
 
-7. If you are using the OAuth client ID and secret provided by `OpenList (or public welfare server/self-built server)`, please configure according to `7.1` and `7.2`:
-
-   7.1. Check `Use online api` to indicate using the online API provided by OpenList.
-
-   7.2. Fill in `https://api.oplist.org/115cloud/renewapi` as the Api url address. If it is a `public welfare server/self-built server`, please fill in the corresponding server address.
-
-   ![115-open-06-01-d](/img/drivers/115/115-open-06-01-d.png#dark)
-
-   ![115-open-06-01-l](/img/drivers/115/115-open-06-01-l.png#light)
-
-8. If you are using your own created OAuth client ID and secret, please configure according to `8.1` and `8.2`:
-
-   8.1. Do not check `Use online api` to indicate using your self-built OAuth client ID and secret.
-
-   8.2. Enter your `Oauth Client ID` in `Client ID` and your `Oauth Client Secret` in `Client Secret`.
-
-   ![115-open-06-02-d](/img/drivers/115/115-open-06-02-d.png#dark)
-
-   ![115-open-06-02-l](/img/drivers/115/115-open-06-02-l.png#light)
-
-9. Click the `Add` button to complete adding the 115 network disk.
+7. Click the `Add` button to complete adding the 115 network disk.
 
 :::
 ::: zh-CN
@@ -261,46 +241,24 @@ The `root folder ID` of this folder is `249163533602609229`.
 
 6. 刷新令牌中填写上面获取的`刷新令牌`和`Access token`（如未获取，请参考[2. 准备接入](#_2-准备接入)）。
 
-7. 如果你使用的是 `OpenList （或者公益服务器/自建服务器）`提供的 OAuth 客户端 ID 和密钥，请按照`7.1`和`7.2`进行配置
+   - 115的令牌刷新机制不需要AppKey，且有针对IP的频控，故使用[本地逻辑](https://github.com/OpenListTeam/115-sdk-go)实现。
 
-   7.1. 在`Use online api`中勾选，表示使用 OpenList 提供的在线 API。
-
-   7.2. Api url address填写为 `https://api.oplist.org/115cloud/renewapi`，如果是`公益服务器/自建服务器`，请填写对应的服务器地址。
-
-   ![115-open-06-01-d](/img/drivers/115/115-open-06-01-d.png#dark)
-
-   ![115-open-06-01-l](/img/drivers/115/115-open-06-01-l.png#light)
-
-8. 如果你使用的是自己创建的 OAuth 客户端 ID 和密钥，请按照`8.1`和`8.2`进行配置
-
-   8.1. 在`Use online api`中不勾选，表示使用自建的 OAuth 客户端 ID 和密钥。
-
-   8.2. 在`客户端ID`中填写你的`Oauth 客户端 ID`，在`客户端密钥`中填写你的`Oauth 客户端密钥`
-
-   ![115-open-06-02-d](/img/drivers/115/115-open-06-02-d.png#dark)
-
-   ![115-open-06-02-l](/img/drivers/115/115-open-06-02-l.png#light)
-
-9. 点击`添加`按钮，完成115网盘的添加。
+7. 点击`添加`按钮，完成115网盘的添加。
 
 :::
 
-## 4. Instructions on the `Use online api` Option { lang="en" }
+### 3.3. Method for Refreshing Access Token { lang="en" }
 
-## 4. 关于`Use online api`选项的说明 { lang="zh-CN" }
-
-### 4.1. Method for Refreshing Access Token When Having Your Own Secret { lang="en" }
-
-### 4.1. 自身有密钥的情况下，AccessToken刷新的方式 { lang="zh-CN" }
+### 3.3. 当前AccessToken刷新的方式 { lang="zh-CN" }
 
 ::: en
 
 ```mermaid
 sequenceDiagram
   participant  OpenList
-  participant  115服务器
-  OpenList->>115服务器: 提供刷新令牌+内置的客户端ID和密钥
-  115服务器->>OpenList: 返回新的访问令牌+刷新令牌
+  participant  115
+  OpenList->>115: Post refresh_token
+  115->>OpenList: Get new access_token and refresh_token
 ```
 
 :::
@@ -310,54 +268,14 @@ sequenceDiagram
 sequenceDiagram
   participant  OpenList
   participant  115服务器
-  OpenList->>115服务器: 提供刷新令牌+内置的客户端ID和密钥
+  OpenList->>115服务器: 提供刷新令牌
   115服务器->>OpenList: 返回新的访问令牌+刷新令牌
 ```
 
-:::
 
-### 4.2. Method for Refreshing Access Token When Not Having Your Own Secret { lang="en" }
+## 4. Notes { lang="en" }
 
-### 4.2. 自身没有密钥的情况下，AccessToken刷新的方式 { lang="zh-CN" }
-
-::: en
-
-```mermaid
----
-title: 如何通过OnlineAPI刷新AccessToken？
----
-sequenceDiagram
-  participant  OpenList
-  participant  OnlineAPI
-  participant  115服务器
-  OpenList->>OnlineAPI: 提供刷新令牌
-  OnlineAPI->>115服务器: 提供刷新令牌+内置的客户端ID和密钥
-  115服务器->>OnlineAPI: 返回新的访问令牌+刷新令牌
-  OnlineAPI->>OpenList: 返回新的访问令牌+刷新令牌
-```
-
-:::
-::: zh-CN
-
-```mermaid
----
-title: 如何通过OnlineAPI刷新AccessToken？
----
-sequenceDiagram
-  participant  OpenList
-  participant  OnlineAPI
-  participant  115服务器
-  OpenList->>OnlineAPI: 提供刷新令牌
-  OnlineAPI->>115服务器: 提供刷新令牌+内置的客户端ID和密钥
-  115服务器->>OnlineAPI: 返回新的访问令牌+刷新令牌
-  OnlineAPI->>OpenList: 返回新的访问令牌+刷新令牌
-```
-
-:::
-
-## 5. Notes { lang="en" }
-
-## 5. 注意事项 { lang="zh-CN" }
+## 4. 注意事项 { lang="zh-CN" }
 
 ::: en
 ::: warning Handling Method for Token Leakage
@@ -390,23 +308,9 @@ An account can obtain two `Refresh tokens` in the same application. After the th
 一个帐号可以在同一个应用获取两次`Refresh token`，第三次获取后第一次获取到的`Refresh token`就会失效，使用第一个`Refresh token`会提示上面的错误
 :::
 
-## 6. Using Other APP IDs to Obtain Refresh Tokens (Not Yet Implemented) { lang="en" }
+## 5. Using Other APP IDs to Obtain Refresh Tokens (Not Yet Implemented) { lang="en" }
 
-## 6. 使用其他 APP ID 获取刷新令牌（尚未实现） { lang="zh-CN" }
-
-::: en
-::: tip
-Under development, the tutorial has not been updated yet. Stay tuned!
-:::
-
-::: zh-CN
-::: tip
-开发中, 教程暂未更新, 敬请期待!
-:::
-
-## 7. Mobile QR Code Authorization PKCE Mode (Not Yet Implemented) { lang="en" }
-
-## 7. 手机扫码授权PKCE模式（尚未实现） { lang="zh-CN" }
+## 5. 使用其他 APP ID 获取刷新令牌（尚未实现） { lang="zh-CN" }
 
 ::: en
 ::: tip
@@ -418,9 +322,23 @@ Under development, the tutorial has not been updated yet. Stay tuned!
 开发中, 教程暂未更新, 敬请期待!
 :::
 
-## 8. Default Download Method Used { lang="en" }
+## 6. Mobile QR Code Authorization PKCE Mode (Not Yet Implemented) { lang="en" }
 
-## 8. 默认使用的下载方式 { lang="zh-CN" }
+## 6. 手机扫码授权PKCE模式（尚未实现） { lang="zh-CN" }
+
+::: en
+::: tip
+Under development, the tutorial has not been updated yet. Stay tuned!
+:::
+
+::: zh-CN
+::: tip
+开发中, 教程暂未更新, 敬请期待!
+:::
+
+## 7. Default Download Method Used { lang="en" }
+
+## 7. 默认使用的下载方式 { lang="zh-CN" }
 
 ::: en
 
