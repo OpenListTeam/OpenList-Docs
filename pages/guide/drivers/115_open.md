@@ -220,7 +220,7 @@ The `root folder ID` of this folder is `249163533602609229`.
 
 6. Enter the obtained `Refresh Token` and `Access Token` in the refresh token (if not obtained, please refer to [2. Preparation for Access](#_2-preparation-for-access)).
 
-   -115's token refresh mechanism does not require AppKey and has IP-based rate limiting, so it is implemented using [local logic](https://github.com/OpenListTeam/115-sdk-go).
+   - 115's token refresh mechanism does not require AppKey and has IP-based rate limiting, so it is implemented using [local logic](https://github.com/OpenListTeam/115-sdk-go).
 
 7. Click the `Add` button to complete adding the 115 network disk.
 
