@@ -19,7 +19,7 @@ Requirements:
 - Linux with systemd
 - Root privileges for installation
 - `curl`, `tar` installed
-- `x86_64` or `arm64` architecture
+- Architectures listed in the [download page](download)
 
 :::
 
@@ -29,7 +29,7 @@ Requirements:
 - 使用 systemd 的 Linux 系统
 - Root 权限
 - 已安装 `curl`, `tar`
-- `x86_64` 或 `arm64` 架构
+- 在[下载页面](download)中列出的架构
 
 :::
 
@@ -121,3 +121,11 @@ Use command: `openlist` or `openlist-manager`
 -------------------
 0、退出脚本
 ```
+
+### FAQ { lang="en" }
+
+### 常见问题 { lang="zh-CN" }
+
+1. Q：我使用的架构在下载页面支持的架构列表中，但安装脚本提示不支持？
+
+   A：这是因为安装脚本暂时还没法识别您的CPU架构，请将`arch`和`uname -m`的输出信息提交到 issue 中，方便我们补充安装脚本的CPU架构识别。
