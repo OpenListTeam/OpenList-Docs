@@ -122,8 +122,6 @@ After the expand
 
 :::
 
----
-
 ::: en
 ::: tip
 If you didn't find this feature, please update the version
