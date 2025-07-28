@@ -68,6 +68,7 @@ declare module 'vue-router/auto-routes' {
     '/guide/advanced/search': RouteRecordInfo<'/guide/advanced/search', '/guide/advanced/search', Record<never, never>, Record<never, never>>,
     '/guide/advanced/sso': RouteRecordInfo<'/guide/advanced/sso', '/guide/advanced/sso', Record<never, never>, Record<never, never>>,
     '/guide/advanced/user': RouteRecordInfo<'/guide/advanced/user', '/guide/advanced/user', Record<never, never>, Record<never, never>>,
+    '/guide/advanced/webdav': RouteRecordInfo<'/guide/advanced/webdav', '/guide/advanced/webdav', Record<never, never>, Record<never, never>>,
     '/guide/drivers/': RouteRecordInfo<'/guide/drivers/', '/guide/drivers', Record<never, never>, Record<never, never>>,
     '/guide/drivers/115': RouteRecordInfo<'/guide/drivers/115', '/guide/drivers/115', Record<never, never>, Record<never, never>>,
     '/guide/drivers/115_open': RouteRecordInfo<'/guide/drivers/115_open', '/guide/drivers/115_open', Record<never, never>, Record<never, never>>,
