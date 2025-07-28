@@ -29,7 +29,7 @@ Due to potential third-party control of the API services provided by the origina
 :::
 
 ::: en
-:: tip Quick overview of how to revoke authorization for each cloud drive
+::: tip Quick overview of how to revoke authorization for each cloud drive
 
 - Baidu Netdisk App - My - Settings - Account Management - Authorization Management - Alist - Revoke Authorization
 - Aliyun Drive - My - Top-right gear - Privacy Settings - Authorization Management - Alist - Revoke Authorization
