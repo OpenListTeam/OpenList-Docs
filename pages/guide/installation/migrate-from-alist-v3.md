@@ -37,7 +37,7 @@ The following content is provided by helpful online users in [OpenListTeam/OpenL
 :::
 
 ::: en
-::: tip Quick overview of how to revoke authorization for each cloud drive
+::: tip ♿️ Quick overview of how to revoke authorization for each cloud drive
 
 - **Baidu Netdisk App** - My - Settings - Account Management - Authorization Management - Alist - Revoke Authorization
 - **Aliyun Drive** - My - Upper right gear icon - Privacy Settings - Authorization Management - Alist - Revoke Authorization
@@ -50,7 +50,7 @@ The following content is provided by helpful online users in [OpenListTeam/OpenL
 :::
 
 ::: zh-CN
-::: tip 速览各网盘解除授权方式
+::: tip ♿️ 速览各网盘解除授权方式
 
 - **百度网盘App** - 我的 - 设置 - 帐号管理 - 授权管理 - Alist - 解除授权
 - **阿里云盘** - 我的 - 右上齿轮 - 隐私设置 - 授权管理 - Alist - 解除授权
