@@ -7,8 +7,9 @@ import { addonGitLog } from 'valaxy-addon-git-log'
 
 import { localIconLoader } from 'vitepress-plugin-group-icons'
 import { markdownThemeImagePlugin } from './utils/markdown-theme-image'
+import { fetchOpenListVersion } from './utils/version'
 
-const COMMIT_TAG = process.env.COMMIT_TAG || 'dev'
+const COMMIT_TAG = process.env.COMMIT_TAG || (await fetchOpenListVersion()) || 'dev'
 const DOCS_COMMIT_SHA = process.env.CF_PAGES_COMMIT_SHA || process.env.DOCS_COMMIT_SHA
 const DOCS_ICP = process.env.DOCS_ICP || ''
 const DOCS_CN = DOCS_ICP !== ''
