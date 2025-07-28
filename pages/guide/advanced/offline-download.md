@@ -186,7 +186,7 @@ According to [source code](https://github.com/alist-org/alist/blob/main/internal
   - 修改位置：**OpenList后台** --> **设置** --> **Qbittorrent 做种时间** 选项，设置你自己需要配置的时间单位是`分钟`，到了设置的做种时间后会自动删除
 
 5.  **我们也可以自定义，不使用默认的预设值**
-  - 修改位置：**OpenList后台** --> **设置** --> **Qbittorrent url** 选项，照着修改即可
+   - 修改位置：**OpenList后台** --> **设置** --> **Qbittorrent url** 选项，照着修改即可
   ![Offline download](/img/advanced/offline-download.png)
 
 :::
