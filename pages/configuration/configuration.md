@@ -241,7 +241,7 @@ Thus it is possible to use any npm or ~~GitHub~~ CDN path for this field. Do not
 :::
 
 - `https://registry.npmmirror.com/@openlist-frontend/openlist-frontend/$version/files/dist`
-- `https://unpkg.com/@openlist-frontend/openlist-frontend@$version/dist/`
+- `https://unpkg.com/@openlist-frontend/openlist-frontend@$version/dist`
 - `https://cdn.jsdelivr.net/npm/@openlist-frontend/openlist-frontend@$version/dist`
 - `https://fastly.jsdelivr.net/npm/@openlist-frontend/openlist-frontend@$version/dist`
 - `https://gcore.jsdelivr.net/npm/@openlist-frontend/openlist-frontend@$version/dist`
