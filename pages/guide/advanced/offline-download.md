@@ -158,7 +158,7 @@ According to [source code](https://github.com/alist-org/alist/blob/main/internal
    - Modification location: **OpenList background** --> **Settings** --> **Qbittorrent seedtime** option, set the time you need to configure, the unit is `minute`, after the set seeding time is reached, it will automatically delete
 
 5.  **We can also customize, instead of using the default presets**
-  - Modification location: **OpenList Manage** --> **Settings** --> **Qbittorrent url** option, just follow the modification
+   - Modification location: **OpenList Manage** --> **Settings** --> **Qbittorrent url** option, just follow the modification
   ![Offline download](/img/advanced/offline-download.png)
 
 :::
