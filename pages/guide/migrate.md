@@ -4,6 +4,7 @@ title:
   zh-CN: 从 AList V3 迁移
 categories:
   - guide
+top: 99999
 ---
 
 ::: en
@@ -156,12 +157,12 @@ Link: https://console.cloud.google.com
 ## 2. 备份配置文件 { lang="zh-CN" }
 
 ::: en
-Use the [Backup & Restore](../advanced/backup.md) function to back up the configuration files to your local device.
+Use the [Backup & Restore](/guide/advanced/backup) function to back up the configuration files to your local device.
 
 Additionally, you will need to back up the `data` folder from Alist V3, which contains site configuration files and the database.
 :::
 ::: zh-CN
-使用 [备份&恢复](../advanced/backup.md) 功能，将配置文件进行备份到本地。
+使用 [备份&恢复](/guide/advanced/backup) 功能，将配置文件进行备份到本地。
 
 此外，您还需要备份 Alist V3 的 `data` 文件夹，里面包含着站点的配置文件以及数据库。
 :::
@@ -204,12 +205,12 @@ If you are using Docker for deployment, make sure to modify the Volume mapping b
 ::: en
 If your Alist V3 version is below v3.46, you can migrate directly—keeping the previous `data` folder and only replacing the OpenList binary files.
 
-Otherwise, use the [Backup & Restore](../advanced/backup.md) function to restore the backed-up configuration files to OpenList.
+Otherwise, use the [Backup & Restore](/guide/advanced/backup) function to restore the backed-up configuration files to OpenList.
 :::
 ::: zh-CN
 如果您的 Alist V3 版本低于 v3.46，正常情况下，您可以直接迁移——即保留之前的 `data` 文件夹，仅替换 OpenList 的二进制文件。
 
-否则，请使用 [备份&恢复](../advanced/backup.md) 功能，将备份的配置文件恢复到 OpenList。
+否则，请使用 [备份&恢复](/guide/advanced/backup) 功能，将备份的配置文件恢复到 OpenList。
 :::
 
 ## 6. Reset Settings { lang="en" }

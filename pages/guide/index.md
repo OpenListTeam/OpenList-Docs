@@ -19,6 +19,20 @@ OpenList 是一个支持多种存储的文件列表程序🗂️，是一个有�
 您可以参照以下步骤快速开始使用 OpenList 🚀：
 :::
 
+::: en
+::: info Still using Alist V3?
+Here's your complete migration guide from Alist V3 to OpenList:
+
+[🚀 Migration Guide](/guide/migrate)
+:::
+
+::: zh-CN
+::: info 仍在使用 Alist V3？
+这里为您提供从 Alist V3 迁移到 OpenList 的完整指南：
+
+[🚀 迁移指南](/guide/migrate)
+:::
+
 ## Installation 🖥️ { lang="en" }
 
 ## 安装 🖥️ { lang="zh-CN" }
