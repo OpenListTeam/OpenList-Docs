@@ -16,9 +16,9 @@ Smooth migration is not compatible with Alist v3.46 and higher versions. If you 
 不兼容 Alist v3.46 及更高版本的平滑迁移，如需迁移请勿升级到更高版本。
 :::
 
-## 1. Remove the Old Alist API { lang="en" }
+## 1. Revoke Authorization for Alist API { lang="en" }
 
-## 1. 移除过去的 Alist API { lang="zh-CN" }
+## 1. 解除授权 Alist API { lang="zh-CN" }
 
 ::: en
 As the API service provided by the original author may have been taken over by a third party, there is a risk of information leakage or account bans. If you have concerns, it is recommended to revoke authorization or log in again to ensure your security.
@@ -36,7 +36,15 @@ The following content is provided by helpful online users in [OpenListTeam/OpenL
 :::
 
 ::: en
-::: tip ♿️ Quick overview of how to revoke authorization for each cloud drive
+::: info The following methods only apply to cloud drives mounted using officially supported Open API methods.
+:::
+
+::: zh-CN
+::: info 以下方法仅适用于采用 Open API 官方支持的方式挂载的网盘。
+:::
+
+::: en
+::: tip Quick overview of how to revoke authorization for each cloud drive ♿️
 
 - **Baidu Netdisk App** - My - Settings - Account Management - Authorization Management - Alist - Revoke Authorization
 - **Aliyun Drive** - My - Upper right gear icon - Privacy Settings - Authorization Management - Alist - Revoke Authorization
@@ -49,7 +57,7 @@ The following content is provided by helpful online users in [OpenListTeam/OpenL
 :::
 
 ::: zh-CN
-::: tip ♿️ 速览各网盘解除授权方式
+::: tip 速览各网盘解除授权方式 ♿️
 
 - **百度网盘App** - 我的 - 设置 - 帐号管理 - 授权管理 - Alist - 解除授权
 - **阿里云盘** - 我的 - 右上齿轮 - 隐私设置 - 授权管理 - Alist - 解除授权
@@ -192,10 +200,14 @@ Follow the instructions provided in the documentation to install OpenList.
 ::: en
 ::: danger
 If you are using Docker for deployment, make sure to modify the Volume mapping by changing the configuration file path from `/opt/alist/data` to `/opt/openlist/data`. Otherwise, your configuration files will be lost after updating the version and rebuilding the container!
+
+In addition, it is recommended to delete the previous container and then recreate it to avoid failure to run due to environmental changes.
 :::
 ::: zh-CN
 ::: danger
 如果您使用 Docker 部署，请确保修改 Volume 映射，将配置文件的路径从 `/opt/alist/data` 修改为 `/opt/openlist/data`。否则，更新版本、重建容器后您的配置文件将丢失！
+
+此外，建议删除之前的容器，然后重新创建，避免环境变化导致无法运行。
 :::
 
 ## 5. Restore Configuration Files{ lang="en" }
