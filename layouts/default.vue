@@ -44,8 +44,7 @@
       <component :is="Component">
         <template #default>
           <div class="prose mx-auto w-full max-w-4xl">
-            <h2 :id="t('post.contributors')">
-              <a :href="`#${t('post.contributors')}`" class="header-anchor" />
+            <h2>
               <span>
                 {{ t('post.contributors') }}
               </span>
