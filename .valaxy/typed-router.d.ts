@@ -128,11 +128,11 @@ declare module 'vue-router/auto-routes' {
     '/guide/installation/docker': RouteRecordInfo<'/guide/installation/docker', '/guide/installation/docker', Record<never, never>, Record<never, never>>,
     '/guide/installation/download': RouteRecordInfo<'/guide/installation/download', '/guide/installation/download', Record<never, never>, Record<never, never>>,
     '/guide/installation/manual': RouteRecordInfo<'/guide/installation/manual', '/guide/installation/manual', Record<never, never>, Record<never, never>>,
-    '/guide/installation/migrate-from-alist-v3': RouteRecordInfo<'/guide/installation/migrate-from-alist-v3', '/guide/installation/migrate-from-alist-v3', Record<never, never>, Record<never, never>>,
     '/guide/installation/paas': RouteRecordInfo<'/guide/installation/paas', '/guide/installation/paas', Record<never, never>, Record<never, never>>,
     '/guide/installation/reverse-proxy': RouteRecordInfo<'/guide/installation/reverse-proxy', '/guide/installation/reverse-proxy', Record<never, never>, Record<never, never>>,
     '/guide/installation/script': RouteRecordInfo<'/guide/installation/script', '/guide/installation/script', Record<never, never>, Record<never, never>>,
     '/guide/installation/source': RouteRecordInfo<'/guide/installation/source', '/guide/installation/source', Record<never, never>, Record<never, never>>,
+    '/guide/migrate': RouteRecordInfo<'/guide/migrate', '/guide/migrate', Record<never, never>, Record<never, never>>,
     '/privacy': RouteRecordInfo<'/privacy', '/privacy', Record<never, never>, Record<never, never>>,
     '/terms': RouteRecordInfo<'/terms', '/terms', Record<never, never>, Record<never, never>>,
   }
