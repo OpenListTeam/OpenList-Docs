@@ -155,10 +155,10 @@ According to [source code](https://github.com/alist-org/alist/blob/main/internal
    - Although you cannot directly add offline `.torrent` type files, you can save the country with a curve Reference: [View method](https://github.com/alist-org/alist/issues/2459#issuecomment-1354870010)
 
 4.  You can configure it yourself not to delete after the download is complete, but to do seeding, the default is `0`, and it will be deleted immediately after uploading
-   - Modification location: **OpenList background** --> **Settings** --> **Qbittorrent seedtime** option, set the time you need to configure, the unit is `minute`, after the set seeding time is reached, it will automatically delete
+    - Modification location: **OpenList background** --> **Settings** --> **Qbittorrent seedtime** option, set the time you need to configure, the unit is `minute`, after the set seeding time is reached, it will automatically delete
 
 5.  **We can also customize, instead of using the default presets**
-   - Modification location: **OpenList Manage** --> **Settings** --> **Qbittorrent url** option, just follow the modification
+    - Modification location: **OpenList Manage** --> **Settings** --> **Qbittorrent url** option, just follow the modification
   ![Offline download](/img/advanced/offline-download.png)
 
 :::
@@ -183,10 +183,10 @@ According to [source code](https://github.com/alist-org/alist/blob/main/internal
    - 虽然不可以直接添加离线`.torrent` 类型的文件，可以曲线救国 参考:[查看方法](https://github.com/OpenListTeam/OpenList/issues/2459#issuecomment-1354870010)
 
 4.  可以自行配置下载完毕后不进行删除，进行做种，默认为`0`会上传完毕后立即删除
-   - 修改位置：**OpenList后台** --> **设置** --> **Qbittorrent 做种时间** 选项，设置你自己需要配置的时间单位是`分钟`，到了设置的做种时间后会自动删除
+    - 修改位置：**OpenList后台** --> **设置** --> **Qbittorrent 做种时间** 选项，设置你自己需要配置的时间单位是`分钟`，到了设置的做种时间后会自动删除
 
 5.  **我们也可以自定义，不使用默认的预设值**
-   - 修改位置：**OpenList后台** --> **设置** --> **Qbittorrent url** 选项，照着修改即可
+    - 修改位置：**OpenList后台** --> **设置** --> **Qbittorrent url** 选项，照着修改即可
   ![Offline download](/img/advanced/offline-download.png)
 
 :::
