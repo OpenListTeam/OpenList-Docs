@@ -54,9 +54,13 @@ Due to potential third-party control of the API services provided by the origina
 
 ::: en
 Since it is not possible to capture the detailed processes for all platforms, we encourage enthusiastic users to contribute screenshots of their revocation process at [https://github.com/OpenListTeam/OpenList-Docs](https://github.com/OpenListTeam/OpenList-Docs)
+
+The following content is provided by helpful online users in [OpenListTeam/OpenList-Docs#5](https://github.com/OpenListTeam/OpenList-Docs/issues/5) and [OpenListTeam/OpenList-Docs#6](https://github.com/OpenListTeam/OpenList-Docs/issues/6). We thank them for their contributions!🙏✨💖
 :::
 ::: zh-CN
 由于无法对各平台一一截取详细流程，欢迎各位热心网友前往 https://github.com/OpenListTeam/OpenList-Docs 提供你的解除授权流程截图
+
+以下内容由热心网友提供（[OpenListTeam/OpenList-Docs#5](https://github.com/OpenListTeam/OpenList-Docs/issues/5)、[OpenListTeam/OpenList-Docs#6](https://github.com/OpenListTeam/OpenList-Docs/issues/6)），特此感谢！🙏✨💖
 :::
 
 ### Aliyun Drive { lang="en" }
