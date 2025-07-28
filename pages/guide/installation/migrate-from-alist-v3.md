@@ -10,7 +10,7 @@ top: 10
 
 ::: en
 ::: danger
-Incompatible with smooth migration for Alist v3.46 and higher. Do not upgrade to a higher version if migration is required.
+Smooth migration is not compatible with Alist v3.46 and higher versions. If you want to migrate, please avoid upgrading to a higher version.
 :::
 ::: zh-CN
 ::: danger
@@ -22,10 +22,18 @@ Incompatible with smooth migration for Alist v3.46 and higher. Do not upgrade to
 ## 1. 移除过去的 Alist API { lang="zh-CN" }
 
 ::: en
-Due to potential third-party control of the API services provided by the original author, which could lead to information leakage or account bans, please consider revoking authorization or logging in again if you have concerns.
+As the API service provided by the original author may have been taken over by a third party, there is a risk of information leakage or account bans. If you have concerns, it is recommended to revoke authorization or log in again to ensure your security.
+
+Since it's not possible to provide detailed steps for every platform, we invite helpful users to visit [https://github.com/OpenListTeam/OpenList-Docs](https://github.com/OpenListTeam/OpenList-Docs) and share screenshots of the authorization revocation process.
+
+The following content is provided by helpful online users in [OpenListTeam/OpenList-Docs#5](https://github.com/OpenListTeam/OpenList-Docs/issues/5) and [OpenListTeam/OpenList-Docs#6](https://github.com/OpenListTeam/OpenList-Docs/issues/6). We thank them for their contributions!🙏✨💖
 :::
 ::: zh-CN
-由于原作者提供的 API 服务可能已被第三方控制，导致信息泄露或者账号封禁，如有顾虑请考虑解除授权或重新登陆
+由于原作者提供的 API 服务可能已被第三方控制，存在信息泄露或账号封禁的风险。如果您对此有所顾虑，建议解除授权或重新登录以确保安全。
+
+由于无法对各平台一一截取详细流程，欢迎各位热心网友前往 https://github.com/OpenListTeam/OpenList-Docs 提供解除授权的流程截图。
+
+以下内容由热心网友提供（[OpenListTeam/OpenList-Docs#5](https://github.com/OpenListTeam/OpenList-Docs/issues/5)、[OpenListTeam/OpenList-Docs#6](https://github.com/OpenListTeam/OpenList-Docs/issues/6)），特别感谢！🙏✨💖
 :::
 
 ::: en
@@ -52,17 +60,6 @@ Due to potential third-party control of the API services provided by the origina
 - **坚果云** - 左上角三横杠 - 设置 - 第三方应用管理 - 撤销授权
 - **OneDrive** - https://account.live.com/consent/Manage - 解除授权
 
-:::
-
-::: en
-Since it is not possible to capture the detailed processes for all platforms, we encourage enthusiastic users to contribute screenshots of their revocation process at [https://github.com/OpenListTeam/OpenList-Docs](https://github.com/OpenListTeam/OpenList-Docs)
-
-The following content is provided by helpful online users in [OpenListTeam/OpenList-Docs#5](https://github.com/OpenListTeam/OpenList-Docs/issues/5) and [OpenListTeam/OpenList-Docs#6](https://github.com/OpenListTeam/OpenList-Docs/issues/6). We thank them for their contributions!🙏✨💖
-:::
-::: zh-CN
-由于无法对各平台一一截取详细流程，欢迎各位热心网友前往 https://github.com/OpenListTeam/OpenList-Docs 提供你的解除授权流程截图
-
-以下内容由热心网友提供（[OpenListTeam/OpenList-Docs#5](https://github.com/OpenListTeam/OpenList-Docs/issues/5)、[OpenListTeam/OpenList-Docs#6](https://github.com/OpenListTeam/OpenList-Docs/issues/6)），特此感谢！🙏✨💖
 :::
 
 ### Aliyun Drive { lang="en" }
