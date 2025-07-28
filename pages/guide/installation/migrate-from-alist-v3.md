@@ -188,11 +188,11 @@ Follow the instructions provided in the documentation to install OpenList.
 :::
 
 ::: en
-::: warning
+::: danger
 If you are using Docker for deployment, make sure to modify the Volume mapping by changing the configuration file path from `/opt/alist/data` to `/opt/openlist/data`. Otherwise, your configuration files will be lost after updating the version and rebuilding the container!
 :::
 ::: zh-CN
-::: warning
+::: danger
 如果您使用 Docker 部署，请确保修改 Volume 映射，将配置文件的路径从 `/opt/alist/data` 修改为 `/opt/openlist/data`。否则，更新版本、重建容器后您的配置文件将丢失！
 :::
 
