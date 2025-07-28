@@ -28,8 +28,6 @@ category:
   drivers: 添加存储
   # FAQ
   faq: FAQ
-  # Migration
-  migration: 迁移
   # Developer Guide
   developer: 开发指引
   api: API 文档

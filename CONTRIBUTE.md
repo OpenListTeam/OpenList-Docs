@@ -27,7 +27,6 @@ top: 1000
   - `api`: API 文档相关
   - `configuration`: 配置文件细节相关
   - `faq`: 常见问题相关
-  - `migration`: 迁移相关
 
 - `top`: 按 `top` 由高到低排列.
 
