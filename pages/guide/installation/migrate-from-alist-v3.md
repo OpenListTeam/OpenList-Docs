@@ -140,6 +140,16 @@ Link: https://account.live.com/consent/Manage
 
 ![](/img/guide/migrate/odp_remove1.jpg)
 
+### Google Drive
+
+Link: https://console.cloud.google.com
+
+![](/img/guide/migrate/google_remove1.png)
+
+![](/img/guide/migrate/google_remove2.png)
+
+![](/img/guide/migrate/google_remove3.png)
+
 ## 2. Backup Configuration Files { lang="en" }
 
 ## 2. 备份配置文件 { lang="zh-CN" }
