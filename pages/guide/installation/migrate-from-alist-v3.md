@@ -31,24 +31,26 @@ Due to potential third-party control of the API services provided by the origina
 ::: en
 ::: tip Quick overview of how to revoke authorization for each cloud drive
 
-- Baidu Netdisk App - My - Settings - Account Management - Authorization Management - Alist - Revoke Authorization
-- Aliyun Drive - My - Top-right gear - Privacy Settings - Authorization Management - Alist - Revoke Authorization
-- 115APP - Lifestyle - Scroll down - Account and Security - Multi-Device Login Management - Third-Party Login
-- Unicom Cloud Drive - Query login account on the website - It is recommended to follow the tutorial to capture login data
-- Yike Photo Album (To be updated)
-- OneDrive Revoke Authorization: [https://account.live.com/consent/Manage](https://account.live.com/consent/Manage)
+- **Baidu Netdisk App** - My - Settings - Account Management - Authorization Management - Alist - Revoke Authorization
+- **Aliyun Drive** - My - Upper right gear icon - Privacy Settings - Authorization Management - Alist - Revoke Authorization
+- **115 APP** - Life (scroll down) - Account & Security - Multi-device Login Management - Third-party Login
+- **China Unicom Cloud** - Check login account on webpage - Future recommendation: follow tutorial for packet capture login
+- **Baidu Photo** - Avatar - App Settings - Account Management - Authorization Management
+- **JianGuoYun** - Upper left three lines - Settings - Third-party App Management - Revoke Authorization
+- **OneDrive** - https://account.live.com/consent/Manage - Revoke Authorization
 
 :::
 
 ::: zh-CN
 ::: tip 速览各网盘解除授权方式
 
-- 百度网盘App - 我的 - 设置 - 帐号管理 - 授权管理 - Alist - 解除授权
-- 阿里云盘 - 我的 - 右上齿轮 - 隐私设置 - 授权管理 - Alist - 解除授权
-- 115APP - 生活 下滑 - 账号与安全 - 多端登录管理 - 第三方登录
-- 联通云盘 - 在网页查询登录账号 - 以后建议 按照 教程抓包登录
-- 一刻相册 （待补充）
-- OneDrive 解除授权 https://account.live.com/consent/Manage
+- **百度网盘App** - 我的 - 设置 - 帐号管理 - 授权管理 - Alist - 解除授权
+- **阿里云盘** - 我的 - 右上齿轮 - 隐私设置 - 授权管理 - Alist - 解除授权
+- **115APP** - 生活 下滑 - 账号与安全 - 多端登录管理 - 第三方登录
+- **联通云盘** - 在网页查询登录账号 - 以后建议按照教程抓包登录
+- **一刻相册** - 头像 - 应用设置 - 账号管理 - 授权管理
+- **坚果云** - 左上角三横杠 - 设置 - 第三方应用管理 - 撤销授权
+- **OneDrive** - https://account.live.com/consent/Manage - 解除授权
 
 :::
 
