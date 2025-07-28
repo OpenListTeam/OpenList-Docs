@@ -4,8 +4,6 @@ title:
   zh-CN: 从 AList V3 迁移
 categories:
   - guide
-  - installation
-top: 10
 ---
 
 ::: en
