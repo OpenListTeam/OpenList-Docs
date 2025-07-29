@@ -49,12 +49,12 @@ If the 2FA is lost for an admin account, please refer to step 2 for instructions
 
 ---
 
-**2. How to access the folder where Alist is located and clear 2FA:**
+**2. How to access the folder where OpenList is located and clear 2FA:**
 
-- **Windows**: Navigate to the folder where Alist is located and enter the command:
+- **Windows**: Navigate to the folder where OpenList is located and enter the command:
   `openlist.exe cancel2fa`
 
-- **Linux**: Similarly, go to the Alist folder and enter the command:
+- **Linux**: Similarly, go to the OpenList folder and enter the command:
   `./openlist cancel2fa`
 
 - **Docker**: In a Docker environment, enter the command:
@@ -84,12 +84,12 @@ In the "Users" section of the backend, you will find the **"Cancel Two-Factor Au
 
 ---
 
-**2. 如何进入Alist所在的文件夹并清除2FA：**
+**2. 如何进入 OpenList 所在的文件夹并清除2FA：**
 
-- **Windows**：进入Alist所在文件夹后，输入命令：
+- **Windows**：进入 OpenList 所在文件夹后，输入命令：
   `openlist.exe cancel2fa`
 
-- **Linux**：同样进入Alist所在文件夹后，输入命令：
+- **Linux**：同样进入 OpenList 所在文件夹后，输入命令：
   `./openlist cancel2fa`
 
 - **Docker**：在Docker环境中，输入命令：

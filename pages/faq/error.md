@@ -172,7 +172,8 @@ This article will collect some error codes that may occur during the use of Open
 **A**：Domestic access is not supported, if you build it locally, you can check this [**Reference Solution**](https://anwen-anyi.github.io/index/07-wenti.html#_41-alist如何-使用-吃到-代理-proxy)
 
 - For example, Google, Mega, Terabox, etc. that require a proxy to access can be used in this way
-  :::
+
+:::
 
 :::zh-CN
 **Q**：failed get objs: failed to list objs: Sorry, sharing is not available in the current region（**PikPak/分享**）

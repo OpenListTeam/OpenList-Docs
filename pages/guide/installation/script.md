@@ -127,6 +127,7 @@ Use command: `openlist` or `openlist-manager`
 ### 常见问题 { lang="zh-CN" }
 
 ::: en
+
 1. Q: The architecture I am using is listed as supported on the download page, why does the installation script say it is not?
 
    A: This is because the installation script is currently unable to recognise your CPU architecture. To help us add CPU architecture recognition to the installation script, please submit the output of the `arch` and `uname -m` commands to the issue page.
@@ -134,6 +135,7 @@ Use command: `openlist` or `openlist-manager`
 :::
 
 ::: zh-CN
+
 1. Q：我使用的架构在下载页面支持的架构列表中，但安装脚本提示不支持？
 
    A：这是因为安装脚本暂时还没法识别您的CPU架构，请将`arch`和`uname -m`的输出信息提交到 issue 中，方便我们补充安装脚本的CPU架构识别。

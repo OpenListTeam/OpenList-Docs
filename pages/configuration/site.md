@@ -46,7 +46,7 @@ The announcement of OpenList, such as `### Hello\nWelcome to use OpenList`. We s
 :::
 
 ::: zh-CN
-OpenList 的公告，如 `### Hello\nWelcome to use Alist`。我们建议您在内容前添加标题，例如 `### Hello`，以免内容被关闭按钮覆盖。
+OpenList 的公告，如 `### Hello\nWelcome to use OpenList`。我们建议您在内容前添加标题，例如 `### Hello`，以免内容被关闭按钮覆盖。
 
 - 如想不显示，可以清空公告内内容即可不显示。
 - 如果嫌右上角的 `x` 按钮碍事可以使用如下CSS去掉

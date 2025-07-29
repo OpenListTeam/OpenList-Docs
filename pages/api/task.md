@@ -19,15 +19,17 @@ star: true
 ---
 
 ::: en
-alist中的任务管理可以分为：
-| 接口名 | 说明 |
-| -------------------------- | ------------- |
-| /upload | 上传任务 |
-| /copy | 复制任务 |
-| /offline_download | 离线下载任务 |
+OpenList 中的任务管理可以分为：
+
+| 接口名                     | 说明             |
+| -------------------------- | ---------------- |
+| /upload                    | 上传任务         |
+| /copy                      | 复制任务         |
+| /offline_download          | 离线下载任务     |
 | /offline_download_transfer | 离线下载转存任务 |
-| /decompress | 解压任务 |
-| /decompress_upload | 解压转存任务 |
+| /decompress                | 解压任务         |
+| /decompress_upload         | 解压转存任务     |
+
 每种任务都有以下接口：
 
 - info
@@ -42,19 +44,24 @@ alist中的任务管理可以分为：
 - delete_some
 - cancel_some
 - retry_some
-  下面将以upload任务为例，说明每个接口的作用。
-  :::
-  ::: zh-CN
-  alist中的任务管理可以分为：
-  | 接口名 | 说明 |
-  | -------------------------- | ---------------- |
-  | /upload | 上传任务 |
-  | /copy | 复制任务 |
-  | /offline_download | 离线下载任务 |
-  | /offline_download_transfer | 离线下载转存任务 |
-  | /decompress | 解压任务 |
-  | /decompress_upload | 解压转存任务 |
-  每种任务都有以下接口：
+
+下面将以upload任务为例，说明每个接口的作用。
+:::
+
+::: zh-CN
+OpenList 中的任务管理可以分为：
+
+| 接口名                     | 说明             |
+| -------------------------- | ---------------- |
+| /upload                    | 上传任务         |
+| /copy                      | 复制任务         |
+| /offline_download          | 离线下载任务     |
+| /offline_download_transfer | 离线下载转存任务 |
+| /decompress                | 解压任务         |
+| /decompress_upload         | 解压转存任务     |
+
+每种任务都有以下接口：
+
 - info
 - done
 - undone
@@ -67,8 +74,9 @@ alist中的任务管理可以分为：
 - delete_some
 - cancel_some
 - retry_some
-  下面将以upload任务为例，说明每个接口的作用。
-  :::
+
+下面将以upload任务为例，说明每个接口的作用。
+:::
 
 ## POST 获取任务信息 { lang="en" }
 
@@ -1464,8 +1472,10 @@ POST /api/task/upload/retry_some
   ```text
   upload 文件名 to [驱动挂载点](驱动内路径)
   ```
-  :::
-  ::: zh-CN
+
+:::
+::: zh-CN
+
 - 上传：
   ```text
   upload 文件名 to [驱动挂载点](驱动内路径)
@@ -1495,4 +1505,5 @@ POST /api/task/upload/retry_some
   ```text
   upload 文件名 to [驱动挂载点](驱动内路径)
   ```
-  :::
+
+:::

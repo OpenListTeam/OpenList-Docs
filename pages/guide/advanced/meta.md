@@ -35,14 +35,14 @@ Password required to access this path.
 
 - Meta information password will not take effect when accessed using `WebDav`
 
-  ::: danger Notes
-  If you want the password to be effective in subfolders, please check `Apply to sub folder` after the password. Do not check `Write` and then check `Apply to sub folder`
+::: danger Notes
+If you want the password to be effective in subfolders, please check `Apply to sub folder` after the password. Do not check `Write` and then check `Apply to sub folder`
 
-  The correct check example is shown below. If you configure the options correctly, if you check the wrong option `Write` and then check `Apply to sub folder`, it will cause anyone to have permission to write dangerous operations
+The correct check example is shown below. If you configure the options correctly, if you check the wrong option `Write` and then check `Apply to sub folder`, it will cause anyone to have permission to write dangerous operations
 
-  ![](/img/advanced/meta/password_b.png#light)
+![](/img/advanced/meta/password_b.png#light)
 
-  ![](/img/advanced/meta/password_h.png#dark)
+![](/img/advanced/meta/password_h.png#dark)
 
 :::
 
@@ -51,14 +51,14 @@ Password required to access this path.
 
 - 元信息密码在使用`WebDav`访问时不会生效
 
-  ::: danger 注意事项
-  填写密码如果想在子文件夹也生效，请勾选密码后面的 `应用到子文件夹`，请勿勾选 `写入`再勾选`应用到子文件夹`
+::: danger 注意事项
+填写密码如果想在子文件夹也生效，请勾选密码后面的 `应用到子文件夹`，请勿勾选 `写入`再勾选`应用到子文件夹`
 
-  正确勾选示例图如下所示，正确配置选项，如果勾选错误为 `写入`再勾选`应用到子文件夹` 会造成任何人都拥有权限写入危险操作
+正确勾选示例图如下所示，正确配置选项，如果勾选错误为 `写入`再勾选`应用到子文件夹` 会造成任何人都拥有权限写入危险操作
 
-  ![](/img/advanced/meta/password_b.png#light)
+![](/img/advanced/meta/password_b.png#light)
 
-  ![](/img/advanced/meta/password_h.png#dark)
+![](/img/advanced/meta/password_h.png#dark)
 
 :::
 

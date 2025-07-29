@@ -153,7 +153,8 @@ openlist-frontend-gh:OpenListTeam/OpenList-Frontend
 1. Log in to GitHub
 2. Visit: https://github.com/settings/tokens
 3. Generate a new token with appropriate permissions
-   :::
+
+:::
 
 ::: zh-CN
 **使用场景：**
@@ -166,7 +167,8 @@ openlist-frontend-gh:OpenListTeam/OpenList-Frontend
 1. 登录 GitHub
 2. 访问：https://github.com/settings/tokens
 3. 生成具有适当权限的新令牌
-   :::
+
+:::
 
 ### Show All Versions { lang="en" }
 

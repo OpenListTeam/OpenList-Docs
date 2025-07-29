@@ -110,7 +110,8 @@ The main dashboard provides a comprehensive overview of your OpenList Desktop en
 - Quick action buttons for common tasks
 - OpenList and Rclone version management
 - Service management controls
-  :::
+
+:::
 
 ::: zh-CN
 主仪表板提供您的 OpenList Desktop 环境的全面概览：
@@ -119,7 +120,8 @@ The main dashboard provides a comprehensive overview of your OpenList Desktop en
 - 常见任务的快速操作按钮
 - OpenList 和 Rclone 版本管理
 - 服务管理控制
-  :::
+
+:::
 
 ### Mount Management { lang="en" }
 
@@ -134,7 +136,8 @@ Easily perform local mounts:
 - Mount/unmount cloud storage
 - Monitor mount status and statistics
 - Configure auto-mounting options
-  :::
+
+:::
 
 ::: zh-CN
 轻松进行本地挂载：
@@ -143,7 +146,8 @@ Easily perform local mounts:
 - 挂载/卸载云存储
 - 监控挂载状态和统计信息
 - 配置自动挂载选项
-  :::
+
+:::
 
 ### Log Management { lang="en" }
 
@@ -160,7 +164,8 @@ Manage logs of multiple sources:
 - Filter and search logs
 - Real-time log updates
 - Export logs to file and clipboard
-  :::
+
+:::
 
 ::: zh-CN
 管理多个来源的日志：
@@ -171,7 +176,8 @@ Manage logs of multiple sources:
 - 过滤和搜索日志
 - 实时日志更新
 - 导出日志到文件和剪贴板
-  :::
+
+:::
 
 ## Installation { lang="en" }
 
@@ -207,7 +213,8 @@ Download the latest release from [GitHub Releases](https://github.com/OpenListTe
 - **Windows**: `OpenList-Desktop_x.x.x_{arch}-setup.exe`
 - **macOS**: `OpenList-Desktop_x.x.x_{arch}.dmg`
 - **Linux**: `OpenList-Desktop_x.x.x_{arch}.deb` or `OpenList-Desktop_x.x.x_{arch}.rpm`
-  :::
+
+:::
 
 ::: zh-CN
 从 [GitHub Releases](https://github.com/OpenListTeam/OpenList-Desktop/releases) 下载最新版本：
@@ -215,7 +222,8 @@ Download the latest release from [GitHub Releases](https://github.com/OpenListTe
 - **Windows**：`OpenList-Desktop_x.x.x_{arch}-setup.exe`
 - **macOS**：`OpenList-Desktop_x.x.x_{arch}.dmg`
 - **Linux**：`OpenList-Desktop_x.x.x_{arch}.deb` 或 `OpenList-Desktop_x.x.x_{arch}.rpm`
-  :::
+
+:::
 
 #### Using Package Managers { lang="en" }
 
@@ -327,7 +335,8 @@ It is recommended to run OpenList Desktop with Administrator privileges on first
 1. **Initial Setup**: On first launch, the application will guide you through initial configuration
 2. **Service Installation**: Install the OpenList service when prompted
 3. **Storage Configuration**: Configure your first cloud storage connection
-   :::
+
+:::
 
 ::: zh-CN
 ::: tip
@@ -337,7 +346,8 @@ It is recommended to run OpenList Desktop with Administrator privileges on first
 1. **初始设置**：首次启动时，应用程序将指导您完成初始配置
 2. **服务安装**：在提示时安装 OpenList 服务
 3. **存储配置**：配置您的第一个云存储连接
-   :::
+
+:::
 
 ### Basic Operations { lang="en" }
 
@@ -429,7 +439,8 @@ Configure storages to automatically mount at startup with custom Rclone flags fo
 - `--vfs-cache-mode=full`: Enable full VFS caching
 - `--buffer-size=256M`: Increase buffer size
 - `--transfers=10`: Concurrent transfer limit
-  :::
+
+:::
 
 ::: zh-CN
 配置存储在启动时自动挂载，使用自定义 Rclone 标志以获得最佳性能：
@@ -437,7 +448,8 @@ Configure storages to automatically mount at startup with custom Rclone flags fo
 - `--vfs-cache-mode=full`：启用完整 VFS 缓存
 - `--buffer-size=256M`：增加缓冲区大小
 - `--transfers=10`：并发传输限制
-  :::
+
+:::
 
 #### System Tray Operations { lang="en" }
 
@@ -474,7 +486,8 @@ Access comprehensive settings management including:
 - **Startup Preferences**: Auto-startup and automation options
 - **Theme and Language**: UI customization options
 - **Update Settings**: Automatic update preferences
-  :::
+
+:::
 
 ::: zh-CN
 访问全面的设置管理，包括：
@@ -483,7 +496,8 @@ Access comprehensive settings management including:
 - **启动偏好设置**：自动启动和自动化选项
 - **主题和语言**：UI 自定义选项
 - **更新设置**：自动更新偏好设置
-  :::
+
+:::
 
 ## Troubleshooting { lang="en" }
 

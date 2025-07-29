@@ -221,7 +221,6 @@ The `root folder ID` of this folder is `249163533602609229`.
 5. Enter the root folder ID obtained above in `Root Folder ID` (please refer to [3.1.1. Root Folder ID](#_3-1-1-root-folder-id)).
 
 6. Enter the obtained `Refresh Token` and `Access Token` in the refresh token (if not obtained, please refer to [2. Preparation for Access](#_2-preparation-for-access)).
-
    - 115's token refresh mechanism does not require AppKey and has IP-based rate limiting, so it is implemented using [local logic](https://github.com/OpenListTeam/115-sdk-go).
 
 7. Click the `Add` button to complete adding the 115 network disk.
@@ -244,7 +243,6 @@ The `root folder ID` of this folder is `249163533602609229`.
 5. 在`根文件夹 ID`中填写上面获取的根文件夹 ID（请参考[3.1.1.根文件夹 ID](#_3-1-1-根文件夹-id)）。
 
 6. 刷新令牌中填写上面获取的`刷新令牌`和`Access token`（如未获取，请参考[2. 准备接入](#_2-准备接入)）。
-
    - 115的令牌刷新机制不需要AppKey，且有针对IP的频控，故使用[本地逻辑](https://github.com/OpenListTeam/115-sdk-go)实现。
 
 7. 点击`添加`按钮，完成115网盘的添加。
@@ -275,7 +273,6 @@ sequenceDiagram
   OpenList->>115服务器: 提供刷新令牌
   115服务器->>OpenList: 返回新的访问令牌+刷新令牌
 ```
-
 
 ## 4. Notes { lang="en" }
 

@@ -55,7 +55,7 @@ location /openlist/ {
 使用 nginx 反向代理到 https://example.com/openlist 的示例：
 
 - 正常安装
-- 将 [site_url](../config/configuration.md#site_url) 设置为 `https://example.com/openlist` 或者仅`/openlist`, 然后重启alist
+- 将 [site_url](../config/configuration.md#site_url) 设置为 `https://example.com/openlist` 或者仅`/openlist`, 然后重启 OpenList
 - 在 nginx 中添加反向代理配置
 
 ```nginx
@@ -80,38 +80,7 @@ location /openlist/ {
 ## 忘记密码怎么办？ { lang="zh-CN" }
 
 :::en
-If you are the owner of the site, you can get the admin's info by run `./openlist admin` in the terminal.
-Otherwise you can ask the owner to reset the password.
-:::
-:::zh-CN
-如果您是站点的所有者，您可以通过在终端中运行 `./openlist admin` 来获取管理员账号信息。
-
-否则，您可以要求站点所有者重置密码。
-:::
-
-:::en
-:::tip
-You need to stop openlist server first if the version of your openlist is v3.9.0 or later as this pr: https://github.com/alist-org/alist/pull/3074
-:::
-:::zh-CN
-:::tip
-如果你使用v3.9.0及以上版本，你需要先停止alist服务因为这个pr: https://github.com/alist-org/alist/pull/3074
-:::
-
-### Lower than v3.25.0{ lang="en" }
-
-### 低于v3.25.0版本 { lang="zh-CN" }
-
-```bash
-./openlist admin
-```
-
-### Higher than v3.25.0 { lang="en" }
-
-### 高于v3.25.0版本 { lang="zh-CN" }
-
-:::en
-Versions above 3.25.0 change the password to an encrypted hash value, and the password cannot be calculated directly. If the password is forgotten, it can only be re-**`randomly generated`** or **`manually set`**
+If the password is forgotten, it can only be re-**`randomly generated`** or **`manually set`**
 
 ```bash
 # Randomly generate a password
@@ -122,7 +91,7 @@ Versions above 3.25.0 change the password to an encrypted hash value, and the pa
 
 :::
 :::zh-CN
-3.25.0以上版本将密码改成加密方式存储的hash值，无法直接反算出密码，如果忘记了密码只能通过重新 **`随机生成`** 或者 **`手动设置`**
+如果忘记了密码只能通过重新 **`随机生成`** 或者 **`手动设置`**
 
 ```bash
 # 随机生成一个密码
@@ -170,7 +139,7 @@ Add a [meta](../guide/advanced/meta.md) record, and open `write` field.
 添加[元信息](../guide/advanced/meta.md)，并启用 `写入`。
 :::
 
-## How to remove `powered_by Alist` at the bottom?​ { lang="en" }
+## How to remove `powered_by OpenList` at the bottom?​ { lang="en" }
 
 ## 如何去掉底部的"由 OpenList 驱动"？​ { lang="zh-CN" }
 

@@ -91,9 +91,9 @@ Open **https://github.com/settings/developers** Click **`New OAuth App`**
     Remember to get **Client secrets** after filling it out, and then fill it in the OpenList background.
     Remember to write and save the background parameters of OpenList. After writing and saving, you have to go back to the bottom of the personal data and there will be a button that needs to be bound, otherwise it cannot be used
 
-  :::
+:::
 
-  ::: zh-CN
+::: zh-CN
 
 - Application name
   - 随便写想叫什么叫什么
@@ -106,6 +106,8 @@ Open **https://github.com/settings/developers** Click **`New OAuth App`**
   - 回调URL地址
   - **https://你的域名/api/auth/sso_callback** - 可以使用http https都可以
     填写完毕后记得获取一下 **Client secrets**，然后填写到OpenList后台。
+
+:::
 
 #### 3.1.2. Completely fill in the reference schematic { lang="en" }
 
@@ -773,15 +775,16 @@ A picture teaches you to create a new application and add it
 - LOGO is not modified when the newly -built newly built, you can wait for the newly built and then modify ^(See_Figure_2)^
 - If you just browse OpenList in the Dingtalk application, you do n’t need a single -point login management, you do n’t need to set up a single -point login configuration, you can just add an application
   ![](/img/advanced/sso_add_app.png)
-  <br/>
-  :::
-  ::: zh-CN
-  一张图教你新建一个应用并且添加
+
+:::
+::: zh-CN
+一张图教你新建一个应用并且添加
+
 - LOGO是默认的新建时不可修改，可以等新建好后再修改 ^(看图二)^
 - 如果你只是在钉钉应用內浏览OpenList，不使用单点登录后台管理，可以不用设置单点登录配置只添加应用就可以
   ![](/img/advanced/sso_add_app.png)
-  <br/>
-  :::
+
+:::
 
 ### 6.1. Modify the application logo { lang="en" }
 

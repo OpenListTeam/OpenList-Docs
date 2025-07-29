@@ -134,7 +134,7 @@ For microsoft office online viewers, you need:
 - 我们使用 `pdf.js` 作为默认的 PDF 预览器。所以它需要 HTTPS + CORS。
 - HTTPS 需要自行打开，可以使用反向代理或在配置文件中提供证书
 - CORS 由相关云盘提供支持，不能自行修改，除非开启代理功能，使用程序传输
- 
+
 :::
 
 ## Why can't package​ download? { lang="en" }
@@ -190,6 +190,7 @@ Same as pdf preview, requires https+cors support,and:
 ## Why can't I download files after add `AliyunDirve` storage and get `InvalidArgument` error? { lang="en" }
 
 ## 为什么添加了 `AliyunDrive` 存储后下载不了文件，出现 `InvalidArgument` 错误？ { lang="zh-CN" }
+
 ::: en
 ::: warning
 This is an outdated driver that has been abandoned, is no longer maintained, and will be removed in future versions. We recommend using the officially supported Aliyundrive Open.
@@ -229,22 +230,22 @@ Check whether the directory you run `./openlist admin` and start OpenList is the
 
 ---
 
-- **Here take Windows as an example**: For example, your OpenList file is in the **`D:\Test\Alist\`** folder, and then you directly start the CMD command running window on the desktop, and then put the D drive Drag the OpenList inside to the command running window to start, and then the configuration file it generates is actually in **`C:\Windows\System32`** here (because CMD is here by default), and then you Obtaining the password is also obtaining the password in this folder. At the same time, because OpenList reads the password in the configuration file in the same directory as OpenList, it is naturally wrong for you to log in with the password.
+- **Here take Windows as an example**: For example, your OpenList file is in the **`D:\Test\OpenList\`** folder, and then you directly start the CMD command running window on the desktop, and then put the D drive Drag the OpenList inside to the command running window to start, and then the configuration file it generates is actually in **`C:\Windows\System32`** here (because CMD is here by default), and then you Obtaining the password is also obtaining the password in this folder. At the same time, because OpenList reads the password in the configuration file in the same directory as OpenList, it is naturally wrong for you to log in with the password.
   - ![faq](/img/faq/alist-admin.png)
-- Solution: You need to go to the folder where OpenList is located to start or check the password, for example, the above is in **`D:\Test\Alist\`**, you have to manually go to this folder and then enter Enter the startup command or the command to view the password to obtain the correct password
+- Solution: You need to go to the folder where OpenList is located to start or check the password, for example, the above is in **`D:\Test\OpenList\`**, you have to manually go to this folder and then enter Enter the startup command or the command to view the password to obtain the correct password
   - **Windows**: After going to the directory where OpenList is located, enter CMD in the top address bar and press Enter, and then use the command to obtain the password
     - ![faq](/img/faq/alist-admin.gif)
   - **Linux**: Use the CD command to go to the directory where OpenList is located to get the correct password
 
 :::
 ::: zh-CN
-检查你运行`./openlist admin`和启动OpenList的目录是否相同。 OpenListt默认会读取你运行程序的当前目录下的配置，所以在不同的目录下运行会导致读取的数据不同。
+检查你运行`./openlist admin`和启动OpenList的目录是否相同。 OpenList默认会读取你运行程序的当前目录下的配置，所以在不同的目录下运行会导致读取的数据不同。
 
 ---
 
-- **这里拿Windows举例**：例如你的OpenList文件在 **`D:\Test\Alist\`** 这个文件夹里面，然后你直接在桌面启动了CMD命令运行窗口，然后把D盘里面的OpenList拖动到命令运行窗口里面启动，然后它生成的配置文件实际上你现在的目录是在 **`C:\Windows\System32`** 这里（因为CMD默认是在这里），然后你获取密码也是获取了这个文件夹里面的密码，同时呢因为OpenList它读取的是和OpenList同级目录下的配置文件里面的密码，你去登录密码自然不对。
+- **这里拿Windows举例**：例如你的OpenList文件在 **`D:\Test\OpenList\`** 这个文件夹里面，然后你直接在桌面启动了CMD命令运行窗口，然后把D盘里面的OpenList拖动到命令运行窗口里面启动，然后它生成的配置文件实际上你现在的目录是在 **`C:\Windows\System32`** 这里（因为CMD默认是在这里），然后你获取密码也是获取了这个文件夹里面的密码，同时呢因为OpenList它读取的是和OpenList同级目录下的配置文件里面的密码，你去登录密码自然不对。
   - ![faq](/img/faq/alist-admin.png)
-- 解决办法：你要到OpenList所在的文件夹里面去在启动或者查看密码，例如上面的是在 **`D:\Test\Alist\`** ，你就要手动去这个文件夹里面然后在输入启动命令或者查看密码的命令即可获取正确的密码
+- 解决办法：你要到OpenList所在的文件夹里面去在启动或者查看密码，例如上面的是在 **`D:\Test\OpenList\`** ，你就要手动去这个文件夹里面然后在输入启动命令或者查看密码的命令即可获取正确的密码
   - **Windows**：去OpenList所在的目录后在顶部地址栏输入 CMD回车这样然后再使用命令获取密码
     - ![faq](/img/faq/alist-admin.gif)
   - **Linux**：使用CD命令 到OpenList所在的目录即可获取正确密码
@@ -274,11 +275,13 @@ Please check and disable the relevant scripts on your own.
 1. **stream** directly puts the binary content of the file into the body, so that the backend can use very little memory, it seem to have no downsides.
 
 2. **form** is to wrap the file into formdata and upload it. The memory used by the backend will be more, but there is no limit on the size.
-   :::
-   ::: zh-CN
-3. **stream** 直接把文件二进制内容放进body中，这样后端可以使用很少的内存，似乎没有什么其他的缺点。
 
-4. **form** 是把文件包裹成formdata上传，后端使用的内存会多一些，但是不限制大小。
+:::
+::: zh-CN
+
+1. **stream** 直接把文件二进制内容放进body中，这样后端可以使用很少的内存，似乎没有什么其他的缺点。
+
+2. **form** 是把文件包裹成formdata上传，后端使用的内存会多一些，但是不限制大小。
 
 :::
 
@@ -347,14 +350,14 @@ Because **`Terabox`** restricts IP, if you access it from a non-overseas IP, you
 
 (Overseas machines can be used. If you have to use local machines (or domestic machines) to build, you can find a way to let OpenList eat **proxy**)
 
-**Note: Check the relevant settings to ensure that traffic related to '*.terabox.com' goes through the **proxy****
+**Note: Check the relevant settings to ensure that traffic related to '\*.terabox.com' goes through the **proxy\***\*
 :::
 ::: zh-CN
-因为 **`Terabox`** 限制IP，如果你是本机非海外IP访问，是无法访问的，自然不会显示内容。
+因为 **`Terabox`\*\* 限制IP，如果你是本机非海外IP访问，是无法访问的，自然不会显示内容。
 
 （可以用海外的机器，如果非得用本机(或者国内的机器)搭建，哪你自己想办法让OpenList吃到**proxy**就可以）
 
-**注意：检查相关设置以确保'*.terabox.com'相关流量经过**proxy****
+**注意：检查相关设置以确保'\*.terabox.com'相关流量经过**proxy\*\*\*\*
 :::
 
 ## Open OpenList prompt System error: TypeError: n.replaceAll is not a function? { lang="en" }
@@ -365,8 +368,8 @@ Because **`Terabox`** restricts IP, if you access it from a non-overseas IP, you
 Your browser kernel version is too low, just add the following to the custom head.
 
 ```html
-<!--Alist V3 suggested to add, it has been added by default, if you don't suggest adding -->
-<script src="https://polyfill.io/v3/polyfill.min.js?features=String.prototype.replaceAll"></script>
+<!--OpenList suggested to add, it has been added by default, if you don't suggest adding -->
+<script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=String.prototype.replaceAll"></script>
 ```
 
 If you think it is too slow, you can change to Ali Cloud
@@ -380,8 +383,8 @@ If you think it is too slow, you can change to Ali Cloud
 你的浏览器内核版本太低，将如下添加到自定义头部即可.
 
 ```html
-<!--Alist V3建议添加的，已经默认添加了，如果你的没有建议加上-->
-<script src="https://polyfill.io/v3/polyfill.min.js?features=String.prototype.replaceAll"></script>
+<!--OpenList建议添加的，已经默认添加了，如果你的没有建议加上-->
+<script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=String.prototype.replaceAll"></script>
 ```
 
 如果嫌太慢可以换阿里云

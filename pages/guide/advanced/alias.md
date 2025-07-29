@@ -359,7 +359,7 @@ You need to enable `Web Proxy` or` Webdav Native Proxy` to take effect. Currentl
 
 - The `139Yun` driver, when this option is enabled, can resolve issues that occur when a proxy is enabled but the download link does not return the correct HTTP status code, such as problems with video playback or lack of support for resume downloads.
 - The `Alias` driver is added to meet specific use cases, for example, when `139Yun` uses a 302 redirect. By enabling the `Alias` proxy, downloads can use `139Yun` with the 302 redirect, while video playback can use the proxy-enabled `Alias`, reducing unnecessary load.
-- The `AList V3` driver is added to support server-side AList mounting with `139Yun` using a 302 redirect. Locally, AList can be mounted via the proxy-enabled `AList V3` to access the server's AList for video playback, etc., to avoid consuming server bandwidth. This also allows for data-free video streaming on mobile networks.
+- The `OpenList` driver is added to support server-side OpenList mounting with `139Yun` using a 302 redirect. Locally, OpenList can be mounted via the proxy-enabled `OpenList` to access the server's OpenList for video playback, etc., to avoid consuming server bandwidth. This also allows for data-free video streaming on mobile networks.
 
 :::
 
@@ -368,7 +368,7 @@ You need to enable `Web Proxy` or` Webdav Native Proxy` to take effect. Currentl
 
 - `139Yun` 驱动开启这个选项后，可解决即使开启代理但下载链接没有返回正确的http状态码导致的一些问题，例如视频无法播放、不支持断点续传等
 - `Alias` 驱动添加是为了满足某些场景，例如 `139Yun` 走302， 然后通过 开启代理的 `Alias` 后，下载用 `139Yun` 走302，播放视频用 开启代理的 `Alias`，减少不必要的负载
-- `AList V3` 驱动添加是为了 服务器的alist挂载 `139Yun` 走302，然后本地的alist通过 开启代理的 `AList V3` 挂载 服务器的alist 播放视频等，达到不消化服务器流量的目的，移动卡还能免流
+- `OpenList` 驱动添加是为了 服务器的 OpenList 挂载 `139Yun` 走302，然后本地的 OpenList 通过 开启代理的 `OpenList` 挂载 服务器的 OpenList 播放视频等，达到不消化服务器流量的目的，移动卡还能免流
 
 :::
 
@@ -535,8 +535,7 @@ graph LR
 - 客户端 → OpenList 别名驱动：使用1个连接
 - OpenList 别名驱动 → 云盘：支持10个并发连接，实际并发数受云盘限制
 
-```
-mermaid
+```mermaid
 graph LR
 A[客户端] -->|连接1| B[OpenList别名驱动]
 
