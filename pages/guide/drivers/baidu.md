@@ -206,14 +206,14 @@ The root foler to mount, defaults to `/`
 
 - **Official:** The official interface, very stable, but for larger files, UA needs to be modified and the speed is slow (SVIP speed fast)
 - **Crack:** unofficial interface，**Seems to be no longer available** ~~You must modify the UA and some files may not have a speed limit, but it will be unstable (not guaranteed 100%availability) Need to use a version greater than `3.19.0`~~
-  - ~~==Need to change the UA to`netdisk`==，Modification method refer to [add-user-agent-user-example](#add-user-agent-usage-example)~~
+  - ~~Need to change the UA to`netdisk`，Modification method refer to [add-user-agent-user-example](#add-user-agent-usage-example)~~
   - ~~Or turn on the Web proxy, you do not need to modify the UA (you need a large broadband to use it stably)~~
   - ~~It is limited to play/download **`video (only tested in the mp4 format other formats are not tested)`**,If it is other format files, such a prompt will appear~~
   - ~~This is not a mistake, this is a limit, please do not panic.~~
 - **Crack video:** unofficial video interface, dedicated to playing videos, the following errors will occur in non-video formats, which is normal
   - The browser also needs to modify the UA: `pan.baidu.com` or `netdisk` In short, if it is not the browser User-Agent, the video can be played.
   - The specific situation is the same as the previous unofficial interface usage
-  - ==The continuous use time is unknown, and 100% availability is not guaranteed==
+  - The continuous use time is unknown, and 100% availability is not guaranteed
 
     ```json{2-4,7-9}
     {
@@ -234,7 +234,7 @@ The root foler to mount, defaults to `/`
 
 - **Official**：官方接口，很稳定，但是文件比较大，需要修改UA，速度慢 (SVIP速度快)
 - **Crack**：非官方接口，**似乎已经无法使用了**~~现在也需要修改UA且部分文件可能不限速，但是会不稳定（不保证100%可用性）需要使用大于`3.19.0`的版本~~
-  - ~~==需要将UA改成`netdisk`==，修改方法参考下方[添加-user-agent-使用示例](#添加-user-agent-使用示例)~~
+  - ~~需要将UA改成`netdisk`，修改方法参考下方[添加-user-agent-使用示例](#添加-user-agent-使用示例)~~
   - ~~或者开启Web代理（需要大宽带才能带的动）~~
   - ~~WebDav播放不需要修改UA，可以直接302播放~~
   - ~~仅限于播放/下载 **`视频(只测试了mp4格式其他格式未测试)`**，其他类型文件的会出现下方提示~~
@@ -242,7 +242,7 @@ The root foler to mount, defaults to `/`
 - **Crack video**：非官方视频接口，播放视频专用，非视频格式会出现以下错误 是正常情况
   - 浏览器查看也需要修改UA：`pan.baidu.com` 或者 `netdisk` 总之不是浏览器 User-Agent 都能播放视频
   - 具体情况和之前的非官方接口用法一样
-  - ==可以持续使用时间未知，不保证100%可用性==
+  - 可以持续使用时间未知，不保证100%可用性
 
     ```json{2-4,7-9}
     {
@@ -265,24 +265,24 @@ The root foler to mount, defaults to `/`
 
 ::: en
 ::: danger If you don't know how to set "User-Agent" see here
-==The following methods are limited to Baidu super member users==
+The following methods are limited to Baidu super member users
 
-==Prompt again The following methods are limited to Baidu super member users==
+Prompt again The following methods are limited to Baidu super member users
 
 It will only be useful if a member finishes modifying **`"User-Agent"`** (choose official and 302)
 
-If you don’t change **`"User-Agent"`**, you can enable ==Web Agent==, the disadvantage is that you need to build an OpenList machine for transfer, that is to say, you need a large broadband to help you transfer
+If you don’t change **`"User-Agent"`**, you can enable=Web Agent, the disadvantage is that you need to build an OpenList machine for transfer, that is to say, you need a large broadband to help you transfer
 :::
 
 ::: zh-CN
 ::: danger 如果你不会设置 "User-Agent" 请看这里
-==以下方法仅限于有百度超级会员用户使用==
+以下方法仅限于有百度超级会员用户使用
 
-==再次提示 以下方法仅限于有百度超级会员用户使用==
+再次提示 以下方法仅限于有百度超级会员用户使用
 
 有会员改完 **`"User-Agent"`** 才会有用（选择官方和302）
 
-如果不改 **`"User-Agent"`**，可以开启 ==Web代理==，缺点是需要你搭建OpenList的机器中转，也就是说你需要大宽带帮你中转
+如果不改 **`"User-Agent"`**，可以开启 Web代理，缺点是需要你搭建OpenList的机器中转，也就是说你需要大宽带帮你中转
 :::
 
 ::: en
@@ -373,7 +373,7 @@ Example 2: Another plugin method covering 360, Chrome, Edge: **https://youtu.be/
 
 3. Select the files we need to download. After selecting, there will be a row of buttons. Select the second option on the right. One is sent to Aria2.
 
-   If you use the webpage to modify the **`user-agent`**, you do not need to configure the `UA` of ==**Aria2**==, and you can download it directly to Aria2
+   If you use the webpage to modify the **`user-agent`**, you do not need to configure the `UA` of **Aria2**, and you can download it directly to Aria2
 
 :::
 
@@ -387,7 +387,7 @@ Example 2: Another plugin method covering 360, Chrome, Edge: **https://youtu.be/
 
 3. 把我们需要下载的文件**进行勾选**，勾选好后下方会出现**一排按钮**，选择右侧第二个选项下载里面有一个**发送到Aria2**
 
-   如果你使用了网页修改 **`"User-Agent"`**，可以不配置 ==**Aria2**== 的`UA`，直接推送到Aria2也能下载
+   如果你使用了网页修改 **`"User-Agent"`**，可以不配置 **Aria2** 的`UA`，直接推送到Aria2也能下载
 
 :::
 
@@ -405,7 +405,7 @@ Example 2: Another plugin method covering 360, Chrome, Edge: **https://youtu.be/
 
 3. Select the files we need to download. After selecting, there will be a row of buttons. Select the second option on the right. One is sent to Aria2.
 
-   If you use the webpage to modify the **`user-agent`**, you do not need to configure the `UA` of ==**Motrix**==, and you can download it directly to Aria2
+   If you use the webpage to modify the **`user-agent`**, you do not need to configure the `UA` of **Motrix**, and you can download it directly to Aria2
 
 - Motrix Download link：[Motrix Official website](https://motrix.app/)，[Motrix-GitHub](https://github.com/agalwood/Motrix)
 
@@ -421,7 +421,7 @@ Example 2: Another plugin method covering 360, Chrome, Edge: **https://youtu.be/
 
 3. 把我们需要下载的文件**进行勾选**，勾选好后下方会出现**一排按钮**，选择右侧第二个选项下载里面有一个**发送到Aria2**
 
-   如果你使用了网页修改 **`"User-Agent"`**，可以不配置 ==**Motrix**== 的`UA`，直接推送到Aria2也能下载
+   如果你使用了网页修改 **`"User-Agent"`**，可以不配置 **Motrix** 的`UA`，直接推送到Aria2也能下载
 
 - Motrix下载链接：[Motrix官网](https://motrix.app/)，[Motrix-GitHub](https://github.com/agalwood/Motrix)
 

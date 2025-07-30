@@ -69,7 +69,7 @@ If you fill in this path, you will move the file into the folder when deleting t
 
 The method of filling in the above -mentioned mounting path is different from different system filling methods.
 
-==If you do n’t know if you fill in it correctly, you can test it yourself first and then use the production environment to use it yourself.==
+If you don’t know if you fill in it correctly, you can test it yourself first and then use the production environment to use it yourself.
 
 - Linux: `/root`
 - Windows: `C:`
@@ -83,7 +83,7 @@ The method of filling in the above -mentioned mounting path is different from di
 
 填写方式参考上述挂载路径的方式不同系统填写方式不同。
 
-==如果不知道是否填写正确，可以先自己在测试环境进行测试一下再进行生产环境使用==
+如果不知道是否填写正确，可以先自己在测试环境进行测试一下再进行生产环境使用
 
 - Linux: `/root`
 - Windows: `C:`
