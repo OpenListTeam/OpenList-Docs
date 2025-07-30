@@ -14,7 +14,7 @@ categories:
 
 ::: en
 ::: warning
-⚠️Note that the public and private keys of 123 Cloud Disk OpenAPI directly connect to the applicant's cloud disk, so you **must use your client id and client secret**.
+The public and private keys of 123 Cloud Disk OpenAPI directly connect to the applicant's cloud disk, so you **must use your client id and client secret**.
 
 - Application method: [123 Open](https://www.123pan.com/developer)
 - Reference Tutorial: [Discussions/55](https://github.com/orgs/OpenListTeam/discussions/55)
@@ -22,7 +22,7 @@ categories:
 :::
 ::: zh-CN
 ::: warning
-⚠️注意，123云盘OpenAPI的公私钥直通申请人的网盘，所以**必须使用自己的公钥和私钥**
+123云盘OpenAPI的公私钥直通申请人的网盘，所以**必须使用自己的公钥和私钥**
 
 - 申请方式: [123云盘开放平台](https://www.123pan.com/developer)
 - 参考教程：[Discussions/55](https://github.com/orgs/OpenListTeam/discussions/55)
