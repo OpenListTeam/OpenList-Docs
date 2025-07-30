@@ -93,7 +93,7 @@ Speed and stability are related to the performance/network of the machine runnin
 Please register an application according to the requirements of the AliYun Drive Open Platform.  
 :::
 ::: en  
-Open Platform URL: [AliYun Drive Open Platform](https://www.alipan.com/developer/f)  
+Open Platform URL: <https://www.alipan.com/developer/f>
 :::
 
 ::: zh-CN
@@ -101,7 +101,7 @@ Open Platform URL: [AliYun Drive Open Platform](https://www.alipan.com/developer
 请根据阿里云盘开放平台的要求注册应用
 :::
 ::: zh-CN
-开放平台地址: [阿里云盘开放平台:https://www.alipan.com/developer/f](https://www.alipan.com/developer/f)
+开放平台地址：<https://www.alipan.com/developer/f>
 :::
 
 ### 2.2. Obtain Tokens { lang="en" }
