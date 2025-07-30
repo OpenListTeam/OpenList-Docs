@@ -12,29 +12,94 @@ categories:
   - drivers
 ---
 
+https://www.123pan.com/developer
+
+## 1. Developer Application { lang="en" }
+
+## 1. 申请开发者 { lang="zh-CN" }
+
 ::: en
 ::: warning
 The public and private keys of 123 Cloud Disk OpenAPI directly connect to the applicant's cloud disk, so you **must use your client id and client secret**.
-
-- Application method: [123 Open](https://www.123pan.com/developer)
-- Reference Tutorial: [Discussions/55](https://github.com/orgs/OpenListTeam/discussions/55)
-
 :::
 ::: zh-CN
 ::: warning
-123云盘OpenAPI的公私钥直通申请人的网盘，所以**必须使用自己的公钥和私钥**
+123云盘OpenAPI的公私钥直通申请人的网盘，所以**必须使用自己的公钥和私钥**。
+:::
 
-- 申请方式: [123云盘开放平台](https://www.123pan.com/developer)
-- 参考教程：[Discussions/55](https://github.com/orgs/OpenListTeam/discussions/55)
+::: en
+
+**Application Method**: Visit the [123 Open Platform Official Website](https://www.123pan.com/developer), read the Developer Agreement, fill in the required fields marked with `*`, and apply for the `client_id` and `client_secret`.
+
+1. Sign the Developer Agreement
+
+2. Fill out the application materials
+
+3. Wait for the review notification
+
+**Reference Tutorial**: [OpenListTeam/discussions#55](https://github.com/orgs/OpenListTeam/discussions/55)
+
+:::
+::: zh-CN
+
+**申请方式**：访问[123开放平台官网](https://www.123pan.com/developer)，阅读开发者协议，填写对应必填项`*`信息，申请`client_id`和`client_secret`。
+
+1. 签署开发者协议
+
+2. 填写申请材料
+
+3. 等待审核通知
+
+**参考教程**：[OpenListTeam/discussions#55](https://github.com/orgs/OpenListTeam/discussions/55)
 
 :::
 
-## 获取Token { lang="zh-CN" }
+### 2. Get UID { lang="en" }
 
-## GetToken { lang="en" }
+### 2. 获取 UID { lang="zh-CN" }
+
+::: en
+
+The method to obtain the "Cloud Drive UID" required during the application process is as follows:
+
+1. **Log in to the 123 Cloud Drive web platform**
+
+   Visit the 123 Cloud Drive official website and log in with your account (phone number).
+
+2. **Go to the "Settings" page**
+
+   After logging in, click on the profile picture or username at the top right, and select "Settings" (or directly visit: <https://www.123pan.com/Setting> ).
+
+3. **Find the "Account ID"**
+
+   In the "Account Settings" or "Security Settings" section, locate the "Account ID," which is your "Cloud Drive UID." Copy it and paste it into the application form.
+
+:::
 
 ::: zh-CN
-打开[https://api.oplist.org/](https://api.oplist.org/)
+
+填写申请过程中需要填入的“云盘UID”一项获取方式如下：
+
+1. 登录123云盘网页端
+
+   打开123云盘官网，使用你的账号（手机号）登录。
+
+2. 进入“设置”页面
+
+   登录后，点击右上角头像或用户名，选择 「设置」（或直接访问：<https://www.123pan.com/Setting> ）。
+
+3. 查看“账号ID”
+
+   在「账号设置」或「安全设置」栏目中，找到“个人账号ID”，该ID即为您的“云盘UID”，复制并填入即可。
+
+:::
+
+## 3. 获取 Token { lang="zh-CN" }
+
+## 3. Get Token { lang="en" }
+
+::: zh-CN
+打开：<https://api.oplist.org/>
 
 > 如果是使用社区或者自建的api服务，请打开对应的地址
 
@@ -50,7 +115,7 @@ The public and private keys of 123 Cloud Disk OpenAPI directly connect to the ap
 :::
 
 ::: en
-Open [https://api.oplist.org/](https://api.oplist.org/)
+Open <https://api.oplist.org/>
 
 > If using a community or self-built API service, please open the corresponding address
 
@@ -68,9 +133,9 @@ After clicking, the access token at the bottom of the interface will display `ht
 ![](/img/drivers/123/123open-01-l.png#light)
 ![](/img/drivers/123/123open-01-d.png#dark)
 
-## 在OpenList中添加 { lang="zh-CN" }
+## 4. 在 OpenList 中添加 { lang="zh-CN" }
 
-## Add in OpenList { lang="en" }
+## 4. Add in OpenList { lang="en" }
 
 ### 刷新令牌 { lang="zh-CN" }
 
@@ -121,16 +186,23 @@ Enter the access token obtained above
 ### 根文件夹 ID { lang="zh-CN" }
 
 ::: en
-The default root directory ID is: `0`<br/>
-Open the official website of 123 Cloud Drive, navigate to the folder you want to set, and then click the number following `homeFilePath` in the URL.<br/>
-For example, <https://www.123pan.com/?homeFilePath=123456><br/>
+The default root directory ID is: `0`
+
+Open the official website of 123 Cloud Drive, navigate to the folder you want to set, and then click the number following `homeFilePath` in the URL.
+
+For example, <https://www.123pan.com/?homeFilePath=123456>
+
 The `root folder ID` of this folder is `123456`.
 :::
 ::: zh-CN
-默认根目录ID为：`0`<br/>
-打开 123 网盘官网，点击进入要设置的文件夹时点击 URL 中 `homeFilePath`后面的数字<br/>
-如 <https://www.123pan.com/?homeFilePath=123456><br/>
-这个文件夹的 `根文件夹ID` 即为 `123456`<br/>
+默认根目录ID为：`0`
+
+打开 123 网盘官网，点击进入要设置的文件夹时点击 URL 中 `homeFilePath`后面的数字
+
+如 <https://www.123pan.com/?homeFilePath=123456>
+
+这个文件夹的 `根文件夹ID` 即为 `123456`
+
 :::
 
 ## The default download method used { lang="en" }
