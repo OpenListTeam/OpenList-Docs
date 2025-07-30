@@ -20,6 +20,8 @@ sticky: true
 star: true
 ---
 
+<!--@include: @/snippets/reverse.md-->
+
 ::: en
 Need to purchase Lenovo devices **https://pc.lenovo.com.cn**
 :::

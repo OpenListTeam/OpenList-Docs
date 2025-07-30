@@ -22,6 +22,8 @@ star: true
 
 **https://feijipan.com/**
 
+<!--@include: @/snippets/reverse.md-->
+
 ::: en
 ::: danger
 Feiji Cloud imposes login restrictions on 3rd-party platforms. Attempting to access its service via OpenList may result in your account being banned. Please proceed with caution!

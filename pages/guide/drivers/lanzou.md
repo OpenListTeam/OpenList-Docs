@@ -20,6 +20,8 @@ sticky: true
 star: true
 ---
 
+<!--@include: @/snippets/reverse.md-->
+
 ::: en
 Lanzuo Network Disk has three types of **modes (types)**, which are **Accounts**, **Cookie** and **Url**
 
