@@ -33,14 +33,14 @@ Aliyundrive Open, developed based on the official authorization API.
 ::: en
 ::: danger Read the precautions carefully
 
-1. ==The refresh token obtained by this tool can only be used for **Aliyundrive open platform** storage mount method==
+1. The refresh token obtained by this tool can only be used for **Aliyundrive open platform** storage mount method.
 2. The token filled in when OpenList is mounted should also be provided by this tool, and the previous acquisition method will not be available
 3. Not applicable to others, but only for OpenList
-4. If the same IP requests =={{ max }}== times within =={{ minutes }}== minutes, **Too Many Requests** will appear. :no_entry_sign:So please do not abuse:no_entry_sign:
+4. If the same IP requests max times within minutes, **Too Many Requests** will appear. :no_entry_sign:So please do not abuse:no_entry_sign:
    - and viewing files and watching video downloads is not counted，The number of times and time mentioned above are dynamic~
    - New optimization: **will only refresh the token when the request finds that the token is expired, update restart editing if the token is still valid will not refresh.**
 5. Online playback video reminder: **`ExceedCapacityForbidden`** error, the capacity exceeds restrictions, implements restrictions, needs to be expanded or deleted unnecessary file saving space to save space,[View details](#four、)
-6. <i class="fa-solid fa-seal-exclamation fa-beat" style="color: #ff0000;"></i> **==Do not share the Alibaba cloud disk publicly, and the account is prohibited from being accessed by multiple IPs. If the account is frozen after sharing, you will be responsible for the consequences== <i class="fa-solid fa-seal-exclamation fa-beat" style="color: #ff0000;"></i> After adding storage, please set up meta information and other measures in time to prevent the account from being frozen by {other people/crawlers} malicious [access/sharing]，Other cloud disks also need to be prevented from being frozen/banned**
+6. **Do not share the Alibaba cloud disk publicly, and the account is prohibited from being accessed by multiple IPs. If the account is frozen after sharing, you will be responsible for the consequences. After adding storage, please set up meta information and other measures in time to prevent the account from being frozen by {other people/crawlers} malicious [access/sharing]，Other cloud disks also need to be prevented from being frozen/banned.**
 7. It is prohibited to use Alibaba Cloud Disk to build distribution services including but not limited to **`picture bed, software bed`** and **`video external link to video website playback`**, as well as some non-standard usage methods not mentioned above. If you violate the rules and are `frozen/banned`, you will be responsible for the consequences and it cannot be lifted.
 
 :::
@@ -48,15 +48,15 @@ Aliyundrive Open, developed based on the official authorization API.
 ::: zh-CN
 ::: danger 请仔细阅读注意事项
 
-1. ==此工具获取的刷新令牌仅可以用于 **阿里云盘开放平台** 存储挂载方式==
+1. 此工具获取的刷新令牌仅可以用于 **阿里云盘开放平台** 存储挂载方式
 2. OpenList 挂载时填写的 token 也应该是这个工具提供的，之前方式获取的不可以
 3. 暂不适用于其他，同时也仅限用于 OpenList 使用
-4. 同一 IP 在 =={{ minutes }}== 分钟内请求 =={{ max }}== 次，会出现 **Too Many Requests** :no_entry_sign:避免滥用，请勿滥用:no_entry_sign:
+4. 同一 IP 在 minutes 分钟内请求 max 次，会出现 **Too Many Requests** :no_entry_sign:避免滥用，请勿滥用:no_entry_sign:
    - 查看文件看视频下载不算，上述的分钟和次数是动态的
    - 新增优化：**只会在请求发现令牌过期时去刷新令牌，更新 重启 编辑如果令牌仍然有效则不会去刷新。**
 5. 在线播放视频提示：**`ExceedCapacityForbidden`** 错误，容量超限限制播放，需要扩容或者删除不必要的文件释放空间,[查看详情](#四、)
-6. <i class="fa-solid fa-seal-exclamation fa-beat" style="color: #ff0000;"></i> **==请勿将阿里云盘进行公开分享，禁止帐号被多IP访问，若进行分享后帐号被冻结后果自负== <i class="fa-solid fa-seal-exclamation fa-beat" style="color: #ff0000;"></i> 添加存储后请及时设置元信息等措施防止被{其他人/爬虫}恶意[访问/分享]导致帐号被冻结，其他云盘也一样防止被冻结/封号**
-7. 禁止使用阿里云盘搭建==包括但不限于== **`图床、软件床`** 和 **`视频外链到视频网站播放`** 等分发服务以及一些没有提到的不规范使用的方式，若违反被`冻结/封号`后果自负，并无法解除。
+6. **请勿将阿里云盘进行公开分享，禁止帐号被多IP访问，若进行分享后帐号被冻结后果自负。添加存储后请及时设置元信息等措施防止被{其他人/爬虫}恶意[访问/分享]导致帐号被冻结，其他云盘也一样防止被冻结/封号**
+7. 禁止使用阿里云盘搭建包括但不限于 **`图床、软件床`** 和 **`视频外链到视频网站播放`** 等分发服务以及一些没有提到的不规范使用的方式，若违反被`冻结/封号`后果自负，并无法解除。
 
 :::
 

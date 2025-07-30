@@ -41,10 +41,10 @@ MoPan address：**https://mopan.sc.189.cn/mopan/#/downloadPc**
 ## Sms code { lang="zh-CN" }
 
 ::: en
-Enter the option of the mobile phone number and password when the first addition, and then enter the `SMS Code` input ==Send==, and then click Save to send it to you.
+Enter the option of the mobile phone number and password when the first addition, and then enter the `SMS Code` input `send`, and then click Save to send it to you.
 :::
 ::: zh-CN
-第一次添加时先输入 手机号和密码的选项，然后在`Sms Code`输入 ==send==，再点击保存会给你进行发短信，然后将验证码重新输入就可以添加
+第一次添加时先输入 手机号和密码的选项，然后在`Sms Code`输入 `send`，再点击保存会给你进行发短信，然后将验证码重新输入就可以添加
 :::
 
 ## Root folder ID { lang="en" }

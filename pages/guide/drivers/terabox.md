@@ -50,11 +50,11 @@ Then enter https://www.terabox.com in the address bar of this tab to enter the w
 ## 下载接口 { lang="zh-CN" }
 
 ::: en
-**Download api needs to choose ==`Crack`==** ，before you can use ^(v3.29)^
+**Download api needs to choose `Crack`** ，before you can use
 <br/>
 :::
 ::: zh-CN
-**下载接口需要选择 ==`非官方`==** ，才可以使用 ^(v3.29)^
+**下载接口需要选择 `非官方`** ，才可以使用
 <br/>
 :::
 
@@ -67,7 +67,6 @@ Then enter https://www.terabox.com in the address bar of this tab to enter the w
 - Root folder id is `/`
 - Mount other single subdirectories, put a picture for reference
   - <img src="/img/drivers/terabox/terabox3.png" alt="Demo"/>
-            <br/>
 
 :::
 
@@ -76,7 +75,6 @@ Then enter https://www.terabox.com in the address bar of this tab to enter the w
 - 根目录为 `/`
 - 挂载其他单个子目录，放一张图参考一下吧
   - <img src="/img/drivers/terabox/terabox3.png" alt="Demo"/>
-            <br/>
 
 :::
 
