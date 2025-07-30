@@ -14,6 +14,8 @@ categories:
 
 https://www.123pan.com/developer
 
+<!--@include: @/snippets/tos-tip.md-->
+
 ## 1. Developer Application { lang="en" }
 
 ## 1. 申请开发者 { lang="zh-CN" }
