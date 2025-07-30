@@ -11,7 +11,7 @@ categories:
   - drivers
 ---
 
-<!--@include: @/snippets/reverse.md-->
+<!--@include: @/snippets/reverse-tip.md-->
 
 ::: en
 163 Music Drive can only upload music and other operations on the mobile phone, and the web page cannot operate

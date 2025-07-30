@@ -11,7 +11,7 @@ categories:
   - drivers
 ---
 
-<!--@include: @/snippets/reverse.md-->
+<!--@include: @/snippets/reverse-tip.md-->
 
 ::: en
 ::: tip

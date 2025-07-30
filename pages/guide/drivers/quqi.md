@@ -20,7 +20,7 @@ sticky: true
 star: true
 ---
 
-<!--@include: @/snippets/reverse.md-->
+<!--@include: @/snippets/reverse-tip.md-->
 
 曲奇云盘官网：https://quqi.com ( v3.31.0)
 

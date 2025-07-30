@@ -20,7 +20,7 @@ sticky: true
 star: true
 ---
 
-<!--@include: @/snippets/reverse.md-->
+<!--@include: @/snippets/reverse-tip.md-->
 
 ::: en
 chaoxingxing group cloud is also affiliated with chaoxingxing. After logging in to chaoxingxing, you can see a group under the left sidebar.

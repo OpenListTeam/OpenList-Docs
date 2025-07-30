@@ -22,7 +22,7 @@ star: true
 
 **https://feijipan.com/**
 
-<!--@include: @/snippets/reverse.md-->
+<!--@include: @/snippets/reverse-tip.md-->
 
 ::: en
 ::: danger

@@ -22,7 +22,7 @@ star: true
 
 **https://ilanzou.com**
 
-<!--@include: @/snippets/reverse.md-->
+<!--@include: @/snippets/reverse-tip.md-->
 
 ## Root folder ID { lang="en" }
 

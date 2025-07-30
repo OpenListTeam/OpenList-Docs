@@ -20,7 +20,7 @@ sticky: true
 star: true
 ---
 
-<!--@include: @/snippets/reverse.md-->
+<!--@include: @/snippets/reverse-tip.md-->
 
 ::: en
 MoPan address：**https://mopan.sc.189.cn/mopan/#/downloadPc**

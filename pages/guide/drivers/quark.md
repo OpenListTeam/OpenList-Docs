@@ -21,7 +21,7 @@ sticky: true
 star: true
 ---
 
-<!--@include: @/snippets/reverse.md-->
+<!--@include: @/snippets/reverse-tip.md-->
 
 **https://pan.quark.cn**
 
