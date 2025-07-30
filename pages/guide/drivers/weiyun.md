@@ -46,9 +46,9 @@ Tencent Weiyun official website: **https://www.weiyun.com**
 
 :::
 
-## Root folder file_idang="en" }
+## Root folder file_id { lang="en" }
 
-## 根文件夹IDang="zh-CN" }
+## 根文件夹ID { lang="zh-CN" }
 
 ::: en
 
@@ -68,9 +68,9 @@ Tencent Weiyun official website: **https://www.weiyun.com**
 
 :::
 
-## Cookieang="en" }
+## Cookie { lang="en" }
 
-## Cookieang="zh-CN" }
+## Cookie { lang="zh-CN" }
 
 ::: en
 After logging in to Weiyun, **Open the developer debugging tool (F12)**, find the request that carries the cookie in any request, copy and fill in it.
@@ -91,9 +91,9 @@ After logging in to Weiyun, **Open the developer debugging tool (F12)**, find th
 
 :::
 
-## other notesang="en" }
+## Other notes { lang="en" }
 
-## 其他说明ang="zh-CN" }
+## 其他说明 { lang="zh-CN" }
 
 ::: en
 
@@ -109,9 +109,9 @@ After logging in to Weiyun, **Open the developer debugging tool (F12)**, find th
 
 :::
 
-### The default download method usedang="en" }
+## The default download method used { lang="en" }
 
-### 默认使用的下载方式ang="zh-CN" }
+## 默认使用的下载方式 { lang="zh-CN" }
 
 ::: en
 
