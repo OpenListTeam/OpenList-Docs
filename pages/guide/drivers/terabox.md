@@ -1,7 +1,7 @@
 ---
 title:
   en: Terabox
-  zh-CN: Terabox(海外百度)
+  zh-CN: Terabox（海外百度）
 icon: iconfont icon-state
 # This control sidebar order
 top: 40
@@ -19,6 +19,10 @@ sticky: true
 # this page will appear in starred articles
 star: true
 ---
+
+<!--@include: @/snippets/reverse.md-->
+
+https://www.terabox.com/
 
 ## Refresh Token { lang="en" }
 
