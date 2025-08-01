@@ -48,6 +48,7 @@ Create `docker-compose.yml` file.
 
 ```bash
 mkdir -p /opt/openlist
+cd /opt/openlist
 vim docker-compose.yml
 ```
 
