@@ -191,14 +191,30 @@ Free and Open Source Software licensed under the GPLv2 License.
 This project is an improved version based on Alist-EX-container.
 Integrates Openlist, Aria2, qBittorrent, Caddy reverse proxy, supports multi-arch one-click deployment, navigation page and multiple web panels, perfect for offline download and resource management.
 
-Free and Open Source Software licensed under the GPL-3.0License.
+Free and Open Source Software licensed under the GPLv3 license.
 :::
 
 ::: zh-CN
 该项目基于 Alist-EX-container 改进。
 集成 Openlist、Aria2、qBittorrent、Caddy 反向代理，支持多架构一键部署，带导航页和多种 Web 面板，适合离线下载和资源管理。
 
-自由开源软件，GPL-3.0 协议
+自由开源软件，GPLv3 协议
+:::
+
+---
+
+### [907739769/OpenList-strm-RuoYi ↗](https://github.com/907739769/OpenList-strm-RuoYi/)
+
+::: en
+An improved version of OpenList Strm based on RuoYi framework.
+
+Free and Open Source Software licensed under the MIT License.
+:::
+
+::: zh-CN
+基于RuoYi框架升级的OpenList Strm 应用
+
+自由开源软件，MIT协议
 :::
 
 ## Third-Party Proprietary Software { lang="en" }
