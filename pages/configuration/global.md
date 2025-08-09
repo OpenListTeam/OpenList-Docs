@@ -275,3 +275,115 @@ Ignore the parameters for forwarding direct links, such as `sign` and `openlist_
 - 直接使用服务器 IP 访问
 
 :::
+
+## Allow previewing sharing files { lang="en" }
+
+## 允许预览分享文件 { lang="zh-CN" }
+
+::: en
+Enable the preview feature for files in share links.
+
+Please note that disabling this option will only hide preview methods (except Download) on the frontend, but cannot prevent users from invoking the relevant APIs.
+:::
+::: zh-CN
+允许分享链接中文件的预览功能。
+
+请注意：关闭该选项只会让前端不显示除 Download 以外的预览方式，并不能阻止用户调用相关 API。
+:::
+
+## Allow previewing sharing archives { lang="en" }
+
+## 允许预览分享的压缩文件 { lang="zh-CN" }
+
+::: en
+Enable the preview feature for archives in share links.
+
+Unlike the previous setting, disabling this option will prevent calls to the archive preview APIs for files in share links.
+:::
+::: zh-CN
+允许分享链接中压缩文件的预览功能。
+
+与上一项配置不同，关闭该选项会拦截对分享链接中压缩文件的预览相关请求。
+:::
+
+## Force proxy sharing files { lang="en" }
+
+## 强制代理分享文件链接 { lang="zh-CN" }
+
+::: en
+Enforce proxying for all file requests originating from share links.
+:::
+::: zh-CN
+强制代理所有来自分享链接的文件请求
+:::
+
+## Share summary content { lang="en" }
+
+## 分享链接复制内容 { lang="zh-CN" }
+
+::: en
+The content copied by clicking "Copy Link" after sharing completion, coding in Handlebars template syntax.
+
+If you prefer copying the accessible link directly, try:
+
+- Preview link
+
+```handlebars
+{{base_url}}/@s/{{id}}
+```
+
+- Preview link with share code
+
+```handlebars
+{{base_url}}/@s/{{id}}{{#if pwd}}?pwd={{pwd}}{{/if}}
+```
+
+- direct download link (applies only to single-file shares)
+
+```handlebars
+{{base_url}}/sd/{{id}}{{#if pwd}}?pwd={{pwd}}{{/if}}
+```
+
+:::
+::: zh-CN
+分享完成后点击“复制链接”复制的内容，使用 Handlebars 模板语法，默认内容的中文版：
+
+```handlebars
+@{{creator}}
+分享了来自
+{{site_title}}
+的
+{{#each files}}
+  {{#if @first}}
+    {{filename this}}
+  {{/if}}
+  {{#if @last}}
+    {{#unless (eq @index 0)}} 等 {{add @index 1}} 项文件{{/unless}}
+  {{/if}}
+{{/each}}
+：{{base_url}}/@s/{{id}}
+{{#if pwd}}，分享码为 {{pwd}}{{/if}}
+{{#if expires}}，请在 {{dateLocaleString expires}} 之前下载{{/if}}。
+```
+
+希望直接复制可访问的链接可采用：
+
+- 预览链接
+
+```handlebars
+{{base_url}}/@s/{{id}}
+```
+
+- 预览链接，带分享码
+
+```handlebars
+{{base_url}}/@s/{{id}}{{#if pwd}}?pwd={{pwd}}{{/if}}
+```
+
+- 直链（仅适用于单文件分享）
+
+```handlebars
+{{base_url}}/sd/{{id}}{{#if pwd}}?pwd={{pwd}}{{/if}}
+```
+
+:::
