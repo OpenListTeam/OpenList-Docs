@@ -15,11 +15,11 @@ https://cnb.cool/
 ## 已知问题 { lang="zh-CN" }
 
 ::: en
-CNB release is not a standard file system and has some unresolved issues. Please do not submit feedback for these.
+CNB releases are not a standard file system and have some unresolved issues. Please do not submit feedback for these.
 
 1. An empty repository needs to be initialized first.
 2. Subdirectories are not supported under Tag / Release directories.
-3. The OpenAPI upload returns `expires_in_sec` as only 10 seconds. Uploading large files may timeout; after timeout, the upload continues but returns `invalid token`. Therefore, a local timeout mechanism is added to automatically stop uploading when the set time is reached, avoiding failed uploads and wasted bandwidth.
+3. The OpenAPI upload returns `expires_in_sec` as only 10 seconds. Uploading large files may time out; after time out, the upload continues but returns `invalid token`. Therefore, a local timeout mechanism is added to automatically stop uploading when the set time is reached, avoiding failed uploads and wasted bandwidth.
 4. `Move`, `Copy`, and `Rename` operations are not supported.
 5. Only when `UseTagName` is disabled, renaming can be done by modifying the Release name.
 
@@ -29,7 +29,7 @@ CNB 发行版非正常文件系统，存在一些无法解决的问题，请勿�
 
 1. 空仓库需要先初始化
 2. Tag / Release 目录下不支持子目录
-3. OpenAPI 上传返回 `expires_in_sec` 仅为 10 s，上传大文件会超时，超时后仍会继续上传然后返回 `token 无效`，因此增加了本地超时机制，达到上传接口返回的设定时间时自动停止上传，避免上传失败、浪费流量
+3. OpenAPI 上传返回 `expires_in_sec` 仅为10秒，上传大文件会超时，超时后仍会继续上传然后返回 `token 无效`，因此增加了本地超时机制，达到上传接口返回的设定时间时自动停止上传，避免上传失败、浪费流量
 4. 不支持 `移动`、`复制`、`重命名` 操作
 5. 仅支持在关闭 `使用Tag名称` 时，通过修改 Release 的名称进行重命名
 
