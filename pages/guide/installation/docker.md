@@ -27,7 +27,7 @@ It is highly recommended to deploy OpenList in an isolated environment using Doc
 
   这意味着，您需要手动处理映射的目录的权限问题，确保容器内的 `openlist(1001)` 用户有权限访问映射的目录。
 
-  您也可以通过 `--user UID:GID` 的方式来运行容器指定容器内运行 OpenLIst 的用户和组，让容器内有权限访问映射的目录。
+  您也可以通过 `--user UID:GID` 的方式来运行容器指定容器内运行 OpenList 的用户和组，让容器内有权限访问映射的目录。
 
 - **rootless** 模式中的 Docker， `--user 0:0` 代表当前用户的 UID 和 GID。请确保您在运行容器时，正确设置了 `--user` 参数，以确保文件权限的正确性。
 :::
