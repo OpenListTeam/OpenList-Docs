@@ -441,7 +441,7 @@ If you are using the current user to run and manage OpenList and its configurati
 :::
 ::: zh-CN
 ::: tip
-如果您希望使用当前用户运行和管理openlist及其配置目录，请使用以下命令：
+如果您希望使用当前用户运行和管理 OpenList 及其配置目录，请使用以下命令：
 :::
 
 ```bash
