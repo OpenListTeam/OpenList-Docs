@@ -23,6 +23,7 @@ It is highly recommended to deploy OpenList in an isolated environment using Doc
 
 ::: zh-CN
 ::: warning
+
 - 在 `v4.1.0` 以后的版本中（不包含 `v4.1.0`），OpenList 镜像已经移除了 `PUID`、`PGID`，并借鉴于 MariaDB 的构建方式，使用 `useradd` 增加了用户 `openlist`（UID 1001）和组 `openlist`（GID 1001），并使用该用户运行 `openlist server`。
 
   这意味着，您需要手动处理映射的目录的权限问题，确保容器内的 `openlist(1001)` 用户有权限访问映射的目录。
@@ -30,10 +31,11 @@ It is highly recommended to deploy OpenList in an isolated environment using Doc
   您也可以通过 `--user UID:GID` 的方式来运行容器指定容器内运行 OpenList 的用户和组，让容器内有权限访问映射的目录。
 
 - **rootless** 模式中的 Docker， `--user 0:0` 代表当前用户的 UID 和 GID。请确保您在运行容器时，正确设置了 `--user` 参数，以确保文件权限的正确性。
-:::
+  :::
 
 ::: en
 ::: warning
+
 - In version `v4.1.0` and later (excluding `v4.1.0`), OpenList has removed the `PUID` and `PGID` environment variables in the image, and has adopted a method similar to that of MariaDB, where a user named `openlist` (UID 1001) and a group named `openlist` (GID 1001) are created, and `openlist server` runs under this user.
 
   This means you need to manually handle the permission issues of the mapped directory, ensuring that the OpenList user (1001) inside the container has access to the mapped directory.
@@ -41,7 +43,7 @@ It is highly recommended to deploy OpenList in an isolated environment using Doc
   You can also run the container with the `--user UID:GID` option to specify the user and group under which OpenList runs inside the container, allowing it to access the mapped directory.
 
 - In the **rootless** mode of Docker, `--user 0:0` represents the current user's UID and GID. Please ensure that you set the `--user` parameter correctly when running the container to ensure proper file permissions.
-:::
+  :::
 
 ## Install { lang="en" }
 
@@ -83,7 +85,7 @@ If you are using the current user to run and manage OpenList and its configurati
 
 ```bash
 mkdir -p /etc/openlist
-docker run --user `id -u`:`id -g` -d --restart=unless-stopped -v /etc/openlist:/opt/openlist/data -p 5244:5244 -e UMASK=022 --name="openlist" openlistteam/openlist:latest
+docker run --user $(id -u):$(id -g) -d --restart=unless-stopped -v /etc/openlist:/opt/openlist/data -p 5244:5244 -e UMASK=022 --name="openlist" openlistteam/openlist:latest
 ```
 
 ::: zh-CN
@@ -445,8 +447,8 @@ If you are using the current user to run and manage OpenList and its configurati
 :::
 
 ```bash
-sudo chown -R `id -u`:`id -g` /etc/openlist
-docker run --user `id -u`:`id -g` -d --restart=unless-stopped -v /etc/openlist:/opt/openlist/data -p 5244:5244 -e UMASK=022 --name="openlist" openlistteam/openlist:latest
+sudo chown -R $(id -u):$(id -g) /etc/openlist
+docker run --user $(id -u):$(id -g) -d --restart=unless-stopped -v /etc/openlist:/opt/openlist/data -p 5244:5244 -e UMASK=022 --name="openlist" openlistteam/openlist:latest
 ```
 
 #### 升级到 v4.1.0 以前的版本（包括 v4.1.0） { lang="zh-CN" }
