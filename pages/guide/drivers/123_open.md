@@ -174,7 +174,7 @@ Enter your client secret
 
 ### 访问令牌 { lang="zh-CN" }
 
-### AccessToken { lang="zh-CN" }
+### AccessToken { lang="en" }
 
 ::: zh-CN
 填入上面获取的访问令牌
