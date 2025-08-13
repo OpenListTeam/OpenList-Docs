@@ -34,7 +34,7 @@ OpenList is not responsible for any consequences resulting from the use
 :::
 :::zh-CN
 :::danger
-CloudFalre已明确禁止使用Worker作为代理流量使用，对于在CF-Worker上实现的快速部署，应当时基于**实验性质**的**临时测试**，而非生产环境下使用长期、大流量使用。
+CloudFlare已明确禁止使用Worker作为代理流量使用，对于在CF-Worker上实现的快速部署，应当时基于**实验性质**的**临时测试**，而非生产环境下使用长期、大流量使用。
 
 OpenList对于使用该Worker造成的任何后果均不负责。
 
