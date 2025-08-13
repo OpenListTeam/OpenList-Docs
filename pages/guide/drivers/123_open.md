@@ -205,6 +205,65 @@ The `root folder ID` of this folder is `123456`.
 
 这个文件夹的 `根文件夹ID` 即为 `123456`
 
+亦可右键文件夹，选择 `复制文件夹ID`
+
+:::
+
+### Direct Link { lang="en" }
+
+### 使用直链 { lang="zh-CN" }
+
+::: en
+Disabled by default; returns standard download links. When enabled, returns CDN direct links, which require VIP access and will consume direct link traffic quota.
+
+Users must manually enable direct link space: Go to the 123 Cloud Drive official website, right-click a folder under the **root directory**, and select `Enable Direct Link Space (VIP)`.
+:::
+::: zh-CN
+默认禁用，返回普通下载链接。启用后，返回 CDN 直链，需要开通 VIP，会消耗直链流量包。
+
+需要用户手动启用直链空间，方法：进入 123 网盘官网，右键**根目录**下的文件夹，选择 `启用直链空间（VIP）`。
+:::
+
+![](/img/drivers/123/123open-02.png)
+
+### Direct Link Private Key { lang="en" }
+
+### 直链鉴权密钥 { lang="zh-CN" }
+
+::: en
+Prerequisite: Enable `Direct Link`.
+
+Leave empty to disable direct link authentication and return permanent direct links.
+
+To prevent your site resources from being maliciously downloaded or stolen, you can configure an "Authentication Key" in 123 Cloud Drive's **Direct Link** → **Basic Function Configuration** → **URL Authentication**, and then set **Authentication Status** to **Enabled**.
+
+After entering the key, the obtained direct links will automatically include authentication parameters.
+:::
+::: zh-CN
+前置条件：开启 `使用直链`。
+
+默认为空，代表不启用直链鉴权，返回永久直链。
+
+为防止站点资源被恶意下载盗用，您可以在 123 云盘的 **直链** -> **基础功能配置** -> **URL鉴权** 中配置 **鉴权密钥**，然后将 **鉴权状态** 设为 **启用**。
+
+填写密钥后，获取到的直链会自动加上鉴权参数。
+:::
+
+![](/img/drivers/123/123open-03.png)
+
+### Direct Link Valid Duration { lang="en" }
+
+### 直链鉴权有效期 { lang="zh-CN" }
+
+::: en
+Prerequisite: Enable `Direct Link` and configure the `Direct Link Private Key`.
+
+Used to generate the expiration timestamp in the direct link authentication parameters.
+:::
+::: zh-CN
+前置条件：开启 `使用直链`，配置 `直链鉴权密钥`。
+
+用于生成直链鉴权参数中的过期时间戳。
 :::
 
 ## The default download method used { lang="en" }
