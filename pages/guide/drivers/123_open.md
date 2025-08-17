@@ -23,10 +23,14 @@ https://www.123pan.com/developer
 ::: en
 ::: warning
 The public and private keys of 123 Cloud Disk OpenAPI directly connect to the applicant's cloud disk, so you **must use your client id and client secret**.
+
+The acquired token counts as a login device
 :::
 ::: zh-CN
 ::: warning
 123云盘OpenAPI的公私钥直通申请人的网盘，所以**必须使用自己的公钥和私钥**。
+
+获取的Token算做一个登录设备
 :::
 
 ::: en
@@ -194,6 +198,8 @@ Open the official website of 123 Cloud Drive, navigate to the folder you want to
 
 For example, <https://www.123pan.com/?homeFilePath=123456>
 
+API queries can also be used
+
 The `root folder ID` of this folder is `123456`.
 :::
 ::: zh-CN
@@ -202,6 +208,8 @@ The `root folder ID` of this folder is `123456`.
 打开 123 网盘官网，点击进入要设置的文件夹时点击 URL 中 `homeFilePath`后面的数字
 
 如 <https://www.123pan.com/?homeFilePath=123456>
+
+也可以使用API查询
 
 这个文件夹的 `根文件夹ID` 即为 `123456`
 
