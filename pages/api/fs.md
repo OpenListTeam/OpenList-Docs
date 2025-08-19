@@ -20,21 +20,26 @@ star: true
 
 ::: en
 ::: tip
+
 When the `path` parameter of the following API starts with `/@s/<share_id>`, it indicates a request for a shared link. In this case, the `Authorization` header is optional and the `password` parameter represents the share code.
 
 - /api/fs/list
 - /api/fs/get
 - /api/fs/archive/meta
 - /api/fs/archive/list
-  :::
-  ::: zh-CN
-  ::: tip
-  以下 API 的`path`参数以`/@s/<share_id>`开头时，表示请求分享链接，此时`Authorization`请求头非必须，且`password`参数表示分享码。
+
+:::
+::: zh-CN
+::: tip
+
+以下 API 的`path`参数以`/@s/<share_id>`开头时，表示请求分享链接，此时`Authorization`请求头非必须，且`password`参数表示分享码。
+
 - /api/fs/list
 - /api/fs/get
 - /api/fs/archive/meta
 - /api/fs/archive/list
-  :::
+
+:::
 
 ## POST 新建文件夹 { lang="en" }
 
