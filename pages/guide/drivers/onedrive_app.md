@@ -4,7 +4,7 @@ title:
   zh-CN: OneDrive APP
 icon: iconfont icon-state
 # This control sidebar order
-top: 480
+top: 470
 # A page can have multiple categories
 categories:
   - guide
@@ -126,7 +126,6 @@ https://entra.microsoft.com/TokenAuthorize?admin_consent=True&tenant={Tenant ID}
 :::
 
 ::: zh-CN
-tabs#onedrive_app
 
 1. 注册一个应用，类型自己选，建议选第三吧
 2. 重定向URL(回调参数)，类型选择Web，参数填写： **https://entra.microsoft.com/TokenAuthorize** ，否则后面授权时无法授权
@@ -319,9 +318,9 @@ onedrive_app:
 <BiliBili bvid="BV1vc411V78S" ratio="16:9" low-quality no-danmaku />
 :::
 
-### The default download method used { lang="en" }
+## The default download method used { lang="en" }
 
-### 默认使用的下载方式 { lang="zh-CN" }
+## 默认使用的下载方式 { lang="zh-CN" }
 
 ::: en
 

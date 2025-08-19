@@ -315,3 +315,52 @@ This article will collect some error codes that may occur during the use of Open
 
 **A**：可能是因为某些驱动不支持修改文件排序导致的，取消文件排序试试看
 :::
+
+---
+
+::: zh-CN
+**Q**：Docker 运行时查看日志，出现: FATA[2025-08-12 02:48:46] failed to create config file: open /opt/openlist/data/config.json: permission denied 。
+
+**A**：挂载的目录与运行 Docker 的用户权限不一致导致的。解决方法:
+
+1. 使用 `--user` 参数来指定运行用户，假设你要运行的用户是 `1000:1000`
+
+   先确认 `${yourDataDir}` 目录的权限是 `1000:1000`，如果不是，请使用 `sudo chown -R 1000:1000 ${yourDataDir}` 来修改目录权限。
+
+   然后使用以下命令运行 Docker：
+
+```bash
+docker run -d --name openlist --user 1000:1000 -v ${yourDataDir}:/opt/openlist/data -p 5244:5244 openlistteam/openlist
+```
+
+2. 修改 `${yourDataDir}` 目录的拥有者为 `1001:1001`，然后运行 Docker：
+
+```bash
+sudo chown -R 1001:1001 ${yourDataDir}
+docker run -d --name openlist -v ${yourDataDir}:/opt/openlist/data -p 5244:5244 openlistteam/openlist
+```
+
+:::
+::: en
+**Q**：When running `docker logs openlist`, the error appears: FATA[2025-08-12 02:48:46] failed to create config file: open /opt/openlist/data/config.json: permission denied 。
+
+**A**：This is caused by the directory mounted not matching the user permissions running the docker. The solution:
+
+1. Use the `--user` parameter to specify the user running the container, assuming the user is `1000:1000`.
+
+   First, ensure that the `${yourDataDir}` directory has permissions of `1000:1000`. If not, use `sudo chown -R 1000:1000 ${yourDataDir}` to change the directory permissions.
+   
+   Then run the Docker with the following command:
+
+```bash
+docker run -d --name openlist --user 1000:1000 -v ${yourDataDir}:/opt/openlist/data -p 5244:5244 openlistteam/openlist
+```
+
+2. Change the owner of the `${yourDataDir}` directory to `1001:1001`, and then run the Docker:
+
+```bash
+sudo chown -R 1001:1001 ${yourDataDir}
+docker run -d --name openlist -v ${yourDataDir}:/opt/openlist/data -p 5244:5244 openlistteam/openlist
+```
+
+:::
