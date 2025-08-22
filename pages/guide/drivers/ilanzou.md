@@ -48,9 +48,20 @@ Just fill in your own NewLanzou Cloud Account Password
 填写自己的蓝奏云优享版帐号密码
 :::
 
-### The default download method used { lang="en" }
+## Known issues { lang="en" }
 
-### 默认使用的下载方式 { lang="zh-CN" }
+## 已知问题 { lang="zh-CN" }
+
+::: en
+The file size returned by iLanZou is in Kilo Bytes, not Bytes. Therefore, you cannot accurately determine if a file has been modified based on its size. Please pay attention to the configuration of your sync software.
+:::
+::: zh-CN
+蓝奏云优享版返回的文件大小非 Bytes，而是 Kilo Bytes，因此无法使用文件大小准确判断一个文件是否被修改，需要注意同步软件的配置。
+:::
+
+## The default download method used { lang="en" }
+
+## 默认使用的下载方式 { lang="zh-CN" }
 
 ::: en
 

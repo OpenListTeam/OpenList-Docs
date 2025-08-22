@@ -22,20 +22,22 @@ https://www.123pan.com/developer
 
 ::: en
 ::: warning
-The public and private keys of 123 Cloud Disk OpenAPI directly connect to the applicant's cloud disk, so you **must use your client id and client secret**.
+This driver uses the [developer authorization mode](https://123yunpan.yuque.com/org-wiki-123yunpan-muaork/cr6ced/hpengmyg32blkbg8), which grants direct management access to the cloud drive associated with the provided public/private key pair, , so you **must use your client id and client secret**.
 
 The acquired token counts as a login device
+
 :::
 ::: zh-CN
 ::: warning
-123云盘OpenAPI的公私钥直通申请人的网盘，所以**必须使用自己的公钥和私钥**。
+该驱动使用的是[开发者授权模式](https://123yunpan.yuque.com/org-wiki-123yunpan-muaork/cr6ced/hpengmyg32blkbg8),将会直接获得该密钥对应网盘的管理权限，所以**必须使用自己的密钥**。
 
 获取的Token算做一个登录设备
+
 :::
 
 ::: en
 
-**Application Method**: Visit the [123 Open Platform Official Website](https://www.123pan.com/developer), read the Developer Agreement, fill in the required fields marked with `*`, and apply for the `client_id` and `client_secret`.
+**Application Method**: Visit the [123 Open Platform Official Website](https://www.123pan.com/developer), read the Developer Agreement, fill in the required fields marked with `*`, and apply for the `client_id` and `client_secret`.Typically, after your application is approved the keys will be sent to your email **remember to check your spam folder, and please keep the keys sent by email safe**.
 
 1. Sign the Developer Agreement
 
@@ -48,7 +50,7 @@ The acquired token counts as a login device
 :::
 ::: zh-CN
 
-**申请方式**：访问[123开放平台官网](https://www.123pan.com/developer)，阅读开发者协议，填写对应必填项`*`信息，申请`client_id`和`client_secret`。
+**申请方式**：访问[123开放平台官网](https://www.123pan.com/developer)，阅读开发者协议，填写对应必填项`*`信息，申请`client_id`和`client_secret`，一般来说申请通过后会发送至邮箱，记得检查邮件的垃圾箱，**请保管好通过邮件发送回来的密钥**。
 
 1. 签署开发者协议
 
@@ -100,44 +102,6 @@ The method to obtain the "Cloud Drive UID" required during the application proce
 
 :::
 
-## 3. 获取 Token { lang="zh-CN" }
-
-## 3. Get Token { lang="en" }
-
-::: zh-CN
-打开：<https://api.oplist.org/>
-
-> 如果是使用社区或者自建的api服务，请打开对应的地址
-
-- 选择`123 网盘 (OAuth2) 跳转登录`
-- 输入`客户端ID（ClientID/AppID）`
-- 输入`应用秘钥 (AppKey/Secret)`
-- 点击`获取Token`
-
-点击后，界面下方的访问令牌中将会出现`https://open-api.123pan.com/api/v1/access_token?client_id=你的客户端ID&clientSecret=你的客户端密钥`
-
-> 这就是访问令牌
-
-:::
-
-::: en
-Open <https://api.oplist.org/>
-
-> If using a community or self-built API service, please open the corresponding address
-
-- Choose the ``123 网盘 (OAuth2) 跳转登录`
-- Enter the `Client ID (ClientID/AppID)`
-- Enter the `Application Secret (AppKey/Secret)`
-- Click `Get Token`
-
-After clicking, the access token at the bottom of the interface will display `https://open-api.123pan.com/api/v1/access_token?client_id=your client ID&clientSecret=your client secret`
-
-> This is the access token
-
-:::
-
-![](/img/drivers/123/123open-01-l.png#light)
-![](/img/drivers/123/123open-01-d.png#dark)
 
 ## 4. 在 OpenList 中添加 { lang="zh-CN" }
 
@@ -176,17 +140,6 @@ Enter your client ID
 Enter your client secret
 :::
 
-### 访问令牌 { lang="zh-CN" }
-
-### AccessToken { lang="zh-CN" }
-
-::: zh-CN
-填入上面获取的访问令牌
-:::
-::: en
-Enter the access token obtained above
-:::
-
 ### Root Folder ID { lang="en" }
 
 ### 根文件夹 ID { lang="zh-CN" }
@@ -213,6 +166,65 @@ The `root folder ID` of this folder is `123456`.
 
 这个文件夹的 `根文件夹ID` 即为 `123456`
 
+亦可右键文件夹，选择 `复制文件夹ID`
+
+:::
+
+### Direct Link { lang="en" }
+
+### 使用直链 { lang="zh-CN" }
+
+::: en
+Disabled by default; returns standard download links. When enabled, returns CDN direct links, which require VIP access and will consume direct link traffic quota.
+
+Users must manually enable direct link space: Go to the 123 Cloud Drive official website, right-click a folder under the **root directory**, and select `Enable Direct Link Space (VIP)`.
+:::
+::: zh-CN
+默认禁用，返回普通下载链接。启用后，返回 CDN 直链，需要开通 VIP，会消耗直链流量包。
+
+需要用户手动启用直链空间，方法：进入 123 网盘官网，右键**根目录**下的文件夹，选择 `启用直链空间（VIP）`。
+:::
+
+![](/img/drivers/123/123open-02.png)
+
+### Direct Link Private Key { lang="en" }
+
+### 直链鉴权密钥 { lang="zh-CN" }
+
+::: en
+Prerequisite: Enable `Direct Link`.
+
+Leave empty to disable direct link authentication and return permanent direct links.
+
+To prevent your site resources from being maliciously downloaded or stolen, you can configure an "Authentication Key" in 123 Cloud Drive's **Direct Link** → **Basic Function Configuration** → **URL Authentication**, and then set **Authentication Status** to **Enabled**.
+
+After entering the key, the obtained direct links will automatically include authentication parameters.
+:::
+::: zh-CN
+前置条件：开启 `使用直链`。
+
+默认为空，代表不启用直链鉴权，返回永久直链。
+
+为防止站点资源被恶意下载盗用，您可以在 123 云盘的 **直链** -> **基础功能配置** -> **URL鉴权** 中配置 **鉴权密钥**，然后将 **鉴权状态** 设为 **启用**。
+
+填写密钥后，获取到的直链会自动加上鉴权参数。
+:::
+
+![](/img/drivers/123/123open-03.png)
+
+### Direct Link Valid Duration { lang="en" }
+
+### 直链鉴权有效期 { lang="zh-CN" }
+
+::: en
+Prerequisite: Enable `Direct Link` and configure the `Direct Link Private Key`.
+
+Used to generate the expiration timestamp in the direct link authentication parameters.
+:::
+::: zh-CN
+前置条件：开启 `使用直链`，配置 `直链鉴权密钥`。
+
+用于生成直链鉴权参数中的过期时间戳。
 :::
 
 ## The default download method used { lang="en" }

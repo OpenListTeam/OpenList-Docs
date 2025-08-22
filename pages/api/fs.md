@@ -1,6 +1,6 @@
 ---
 title:
-  en: todo
+  en: fs
   zh-CN: fs
 icon: iconfont icon-file
 # This control sidebar order
@@ -17,6 +17,29 @@ sticky: true
 # this page will appear in starred articles
 star: true
 ---
+
+::: en
+::: tip
+
+When the `path` parameter of the following API starts with `/@s/<share_id>`, it indicates a request for a shared link. In this case, the `Authorization` header is optional and the `password` parameter represents the share code.
+
+- /api/fs/list
+- /api/fs/get
+- /api/fs/archive/meta
+- /api/fs/archive/list
+
+:::
+::: zh-CN
+::: tip
+
+以下 API 的`path`参数以`/@s/<share_id>`开头时，表示请求分享链接，此时`Authorization`请求头非必须，且`password`参数表示分享码。
+
+- /api/fs/list
+- /api/fs/get
+- /api/fs/archive/meta
+- /api/fs/archive/list
+
+:::
 
 ## POST 新建文件夹 { lang="en" }
 
@@ -2288,4 +2311,561 @@ POST /api/fs/add_offline_download
 | »»» status | string | false | none | | none |
 | »»» progress | integer | false | none | | none |
 | »»» error | string | false | none | | none |
+:::
+
+## POST 获取压缩文件元信息 { lang="en" }
+
+## POST 获取压缩文件元信息 { lang="zh-CN" }
+
+::: en
+POST /api/fs/archive/meta
+
+> Body 请求参数
+
+```json
+{
+  "path": "/@s/j20jfpiY/test.rar",
+  "password": "z8YB0",
+  "refresh": false,
+  "archive_pass": "12345678"
+}
+```
+
+:::
+::: zh-CN
+POST /api/fs/archive/meta
+
+> Body 请求参数
+
+```json
+{
+  "path": "/@s/j20jfpiY/test.rar",
+  "password": "z8YB0",
+  "refresh": false,
+  "archive_pass": "12345678"
+}
+```
+
+:::
+
+### 请求参数 { lang="en" }
+
+### 请求参数 { lang="zh-CN" }
+
+::: en
+| 名称 | 位置 | 类型 | 必选 | 中文名 | 说明 |
+| ------------- | ------ | ------ | ---- | ---------- | ----- |
+| Authorization | header | string | 是 | | token |
+| Content-Type | header | string | 否 | | none |
+| body | body | object | 否 | | none |
+| » path | body | string | 是 | 路径 | none |
+| » password | body | string | 否 | 密码 | none |
+| » refresh | body | string | 否 | 是否强制刷新 | none |
+| » archive_pass | body | string | 否 | 压缩文件密码 | none |
+:::
+::: zh-CN
+| 名称 | 位置 | 类型 | 必选 | 中文名 | 说明 |
+| ------------- | ------ | ------ | ---- | ---------- | ----- |
+| Authorization | header | string | 是 | | token |
+| Content-Type | header | string | 否 | | none |
+| body | body | object | 否 | | none |
+| » path | body | string | 是 | 路径 | none |
+| » password | body | string | 否 | 密码 | none |
+| » refresh | body | string | 否 | 是否强制刷新 | none |
+| » archive_pass | body | string | 否 | 压缩文件密码 | none |
+:::
+
+### 返回示例 { lang="en" }
+
+### 返回示例 { lang="zh-CN" }
+
+::: en
+
+> 成功
+
+```json
+{
+  "code": 200,
+  "message": "success",
+  "data": {
+    "comment": "",
+    "encrypted": true,
+    "raw_url": "",
+    "sign": "",
+    "sort": {
+      "order_by": "name",
+      "order_direction": "asc",
+      "extract_folder": "front"
+    },
+    "content": [
+      {
+        "name": "testDir",
+        "size": 0,
+        "is_dir": true,
+        "modified": "2024-05-17T16:05:36.4651534+08:00",
+        "created": "2024-05-17T16:05:29.2001008+08:00",
+        "sign": "",
+        "thumb": "",
+        "type": 1,
+        "hashinfo": "null",
+        "hash_info": null,
+        "children": null
+      }
+    ]
+  }
+}
+```
+
+:::
+::: zh-CN
+
+> 成功
+
+```json
+{
+  "code": 200,
+  "message": "success",
+  "data": {
+    "comment": "",
+    "encrypted": true,
+    "raw_url": "",
+    "sign": "",
+    "sort": {
+      "order_by": "name",
+      "order_direction": "asc",
+      "extract_folder": "front"
+    },
+    "content": [
+      {
+        "name": "testDir",
+        "size": 0,
+        "is_dir": true,
+        "modified": "2024-05-17T16:05:36.4651534+08:00",
+        "created": "2024-05-17T16:05:29.2001008+08:00",
+        "sign": "",
+        "thumb": "",
+        "type": 1,
+        "hashinfo": "null",
+        "hash_info": null,
+        "children": null
+      }
+    ]
+  }
+}
+```
+
+:::
+
+### 返回结果 { lang="en" }
+
+### 返回结果 { lang="zh-CN" }
+
+::: en
+| 状态码 | 状态码含义 | 说明 | 数据模型 |
+| --------- | ------------------------------------------------------- | ---- | -------- |
+| 200 | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | 成功 | Inline |
+:::
+::: zh-CN
+| 状态码 | 状态码含义 | 说明 | 数据模型 |
+| ------ | ------------------------------------------------------- | ---- | -------- |
+| 200 | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | 成功 | Inline |
+:::
+
+### 返回数据结构 { lang="en" }
+
+### 返回数据结构 { lang="zh-CN" }
+
+::: en
+状态码 **200**
+| 名称 | 类型 | 必选 | 约束 | 中文名 | 说明 |
+| -------------- | ------- | ---- | ---- | ------ | ---- |
+| » code | integer | true | none | 状态码 | 为202时表示压缩文件密码错误，其余值的含义与`/api/fs/list`相同 |
+| » message | string | true | none | 信息 | none |
+| » data | object | true | none | | none |
+| »» comment | string | true | none | 压缩文件的注释 | 不保证成功获取 |
+| »» encrypted | bool | true | none | 是否加密 | 不提供`archive_pass`时，本 API 仍有可能成功响应，提取和解压过程是否需要提供解压密码应以此属性的值为准 |
+| »» raw_url | string | true | none | 提取 URL | none |
+| »» sign | string | true | none | 签名 | 与`/api/fs/get`得到的值不同，用于提取操作 |
+| »» sort | null | false | none | 内容排序方式 | 与所在 storage 一致 |
+| »»» order_by | string | true | none | 排序方式 | 有效值有`"name"`, `"size"`, `"modified"`, `""` |
+| »»» order_direction | string | true | none | 排序方向 | 有效值有`"asc"`, `"desc"`, `""` |
+| »»» extract_folder | string | true | none | 提取文件夹 | 有效值有`"front"`, `"back"`, `""` |
+| »» content | [object] \| null | true | none | 目录信息 | 为`null`表示应使用`/api/fs/archive/list`获取目录信息 |
+| »»» name | string | true | none | 文件名 | none |
+| »»» size | integer | true | none | 大小 | none |
+| »»» is_dir | boolean | true | none | 是否是文件夹 | none |
+| »»» modified | string | true | none | 修改时间 | none |
+| »»» created | string | true | none | 创建时间 | none |
+| »»» sign | string | true | none | 签名 | 总为空 |
+| »»» thumb | string | true | none | 缩略图 | 总为空 |
+| »»» type | integer | true | none | 类型 | none |
+| »»» hashinfo | string | true | none | | none |
+| »»» hash_info | null | true | none | | none |
+| »»» children | [object] \| null | true | none | 子项 | 与`content`类型相同，为[]表示该文件夹为空，为`null`表示该项为文件或未展开，未展开的文件夹可用`/api/fs/archive/list`继续展开。 |
+:::
+::: zh-CN
+状态码 **200**
+| 名称 | 类型 | 必选 | 约束 | 中文名 | 说明 |
+| --------- | ------- | ---- | ---- | ------ | ---- |
+| » code | integer | true | none | 状态码 | 为202时表示压缩文件密码错误，其余值的含义与`/api/fs/list`相同 |
+| » message | string | true | none | 信息 | none |
+| » data | object | true | none | | none |
+| »» comment | string | true | none | 压缩文件的注释 | 不保证成功获取 |
+| »» encrypted | bool | true | none | 是否加密 | 不提供`archive_pass`时，本 API 仍有可能成功响应，提取和解压过程是否需要提供解压密码应以此属性的值为准 |
+| »» raw_url | string | true | none | 提取 URL | none |
+| »» sign | string | true | none | 签名 | 与`/api/fs/get`得到的值不同，用于提取操作 |
+| »» sort | null | false | none | 内容排序方式 | 与所在 storage 一致 |
+| »»» order_by | string | true | none | 排序方式 | 有效值有`"name"`, `"size"`, `"modified"`, `""` |
+| »»» order_direction | string | true | none | 排序方向 | 有效值有`"asc"`, `"desc"`, `""` |
+| »»» extract_folder | string | true | none | 提取文件夹 | 有效值有`"front"`, `"back"`, `""` |
+| »» content | [object] \| null | true | none | 目录信息 | 为`null`表示应使用`/api/fs/archive/list`获取目录信息 |
+| »»» name | string | true | none | 文件名 | none |
+| »»» size | integer | true | none | 大小 | none |
+| »»» is_dir | boolean | true | none | 是否是文件夹 | none |
+| »»» modified | string | true | none | 修改时间 | none |
+| »»» created | string | true | none | 创建时间 | none |
+| »»» sign | string | true | none | 签名 | 总为空 |
+| »»» thumb | string | true | none | 缩略图 | 总为空 |
+| »»» type | integer | true | none | 类型 | none |
+| »»» hashinfo | string | true | none | | none |
+| »»» hash_info | null | true | none | | none |
+| »»» children | [object] \| null | true | none | 子项 | 与`content`类型相同，为[]表示该文件夹为空，为`null`表示该项为文件或未展开，未展开的文件夹可用`/api/fs/archive/list`继续展开。 |
+:::
+
+## POST 列出压缩文件目录 { lang="en" }
+
+## POST 列出压缩文件目录 { lang="zh-CN" }
+
+::: en
+POST /api/fs/archive/list
+
+> Body 请求参数
+
+```json
+{
+  "path": "/tt/test.rar",
+  "password": "",
+  "page": 1,
+  "per_page": 0,
+  "refresh": false,
+  "archive_pass": "",
+  "inner_path": "/testDir"
+}
+```
+
+:::
+::: zh-CN
+POST /api/fs/archive/list
+
+> Body 请求参数
+
+```json
+{
+  "path": "/tt/test.rar",
+  "password": "",
+  "page": 1,
+  "per_page": 0,
+  "refresh": false,
+  "archive_pass": "",
+  "inner_path": "/testDir"
+}
+```
+
+:::
+
+### 请求参数 { lang="en" }
+
+### 请求参数 { lang="zh-CN" }
+
+::: en
+| 名称 | 位置 | 类型 | 必选 | 中文名 | 说明 |
+| ------------- | ------ | ------ | ---- | ---------- | ----- |
+| Authorization | header | string | 是 | | token |
+| Content-Type | header | string | 否 | | none |
+| body | body | object | 否 | | none |
+| » path | body | string | 是 | 路径 | none |
+| » password | body | string | 否 | 密码 | none |
+| » page | body | integer | 否 | 页数 | none |
+| » per_page | body | integer | 否 | 每页数目 | none |
+| » refresh | body | string | 否 | 是否强制刷新 | none |
+| » archive_pass | body | string | 否 | 压缩文件密码 | none |
+| » inner_path | body | string | 是 | 压缩文件内部路径 | none |
+:::
+::: zh-CN
+| 名称 | 位置 | 类型 | 必选 | 中文名 | 说明 |
+| ------------- | ------ | ------ | ---- | ---------- | ----- |
+| Authorization | header | string | 是 | | token |
+| Content-Type | header | string | 否 | | none |
+| body | body | object | 否 | | none |
+| » path | body | string | 是 | 路径 | none |
+| » password | body | string | 否 | 密码 | none |
+| » page | body | integer | 否 | 页数 | none |
+| » per_page | body | integer | 否 | 每页数目 | none |
+| » refresh | body | string | 否 | 是否强制刷新 | none |
+| » archive_pass | body | string | 否 | 压缩文件密码 | none |
+| » inner_path | body | string | 是 | 压缩文件内部路径 | none |
+:::
+
+### 返回示例 { lang="en" }
+
+### 返回示例 { lang="zh-CN" }
+
+::: en
+
+> 成功
+
+```json
+{
+  "code": 200,
+  "message": "success",
+  "data": {
+    "content": [
+      {
+        "name": "README.md",
+        "size": 1000,
+        "is_dir": false,
+        "modified": "2024-05-17T16:05:36.4651534+08:00",
+        "created": "2024-05-17T16:05:29.2001008+08:00",
+        "sign": "",
+        "thumb": "",
+        "type": 4,
+        "hashinfo": "null",
+        "hash_info": null
+      }
+    ],
+    "total": 1
+  }
+}
+```
+
+:::
+::: zh-CN
+
+> 成功
+
+```json
+{
+  "code": 200,
+  "message": "success",
+  "data": {
+    "content": [
+      {
+        "name": "README.md",
+        "size": 1000,
+        "is_dir": false,
+        "modified": "2024-05-17T16:05:36.4651534+08:00",
+        "created": "2024-05-17T16:05:29.2001008+08:00",
+        "sign": "",
+        "thumb": "",
+        "type": 4,
+        "hashinfo": "null",
+        "hash_info": null
+      }
+    ],
+    "total": 1
+  }
+}
+```
+
+:::
+
+### 返回结果 { lang="en" }
+
+### 返回结果 { lang="zh-CN" }
+
+::: en
+| 状态码 | 状态码含义 | 说明 | 数据模型 |
+| --------- | ------------------------------------------------------- | ---- | -------- |
+| 200 | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | 成功 | Inline |
+:::
+::: zh-CN
+| 状态码 | 状态码含义 | 说明 | 数据模型 |
+| ------ | ------------------------------------------------------- | ---- | -------- |
+| 200 | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | 成功 | Inline |
+:::
+
+### 返回数据结构 { lang="en" }
+
+### 返回数据结构 { lang="zh-CN" }
+
+::: en
+状态码 **200**
+| 名称 | 类型 | 必选 | 约束 | 中文名 | 说明 |
+| -------------- | ------- | ---- | ---- | ------ | ---- |
+| » code | integer | true | none | 状态码 | 为202时表示压缩文件密码错误 |
+| » message | string | true | none | 信息 | none |
+| » data | object | true | none | | none |
+| »» content | [object] | true | none | 目录信息 | none |
+| »»» name | string | true | none | 文件名 | none |
+| »»» size | integer | true | none | 大小 | none |
+| »»» is_dir | boolean | true | none | 是否是文件夹 | none |
+| »»» modified | string | true | none | 修改时间 | none |
+| »»» created | string | true | none | 创建时间 | none |
+| »»» sign | string | true | none | 签名 | 总为空 |
+| »»» thumb | string | true | none | 缩略图 | 总为空 |
+| »»» type | integer | true | none | 类型 | none |
+| »»» hashinfo | string | true | none | | none |
+| »»» hash_info | null | true | none | | none |
+| »» total | integer | true | none | 总数 | none |
+:::
+::: zh-CN
+状态码 **200**
+| 名称 | 类型 | 必选 | 约束 | 中文名 | 说明 |
+| --------- | ------- | ---- | ---- | ------ | ---- |
+| » code | integer | true | none | 状态码 | 为202时表示压缩文件密码错误 |
+| » message | string | true | none | 信息 | none |
+| » data | object | true | none | | none |
+| »» content | [object] | true | none | 目录信息 | none |
+| »»» name | string | true | none | 文件名 | none |
+| »»» size | integer | true | none | 大小 | none |
+| »»» is_dir | boolean | true | none | 是否是文件夹 | none |
+| »»» modified | string | true | none | 修改时间 | none |
+| »»» created | string | true | none | 创建时间 | none |
+| »»» sign | string | true | none | 签名 | 总为空 |
+| »»» thumb | string | true | none | 缩略图 | 总为空 |
+| »»» type | integer | true | none | 类型 | none |
+| »»» hashinfo | string | true | none | | none |
+| »»» hash_info | null | true | none | | none |
+| »» total | integer | true | none | 总数 | none |
+:::
+
+## POST 解压压缩文件 { lang="en" }
+
+## POST 解压压缩文件 { lang="zh-CN" }
+
+::: en
+POST /api/fs/archive/decompress
+
+> Body 请求参数
+
+```json
+{
+  "src_dir": "/src",
+  "dst_dir": "/dst",
+  "name": ["test.rar"],
+  "archive_pass": "",
+  "inner_path": "/testDir",
+  "cache_full": true,
+  "put_into_new_dir": false
+}
+```
+
+:::
+::: zh-CN
+POST /api/fs/archive/decompress
+
+> Body 请求参数
+
+```json
+{
+  "src_dir": "/src",
+  "dst_dir": "/dst",
+  "name": ["test.rar"],
+  "archive_pass": "",
+  "inner_path": "/testDir",
+  "cache_full": true,
+  "put_into_new_dir": false
+}
+```
+
+:::
+
+### 请求参数 { lang="en" }
+
+### 请求参数 { lang="zh-CN" }
+
+::: en
+| 名称 | 位置 | 类型 | 必选 | 中文名 | 说明 |
+| ------------- | ------ | ------ | ---- | ---------- | ----- |
+| Authorization | header | string | 是 | | token |
+| Content-Type | header | string | 否 | | none |
+| body | body | object | 否 | | none |
+| » src_dir | body | string | 是 | 源文件夹 | none |
+| » dst_dir | body | string | 是 | 目标文件夹 | none |
+| » name | body | [string] | 是 | 文件名 | none |
+| » archive_pass | body | string | 否 | 压缩文件密码 | none |
+| » inner_path | body | string | 是 | 压缩文件内部路径 | none |
+| » cache_full | body | boolean | 否 | 解压前是否先将压缩文件下载到本地 | none |
+| » put_into_new_dir | body | boolean | 否 | 是否解压到新建同名文件夹 | none |
+:::
+::: zh-CN
+| 名称 | 位置 | 类型 | 必选 | 中文名 | 说明 |
+| ------------- | ------ | ------ | ---- | ---------- | ----- |
+| Authorization | header | string | 是 | | token |
+| Content-Type | header | string | 否 | | none |
+| body | body | object | 否 | | none |
+| » src_dir | body | string | 是 | 源文件夹 | none |
+| » dst_dir | body | string | 是 | 目标文件夹 | none |
+| » name | body | [string] | 是 | 文件名 | none |
+| » archive_pass | body | string | 否 | 压缩文件密码 | none |
+| » inner_path | body | string | 是 | 压缩文件内部路径 | none |
+| » cache_full | body | boolean | 否 | 解压前是否先将压缩文件下载到本地 | none |
+| » put_into_new_dir | body | boolean | 否 | 是否解压到新建同名文件夹 | none |
+:::
+
+### 返回示例 { lang="en" }
+
+### 返回示例 { lang="zh-CN" }
+
+::: en
+
+> 成功
+
+```json
+{
+  "code": 200,
+  "message": "success",
+  "data": null
+}
+```
+
+:::
+::: zh-CN
+
+> 成功
+
+```json
+{
+  "code": 200,
+  "message": "success",
+  "data": null
+}
+```
+
+:::
+
+### 返回结果 { lang="en" }
+
+### 返回结果 { lang="zh-CN" }
+
+::: en
+| 状态码 | 状态码含义 | 说明 | 数据模型 |
+| --------- | ------------------------------------------------------- | ---- | -------- |
+| 200 | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | 成功 | Inline |
+:::
+::: zh-CN
+| 状态码 | 状态码含义 | 说明 | 数据模型 |
+| ------ | ------------------------------------------------------- | ---- | -------- |
+| 200 | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | 成功 | Inline |
+:::
+
+### 返回数据结构 { lang="en" }
+
+### 返回数据结构 { lang="zh-CN" }
+
+::: en
+状态码 **200**
+| 名称 | 类型 | 必选 | 约束 | 中文名 | 说明 |
+| -------------- | ------- | ---- | ---- | ------ | ---- |
+| » code | integer | true | none | 状态码 | 为202时表示压缩文件密码错误 |
+| » message | string | true | none | 信息 | none |
+| » data | null | true | none | | none |
+:::
+::: zh-CN
+状态码 **200**
+| 名称 | 类型 | 必选 | 约束 | 中文名 | 说明 |
+| --------- | ------- | ---- | ---- | ------ | ---- |
+| » code | integer | true | none | 状态码 | 为202时表示压缩文件密码错误 |
+| » message | string | true | none | 信息 | none |
+| » data | null | true | none | | none |
 :::

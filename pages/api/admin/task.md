@@ -22,9 +22,9 @@ star: false
 
 ::: en
 本 API 现已移至`/api/task`，`/api/admin/task`仅出于兼容目的保留
-另见[/api/task](/guide/api/task.html)
+另见[/api/task](/api/task)
 :::
 ::: zh-CN
 本 API 现已移至`/api/task`，`/api/admin/task`仅出于兼容目的保留
-另见[/api/task](/zh/guide/api/task.html)
+另见[/api/task](/api/task)
 :::
