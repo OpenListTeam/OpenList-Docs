@@ -22,16 +22,16 @@ https://www.123pan.com/developer
 
 ::: en
 ::: warning
-The public and private keys of 123 Cloud Disk OpenAPI directly connect to the applicant's cloud disk, so you **must use your client id and client secret**.
+This driver uses the [developer authorization mode](https://123yunpan.yuque.com/org-wiki-123yunpan-muaork/cr6ced/hpengmyg32blkbg8), which grants direct management access to the cloud drive associated with the provided public/private key pair, , so you **must use your client id and client secret**.
 :::
 ::: zh-CN
 ::: warning
-123云盘OpenAPI的公私钥直通申请人的网盘，所以**必须使用自己的公钥和私钥**。
+该驱动使用的是[开发者授权模式](https://123yunpan.yuque.com/org-wiki-123yunpan-muaork/cr6ced/hpengmyg32blkbg8),将会直接获得该密钥对应网盘的管理权限，所以**必须使用自己的密钥**。
 :::
 
 ::: en
 
-**Application Method**: Visit the [123 Open Platform Official Website](https://www.123pan.com/developer), read the Developer Agreement, fill in the required fields marked with `*`, and apply for the `client_id` and `client_secret`.
+**Application Method**: Visit the [123 Open Platform Official Website](https://www.123pan.com/developer), read the Developer Agreement, fill in the required fields marked with `*`, and apply for the `client_id` and `client_secret`.Typically, after your application is approved the keys will be sent to your email **remember to check your spam folder, and please keep the keys sent by email safe**.
 
 1. Sign the Developer Agreement
 
@@ -44,7 +44,7 @@ The public and private keys of 123 Cloud Disk OpenAPI directly connect to the ap
 :::
 ::: zh-CN
 
-**申请方式**：访问[123开放平台官网](https://www.123pan.com/developer)，阅读开发者协议，填写对应必填项`*`信息，申请`client_id`和`client_secret`。
+**申请方式**：访问[123开放平台官网](https://www.123pan.com/developer)，阅读开发者协议，填写对应必填项`*`信息，申请`client_id`和`client_secret`，一般来说申请通过后会发送至邮箱，记得检查邮件的垃圾箱，**请保管好通过邮件发送回来的密钥**。
 
 1. 签署开发者协议
 
@@ -96,44 +96,6 @@ The method to obtain the "Cloud Drive UID" required during the application proce
 
 :::
 
-## 3. 获取 Token { lang="zh-CN" }
-
-## 3. Get Token { lang="en" }
-
-::: zh-CN
-打开：<https://api.oplist.org/>
-
-> 如果是使用社区或者自建的api服务，请打开对应的地址
-
-- 选择`123 网盘 (OAuth2) 跳转登录`
-- 输入`客户端ID（ClientID/AppID）`
-- 输入`应用秘钥 (AppKey/Secret)`
-- 点击`获取Token`
-
-点击后，界面下方的访问令牌中将会出现`https://open-api.123pan.com/api/v1/access_token?client_id=你的客户端ID&clientSecret=你的客户端密钥`
-
-> 这就是访问令牌
-
-:::
-
-::: en
-Open <https://api.oplist.org/>
-
-> If using a community or self-built API service, please open the corresponding address
-
-- Choose the ``123 网盘 (OAuth2) 跳转登录`
-- Enter the `Client ID (ClientID/AppID)`
-- Enter the `Application Secret (AppKey/Secret)`
-- Click `Get Token`
-
-After clicking, the access token at the bottom of the interface will display `https://open-api.123pan.com/api/v1/access_token?client_id=your client ID&clientSecret=your client secret`
-
-> This is the access token
-
-:::
-
-![](/img/drivers/123/123open-01-l.png#light)
-![](/img/drivers/123/123open-01-d.png#dark)
 
 ## 4. 在 OpenList 中添加 { lang="zh-CN" }
 
@@ -170,17 +132,6 @@ Enter your client ID
 :::
 ::: en
 Enter your client secret
-:::
-
-### 访问令牌 { lang="zh-CN" }
-
-### Access Token { lang="en" }
-
-::: zh-CN
-填入上面获取的访问令牌
-:::
-::: en
-Enter the access token obtained above
 :::
 
 ### Root Folder ID { lang="en" }
