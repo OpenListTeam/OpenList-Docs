@@ -157,10 +157,10 @@ Permissions of this strongest copyleft license are conditioned on making availab
 ## 添加 189 云存储时：设备 ID 不存在，需要二次设备验证 ​ { lang="zh-CN" }
 
 :::en
-Open the Tianyi Account website at https://e.dlife.cn/index.do, log in, and then disable the Device Lock..
+Open the Tianyi Account website at <https://e.dlife.cn/index.do>, log in, and then disable the Device Lock..
 :::
 :::zh-CN
-打开天翼账号网站https://e.dlife.cn/index.do登陆后关掉设备锁即可。
+打开天翼账号网站 <https://e.dlife.cn/index.do>，登陆后关掉设备锁即可。
 :::
 
 ## When adding Tianyi cloud disk client storage: prompt need img validate code: verification code { lang="en" }
