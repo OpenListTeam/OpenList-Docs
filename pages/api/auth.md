@@ -24,7 +24,7 @@ star: true
 
 ::: en
 POST /api/auth/login
-获取某个用户的临时JWt token, 有效期默认48小时
+获取某个用户的临时JWt token，有效期默认48小时
 
 > Body 请求参数
 
@@ -38,7 +38,7 @@ POST /api/auth/login
 :::
 ::: zh-CN
 POST /api/auth/login
-获取某个用户的临时JWt token, 有效期默认48小时
+获取某个用户的临时JWt token，有效期默认48小时
 
 > Body 请求参数
 

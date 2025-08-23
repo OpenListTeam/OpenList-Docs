@@ -90,7 +90,7 @@ Just fill in your own Lanzou Cloud Account Password
 只需要填写自己的蓝奏云帐号密码
 :::
 
-## Cooike { lang="en" }
+## Cookie { lang="en" }
 
 ## Cookie { lang="zh-CN" }
 
@@ -117,8 +117,8 @@ Log in to your [**Lanzuo Cloud Disk**](https://pc.woozooo.com/) account, then F1
 ::: zh-CN
 
 - **分享链接**：在蓝奏云盘内随便生成一个分享链接
-  - 小提示 ：链接里面的 **lanzouX**，最后这个默认的 **X**内容有时候有些地区打不开，可以自己更换一下试试看比如换成 i,x,u,t 等等等反正好多自己试试看就行.
-- **分享密码** ：链接的密码
+  - 小提示：链接里面的 **lanzouX**，最后这个默认的 **X**内容有时候有些地区打不开，可以自己更换一下试试看比如换成 i,x,u,t 等等等反正好多自己试试看就行.
+- **分享密码**：链接的密码
 
 :::
 

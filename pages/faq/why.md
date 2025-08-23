@@ -212,7 +212,7 @@ Due to referrer restrictions, mobile tokens must be used if you don't open any p
 
 ## Why is the uploaded file not displayed/deleted file still/modified in the root directory does not take effect? ​ { lang="en" }
 
-## 为什么上传的件不显示/删除的文件还在/修改根目录不生效？ { lang="zh-CN" }
+## 为什么上传的文件不显示/删除的文件还在/修改根目录不生效？ { lang="zh-CN" }
 
 ::: en
 There is a half-hour cache by default, which can be modified on the Add Storage page. If you need to refresh immediately, click the refresh button in the lower right corner of the directory that needs to be refreshed.

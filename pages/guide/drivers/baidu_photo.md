@@ -61,7 +61,7 @@ If you want to mount a single album, fill in the following:
 如果挂载单个相册时需填写如下内容
 
 - 相薄ID 应填：`{album_id}|{tid}` 示例：`4021858707431029901|316519298447849660`
-  - `{album_id}` ：进入你需要挂载的相册后,查看顶部链接/album 后的ID就是 `{album_id}`
+  - `{album_id}`：进入你需要挂载的相册后,查看顶部链接/album 后的ID就是 `{album_id}`
     - https://photo.baidu.com/photo/web/album/4021858707431029901
     - **4021858707431029901**就是 `{album_id}`
 

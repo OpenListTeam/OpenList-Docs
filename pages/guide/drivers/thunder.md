@@ -695,7 +695,7 @@ The default is the full directory of the empty display, If you want to use a sub
 
 ::: en
 
-- `Captcha token` ：No need to fill in
+- `Captcha token`：No need to fill in
 - `Device id`：The value calculated by MD5 is used to judge the login device
 - `Client id`, `Client secret`, `Client version`, `Package name`：It related to the signature, fill in according to the actual situation
 
@@ -722,7 +722,7 @@ In the request in the package `https://xluser-ssl.xunleix.com/v1/shield/captcha/
 
 ::: zh-CN
 
-- `验证码` ：无需填写
+- `验证码`：无需填写
 - `设备id`：通过 MD5 计算的值，用于判断登录的设备
 - `客户端ID`, `客户端密钥`, `客户端版本`, `包名`：与签名有关，根据实际情况填写
 
@@ -1100,7 +1100,7 @@ Thunder Browser Safe password
 
 ::: en
 
-- `Captcha token` ：No need to fill in
+- `Captcha token`：No need to fill in
 - `Device id`：The value calculated by MD5 is used to judge the login device
 - `Client id`, `Client secret`, `Client version`, `Package name`：It related to the signature, fill in according to the actual situation
 
@@ -1127,7 +1127,7 @@ In the request in the package `https://xluser-ssl.xunlei.com/v1/shield/captcha/i
 
 ::: zh-CN
 
-- `验证码` ：无需填写
+- `验证码`：无需填写
 - `设备id`：通过 MD5 计算的值，用于判断登录的设备
 - `客户端ID`, `客户端密钥`, `客户端版本`, `包名`：与签名有关，根据实际情况填写
 
