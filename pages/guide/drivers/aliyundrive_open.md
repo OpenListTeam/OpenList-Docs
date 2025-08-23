@@ -37,9 +37,9 @@ Aliyundrive Open, developed based on the official authorization API.
 2. The token filled in when OpenList is mounted should also be provided by this tool, and the previous acquisition method will not be available
 3. Not applicable to others, but only for OpenList
 4. If the same IP requests max times within minutes, **Too Many Requests** will appear. :no_entry_sign:So please do not abuse:no_entry_sign:
-   - and viewing files and watching video downloads is not counted，The number of times and time mentioned above are dynamic~
+   - viewing files and watching video downloads are not counted. The number of times and time mentioned above are dynamic~
    - New optimization: **will only refresh the token when the request finds that the token is expired, update restart editing if the token is still valid will not refresh.**
-5. Online playback video reminder: **`ExceedCapacityForbidden`** error, the capacity exceeds restrictions, implements restrictions, needs to be expanded or deleted unnecessary file saving space to save space,[View details](#four、)
+5. Online playback video reminder: **`ExceedCapacityForbidden`** error, the capacity exceeds restrictions, needs to be expanded or delete unnecessary files to save space,[View details](#four、)
 6. **Do not share the Alibaba cloud disk publicly, and the account is prohibited from being accessed by multiple IPs. If the account is frozen after sharing, you will be responsible for the consequences. After adding storage, please set up meta information and other measures in time to prevent the account from being frozen by {other people/crawlers} malicious [access/sharing]，Other cloud disks also need to be prevented from being frozen/banned.**
 7. It is prohibited to use Alibaba Cloud Disk to build distribution services including but not limited to **`picture bed, software bed`** and **`video external link to video website playback`**, as well as some non-standard usage methods not mentioned above. If you violate the rules and are `frozen/banned`, you will be responsible for the consequences and it cannot be lifted.
 

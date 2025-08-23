@@ -83,12 +83,12 @@ This article will collect some error codes that may occur during the use of Open
 :::en
 **Q**：failed get objs: failed to list objs: ForbiddenDriveNotValid:not valid driveld
 
-**A**：Generally, it means that `driver` has been deprecated. For example, Aliyun disk can be replaced with [**Alibaba cloud disk open**](../guide/drivers/aliyundrive_open.md). Others are temporarily unknown, and others not yet
+**A**：Generally, it means that `driver` has been deprecated. For example, Aliyun disk can be replaced with [**Alibaba cloud disk open**](../guide/drivers/aliyundrive_open.md). Others are temporarily unknown.
 :::
 :::zh-CN
 **Q**：failed get objs: failed to list objs: ForbiddenDriveNotValid:not valid driveld
 
-**A**：一般指的是`驱动`已经弃用，例如阿里云盘，更换成[**阿里云盘open**](../guide/drivers/aliyundrive_open.md)即可,其他的暂时未知，其他的暂时没有
+**A**：一般指的是`驱动`已经弃用，例如阿里云盘，更换成[**阿里云盘open**](../guide/drivers/aliyundrive_open.md)即可，其他的暂时未知。
 :::
 
 ---

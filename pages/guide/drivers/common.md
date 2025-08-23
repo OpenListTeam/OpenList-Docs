@@ -106,7 +106,7 @@ You can add notes for easier management.
 ### 引用 { lang="zh-CN" }
 
 ::: en
-Rreference authentication, tokens, etc., from the **"Mounted Storage"** to enable sharing the same token between multiple cloud drives.
+Reference authentication, tokens, etc., from the **"Mounted Storage"** to enable sharing the same token between multiple cloud drives.
 
 Currently, the following cloud drives are supported:
 
@@ -407,7 +407,7 @@ const sign = `${_sign}:${expireTimeStamp}`
 ::: en
 
 - **Sort by**: Sort by what
-- **Sort direction**: Whether the sort direction is ascending or descedning
+- **Sort direction**: Whether the sort direction is ascending or descending
 
 :::
 
