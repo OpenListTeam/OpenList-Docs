@@ -355,7 +355,7 @@ Because **`Terabox`** restricts IP, if you access it from a non-overseas IP, you
 ::: zh-CN
 因为 **`Terabox`\*\* 限制IP，如果你是本机非海外IP访问，是无法访问的，自然不会显示内容。
 
-（可以用海外的机器，如果非得用本机(或者国内的机器)搭建，哪你自己想办法让OpenList吃到**proxy**就可以）
+（可以用海外的机器，如果非得用本机(或者国内的机器)搭建，那你自己想办法让OpenList吃到**proxy**就可以）
 
 **注意：检查相关设置以确保'\*.terabox.com'相关流量经过**proxy\*\*\*\*
 :::
