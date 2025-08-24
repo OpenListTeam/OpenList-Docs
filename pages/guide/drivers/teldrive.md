@@ -138,7 +138,7 @@ Otherwise, the default is to use the local proxy provided by **OpenList**.
 
 ## The default download method used { lang="en" }
 
-# 默认使用的下载方式 { lang="zh-CN" }
+## 默认使用的下载方式 { lang="zh-CN" }
 
 ::: en
 
