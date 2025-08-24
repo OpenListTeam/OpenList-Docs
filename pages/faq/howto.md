@@ -152,9 +152,9 @@ Permissions of this strongest copyleft license are conditioned on making availab
 此最强copyleft许可的权限以在同一许可下提供许可作品和修改的完整源代码为条件，其中包括使用许可作品的较大作品。**版权和许可声明必须保留** 贡献者明确授予专利权。当使用修改后的版本通过网络提供服务时，必须提供修改后版本的完整源代码。
 :::
 
-## When adding a 189Cloud storage: the device ID does not exist, and a secondary device verification is required​ { lang="en" }
+## When adding a 189 Cloud storage: the device ID does not exist, and a secondary device verification is required​ { lang="en" }
 
-## 添加 189 云存储时：设备 ID 不存在，需要二次设备验证 ​ { lang="zh-CN" }
+## 添加 天翼云盘 云存储时：设备 ID 不存在，需要二次设备验证 ​ { lang="zh-CN" }
 
 :::en
 Open the Tianyi Account website at <https://e.dlife.cn/index.do>, log in, and then disable the Device Lock..
@@ -163,7 +163,7 @@ Open the Tianyi Account website at <https://e.dlife.cn/index.do>, log in, and th
 打开天翼账号网站 <https://e.dlife.cn/index.do>，登陆后关掉设备锁即可。
 :::
 
-## When adding Tianyi cloud disk client storage: prompt need img validate code: verification code { lang="en" }
+## When adding 189 Cloud disk client storage: prompt need img validate code: verification code { lang="en" }
 
 ## 添加 天翼云盘客户端 存储时：提示 need img validate code: 验证码 { lang="zh-CN" }
 
