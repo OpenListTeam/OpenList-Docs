@@ -20,7 +20,7 @@ sticky: true
 star: true
 ---
 
-<!--@include: @/snippets/reverse-tip.md-->
+<!--@include: @/snippets/tos-tip.md-->
 
 ::: en
 Teldrive is a Telegram-based cloud storage app maintained by a third-party open-source project: [tgdrive/teldrive](https://github.com/tgdrive/teldrive).
