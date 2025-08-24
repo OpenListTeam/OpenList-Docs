@@ -67,7 +67,8 @@ Example: `https://teldrive.example.com`
 ::: en
 Only **Cookie** authentication is supported.
 
-After logging in to the Teldrive web UI, grab the cookie from your browser.  
+After logging in to the Teldrive web UI, grab the cookie from your browser.
+
 The cookie should **start with** `access_token=` and is a JWT.
 
 ![Fetch teldrive cookie](/img/drivers/teldrive/fetch_teldrive_cookie.png)
@@ -78,7 +79,8 @@ You only need the string **containing** `access_token=`.
 ::: zh-CN
 仅支持 **Cookie** 方式认证。
 
-登录 Teldrive 网页端后，从浏览器中获取 Cookie。  
+登录 Teldrive 网页端后，从浏览器中获取 Cookie。
+
 Cookie 应当以 `access_token=` 开头，这是一个 JWT。
 
 ![获取 teldrive cookie](/img/drivers/teldrive/fetch_teldrive_cookie.png)
@@ -107,13 +109,15 @@ Otherwise, you need to enable OpenList's `Web Proxy`.
 ## 分块大小 { lang="zh-CN" }
 
 ::: en
-Upload chunk size in **MiB**.  
+Upload chunk size in **MiB**.
+
 Default: `10` (10 MiB). If large uploads fail, try a smaller value.
 
 If the chunk size is larger than the file size, the file is uploaded in a single thread without chunking.
 :::
 ::: zh-CN
-上传时的分块大小，单位 **MiB**。  
+上传时的分块大小，单位 **MiB**。
+
 默认值：`10`（10 MiB）。若大文件上传失败，可尝试调小。
 
 当分块大小大于文件本身大小时，不会分块，文件将以单线程上传。
@@ -130,7 +134,7 @@ Adjust based on available memory. A handy estimate is:
 `memory ≈ chunk_size × concurrency`
 :::
 ::: zh-CN
-上传并发线程数，默认：`10`。
+上传并发线程数，默认：`4`。
 
 请根据可用内存调整，粗略计算：  
 `内存占用 ≈ 分块大小 × 并发数`
