@@ -87,6 +87,21 @@ Cookie 应当以 `access_token=` 开头，这是一个 JWT。
 只需要**包含** `access_token=` 的那一串字符串。
 :::
 
+## Download methods { lang="en" }
+
+## 下载方式 { lang="zh-CN" }
+
+::: en
+**Note**: If `Use Share Link` is enabled, a shared file link is created and the download URL is valid for **1 hour**.
+
+Otherwise, you need to enable OpenList's `Web Proxy`.
+:::
+::: zh-CN
+**注意**：如果启用了 `使用分享链接` 选项，将会创建共享文件链接，下载链接有效期为 **1 小时**。
+
+否则，您需要启用 OpenList 的 Web 代理。
+:::
+
 ## Chunk size { lang="en" }
 
 ## 分块大小 { lang="zh-CN" }
@@ -104,9 +119,9 @@ If the chunk size is larger than the file size, the file is uploaded in a single
 当分块大小大于文件本身大小时，不会分块，文件将以单线程上传。
 :::
 
-## Concurrency { lang="en" }
+## Upload Concurrency { lang="en" }
 
-## 并发数量 { lang="zh-CN" }
+## 上传并发数量 { lang="zh-CN" }
 
 ::: en
 Concurrent upload threads. Default: `4`.
@@ -115,25 +130,10 @@ Adjust based on available memory. A handy estimate is:
 `memory ≈ chunk_size × concurrency`
 :::
 ::: zh-CN
-上传并发线程数，默认：`4`。
+上传并发线程数，默认：`10`。
 
 请根据可用内存调整，粗略计算：  
 `内存占用 ≈ 分块大小 × 并发数`
-:::
-
-## Download methods { lang="en" }
-
-## 下载方式 { lang="zh-CN" }
-
-::: en
-**Note**: If **share link** is enabled, a shared file link is generated and the download URL is valid for **1 hour**.
-
-Otherwise, the default is to use the local proxy provided by **OpenList**.
-:::
-::: zh-CN
-**注意**：如果启用了 **share link** 选项，将会生成共享文件链接，下载链接有效期为 **1 小时**。
-
-否则默认使用 **OpenList** 提供的本地代理方式。
 :::
 
 ## The default download method used { lang="en" }
