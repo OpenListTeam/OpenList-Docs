@@ -48,11 +48,11 @@ Teldrive 是一个基于 Telegram 的云存储应用，由第三方开源仓库�
 ## 地址 { lang="zh-CN" }
 
 ::: en
-Enter the base URL of your Teldrive backend **without** a trailing hyphen.  
+Enter the base URL of your Teldrive backend **without** a trailing slash.  
 Example: `https://teldrive.example.com`
 :::
 ::: zh-CN
-填写 Teldrive 后端的基础网址，**不要**包含末尾短横线。  
+填写 Teldrive 后端的基础网址，**不要**包含末尾斜杠 `/`。  
 示例：`https://teldrive.example.com`
 :::
 
