@@ -26,6 +26,7 @@ star: true
 Teldrive is a Telegram-based cloud storage app maintained by a third-party open-source project: [tgdrive/teldrive](https://github.com/tgdrive/teldrive).
 
 **Highlights**
+
 - Unlimited storage
 - No file size limit
 - If you don’t subscribe to Telegram Premium, bandwidth is limited, and speed depends on the distance and bandwidth quality between your account’s data center (DC1–DC5) and the Teldrive server.
@@ -36,11 +37,12 @@ Backend deployment requires a **Telegram API (not Bot API)**. See the official g
 Teldrive 是一个基于 Telegram 的云存储应用，由第三方开源仓库维护：[tgdrive/teldrive](https://github.com/tgdrive/teldrive)。
 
 **功能特点**
+
 - 无限存储空间
 - 无文件大小限制
 - 未订阅 Telegram Premium 时带宽会受限，速度取决于你的账户数据中心（DC1–DC5）与 Teldrive 服务之间的距离和带宽质量。
 
-部署后端需要 **Telegram API（不是 Bot API）**。完整安装指南见：[teldrive 安装教程](https://teldrive-docs.pages.dev/docs/getting-started/prerequisites)
+部署后端需要 **Telegram API（不是 Bot API）**。完整安装指南见：[Teldrive 安装教程](https://teldrive-docs.pages.dev/docs/getting-started/prerequisites)
 :::
 
 ## Address { lang="en" }
@@ -48,11 +50,13 @@ Teldrive 是一个基于 Telegram 的云存储应用，由第三方开源仓库�
 ## 地址 { lang="zh-CN" }
 
 ::: en
-Enter the base URL of your Teldrive backend **without** a trailing slash.  
+Enter the base URL of your Teldrive backend **without** a trailing slash.
+
 Example: `https://teldrive.example.com`
 :::
 ::: zh-CN
-填写 Teldrive 后端的基础网址，**不要**包含末尾斜杠 `/`。  
+填写 Teldrive 后端的基础网址，**不要**包含末尾斜杠 `/`。
+
 示例：`https://teldrive.example.com`
 :::
 
@@ -71,7 +75,6 @@ The cookie should **start with** `access_token=` and is a JWT.
 ::: tip
 You only need the string **containing** `access_token=`.
 :::
-:::
 ::: zh-CN
 仅支持 **Cookie** 方式认证。
 
@@ -82,7 +85,6 @@ Cookie 应当以 `access_token=` 开头，这是一个 JWT。
 
 ::: tip
 只需要**包含** `access_token=` 的那一串字符串。
-:::
 :::
 
 ## Chunk size { lang="en" }
@@ -124,14 +126,14 @@ Adjust based on available memory. A handy estimate is:
 ## 下载方式 { lang="zh-CN" }
 
 ::: en
-**Note:** If **share link** is enabled, a shared file link is generated and the download URL is valid for **1 hour**.
+**Note**: If **share link** is enabled, a shared file link is generated and the download URL is valid for **1 hour**.
 
-Otherwise, the default is to use the local proxy provided by **AlistGo**.
+Otherwise, the default is to use the local proxy provided by **OpenList**.
 :::
 ::: zh-CN
-**注意：**如果启用了 **share link** 选项，将会生成共享文件链接，下载链接有效期为 **1 小时**。
+**注意**：如果启用了 **share link** 选项，将会生成共享文件链接，下载链接有效期为 **1 小时**。
 
-否则默认使用 **AlistGo** 提供的本地代理方式。
+否则默认使用 **OpenList** 提供的本地代理方式。
 :::
 
 ## The default download method used { lang="en" }
