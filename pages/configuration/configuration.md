@@ -745,7 +745,7 @@ Each filter acts as the following object:
 ```json
 {
   "cidr": "",
-  "path": "", // http path，If it starts with“/”, it is an absolute path; if it doesn't start with“/”, it is a relative path
+  "path": "", // http path, If it starts with "/", it is an absolute path; if it does not start with "/", it is a relative path
   "method": "" // HTTP/webdav method, in uppercase
 }
 ```

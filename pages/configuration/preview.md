@@ -96,7 +96,7 @@ interface {
 }
 ```
 
-the first key `extensions` is the file extensions that split by `,`(if it's startsWith `/`, it will be considered a regular expression), and the value is also a `key-value` object, the key is the preview name, and the value is the external url.
+the first key `extensions` is the file extensions separated by `,` (if it starts with `/`, it will be considered a regular expression), and the value is also a `key-value` object, the key is the preview name, and the value is the external url.
 
 For the external URL, we provide some variables for you to use:
 
@@ -141,7 +141,7 @@ interface {
 }
 ```
 
-第一个key `extensions` 是用 `,` 分割的文件扩展名（如果是 startsWith`/` 会被认为是正则表达式），value 也是一个 `key-value` 对象，key 是 预览名称，值为外部网址。
+第一个key `extensions` 是用 `,` 分割的文件扩展名（如果以 `/` 开头会被认为是正则表达式），value 也是一个 `key-value` 对象，key 是 预览名称，值为外部网址。
 
 对于外部 URL，我们提供了一些变量供您使用：
 
@@ -152,7 +152,7 @@ interface {
 - `$name`: 文件名
 
 拓展变量：
-在基础变量前添加[eb_]，其中e表示`encodeURIComponent`，b表示`base64`， 如：
+在基础变量前添加 [eb_]，其中 e 表示 `encodeURIComponent`，b 表示 `base64`，如：
 
 - `$e_url`: encodeURIComponent($url)
 - `$b_url`: btoa($url)

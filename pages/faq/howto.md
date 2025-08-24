@@ -163,7 +163,7 @@ Open the Tianyi Account website at <https://e.dlife.cn/index.do>, log in, and th
 打开天翼账号网站 <https://e.dlife.cn/index.do>，登陆后关掉设备锁即可。
 :::
 
-## When adding 189 Cloud disk client storage: prompt need img validate code: verification code { lang="en" }
+## When adding 189 Cloud PC storage: prompt need img validate code: verification code { lang="en" }
 
 ## 添加 天翼云盘客户端 存储时：提示 need img validate code: 验证码 { lang="zh-CN" }
 
@@ -172,7 +172,7 @@ Open the Tianyi Account website at <https://e.dlife.cn/index.do>, log in, and th
 - Click Edit, write the verification code you just saw into the configuration and click Save
 - Click Edit and turn on the Do not use OCR button
 - Or build it yourself [**Ocr interface**](../config/global.md#ocr-api)
-- **189 Cloud** Driver has been replaced with sliding verification code because web login has been replaced.**No longer supports OCR and manual input**, if the verification code needs to be used, please use the addition of `Cookie to log in` or use the `189 Cloud PC` Driver. Note_that_it_is_189_Cloud_driver_is_not_189_Cloud_PC.
+- **189 Cloud** Driver has been replaced with sliding verification code because web login has been replaced.**No longer supports OCR and manual input**, if the verification code needs to be used, please use the addition of `Cookie to log in` or use the `189 Cloud PC` Driver. Note: The 189 Cloud Driver is different from the 189 Cloud PC Driver.
 
 :::
 :::zh-CN
