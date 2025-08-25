@@ -23,8 +23,8 @@ In normal cases, you can log in with your username + password. If you encounter 
 **鉴权方式**：
 
 1. 用户名 + 密码
-2. Refresh Token
-3. Access Token
+2. 刷新令牌
+3. 访问令牌
 
 正常情况下，可以使用用户名 + 密码进行登录。如果您遇到了429错误，可以使用令牌登录。您可以从浏览器的请求内容或头部中获取访问令牌。
 :::
