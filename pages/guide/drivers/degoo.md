@@ -10,6 +10,25 @@ top: 10
 
 https://degoo.com/
 
+::: en
+**Authentication methods**:
+
+1. Username + Password
+2. Refresh Token
+3. Access Token
+
+In normal cases, you can log in with your username + password. If you encounter a 429 error, you can log in using tokens. You can obtain the token from the request body or header in your browser.
+:::
+::: zh-CN
+**鉴权方式**：
+
+1. 用户名 + 密码
+2. Refresh Token
+3. Access Token
+
+正常情况下，可以使用用户名 + 密码进行登录。如果您遇到了429错误，可以使用令牌登录。您可以从浏览器的请求内容或头部中获取访问令牌。
+:::
+
 ## Username { lang="en" }
 
 ## 用户名 { lang="zh-CN" }
@@ -32,19 +51,26 @@ Your user's password.
 您用户的密码。
 :::
 
-## Token { lang="en" }
+## Refresh Token { lang="en" }
 
-## 令牌 { lang="zh-CN" }
+## 刷新令牌 { lang="zh-CN" }
 
 ::: en
-Optional. If you encounter a 429 error, you can log in using a token.
-
-You can obtain the token from the request body in your browser.
+Refresh token for automatic token renewal, obtained automatically.
 :::
 ::: zh-CN
-可选。如果您遇到了429错误，您可以使用令牌登录。
+用于自动更新令牌的刷新令牌，自动获取。
+:::
 
-您可以从浏览器的请求内容中获取令牌。
+## Access Token { lang="en" }
+
+## 访问令牌 { lang="zh-CN" }
+
+::: en
+Access token for Degoo API, obtained automatically.
+:::
+::: zh-CN
+Degoo API 访问令牌，自动获取。
 :::
 
 ## The default download method used { lang="en" }
