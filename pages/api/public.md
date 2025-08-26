@@ -205,7 +205,7 @@ GET /api/public/settings
 | »» iframe_previews | string | true | none | iframe预览设置 | none |
 | »» logo | string | true | none | logo | none |
 | »» main_color | string | true | none | 主题颜色 | none |
-| »» ocr_api | string | true | none | pcr接口 | none |
+| »» ocr_api | string | true | none | ocr接口 | none |
 | »» package_download | string | true | none | 打包下载 | none |
 | »» pagination_type | string | true | none | | none |
 | »» robots_txt | string | true | none | robots文件 | none |
