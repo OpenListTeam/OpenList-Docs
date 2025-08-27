@@ -88,6 +88,8 @@ The username is the OneDrive account email, and the password is the OneDrive acc
 
   ![webdav](/img/drivers/webdav/webdav_Security.png)
 
+  Another situation is that the corresponding OneDrive account has not been used for a long time, which will also prompt this problem. Try to log in to the account again from the OneDrive web page. The system will prompt you to change the password. After updating the password, try again with the changed password.
+
 :::
 ::: zh-CN
 
