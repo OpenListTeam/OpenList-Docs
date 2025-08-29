@@ -154,7 +154,7 @@ Permissions of this strongest copyleft license are conditioned on making availab
 
 ## When adding a 189 Cloud storage: the device ID does not exist, and a secondary device verification is required​ { lang="en" }
 
-## 添加 天翼云盘 云存储时：设备 ID 不存在，需要二次设备验证 ​ { lang="zh-CN" }
+## 添加 天翼云盘 云存储时：设备 ID 不存在，需要二次设备验证 ​{ lang="zh-CN" }
 
 :::en
 Open the Tianyi Account website at <https://e.dlife.cn/index.do>, log in, and then disable the Device Lock..
