@@ -139,7 +139,7 @@ Add a [meta](../guide/advanced/meta.md) record, and open `write` field.
 添加[元信息](../guide/advanced/meta.md)，并启用 `写入`。
 :::
 
-## How to remove `powered_by OpenList` at the bottom?​ { lang="en" }
+## How to remove "Powered by OpenList" at the bottom?​ { lang="en" }
 
 ## 如何去掉底部的"由 OpenList 驱动"？​ { lang="zh-CN" }
 
