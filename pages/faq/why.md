@@ -137,7 +137,7 @@ For microsoft office online viewers, you need:
 
 :::
 
-## Why can't package​ download? { lang="en" }
+## Why can't package download? { lang="en" }
 
 ## 为什么无法打包下载？{ lang="zh-CN" }
 
@@ -210,7 +210,7 @@ Due to referrer restrictions, mobile tokens must be used if you don't open any p
 由于 referer 限制，如果您不打开程序的任何代理中转功能，则必须使用移动端的 `refresh token`
 :::
 
-## Why is the uploaded file not displayed/deleted file still/modified in the root directory does not take effect? ​ { lang="en" }
+## Why is the uploaded file not displayed/deleted file still/modified in the root directory does not take effect?  { lang="en" }
 
 ## 为什么上传的文件不显示/删除的文件还在/修改根目录不生效？ { lang="zh-CN" }
 

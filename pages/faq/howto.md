@@ -102,9 +102,9 @@ If the password is forgotten, it can only be re-**`randomly generated`** or **`m
 
 :::
 
-## How to modify the listening port​ { lang="en" }
+## How to modify the listening port { lang="en" }
 
-## 如何修改监听端口​ { lang="zh-CN" }
+## 如何修改监听端口 { lang="zh-CN" }
 
 :::en
 Refer to [config](../config/configuration.md#port)
@@ -139,9 +139,9 @@ Add a [meta](../guide/advanced/meta.md) record, and open `write` field.
 添加[元信息](../guide/advanced/meta.md)，并启用 `写入`。
 :::
 
-## How to remove "Powered by OpenList" at the bottom?​ { lang="en" }
+## How to remove "Powered by OpenList" at the bottom? { lang="en" }
 
-## 如何去掉底部的"由 OpenList 驱动"？​ { lang="zh-CN" }
+## 如何去掉底部的"由 OpenList 驱动"？ { lang="zh-CN" }
 
 :::en
 According to our open source license:
@@ -152,9 +152,9 @@ Permissions of this strongest copyleft license are conditioned on making availab
 此最强copyleft许可的权限以在同一许可下提供许可作品和修改的完整源代码为条件，其中包括使用许可作品的较大作品。**版权和许可声明必须保留** 贡献者明确授予专利权。当使用修改后的版本通过网络提供服务时，必须提供修改后版本的完整源代码。
 :::
 
-## When adding a 189 Cloud storage: the device ID does not exist, and a secondary device verification is required​ { lang="en" }
+## When adding a 189 Cloud storage: the device ID does not exist, and a secondary device verification is required { lang="en" }
 
-## 添加 天翼云盘 云存储时：设备 ID 不存在，需要二次设备验证 ​ { lang="zh-CN" }
+## 添加 天翼云盘 云存储时：设备 ID 不存在，需要二次设备验证  { lang="zh-CN" }
 
 :::en
 Open the Tianyi Account website at <https://e.dlife.cn/index.do>, log in, and then disable the Device Lock..

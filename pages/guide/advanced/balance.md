@@ -28,9 +28,9 @@ Different network disks can be used, but the file directories must be consistent
 
 :::
 
-## Usage​ { lang="en" }
+## Usage { lang="en" }
 
-## 如何使用​ { lang="zh-CN" }
+## 如何使用 { lang="zh-CN" }
 
 ::: en
 One storage can be added normally, and the other storage can be added with the mount path of `the first storage mount path + .balance + any other content`.
