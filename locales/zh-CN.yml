@@ -1,6 +1,6 @@
 siteConfig:
   title: OpenList 文档
-  description: OpenList 文档网站
+  description: OpenList 完整文档 - 支持多种云存储平台的文件列表程序。社区驱动的 AList 分支，具有增强的安全性和长期维护保障。
 
 # ! Navigation bar search entry
 search:

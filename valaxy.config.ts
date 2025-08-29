@@ -15,7 +15,7 @@ const DOCS_ICP = process.env.DOCS_ICP || ''
 const DOCS_CN = DOCS_ICP !== ''
 const DOCS_BUILT_DATE = new Date().toLocaleString('zh-CN', { hour12: false }).replace('T', ' ')
 // Must have SITE_URL or build fails
-const SITE_URL = process.env.SITE_URL || 'https://example.com'
+const SITE_URL = process.env.SITE_URL || 'https://doc.oplist.org'
 const VITE_BASE = process.env.VITE_BASE || '/'
 
 const safelist = ['i-ri-home-line', 'i-ri-github-line', 'i-ri-arrow-up-line']
@@ -25,6 +25,12 @@ export default defineValaxyConfig<PressTheme.Config>({
     title: $t('siteConfig.title'),
     url: SITE_URL,
     description: $t('siteConfig.description'),
+    
+    author: {
+      name: 'OpenList Team',
+      link: 'https://github.com/OpenListTeam',
+      avatar: `${SITE_URL}/logo.svg`,
+    },
 
     comment: {
       enable: DOCS_CN ? false : true,
@@ -70,7 +76,7 @@ export default defineValaxyConfig<PressTheme.Config>({
 
   theme: 'press',
   themeConfig: {
-    logo: VITE_BASE.endsWith('/') ? `${VITE_BASE}logo.svg` : `/${VITE_BASE}/logo.svg`,
+    logo: `${VITE_BASE.replace(/\/$/, '')}/logo.svg`,
     sidebar: ['guide', 'configuration', 'faq', 'api', 'migration', 'ecosystem'],
     socialLinks: [{ icon: 'i-ri-github-line', link: 'https://github.com/OpenListTeam/OpenList' }],
     nav: [
