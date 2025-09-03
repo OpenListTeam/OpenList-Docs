@@ -128,7 +128,7 @@ Family cloud：add `Family ID` Unknown (wait for replenishment)
 :::
 ::: zh-CN
 个人云：将`Family ID`空着就是个人云
-家庭云：填写`Family ID` 未知(后续补充)
+家庭云：填写`Family ID` 联通智家APP-登录-我的-某某的家点击加号邀请加入家庭-微信邀请-发送给自己打开邀请链接-复制链接-groupId=？？？（家庭ID）
 :::
 
 ## OpenList fill in examples： { lang="en" }
