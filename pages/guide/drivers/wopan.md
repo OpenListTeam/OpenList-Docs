@@ -124,7 +124,8 @@ The difference between the two token acquisition methods:
 
 ::: en
 Personal cloud：Put the `family ID` blank is the personal cloud
-Family cloud：add `Family ID` Unknown (wait for replenishment)
+Family cloud：add `Family ID` SmartHome-Login-我的-Click the plus sign to invite to join Your family-微信邀请-Send yourself an invitation link to open it-Three dots in the upper right corner-Copy link
+-groupId=？？？（family ID）
 :::
 ::: zh-CN
 个人云：将`Family ID`空着就是个人云
