@@ -124,12 +124,11 @@ The difference between the two token acquisition methods:
 
 ::: en
 Personal cloud：Put the `family ID` blank is the personal cloud
-Family cloud：add `Family ID` SmartHome-Login-我的-Click the plus sign to invite to join Your family-微信邀请-Send yourself an invitation link to open it-Three dots in the upper right corner-Copy link
--groupId=？？？（family ID）
+Family cloud：add `Family ID` Log in to the [SmartHome] -> [我的] -> [您的家], click"+" [Invite] -> [微信邀请], send the link to yourself, open it and copy all the text after 'groupId='.
 :::
 ::: zh-CN
 个人云：将`Family ID`空着就是个人云
-家庭云：填写`Family ID` 联通智家APP-登录-我的-某某的家点击加号邀请加入家庭-微信邀请-发送给自己打开邀请链接-复制链接-groupId=？？？（家庭ID）
+家庭云：填写`Family ID` 登录【联通智家APP】->【我的】->【您的家】，点击"+"【邀请家人】->【微信邀请】，将链接发送给自己，打开后复制“groupId=”后面的全部文本
 :::
 
 ## OpenList fill in examples： { lang="en" }
