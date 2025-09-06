@@ -176,6 +176,86 @@ sudo apt install openlist -y
 
 :::
 
+#### Flatpak { lang="en" }
+
+#### Flatpak { lang="zh-CN" }
+
+::: en
+OpenList can be installed as a Flatpak package on most Linux distributions. Flatpak provides a sandboxed environment and automatic updates.
+
+:::
+::: zh-CN
+OpenList 可以在大多数 Linux 发行版上作为 Flatpak 软件包安装。Flatpak 提供沙盒环境和自动更新。
+
+:::
+
+[![Flatpak package](https://img.shields.io/badge/dynamic/json?color=4A90E2&label=Flatpak&query=tag_name&url=https%3A%2F%2Fapi.github.com%2Frepos%2FOpenListTeam%2FOpenList-FLATPAK%2Freleases%2Flatest&logo=flatpak)](https://github.com/OpenListTeam/OpenList-FLATPAK/releases)
+
+::: en
+One-line Installation (Recommended)
+
+```bash
+curl -fsSL https://github.com/OpenListTeam/OpenList-FLATPAK/releases/latest/download/install-flatpak.sh | bash
+```
+
+Manual Installation
+
+```bash
+# Install Flatpak (if not already installed)
+# On Ubuntu/Debian
+sudo apt install flatpak
+
+# On Fedora
+sudo dnf install flatpak
+
+# On Arch Linux
+sudo pacman -S flatpak
+
+# Add Flathub repository (required for dependencies)
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+# Download and install OpenList Flatpak package
+wget https://github.com/OpenListTeam/OpenList-FLATPAK/releases/latest/download/org.oplist.openlist-linux-x86_64.flatpak
+flatpak install --user --bundle org.oplist.openlist-linux-x86_64.flatpak -y
+
+# Start OpenList
+flatpak run org.oplist.openlist server
+```
+
+:::
+::: zh-CN
+一行命令安装（推荐）
+
+```bash
+curl -fsSL https://github.com/OpenListTeam/OpenList-FLATPAK/releases/latest/download/install-flatpak.sh | bash
+```
+
+手动安装
+
+```bash
+# 安装 Flatpak（如果尚未安装）
+# 在 Ubuntu/Debian
+sudo apt install flatpak
+
+# 在 Fedora
+sudo dnf install flatpak
+
+# 在 Arch Linux
+sudo pacman -S flatpak
+
+# 添加 Flathub 仓库（依赖项所需）
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+# 下载并安装 OpenList Flatpak 软件包
+wget https://github.com/OpenListTeam/OpenList-FLATPAK/releases/latest/download/org.oplist.openlist-linux-x86_64.flatpak
+flatpak install --user --bundle org.oplist.openlist-linux-x86_64.flatpak -y
+
+# 启动 OpenList
+flatpak run org.oplist.openlist server
+```
+
+:::
+
 ### Windows
 
 ::: en
@@ -332,6 +412,28 @@ accept: function not implemented
 ```
 
 When you see the output of `start server @ 0.0.0.0:5244` and no error is reported afterwards, it means that the operation is successful. The initial password will be output when running for the first time. The program listens to port 5244 by default. Now open `http://ip:5244` You can see the login page, please see [WebDav](../webdav.md) for webdav.
+
+**For Flatpak Users**
+
+If you installed OpenList via Flatpak, use the following commands instead:
+
+```bash
+# Start server
+flatpak run org.oplist.openlist server
+
+# Show admin info
+flatpak run org.oplist.openlist admin
+
+# Generate random admin password
+flatpak run org.oplist.openlist admin random
+
+# Set admin password
+flatpak run org.oplist.openlist admin set NEW_PASSWORD
+
+# Show version
+flatpak run org.oplist.openlist version
+```
+
 :::
 
 ::: zh-CN
@@ -344,6 +446,28 @@ accept: function not implemented
 ```
 
 当你看到 `start server@0.0.0.0:5244` 的输出，之后没有报错，说明操作成功。 第一次运行时会输出初始密码。程序默认监听 5244 端口。 现在打开 `http://ip:5244` 可以看到登录页面，WebDAV 请参阅 [WebDav](../webdav.md)。
+
+**Flatpak 用户**
+
+如果您通过 Flatpak 安装了 OpenList，请使用以下命令：
+
+```bash
+# 启动服务器
+flatpak run org.oplist.openlist server
+
+# 显示管理员信息
+flatpak run org.oplist.openlist admin
+
+# 生成随机管理员密码
+flatpak run org.oplist.openlist admin random
+
+# 设置管理员密码
+flatpak run org.oplist.openlist admin set NEW_PASSWORD
+
+# 显示版本
+flatpak run org.oplist.openlist version
+```
+
 <br/>
 :::
 
