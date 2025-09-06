@@ -571,7 +571,7 @@ Wscript.quit
 ```
 
 1. If the script will not be created, you can download it yourself: [**Script Download**](https://www.alipan.com/s/DHPMhRtKUzY/folder/63e0961eae317bd4d4d945cda69dbb00f9837fb7)
-2. If the script will not be used, you can watch the video: [**reference video**](https://www.bilibili.com/video/BV1DG411s7j5?t=266.2)
+2. If the script will not be used, you can watch the video: [**reference video**](https://www.bilibili.com/video/BV1wWYTzdE4B)
    How to realize Windows startup automatically, you can refer to the script mentioned above to use the video (second).
 
 :::
@@ -597,7 +597,7 @@ Wscript.quit
 ```
 
 1. 脚本不会创建的可以自行下载：[**脚本下载**](https://www.alipan.com/s/DHPMhRtKUzY/folder/63e0961eae317bd4d4d945cda69dbb00f9837fb7)
-2. 脚本不会使用的可以看看视频：[**参考视频**](https://www.bilibili.com/video/BV1DG411s7j5?t=266.2)
+2. 脚本不会使用的可以看看视频：[**参考视频**](https://www.bilibili.com/video/BV1wWYTzdE4B)
    如何实现Windows开机自启，可以参考上面提到的脚本使用视频(第二个)
 
 :::
