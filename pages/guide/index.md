@@ -56,7 +56,7 @@ Here's your complete migration guide from Alist V3 to OpenList:
 - [一键脚本 🎯](/guide/installation/script)
 - [手动安装 ⚙️](/guide/installation/manual)
 - [使用 Docker 🐋](/guide/installation/docker)
-- [使用 1Panel](/guide/installation/1panel)
+- [使用 1Panel 📟](/guide/installation/1panel)
 - [桌面版 💻](/guide/installation/desktop)
 - [PaaS ☁️](/guide/installation/paas)
 - [从源码运行 🏗️](/guide/installation/source)
