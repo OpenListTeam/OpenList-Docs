@@ -107,7 +107,7 @@ After installation, go to the **Installed** page and click **Open** to access th
 > It is recommended to set the **Default Access Address** in the panel settings before using the application.
 
 > If you later configure a **reverse proxy**, update the **Web Access Address** in `Installed → Parameters`.
-> :::
+:::
 
 ::: zh-CN
 安装完成后，进入 **已安装** 页面，点击 **跳转** 即可进入 OpenList 的 **WebUI** 页面。
@@ -117,7 +117,7 @@ After installation, go to the **Installed** page and click **Open** to access th
 > 使用前建议在 **面板设置** 页面设置好**默认访问地址**。
 
 > 如果后续配置了**反向代理**，可以在 `已安装 → 参数` 页面修改 **Web 访问地址**。
-> :::
+:::
 
 ### Get Default Account & Password { lang="en" }
 
