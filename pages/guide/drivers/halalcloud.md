@@ -71,7 +71,7 @@ Return to the storage page and click the refresh button. The previously added dr
 
 - Or copy it to other locations and then obtain the `RefreshToken` field in the link
 
-- After copying to other locations, it will automatically be UrlEncoded. Specifically, the `RefreshToken` field is a string starting with `"rt__` and ending with `"`^("is*encoded_to*%22)^
+- After copying to other locations, it will automatically be UrlEncoded. Specifically, the `RefreshToken` field is a string starting with `"rt__` and ending with `"`<sup>("is*encoded_to*%22)</sup>
 
 - You can refer to the following extraction example or borrow tools
 
@@ -100,7 +100,7 @@ Return to the storage page and click the refresh button. The previously added dr
 
 - 或者复制到其它位置再进行获取链接中`RefreshToken`字段
 
-- 复制到其它位置后会自动进行UrlEncode编码，具体以`RefreshToken`字段是 `"rt__`开头的，以`"`（"编码后是%22）结尾的字符串
+- 复制到其它位置后会自动进行UrlEncode编码，具体以`RefreshToken`字段是 `"rt__`开头的，以`"`<sup>（"编码后是%22）</sup>结尾的字符串
 
   可以参考下面提取示例或者借用工具
 

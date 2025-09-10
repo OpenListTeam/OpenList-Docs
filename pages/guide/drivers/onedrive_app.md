@@ -107,7 +107,7 @@ matters needing attention
   - The above is what it looks like when it is not authorized, and the following is what it looks like after authorization (just refresh the page after authorization)
     ![onedriveapp](/img/drivers/onedrive_app/onedrive_app7.png)
 
-From the beginning to the present, we have obtained the following parameters: tenant ID^1^, registered application^2^, client ID/secret key^3^, authorization API/administrator API^4^
+From the beginning to the present, we have obtained the following parameters: tenant ID<sup>1</sup>, registered application<sup>2</sup>, client ID/secret key<sup>3</sup>, authorization API/administrator API<sup>4</sup>
 Then open the browser and finally authorize it through the following format, which are `tenant ID` `client ID` `Callback URL` Change to your own final login to receive
 
 ```html
@@ -150,7 +150,7 @@ API授权后，我们去授权组织应用
   - 上面是未授权时的样子，下面是授权后的样子（授权后刷新页面即可）
     ![onedriveapp](/img/drivers/onedrive_app/onedrive_app7.png)
 
-通过开始到现在 我们分别拿到了如下参数：租户ID^1^，注册应用^2^，拿到客户端ID/秘钥^3^，授权API/管理员API^4^
+通过开始到现在 我们分别拿到了如下参数：租户ID<sup>1</sup>，注册应用<sup>2</sup>，拿到客户端ID/秘钥<sup>3</sup>，授权API/管理员API<sup>4</sup>
 
 然后通过下面的格式最终授权一下即可，分别是`租户ID`、`客户端ID`、`回调参数URL`改成自己的最终登录收取即可
 

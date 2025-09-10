@@ -20,7 +20,7 @@ top: 130
 **The left side** is the source Network Disk、**The top side** is the target Network Disk
 :::
 ::: en
-| | Aliyun | 115 | Baidu^(5)^ | 189 | Xunlei | PikPak | GoogleDrive | OneDrive | localhost |
+| | Aliyun | 115 | Baidu<sup>(5)</sup> | 189 | Xunlei | PikPak | GoogleDrive | OneDrive | localhost |
 | :---------: | :----------------: | :----------------: | :----------------: | :----------------: | :-------------: | :----------------: | :-------------: | :-------------: | :-------------: |
 | localhost | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | :white_check_mark: | :x: | :x: | :no_entry_sign: |
 | Aliyun | :white_check_mark: | :white_check_mark: | :question: | :x: | :x: | :x: | :x: | :x: | :no_entry_sign: |
@@ -48,7 +48,7 @@ top: 130
 **左侧**为来源网盘、**顶部**为目标网盘。
 :::
 ::: zh-CN
-| | 阿里云盘 | 115 | 百度云盘^(5)^ | 天翼云盘 | 迅雷云盘 | PikPak | 谷歌云盘 | OneDrive | 本地存储 |
+| | 阿里云盘 | 115 | 百度云盘<sup>(5)</sup> | 天翼云盘 | 迅雷云盘 | PikPak | 谷歌云盘 | OneDrive | 本地存储 |
 | :------: | :----------------: | :----------------: | :----------------: | :----------------: | :-------------: | :----------------: | :-------------: | :-------------: | :-------------: |
 | 本地存储 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | :white_check_mark: | :x: | :x: | :no_entry_sign: |
 | 阿里云盘 | :white_check_mark: | :white_check_mark: | :question: | :x: | :x: | :x: | :x: | :x: | :no_entry_sign: |

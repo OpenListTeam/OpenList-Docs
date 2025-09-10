@@ -55,7 +55,7 @@ https://raw.githubusercontent.com/OpenListTeam/OpenList/main/README_cn.md
 │ README_cn.md
 ```
 
-2. 有文件的同时，也可以创建文件夹^第一个代码示例^，也可以创建多个文件夹^第二个代码示例^
+2. 有文件的同时，也可以创建文件夹<sup>第一个代码示例</sup>，也可以创建多个文件夹<sup>第二个代码示例</sup>
 
 **输入**
 

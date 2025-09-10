@@ -84,7 +84,7 @@ Note: Please use Chrome browser to obtain Cookies. If you use Firefox, you may r
 ### [在线预览/下载]很慢? { lang="zh-CN" }
 
 :::en
-Quark Cloud Drive downloads are slow because a **membership** is required, and mounting can only (forcibly) use the `local proxy` method, which means your OpenList server needs to have high bandwidth.
+Quark Cloud Drive downloads are slow because a **membership** is required, and mounting can only <sup>(forcibly)</sup> use the `local proxy` method, which means your OpenList server needs to have high bandwidth.
 
 - What is `local proxy`?
   - `Local proxy` means your OpenList server acts as a relay: it first downloads to your OpenList server, then forwards to you. If your server's speed is not fast enough, the forwarding speed to you will also be slow.
@@ -95,7 +95,7 @@ Quark Cloud Drive downloads are slow because a **membership** is required, and m
 
 :::
 :::zh-CN
-夸克云盘下载很慢是因为夸克云盘需要开通**会员**，并且挂载只能^(强制)^使用`本地代理`方式，就需要你搭建OpenList的机器有一个很高的带宽速度
+夸克云盘下载很慢是因为夸克云盘需要开通**会员**，并且挂载只能<sup>(强制)</sup>使用`本地代理`方式，就需要你搭建OpenList的机器有一个很高的带宽速度
 
 - 什么是`本地代理`？
   - `本地代理`就是你搭建OpenList的机器来中转,就是先下载到你搭建OpenList的机器，再由机器转发给你，你搭建OpenList的机器速度不够快，再转发给你的速度自然也不够快

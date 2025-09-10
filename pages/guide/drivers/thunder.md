@@ -707,14 +707,14 @@ The default is the full directory of the empty display, If you want to use a sub
 
 ---
 
-In the request in the package `https://xluser-ssl.xunleix.com/v1/shield/captcha/init`，you can get the following parameters^6^
+In the request in the package `https://xluser-ssl.xunleix.com/v1/shield/captcha/init`，you can get the following parameters<sup>6</sup>
 
 - `Client id`、`Device id`、`Captcha sign`
 - `Package name`、`Client version`、`Timestamp`
 
   ![xunlei](/img/drivers/xunlei/xlx_z1.jpg)
 
-  In the request in the package `https://xluser-ssl.xunleix.com/v1/auth/signin`, you can get the following parameters^2^
+  In the request in the package `https://xluser-ssl.xunleix.com/v1/auth/signin`, you can get the following parameters<sup>2</sup>
   - `Client id`、`Client secret`
     ![xunlei](/img/drivers/xunlei/xlx_z2.jpg)
 
@@ -734,14 +734,14 @@ In the request in the package `https://xluser-ssl.xunleix.com/v1/shield/captcha/
 
 ---
 
-抓包请求中的`https://xluser-ssl.xunleix.com/v1/shield/captcha/init`，可以得到下面参数^6个^
+抓包请求中的`https://xluser-ssl.xunleix.com/v1/shield/captcha/init`，可以得到下面参数<sup>6</sup>
 
 - `客户端ID（Client id）`、`设备id（Device id）`、`验证码签名（Captcha sign）`
 - `包名（Package name）`、`客户端版本（Client version）`、`时间戳（Timestamp）`
 
   ![xunlei](/img/drivers/xunlei/xlx_z1.jpg)
 
-  抓包请求中的`https://xluser-ssl.xunleix.com/v1/auth/signin`，可以得到下面的参数^2个^
+  抓包请求中的`https://xluser-ssl.xunleix.com/v1/auth/signin`，可以得到下面的参数<sup>2</sup>
 
 - `客户端ID（Client id）`、`客户端密钥（Client secret）`
   ![xunlei](/img/drivers/xunlei/xlx_z2.jpg)
@@ -1112,13 +1112,13 @@ Thunder Browser Safe password
 
 ---
 
-In the request in the package `https://xluser-ssl.xunlei.com/v1/shield/captcha/init`，you can get the following parameters^6个^
+In the request in the package `https://xluser-ssl.xunlei.com/v1/shield/captcha/init`，you can get the following parameters<sup>6</sup>
 
 - `Client id`、`Device id`、`Captcha sign`
 - `Package name`、`Client version`、`Timestamp`
   ![xunlei](/img/drivers/xunlei/x_br_add1.png)
 
-  In the request in the package `https://xluser-ssl.xunlei.com/v1/auth/signin/token`, you can get the following parameters^3^
+  In the request in the package `https://xluser-ssl.xunlei.com/v1/auth/signin/token`, you can get the following parameters<sup>3</sup>
   - `Client id`、`Client secret`、`Refresh token`
 
     ![xunlei](/img/drivers/xunlei/x_br_add2.png)
@@ -1139,13 +1139,13 @@ In the request in the package `https://xluser-ssl.xunlei.com/v1/shield/captcha/i
 
 ---
 
-抓包请求中的`https://xluser-ssl.xunlei.com/v1/shield/captcha/init`，可以得到下面参数^6个^
+抓包请求中的`https://xluser-ssl.xunlei.com/v1/shield/captcha/init`，可以得到下面参数<sup>6</sup>
 
 - `客户端ID（Client id）`、`设备id（Device id）`、`验证码签名（Captcha sign）`
 - `包名（Package name）`、`客户端版本（Client version）`、`时间戳（Timestamp）`
   ![xunlei](/img/drivers/xunlei/x_br_add1.png)
 
-  抓包请求中的`https://xluser-ssl.xunlei.com/v1/auth/signin/token`，可以得到下面的参数^3个^
+  抓包请求中的`https://xluser-ssl.xunlei.com/v1/auth/signin/token`，可以得到下面的参数<sup>3</sup>
 
 - `客户端ID（Client id）`、`客户端密钥（Client secret）`、`刷新令牌（Refresh token）`
   ![xunlei](/img/drivers/xunlei/x_br_add2.png)
