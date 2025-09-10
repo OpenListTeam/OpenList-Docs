@@ -361,7 +361,7 @@ Now, Casdoor supports many OAuth application providers, as many as dozens of kin
 
 **GitHub open source link: https://github.com/casdoor/casdoor**
 
-After we enter `Casdoor`, we first create **Organization**^1^, **Token**^2^, **Application**^3^, **User**^4^
+After we enter `Casdoor`, we first create **Organization**<sup>1</sup>, **Token**<sup>2</sup>, **Application**<sup>3</sup>, **User**<sup>4</sup>
 
 Do not use the default organization (**app-built-in**) directly, because all users in this organization are global administrator accounts
 
@@ -384,7 +384,7 @@ Then the `Casdoor` window will pop up, we can enter our registered user name
 
 **GitHub开源链接：https://github.com/casdoor/casdoor**
 
-我们进入`Casdoor`后，首先分别新建一下 **组织**^1^，**令牌**^2^，**应用**^3^，**用户**^4^
+我们进入`Casdoor`后，首先分别新建一下 **组织**<sup>1</sup>，**令牌**<sup>2</sup>，**应用**<sup>3</sup>，**用户**<sup>4</sup>
 
 请勿直接使用默认组织(**app-built-in**),因为这个组织内的用户都是全局管理员帐号
 
@@ -772,7 +772,7 @@ OpenList单点登录绑定了钉钉，然后在 **`钉钉`** 应用内打开Open
 ::: en
 A picture teaches you to create a new application and add it
 
-- LOGO is not modified when the newly -built newly built, you can wait for the newly built and then modify ^(See_Figure_2)^
+- LOGO is not modified when the newly -built newly built, you can wait for the newly built and then modify <sup>See_Figure_2</sup>
 - If you just browse OpenList in the Dingtalk application, you do n’t need a single -point login management, you do n’t need to set up a single -point login configuration, you can just add an application
   ![](/img/advanced/sso_add_app.png)
 
@@ -780,7 +780,7 @@ A picture teaches you to create a new application and add it
 ::: zh-CN
 一张图教你新建一个应用并且添加
 
-- LOGO是默认的新建时不可修改，可以等新建好后再修改 ^(看图二)^
+- LOGO是默认的新建时不可修改，可以等新建好后再修改 <sup>(看图二)</sup>
 - 如果你只是在钉钉应用內浏览OpenList，不使用单点登录后台管理，可以不用设置单点登录配置只添加应用就可以
   ![](/img/advanced/sso_add_app.png)
 
