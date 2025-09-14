@@ -1,7 +1,7 @@
 ---
 title:
-  en: Use TrueNAS Scale 
-  zh-CN: 使用 TrueNAS Scale 
+  en: Use TrueNAS Scale
+  zh-CN: 使用 TrueNAS Scale
 icon: iconfont icon-geometry
 # This control sidebar order
 top: 44
@@ -52,9 +52,9 @@ To deploy a third-party application using the **Install iX App** wizard, go to *
 
 4. In the **Device** section, you can choose what devices listed in `/dev` will be passed to the container. This beyonds the scope of this guide, so just keep it as is.
 
-5. In **Security Context Configuration** section, you should configure the user and group to run this container. Check the **Custom User** checkbox and fill the UID and GID of the user you want to run this container with. The default UID/GID is 568/568 (apps/apps). Please make sure you have choosed the right user who have the permission to access the volumes mounted later. 
+5. In **Security Context Configuration** section, you should configure the user and group to run this container. Check the **Custom User** checkbox and fill the UID and GID of the user you want to run this container with. The default UID/GID is 568/568 (apps/apps). Please make sure you have choosed the right user who have the permission to access the volumes mounted later.
 
-    > Note: If you want to used ixVolume to store the data of openlist in later sections, you may need to give the user you choosed the permission to access that ixVolume. Or, you can choose `root`, whose ids are both `0`, as the user to run the container, but this is not recommended as it may cause security issues.
+   > Note: If you want to used ixVolume to store the data of openlist in later sections, you may need to give the user you choosed the permission to access that ixVolume. Or, you can choose `root`, whose ids are both `0`, as the user to run the container, but this is not recommended as it may cause security issues.
 
 ![Security Context Configuration](img/truenas/InstallCustomAppSecurityContextConfiguration.png)
 
@@ -66,13 +66,13 @@ To deploy a third-party application using the **Install iX App** wizard, go to *
 
 ![Portal Configuration](img/truenas/InstallCustomAppPortalConfiguration.png)
 
-8. In **Storage Configuration**, configure the storage options you like. You *must at least configure a volume* to store the data of OpenList. In the **Storage** section, click **Add** and choose the storage type you want to use. Make sure that the mount path is `/opt/openlist/data` and the container has proper privilege to access it. You can also add more volumes if you want to use local storage.
+8. In **Storage Configuration**, configure the storage options you like. You _must at least configure a volume_ to store the data of OpenList. In the **Storage** section, click **Add** and choose the storage type you want to use. Make sure that the mount path is `/opt/openlist/data` and the container has proper privilege to access it. You can also add more volumes if you want to use local storage.
 
 ![Storage Configuration](img/truenas/InstallCustomAppStorageConfiguration.png)
 
 9. Just skip Labels Configuration section
 
-10. In the **Resources Configuration** section, you can optionally configure the CPU and memory usage limit of the container. 
+10. In the **Resources Configuration** section, you can optionally configure the CPU and memory usage limit of the container.
 
 ![Resources Configuration](img/truenas/InstallCustomResourcesConfiguration.png)
 
@@ -102,7 +102,7 @@ To deploy a third-party application using the **Install iX App** wizard, go to *
 
 5. 在**Security Context Configuration**部分，应配置运行此容器的用户和组。勾选**自定义用户**复选框，并填入您希望运行此容器的用户的UID和GID。默认UID/GID为568/568（apps/apps）。请确保您选择的用户具有访问后续挂载卷的权限。
 
-    > 注意：如果您计划在后续章节中使用ixVolume存储OpenList数据，则可能需要赋予所选用户访问该ixVolume的权限。或者，您可以选择`root`作为运行容器的用户，其ID均为`0`，但不推荐这样做，因为可能引发安全问题。
+   > 注意：如果您计划在后续章节中使用ixVolume存储OpenList数据，则可能需要赋予所选用户访问该ixVolume的权限。或者，您可以选择`root`作为运行容器的用户，其ID均为`0`，但不推荐这样做，因为可能引发安全问题。
 
 ![安全上下文配置](img/truenas/InstallCustomAppSecurityContextConfiguration.png)
 
