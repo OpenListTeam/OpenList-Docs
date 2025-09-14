@@ -42,7 +42,7 @@ To deploy a third-party application using the **Install iX App** wizard, go to *
 
 ![Application Name](img/truenas/InstallCustomAppApplicationName.png)
 
-2. In the **Image Configuration** section, enter `openlistteam/openlist` in the **Repository** filed, which is the Docker Hub repository for OpenList. After that, fill in the **Tag** section with `latest` to get the latest version or other version number you want. For other configuration option, you can just keep it as is.
+2. In the **Image Configuration** section, enter `openlistteam/openlist` in the **Repository** field, which is the Docker Hub repository for OpenList. After that, fill in the **Tag** section with `latest` to get the latest version or other version number you want. For other configuration option, you can just keep it as is.
 
 ![Image Configuration](img/truenas/InstallCustomAppImageConfiguration.png)
 
