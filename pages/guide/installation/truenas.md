@@ -93,7 +93,8 @@ Follow these steps to deploy OpenList via the **Install iX App** wizard:
 11. **Final Step**  
      Click **Install** to deploy the OpenList container.  
      Wait for status to turn green → then click **Web UI** to access the interface.
-    :::
+
+:::
 
 ::: zh-CN
 由于 OpenList 未在 TrueNAS 应用市场官方提供，您必须使用 **自定义应用** 功能进行安装。
@@ -173,4 +174,5 @@ Follow these steps to deploy OpenList via the **Install iX App** wizard:
 11. **完成安装**  
      点击 **安装** 启动容器。  
      等待状态变为绿色后，点击 **Web UI** 按钮即可访问 OpenList 界面。
-    :::
+
+:::
