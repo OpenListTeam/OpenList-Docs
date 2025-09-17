@@ -666,3 +666,20 @@ Maybe other links are blocked, manually add the blocked domain name to the white
 也许拦截了其它链接，手动将被拦截域名添加到白名单或者关闭插件，也可能是插件抽风了
 ![faq](/img/faq/download.png)
 :::
+
+## Why do prompts appear after clicking "Login success" and "Guest is disabled, login please" { lang="en" }
+
+## 为什么在点击登录后同时出现提示 "登录成功" 和 "访客已禁用，请登录" { lang="zh-CN" }
+
+::: en
+Please check whether your site is connected to a `CDN`. If so, please remove the CDN cache.
+
+Connecting OpenList to a CDN is not recommended for non-professionals. [See here](https://t.me/OpenListTeam/119862).
+
+![faq](/img/faq/download.png)
+:::
+::: zh-CN
+请检查你的站点是否接入了 `CDN`。如有，请去掉CDN缓存。
+
+不建议非专业人士给OpenList接入CDN。详见[此处](https://t.me/OpenListTeam/119862)。
+:::
