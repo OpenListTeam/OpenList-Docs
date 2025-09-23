@@ -210,7 +210,7 @@ Due to referrer restrictions, mobile tokens must be used if you don't open any p
 由于 referer 限制，如果您不打开程序的任何代理中转功能，则必须使用移动端的 `refresh token`
 :::
 
-## Why is the uploaded file not displayed/deleted file still/modified in the root directory does not take effect?  { lang="en" }
+## Why is the uploaded file not displayed/deleted file still/modified in the root directory does not take effect? { lang="en" }
 
 ## 为什么上传的文件不显示/删除的文件还在/修改根目录不生效？ { lang="zh-CN" }
 
@@ -674,13 +674,13 @@ Maybe other links are blocked, manually add the blocked domain name to the white
 ::: en
 Please check whether your site is connected to a `CDN`. If so, please remove the CDN cache.
 
-Connecting OpenList to a CDN is not recommended for non-professionals. [See here](https://t.me/OpenListTeam/119862).
+Connecting OpenList to a CDN is not recommended for non-professionals. [See here](https://t.me/OpenListOfficial/23).
 
 :::
 
 ::: zh-CN
 请检查你的站点是否接入了 `CDN`。如有，请去掉CDN缓存。
 
-不建议非专业人士给OpenList接入CDN。详见[此处](https://t.me/OpenListTeam/119862)。
+不建议非专业人士给OpenList接入CDN。详见[此处](https://t.me/OpenListOfficial/23)。
 
 :::
