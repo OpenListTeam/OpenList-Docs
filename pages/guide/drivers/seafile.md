@@ -91,6 +91,8 @@ The password for your email or username.
 邮箱或用户名对应的密码。
 :::
 
+## Token { lang="en" }
+
 ## 令牌 { lang="zh-CN" }
 
 ::: en
