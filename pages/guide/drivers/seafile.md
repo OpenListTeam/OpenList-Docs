@@ -91,6 +91,19 @@ The password for your email or username.
 邮箱或用户名对应的密码。
 :::
 
+## Token { lang="en" }
+
+## 令牌 { lang="zh-CN" }
+
+::: en
+Applicable to certain Seafile cloud storage systems integrated with enterprise/school unified authentication. For such cloud storage systems, there is no need to enter the username and password; only the token information needs to be filled in. Taking Tsinghua Cloud Disk as an example, the following steps can be used to obtain the token: `cookie` → `seahub_auth` → `"student ID@tsinghua.edu.cn@random string"`, where the random string is the token.
+
+:::
+::: zh-CN
+适用于某些接入了企业/学校统一认证的Seafile云盘。对于这类云盘，无需填写用户名和密码，只需要填写令牌信息即可。以清华云盘为例，可采用如下步骤获取令牌：`cookie`-->`seahub_auth`-->`"学号@tsinghua.edu.cn@随机字符串"`，这里的随机字符串即为令牌。
+
+:::
+
 ## RepoId (Library ID) { lang="en" }
 
 ## RepoId（资料库ID） { lang="zh-CN" }
