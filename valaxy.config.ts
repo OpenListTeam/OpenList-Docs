@@ -25,7 +25,7 @@ export default defineValaxyConfig<PressTheme.Config>({
     title: $t('siteConfig.title'),
     url: SITE_URL,
     description: $t('siteConfig.description'),
-    
+
     author: {
       name: 'OpenList Team',
       link: 'https://github.com/OpenListTeam',

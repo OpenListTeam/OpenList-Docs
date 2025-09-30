@@ -100,7 +100,7 @@ The username is the OneDrive account email, and the password is the OneDrive acc
   找到 `管理安全默认值` 点击并禁用（❗注：此项关闭后会关闭域的 Authenticator 验证）
 
   ![webdav](/img/drivers/webdav/webdav_Security.png)
-  
+
   另外一种情况是对应的 OneDrive 账号太长时间没有操作也会提示这个问题，尝试从 OneDrive 网页端重新登录账号，系统会提示要求更改密码，更新密码后，使用更改后的密码再次尝试即可
 
 :::

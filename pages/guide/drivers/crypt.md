@@ -317,6 +317,7 @@ After saving the configuration, both password and salt values are encrypted and 
 #### Password { lang="en" }
 
 #### 密码 { lang="zh-CN" }
+
 ::: en
 ::: warning
 Note that passwords exported using `rclone config` are obfuscated and cannot be used directly. Please prefix the password with `___Obfuscated___` before use.<br>
@@ -339,6 +340,7 @@ Primary encryption key. **Must be remembered** - cannot be recovered if lost.
 #### Salt { lang="en" }
 
 #### 盐值 { lang="zh-CN" }
+
 ::: en
 ::: warning
 Note that salts exported using `rclone config` are obfuscated and cannot be used directly. Please prefix the salt with `___Obfuscated___` before use.<br>
@@ -350,7 +352,6 @@ For example, if the exported salt is `abc123xyz`, it should be entered as `___Ob
 请注意，rclone config 导出的配置中，盐值(即password2)是混淆后的，无法直接使用，请在盐值的前缀中添加 `___Obfuscated___` 后再使用。<br>
 例如导出的盐值是 `abc123xyz`，则在 Crypt 驱动中应填写 `___Obfuscated___abc123xyz`。
 :::
-
 
 ::: en
 Secondary encryption key, acts as an additional password layer. **Must be remembered** - cannot be recovered if lost.

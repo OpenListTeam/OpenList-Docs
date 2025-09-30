@@ -154,7 +154,7 @@ Permissions of this strongest copyleft license are conditioned on making availab
 
 ## When adding a 189 Cloud storage: the device ID does not exist, and a secondary device verification is required { lang="en" }
 
-## 添加 天翼云盘 云存储时：设备 ID 不存在，需要二次设备验证  { lang="zh-CN" }
+## 添加 天翼云盘 云存储时：设备 ID 不存在，需要二次设备验证 { lang="zh-CN" }
 
 :::en
 Open the Tianyi Account website at <https://e.dlife.cn/index.do>, log in, and then disable the Device Lock..
@@ -262,8 +262,8 @@ When using the `--debug` parameter to start, there will be some sensitive data s
 
 - **Windows**：`openlist.exe server --debug`
 - **Linux**：`./openlist server --debug`
-- **Mac**: Temporarily unknown, maybe it is started with the `--debug` parameter
-- **Docker**：`docker exec -it openlist ./openlist server --debug`
+- **Mac**: `./openlist server --debug`
+- **Docker**：`docker exec -it openlist ./openlist server --debug` (to be modified, because this command runs OpenList in an already started container, so it will not start a second OpenList)
 
 How to stop the relevant logs after startup? `Ctrl+C` can stop the program (or simply close the program directly)
 :::
@@ -271,8 +271,8 @@ How to stop the relevant logs after startup? `Ctrl+C` can stop the program (or s
 
 - **Windows**：`openlist.exe server --debug`
 - **Linux**：`./openlist server --debug`
-- **Mac**：暂时未知，可能也是可以加 `--debug` 参数启动
-- **Docker**：`docker exec -it openlist ./openlist server --debug`
+- **Mac**：`./openlist server --debug`
+- **Docker**：`docker exec -it openlist ./openlist server --debug` (待修改，因为该命令是在已经启动的容器内运行OpenList，所以不会启动第二个OpenList)
 
 启动后拿到相关日志，如何停止? `Ctrl+C` 可以使程序停止运行（或者简单粗暴直接关闭程序）
 :::
