@@ -225,7 +225,7 @@ Free and Open Source Software licensed under the GPLv3 license.
 ::: en
 A full-stack application for converting OpenList file lists into STRM streaming media files.
 
-Free and Open Source Software licensed under the GPLv3 License.
+Free and Open Source Software licensed under the GPLv3 license.
 :::
 
 ::: zh-CN
