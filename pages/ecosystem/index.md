@@ -241,7 +241,7 @@ Free and Open Source Software licensed under the GPLv3 license.
 ::: en
 An open-source fork of OpenList focusing on stability.
 
-Free and Open Source Software licensed under the AGPLv3 License.
+Free and Open Source Software licensed under the AGPLv3 license.
 :::
 
 ::: zh-CN
