@@ -220,6 +220,38 @@ Free and Open Source Software licensed under the GPLv3 license.
 
 ---
 
+### [hienao/openlist-strm ↗](https://github.com/hienao/openlist-strm)
+
+::: en
+A full-stack application for converting OpenList file lists into STRM streaming media files.
+
+Free and Open Source Software licensed under the GPLv3 License.
+:::
+
+::: zh-CN
+一个用于将 OpenList 文件列表转换为 STRM 流媒体文件的全栈应用
+
+自由开源软件，GPLv3协议
+:::
+
+---
+
+### [li-peifeng/iNoi ↗](https://github.com/li-peifeng/iNoi)
+
+::: en
+An open-source fork of OpenList focusing on stability.
+
+Free and Open Source Software licensed under the AGPLv3 License.
+:::
+
+::: zh-CN
+一个OpenList的开源分支，以追求稳定为主
+
+自由开源软件，AGPLv3协议
+:::
+
+---
+
 ### [907739769/OpenList-strm-RuoYi ↗](https://github.com/907739769/OpenList-strm-RuoYi/)
 
 ::: en
@@ -274,4 +306,30 @@ OpenList的第三方闭源qpkg版本。
 专有软件，付费授权
 
 注意：因没有开放源码，违反AGPLv3许可证、违反OpenList LOGO的CC BY-NC-SA 4.0许可。
+:::
+
+---
+
+### [Yxiguan/OpenList_123](https://github.com/Yxiguan/OpenList_123)
+
+::: en
+::: danger
+The third-party closed-source modified version of OpenList.
+
+[Archived on 2025-10-19](https://web.archive.org/web/20251019150201/https://github.com/Yxiguan/OpenList_123)
+
+Proprietary software, no license.
+
+Note: The source code is not open, violating the AGPLv3 license.
+:::
+
+::: zh-CN
+::: danger
+OpenList的第三方闭源修改版本。
+
+[存档于2025-10-19](https://web.archive.org/web/20251019150201/https://github.com/Yxiguan/OpenList_123)
+
+专有软件，无授权
+
+注意：因没有开放源码，违反AGPLv3许可证。
 :::
