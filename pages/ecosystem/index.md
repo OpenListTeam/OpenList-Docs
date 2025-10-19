@@ -245,7 +245,7 @@ Free and Open Source Software licensed under the AGPLv3 License.
 :::
 
 ::: zh-CN
-一个OpenList的开源分支，以追求稳定为主
+一个 OpenList 的开源分支，以追求稳定为主
 
 自由开源软件，AGPLv3协议
 :::
