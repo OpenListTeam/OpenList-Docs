@@ -95,7 +95,7 @@ If you have a new project that is not listed here, you can submit it through [Is
 ::: en
 Provides LuCI support for OpenList, suitable for OpenWRT-based router systems.
 
-Free and Open Source Software licensed under the MIT License.
+Free and Open Source Software licensed under the MIT license.
 :::
 
 ::: zh-CN
@@ -111,7 +111,7 @@ Free and Open Source Software licensed under the MIT License.
 ::: en
 OpenList management script for Termux, used for convenient installation, updating, and management of OpenList in the Android Termux environment.
 
-Free and Open Source Software licensed under the MIT License.
+Free and Open Source Software licensed under the MIT license.
 :::
 
 ::: zh-CN
@@ -127,7 +127,7 @@ Termux 下的 OpenList 管理脚本，用于在 Android Termux 环境中便捷�
 ::: en
 A cross-platform interactive Shell script for managing OpenList, supporting Linux, macOS, Windows (WSL), and Android Termux.
 
-Free and Open Source Software licensed under the MIT License.
+Free and Open Source Software licensed under the MIT license.
 :::
 
 ::: zh-CN
@@ -143,7 +143,7 @@ Free and Open Source Software licensed under the MIT License.
 ::: en
 The OpenList Magisk module integrates the OpenList file server into the Android system, running in a systemized manner through Magisk, supporting ARM and ARM64 architectures.
 
-Free and Open Source Software licensed under the MIT License.
+Free and Open Source Software licensed under the MIT license.
 :::
 
 ::: zh-CN
@@ -159,7 +159,7 @@ OpenList Magisk 模块将 OpenList 文件服务器集成到 Android 系统中，
 ::: en
 OpenList Desktop is a cross-platform desktop client designed for OpenList (Alist) and Rclone. It provides a modern and user-friendly graphical interface that helps you easily manage Alist services and Rclone cloud storage mounts without needing to memorize and input tedious command-line instructions.
 
-Free and Open Source Software licensed under the GPLv3 License.
+Free and Open Source Software licensed under the GPLv3 license.
 :::
 
 ::: zh-CN
@@ -175,7 +175,7 @@ OpenList Desktop 是一个为 OpenList (Alist) 和 Rclone 设计的跨平台桌�
 ::: en
 AListLite is an Android application that supports running OpenList services. Compared to the tutorial described in BV1ex4y157xJ, users can use OpenList services on Android devices (phones/TVs) without needing to install Termux.
 
-Free and Open Source Software licensed under the AGPLv3 License.
+Free and Open Source Software licensed under the AGPLv3 license.
 :::
 
 ::: zh-CN
@@ -191,7 +191,7 @@ AListLite 是一款支持运行 OpenList 服务的 Android 应用，相对于教
 ::: en
 This is a URL protocol handler (mpv://) designed for mpv or mpv.net media players on Windows platform. This tool is used to invoke mpv or mpv.net players from OpenList web pages to open video links.
 
-Free and Open Source Software licensed under the GPLv2 License.
+Free and Open Source Software licensed under the GPLv2 picense.
 :::
 
 ::: zh-CN
@@ -257,7 +257,7 @@ Free and Open Source Software licensed under the AGPLv3 license.
 ::: en
 An improved version of OpenList Strm based on RuoYi framework.
 
-Free and Open Source Software licensed under the MIT License.
+Free and Open Source Software licensed under the MIT license.
 :::
 
 ::: zh-CN
