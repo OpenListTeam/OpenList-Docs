@@ -191,7 +191,7 @@ AListLite 是一款支持运行 OpenList 服务的 Android 应用，相对于教
 ::: en
 This is a URL protocol handler (mpv://) designed for mpv or mpv.net media players on Windows platform. This tool is used to invoke mpv or mpv.net players from OpenList web pages to open video links.
 
-Free and Open Source Software licensed under the GPLv2 picense.
+Free and Open Source Software licensed under the GPLv2 license.
 :::
 
 ::: zh-CN
