@@ -35,7 +35,7 @@ The documentation may not be updated in a timely manner. Please make adjustments
 ::: danger
 Due to the removal of `PUID`/`PGID` environment variable support for better container specifications in [OpenList v4.1.1](https://github.com/OpenListTeam/OpenList/releases/tag/v4.1.1), ClawCloud platform will not be able to function properly due to lack of permission to write data (including using images or app in App Store).
 
-As of October 20, 2025, the official ClawCloud has not yet merged the PR, so one-click deployment is temporarily unavailable. If you need to use ClawCloud for deployment, please refer to [#1209 (comment)](https://github.com/OpenListTeam/OpenList/issues/1209#issuecomment-3243803024).
+As of October 20 2025, ClawCloud has not yet merged our Deployment Template. One-click deployment is temporarily unavailable. If you want to deploy on ClawCloud, please refer to [#1209 (comment)](https://github.com/OpenListTeam/OpenList/issues/1209#issuecomment-3243803024).
 :::
 ::: zh-CN
 ::: danger
