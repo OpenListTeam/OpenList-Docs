@@ -32,6 +32,15 @@ The documentation may not be updated in a timely manner. Please make adjustments
 ### 一键部署 { lang="zh-CN" }
 
 ::: en
+::: danger
+As of October 20, 2025, the official ClawCloud has not yet merged the PR, and one-click deployment is temporarily unavailable. If you need to use Claw Cloud for deployment, please refer to [#1209 (comment)](https://github.com/OpenListTeam/OpenList/issues/1209#issuecomment-3243803024).
+:::
+::: zh-CN
+::: danger
+至 2025 年 10 月 20 日，ClawCloud 官方仍未合并 PR ，一键部署暂不可用。如需使用 Claw Cloud 部署，请参见[#1209 (comment)](https://github.com/OpenListTeam/OpenList/issues/1209#issuecomment-3243803024)
+:::
+
+::: en
 Click the button below to [deploy to Claw Cloud](https://template.run.claw.cloud/?openapp=system-fastdeploy%3FtemplateName%3Dopenlist). It can also be found in App Launchpad.
 :::
 
