@@ -33,11 +33,15 @@ The documentation may not be updated in a timely manner. Please make adjustments
 
 ::: en
 ::: danger
-As of October 20, 2025, the official ClawCloud has not yet merged the PR, and one-click deployment is temporarily unavailable. If you need to use Claw Cloud for deployment, please refer to [#1209 (comment)](https://github.com/OpenListTeam/OpenList/issues/1209#issuecomment-3243803024).
+Due to the removal of `PUID`/`PGID` environment variable support for better container specifications in [OpenList v4.1.1](https://github.com/OpenListTeam/OpenList/releases/tag/v4.1.1), ClawCloud platform will not be able to function properly due to lack of permission to write data (including using images or app in App Store).
+
+If you need to continue using the ClawCloud to deploy OpenList, please refer to [#1209 (comment)](https://github.com/OpenListTeam/OpenList/issues/1209#issuecomment-3243803024).
 :::
 ::: zh-CN
 ::: danger
-至 2025 年 10 月 20 日，ClawCloud 官方仍未合并 PR ，一键部署暂不可用。如需使用 Claw Cloud 部署，请参见[#1209 (comment)](https://github.com/OpenListTeam/OpenList/issues/1209#issuecomment-3243803024)
+由于在[OpenList v4.1.1](https://github.com/OpenListTeam/OpenList/releases/tag/v4.1.1)中为容器规范移除了`PUID`/`PGID`环境变量支持，故在 ClawCloud 平台将由于无权限写入数据而无法正常使用（包括使用镜像和App Store内应用）
+
+如需继续使用 ClawCloud 平台部署 OpenList，请参考 [#1209 (comment)](https://github.com/OpenListTeam/OpenList/issues/1209#issuecomment-3243803024)。
 :::
 
 ::: en
