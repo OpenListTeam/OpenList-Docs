@@ -41,7 +41,7 @@ As of October 20, 2025, the official ClawCloud has not yet merged the PR, so one
 ::: danger
 由于在[OpenList v4.1.1](https://github.com/OpenListTeam/OpenList/releases/tag/v4.1.1)中为容器规范移除了`PUID`/`PGID`环境变量支持，故在 ClawCloud 平台将由于无权限写入数据而无法正常使用（包括使用镜像和App Store内应用）
 
-截止 2025年10月20日， ClawCloud 官方暂未合并我们的修复部署模板，一键部署暂不可用。如需部署至ClawCloud，请参见 [#1209 (comment)](https://github.com/OpenListTeam/OpenList/issues/1209#issuecomment-3243803024)。
+截止 2025年10月20日， ClawCloud 官方暂未合并我们的修复部署模板，一键部署暂不可用。如需部署至ClawCloud，请参阅 [#1209 (comment)](https://github.com/OpenListTeam/OpenList/issues/1209#issuecomment-3243803024)。
 :::
 
 ::: en
