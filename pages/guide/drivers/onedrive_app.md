@@ -58,6 +58,10 @@ First log in with your personal or organizational account
 Login to get our `tenant ID`
 
 ![onedriveapp](/img/drivers/onedrive_app/onedrive_app0.png)
+
+To log in to OneDrive (Operated by 21Vianet), please use this link
+
+<https://entra.microsoftonline.cn/#view/Microsoft_AAD_IAM/TenantOverview.ReactView?Microsoft_AAD_IAM_legacyAADRedirect=true>
 :::
 ::: zh-CN
 首先使用个人或者组织账号登录
@@ -67,6 +71,10 @@ Login to get our `tenant ID`
 登录后获取我们的 `租户ID`
 
 ![onedriveapp](/img/drivers/onedrive_app/onedrive_app0.png)
+
+世纪互联版本的 OneDrive 登录 
+
+<https://entra.microsoftonline.cn/#view/Microsoft_AAD_IAM/TenantOverview.ReactView?Microsoft_AAD_IAM_legacyAADRedirect=true>
 :::
 
 ## Create process { lang="en" }
@@ -85,7 +93,7 @@ Please read carefully the following **`serial numbers , view in sequence`** , if
 ::: en
 
 1. Register an application, choose the type yourself, it is recommended to choose the third
-2. Redirect URL (callback parameter), select Web as the type, and fill in the parameters **https://entra.microsoft.com/TokenAuthorize** ,Otherwise, it will not be able to authorize later
+2. Redirect URL (callback parameter), select Web as the type, and fill in the parameters **https://entra.microsoft.com/TokenAuthorize** ,Otherwise, it will not be able to authorize later. For OneDrive (Operated by 21Vianet), please use: **https://entra.microsoftonline.cn/TokenAuthorize**
 3. After filling out, click on the registration below and you can see it after jumping `client ID`
    ![onedriveapp](/img/drivers/onedrive_app/onedrive_app1.png)
 
@@ -115,6 +123,13 @@ https://login.microsoftonline.com/{tenant ID or common}/adminConsent?client_id={
 ID}&redirect_uri={Callback URL}
 ```
 
+For OneDrive (Operated by 21Vianet), please use: 
+
+```html
+https://login.partner.microsoftonline.cn/{tenant ID or common}/adminConsent?client_id={client
+ID}&redirect_uri={Callback URL}
+```
+
 ![onedriveapp](/img/drivers/onedrive_app/onedrive_app6.png)
 If you log in according to the spelled link and find that you are redirected to a blank page, such as the sample code and picture below, the authorization is successful, don’t worry
 
@@ -128,7 +143,7 @@ https://entra.microsoft.com/TokenAuthorize?admin_consent=True&tenant={Tenant ID}
 ::: zh-CN
 
 1. 注册一个应用，类型自己选，建议选第三吧
-2. 重定向URL(回调参数)，类型选择Web，参数填写： **https://entra.microsoft.com/TokenAuthorize** ，否则后面授权时无法授权
+2. 重定向URL(回调参数)，类型选择Web，参数填写： **https://entra.microsoft.com/TokenAuthorize** ，否则后面授权时无法授权。世纪互联版本的 OneDrive 请填写： **https://entra.microsoftonline.cn/TokenAuthorize**
 3. 填好后点击下方的注册 跳转后就可以看到 `客户端ID`
    ![onedriveapp](/img/drivers/onedrive_app/onedrive_app1.png)
 
@@ -156,6 +171,12 @@ API授权后，我们去授权组织应用
 
 ```html
 https://login.microsoftonline.com/{租户ID或者common}/adminConsent?client_id={客户端ID}&redirect_uri={注册应用时的回调URL}
+```
+
+世纪互联版本的 OneDrive 请采用这个格式
+
+```html
+https://login.partner.microsoftonline.cn/{租户ID或者common}/adminConsent?client_id={客户端ID}&redirect_uri={注册应用时的回调URL}
 ```
 
 ![onedriveapp](/img/drivers/onedrive_app/onedrive_app6.png)
