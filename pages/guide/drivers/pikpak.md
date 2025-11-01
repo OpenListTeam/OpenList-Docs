@@ -168,7 +168,7 @@ support calling `Pikpak` offline download function in OpenList
 
 Select `Pikpak` in the lower right corner and select `Pikpak` for offline download options
 
-- Support: `magne`, `http`, `ed2k` links
+- Support: `magnet`, `http`, `ed2k` links
 - Also supports: X, TikTok, Facebook, TG URL links
 
 - Only Pikpak is supported for offline download. If it is not Pikpak, the following error message will be displayed, Although the offline download prompt was successfully added, an error will be prompted in the background.
@@ -183,7 +183,7 @@ Select `Pikpak` in the lower right corner and select `Pikpak` for offline downlo
 
 右下角选择离线下载选项选择`Pikpak`
 
-- 支持：`magne`、`http`、 `ed2k` 链接
+- 支持：`magnet`、`http`、 `ed2k` 链接
 - 也支持：X、TikTok、Facebook、TG的网址链接
 - 仅支持使用Pikpak离线下载，非Pikpak会提示如下错误，**虽然添加离线下载提示成功但是在后台会提示错误**
 
