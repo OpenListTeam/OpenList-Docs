@@ -111,7 +111,7 @@ The following content is provided by helpful online users in [OpenListTeam/OpenL
 1. Log in to Baidu Netdisk
 2. Visit the link: [https://passport.baidu.com/v6/appAuthority](https://passport.baidu.com/v6/appAuthority)
    ![](/img/guide/migrate/baidu_remove1.png)
-3. Find Alist in Authorization Management (when writing this, Alist was banned, so here it is shown as OpenList), click to enter, then click "**Revoke Authorization**"
+3. Find Alist in Authorization Management, click to enter, then click "**Revoke Authorization**"
    ![](/img/guide/migrate/baidu_remove2.png)
 4. Successfully revoked
 
@@ -122,7 +122,7 @@ The following content is provided by helpful online users in [OpenListTeam/OpenL
 1. 登陆百度网盘
 2. 访问链接 https://passport.baidu.com/v6/appAuthority
    ![](/img/guide/migrate/baidu_remove1.png)
-3. 在授权管理中找到 Alist（编写本段时Alist被D了，这里演示为OpenList），点击进入后点击 “**解除授权**”
+3. 在授权管理中找到 Alist，点击进入后点击 “**解除授权**”
    ![](/img/guide/migrate/baidu_remove2.png)
 4. 解除成功
 
