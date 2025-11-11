@@ -715,19 +715,23 @@ The reason is the same as the previous one: you need the "WebDAV Manage" permiss
 :::
 
 ::: zh-CN
-原因与上一条问题相同，你需要”WebDAV管理“权限
+原因与上一条问题相同，你需要“WebDAV管理”权限。
 :::
 
 ## Why is my Markdown file preview showing garbled text? { lang="en" }
 
+## Why aren't lists in my Markdown file visible during preview? { lang="en" }
+
 ## 为什么预览 Markdown 文件会出现乱码？ { lang="zh-CN" }
+
+## 为什么预览时看不到 Markdown 文件中的列表？ { lang="zh-CN" }
 
 ::: en
 This phenomenon is mainly observed in Markdown files that include tables or code. As a security measure to prevent the execution of potentially malicious scripts from untrusted sources, the system has XSS protection enabled by default.
 
 This mechanism can be disabled by navigating to "**Settings / Preview**" and deactivating the "**Filter scripts in README**" option.
 
-Please be advised that disabling this protective measure will expose your device to the risk of XSS (Cross-Site Scripting) attacks. The user assumes full responsibility for the security of their device.
+Please note that disabling this protective measure will make your device vulnerable to XSS (cross-site scripting) attacks. Users are fully responsible for the security of their own devices.
 :::
 
 ::: zh-CN
