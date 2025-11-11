@@ -684,3 +684,96 @@ Connecting OpenList to a CDN is not recommended for non-professionals. [See here
 不建议非专业人士给OpenList接入CDN。详见[此处](https://t.me/OpenListOfficial/23)。
 
 :::
+
+## Why has the "Add" button on the sharing management page been disabled? { lang="en" }
+
+## 为什么分享管理页面的添加按钮被禁用了？ { lang="zh-CN" }
+
+::: en
+Your account does not have "Sharing" permissions.
+
+- If you are an administrator, please go to the User Management interface to enable the required permissions for yourself.
+- If you are a regular user, please contact your administrator to request access.
+
+:::
+
+::: zh-CN
+你的账号没有“分享”权限。
+
+- 如果你是管理员，需要在用户管理界面为自己开启相应权限。
+
+- 如果你是普通用户，请联系管理员。
+
+:::
+
+## Why can't I use a WebDAV client to manage (writing operations) files in OpenList? { lang="en" }
+
+## 为什么我无法使用 WebDAV 客户端管理（特指写入操作） OpenList 中的文件？ { lang="zh-CN" }
+
+::: en
+The reason is the same as the previous one: you need the "WebDAV Manage" permission.
+:::
+
+::: zh-CN
+原因与上一条问题相同，你需要”WebDAV管理“权限
+:::
+
+## Why is my Markdown file preview showing garbled text? { lang="en" }
+
+## 为什么预览 Markdown 文件会出现乱码？ { lang="zh-CN" }
+
+::: en
+This phenomenon is mainly observed in Markdown files that include tables or code. As a security measure to prevent the execution of potentially malicious scripts from untrusted sources, the system has XSS protection enabled by default.
+
+This mechanism can be disabled by navigating to "**Settings / Preview**" and deactivating the "**Filter scripts in README**" option.
+
+Please be advised that disabling this protective measure will expose your device to the risk of XSS (Cross-Site Scripting) attacks. The user assumes full responsibility for the security of their device.
+:::
+
+::: zh-CN
+这一问题主要出现在 Markdown 文件中存在表格或代码的情况，为了防止用户在不知情的情况下点击来源不明的 Markdown 文件，导致其中可能存在的恶意代码被执行，系统默认开启了 XSS 保护。
+
+你可以在“**设置 / 预览**”中关闭“**过滤 README 文件中的脚本**”选项以关闭这一机制。
+
+**关闭这一保护机制后，你的设备可能会遭受到XSS攻击，请为自己的设备安全负责。**
+:::
+
+## Why can't I connect to OpenList via an FTP client even after I've filled in the FTP mount configuration? { lang="en" }
+
+## 为什么我填写了 FTP 挂载相关配置，但依然无法通过 FTP 客户端连接 OpenList？ { lang="zh-CN" }
+
+::: en
+Besides configuring the settings in the admin panel, you must also set `enable` to `true` under the `ftp` section in the configuration file (`config.json`) to activate the FTP connection feature.
+
+Additionally, any changes made in the admin panel require a restart of OpenList to take effect.
+
+If you wish to connect using the SFTP protocol, please enable it by setting `enable` to `true` in the `sftp`(rather than `ftp`) section of the configuration file.
+:::
+
+::: zh-CN
+除了填写管理界面中的相关设置外，你还需要将配置文件（`config.json`）中`ftp`子项中的`enable`设置为`true`才能开启 FTP 连接功能。
+
+此外，管理界面中的配置项修改完毕后，需要重新启动 OpenList 才能生效。
+
+如果你需要使用 SFTP 协议连接 OpenList，请打开配置文件（`config.json`）中`sftp`（而不是`ftp`）子项中的`enable`。
+:::
+
+## Why are the filenames in my ZIP file showing up as garbled text/characters when I preview it? { lang="en" }
+
+## 为什么预览 ZIP 压缩文件时，文件名显示为乱码？ { lang="zh-CN" }
+
+::: en
+Older versions of the ZIP format do not mandate UTF-8 encoding for filenames, which can lead to decoding problems for non-ASCII characters.
+
+To resolve this, you can adjust the "**Alternative Encoding for ZIP Files**" setting under "**Settings / Preview**".
+
+For Simplified Chinese users, you can fix this issue by setting this value to "**GBK**" in most cases.
+:::
+
+::: zh-CN
+较旧版本的 ZIP 文件并不强制要求文件名采用 UTF-8 编码，此时非 ASCII 字符的解码会出现问题。
+
+你可以在“**设置 / 预览**”中调整“**ZIP 文件备选编码**”配置项的值来规定系统此时采用什么编码来解码文件名。
+
+对于简体中文用户来说，将此项设置为“**GBK**”就可以解决大多数情况下文件名乱码的问题。
+:::
