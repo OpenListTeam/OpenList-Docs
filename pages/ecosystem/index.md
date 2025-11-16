@@ -266,6 +266,22 @@ Free and Open Source Software licensed under the MIT license.
 自由开源软件，MIT协议
 :::
 
+---
+
+### [Liki4/qnap-openlist-webdav ↗](https://github.com/Liki4/qnap-openlist-webdav/)
+
+::: en
+QNAP OpenList | The third-party open-source QPKG version of OpenList.
+
+Free and Open Source Software licensed under the AGPLv3 license.
+:::
+
+::: zh-CN
+QNAP OpenList | OpenList的第三方开源qpkg版本。
+
+自由开源软件，AGPLv3协议
+:::
+
 ## Third-Party Proprietary Software { lang="en" }
 
 ## 其他第三方项目 { lang="zh-CN" }
