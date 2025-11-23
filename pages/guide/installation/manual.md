@@ -283,6 +283,25 @@ winget install OpenListTeam.OpenList
 openlist server
 ```
 
+:::
+
+### MacOS
+
+::: en
+OpenList is available via Homebrew on macOS.
+:::
+::: zh-CN
+MacOS 可以从 Homebrew 安装。
+:::
+
+#### Homebrew
+
+```bash
+$ brew install openlist
+```
+
+:::
+
 ### Android
 
 ::: en
