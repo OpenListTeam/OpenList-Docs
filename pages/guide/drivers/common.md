@@ -209,8 +209,8 @@ Example configuration:
 
 Explanation:
 
-- `*` matches only a single directory level.Therefore, items directly under `/Series/Completed` will be cached for 60 minutes.This rule does **not** apply to subdirectories — for example, `/Series/Completed/A/B` will not match.
-- `**` matches multiple directory levels.In the second rule, all items under `/Series/Updating` (including all subdirectories) will be cached for 10 minutes.For example, both `/Series/Updating/A` and `/Series/Updating/A/B` will match the rule.
+- `*` matches only a single directory level. Therefore, items directly under `/Series/Completed` will be cached for 60 minutes. This rule does **not** apply to subdirectories — for example, `/Series/Completed/A/B` will not match.
+- `**` matches multiple directory levels. In the second rule, all items under `/Series/Updating` (including all subdirectories) will be cached for 10 minutes. For example, both `/Series/Updating/A` and `/Series/Updating/A/B` will match the rule.
 
 :::
 
