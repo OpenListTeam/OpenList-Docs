@@ -176,7 +176,7 @@ Allow users to disable storage indexing.
 
 :::
 
-### Cache Expiration { lang="en" }
+## Cache Expiration { lang="en" }
 
 ## 缓存过期 { lang="zh-CN" }
 
@@ -185,6 +185,56 @@ Cache time of directory structure.
 :::
 ::: zh-CN
 目录结构的缓存时间。
+:::
+
+## Custom Cache Policies { lang="en" }
+
+## 自定义缓存策略 { lang="zh-CN" }
+
+::: en
+
+Cache time for directory paths (in minutes).
+
+You can customize the cache time for specific file paths using pattern matching. The configuration supports wildcard patterns:
+
+- `*` matches a single directory level.
+- `**` matches multiple directory levels.
+
+Example configuration:
+
+```txt
+/Series/Completed/*:60
+/Series/Updating/*/**:10
+```
+
+Explanation:
+
+- `*` matches only a single directory level.Therefore, items directly under `/Series/Completed` will be cached for 60 minutes.This rule does **not** apply to subdirectories — for example, `/Series/Completed/A/B` will not match.
+- `**` matches multiple directory levels.In the second rule, all items under `/Series/Updating` (including all subdirectories) will be cached for 10 minutes.For example, both `/Series/Updating/A` and `/Series/Updating/A/B` will match the rule.
+
+:::
+
+::: zh-CN
+
+目录路径缓存时间（单位：分钟）。
+
+可以通过模式匹配来自定义某些文件路径的缓存时间。配置支持通配符：
+
+- `*` 匹配单层目录。
+- `**` 匹配多层目录。
+
+示例配置：
+
+```txt
+/剧集/已完结/*:60
+/剧集/更新中/*/**:10
+```
+
+说明：
+
+- `*` 仅匹配单层目录，因此 `/剧集/已完结` 下**直接**包含的项将被缓存 60 分钟。由于是单层匹配，不包括更深层的子目录，例如 `/剧集/已完结/A/B` 将不会匹配该规则。
+- `**` 匹配多层目录，因此 `/剧集/更新中` 下的内容（包括任意层级的子目录）都会被缓存 10 分钟。例如 `/剧集/更新中/A` 和 `/剧集/更新中/A/B` 都会符合该规则。
+
 :::
 
 ## Web proxy { lang="en" }
