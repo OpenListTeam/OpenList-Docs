@@ -72,7 +72,7 @@ folder:
   http://pic.rmb.bdstatic.com/bjh/aff9c9c8817d943d6857a73188958d45.jpeg
   https://raw.githubusercontent.com/OpenListTeam/OpenList/main/README_cn.md
 http://pic.rmb.bdstatic.com/bjh/a66923e9bfefd03c2998ee998d3b55e7.jpeg
-folde2r:
+folder2:
   http://pic.rmb.bdstatic.com/bjh/e919290bf3b8396817d369cedf33b8cd.jpeg
   https://raw.githubusercontent.com/OpenListTeam/OpenList/main/CONTRIBUTING.md
 ```
@@ -113,8 +113,8 @@ folde2r:
 文件大小不用写也是可以重新命名的
 
 ```
-新名称.jpeg:1024:http://pic.rmb.bdstatic.com/bjh/aff9c9c8817d943d6857a73188958d45.jpeg
-新名称2.md:2048:https://raw.githubusercontent.com/OpenListTeam/OpenList/main/README_cn.md
+新名称.jpeg:http://pic.rmb.bdstatic.com/bjh/aff9c9c8817d943d6857a73188958d45.jpeg
+新名称2.md:https://raw.githubusercontent.com/OpenListTeam/OpenList/main/README_cn.md
 ```
 
 @tab 4
@@ -157,7 +157,7 @@ folder33:
       http://pic.rmb.bdstatic.com/bjh/333.jpeg
 ```
 
-- 不建议的写法，像 **`2.jpeg，5.jpeg`** 这样写法，建议想往那一层文件夹就去那一层文件夹增加链接按照格式，不要这样下面这样写
+- 不建议的写法，像 **`2.jpeg，5.jpeg`** 这样写法，建议想往哪一层文件夹就去哪一层文件夹按照格式增加链接，不要像下面这样写
 
 **错误写法**
 
