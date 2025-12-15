@@ -41,15 +41,15 @@ A chunked file is stored as a folder on the backend driver, containing all its c
 ::: en
 
 - **Remote path:** The real storage path of the chunked files. This path must be the root path or a subpath of another driver.
-- **Part size:** Maximum chunk size / Size of chunks except the last.
-- **Chunk large file only:** Whether to chunk files smaller than Part size.
+- **Part size:** Maximum chunk size / Size of chunks except the last, in bytes.
+- **Chunk large file only:** Whether to only chunk files larger than Part size.
   - When disabled:
     ![chunk_large_only_disabled](/img/drivers/chunk/chunk_large_only_disabled.png)
   - When enabled:
     ![chunk_large_only_enabled](/img/drivers/chunk/chunk_large_only_enabled.png)
 - **Chunk prefix:** The prefix for the names of chunk folders stored on the backend driver, representing a chunked file. This is used to identify whether a folder is a regular folder or a chunked file storing folder, and therefore cannot be empty.
 - **Custom ext:** Custom suffix for chunk names, used to bypass limitations of certain drivers.
-  - When keeping empty:![custom_ext_disabled](/img/drivers/chunk/custom_ext_disabled.png)
+  - When left empty:![custom_ext_disabled](/img/drivers/chunk/custom_ext_disabled.png)
   - When setting to `.jpg`:![custom_ext_enabled](/img/drivers/chunk/custom_ext_enabled.png)
 
 ::: warning TIP
@@ -69,8 +69,8 @@ If modification is necessary, you must manually change the suffix of all chunks 
 ::: zh-CN
 
 - **远程存储路径：** 分块后文件的真实存储路径，该路径必须是其它驱动的根路径或子路径。
-- **分块大小：** 文件块的最大大小 / 除最后一个文件块外文件块的大小。
-- **仅分块大文件：** 当上传的文件小于分块大小，是否对文件进行分块。
+- **分块大小：** 文件块的最大大小 / 除最后一个文件块外文件块的大小，单位：字节。
+- **仅对大文件分块：** 是否仅对大于或等于“分块大小”的文件进行分块。
   - 关闭时：
     ![chunk_large_only_disabled](/img/drivers/chunk/chunk_large_only_disabled.png)
   - 开启时：
