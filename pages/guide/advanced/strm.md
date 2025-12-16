@@ -4,9 +4,11 @@
 ::: warning Important Notes
 Please understand the function of strm files before use
 
-Only the **`Download Preview (Read-Only)`** operation is supported. Other operations such as **Copy, Delete, Rename, Offline Download, Upload** are **not supported**.
+Only the **`Download Preview (Read-Only)`** operation is supported. Other operations such as **Copy, Delete, Rename,
+Offline Download, Upload** are **not supported**.
 
-Strm uses a local proxy method, and during the **`Download Preview (Read-Only)`** operation, it will consume bandwidth from the deployed machine (depending on the number of files; individual files typically consume less than 100KB).
+Strm uses a local proxy method, and during the **`Download Preview (Read-Only)`** operation, it will consume bandwidth
+from the deployed machine (depending on the number of files; individual files typically consume less than 100KB).
 :::
 
 ::: en
@@ -23,7 +25,8 @@ Strm uses a local proxy method, and during the **`Download Preview (Read-Only)`*
 
   For example, if the directory /115_open/Video contains the file:`/电影/再见，李可乐 (2023)/再见，李可乐 (2023) - 2160p.mkv`
 
-  And you enter http://localhost:5244 as the Site URL, the generated .strm file will point to: `http://localhost:5244/115_open/Video/电影/再见，李可乐 (2023)/再见，李可乐 (2023) - 2160p.strm`
+  And you enter http://localhost:5244 as the Site URL, the generated .strm file will point to:
+  `http://localhost:5244/d/115_open/Video/电影/再见，李可乐 (2023)/再见，李可乐 (2023) - 2160p.strm`
 
   This field is optional. If left blank, the current access URL will be used as the default prefix.
 
@@ -44,16 +47,26 @@ Strm uses a local proxy method, and during the **`Download Preview (Read-Only)`*
 - **Encode Path:** Whether to enable URL path encoding.
 
   If disabled, the .strm URL will be:
-  `http://localhost:5244/115_open/Video/电影/再见，李可乐 (2023)/再见，李可乐 (2023) - 2160p.stm`
+  `http://localhost:5244/d/Video/电影/再见，李可乐 (2023)/再见，李可乐 (2023) - 2160p.stm`
 
   If enabled, it will be:
-  `http://localhost:5244/Video/%E7%94%B5%E5%BD%B1/%E5%86%8D%E8%A7%81%EF%BC%8C%E6%9D%8E%E5%8F%AF%E4%B9%90%20(2023)/%E5%86%8D%E8%A7%81%EF%BC%8C%E6%9D%8E%E5%8F%AF%E4%B9%90%20(2023)%20-%202160p.mkv`
+  `http://localhost:5244/d/Video/%E7%94%B5%E5%BD%B1/%E5%86%8D%E8%A7%81%EF%BC%8C%E6%9D%8E%E5%8F%AF%E4%B9%90%20(2023)/%E5%86%8D%E8%A7%81%EF%BC%8C%E6%9D%8E%E5%8F%AF%E4%B9%90%20(2023)%20-%202160p.mkv`
 
 - **Without Url:** The generated strm file after opening will not contain URL prefixes
 
-- **SaveStrmToLocal:** When enabled, accessing a directory within or mounted by the Strm driver will save the Strm files locally
+- **SaveStrmToLocal:** When enabled, accessing a directory within or mounted by the Strm driver will save the Strm files
+  locally
 
 - **SaveStrmLocalPath:** The local directory path where Strm files are stored.
+
+- **Local Save Mode:**
+
+  `Insert Mode`: Only generate files that do not exist locally; existing local files will not be modified.
+
+  `Update Mode`: Generate files that do not exist locally and update the content of existing local files to the latest
+  version.
+
+  `Sync Mode`: Based on Update Mode, additionally delete local files that no longer exist on the cloud drive.
 
 :::
 
@@ -85,7 +98,8 @@ Strm采用本地代理方式，在 **`下载预览（只读）`** 操作时会�
 
   如在`/115_open/Video`目录下有`/电影/再见，李可乐 (2023)/再见，李可乐 (2023) - 2160p.mkv`
 
-  填写`http://localhost:5244` 则生成的Strm文件为`http://localhost:5244/115_open/Video/电影/再见，李可乐 (2023)/再见，李可乐 (2023) - 2160p.strm`
+  填写`http://localhost:5244` 则生成的Strm文件为
+  `http://localhost:5244/d/115_open/Video/电影/再见，李可乐 (2023)/再见，李可乐 (2023) - 2160p.strm`
 
   此项可默认不填、不填时URL前缀会采用你当前访问的地址作为URL前缀
 
@@ -105,14 +119,23 @@ Strm采用本地代理方式，在 **`下载预览（只读）`** 操作时会�
 
 - **编码路径**：是否启用路径编码
 
-  不启用时生成的strm文件为 `http://localhost:5244/115_open/Video/电影/再见，李可乐 (2023)/再见，李可乐 (2023) - 2160p.stm`
+  不启用时生成的strm文件为 `http://localhost:5244/d/Video/电影/再见，李可乐 (2023)/再见，李可乐 (2023) - 2160p.stm`
 
-  启用时`http://localhost:5244/Video/%E7%94%B5%E5%BD%B1/%E5%86%8D%E8%A7%81%EF%BC%8C%E6%9D%8E%E5%8F%AF%E4%B9%90%20(2023)/%E5%86%8D%E8%A7%81%EF%BC%8C%E6%9D%8E%E5%8F%AF%E4%B9%90%20(2023)%20-%202160p.mkv`
+  启用时
+  `http://localhost:5244/d/Video/%E7%94%B5%E5%BD%B1/%E5%86%8D%E8%A7%81%EF%BC%8C%E6%9D%8E%E5%8F%AF%E4%B9%90%20(2023)/%E5%86%8D%E8%A7%81%EF%BC%8C%E6%9D%8E%E5%8F%AF%E4%B9%90%20(2023)%20-%202160p.mkv`
 
 - **不包含URL前缀**：开启后生成的strm文件将不包含URL前缀
 
 - **保存Strm文件至本地**: 开启后访问 strm 驱动中目录或被 strm 驱动挂载的目录时会将 strm 文件保存至本地
 
 - **保存Strm文件本地路径**: strm文件保存的本地路径
+
+- **保存本地模式**：
+
+  `新增模式`: 仅对本地没有的文件进行生成，对本地文件不进行任何操作
+
+  `更新模式`: 对本地没有的文件进行生成同时更新本地文件内容至最新
+
+  `同步模式`: 在更新模式的基础上删除本地中网盘没有的文件
 
 :::
