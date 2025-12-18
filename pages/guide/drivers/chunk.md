@@ -104,30 +104,33 @@ If modification is necessary, you must manually change the suffix of all chunks 
 If you need to both chunk and encrypt files, it is recommended to encrypt first and then chunk. Specifically, set Remote path of the Crypt driver to the mount path of the chunk driver, and set Remote path of the chunk driver to the actual storage path of the files.
 
 - Best practice:
-  ```mermaid
-  graph LR
-     File[Upload stream] --> Crypt
-     Crypt --> Chunk
-     Chunk -->|chunk1| Backend[Backend driver]
-     Chunk -->|chunk2| Backend
-     Chunk -->|chunk3| Backend
-  ```
+
+```mermaid
+graph LR
+   File[Upload stream] --> Crypt
+   Crypt --> Chunk
+   Chunk -->|chunk1| Backend[Backend driver]
+   Chunk -->|chunk2| Backend
+   Chunk -->|chunk3| Backend
+```
+
 - Bad practice:
-  ```mermaid
-  graph LR
-     File[Upload stream] --> Chunk
-     Chunk -->|chunk1| Crypt1[Encryption algorithm]
-     Chunk -->|chunk2| Crypt2[Encryption algorithm]
-     Chunk -->|chunk3| Crypt3[Encryption algorithm]
-     Crypt1 -->|encrypted chunk 1| Backend[Backend driver]
-     Crypt2 -->|encrypted chunk 2| Backend
-     Crypt3 -->|encrypted chunk 3| Backend
-     subgraph Crypt
-        Crypt1
-        Crypt2
-        Crypt3
-     end
-  ```
+
+```mermaid
+graph LR
+   File[Upload stream] --> Chunk
+   Chunk -->|chunk1| Crypt1[Encryption algorithm]
+   Chunk -->|chunk2| Crypt2[Encryption algorithm]
+   Chunk -->|chunk3| Crypt3[Encryption algorithm]
+   Crypt1 -->|encrypted chunk 1| Backend[Backend driver]
+   Crypt2 -->|encrypted chunk 2| Backend
+   Crypt3 -->|encrypted chunk 3| Backend
+   subgraph Crypt
+      Crypt1
+      Crypt2
+      Crypt3
+   end
+```
 
 **Reason**: The bad practice involves storing a series of encryption metadata in each file chunk, which consumes more space. It also fails to guarantee that the chunks adhere to the user-specified maximum size, thereby undermining the purpose of file chunking.
 
@@ -139,31 +142,32 @@ To perform emergency recovery on an encrypted file chunked according to the best
 
 - 正确实践：
 
-  ```mermaid
-  graph LR
-     File[上传文件流] --> Crypt
-     Crypt --> Chunk[分块]
-     Chunk -->|文件块1| 后端驱动
-     Chunk -->|文件块2| 后端驱动
-     Chunk -->|文件块3| 后端驱动
-  ```
+```mermaid
+graph LR
+   File[上传文件流] --> Crypt
+   Crypt --> Chunk[分块]
+   Chunk -->|文件块1| 后端驱动
+   Chunk -->|文件块2| 后端驱动
+   Chunk -->|文件块3| 后端驱动
+```
 
 - 错误实践
-  ```mermaid
-  graph LR
-     File[上传文件流] --> Chunk[分块]
-     Chunk -->|文件块1| Crypt1[加密算法]
-     Chunk -->|文件块2| Crypt2[加密算法]
-     Chunk -->|文件块3| Crypt3[加密算法]
-     Crypt1 -->|加密文件块1| 后端驱动
-     Crypt2 -->|加密文件块2| 后端驱动
-     Crypt3 -->|加密文件块3| 后端驱动
-     subgraph Crypt
-        Crypt1
-        Crypt2
-        Crypt3
-     end
-  ```
+
+```mermaid
+graph LR
+   File[上传文件流] --> Chunk[分块]
+   Chunk -->|文件块1| Crypt1[加密算法]
+   Chunk -->|文件块2| Crypt2[加密算法]
+   Chunk -->|文件块3| Crypt3[加密算法]
+   Crypt1 -->|加密文件块1| 后端驱动
+   Crypt2 -->|加密文件块2| 后端驱动
+   Crypt3 -->|加密文件块3| 后端驱动
+   subgraph Crypt
+      Crypt1
+      Crypt2
+      Crypt3
+   end
+```
 
 **原因**：错误实践的这种做法在每个文件块中都存储了一系列加密元信息，占用空间更多，也不能保证文件块具有用户给定的最大大小，失去了对文件分块的意义。
 
