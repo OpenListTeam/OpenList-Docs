@@ -282,6 +282,22 @@ QNAP OpenList | OpenList的第三方开源qpkg版本。
 自由开源软件，AGPLv3协议
 :::
 
+---
+
+### [jiwangyihao/olist-cdn-preheat ↗](https://github.com/jiwangyihao/olist-cdn-preheat/)
+
+::: en
+OpenList dedicated CDN preheating tool. When used with EdgeOne/ESA origin-following redirection, it efficiently improves cache hit rates and accelerates site downloads.
+
+Free and Open Source Software licensed under the MPLv2 license.
+:::
+
+::: zh-CN
+OpenList 专用 CDN 预热工具。搭配 EdgeOne/ESA 回源跟随重定向，高效提升缓存命中率，加速站点下载。
+
+自由开源软件，MPLv2协议
+:::
+
 ## Third-Party Proprietary Software { lang="en" }
 
 ## 其他第三方项目 { lang="zh-CN" }
