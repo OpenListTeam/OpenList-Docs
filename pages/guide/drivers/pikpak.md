@@ -209,7 +209,7 @@ It is known that PikPak Share can only see 40%-50%
 ::: en
 You only need to fill in **`Username`, `Password`, `Shared ID`** three items, **root folder ID** can be written or not, if not written, the default is the root directory (root directory)
 
-- Root folder ID: If it is a multi-layer directory, which directory do you want to display as the root directory, you can write which root directory.
+- Root folder ID: If it is a multi-layer directory, which directory do you want to display as the root directory, you can write which root directory.(Refer to the method of obtaining the root folder ID below)
 - Sharing password: if there is a password to share, write it, if not, don’t write it
 
 :::
@@ -217,12 +217,38 @@ You only need to fill in **`Username`, `Password`, `Shared ID`** three items, **
 ::: zh-CN
 只需要填写 `用户名` ，`密码`，`分享ID` 三项即可 ，**根文件夹ID** 可写可不写，不写默认为root目录（根目录）
 
-- 根文件夹ID：如果是多层目录，你想让哪个目录展示当根目录你就写哪个根目录.
+- 根文件夹ID：如果是多层目录，你想让哪个目录展示当根目录你就写哪个根目录.（参考下方获取根文件夹ID方法）
 - 分享密码：分享的有密码就写，没有就不写
 
 :::
 
 ![pikpak-share](/img/drivers/pikpak/pikpak-share.png)
+
+### 获取根文件夹ID { lang="zh-CN" }
+
+### Get Root Folder ID { lang="en" }
+
+![pikpak-share-rootfolder](/img/drivers/pikpak/pikpak-share-rootfolder.png)
+
+::: en
+**The root directory ID of the current pikpak share can no longer be obtained in the address, you need to check the data returned by the interface**
+
+- Open the F12 console and go to the Network tab
+- Refresh the page and search for `detail`, find the last `detail` request
+- Select `detail` and find `files` in the Response
+- Find the corresponding folder name and check its `id` field content as the root folder ID.(You can confirm the corresponding folder through the `name` field)
+
+:::
+
+::: zh-CN
+**当前pikpak分享的根目录ID已经无法在地址中获取，需要查看接口返回的数据**
+
+- 打开F12控制台，进入网络（Network）选项卡
+- 刷新页面，搜`detail`，找到最后一个`detail`请求
+- 选择`detail`，在响应（Response）中找到`files`
+- 找到对应的文件夹名称，查看其`id`字段内容即为根文件夹ID（可以通过`name`字段来确认对应的文件夹）
+
+:::
 
 ### Use transcoding address { lang="en" }
 

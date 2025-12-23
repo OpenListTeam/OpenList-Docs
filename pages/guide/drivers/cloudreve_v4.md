@@ -217,6 +217,7 @@ The supported storage policies for uploading are as follows:
 - Slave storage
 - OneDrive
 - S3
+- KS3
 
 Upload storage policies can be set within Cloudreve V4 web interface by entering the corresponding folder (requires the server to be Cloudreve Pro).
 
@@ -229,6 +230,7 @@ If upload permissions are enabled for shares, uploads are supported. It requires
 - 从机存储
 - OneDrive
 - S3
+- 金山云（KS3）
 
 上传的存储策略请在 Cloudreve V4 网页端进入相应文件夹中进行设置（需要服务端为 Cloudreve Pro）。
 
