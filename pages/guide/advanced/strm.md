@@ -54,8 +54,7 @@ from the deployed machine (depending on the number of files; individual files ty
 
 - **Without Url:** The generated strm file after opening will not contain URL prefixes
 
-- **SaveStrmToLocal:** When enabled, accessing a directory within or mounted by the Strm driver will save the Strm files
-  locally
+- **SaveStrmToLocal:** When enabled, accessing a directory within or mounted by the Strm driver will save the Strm files locally
 
 - **SaveStrmLocalPath:** The local directory path where Strm files are stored.
 
