@@ -387,3 +387,44 @@ If you prefer copying the accessible link directly, try:
 ```
 
 :::
+
+## Handle hook after writing { lang="en" }
+
+## 写入操作后触发目录更新钩子 { lang="zh-CN" }
+
+::: en
+Whether to trigger the directory update hook after operations such as upload, rename, delete, move, copy, or extraction.
+
+Triggering the directory update hook will cause the index to update and activate the function of the [Strm](/guide/drivers/strm) driver to generate local files.
+:::
+::: zh-CN
+上传、重命名、删除、移动、复制、解压操作后，是否触发目录更新钩子。
+
+目录更新钩子触发将导致索引更新及[Strm](/guide/drivers/strm)驱动生成本地文件的功能触发。
+:::
+
+## Handle hook rate limit { lang="en" }
+
+## 目录更新钩子遍历限制速率 { lang="zh-CN" }
+
+::: en
+It is only meaningful when the [Handle hook after writing](/configuration/global#handle-hook-after-writing) is enabled. When the directory update hook is triggered, this limits the rate at which the driver API is called (unit: times/second; 0 means no restriction).
+:::
+::: zh-CN
+仅当[写入操作后触发目录更新钩子](/configuration/global#写入操作后触发目录更新钩子)开启时有意义，触发目录更新钩子时，限制调用驱动 API 的速率（单位：次/秒，为 0 表示不限制）。
+:::
+
+## Ignore system files { lang="en" }
+
+## 忽略系统文件 { lang="zh-CN" }
+
+::: en
+When enabled, attempts by users to upload certain system files will directly fail, thereby achieving filtering.
+
+The determination of whether a file is a system file is based on its filename.
+:::
+::: zh-CN
+开启时，当用户尝试上传某些系统文件时会直接失败，从而实现过滤。
+
+判断是否为系统文件的依据为文件名。
+:::

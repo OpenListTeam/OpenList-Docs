@@ -19,4 +19,4 @@ sticky: true
 star: true
 ---
 
-<!--@include: ./../advanced/strm.md-->
+<!--@include: ./strm_text.md-->

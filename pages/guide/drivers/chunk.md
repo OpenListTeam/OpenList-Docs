@@ -101,7 +101,7 @@ If modification is necessary, you must manually change the suffix of all chunks 
 ## 与 Crypt 结合使用 { lang="zh-CN" }
 
 ::: en
-If you need to both chunk and encrypt files, it is recommended to encrypt first and then chunk. Specifically, set Remote path of the Crypt driver to the mount path of the chunk driver, and set Remote path of the chunk driver to the actual storage path of the files.
+If you need to both chunk and encrypt files, it is recommended to **encrypt first, then chunk**. Specifically, set Remote path of the [Crypt](/guide/drivers/crypt) driver to the mount path of the **Chunk** driver, and set Remote path of the **Chunk** driver to the actual storage path of the files.
 
 - Best practice:
 
@@ -138,7 +138,7 @@ To perform emergency recovery on an encrypted file chunked according to the best
 :::
 
 ::: zh-CN
-如果既需要对文件进行分块，又需要对文件进行加密，推荐先加密后分块，即将 Crypt 驱动的远程存储路径设为分块驱动的挂载路径，将分块驱动的远程存储路径设为文件真实存储路径。
+如果既需要对文件进行分块，又需要对文件进行加密，推荐**先加密后分块**，即将 [Crypt](/guide/drivers/crypt) 驱动的远程存储路径设为**分块**驱动的挂载路径，将**分块**驱动的远程存储路径设为文件真实存储路径。
 
 - 正确实践：
 
@@ -151,7 +151,7 @@ graph LR
    Chunk -->|文件块3| 后端驱动
 ```
 
-- 错误实践
+- 错误实践：
 
 ```mermaid
 graph LR
@@ -172,4 +172,81 @@ graph LR
 **原因**：错误实践的这种做法在每个文件块中都存储了一系列加密元信息，占用空间更多，也不能保证文件块具有用户给定的最大大小，失去了对文件分块的意义。
 
 如果需要紧急恢复按推荐做法分块的加密文件，只需要按顺序直接拼接所有分块，再进行恢复即可。
+:::
+
+## Use in combination with Alias { lang="en" }
+
+## 与别名结合使用 { lang="zh-CN" }
+
+::: en
+If you need to store chunked files across multiple load-balanced drivers, you can combine this with the [Alias](/guide/drivers/alias) driver. For details, refer to [Load Balancing / Load balancing by file chunks](/guide/advanced/balance#load-balancing-by-file-chunks).
+
+It's important to note that, unlike the approach used with Crypt, when combining with Alias, the process should be **chunk first, then load balance**. This means setting the Remote path of the **Chunk** driver to the mount path of the **Alias** driver, and setting the paths within the **Alias** driver to the actual file storage paths.
+
+- Best Practice:
+
+```mermaid
+graph LR
+   File[Upload Stream] -->|File1| Chunk
+   File -->|File2| Chunk
+   Chunk -->|File1 Block1, File1 Block2, File1 Block3| Alias
+   Chunk -->|File2 Block1, File2 Block2| Alias
+   Alias -->|File1 Block3| D1[Backend Driver 1]
+   Alias -->|File1 Block2| D2[Backend Driver 2]
+   Alias -->|File1 Block1| D3[Backend Driver 3]
+   Alias -->|File2 Block1| D1
+   Alias -->|File2 Block2| D3
+```
+
+- Bad Practice:
+
+```mermaid
+graph LR
+   File[Upload Stream] -->|File1| Alias
+   File -->|File2| Alias
+   Alias -->|File1| Chunk1[Chunk 1]
+   Alias -->|File2| Chunk2[Chunk 2]
+   Chunk1 -->|File1 Block1| D1[Backend Driver 1]
+   Chunk1 -->|File1 Block2| D1
+   Chunk1 -->|File1 Block3| D1
+   Chunk2 -->|File2 Block1| D2[Backend Driver 2]
+   Chunk2 -->|File2 Block2| D2
+```
+
+:::
+::: zh-CN
+如果需要将分块后的文件在多个负载均衡驱动上存储，可以与[别名](/guide/drivers/alias)结合使用，详见[负载均衡 / 按文件块负载均衡](/guide/advanced/balance#按文件块负载均衡)。
+
+需要注意的是，与结合 Crypt 使用的方案不同，与别名结合使用时，应**先分块后负载均衡**，即将**分块**驱动的远程存储路径设为**别名**驱动的挂载路径，将**别名**驱动的路径设为文件真实存储路径。
+
+- 正确实践：
+
+```mermaid
+graph LR
+   File[上传文件流] -->|文件1| Chunk[分块]
+   File -->|文件2| Chunk
+   Chunk -->|文件1块1,文件1块2,文件1块3| Alias[别名]
+   Chunk -->|文件2块1,文件2块2| Alias
+   Alias -->|文件1块3| D1[后端驱动 1]
+   Alias -->|文件1块2| D2[后端驱动 2]
+   Alias -->|文件1块1| D3[后端驱动 3]
+   Alias -->|文件2块1| D1
+   Alias -->|文件2块2| D3
+```
+
+- 错误实践：
+
+```mermaid
+graph LR
+   File[上传文件流] -->|文件1| Alias[别名]
+   File -->|文件2| Alias
+   Alias -->|文件1| Chunk1[分块驱动 1]
+   Alias -->|文件2| Chunk2[分块驱动 2]
+   Chunk1 -->|文件1块1| D1[后端驱动 1]
+   Chunk1 -->|文件1块2| D1
+   Chunk1 -->|文件1块3| D1
+   Chunk2 -->|文件2块1| D2[后端驱动 2]
+   Chunk2 -->|文件2块2| D2
+```
+
 :::

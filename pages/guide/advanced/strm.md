@@ -1,3 +1,13 @@
+---
+title:
+  en: Generate Strm
+  zh-CN: 生成 strm
+categories:
+  - guide
+  - advanced
+top: 10
+---
+
 ::: en
 **Strm** is a driver that allows you to convert supported files from multiple cloud drives into .strm files.
 
@@ -138,3 +148,6 @@ Strm采用本地代理方式，在 **`下载预览（只读）`** 操作时会�
   `同步模式`: 在更新模式的基础上删除本地中网盘没有的文件
 
 :::
+
+
+<!--@include: ../drivers/strm_text.md-->

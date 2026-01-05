@@ -10,7 +10,7 @@ top: 60
 
 ## 1. Single sign-on client id { lang="en" }
 
-## 1.Single sign-on client id { lang="zh-CN" }
+## 1. 单点登录客户端ID { lang="zh-CN" }
 
 ::: en
 client ID.
@@ -21,10 +21,10 @@ client ID.
 
 ## 2. Single sign-on client secrets { lang="en" }
 
-## 2. Single sign-on client secrets { lang="zh-CN" }
+## 2. 单点登录客户端秘钥 { lang="zh-CN" }
 
 ::: en
-secrets ID.
+client secrets.
 ::: warning matters needing attention
 
 1. Remember to write and save the background parameters of OpenList. After writing and saving, you have to go back to the bottom of the personal data and there will be a button that needs to be bound, otherwise it cannot be used
@@ -35,7 +35,7 @@ secrets ID.
 :::
 
 ::: zh-CN
-秘钥ID
+客户端秘钥
 
 ::: warning 注意事项
 
@@ -328,15 +328,15 @@ http://127.0.0.1:5244/api/auth/sso_callback?method=sso_get_token
 
 ::: en
 If it has been configured, just ignore this picture (you can zoom in if you can’t see it clearly)
-![google-ouath-00](/img/drivers/google/google-ouath-00.png)
-![google-ouath-01](/img/drivers/google/google-ouath-01.png)
-![google-ouath-02](/img/drivers/google/google-ouath-02.png)
+![google-oauth-00](/img/drivers/google/google-oauth-eng-00.png)
+![google-oauth-01](/img/drivers/google/google-oauth-eng-01.png)
+![google-oauth-02](/img/drivers/google/google-oauth-eng-02.png)
 :::
 ::: zh-CN
 如已配置好 忽略本图即可(如果看不清楚可以放大)
-![google-ouath-00](/img/drivers/google/google-ouath-00.png)
-![google-ouath-01](/img/drivers/google/google-ouath-01.png)
-![google-ouath-02](/img/drivers/google/google-ouath-02.png)
+![google-oauth-00](/img/drivers/google/google-oauth-00.png)
+![google-oauth-01](/img/drivers/google/google-oauth-01.png)
+![google-oauth-02](/img/drivers/google/google-oauth-02.png)
 :::
 
 #### 3.4.2. Completely fill in the reference schematic { lang="en" }
