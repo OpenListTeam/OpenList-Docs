@@ -21,9 +21,9 @@ Strm uses a local proxy method, and during the **`Download Preview (Read-Only)`*
 from the deployed machine (depending on the number of files; individual files typically consume less than 100KB).
 :::
 
-::: en
+### Parameter Descriptions { lang="en" }
 
-### Parameter Descriptions
+::: en
 
 - **Path:** The full path in OpenList where .strm files should be generated.
   Examples:
@@ -90,9 +90,9 @@ from the deployed machine (depending on the number of files; individual files ty
 Strm采用本地代理方式，在 **`下载预览（只读）`** 操作时会消耗一定部署机器的流量（取决于文件数量、单个文件一般不超过100KB）
 :::
 
-::: zh-CN
+### 参数介绍 { lang="zh-CN" }
 
-### 参数介绍
+::: zh-CN
 
 - **路径**：需要生成strm文件的`OpenList上的完整路径`。
 
@@ -148,6 +148,3 @@ Strm采用本地代理方式，在 **`下载预览（只读）`** 操作时会�
   `同步模式`: 在更新模式的基础上删除本地中网盘没有的文件
 
 :::
-
-
-<!--@include: ../drivers/strm_text.md-->
