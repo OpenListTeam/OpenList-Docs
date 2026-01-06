@@ -17,7 +17,7 @@ Please understand the function of strm files before use
 Only the **`Download Preview (Read-Only)`** operation is supported. Other operations such as **Copy, Delete, Rename,
 Offline Download, Upload** are **not supported**.
 
-Strm uses a local proxy method, and during the **`Download Preview (Read-Only)`** operation, it will consume bandwidth
+Strm uses a local proxy method, and during the **`Download Preview (Read-Only)`** operation, it will consume traffic
 from the deployed machine (depending on the number of files; individual files typically consume less than 100KB).
 :::
 
@@ -62,7 +62,7 @@ from the deployed machine (depending on the number of files; individual files ty
   If enabled, it will be:
   `http://localhost:5244/d/Video/%E7%94%B5%E5%BD%B1/%E5%86%8D%E8%A7%81%EF%BC%8C%E6%9D%8E%E5%8F%AF%E4%B9%90%20(2023)/%E5%86%8D%E8%A7%81%EF%BC%8C%E6%9D%8E%E5%8F%AF%E4%B9%90%20(2023)%20-%202160p.mkv`
 
-- **Without Url:** The generated strm file after opening will not contain URL prefixes
+- **Without Url:** The generated strm file will not contain URL prefixes
 
 - **SaveStrmToLocal:** When enabled, accessing a directory within or mounted by the Strm driver will save the Strm files locally
 
