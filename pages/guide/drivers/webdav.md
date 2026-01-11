@@ -66,6 +66,38 @@ Whether to skip SSL certificate verification. If your WebDAV server uses a self-
 是否跳过 SSL 证书验证。如果你的 WebDAV 服务器使用自签名证书，可能需要启用此选项。启用后会降低安全性，请谨慎使用。
 :::
 
+## Support 302 redirect { lang="en" }
+
+## 支持 302 重定向 { lang="zh-CN" }
+
+::: zh-CN
+
+通常情况下，WebDAV 服务器会直接返回文件内容，由于需要授权，只能代理下载。但一些服务器会重定向到实际的文件地址，如 OpenList `WebDav 策略` 的 `302 重定向`。
+
+WebDAV 存储设置的 `Web 代理` 选项默认为开启状态，如果关闭，OpenList 将会尝试获取重定向后的地址，然后将该地址返回给用户设备直接下载。
+
+前提条件：
+
+1. WebDAV 服务器必须支持返回 302，如果返回 200，则无法使用此功能，关闭 Web 代理将无法使用。
+2. 返回的 302 地址必须是公开可访问的地址，不得需要授权信息，否则用户设备无法下载。
+3. 在存储设置中关闭 `Web 代理` 选项。
+
+:::
+
+::: en
+
+In general, WebDAV servers return the file content directly. Due to the need for authorization, only proxy downloads are possible. However, some servers redirect to the actual file address, such as OpenList `WebDav Policy`'s `302 Redirect`.
+
+The `Web Proxy` option in WebDAV storage settings is enabled by default. If disabled, OpenList will attempt to obtain the redirected address and return it to the user device for direct download.
+
+Prerequisites:
+
+1. The WebDAV server must support returning 302; if it returns 200, this feature cannot be used, and disabling Web Proxy will make it unusable.
+2. The returned 302 address must be publicly accessible and must not require authorization information; otherwise, the user device cannot download it.
+3. Disable the `Web Proxy` option in the storage settings.
+
+:::
+
 ## OneDrive/SharePoint { lang="zh-CN" }
 
 ## OneDrive/SharePoint { lang="en" }
