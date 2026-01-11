@@ -55,6 +55,17 @@ The path of fodler you want to mount, same as join in address
 要挂载的文件夹路径，与加入地址相同
 :::
 
+## Tls insecure skip verify { lang="zh-CN" }
+
+## 跳过 SSL 证书验证 { lang="zh-CN" }
+
+::: en
+Whether to skip SSL certificate verification. If your WebDAV server uses a self-signed certificate, you may need to enable this option. Enabling it will reduce security, please use it with caution.
+:::
+::: zh-CN
+是否跳过 SSL 证书验证。如果你的 WebDAV 服务器使用自签名证书，可能需要启用此选项。启用后会降低安全性，请谨慎使用。
+:::
+
 ## OneDrive/SharePoint { lang="zh-CN" }
 
 ## OneDrive/SharePoint { lang="en" }
