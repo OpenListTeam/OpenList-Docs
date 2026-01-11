@@ -242,9 +242,9 @@ flowchart TB
     subgraph ide1 [ ]
     a1
     end
-    a1[302]:::someclass====|default|a2[user equipment]
+    a1[local proxy]:::someclass====|default|a2[user equipment]
     classDef someclass fill:#f96
-    c1[local proxy]-.alternative.->a2[user equipment]
+    c1[302]-.alternative.->a2[user equipment]
     b1[Download proxy URL]-.alternative.->a2[user equipment]
     click a1 "../drivers/common.html#webdav-policy"
     click b1 "../drivers/common.html#webdav-policy"
@@ -265,9 +265,9 @@ flowchart TB
     subgraph ide1 [ ]
     a1
     end
-    a1[302]:::someclass====|默认|a2[用户设备]
+    a1[本机代理]:::someclass====|默认|a2[用户设备]
     classDef someclass fill:#f96
-    c1[本机代理]-.备选.->a2[用户设备]
+    c1[302]-.备选.->a2[用户设备]
     b1[代理URL]-.备选.->a2[用户设备]
     click a1 "../drivers/common.html#webdav-策略"
     click b1 "../drivers/common.html#webdav-策略"

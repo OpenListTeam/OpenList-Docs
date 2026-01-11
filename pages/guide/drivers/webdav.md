@@ -116,19 +116,22 @@ The username is the OneDrive account email, and the password is the OneDrive acc
 title: Which download method is used by default?
 ---
 flowchart TB
-    style c1 fill:#bbf,stroke:#f66,stroke-width:2px,color:#fff
+    style a1 fill:#bbf,stroke:#f66,stroke-width:2px,color:#fff
     style a2 fill:#ff7575,stroke:#333,stroke-width:4px
     subgraph ide1 [ ]
-    c1
+    a1
     end
-    c1[local proxy]:::someclass==default===>a2[user equipment]
+    a1[local proxy]:::someclass====|default|a2[user equipment]
     classDef someclass fill:#f96
+    c1[302]-.alternative.->a2[user equipment]
     b1[Download proxy URL]-.alternative.->a2[user equipment]
+    click a1 "../drivers/common.html#webdav-policy"
     click b1 "../drivers/common.html#webdav-policy"
     click c1 "../drivers/common.html#webdav-policy"
 ```
 
 :::
+
 ::: zh-CN
 
 ```mermaid
@@ -136,14 +139,16 @@ flowchart TB
 title: 默认使用的哪种下载方式？
 ---
 flowchart TB
-    style c1 fill:#bbf,stroke:#f66,stroke-width:2px,color:#fff
+    style a1 fill:#bbf,stroke:#f66,stroke-width:2px,color:#fff
     style a2 fill:#ff7575,stroke:#333,stroke-width:4px
     subgraph ide1 [ ]
-    c1
+    a1
     end
-    c1[本机代理]:::someclass==默认===>a2[用户设备]
+    a1[本机代理]:::someclass====|默认|a2[用户设备]
     classDef someclass fill:#f96
+    c1[302]-.备选.->a2[用户设备]
     b1[代理URL]-.备选.->a2[用户设备]
+    click a1 "../drivers/common.html#webdav-策略"
     click b1 "../drivers/common.html#webdav-策略"
     click c1 "../drivers/common.html#webdav-策略"
 ```
