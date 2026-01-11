@@ -124,45 +124,61 @@ flowchart TB
 
 All methods require you to [click here](https://api.oplist.org/) to obtain the refresh token. The **first method** requires developer permissions, while the **latter two** do not.
 
-1. If you have Baidu Netdisk developer permissions, please select **"Baidu Netdisk Auth Login"**, and in the Baidu Netdisk developer app backend, set the callback URL to the one provided on the webpage. After clicking "Get Token," you will automatically receive a refresh token. You can then configure your own `client_id` and `client_secret` in OpenList.  
+1. If you have Baidu Netdisk developer permissions, please select **"Baidu Netdisk Auth Login"**, and in the Baidu Netdisk developer app backend, set the callback URL to the one provided on the webpage. After clicking "Get Token," you will automatically receive a refresh token. You can then configure your own `client_id` and `client_secret` in OpenList.
+
    (Please note: If using Baidu Netdisk's API, ensure the “Use Online API” option is unchecked, otherwise it will prevent connection.)
+
    ![](/img/drivers/baidu/dev_token.png)
 
-   Want to obtain developer permissions? Please follow the steps below to apply for developer permissions on Baidu Cloud Open Platform:  
+   Want to obtain developer permissions? Please follow the steps below to apply for developer permissions on Baidu Cloud Open Platform:
+
    (Please note that we do not advocate the abuse of Baidu Netdisk developer permissions. You need to bear the operational risks yourself.)
    1. Please go to [Baidu Open Platform](https://pan.baidu.com/union).
 
-   ![](/img/drivers/baidu/dev_platform.png)
+      ![](/img/drivers/baidu/dev_platform.png)
+
    2. Log in to your Baidu account.
 
-   ![](/img/drivers/baidu/dev_platform_login.png){width=200px}
+      ![](/img/drivers/baidu/dev_platform_login.png){width=200px}
+
    3. Follow the steps to complete the developer certification (supplement account information, such as real-name authentication, email, etc.).
-   4. After completion, the system will automatically redirect to the [Baidu Open Platform Console](https://pan.baidu.com/union/console/applist).  
+
+   4. After completion, the system will automatically redirect to the [Baidu Open Platform Console](https://pan.baidu.com/union/console/applist).
+
       If you cannot access the console, you may not have completed the certification. Please return to step one and try again.
 
-   ![](/img/drivers/baidu/dev_platform_console.png){width=600px}
-   5. Create an application using the create button in the console.  
+      ![](/img/drivers/baidu/dev_platform_console.png){width=600px}
+
+   5. Create an application using the create button in the console.
+
       (Please note that individual developers can only create one application. If you have other uses for the application, please use methods two and three. Here we assume you don't have an application and are willing to create one for OpenList.)
 
-   ![](/img/drivers/baidu/dev_app_create_button.png){width=600px}
+      ![](/img/drivers/baidu/dev_app_create_button.png){width=600px}
+
    6. Select "Software" as the application category, and fill in the application name and description according to your preference. Please note that these three contents cannot be changed once set, so please think carefully before filling them out.
 
-   ![](/img/drivers/baidu/dev_app_create_panel.png){width=600px}
-   7. After creation is complete, you'll return to the control panel. Click on the application name to enter the application details page.  
+      ![](/img/drivers/baidu/dev_app_create_panel.png){width=600px}
+
+   7. After creation is complete, you'll return to the control panel. Click on the application name to enter the application details page.
+
       (Please note that you don't need to apply for online review to use it normally.)
 
-   ![](/img/drivers/baidu/dev_app_console.png){width=200px}
+      ![](/img/drivers/baidu/dev_app_console.png){width=200px}
+
    8. Select Security Settings and fill in the application callback URL with the provided callback address and save.
 
-   ![](/img/drivers/baidu/dev_app_info.png){width=600px}
+      ![](/img/drivers/baidu/dev_app_info.png){width=600px}
 
-   ```
-   https://api.oplist.org/baiduyun/callback
-   ```
+      ```
+      https://api.oplist.org/baiduyun/callback
+      ```
 
-   ![](/img/drivers/baidu/dev_app_settings_safety.png){width=600px}
+      ![](/img/drivers/baidu/dev_app_settings_safety.png){width=600px}
+
    9. Return to the application details page and copy the necessary AppKey and SecretKey.
+
    10. Use the [OpenList Token Acquisition Tool](https://api.oplist.org/) to log in via Baidu Netdisk authentication and fill in the corresponding keys to obtain the token.
+
    11. Fill in the corresponding parameters and settings according to the image at the beginning of this method to start using it.
 
 2. This method uses a built-in API call via our intermediary server to refresh the access token. It is already available online. Simply check the option to use the parameters provided by OpenList, click "Get Token," and you will receive a refresh token. In the storage configuration page of OpenList, enable the "Use Online API" option, and enter the refresh token to start using it.
@@ -184,46 +200,61 @@ All methods require you to [click here](https://api.oplist.org/) to obtain the r
 
 全部都要[点击这里](https://api.oplist.org/) 来获取刷新令牌。第一种需要开发者权限，后**两种**不需要。
 
-1. 如果你有百度网盘开发者权限，请选择“百度网盘 验证登录”，并在百度网盘开发者应用后台里填入配置回调地址为该网页提供的回调地址。点击获取token后即可自动获取刷新令牌，并在openlist中配置您自己的cilent_id和cilent_secret。  
-    （请注意如使用百度网盘的api，请务必确保OpenList存储设置中“使用在线API”选项为非勾选状态，否则会导致无法连接。）
+1. 如果你有百度网盘开发者权限，请选择“百度网盘 验证登录”，并在百度网盘开发者应用后台里填入配置回调地址为该网页提供的回调地址。点击获取token后即可自动获取刷新令牌，并在openlist中配置您自己的cilent_id和cilent_secret。
+
+   （请注意如使用百度网盘的api，请务必确保OpenList存储设置中“使用在线API”选项为非勾选状态，否则会导致无法连接。）
 
    ![](/img/drivers/baidu/dev_token.png)
 
-   想要获取开发者权限？请按下方操作访问百度云开放平台申请开发者权限  
+   想要获取开发者权限？请按下方操作访问百度云开放平台申请开发者权限
+
    （请注意我们并不提倡滥用百度网盘的开发者权限，您需要自行承担操作风险）
    1. 请前往[百度开放平台](https://pan.baidu.com/union)。
 
-   ![](/img/drivers/baidu/dev_platform.png)
+      ![](/img/drivers/baidu/dev_platform.png)
+
    2. 登录你的百度账号。
 
-   ![](/img/drivers/baidu/dev_platform_login.png){width=200px}
+      ![](/img/drivers/baidu/dev_platform_login.png){width=200px}
+
    3. 按照步骤填写信息完成开发者认证。（补充账户信息，如实名，邮箱等。）
+
    4. 在完成后系统会自动跳转到[百度开放平台控制台](https://pan.baidu.com/union/console/applist)。
+
       如果你无法访问控制台，可能是没有完成认证，请返回第一步重试。
 
-   ![](/img/drivers/baidu/dev_platform_console.png){width=600px}
-   5. 使用控制台的创建按钮创建一个应用。  
+      ![](/img/drivers/baidu/dev_platform_console.png){width=600px}
+
+   5. 使用控制台的创建按钮创建一个应用。
+
       （请注意个人开发者只能创建一个应用，如您对应用有其他使用，请使用第二和三方法，此处默认您没有应用且愿意为openlist创建应用。）
 
-   ![](/img/drivers/baidu/dev_app_create_button.png){width=600px}
+      ![](/img/drivers/baidu/dev_app_create_button.png){width=600px}
+
    6. 选择应用类别为”软件“，并按自己的想法填写应用名称和描述，请注意这三个内容一旦设定完成无法更改，请深思熟虑后填写。
 
-   ![](/img/drivers/baidu/dev_app_create_panel.png){width=600px}
-   7. 创建完成后将会回到控制面板，点击应用名称进入应用详情页。  
+      ![](/img/drivers/baidu/dev_app_create_panel.png){width=600px}
+
+   7. 创建完成后将会回到控制面板，点击应用名称进入应用详情页。
+
       （请注意您不需要申请上线审核就可以正常使用。）
 
-   ![](/img/drivers/baidu/dev_app_console.png){width=200px}
+      ![](/img/drivers/baidu/dev_app_console.png){width=200px}
+
    8. 选择安全设置，并填写应用回调地址为提供的回调地址并保存。
 
-   ![](/img/drivers/baidu/dev_app_info.png){width=600px}
+      ![](/img/drivers/baidu/dev_app_info.png){width=600px}
 
-   ```
-   https://api.oplist.org/baiduyun/callback
-   ```
+      ```
+      https://api.oplist.org/baiduyun/callback
+      ```
 
-   ![](/img/drivers/baidu/dev_app_settings_safety.png){width=600px}
+      ![](/img/drivers/baidu/dev_app_settings_safety.png){width=600px}
+
    9. 回到应用详情页，复制必要的Appkey与Secretkey
+
    10. 使用[OpenList Token 获取工具](https://api.oplist.org/)通过百度网盘验证登录填写对应的Key，获取令牌。
+
    11. 按照本方法开始处的图片填写对应的参数和设置即可使用。
 
 2. 内置API调用的实现方式，利用我们建立的服务器中转刷新access_token，目前已经上线，勾选使用OpenList提供的参数，点击获取token即可获得刷新令牌。在OpenList的存储配置界面，打开使用online api选项，经刷新令牌填入即可使用。
@@ -552,9 +583,9 @@ flowchart TB
     subgraph ide1 [ ]
     a1
     end
-    a1[302]:::someclass====|default|a2[user equipment]
+    a1[local proxy]:::someclass====|default|a2[user equipment]
     classDef someclass fill:#f96
-    c1[local proxy]-.alternative.->a2[user equipment]
+    c1[302]-.alternative.->a2[user equipment]
     b1[Download proxy URL]-.alternative.->a2[user equipment]
     click a1 "../drivers/common.html#webdav-policy"
     click b1 "../drivers/common.html#webdav-policy"
@@ -562,6 +593,7 @@ flowchart TB
 ```
 
 :::
+
 ::: zh-CN
 
 ```mermaid
@@ -574,9 +606,9 @@ flowchart TB
     subgraph ide1 [ ]
     a1
     end
-    a1[302]:::someclass====|默认|a2[用户设备]
+    a1[本机代理]:::someclass====|默认|a2[用户设备]
     classDef someclass fill:#f96
-    c1[本机代理]-.备选.->a2[用户设备]
+    c1[302]-.备选.->a2[用户设备]
     b1[代理URL]-.备选.->a2[用户设备]
     click a1 "../drivers/common.html#webdav-策略"
     click b1 "../drivers/common.html#webdav-策略"
