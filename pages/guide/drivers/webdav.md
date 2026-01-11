@@ -133,6 +133,10 @@ The username is the OneDrive account email, and the password is the OneDrive acc
 
   Another situation is that the corresponding OneDrive account has not been used for a long time, which will also prompt this problem. Try to log in to the account again from the OneDrive web page. The system will prompt you to change the password. After updating the password, try again with the changed password.
 
+- **failed link: failed get link: redirect failed, status: 200**
+
+  This error indicates that the WebDAV server does not support 302 redirects. You need to enable the `Web Proxy` option in the storage settings to use proxy downloads.
+
 :::
 ::: zh-CN
 
@@ -145,6 +149,10 @@ The username is the OneDrive account email, and the password is the OneDrive acc
   ![webdav](/img/drivers/webdav/webdav_Security.png)
 
   另外一种情况是对应的 OneDrive 账号太长时间没有操作也会提示这个问题，尝试从 OneDrive 网页端重新登录账号，系统会提示要求更改密码，更新密码后，使用更改后的密码再次尝试即可
+
+- **failed link: failed get link: redirect failed, status: 200**
+
+  此错误表示 WebDAV 服务器不支持 302 重定向，需要在存储设置中启用 `Web 代理` 选项以使用代理下载。
 
 :::
 
