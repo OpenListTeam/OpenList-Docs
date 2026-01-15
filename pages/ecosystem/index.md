@@ -201,6 +201,21 @@ Free and Open Source Software licensed under the GPLv2 license.
 :::
 
 ---
+### [moyanj/AList3SDK ↗](https://github.com/moyanj/AList3SDK)
+
+::: en
+A high-performance Python SDK for easy interaction with OpenList/AList services. Supports both asynchronous and synchronous APIs, and provides comprehensive type annotations!
+
+Free and Open Source Software licensed under the LGPL-2.1 license.
+:::
+
+::: zh-CN
+一个高性能的 Python SDK，用于与 OpenList/AList 服务轻松交互。同时支持异步和同步 API，并提供完善的类型注解！
+
+自由开源软件，LGPL-2.1协议
+:::
+
+---
 
 ### [huancun/Openlist-EX-container ↗](https://github.com/huancun/Openlist-EX-container)
 
