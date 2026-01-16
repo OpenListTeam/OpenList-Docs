@@ -1,7 +1,7 @@
 ---
 title:
-  en: Autoindex
-  zh-CN: Autoindex
+  en: AutoIndex
+  zh-CN: AutoIndex
 icon: iconfont icon-state
 top: 350
 categories:
@@ -11,7 +11,7 @@ categories:
 
 ::: en
 
-The Autoindex driver is used to mount directory index pages built into HTTP servers, such as the [Nginx Source Index](https://nginx.org/download/) and [Redis Releases](https://download.redis.io/releases/).
+The AutoIndex driver is used to mount directory index pages built into HTTP servers, such as the [Nginx Source Index](https://nginx.org/download/) and [Redis Releases](https://download.redis.io/releases/).
 
 This driver essentially scrapes page information directly and requires manually specifying XPaths, making it suitable for scraping pages that are not directory index pages as well.
 
@@ -19,7 +19,7 @@ This driver essentially scrapes page information directly and requires manually 
 
 ::: zh-CN
 
-Autoindex 驱动用于挂载 HTTP 服务器内置的目录索引页，如[Nginx Source Index](https://nginx.org/download/)、[Redis Releases](https://download.redis.io/releases/)。
+AutoIndex 驱动用于挂载 HTTP 服务器内置的目录索引页，如[Nginx Source Index](https://nginx.org/download/)、[Redis Releases](https://download.redis.io/releases/)。
 
 该驱动本质上是直接爬取页面信息，需要手动填写 XPath，因此也可以用来爬取那些不是目录索引页的页面。
 
@@ -37,7 +37,7 @@ Autoindex 驱动用于挂载 HTTP 服务器内置的目录索引页，如[Nginx 
 - **Modification time XPath:** Within the context of each node matched by **Entry XPath**, this XPath expression is used to extract the file modification time. The result can be a node, node-set, or string. If the result is a node or node-set, the innerText of the first node will be used as the modification time string. Optional. If left blank, no node is matched, or the date format is unrecognizable, the current time will be used by default.
 - **File size XPath:** Within the context of each node matched by **Entry XPath**, this XPath expression is used to extract the file size. The result can be a node, node-set, number, or string. If the result is a node or node-set, the innerText of the first node will be parsed as the file size. Optional. If left blank, no node is matched, or the content cannot be recognized as a valid size, the driver will return a file size of 0.
 - **Ignore filenames:** Used to filter out entries that should not be crawled (e.g., list headers, parent directory links). Enter the filenames to ignore (without the trailing `/`).
-- **Modification date format:** Enter a time string matching the format displayed on the page, corresponding to the reference timestamp `Mon Jan 2 15:04:05 -0700 MST 2006`.
+- **Modification date format:** Enter a time string matching the format displayed on the page (refer to the Go time template: `Mon Jan 2 15:04:05 -0700 MST 2006`, see also: [Go Time Formatting Documentation](https://golang.org/pkg/time/#pkg-constants)).
 
 :::
 ::: zh-CN
@@ -48,7 +48,7 @@ Autoindex 驱动用于挂载 HTTP 服务器内置的目录索引页，如[Nginx 
 - **修改时间 XPath：** 在**条目 XPath** 所匹配的每个节点上下文中，用于提取文件修改时间的 XPath 表达式。表达式结果可以是节点、节点集或字符串。若结果为节点或节点集，系统将取首个节点的 innerText 作为修改时间字符串。选填，若未填写、未匹配到节点或日期格式无法识别，则默认使用当前时间。
 - **文件大小 XPath：** 在**条目 XPath** 所匹配的每个节点上下文中，用于提取文件大小的 XPath 表达式。表达式结果可以是节点、节点集、数字或字符串。若结果为节点或节点集，系统将取首个节点的 innerText 并尝试解析为文件大小。选填，若未填写、未匹配到节点或内容无法识别为有效大小，则驱动返回的文件大小为 0。
 - **忽略文件名：** 用于过滤不需要抓取的条目（例如列表表头、返回上级目录的链接等）。填写希望忽略的文件名（无需包含结尾的`/`）。
-- **修改日期格式：** 填写`Mon Jan 2 15:04:05 -0700 MST 2006`这个时间点，与页面中实际显示的时间格式一致的时间字符串。
+- **修改日期格式：** 填写与页面显示格式对应的时间字符串（参考 Go 时间模板：`Mon Jan 2 15:04:05 -0700 MST 2006`，另请参阅： [Go时间格式化文档](https://golang.org/pkg/time/#pkg-constants)）
 
 :::
 
@@ -57,10 +57,10 @@ Autoindex 驱动用于挂载 HTTP 服务器内置的目录索引页，如[Nginx 
 ## 参考配置 { lang="zh-CN" }
 
 ::: en
-The following configurations can be used to mount the autoindex pages of some HTTP servers. Since the style of autoindex pages may change with updates to the HTTP server version, the configurations provided below are for reference only and are not guaranteed to work across all versions. You are welcome to supplement available configurations for other HTTP servers in the comments.
+The following configurations can be used to mount the auto-index pages of some HTTP servers. Since the style of auto-index pages may change with updates to the HTTP server version, the configurations provided below are for reference only and are not guaranteed to work across all versions. You are welcome to supplement available configurations for other HTTP servers in the comments.
 :::
 ::: zh-CN
-以下为挂载部分 HTTP 服务器 autoindex 页的可用配置。由于 autoindex 页的样式可能随 HTTP 服务器的版本更新而发生改变，以下配置仅供参考，不保证在所有版本中都可以使用。欢迎在评论中补充其它 HTTP 服务器的可用配置。
+以下为挂载部分 HTTP 服务器 auto-index 页的可用配置。由于 auto-index 页的样式可能随 HTTP 服务器的版本更新而发生改变，以下配置仅供参考，不保证在所有版本中都可以使用。欢迎在评论中补充其它 HTTP 服务器的可用配置。
 :::
 
 #### Nginx (Tested on 1.29.0) { lang="en" }
