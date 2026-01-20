@@ -35,7 +35,7 @@ Set Aria2 uri and Aria2 for offline download.
 The Aria2 RPC address used for offline downloading. The default value is: `http://localhost:6800/jsonrpc`.
 :::
 ::: zh-CN
-用于离线下载的 Aria2 RPC 地址。预设值为：`http://localhost:6800/jsonrpc`。
+用于离线下载的 Aria2 RPC 地址。默认值为：`http://localhost:6800/jsonrpc`。
 :::
 
 ### Aria2 秘钥 { lang="zh-CN" }
@@ -46,7 +46,7 @@ The Aria2 RPC address used for offline downloading. The default value is: `http:
 The Aria2 RPC secret key used for offline downloading. The default value is empty.
 :::
 ::: zh-CN
-用于离线下载的 Aria2 RPC 秘钥。预设值为空。
+用于离线下载的 Aria2 RPC 秘钥。默认值为空。
 :::
 
 ## qBittorrent
