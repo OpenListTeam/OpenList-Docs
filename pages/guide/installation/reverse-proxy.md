@@ -26,9 +26,9 @@ OpenList listens to port 5244 by default. If modified, please also update the po
 
 If you are using **reverse proxy**, please ensure that the correct `Host` header is passed, as OpenList will generate the URL based on this information.
 
-If the `Host` header is unavailable, you can use the higher-priority `X-Forwarded-Host` header (non-standard header). If the issue persists, configure the [site_url](../../configuration/configuration.md#site_url).
+If the `Host` header is unavailable, you can use the higher-priority `X-Forwarded-Host` header (non-standard header). If the issue persists, configure the [site_url](../../configuration/configuration.md#site-url).
 
-If you want to use a **sub folder**, you should configure the [site_url](../../configuration/configuration.md#site_url). Refer to [reverse proxy with sub folder](../../faq/howto.md#how-to-reverse-proxy-with-sub-directory).
+If you want to use a **sub folder**, you should configure the [site_url](../../configuration/configuration.md#site-url). Refer to [reverse proxy with sub folder](../../faq/howto.md#how-to-reverse-proxy-with-sub-directory).
 
 :::warning
 If you need to proxy to a non-standard port, make sure to pass the `domain:port` information through the `Host` or `X-Forwarded-Host` header, otherwise the port will be lost in URLs!
@@ -40,9 +40,9 @@ OpenList 默认监听 5244 端口。如有修改，请一并修改下列配置�
 
 如果您使用**反向代理**，请确保传递正确的 `Host` 、 `X-Forwarded-Proto` 头部信息，OpenList 将根据该信息生成 URL 地址。
 
-如果 `Host` 头不可用，您可以使用优先级更高的 `X-Forwarded-Host`（非标准头部）。如果问题仍然存在，请通过配置 [site_url](../../configuration/configuration.md#site_url) 进行设置。
+如果 `Host` 头不可用，您可以使用优先级更高的 `X-Forwarded-Host`（非标准头部）。如果问题仍然存在，请通过配置 [site_url](../../configuration/configuration.md#site-url) 进行设置。
 
-如果你想使用**子目录**，请通过配置 [site_url](../../configuration/configuration.md#site_url) 进行设置。参考 [如何对子目录进行反向代理](../../faq/howto.md#如何对子目录进行反向代理)。
+如果你想使用**子目录**，请通过配置 [site_url](../../configuration/configuration.md#site-url) 进行设置。参考 [如何对子目录进行反向代理](../../faq/howto.md#如何对子目录进行反向代理)。
 
 :::warning
 如果需要**反向代理**到**非标准端口**，请务必通过 `Host` 或 `X-Forwarded-Host` 标头传递实际访问的 `域名:端口` 信息，否则会导致获取到的链接丢失端口！
