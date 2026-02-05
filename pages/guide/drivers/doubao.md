@@ -11,6 +11,8 @@ categories:
   - drivers
 ---
 
+<!--@include: @/snippets/reverse-tip.md-->
+
 ::: en
 Mount [Doubao Drive](https://www.doubao.com/drive/) cloud storage.
 
