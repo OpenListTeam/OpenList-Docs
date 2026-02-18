@@ -9,10 +9,10 @@ top: 80
 ---
 
 ::: en
-The configuration in the meta information is valid for `All Roles`, if you want to have the corresponding permissions for users, please go to `User`-->`User Account` to modify the relative permissions
+Most settings in meta information apply to `All Roles`. The `Read Users` and `Write Users` fields are exceptions — they allow you to restrict access to specific users.
 :::
 ::: zh-CN
-元信息内的配置对`所有角色`生效，如果想让用户有相应的权限请前往 `用户`-->`用户账号` 进行修改相应的权限
+元信息中的大多数设置对`所有角色`生效。`可读用户`和`可写用户`字段是例外——它们允许你将访问权限限制到特定用户。
 :::
 
 ## Path { lang="en" }
@@ -62,15 +62,53 @@ The correct check example is shown below. If you configure the options correctly
 
 :::
 
-## Write { lang="en" }
+## Read Users { lang="en" }
 
-## 写入 { lang="zh-CN" }
+## 可读用户 { lang="zh-CN" }
 
 ::: en
-Allow user to make directory, new file and upload files.
+A whitelist of users allowed to read this path. If the list is non-empty, only the selected users can access the path; all other users will be denied access.
+
+- Users are selected by name in the management interface
+- Check `Apply to sub folder` to also restrict sub-directories
+
 :::
 ::: zh-CN
-允许用户新建目录、新文件和上传文件。
+允许读取此路径的用户白名单。如果列表非空，则只有选中的用户才能访问该路径，其他所有用户将被拒绝访问。
+
+- 在管理界面中通过用户名选择用户
+- 勾选`应用到子文件夹`可同时限制子目录
+
+:::
+
+## Write Users { lang="en" }
+
+## 可写用户 { lang="zh-CN" }
+
+::: en
+A whitelist of users allowed to write to this path. If the list is non-empty, only the selected users can perform write operations (upload, create, rename, move, delete) on this path.
+
+- Users are selected by name in the management interface
+- Check `Apply to sub folder` to also restrict sub-directories
+
+:::
+::: zh-CN
+允许写入此路径的用户白名单。如果列表非空，则只有选中的用户才能对该路径执行写入操作（上传、新建、重命名、移动、删除）。
+
+- 在管理界面中通过用户名选择用户
+- 勾选`应用到子文件夹`可同时限制子目录
+
+:::
+
+## Write Content Bypass { lang="en" }
+
+## 开放写入 { lang="zh-CN" }
+
+::: en
+Allow any user to make directory, create new file and upload files, bypassing user-level write permission checks.
+:::
+::: zh-CN
+允许任何用户新建目录、新文件和上传文件，绕过用户级别的写入权限检查。
 :::
 
 ## Hide { lang="en" }
