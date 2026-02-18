@@ -1,3 +1,11 @@
+if (typeof g === 'undefined' || !globalThis.localStorage) {
+  ;(globalThis as any).localStorage = {
+    getItem: () => null,
+    setItem: () => {},
+    removeItem: () => {},
+    clear: () => {},
+  }
+}
 import type { PressTheme } from 'valaxy-theme-press'
 import process from 'node:process'
 import { $t, defineValaxyConfig } from 'valaxy'
