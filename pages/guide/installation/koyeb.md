@@ -1,17 +1,12 @@
 ---
-# This is the title of the article
-# title: One-click Script
 title:
   en: Koyeb
   zh-CN: 使用 Koyeb
 icon: iconfont icon-module
-# This control sidebar order
 top: 42
-# A page can have multiple categories
 categories:
   - guide
   - installation
-# A page can have multiple tags
 ---
 
 ::: zh-CN
@@ -20,7 +15,8 @@ categories:
 
 - 1个WebService (500MB内存，地区可选德国🇩🇪或美国🇺🇸)
 - ~~1个Postgres~~(Koyeb的免费数据库每月只提供5小时额度，本教程将使用[Supabase免费方案](https://supabase.com/pricing)代替)
-  :::
+
+:::
 
 ::: en
 ::: tip
@@ -28,7 +24,8 @@ The [Koyeb free plan](https://www.koyeb.com/pricing#features) includes:
 
 - 1 Web Service (500 MB RAM, regions: Germany 🇩🇪 or United States 🇺🇸)
 - ~~1 Postgres~~ (Koyeb's free database only provides 5 hours per month; this guide uses the [Supabase free plan](https://supabase.com/pricing) instead)
-  :::
+
+:::
 
 ## Deployment Overview { lang="en" }
 
