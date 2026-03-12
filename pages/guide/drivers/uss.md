@@ -29,7 +29,7 @@ Solutions:
 
 - Method 1: In the Upyun console, under **"Cache Control"**, change **"Parameter Follow"** to **"Parameter Not Follow"**.
 
-- Method 2: Set the WebDAV policy of OpenList to **"Local Proxy"**. This mode avoids appending interference parameters but will consume the server's transit bandwidth.
+- Method 2: Set the WebDAV policy of OpenList to **"Local Proxy"**. This mode avoids appending interfering parameters but will increase the server's data transfer.
 :::
 
 ::: zh-CN
