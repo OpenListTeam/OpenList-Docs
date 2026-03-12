@@ -22,6 +22,29 @@ star: true
 ---
 
 ::: en
+::: tip
+When using the **302 redirect** strategy, the `_upd` and `_upt` parameters are automatically appended to the URL. If **"Parameter Follow"** is enabled in the Upyun console, the CDN nodes will treat these parameters as part of the file path, resulting in a **404 Not Found** error for existing files.
+
+Solutions:
+
+- Method 1: In the Upyun console, under **"Cache Control"**, change **"Parameter Follow"** to **"Parameter Not Follow"**.
+
+- Method 2: Set the WebDAV policy of OpenList to **"Local Proxy"**. This mode avoids appending interference parameters but will consume the server's transit bandwidth.
+:::
+
+::: zh-CN
+::: tip
+在使用 **302 重定向** 策略时，会自动在 URL 后拼接 `_upd` 与 `_upt` 参数，若又拍云后台开启了 **“参数跟随”**，CDN 节点会将这些参数视为文件路径的一部分进行匹配，从而导致原本存在的文件返回 **404 Not Found**。
+
+解决办法：
+
+- 方法1：将又拍云控制台 **“缓存控制”** 中的 **“参数跟随”** 修改为 **“参数不跟随”**。
+
+- 方法2：将 OpenList 的 WebDAV 策略设置为 **“本地代理”**，此模式下不会拼接干扰参数，但会消耗服务器中转带宽。
+
+:::
+
+::: en
 UPYUN Storage Service，refer to as USS，[**Yupyun USS Official Website**](https://console.upyun.com/services/file/)
 :::
 ::: zh-CN
