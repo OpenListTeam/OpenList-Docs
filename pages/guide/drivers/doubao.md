@@ -14,28 +14,45 @@ categories:
 <!--@include: @/snippets/reverse-tip.md-->
 
 ::: en
-Mount [Doubao Drive](https://www.doubao.com/drive/) cloud storage.
+Mount [Doubao Drive](https://www.doubao.com/chat/drive/) cloud storage.
 
 :::
 ::: zh-CN
-挂载 [豆包云盘](https://www.doubao.com/drive/) 云存储。
+挂载 [豆包云盘](https://www.doubao.com/chat/drive/) 云存储。
+
+:::
+
+::: en
+::: danger Security Risk
+
+Do not use 302 if the storage is public accessible.
+Otherwise, the download link may leak sensitive information such as access token or signature.
+Others may use the leaked link to **access all your files**.
+
+:::
+::: zh-CN
+::: danger 安全风险
+
+若存储可公开访问，则请勿使用302重定向。
+否则，下载链接可能泄露访问令牌、签名等敏感信息。
+他人可利用泄露的链接**访问你所有的文件**。
 
 :::
 
 ## Root folder ID { lang="en" }
 
-::: en
-The root folder ID needs to be obtained manually. Open browser developer tools, visit [Doubao Drive](https://www.doubao.com/drive/), log in to your account, open the `Network` tab, search for `homepage`, switch to the `Preview` tab, where `root_id` is the root folder ID.
-![Doubao Drive Session Token](/img/drivers/doubao/doubao-root-folder-path.png)
-
-:::
-
 ## 根文件夹ID { lang="zh-CN" }
 
-::: zh-CN
-根文件夹ID需要手动获取，打开浏览器开发者工具，访问 [豆包云盘](https://www.doubao.com/drive/)，登陆你的账户，打开`network(网络)`栏，搜索 `homepage`，切换到 `Preview(预览)`栏，其中root_id为根文件夹ID。
-![Doubao Drive Root Folder ID](/img/drivers/doubao/doubao-root-folder-path.png)
+::: en
+The root folder ID is the parameter value displayed in the address bar when accessing Doubao Drive via a web page. For example, after accessing [Doubao Drive](https://www.doubao.com/chat/drive/), the address bar shows `https://www.doubao.com/chat/drive/AAAAAAAAAAAAAAAAAAAAAAAAAA?tab=myUpload`, where `AAAAAAAAAAAAAAAAAAAAAAAAAA` is the root folder ID.
 
+![Doubao Drive Root Folder ID](/img/drivers/doubao/doubao-root-folder-id.png)
+:::
+
+::: zh-CN
+根文件夹ID即为网页访问豆包云盘时地址栏中的参数值，例如访问[豆包云盘](https://www.doubao.com/chat/drive/)后，地址栏显示为`https://www.doubao.com/chat/drive/AAAAAAAAAAAAAAAAAAAAAAAAAA?tab=myUpload`，其中`AAAAAAAAAAAAAAAAAAAAAAAAAA`即为根文件夹ID。
+
+![豆包云盘根文件夹ID](/img/drivers/doubao/doubao-root-folder-id.png)
 :::
 
 ## Cookie { lang="zh-CN" }
@@ -43,16 +60,30 @@ The root folder ID needs to be obtained manually. Open browser developer tools, 
 ## Cookie { lang="en" }
 
 ::: en
-Web Cookie
+Web cookie; used to refresh token and extract Authorization/DPoP tokens.
 
-Open browser developer tools, visit [Doubao Drive](https://www.doubao.com/drive/), log in to your account, check the `Network` tab, search for `homepage` and open it, find `Cookie` in the `Header`, copy the `sid_guard` value and fill it in (note: please copy all the way to the end including +GMT).
+Open browser developer tools, visit [Doubao Drive](https://www.doubao.com/drive/), log in to your account, check the `Network` tab, search for `biz_auth` and open it, find `Cookie` in the `Header`, copy the complete value and fill it in.
 
 ![Doubao Drive Cookie](/img/drivers/doubao/doubao-cookie.png)
+
+OpenList will automatically extract other attributes from the Cookie. Please ensure that the Cookie contains the following key-value pairs:
+
+- `LARK_SUITE_DPOP`
+- `LARK_SUITE_ACCESS_TOKEN`
+- `feishu_dpop_keypair` (used for key generation, optional)
+
 :::
 ::: zh-CN
-网页Cookie
+网页 Cookie。用于刷新 Token 和提取 Authorization/DPoP Token。
 
-打开浏览器开发者工具，访问 [豆包云盘](https://www.doubao.com/drive/)，登录账号后，查看`Network`（网络）Tab，搜索`homepage`并打开`homepage`，在`Header`（标头）中找到`Cookie`，复制其`sid_guard`值填入即可（注意，请一直复制到+GMT结束）。
+打开浏览器开发者工具，访问 [豆包云盘](https://www.doubao.com/drive/)，登录账号后，查看`Network`（网络）Tab，搜索 `biz_auth` 并打开它，在 `Header`（标头）中找到 `Cookie`，复制其完整值填入即可。
 
-![Doubao Drive Cookie](/img/drivers/doubao/doubao-cookie.png)
+![豆包云盘Cookie](/img/drivers/doubao/doubao-cookie.png)
+
+OpenList 会自动从 Cookie 中提取其他属性。请确保 Cookie 中包含以下键值对：
+
+- `LARK_SUITE_DPOP`
+- `LARK_SUITE_ACCESS_TOKEN`
+- `feishu_dpop_keypair` （用于密钥生成，可选）
+
 :::
