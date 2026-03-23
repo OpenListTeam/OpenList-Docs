@@ -74,7 +74,7 @@ OpenList will automatically extract other attributes from the Cookie. Please ens
 
 :::
 ::: zh-CN
-网页 Cookie。用于刷新 Token 和提取 Authorization/DPoP Token。
+必填，网页 Cookie。用于刷新 Token 和提取 Authorization/DPoP Token。
 
 打开浏览器开发者工具，访问 [豆包云盘](https://www.doubao.com/drive/)，登录账号后，查看`Network`（网络）Tab，搜索 `biz_auth` 并打开它，在 `Header`（标头）中找到 `Cookie`，复制其完整值填入即可。
 
@@ -86,4 +86,52 @@ OpenList 会自动从 Cookie 中提取其他属性。请确保 Cookie 中包含�
 - `LARK_SUITE_ACCESS_TOKEN`
 - `feishu_dpop_keypair` （用于密钥生成，可选）
 
+:::
+
+## App ID { lang="en" }
+
+## App ID { lang="zh-CN" }
+
+::: en
+必填，Doubao's App ID. The App ID may vary for different clients, please refer to the actual value.
+:::
+
+::: zh-CN
+必填，豆包的App ID。不同客户端的App ID可能不相同，请以实际为准。
+:::
+
+## DPoP Key Secret, Auth Client ID, Auth Scope, Auth SDK Source, Auth SDK Version { lang="en" }
+
+## DPoP 密钥、认证客户端ID、认证区域、认证SDK来源、认证SDK版本 { lang="zh-CN" }
+
+::: en
+Optional, for Token refresh. Please obtain it yourself, and refer to the actual value.
+:::
+
+::: zh-CN
+可选，用于刷新 Token。请自行获取，以实际为准。
+:::
+
+## Share Link { lang="en" }
+
+## 分享链接 { lang="zh-CN" }
+
+::: en
+Whether to use share link for download. If enabled, OpenList will create share and request with anonymous user's token to create download link. This can reduce authorization leak.
+:::
+
+::: zh-CN
+是否使用分享链接下载。启用后，OpenList 将创建分享然后使用匿名用户Token请求创建下载链接以减少授权泄露。
+:::
+
+## Ignore JWT Check { lang="en" }
+
+## 忽略 JWT 检查 { lang="zh-CN" }
+
+::: en
+Whether to ignore JWT check to prevent time issue
+:::
+
+::: zh-CN
+是否忽略忽略 JWT 检查以避免时间问题。
 :::
