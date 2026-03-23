@@ -118,10 +118,14 @@ Optional, for Token refresh. Please obtain it yourself, and refer to the actual 
 
 ::: en
 Whether to use share link for download. If enabled, OpenList will create share and request with anonymous user's token to create download link. This can reduce authorization leak.
+
+Please ensure you have filled all authentication options above before enabling this function.
 :::
 
 ::: zh-CN
 是否使用分享链接下载。启用后，OpenList 将创建分享然后使用匿名用户Token请求创建下载链接以减少授权泄露。
+
+请确保您在启用此功能前已经填写了上面的所有认证参数。
 :::
 
 ## Ignore JWT Check { lang="en" }
