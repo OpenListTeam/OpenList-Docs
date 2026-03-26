@@ -1,12 +1,14 @@
 ---
 title:
-	en: Emby
-	zh-CN: Emby
+  en: Emby
+  zh-CN: Emby
 icon: iconfont icon-state
+# This control sidebar order
+top: 493
 # A page can have multiple categories
 categories:
-	- guide
-	- drivers
+  - guide
+  - drivers
 ---
 
 ::: en
@@ -122,9 +124,13 @@ Do not mix both methods at the same time.
 - URL: `http://127.0.0.1:8086`
 - LinkMethod: `stream`
 - Authentication: choose one method only
-  :::
-  ::: zh-CN
+
+:::
+
+::: zh-CN
+
 - URL：`http://127.0.0.1:8086`
 - LinkMethod：`stream`
 - 认证方式：仅选择其中一种
-  :::
+
+:::
