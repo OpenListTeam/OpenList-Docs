@@ -137,5 +137,5 @@ Whether to ignore JWT check to prevent time issue
 :::
 
 ::: zh-CN
-是否忽略忽略 JWT 检查以避免时间问题。
+是否忽略 JWT 检查以避免时间问题。
 :::
