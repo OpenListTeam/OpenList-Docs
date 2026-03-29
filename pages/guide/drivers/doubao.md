@@ -60,7 +60,7 @@ The root folder ID is the parameter value displayed in the address bar when acce
 ## Cookie { lang="en" }
 
 ::: en
-Web cookie; used to refresh token and extract Authorization/DPoP tokens.
+Required. Web cookie. Used to refresh token and extract Authorization/DPoP tokens.
 
 Open browser developer tools, visit [Doubao Drive](https://www.doubao.com/drive/), log in to your account, check the `Network` tab, search for `biz_auth` and open it, find `Cookie` in the `Header`, copy the complete value and fill it in.
 
