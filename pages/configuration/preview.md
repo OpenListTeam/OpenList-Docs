@@ -348,3 +348,18 @@ IMAGE
 
 示例: `http://yourdomain/test-file.ahk?type=text`
 :::
+
+## Specify preview { lang="en" }
+
+## 指定预览 { lang="zh-CN" }
+
+::: en
+We can specify the preview through the `preview` query parameter. The parameter will be generated when you select a preview in the file page.
+
+Example: `http://yourdomain/test-file.ahk?preview=download`
+:::
+::: zh-CN
+可以通过 `preview` 请求参数来指定预览的 `key`。此参数会在文件页面选择预览时生成。
+
+示例: `http://yourdomain/test-file.ahk?preview=download`
+:::
