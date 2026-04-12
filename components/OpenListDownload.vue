@@ -2,16 +2,18 @@
   <p>{{ t('download.version') }}:</p>
   <div class="filter-buttons">
     <button :class="{ active: selectedVersion === 'latest' }" @click="selectedVersion = 'latest'">
-      Latest
+      {{ t('download.latest') }}
     </button>
     <button :class="{ active: selectedVersion === 'beta' }" @click="selectedVersion = 'beta'">
-      Beta
+      {{ t('download.beta') }}
     </button>
   </div>
 
   <p>{{ t('download.os') }}:</p>
   <div class="filter-buttons">
-    <button :class="{ active: selectedOS === '' }" @click="selectedOS = ''">All</button>
+    <button :class="{ active: selectedOS === '' }" @click="selectedOS = ''">
+      {{ t('download.all') }}
+    </button>
     <button
       v-for="os in availableOS"
       :key="os"
@@ -24,7 +26,9 @@
 
   <p>{{ t('download.cpu') }}:</p>
   <div class="filter-buttons">
-    <button :class="{ active: selectedCPU === '' }" @click="selectedCPU = ''">All CPU</button>
+    <button :class="{ active: selectedCPU === '' }" @click="selectedCPU = ''">
+      {{ t('download.all') }}
+    </button>
     <button
       v-for="cpu in availableCPU"
       :key="cpu"
@@ -32,6 +36,19 @@
       @click="selectedCPU = cpu"
     >
       {{ cpu }}
+    </button>
+  </div>
+
+  <p v-if="locale == 'zh-CN'">{{ t('download.down_source') }}:</p>
+  <div class="filter-buttons">
+    <button
+      v-if="locale == 'zh-CN'"
+      v-for="source in sources"
+      :key="source.name"
+      :class="{ active: selectedDownSource.name === source.name }"
+      @click="selectedDownSource = source"
+    >
+      {{ source.name }}
     </button>
   </div>
 
@@ -51,21 +68,12 @@
       </div>
       <div class="downloads">
         <a
-          v-if="locale === 'zh-CN'"
-          :href="getGhProxyUrl(download.filename)"
+          :href="getDownloadUrl(download.filename)"
           class="download-button"
           :download="download.filename"
           target="_blank"
         >
-          {{ t('download.gh_proxy') }}
-        </a>
-        <a
-          :href="getDirectUrl(download.filename)"
-          class="download-button"
-          :download="download.filename"
-          target="_blank"
-        >
-          {{ t('download.download') }}
+          {{ t('download.download') }} ({{ selectedDownSource.name }})
         </a>
       </div>
     </div>
@@ -83,12 +91,38 @@
   import releases from './openlist_releases_db.json'
 
   type VersionType = 'latest' | 'beta'
+  type Source = {
+    name: string
+    prefix: string
+  }
+
+  const sources: Source[] = [
+    { name: 'GitHub', prefix: 'https://github.com/OpenListTeam/OpenList' },
+    { name: 'ghfast.top', prefix: 'https://ghfast.top/https://github.com/OpenListTeam/OpenList' },
+    {
+      name: 'v6.gh-proxy.org',
+      prefix: 'https://v6.gh-proxy.org/https://github.com/OpenListTeam/OpenList',
+    },
+    {
+      name: 'hk.gh-proxy.org',
+      prefix: 'https://hk.gh-proxy.org/https://github.com/OpenListTeam/OpenList',
+    },
+    {
+      name: 'cdn.gh-proxy.org',
+      prefix: 'https://cdn.gh-proxy.org/https://github.com/OpenListTeam/OpenList',
+    },
+    {
+      name: 'edgeone.gh-proxy.org',
+      prefix: 'https://edgeone.gh-proxy.org/https://github.com/OpenListTeam/OpenList',
+    },
+  ]
 
   const { t, locale } = useI18n()
 
   const selectedVersion = ref<VersionType>('latest')
   const selectedOS = ref<string>('')
   const selectedCPU = ref<string>('')
+  const selectedDownSource = ref<Source>(sources[0])
 
   const availableOS = computed((): string[] => {
     const osSet = new Set(releases.map(d => d.os).filter(os => os))
@@ -125,16 +159,10 @@
     return filtered
   })
 
-  const getDirectUrl = (filename: string): string => {
+  const getDownloadUrl = (filename: string): string => {
     const basePath =
       selectedVersion.value === 'latest' ? 'releases/latest/download' : 'releases/download/beta'
-    return `https://github.com/OpenListTeam/OpenList/${basePath}/${filename}`
-  }
-
-  const getGhProxyUrl = (filename: string): string => {
-    const basePath =
-      selectedVersion.value === 'latest' ? 'releases/latest/download' : 'releases/download/beta'
-    return `https://ghproxy.cn/https://github.com/OpenListTeam/OpenList/${basePath}/${filename}`
+    return `${selectedDownSource.value.prefix}/${basePath}/${filename}`
   }
 </script>
 

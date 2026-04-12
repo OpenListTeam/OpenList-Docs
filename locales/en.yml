@@ -62,8 +62,12 @@ post:
 
 # ! components/OpenListDownload.vue
 download:
+  all: All
   os: Operating System
   cpu: CPU Architecture
+  down_source: Download Source
   download: Download
   gh_proxy: GhProxy
   version: Version
+  beta: Beta
+  latest: Latest

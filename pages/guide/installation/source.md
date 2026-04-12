@@ -27,10 +27,10 @@ This step is only for users who need to modify the source code by themselves. If
 ## 环境准备 { lang="zh-CN" }
 
 ::: en
-First, you need to have an environment of `git`, `nodejs>=22`, `pnpm`, `golang>=1.24`, `gcc`
+First, you need to have an environment of `git`, `nodejs>=24`, `pnpm`, `golang>=1.24`, `gcc`
 :::
 ::: zh-CN
-首先，你需要一个有`git`，`nodejs>=22`，`pnpm`，`golang>=1.24`，`gcc`的环境
+首先，你需要一个有`git`，`nodejs>=24`，`pnpm`，`golang>=1.24`，`gcc`的环境
 :::
 
 On **Windows**, use Scoop:
@@ -57,7 +57,7 @@ xcode-select --install
 
 # Install nodejs and golang use Homebrew for newer version
 curl -o- https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
-brew install node@22 go
+brew install node@24 go
 corepack enable pnpm
 ```
 

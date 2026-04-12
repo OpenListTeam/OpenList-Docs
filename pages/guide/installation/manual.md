@@ -276,31 +276,27 @@ openlist server
 
 #### WinGet
 
-[![winget package](https://repology.org/badge/version-for-repo/winget/openlist.svg)](https://repology.org/project/openlist/versions)
-
 ```powershell
 winget install OpenListTeam.OpenList
 openlist server
 ```
 
-:::
-
-### MacOS
+### macOS
 
 ::: en
 OpenList is available via Homebrew on macOS.
 :::
 ::: zh-CN
-MacOS 可以从 Homebrew 安装。
+macOS 可以从 Homebrew 安装。
 :::
 
 #### Homebrew
 
+[![Homebrew package](https://repology.org/badge/version-for-repo/homebrew/openlist.svg)](https://repology.org/project/openlist/versions)
+
 ```bash
 $ brew install openlist
 ```
-
-:::
 
 ### Android
 

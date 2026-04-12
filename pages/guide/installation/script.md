@@ -41,9 +41,21 @@ Requirements:
 
 ### 安装 { lang="zh-CN" }
 
-```bash
+::: code-group
+
+```bash [🌍Global]
 curl -fsSL https://res.oplist.org/script/v4.sh > install-openlist-v4.sh && sudo bash install-openlist-v4.sh
 ```
+
+```bash [🇨🇳CN]
+curl -fsSL https://res.oplist.org.cn/script/v4.sh > install-openlist-v4.sh && sudo bash install-openlist-v4.sh
+```
+
+```bash [GitHub]
+curl -fsSL https://raw.githubusercontent.com/OpenListTeam/OpenList-Resource/refs/heads/main/script/v4.sh > install-openlist-v4.sh && sudo bash install-openlist-v4.sh
+```
+
+:::
 
 ```bash
 欢迎使用 OpenList 管理脚本

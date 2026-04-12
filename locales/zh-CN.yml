@@ -62,8 +62,12 @@ post:
 
 # ! components/OpenListDownload.vue
 download:
+  all: 全部
   os: 操作系统
   cpu: CPU 架构
   download: 下载
+  down_source: 下载来源
   gh_proxy: 加速下载
   version: 版本
+  beta: 测试版
+  latest: 最新版

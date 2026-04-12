@@ -11,16 +11,6 @@ categories:
   - installation
 ---
 
-::: en
-::: warning
-It is highly recommended to deploy OpenList in an isolated environment using Docker. Otherwise, without security measures like SELinux or AppArmor, if your password is exposed, and hackers may gain access to all the files on your server.
-:::
-
-::: zh-CN
-::: warning
-强烈建议使用 Docker 在隔离环境中部署 OpenList。否则，如果没有正确配置像 SELinux 或 AppArmor 这样的安全措施，假如您的密码暴露，黑客将可以访问您服务器上的所有文件。
-:::
-
 ::: zh-CN
 ::: warning
 
