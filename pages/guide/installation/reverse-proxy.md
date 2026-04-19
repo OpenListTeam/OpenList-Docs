@@ -297,8 +297,6 @@ example.com {
 
 ::: zh-CN
 
-![bt_reverse_proxy](/img/guide/reverse_proxy/bt_reverse_proxy.png)
-
 > 如需申请`SSL`证书，可先在`SSL`选项中申请证书，然后在设置反向代理。或者设置反向代理之后，关闭反向代理功能，申请`SSL`证书后再次开启代理。
 
 :::
