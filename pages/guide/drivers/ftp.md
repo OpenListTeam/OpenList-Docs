@@ -64,6 +64,18 @@ root folder , default `/`, same as local storage.
 根文件夹，默认 `/`，同本地存储。
 :::
 
+## Enter directory before listing { lang="en" }
+
+## 列出前先进入目录 { lang="zh-CN" }
+
+::: en
+Whether to change into the target directory before listing files. Some FTP servers do not support listing files with a path argument directly. Enable this option to first `cd` into the directory and then `ls`, which can resolve such compatibility issues. Default: `false`.
+:::
+
+::: zh-CN
+是否在列出文件前先进入目标目录。部分 FTP 服务器不支持直接带路径参数列出文件，开启此选项后会先 `cd` 进入目录再 `ls`，可以解决此类兼容性问题。默认: `false`。
+:::
+
 ### The default download method used { lang="en" }
 
 ### 默认使用的下载方式 { lang="zh-CN" }
