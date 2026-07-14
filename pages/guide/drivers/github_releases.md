@@ -345,16 +345,23 @@ Use GitHub proxy services to accelerate downloads in regions with limited GitHub
 Replace the GitHub domain with a proxy service URL:
 
 ```text
-https://gh-proxy.com/github.com
+https://gh-proxy.com/https://github.com
 ```
 
 **Available Proxy Services:**
 
-| Service  | URL                               |
-| -------- | --------------------------------- |
-| GH-Proxy | `https://gh-proxy.com/github.com` |
-| GHFast   | `https://ghfast.top/github.com`   |
-| GHProxy  | `https://ghproxy.net/github.com`  |
+| Service     | URL                                       |
+| ----------- | ----------------------------------------- |
+| GH-Proxy    | `https://gh-proxy.com/https://github.com` |
+| GHProxy.net | `https://ghproxy.net/https://github.com`  |
+| GHFast      | `https://ghfast.top/https://github.com`   |
+
+Example:
+
+```
+Before: https://github.com/owner/repo/releases/download/v1.0/file.zip
+After:  https://ghproxy.net/https://github.com/owner/repo/releases/download/v1.0/file.zip
+```
 
 ::: warning
 Proxy services are third-party and may have varying availability and performance.
@@ -367,16 +374,23 @@ Proxy services are third-party and may have varying availability and performance
 将 GitHub 域名替换为代理服务 URL：
 
 ```text
-https://gh-proxy.com/github.com
+https://gh-proxy.com/https://github.com
 ```
 
 **可用代理服务：**
 
-| 服务     | URL                               |
-| -------- | --------------------------------- |
-| GH-Proxy | `https://gh-proxy.com/github.com` |
-| GHFast   | `https://ghfast.top/github.com`   |
-| GHProxy  | `https://ghproxy.net/github.com`  |
+| 服务        | URL                                       |
+| ----------- | ----------------------------------------- |
+| GH-Proxy    | `https://gh-proxy.com/https://github.com` |
+| GHProxy.net | `https://ghproxy.net/https://github.com`  |
+| GHFast      | `https://ghfast.top/https://github.com`   |
+
+示例：
+
+```
+转换前：https://github.com/owner/repo/releases/download/v1.0/file.zip
+转换后：https://ghproxy.net/https://github.com/owner/repo/releases/download/v1.0/file.zip
+```
 
 ::: warning
 代理服务为第三方提供，可用性和性能可能存在差异。
