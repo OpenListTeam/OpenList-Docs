@@ -228,6 +228,52 @@ openlist/
 启用后，所有可用的发布版本都会显示在单独的目录中。
 :::
 
+### Pagination Control (Show All Versions) { lang="en" }
+
+### 分页控制（显示所有版本） { lang="zh-CN" }
+
+::: en
+When "Show All Versions" is enabled, you can control the number of releases fetched via pagination:
+
+- **`per_page`**: Number of releases per page (default: `30`, max: `100`)
+- **`max_page`**: Maximum number of pages to fetch (`0` means unlimited)
+
+These settings help you avoid hitting API rate limits when repositories have a large number of releases.
+
+**Example:**
+
+To fetch at most 2 pages with 50 releases per page (up to 100 releases total):
+
+```text
+per_page = 50
+max_page = 2
+```
+
+::: tip
+A single unauthenticated request counts as 1 toward the 60 requests/hour limit. With `per_page=100` and `max_page=1`, fetching releases for a single repository costs only 1 request.
+:::
+
+::: zh-CN
+当启用"显示所有版本"时，您可以通过分页控制获取的发布数量：
+
+- **`per_page`**：每页 release 数量（默认：`30`，最大：`100`）
+- **`max_page`**：最大请求页数（`0` 表示不限页数）
+
+当仓库有大量发布版本时，这些设置可以帮助您避免触发 API 速率限制。
+
+**配置示例：**
+
+最多请求 2 页，每页 50 个 release（最多获取 100 个 release）：
+
+```text
+per_page = 50
+max_page = 2
+```
+
+::: tip
+单次未认证请求计为 1 次，占每小时 60 次限额。设 `per_page=100`、`max_page=1` 时，获取单个仓库的 release 仅消耗 1 次请求。
+:::
+
 ### Show README Files { lang="en" }
 
 ### 显示 README 文件 { lang="zh-CN" }
