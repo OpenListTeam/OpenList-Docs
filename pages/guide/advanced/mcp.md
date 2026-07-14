@@ -77,8 +77,13 @@ To connect an MCP client (such as an AI coding agent that supports MCP) to OpenL
 
 **URL**: `http[s]://your-domain:port/api/mcp`
 
-**Authentication**: HTTP Bearer Token Authentication. The token is your OpenList login token — obtain it from your OpenList account settings page or via the API.
+**Authentication**: Token Authentication. The token is your OpenList login token — include it directly in the `Authorization` header of each request (e.g. `Authorization: <token>`). Do **NOT** add a `Bearer` prefix. Obtain the token from your OpenList account settings page or via the API.
 
+::: warning
+OpenList's authentication middleware reads the `Authorization` header value as-is. Adding a `Bearer ` prefix will result in authentication failure. Use `Authorization: <token>` only.
+:::
+
+::: en
 **Protocol version**: `2025-11-25` (also compatible with `2025-06-18`)
 
 **Session handling**: A session is created on `initialize` and identified via the `MCP-Session-Id` response header. You must include this header in subsequent requests.
@@ -91,7 +96,13 @@ To connect an MCP client (such as an AI coding agent that supports MCP) to OpenL
 
 **URL**：`http[s]://your-domain:port/api/mcp`
 
-**认证方式**：HTTP Bearer Token 认证。Token 是你的 OpenList 登录令牌——可以从 OpenList 账户设置页面或通过 API 获取。
+**认证方式**：Token 认证。Token 是你的 OpenList 登录令牌——直接在每个请求的 `Authorization` 头中传入（例如 `Authorization: <token>`）。**不要**加 `Bearer` 前缀。可以从 OpenList 账户设置页面或通过 API 获取。
+
+::: warning
+OpenList 的认证中间件直接对比 `Authorization` 头的原始值。如果添加 `Bearer ` 前缀会导致认证失败，请仅使用 `Authorization: <token>`。
+:::
+
+::: zh-CN
 
 **协议版本**：`2025-11-25`（同时兼容 `2025-06-18`）
 
@@ -210,7 +221,7 @@ OpenList implements the MCP **Streamable HTTP** transport. The endpoint accepts:
 
 ### Authentication
 
-The MCP endpoint reuses OpenList's authentication middleware. Requests must include a valid `Authorization: Bearer <token>` header with a valid user token. The session is bound to the authenticated user — a user cannot use sessions belonging to other users.
+The MCP endpoint reuses OpenList's authentication middleware. Requests must include a valid `Authorization` header with a valid user token. The session is bound to the authenticated user — a user cannot use sessions belonging to other users.
 
 ### Session Lifecycle
 
@@ -254,7 +265,7 @@ OpenList 实现了 MCP **Streamable HTTP** 传输。端点接受：
 
 ### 认证
 
-MCP 端点复用 OpenList 的认证中间件。请求必须包含有效的 `Authorization: Bearer <token>` 头及有效的用户令牌。会话与认证用户绑定——用户不能使用属于其他用户的会话。
+MCP 端点复用 OpenList 的认证中间件。请求必须在 `Authorization` 头中包含有效的用户令牌。会话与认证用户绑定——用户不能使用属于其他用户的会话。
 
 ### 会话生命周期
 
@@ -300,7 +311,7 @@ Many AI coding assistants support the MCP protocol and can be configured to use 
       "type": "http",
       "url": "https://your-domain:port/api/mcp",
       "headers": {
-        "Authorization": "Bearer YOUR_OPENLIST_TOKEN"
+        "Authorization": "YOUR_OPENLIST_TOKEN"
       }
     }
   }
@@ -308,6 +319,8 @@ Many AI coding assistants support the MCP protocol and can be configured to use 
 ```
 
 Replace `YOUR_OPENLIST_TOKEN` with your actual OpenList authentication token, which can be obtained from the OpenList management panel.
+
+> **Warning**: Do **NOT** prefix the token with `Bearer `. The `Authorization` header value must be the token itself, nothing else.
 
 :::
 
@@ -321,7 +334,7 @@ Replace `YOUR_OPENLIST_TOKEN` with your actual OpenList authentication token, wh
       "type": "http",
       "url": "https://your-domain:port/api/mcp",
       "headers": {
-        "Authorization": "Bearer YOUR_OPENLIST_TOKEN"
+        "Authorization": "YOUR_OPENLIST_TOKEN"
       }
     }
   }
@@ -329,5 +342,7 @@ Replace `YOUR_OPENLIST_TOKEN` with your actual OpenList authentication token, wh
 ```
 
 将 `YOUR_OPENLIST_TOKEN` 替换为你的 OpenList 认证令牌，可从 OpenList 管理面板获取。
+
+> **Warning**：**不要**在令牌前加 `Bearer ` 前缀。`Authorization` 头的值必须直接是令牌本身，不要加任何前缀。
 
 :::
