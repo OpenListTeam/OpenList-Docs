@@ -8,6 +8,43 @@ categories:
 top: 109
 ---
 
+## Enable and manage passkeys { lang="en" }
+
+## 启用和管理通行密钥 { lang="zh-CN" }
+
+::: en
+
+An administrator must turn on the global setting labeled **WebAuthn login enabled**
+before users can register or sign in with passkeys. Each signed-in user can then open
+their profile to register, name, rename, review, or revoke credentials. Password, LDAP,
+SSO, and recovery methods remain available.
+
+Disabling the setting hides passkey login and management in the supported UI and rejects
+new registration and login ceremonies. It does not delete stored credentials. Re-enabling
+the setting makes them available again.
+
+Credentials created by earlier OpenList versions remain valid. They appear with a
+generated name and unknown creation metadata until renamed; **Last used** changes from
+**Never** after a successful assertion. No database migration or credential
+re-registration is required.
+
+:::
+
+::: zh-CN
+
+管理员必须先打开名为 **WebAuthn login enabled** 的全局设置，用户才能注册通行密钥或
+使用通行密钥登录。登录后的用户可以在个人资料中注册、命名、重命名、查看或撤销凭据。
+密码、LDAP、SSO 和恢复方式仍然可用。
+
+关闭该设置后，受支持的界面会隐藏通行密钥登录和管理功能，并拒绝新的注册和登录流程，
+但不会删除已保存的凭据。重新启用后，这些凭据会再次可用。
+
+旧版 OpenList 创建的 WebAuthn 凭据仍然有效。它们会显示自动生成的名称，创建时间显示为
+未知，用户可以手动重命名；成功完成一次验证后，界面中的 **Last used** 会从 **Never**
+更新为实际时间。无需执行数据库迁移，也无需重新注册凭据。
+
+:::
+
 ## Deployment requirements { lang="en" }
 
 ## 部署要求 { lang="zh-CN" }
