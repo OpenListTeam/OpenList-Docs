@@ -209,21 +209,50 @@ Return usable link information for a file path that the current user can access.
 
 ## 协议细节 { lang="zh-CN" }
 
+### Transport { lang="en" }
+
+### 传输方式 { lang="zh-CN" }
+
 ::: en
-
-### Transport
-
 OpenList implements the MCP **Streamable HTTP** transport. The endpoint accepts:
 
 - `POST /mcp` — Main endpoint for all MCP JSON-RPC requests
 - `GET /mcp` — Returns `405 Method Not Allowed` with `Allow: POST, DELETE` (used for CORS preflight validation)
 - `DELETE /mcp` — Terminates an active session (requires `MCP-Session-Id` header)
 
-### Authentication
+:::
+
+::: zh-CN
+
+OpenList 实现了 MCP **Streamable HTTP** 传输。端点接受：
+
+- `POST /mcp` — 所有 MCP JSON-RPC 请求的主端点
+- `GET /mcp` — 返回 `405 Method Not Allowed` 及 `Allow: POST, DELETE`（用于 CORS 预检验证）
+- `DELETE /mcp` — 终止活跃会话（需要 `MCP-Session-Id` 头）
+
+:::
+
+### Authentication {{ lang="en" }}
+
+### 认证 {{ lang="zh-CN" }}
+
+::: en
 
 The MCP endpoint reuses OpenList's authentication middleware. Requests must include a valid `Authorization` header with a valid user token. The session is bound to the authenticated user — a user cannot use sessions belonging to other users.
 
-### Session Lifecycle
+:::
+
+::: zh-CN
+
+MCP 端点复用 OpenList 的认证中间件。请求必须在 `Authorization` 头中包含有效的用户令牌。会话与认证用户绑定——用户不能使用属于其他用户的会话。
+
+:::
+
+### Session Lifecycle {{ lang="en" }}
+
+### 会话生命周期 {{ lang="zh-CN" }}
+
+::: en
 
 1. **Initialize**: Client sends `initialize` request. Server returns a `MCP-Session-Id` response header.
 2. **Notify Initialized**: Client sends `notifications/initialized` to mark the session as ready.
@@ -231,13 +260,43 @@ The MCP endpoint reuses OpenList's authentication middleware. Requests must incl
 4. **Ping**: Client may send `ping` to keep the session alive.
 5. **Cleanup**: Sessions expire after 30 minutes of inactivity. Global maximum: 128 sessions per server, 16 sessions per user. The least recently used sessions are evicted first.
 
-### Protocol Version
+:::
+
+::: zh-CN
+
+1. **初始化**：客户端发送 `initialize` 请求。服务器返回 `MCP-Session-Id` 响应头。
+2. **通知已初始化**：客户端发送 `notifications/initialized` 将会话标记为就绪。
+3. **工具调用**：客户端携带 `MCP-Session-Id` 头发送 `tools/list` 和 `tools/call` 请求。
+4. **心跳**：客户端可发送 `ping` 保持会话活跃。
+5. **清理**：会话在 30 分钟无活动后过期。全局上限：每台服务器 128 个会话，每个用户 16 个会话。最近最少使用的会话会被优先淘汰。
+
+:::
+
+### Protocol Version {{ lang="en" }}
+
+### 协议版本 {{ lang="zh-CN" }}
+
+::: en
 
 Supported protocol versions: `2025-11-25` (default), `2025-06-18`.
 
 The server returns its protocol version during `initialize` negotiation. Subsequent requests must carry a compatible `MCP-Protocol-Version` header matching the negotiated version.
 
-### Error Codes
+:::
+
+::: zh-CN
+
+支持的协议版本：`2025-11-25`（默认）、`2025-06-18`。
+
+服务器在 `initialize` 协商期间返回其协议版本。后续请求必须携带与协商版本匹配的 `MCP-Protocol-Version` 头。
+
+:::
+
+### Error Codes {{ lang="en" }}
+
+### 错误码 {{ lang="zh-CN" }}
+
+::: en
 
 | Code   | Meaning                            |
 | ------ | ---------------------------------- |
@@ -254,34 +313,6 @@ The server returns its protocol version during `initialize` negotiation. Subsequ
 :::
 
 ::: zh-CN
-
-### 传输方式
-
-OpenList 实现了 MCP **Streamable HTTP** 传输。端点接受：
-
-- `POST /mcp` — 所有 MCP JSON-RPC 请求的主端点
-- `GET /mcp` — 返回 `405 Method Not Allowed` 及 `Allow: POST, DELETE`（用于 CORS 预检验证）
-- `DELETE /mcp` — 终止活跃会话（需要 `MCP-Session-Id` 头）
-
-### 认证
-
-MCP 端点复用 OpenList 的认证中间件。请求必须在 `Authorization` 头中包含有效的用户令牌。会话与认证用户绑定——用户不能使用属于其他用户的会话。
-
-### 会话生命周期
-
-1. **初始化**：客户端发送 `initialize` 请求。服务器返回 `MCP-Session-Id` 响应头。
-2. **通知已初始化**：客户端发送 `notifications/initialized` 将会话标记为就绪。
-3. **工具调用**：客户端携带 `MCP-Session-Id` 头发送 `tools/list` 和 `tools/call` 请求。
-4. **心跳**：客户端可发送 `ping` 保持会话活跃。
-5. **清理**：会话在 30 分钟无活动后过期。全局上限：每台服务器 128 个会话，每个用户 16 个会话。最近最少使用的会话会被优先淘汰。
-
-### 协议版本
-
-支持的协议版本：`2025-11-25`（默认）、`2025-06-18`。
-
-服务器在 `initialize` 协商期间返回其协议版本。后续请求必须携带与协商版本匹配的 `MCP-Protocol-Version` 头。
-
-### 错误码
 
 | 错误码 | 含义                 |
 | ------ | -------------------- |
