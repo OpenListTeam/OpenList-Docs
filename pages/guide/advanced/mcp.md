@@ -46,7 +46,7 @@ With the OpenList MCP endpoint, you can:
 ```
 
 3. Restart OpenList for the change to take effect
-4. The MCP endpoint is now available at `http[s]://your-domain:port/api/mcp`
+4. The MCP endpoint is now available at `http[s]://your-domain:port/mcp`
 
 :::
 
@@ -62,7 +62,7 @@ With the OpenList MCP endpoint, you can:
 ```
 
 3. 重启 OpenList 使配置生效
-4. MCP 端点现在可以通过 `http[s]://your-domain:port/api/mcp` 访问
+4. MCP 端点现在可以通过 `http[s]://your-domain:port/mcp` 访问
 
 :::
 
@@ -75,7 +75,7 @@ To connect an MCP client (such as an AI coding agent that supports MCP) to OpenL
 
 **Transport type**: Streamable HTTP
 
-**URL**: `http[s]://your-domain:port/api/mcp`
+**URL**: `http[s]://your-domain:port/mcp`
 
 **Authentication**: Token Authentication. The token is your OpenList login token — include it directly in the `Authorization` header of each request (e.g. `Authorization: <token>`). Do **NOT** add a `Bearer` prefix. Obtain the token from your OpenList account settings page or via the API.
 
@@ -94,7 +94,7 @@ OpenList's authentication middleware reads the `Authorization` header value as-i
 
 **传输类型**：Streamable HTTP
 
-**URL**：`http[s]://your-domain:port/api/mcp`
+**URL**：`http[s]://your-domain:port/mcp`
 
 **认证方式**：Token 认证。Token 是你的 OpenList 登录令牌——直接在每个请求的 `Authorization` 头中传入（例如 `Authorization: <token>`）。**不要**加 `Bearer` 前缀。可以从 OpenList 账户设置页面或通过 API 获取。
 
@@ -215,9 +215,9 @@ Return usable link information for a file path that the current user can access.
 
 OpenList implements the MCP **Streamable HTTP** transport. The endpoint accepts:
 
-- `POST /api/mcp` — Main endpoint for all MCP JSON-RPC requests
-- `GET /api/mcp` — Returns `405 Method Not Allowed` with `Allow: POST, DELETE` (used for CORS preflight validation)
-- `DELETE /api/mcp` — Terminates an active session (requires `MCP-Session-Id` header)
+- `POST /mcp` — Main endpoint for all MCP JSON-RPC requests
+- `GET /mcp` — Returns `405 Method Not Allowed` with `Allow: POST, DELETE` (used for CORS preflight validation)
+- `DELETE /mcp` — Terminates an active session (requires `MCP-Session-Id` header)
 
 ### Authentication
 
@@ -259,9 +259,9 @@ The server returns its protocol version during `initialize` negotiation. Subsequ
 
 OpenList 实现了 MCP **Streamable HTTP** 传输。端点接受：
 
-- `POST /api/mcp` — 所有 MCP JSON-RPC 请求的主端点
-- `GET /api/mcp` — 返回 `405 Method Not Allowed` 及 `Allow: POST, DELETE`（用于 CORS 预检验证）
-- `DELETE /api/mcp` — 终止活跃会话（需要 `MCP-Session-Id` 头）
+- `POST /mcp` — 所有 MCP JSON-RPC 请求的主端点
+- `GET /mcp` — 返回 `405 Method Not Allowed` 及 `Allow: POST, DELETE`（用于 CORS 预检验证）
+- `DELETE /mcp` — 终止活跃会话（需要 `MCP-Session-Id` 头）
 
 ### 认证
 
@@ -309,7 +309,7 @@ Many AI coding assistants support the MCP protocol and can be configured to use 
   "mcpServers": {
     "openlist": {
       "type": "http",
-      "url": "https://your-domain:port/api/mcp",
+      "url": "https://your-domain:port/mcp",
       "headers": {
         "Authorization": "YOUR_OPENLIST_TOKEN"
       }
@@ -332,7 +332,7 @@ Replace `YOUR_OPENLIST_TOKEN` with your actual OpenList authentication token, wh
   "mcpServers": {
     "openlist": {
       "type": "http",
-      "url": "https://your-domain:port/api/mcp",
+      "url": "https://your-domain:port/mcp",
       "headers": {
         "Authorization": "YOUR_OPENLIST_TOKEN"
       }
