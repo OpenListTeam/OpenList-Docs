@@ -64,14 +64,14 @@ The home icon is displayed in the left of the navigation bar. The default is `�
 ::: en
 
 - Max 980px: the main width will set to `min(99%, 980px)`
-- Hope container: sets the max-width of the content to match the min-width of the current breakpoint, refer to https://hope-ui.com/docs/layout/container
+- Hope container: sets the max-width of the content to match the min-width of the current breakpoint, refer to https://openlistteam.github.io/hope-ui/docs/layout/container
 
 :::
 
 ::: zh-CN
 
 - Max 980px：主宽度将设置为 `min(99%, 980px)`
-- Hope 容器：设置内容的最大宽度以匹配当前断点的最小宽度，参考 https://hope-ui.com/docs/layout/container
+- Hope 容器：设置内容的最大宽度以匹配当前断点的最小宽度，参考 https://openlistteam.github.io/hope-ui/docs/layout/container
 
 :::
 
