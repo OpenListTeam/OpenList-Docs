@@ -735,6 +735,69 @@ Size threshold (in **MB**) for choosing the Go-managed `[]byte` cache in the **H
 
 :::
 
+#### HybridCache 缓存策略 { lang="zh-CN" }
+
+#### HybridCache cache strategy { lang="en" }
+
+::: en
+The **HybridCache** picks a backing store tier for each stream based on `min_free_memory`, `auto_memory_limit`, and the stream's maximum memory size:
+
+```mermaid
+flowchart TD
+    A["Stream needs caching"] --> B{"min_free_memory > 0?"}
+
+    B -->|No| F["Use file-backed cache<br/>MultiFileStore"]
+    B -->|Yes| C{"max_memory_size<br/><= auto_memory_limit?"}
+
+    C -->|Yes| D["Use Go-managed []byte<br/>BufferStore<br/>reclaimed by GC"]
+    C -->|No| E{"Manual memory available?<br/>mmap / VirtualAlloc,<br/>blockSize <= max_block_limit"}
+
+    E -->|Yes| G["Use manually-managed memory<br/>GuardedMemory"]
+    E -->|No| F
+
+    G --> H{"Sufficient free memory?"}
+    H -->|Yes| I["Keep using memory tier"]
+    H -->|No| F
+```
+
+Notes:
+
+- `min_free_memory <= 0` skips both memory tiers and falls straight back to the file-backed tier.
+- The Go-managed `BufferStore` only applies when the stream fits under `auto_memory_limit`; otherwise the cache tries the manually-managed memory tier first.
+- When `min_free_memory > 0`, `max_block_limit` also caps the per-part size of multi-threaded downloads.
+- If the host memory info is unavailable, both memory tiers are skipped and the file-backed tier is used.
+
+:::
+::: zh-CN
+**HybridCache** 会根据 `min_free_memory`、`auto_memory_limit` 以及数据流的最大占用内存为每个数据流选择缓存层：
+
+```mermaid
+flowchart TD
+    A["数据流需要缓存"] --> B{"min_free_memory > 0?"}
+
+    B -->|否| F["使用文件缓存<br/>MultiFileStore"]
+    B -->|是| C{"max_memory_size<br/><= auto_memory_limit?"}
+
+    C -->|是| D["使用 Go 自动管理的 []byte<br/>BufferStore<br/>由 GC 回收"]
+    C -->|否| E{"手动管理内存可用？<br/>mmap / VirtualAlloc,<br/>blockSize <= max_block_limit"}
+
+    E -->|是| G["使用手动管理的内存<br/>GuardedMemory"]
+    E -->|否| F
+
+    G --> H{"空闲内存充足？"}
+    H -->|是| I["继续使用内存层"]
+    H -->|否| F
+```
+
+补充说明：
+
+- `min_free_memory <= 0` 会跳过两个内存层，直接回退到文件层。
+- 只有当数据流占用内存不超过 `auto_memory_limit` 时才会使用 Go 自动管理的 `BufferStore`，否则优先尝试手动管理的内存层。
+- 当 `min_free_memory > 0` 时，`max_block_limit` 还会限制多线程下载的单分片大小。
+- 如果运行时无法获取宿主机内存信息，两层内存缓存都会被跳过，直接使用文件缓存。
+
+:::
+
 ### min_free_memory
 
 ::: en
