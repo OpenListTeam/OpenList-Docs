@@ -74,6 +74,9 @@ After modifying the configuration file, restart OpenList for changes to take eff
   "temp_dir": "data\\temp",
   "bleve_dir": "data\\bleve",
   "dist_dir": "",
+  "auto_memory_limit": 4,
+  "min_free_memory": 16,
+  "max_block_limit": 16,
   "log": {
     "enable": true,
     "name": "data\\log\\log.log",
@@ -711,6 +714,125 @@ Upload the front-end files (dist) to the application's `data` folder, then fill 
 ```json
   "dist_dir": "data/dist",
 ```
+
+### auto_memory_limit
+
+::: en
+Size threshold (in **MB**) for choosing the Go-managed `[]byte` cache in the **HybridCache** stream cache. Streams whose maximum memory size is less than or equal to this value are cached only in Go-managed memory (reclaimed by the GC); larger streams prefer manually-managed memory (Unix `mmap` / Windows `VirtualAlloc`) and fall back to a file-backed cache when memory is insufficient.
+
+- **Unit**: MB
+- **Default**: `4` — when the value is `<= 0` the program also treats it as the default.
+- If the runtime cannot obtain the host's memory information, the manually-managed memory tier is skipped and the file-backed tier is used instead.
+
+:::
+
+::: zh-CN
+**HybridCache** 流式缓存中，选择 Go 自动管理的 `[]byte` 缓存的大小阈值（单位 **MB**）。数据流最大占用内存小于等于此值时仅使用 Go 自动管理的内存缓存（由 GC 回收）；超过此值的数据流优先使用手动管理的内存（Unix `mmap` / Windows `VirtualAlloc`），内存不足时回退到文件缓存。
+
+- **单位**：MB
+- **默认值**：`4`；当值 `<= 0` 时同样按默认值处理。
+- 如果运行时无法获取宿主机内存信息，会跳过手动管理内存这一层，直接使用文件缓存。
+
+:::
+
+#### HybridCache 缓存策略 { lang="zh-CN" }
+
+#### HybridCache cache strategy { lang="en" }
+
+::: en
+The **HybridCache** picks a backing store tier for each stream based on `min_free_memory`, `auto_memory_limit`, and the stream's maximum memory size:
+
+```mermaid
+flowchart TD
+    A["Stream needs caching"] --> B{"min_free_memory > 0?"}
+
+    B -->|No| F["Use file-backed cache<br/>MultiFileStore"]
+    B -->|Yes| C{"max_memory_size<br/><= auto_memory_limit?"}
+
+    C -->|Yes| D["Use Go-managed []byte<br/>BufferStore<br/>reclaimed by GC"]
+    C -->|No| E{"Manual memory available?<br/>mmap / VirtualAlloc,<br/>blockSize <= max_block_limit"}
+
+    E -->|Yes| G["Use manually-managed memory<br/>GuardedMemory"]
+    E -->|No| F
+
+    G --> H{"Sufficient free memory?"}
+    H -->|Yes| I["Keep using memory tier"]
+    H -->|No| F
+```
+
+Notes:
+
+- `min_free_memory <= 0` skips both memory tiers and falls straight back to the file-backed tier.
+- The Go-managed `BufferStore` only applies when the stream fits under `auto_memory_limit`; otherwise the cache tries the manually-managed memory tier first.
+- When `min_free_memory > 0`, `max_block_limit` also caps the per-part size of multi-threaded downloads.
+- If the host memory info is unavailable, both memory tiers are skipped and the file-backed tier is used.
+
+:::
+::: zh-CN
+**HybridCache** 会根据 `min_free_memory`、`auto_memory_limit` 以及数据流的最大占用内存为每个数据流选择缓存层：
+
+```mermaid
+flowchart TD
+    A["数据流需要缓存"] --> B{"min_free_memory > 0?"}
+
+    B -->|否| F["使用文件缓存<br/>MultiFileStore"]
+    B -->|是| C{"max_memory_size<br/><= auto_memory_limit?"}
+
+    C -->|是| D["使用 Go 自动管理的 []byte<br/>BufferStore<br/>由 GC 回收"]
+    C -->|否| E{"手动管理内存可用？<br/>mmap / VirtualAlloc,<br/>blockSize <= max_block_limit"}
+
+    E -->|是| G["使用手动管理的内存<br/>GuardedMemory"]
+    E -->|否| F
+
+    G --> H{"空闲内存充足？"}
+    H -->|是| I["继续使用内存层"]
+    H -->|否| F
+```
+
+补充说明：
+
+- `min_free_memory <= 0` 会跳过两个内存层，直接回退到文件层。
+- 只有当数据流占用内存不超过 `auto_memory_limit` 时才会使用 Go 自动管理的 `BufferStore`，否则优先尝试手动管理的内存层。
+- 当 `min_free_memory > 0` 时，`max_block_limit` 还会限制多线程下载的单分片大小。
+- 如果运行时无法获取宿主机内存信息，两层内存缓存都会被跳过，直接使用文件缓存。
+
+:::
+
+### min_free_memory
+
+::: en
+Minimum amount of free memory (in **MB**) the **HybridCache** requires to keep using the memory-backed tiers. When the available memory is below this threshold, the cache falls back to file-backed storage.
+
+- **Unit**: MB
+- **Default**: when the configured value is `< 16`, the program auto-sizes it to `max(16, min(total_memory / 10, 1024))` MB based on the host's total memory. Values `< 0` are normalized to `0`, which forces the **HybridCache** to use only the file-backed tier and skip the in-memory tiers entirely.
+
+:::
+
+::: zh-CN
+**HybridCache** 继续使用内存缓存层所需的最小空闲内存（单位 **MB**）。当可用内存低于该阈值时，缓存回退到文件存储。
+
+- **单位**：MB
+- **默认值**：当配置值 `< 16` 时，程序会根据宿主机总内存自动计算为 `max(16, min(总内存 / 10, 1024))` MB。当值 `< 0` 时会被规范化为 `0`，此时 **HybridCache** 仅使用文件缓存层，完全跳过内存层。
+
+:::
+
+### max_block_limit
+
+::: en
+Maximum size (in **MB**) the **HybridCache** is allowed to grow the manually-managed memory block in a single allocation. Once a request would exceed this cap, the cache splits the growth into multiple smaller steps so it can probe available memory in between. When `min_free_memory > 0`, this value also caps the per-part size of multi-threaded downloads.
+
+- **Unit**: MB
+- **Default**: when the configured value is `< 4`, the program auto-sizes it to `max(4, min(total_memory * 3 / 100, 64))` MB based on the host's total memory.
+
+:::
+
+::: zh-CN
+**HybridCache** 手动管理内存单次扩容的最大大小（单位 **MB**）。当一次扩容请求超过该阈值时，会被拆成多次较小扩容，以便在每次扩容之间检测可用内存。当 `min_free_memory > 0` 时，该值还会限制多线程下载的单分片大小。
+
+- **单位**：MB
+- **默认值**：当配置值 `< 4` 时，程序会根据宿主机总内存自动计算为 `max(4, min(总内存 * 3 / 100, 64))` MB。
+
+:::
 
 ### log
 
