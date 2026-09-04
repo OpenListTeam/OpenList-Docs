@@ -156,14 +156,18 @@ Optional custom `X-Device-Sign` header. Generated from `device_id` when empty.
 ### 分页大小 / 排序字段 / 排序方向 { lang="zh-CN" }
 
 :::: en
+
 - `Page Size`: file list page size, default `100`.
 - `Order By`: sort field used by the file list, options `0,1,2,3,4`, default `3`.
 - `Sort Type`: sort direction used by the file list, options `0,1`, default `1`.
+
 ::::
 :::: zh-CN
+
 - `分页大小`：文件列表每页数量，默认 `100`。
 - `排序字段`：文件列表使用的排序字段，可选 `0,1,2,3,4`，默认 `3`。
 - `排序方向`：文件列表使用的排序方向，可选 `0,1`，默认 `1`。
+
 ::::
 
 ## 2. SMS Login Steps { lang="en" }
@@ -171,14 +175,18 @@ Optional custom `X-Device-Sign` header. Generated from `device_id` when empty.
 ## 2. 短信登录步骤 { lang="zh-CN" }
 
 :::: en
+
 1. Fill in `client_id` and `phone_number` (and `captcha_token` if needed).
 2. Set `send_code` to `true`, then save. The storage will enter a "SMS sent" status and the `verification_id` is generated automatically.
 3. Fill in the received `verify_code`, then save again to finish the login. The `access_token` and `refresh_token` are saved automatically.
+
 ::::
 :::: zh-CN
+
 1. 填写 `client_id` 与 `phone_number`（如需要同时填写 `captcha_token`）。
 2. 将 `send_code` 设为 `true` 并保存，存储会进入「短信已发送」状态，并自动生成 `verification_id`。
 3. 填写收到的 `verify_code` 后再次保存，即可完成登录，`access_token` 与 `refresh_token` 会自动保存。
+
 ::::
 
 ## 3. Offline Download { lang="en" }
@@ -193,6 +201,7 @@ GuangYaPan supports calling its own offline download function from OpenList.
 3. Go back to the frontend, enter the target folder, and choose **GuangYaPan** in the offline download option at the lower right corner.
 
 - Supports adding offline tasks via URL (e.g. `http`, `magnet` links).
+
 ::::
 :::: zh-CN
 光鸭云盘支持在 OpenList 中调用其自身的离线下载功能。
@@ -202,6 +211,7 @@ GuangYaPan supports calling its own offline download function from OpenList.
 3. 回到前端，进入目标文件夹，在右下角的离线下载选项中选择 **GuangYaPan**。
 
 - 支持通过链接（如 `http`、`magnet`）添加离线任务。
+
 ::::
 
 ## 4. Precautions { lang="en" }
@@ -209,14 +219,18 @@ GuangYaPan supports calling its own offline download function from OpenList.
 ## 4. 注意事项 { lang="zh-CN" }
 
 :::: en
+
 - `client_id` is required, otherwise storage initialization will fail.
 - The `verify_code` is one-time use and will be cleared after a successful login.
 - The driver does not support overwriting uploads (same-name files will not overwrite).
 - Login priority: `access_token` → `refresh_token` → SMS login.
+
 ::::
 :::: zh-CN
+
 - `client_id` 为必填项，否则存储初始化会失败。
 - `verify_code` 为一次性使用，登录成功后会被清空。
 - 该驱动不支持覆盖上传（同名文件不会覆盖）。
 - 登录优先级：`access_token` → `refresh_token` → 短信登录。
+
 ::::
