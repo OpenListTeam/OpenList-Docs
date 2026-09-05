@@ -38,12 +38,12 @@ This article will collect some error codes that may occur during the use of Open
 ::: en
 **Q**：Ali cloud disk open appears **ExceedCapacityForbidden**
 
-**A**：[**Click me to view detailed description**](../guide/drivers/aliyundrive_open.md#four、)
+**A**：[**Click me to view detailed description**](../guide/drivers/aliyundrive_open.md#4-other-instructions)
 :::
 ::: zh-CN
 **Q**：阿里云盘open出现 **ExceedCapacityForbidden**
 
-**A**：[**点我查看详细说明**](../guide/drivers/aliyundrive_open.md#四、)
+**A**：[**点我查看详细说明**](../guide/drivers/aliyundrive_open.md#4-其他说明)
 :::
 
 ---

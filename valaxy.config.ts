@@ -77,7 +77,7 @@ export default defineValaxyConfig<PressTheme.Config>({
   theme: 'press',
   themeConfig: {
     logo: `${VITE_BASE.replace(/\/$/, '')}/logo.svg`,
-    sidebar: ['guide', 'configuration', 'faq', 'api', 'migration', 'ecosystem'],
+    sidebar: ['guide', 'configuration', 'faq', 'api', 'ecosystem'],
     socialLinks: [{ icon: 'i-ri-github-line', link: 'https://github.com/OpenListTeam/OpenList' }],
     nav: [
       {

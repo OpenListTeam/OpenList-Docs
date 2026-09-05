@@ -54,12 +54,12 @@ The Aria2 RPC secret key used for offline downloading. The default value is empt
 ::: en
 Used to customize **qBittorrent** parameters to configure the client to use.
 
-The default value is: `http://admin:adminadmin@localhost:8080/`, you can modify it by referring to [specific instructions](../guide/advanced/offline-download.md#_2-qbittorrent)
+The default value is: `http://admin:adminadmin@localhost:8080/`, you can modify it by referring to [specific instructions](../guide/advanced/offline-download.md#qbittorrent)
 :::
 ::: zh-CN
 用于自定义 **qBittorrent** 参数用来配置客户端中使用。
 
-预设值为：`http://admin:adminadmin@localhost:8080/`，您可以参考 [具体说明](../guide/advanced/offline-download.md#_2-qbittorrent) 进行修改。
+预设值为：`http://admin:adminadmin@localhost:8080/`，您可以参考 [具体说明](../guide/advanced/offline-download.md#qbittorrent) 进行修改。
 :::
 
 ## 115、PikPak、Thunder { lang="en" }
@@ -104,7 +104,7 @@ The token that can be used to access all APIs of the program. Unlike the token o
 
 ::: en
 
-1. When using OpenList, you may notice two Aria2 options. What is the difference between them? [**Click here for detailed explanation**](../faq/why.md#What-are-the-differences-between-the-two-Aria2s)
+1. When using OpenList, you may notice two Aria2 options. What is the difference between them? [**Click here for detailed explanation**](../faq/why.md#what-is-the-difference-between-the-two-aria2)
 
 2. Supports using Aria2 to download folders while preserving the original directory structure.
    - **Configure Aria2**: Go to the bottom-right corner, click `Settings` → `Aria2 RPC Link` → Enter the `Aria2 RPC Key` (if available).
