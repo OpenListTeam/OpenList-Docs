@@ -138,7 +138,7 @@ Do not use "/" at the end of the address.
 
 :::en
 
-Download the [binary package](ttps://github.com/OpenListTeam/OpenList-Proxy/releases) and run the command `./openlist-proxy -help` to learn how to use it.
+Download the [binary package](https://github.com/OpenListTeam/OpenList-Proxy/releases) and run the command `./openlist-proxy -help` to learn how to use it.
 :::
 :::zh-CN
 下载[二进制包](https://github.com/OpenListTeam/OpenList-Proxy/releases)后，使用`./openlist-proxy -help`命令自行学习使用。
