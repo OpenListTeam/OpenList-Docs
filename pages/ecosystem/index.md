@@ -202,6 +202,22 @@ Free and Open Source Software licensed under the GPLv2 license.
 
 ---
 
+### [outlook84/openlist-tvbox-gateway ↗](https://github.com/outlook84/openlist-tvbox-gateway)
+
+::: en
+OpenList gateway for TVBox, used to connect OpenList resources to TVBox-compatible clients.
+
+Free and Open Source Software licensed under the AGPLv3 license.
+:::
+
+::: zh-CN
+适用于 TVBox 的 OpenList 网关，用于将 OpenList 资源接入兼容 TVBox 的客户端。
+
+自由开源软件，AGPLv3 协议
+:::
+
+---
+
 ### [moyanj/AList3SDK ↗](https://github.com/moyanj/AList3SDK)
 
 ::: en

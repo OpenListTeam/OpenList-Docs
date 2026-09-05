@@ -8,6 +8,19 @@ categories:
 top: 140
 ---
 
+## Add user { lang="en" }
+
+## 添加用户 { lang="zh-CN" }
+
+::: en
+::: warning Security Notice
+Adding a user may expose files and server-side capabilities to another account. Use a strong, unique password, grant only the minimum required permissions, and create accounts only for trusted users. Security incidents resulting from improper user or permission management are the administrator's responsibility.
+:::
+::: zh-CN
+::: warning 安全提醒
+添加用户可能会使其他账户获得文件和服务器侧功能的访问能力。请使用强且唯一的密码，仅授予必要的最小权限，并仅为可信用户创建账户。因用户或权限管理不当而导致的安全事件，由管理员用户承担责任。
+:::
+
 ## Username { lang="en" }
 
 ## 用户名 { lang="zh-CN" }
@@ -73,6 +86,7 @@ A：可以新建一个[别名](alias.md)存储,将你需要给用户展示的路
 - Can see hides: Can see the hides files and folders
 - Access without password: Can access without password
 - Add offline download tasks: Add offline download tasks
+  - ⚠️ Granting a user remote file read/write permissions also grants them the ability to access resources from the server's network context, including internal network addresses. Only grant this permission to fully trusted users. Internal network access resulting from improper permission assignment is not considered a security vulnerability.
 - Mkdir or upload: Can make directory or upload files
 - Rename: Can rename files and folders
 - Move: Can move files and folders
@@ -95,6 +109,7 @@ A：可以新建一个[别名](alias.md)存储,将你需要给用户展示的路
 - 可以看到隐藏：可以看到隐藏的文件和文件夹
 - 无密码访问：无需密码即可访问
 - 添加离线下载任务：添加离线下载任务
+  - ⚠️ 授予用户远程文件读写权限，同时也赋予了其利用服务器网络环境(包括内部网络地址)访问资源的能力。请仅向完全可信的用户授予此权限。因权限分配不当而导致的内部网络访问，由管理员用户承担责任。
 - 创建目录或上传：可以创建目录或上传文件
 - 重命名：可以重命名文件和文件夹
 - 移动：可以移动文件和文件夹

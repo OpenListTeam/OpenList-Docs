@@ -16,7 +16,7 @@ categories:
 ::: en
 Requirements:
 
-- Linux with systemd
+- Linux with systemd or OpenRC
 - Root privileges for installation
 - `curl`, `tar` installed
 - Architectures listed in the [download page](download)
@@ -26,7 +26,7 @@ Requirements:
 ::: zh-CN
 要求：
 
-- 使用 systemd 的 Linux 系统
+- 使用 systemd 或者 OpenRC 的 Linux 系统
 - Root 权限
 - 已安装 `curl`, `tar`
 - 在[下载页面](download)中列出的架构

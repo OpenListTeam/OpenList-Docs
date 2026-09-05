@@ -165,6 +165,9 @@ After modifying the configuration file, restart OpenList for changes to take eff
     "enable": false,
     "listen": ":5222"
   },
+  "mcp": {
+    "enable": false
+  },
   "last_launched_version": "OpenList version",
   "proxy_address": ""
 }
@@ -286,7 +289,6 @@ To solve this problem, we've added the ability to fetch `index.html` from CDN fo
 Since Beta versions don't have NPM CDN provided by OpenListTeam, you need to deploy it yourself:
 
 1. **Deploy frontend build artifacts**
-
    - Deploy build artifacts to a CDN platform (you can use Cloudflare Pages, EdgeOne Pages, etc.)
    - Configure necessary CORS headers, for example of `edgeone.json`:
 
@@ -326,7 +328,6 @@ Since Beta versions don't have NPM CDN provided by OpenListTeam, you need to dep
    - Recommend using "copy + overwrite" deployment method, retaining old version resource files to ensure compatibility for versions not rebooted
 
 2. **Configure backend**
-
    - Add CDN configuration in `config.json`
    - The program will automatically fetch the latest `index.html` from CDN when starting
 
@@ -376,7 +377,6 @@ OpenList 后端需要将 `index.html` 加载到内存中进行处理，包括插
 由于目前 OpenList 的 Beta 版本没有可用的 CDN，您需要自行部署：
 
 1. **部署前端构建产物**
-
    - 将构建产物部署到 CDN 平台（可使用 Cloudflare Pages、EdgeOne Pages 等）
    - 配置必要的 CORS 标头，如下方的 `edgeone.json`
 
@@ -1203,6 +1203,34 @@ Other instructions: [Click to view](../guide/advanced/ftp.md)
 - `listen`：端口号
 
 其它说明：[点击查看](../guide/advanced/ftp.md)
+:::
+
+### mcp
+
+::: en
+
+```json
+  "mcp": {
+    "enable": false
+  }
+```
+
+- `enable`: Whether the **MCP** endpoint is enabled, not enabled by default
+
+Other instructions: [Click to view](../guide/advanced/mcp.md)
+:::
+
+::: zh-CN
+
+```json
+  "mcp": {
+    "enable": false
+  }
+```
+
+- `enable`：**MCP** 功能是否启用，默认未启用
+
+其它说明：[点击查看](../guide/advanced/mcp.md)
 :::
 
 ### proxy
