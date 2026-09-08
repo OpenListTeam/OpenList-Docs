@@ -40,7 +40,7 @@ The root directory is root, and other directory IDs are unknown (~~It seems that
 
 Get the tool https://api.oplist.org
 
-How to get your own `client_id (client ID) client_secret (client secret key)` Go to [**Google Drive**](./googledrive.md) which article
+How to get your own `client_id (client ID) client_secret (client secret key)` Go to [**Google Drive**](./google_drive.md) which article
 :::
 ::: en
 ::: tip
@@ -65,7 +65,7 @@ Remember to enable **`Photos Library API`**
 ::: zh-CN
 获取工具 https://api.oplist.org
 
-如何获取自己的 `client_id(客户端ID)  client_secret(客户端秘钥)` 去看[**谷歌网盘**](./googledrive.md)哪一篇
+如何获取自己的 `client_id(客户端ID)  client_secret(客户端秘钥)` 去看[**谷歌网盘**](./google_drive.md)哪一篇
 :::
 ::: zh-CN
 ::: tip
