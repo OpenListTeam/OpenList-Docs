@@ -127,6 +127,8 @@ Worker 不携带自己的前端源码，通过 `scripts/fetch-frontend.mjs` 拉�
 ## 使用教程 { lang="zh-CN" }
 
 ::::en
+For a detailed, step-by-step deployment guide (Cloudflare Workers / EdgeOne / ESA), see [OpenList Worker 部署指南](/guide/installation/worker).
+
 ::::tip
 After deployment, the first visit enters an **install wizard** to set the admin account and password in the browser; no pre-configured `ADMIN_PASSWORD` is needed.
 ::::
@@ -167,6 +169,8 @@ pnpm run deploy
 ::::
 
 ::::zh-CN
+详细的分步部署指南（Cloudflare Workers / EdgeOne / ESA）请参阅 [OpenList Worker 部署指南](/guide/installation/worker)。
+
 ::::tip
 部署完成后，首次访问站点会自动进入**安装向导**，在浏览器中设置管理员账号与密码即可完成初始化，无需预先配置 `ADMIN_PASSWORD`。
 ::::
