@@ -184,6 +184,21 @@ DB_DRIVER=d1
 
 > **Backward compatibility:** the legacy `DB_DRIVER=json` auto-converts to `DB_FORMAT=map` + auto-detected driver, and `DB_JSON_BACKEND` is deprecated and auto-mapped to `DB_DRIVER`.
 
+#### Table naming (SQL format)
+
+The `sql` format uses columnar tables with the same naming strategy as the Go backend's GORM: snake_case + pluralized table names, plus a configurable prefix.
+
+| Go struct      | Table name        |
+| :------------- | :---------------- |
+| `SettingItem`  | `x_setting_items` |
+| `SharingDB`    | `x_sharing_dbs`   |
+| `Storage`      | `x_storages`      |
+| `User`         | `x_users`         |
+| `Meta`         | `x_metas`         |
+| *(TS only)*    | `x_plugins`       |
+
+The prefix defaults to `x_` and is controlled by the `TABLE_PREFIX` env var (matching the Go backend). Keep the default to share the same physical database with the Go backend.
+
 ::::
 
 ::::zh-CN
@@ -221,6 +236,21 @@ DB_DRIVER=d1
 ```
 
 > **向后兼容：** 旧的 `DB_DRIVER=json` 会自动转换为 `DB_FORMAT=map` + 自动检测驱动；`DB_JSON_BACKEND` 已废弃，会自动映射为 `DB_DRIVER`。
+
+#### 表名对齐（SQL 格式）
+
+`sql` 格式采用列式表，命名策略与 Go 后端的 GORM 一致：snake_case + 复数表名 + 可配置前缀。
+
+| Go 结构体      | 表名                |
+| :------------- | :------------------ |
+| `SettingItem`  | `x_setting_items` |
+| `SharingDB`    | `x_sharing_dbs`   |
+| `Storage`      | `x_storages`      |
+| `User`         | `x_users`         |
+| `Meta`         | `x_metas`         |
+| *（仅 TS）*    | `x_plugins`       |
+
+前缀默认为 `x_`，由 `TABLE_PREFIX` 环境变量控制（与 Go 后端一致）。要与 Go 后端共享同一物理数据库，保持默认值即可。
 
 ::::
 
