@@ -112,12 +112,12 @@ After deployment, the first visit to the site automatically enters an **installa
 | `ENCRYPTION_SECRET` | Recommended | — | Static encryption key (≥16 chars). Encrypts drive tokens/secrets; stored in plaintext when unset |
 | `JWT_SECRET` | Recommended | — | JWT signing key. Auto-generated and persisted to KV when unset |
 | `CRON_SECRET` | Optional | — | Auth key for scheduled refresh tasks (EdgeOne Schedules only) |
-| `DB_DRIVER` | Optional | `json` | Data backend: `json` / `kv` / `d1` / `mysql` |
-| `DB_JSON_BACKEND` | Optional | `auto` | Backend for `json` driver: `auto` / `blob` / `kv` / `cf_rest` |
-| `KV_NAME` | Optional | — | Custom KV binding name (json/kv mode) |
-| `CF_ACCOUNT_ID` | Optional | — | Cloudflare account ID (required for `cf_rest` mode) |
-| `CF_KV_NAMESPACE_ID` | Optional | — | Cloudflare KV namespace ID (required for `cf_rest` mode) |
-| `CF_API_TOKEN` | Optional | — | Cloudflare API token (required for `cf_rest` mode) |
+| `DB_FORMAT` | Optional | `map` | Storage format: `map` (whole JSON) / `key` (per-key) / `sql` (relational, Go-compatible) |
+| `DB_DRIVER` | Optional | `auto` | Database driver: `auto` / `blob` / `cfkv` / `kv` / `d1` / `do` / `mysql` |
+| `KV_NAME` | Optional | — | Custom KV binding name (map/key mode) |
+| `CF_ACCOUNT_ID` | Optional | — | Cloudflare account ID (required for `cfkv` mode) |
+| `CF_KV_NAMESPACE_ID` | Optional | — | Cloudflare KV namespace ID (required for `cfkv` mode) |
+| `CF_API_TOKEN` | Optional | — | Cloudflare API token (required for `cfkv` mode) |
 | `MYSQL_URL` | Optional | — | MySQL connection string (or use `MYSQL_*` fields below) |
 | `MYSQL_HOST` / `MYSQL_PORT` / `MYSQL_USER` / `MYSQL_PASSWORD` / `MYSQL_DATABASE` | Optional | — | MySQL connection fields (`DB_DRIVER = mysql`) |
 | `ADMIN_PASSWORD` | Optional | — | Skip the install wizard and auto-initialize admin with this password |
@@ -131,12 +131,12 @@ After deployment, the first visit to the site automatically enters an **installa
 | `ENCRYPTION_SECRET` | 推荐 | — | 静态加密密钥（≥16 字符）。加密网盘 token/secret 等敏感字段；未配置时将以明文落盘 |
 | `JWT_SECRET` | 推荐 | — | JWT 签名密钥。未配置时自动生成并持久化到 KV |
 | `CRON_SECRET` | 可选 | — | 定时刷新任务鉴权密钥（仅 EdgeOne 定时任务需要） |
-| `DB_DRIVER` | 可选 | `json` | 数据保存方式：`json` / `kv` / `d1` / `mysql` |
-| `DB_JSON_BACKEND` | 可选 | `auto` | `json` 模式使用的后端：`auto` / `blob` / `kv` / `cf_rest` |
-| `KV_NAME` | 可选 | — | 自定义 KV binding 名（json/kv 模式） |
-| `CF_ACCOUNT_ID` | 可选 | — | Cloudflare 账号 ID（`cf_rest` 模式必填） |
-| `CF_KV_NAMESPACE_ID` | 可选 | — | Cloudflare KV namespace ID（`cf_rest` 模式必填） |
-| `CF_API_TOKEN` | 可选 | — | Cloudflare API token（`cf_rest` 模式必填） |
+| `DB_FORMAT` | 可选 | `map` | 数据存储格式：`map`（整对象 JSON）/ `key`（分 key 存储）/ `sql`（关系表，与 Go 后端一致） |
+| `DB_DRIVER` | 可选 | `auto` | 数据库驱动：`auto` / `blob` / `cfkv` / `kv` / `d1` / `do` / `mysql` |
+| `KV_NAME` | 可选 | — | 自定义 KV binding 名（map/key 模式） |
+| `CF_ACCOUNT_ID` | 可选 | — | Cloudflare 账号 ID（`cfkv` 模式必填） |
+| `CF_KV_NAMESPACE_ID` | 可选 | — | Cloudflare KV namespace ID（`cfkv` 模式必填） |
+| `CF_API_TOKEN` | 可选 | — | Cloudflare API token（`cfkv` 模式必填） |
 | `MYSQL_URL` | 可选 | — | MySQL 连接串（或用下方 `MYSQL_*` 分项） |
 | `MYSQL_HOST` / `MYSQL_PORT` / `MYSQL_USER` / `MYSQL_PASSWORD` / `MYSQL_DATABASE` | 可选 | — | MySQL 分项连接配置（`DB_DRIVER = mysql`） |
 | `ADMIN_PASSWORD` | 可选 | — | 跳过安装向导，以该密码自动初始化 admin |
@@ -144,49 +144,83 @@ After deployment, the first visit to the site automatically enters an **installa
 | `DATABASE_JSON` | 可选 | — | 内存 JSON 数据库（仅测试/本地调试，重启即失） |
 ::::
 
-## Data Backend（DB_DRIVER） { lang="en" }
+## Data Backend（DB_FORMAT & DB_DRIVER） { lang="en" }
 
-## 数据存储后端（DB_DRIVER） { lang="zh-CN" }
+## 数据存储后端（DB_FORMAT 与 DB_DRIVER） { lang="zh-CN" }
 
 ::::en
-OpenList Worker uses an abstraction layer for persistence. Choose the backend that fits your platform:
+OpenList Worker separates persistence into two orthogonal layers:
 
-| `DB_DRIVER`       | Description                                                                    | Suitable platform            |
-| :---------------- | :----------------------------------------------------------------------------- | :--------------------------- |
-| `json`（default） | Whole object stored in a single key, auto-detects KV / Blob / CF REST / memory | Universal, works everywhere  |
-| `kv`              | KV table-per-entity backend, one key per row                                   | Cloudflare KV / EdgeOne Blob |
-| `d1`              | Cloudflare D1 (SQLite)                                                         | Cloudflare Workers           |
-| `mysql`           | External MySQL                                                                 | Node.js container runtime    |
+- **`DB_FORMAT`** — how data is serialized and stored
+- **`DB_DRIVER`** — which underlying storage system is used
 
-For the `json` driver, `DB_JSON_BACKEND` controls the actual storage:
+### `DB_FORMAT`（data storage format）
 
-| `DB_JSON_BACKEND` | Description                                                                                |
-| :---------------- | :----------------------------------------------------------------------------------------- |
-| `auto`（default） | Auto-detect the best available backend                                                     |
-| `blob`            | EdgeOne Blob（`@edgeone/pages-blob`）                                                      |
-| `kv`              | KV binding                                                                                 |
-| `cf_rest`         | Cloudflare KV REST API（requires `CF_ACCOUNT_ID` / `CF_KV_NAMESPACE_ID` / `CF_API_TOKEN`） |
+| Value            | Description                                                                 |
+| :--------------- | :-------------------------------------------------------------------------- |
+| `map`（default） | Whole object serialized as a single JSON value, ideal for KV / Blob storage |
+| `key`            | Per-key storage, one record per entity (avoids large JSON)                  |
+| `sql`            | Relational tables, fully compatible with the Go backend (for D1 / MySQL)    |
+
+### `DB_DRIVER`（database driver）
+
+| Value             | Description                                                                                       | Suitable platform         |
+| :---------------- | :------------------------------------------------------------------------------------------------ | :------------------------ |
+| `auto`（default） | Auto-detect available driver（priority: blob → cfkv → kv → d1 → memory）                         | Universal, works anywhere |
+| `blob`            | Tencent EdgeOne Blob / Alibaba ESA Blob                                                           | EdgeOne / ESA             |
+| `cfkv`            | Cloudflare KV REST API（requires `CF_ACCOUNT_ID` / `CF_KV_NAMESPACE_ID` / `CF_API_TOKEN`）       | External / cross-account  |
+| `kv`              | Cloudflare KV binding                                                                             | Cloudflare Workers        |
+| `d1`              | Cloudflare D1 (SQLite)                                                                            | Cloudflare Workers        |
+| `do`              | Cloudflare Durable Objects (SQLite)                                                               | Cloudflare Workers        |
+| `mysql`           | External MySQL                                                                                    | Node.js container runtime |
+
+### Recommended combinations
+
+```bash
+# Cloudflare Workers + D1 (recommended, SQL format compatible with Go backend)
+DB_FORMAT=sql
+DB_DRIVER=d1
+```
+
+> **Backward compatibility:** the legacy `DB_DRIVER=json` auto-converts to `DB_FORMAT=map` + auto-detected driver, and `DB_JSON_BACKEND` is deprecated and auto-mapped to `DB_DRIVER`.
 
 ::::
 
 ::::zh-CN
-OpenList Worker 通过抽象层实现持久化，请根据平台选择合适的数据后端：
+OpenList Worker 将持久化拆分为两个正交的层：
 
-| `DB_DRIVER`    | 说明                                                      | 适用平台                     |
-| :------------- | :-------------------------------------------------------- | :--------------------------- |
-| `json`（默认） | 整对象存单个 key，内部自动检测 KV / Blob / CF REST / 内存 | 通用，任何平台可用           |
-| `kv`           | KV 分表后端，每实体一条 key                               | Cloudflare KV / EdgeOne Blob |
-| `d1`           | Cloudflare D1（SQLite）                                   | Cloudflare Workers           |
-| `mysql`        | 外部 MySQL                                                | Node.js 容器运行时           |
+- **`DB_FORMAT`** — 决定数据的序列化与存储方式
+- **`DB_DRIVER`** — 决定底层的存储系统
 
-`json` 模式下，`DB_JSON_BACKEND` 控制实际存储：
+### `DB_FORMAT`（数据存储格式）
 
-| `DB_JSON_BACKEND` | 说明                                                                                 |
-| :---------------- | :----------------------------------------------------------------------------------- |
-| `auto`（默认）    | 自动检测可用的最佳后端                                                               |
-| `blob`            | EdgeOne Blob（`@edgeone/pages-blob`）                                                |
-| `kv`              | KV binding                                                                           |
-| `cf_rest`         | Cloudflare KV REST API（需 `CF_ACCOUNT_ID` / `CF_KV_NAMESPACE_ID` / `CF_API_TOKEN`） |
+| 值              | 说明                                                    |
+| :------------- | :------------------------------------------------------ |
+| `map`（默认）  | 整对象序列化为单个 JSON 值，适合 KV / Blob 存储         |
+| `key`          | 分 key 存储，每实体一条记录（避免大 JSON）              |
+| `sql`          | 关系表，与 Go 后端完全一致（用于 D1 / MySQL）           |
+
+### `DB_DRIVER`（数据库驱动）
+
+| 值               | 说明                                                                                        | 适用平台                 |
+| :-------------- | :------------------------------------------------------------------------------------------ | :----------------------- |
+| `auto`（默认）  | 自动检测可用驱动（优先级：blob → cfkv → kv → d1 → memory）                                  | 通用，任何平台可用       |
+| `blob`          | 腾讯云 EdgeOne Blob / 阿里云 ESA Blob                                                       | EdgeOne / ESA            |
+| `cfkv`          | Cloudflare KV REST API（需 `CF_ACCOUNT_ID` / `CF_KV_NAMESPACE_ID` / `CF_API_TOKEN`）       | 外部服务 / 跨账号        |
+| `kv`            | Cloudflare KV binding                                                                       | Cloudflare Workers       |
+| `d1`            | Cloudflare D1（SQLite）                                                                     | Cloudflare Workers       |
+| `do`            | Cloudflare Durable Objects（SQLite）                                                        | Cloudflare Workers       |
+| `mysql`         | 外部 MySQL                                                                                  | Node.js 容器运行时       |
+
+### 推荐组合
+
+```bash
+# Cloudflare Workers + D1（推荐，SQL 格式与 Go 后端完全兼容）
+DB_FORMAT=sql
+DB_DRIVER=d1
+```
+
+> **向后兼容：** 旧的 `DB_DRIVER=json` 会自动转换为 `DB_FORMAT=map` + 自动检测驱动；`DB_JSON_BACKEND` 已废弃，会自动映射为 `DB_DRIVER`。
 
 ::::
 
@@ -226,7 +260,7 @@ Use Cloudflare's _Automatic resource provisioning_: omit `database_id` in `wrang
 
 ```jsonc
 {
-  "vars": { "DB_DRIVER": "d1" },
+  "vars": { "DB_FORMAT": "sql", "DB_DRIVER": "d1" },
   "d1_databases": [{ "binding": "DB", "database_name": "openlist-data-base" }],
 }
 ```
@@ -266,7 +300,7 @@ pnpm run deploy:worker
 
 ```jsonc
 {
-  "vars": { "DB_DRIVER": "d1" },
+  "vars": { "DB_FORMAT": "sql", "DB_DRIVER": "d1" },
   "d1_databases": [{ "binding": "DB", "database_name": "openlist-data-base" }],
 }
 ```
@@ -289,7 +323,7 @@ Click the **EdgeOne** deploy button above, choose the international or China sit
 
 ### Persistence
 
-EdgeOne Makers uses `@edgeone/pages-blob` for persistence. The default `json` driver auto-detects Blob. You can also explicitly set `DB_JSON_BACKEND = "blob"` or `DB_DRIVER = "kv"`.
+EdgeOne Makers uses `@edgeone/pages-blob` for persistence. The default `auto` driver auto-detects Blob. You can also explicitly set `DB_DRIVER = "blob"` (with `DB_FORMAT = "map"`) or `DB_DRIVER = "kv"` (with `DB_FORMAT = "key"`).
 
 ### Scheduled tasks
 
@@ -323,7 +357,7 @@ EdgeOne supports scheduled refresh via `edgeone.json`. Set `CRON_SECRET` in envi
 
 ### 持久化
 
-EdgeOne Makers 使用 `@edgeone/pages-blob` 进行持久化。默认的 `json` 后端会自动探测 Blob，您也可以显式设置 `DB_JSON_BACKEND = "blob"` 或 `DB_DRIVER = "kv"`。
+EdgeOne Makers 使用 `@edgeone/pages-blob` 进行持久化。默认的 `auto` 驱动会自动探测 Blob，您也可以显式设置 `DB_DRIVER = "blob"`（配合 `DB_FORMAT = "map"`）或 `DB_DRIVER = "kv"`（配合 `DB_FORMAT = "key"`）。
 
 ### 定时任务
 
