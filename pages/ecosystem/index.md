@@ -72,6 +72,17 @@ OpenList traffic proxy program, which can use another server to proxy OpenList t
 OpenList流量代理程序，可以利用另一台服务器代理OpenList的流量
 :::
 
+### [OpenList Worker ↗](./ecosystem/official_worker)
+
+::::en
+The official TypeScript port of OpenList running on Cloudflare Workers / EdgeOne, reusing the official SolidJS frontend.
+::::
+::::zh-CN
+OpenList 官方的 TypeScript 移植版，运行于 Cloudflare Workers / EdgeOne，复用官方 SolidJS 前端。
+::::
+
+---
+
 ## Third-Party Open Source Projects { lang="en" }
 
 ## 第三方开源项目 { lang="zh-CN" }
