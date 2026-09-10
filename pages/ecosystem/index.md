@@ -75,10 +75,10 @@ OpenList流量代理程序，可以利用另一台服务器代理OpenList的流�
 ### [OpenList Worker ↗](./ecosystem/official_worker)
 
 ::::en
-The official TypeScript port of OpenList running on Cloudflare Workers / EdgeOne, reusing the official SolidJS frontend.
+The official TypeScript + Serverless port of OpenList running on Cloudflare Workers / EdgeOne / Alibaba Cloud ESA, reusing the official React 19 frontend.
 ::::
 ::::zh-CN
-OpenList 官方的 TypeScript 移植版，运行于 Cloudflare Workers / EdgeOne，复用官方 SolidJS 前端。
+OpenList 官方的 TypeScript + Serverless 移植版，运行于 Cloudflare Workers / EdgeOne / 阿里云 ESA，复用官方 React 19 前端。
 ::::
 
 ---
