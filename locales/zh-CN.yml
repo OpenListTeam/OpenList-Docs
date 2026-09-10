@@ -11,6 +11,7 @@ nav:
   configuration: 配置指南
   guide: 用户指南
   faq: FAQ
+  seeds: 传输种子
   community:
     title: 社区
     discussions: Github 讨论区
@@ -28,6 +29,7 @@ category:
   drivers: 添加存储
   # FAQ
   faq: FAQ
+  seeds: 传输种子
   # Developer Guide
   developer: 开发指引
   api: API 文档
@@ -37,6 +39,7 @@ category:
   # Ecosystem
   ecosystem: 生态项目
   eco_official: 官方生态项目
+  eco_worker: OpenList Worker
 
 # ! Index page (layout: hero)
 hero:

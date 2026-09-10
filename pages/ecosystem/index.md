@@ -7,11 +7,11 @@ categories:
 top: 1000
 ---
 
-:::en
+::: en
 This page shows the OpenList ecosystem, including official projects and third-party projects
 :::
 
-:::zh-CN
+::: zh-CN
 本页面展示了OpenList的生态项目，包括官方项目和第三方项目
 :::
 
@@ -21,10 +21,10 @@ This page shows the OpenList ecosystem, including official projects and third-pa
 
 ### [OpenList Docs ↗](./ecosystem/official_docs)
 
-:::en
+::: en
 Documentation based on Valaxy, supporting multiple styles and real-time builds from the GitHub repository.
 :::
-:::zh-CN
+::: zh-CN
 基于Valaxy的文档，支持多种样式，基于GitHub仓库实时构建。
 :::
 
@@ -32,10 +32,10 @@ Documentation based on Valaxy, supporting multiple styles and real-time builds f
 
 ### [OpenList Desktop ↗](./ecosystem/official_desktop)
 
-:::en
+::: en
 A cross-platform GUI management interface integrating OpenList and rclone, offering graphical configuration, monitoring, and service management features.
 :::
-:::zh-CN
+::: zh-CN
 整合了OpenList和rclone的跨平台GUI管理界面，提供图形化配置界面、监控和服务管理等实用功能。
 :::
 
@@ -43,10 +43,10 @@ A cross-platform GUI management interface integrating OpenList and rclone, offer
 
 ### [OpenList Mobile ↗](./ecosystem/official_mobile)
 
-:::en
+::: en
 A mobile file server application based on OpenList, built with Flutter framework. Turn your phone into a file server.
 :::
-:::zh-CN
+::: zh-CN
 基于OpenList的移动端文件服务器应用，使用Flutter框架开发。将您的手机变成文件服务器。
 :::
 
@@ -54,10 +54,10 @@ A mobile file server application based on OpenList, built with Flutter framework
 
 ### [OpenList APIPages ↗](./ecosystem/official_APIpage)
 
-:::en
+::: en
 An open-source implementation of the online API functionality in OpenList, deployable on various servers, providing stable and privacy-protected API authentication services for cloud storage users.
 :::
-:::zh-CN
+::: zh-CN
 OpenList中在线API功能的开源实现，可灵活部署至多种服务器，可以为网盘用户提供稳定且有双向隐私保障的API鉴权服务。
 :::
 
@@ -65,30 +65,42 @@ OpenList中在线API功能的开源实现，可灵活部署至多种服务器，
 
 ### [OpenList Proxy ↗](./ecosystem/official_proxy)
 
-:::en
+::: en
 OpenList traffic proxy program, which can use another server to proxy OpenList traffic.
 :::
-:::zh-CN
+::: zh-CN
 OpenList流量代理程序，可以利用另一台服务器代理OpenList的流量
 :::
+
+### [OpenList Worker ↗](./ecosystem/official_worker)
+
+:::: en
+The official TypeScript + Serverless port of OpenList running on Cloudflare Workers / EdgeOne / Alibaba Cloud ESA, reusing the official React 19 frontend.
+::::
+:::: zh-CN
+OpenList 官方的 TypeScript + Serverless 移植版，运行于 Cloudflare Workers / EdgeOne / 阿里云 ESA，复用官方 React 19 前端。
+::::
+
+---
 
 ## Third-Party Open Source Projects { lang="en" }
 
 ## 第三方开源项目 { lang="zh-CN" }
 
-::: en
+:::: en
 ::: tip
 Third-party open source projects are based on community open-source security. The following projects are not affiliated with OpenListTeam. Please evaluate the associated risks before deploying them to a production environment.
 
 If you have a new project that is not listed here, you can submit it through [Issues](https://github.com/OpenListTeam/OpenList-Docs/issues) or [Pull Request](https://github.com/OpenListTeam/OpenList-Docs/pulls).
 :::
+::::
 
-::: zh-CN
+:::: zh-CN
 ::: tip
 以下第三方开源项目均由社区开发并保持开源，与 OpenListTeam 无直接关联。在部署到生产环境前，请自行评估相关风险。
 
 如果您有新的项目没有在此列出，可以通过 [Issues](https://github.com/OpenListTeam/OpenList-Docs/issues) 或 [Pull Request](https://github.com/OpenListTeam/OpenList-Docs/pulls) 提交。
-:::
+::::
 
 ### [sbwml/luci-app-openlist ↗](https://github.com/sbwml/luci-app-openlist)
 
@@ -97,6 +109,7 @@ Provides LuCI support for OpenList, suitable for OpenWRT-based router systems.
 
 Free and Open Source Software licensed under the MIT license.
 :::
+::::
 
 ::: zh-CN
 为 OpenList 提供 LuCI 支持，适用于基于 OpenWRT 的路由器系统。
@@ -372,7 +385,7 @@ The communication progress is as follows:
 
 :::
 
-::: en
+:::: en
 ::: details History information (outdated，archived at 2026-01-22)
 The third-party closed-source QPKG version of OpenList.
 
@@ -382,8 +395,9 @@ Proprietary software, paid license.
 
 Note: The source code is not open, violating the AGPLv3 license and the OpenList logo's CC BY-NC-SA 4.0 license.
 :::
+::::
 
-::: zh-CN
+:::: zh-CN
 ::: details 历史信息（已过时，归档于2026-01-22）
 OpenList的第三方闭源qpkg版本。
 
@@ -392,29 +406,30 @@ OpenList的第三方闭源qpkg版本。
 专有软件，付费授权
 
 注意：因没有开放源码，违反AGPLv3许可证、违反OpenList LOGO的CC BY-NC-SA 4.0许可。
-:::
+::::
 
 ## Third-Party Proprietary Software { lang="en" }
 
 ## 其他第三方项目 { lang="zh-CN" }
 
-::: en
+:::: en
 ::: danger
 The following lists several other third-party projects derived from OpenList that do not fall into the above categories.
 
 Any actions of these software/projects (including references to OpenList in their names, functionality design, content, or promotional methods) do not represent the stance of the OpenList project. The functionality, consequences of use, and related legal responsibilities are entirely borne by their respective developers or publishers, and the OpenList project assumes no responsibility.
 :::
+::::
 
-::: zh-CN
+:::: zh-CN
 ::: danger
 以下列出若干基于 OpenList 衍生的其他不符合上述分类的的第三方项目。
 
 以下软件/项目的任何行为（包括其名称中对 OpenList 的引用、功能设计、内容及宣传方式）均**不代表** OpenList 项目的立场。软件功能、使用后果及相关法律责任完全由其开发者或发布方承担，OpenList 项目概不负责。
-:::
+::::
 
 ### [Yxiguan/OpenList_123](https://github.com/Yxiguan/OpenList_123)
 
-::: en
+:::: en
 ::: danger
 The third-party closed-source modified version of OpenList.
 
@@ -424,8 +439,9 @@ Proprietary software, no license.
 
 Note: The source code is not open, violating the AGPLv3 license.
 :::
+::::
 
-::: zh-CN
+:::: zh-CN
 ::: danger
 OpenList的第三方闭源修改版本。
 
@@ -434,4 +450,4 @@ OpenList的第三方闭源修改版本。
 专有软件，无授权
 
 注意：因没有开放源码，违反AGPLv3许可证。
-:::
+::::
