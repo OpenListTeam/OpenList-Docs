@@ -1,8 +1,18 @@
+---
+title:
+  en: Deploy to Cloudflare Workers
+  zh-CN: 部署教程 - Cloudflare Workers
+categories:
+  - ecosystem
+  - eco_worker
+top: 967
+---
+
 ## Deploy to Cloudflare Workers { lang="en" }
 
 ## 部署到 Cloudflare Workers { lang="zh-CN" }
 
-:::en
+::: en
 
 ### Prerequisites
 
@@ -27,7 +37,7 @@ Open the Cloudflare Workers dashboard, click **Create application** in the top-r
 
 Fork this project to your own GitHub account first, then select your forked Worker repository when creating the application.
 
-:::tip
+::: tip
 If you deploy directly using the upstream `OpenListTeam/OpenList-Worker` repository and Cloudflare reports "unable to fetch repository content", fork the project first and select your fork instead.
 :::
 
@@ -66,7 +76,7 @@ If you selected KV or D1 as the driver, you need to bind the corresponding bindi
 
 ![Bind the KV / D1 / DO binding](/img/worker/create_app5.png)
 
-:::tip Automatic D1 provisioning
+::: tip Automatic D1 provisioning
 For D1, you can enable Cloudflare's **Automatic resource provisioning**: omit `database_id` in the D1 binding, and Wrangler (>= 4.45.0) auto-creates a D1 database with the same name and writes back the ID on deploy.
 :::
 
@@ -78,7 +88,7 @@ Add your own domain in **Settings → Domains and Routes**, then create a CNAME 
 
 ### After deployment
 
-:::tip
+::: tip
 After deployment, the first visit to the site automatically enters an **install wizard**. Set the admin account and password in the browser to complete initialization — no pre-configured `ADMIN_PASSWORD` is required.
 :::
 
@@ -101,7 +111,7 @@ pnpm run deploy
 
 :::
 
-:::zh-CN
+::: zh-CN
 
 ### 前置要求
 
@@ -126,7 +136,7 @@ pnpm run deploy
 
 请先将本项目 Fork 到您自己的 GitHub 账号内，然后在创建时选择 Fork 后的 Worker 仓库。
 
-:::tip
+::: tip
 如果你直接使用上游 `OpenListTeam/OpenList-Worker` 仓库部署，且 Cloudflare 提示「无法获取存储库内容」，请先 Fork 本项目，再选择你的 Fork 仓库。
 :::
 
@@ -165,7 +175,7 @@ Cloudflare 会构建 Worker 并部署到 `*.workers.dev` 子域名。
 
 ![绑定 KV / D1 / DO 绑定](/img/worker/create_app5.png)
 
-:::tip D1 自动创建
+::: tip D1 自动创建
 对于 D1，可启用 Cloudflare 的 **Automatic resource provisioning**：在 D1 绑定中省略 `database_id`，Wrangler（>= 4.45.0）会自动创建同名 D1 库并回写 ID。
 :::
 
@@ -177,7 +187,7 @@ Cloudflare 会构建 Worker 并部署到 `*.workers.dev` 子域名。
 
 ### 部署后初始化
 
-:::tip
+::: tip
 部署完成后，首次访问站点会自动进入**安装向导**，在浏览器中设置管理员账号与密码即可完成初始化，无需预先配置 `ADMIN_PASSWORD`。
 :::
 
@@ -200,4 +210,10 @@ pnpm run deploy
 
 :::
 
-<!--@include: ./guide_env.md -->
+::: en
+For a full list of environment variables and recommended configurations, see [Environment Variables](./guide_env).
+:::
+
+::: zh-CN
+完整的环境变量说明与推荐配置组合，请参阅 [配置变量](./guide_env)。
+:::

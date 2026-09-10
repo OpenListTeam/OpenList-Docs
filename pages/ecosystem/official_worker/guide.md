@@ -1,24 +1,24 @@
 ---
 title:
-  en: OpenList Worker Deployment
-  zh-CN: OpenList Worker 部署
+  en: Deployment
+  zh-CN: 部署教程
 categories:
   - ecosystem
-  - eco_official
-top: 957
+  - eco_worker
+top: 977
 ---
 
 ## How to Deploy { lang="en" }
 
 ## 部署方法 { lang="zh-CN" }
 
-:::en
+:::: en
 For a detailed, step-by-step deployment guide (Cloudflare Workers / EdgeOne / ESA), see [OpenList Worker 部署指南](/guide/installation/worker).
-:::
+::::
 
-:::zh-CN
+:::: zh-CN
 详细的分步部署指南（Cloudflare Workers / EdgeOne / ESA）请参阅 [OpenList Worker 部署指南](/guide/installation/worker)。
-:::
+::::
 
 ### One-click Deploy { lang="en" }
 
@@ -28,43 +28,53 @@ For a detailed, step-by-step deployment guide (Cloudflare Workers / EdgeOne / ES
 | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
 | [![使用 EdgeOne 部署](https://cdnstatic.tencentcs.com/edgeone/pages/deploy.svg)](https://edgeone.ai/pages/new?project-name=openlist-tsworker&repository-url=https://github.com/OpenListTeam/OpenList-Worker&install-command=pnpm%20install%20--no-frozen-lockfile&build-command=pnpm%20run%20build&output-directory=dist&env=ENCRYPTION_SECRET,JWT_SECRET) | [![使用 EdgeOne 部署](https://cdnstatic.tencentcs.com/edgeone/pages/deploy.svg)](https://console.cloud.tencent.com/edgeone/pages/new?project-name=openlist-tsworker&repository-url=https://github.com/OpenListTeam/OpenList-Worker&install-command=pnpm%20install%20--no-frozen-lockfile&build-command=pnpm%20run%20build&output-directory=dist&env=ENCRYPTION_SECRET,JWT_SECRET) | [![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/OpenListTeam/OpenList-Worker) |
 
-:::en
+:::: en
 
 > **Note**: If Cloudflare reports "unable to fetch repository content", [Fork](https://github.com/OpenListTeam/OpenList-Worker/fork) the project first, then deploy via the GitHub repository connection.
-> :::
+> ::::
 
-:::zh-CN
+:::: zh-CN
 
-> **注意**：若 Cloudflare 提示“无法获取存储库内容”，请先 [Fork](https://github.com/OpenListTeam/OpenList-Worker/fork) 本项目，再通过连接到 GitHub 仓库功能部署。
-> :::
+> **注意**：若 Cloudflare 提示"无法获取存储库内容"，请先 [Fork](https://github.com/OpenListTeam/OpenList-Worker/fork) 本项目，再通过连接到 GitHub 仓库功能部署。
+> ::::
 
-<!--@include: ./guide_cfw.md -->
+:::: en
+For platform-specific step-by-step guides, see:
 
-<!--@include: ./guide_eom.md -->
+- [Cloudflare Workers](./guide_cfw)
+- [Tencent Cloud EdgeOne](./guide_eom)
+- [Alibaba Cloud ESA](./guide_esa)
+  ::::
 
-<!--@include: ./guide_esa.md -->
+:::: zh-CN
+各平台的分步部署教程，请参阅：
+
+- [Cloudflare Workers](./guide_cfw)
+- [腾讯云 EdgeOne](./guide_eom)
+- [阿里云 ESA](./guide_esa)
+  ::::
 
 ### Initialization { lang="en" }
 
 ### 部署后初始化 { lang="zh-CN" }
 
-:::en
-:::tip
+:::: en
+::: tip
 After deployment, the first visit to the site automatically enters an **install wizard**. Set the admin account and password in the browser to complete initialization — no pre-configured `ADMIN_PASSWORD` is required.
 :::
-:::
+::::
 
-:::zh-CN
-:::tip
+:::: zh-CN
+::: tip
 部署完成后，首次访问站点会自动进入**安装向导**，在浏览器中设置管理员账号与密码即可完成初始化，无需预先配置 `ADMIN_PASSWORD`。
 :::
-:::
+::::
 
 ### Local Development { lang="en" }
 
 ### 本地开发 { lang="zh-CN" }
 
-:::en
+:::: en
 **Prerequisites**
 
 - Node.js 18+ (pnpm recommended)
@@ -95,9 +105,9 @@ pnpm run deploy
 pnpm run deploy:worker
 ```
 
-:::
+::::
 
-:::zh-CN
+:::: zh-CN
 **前置要求**
 
 - Node.js 18+（推荐使用 pnpm）
@@ -128,4 +138,4 @@ pnpm run deploy
 pnpm run deploy:worker
 ```
 
-:::
+::::

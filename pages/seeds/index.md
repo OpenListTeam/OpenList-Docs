@@ -7,10 +7,6 @@ categories:
 top: 1000
 ---
 
-# 传输种子 { lang="zh-CN" }
-
-# Transfer Seeds { lang="en" }
-
 ## 什么是传输种子 { lang="zh-CN" }
 
 ## What are Transfer Seeds { lang="en" }

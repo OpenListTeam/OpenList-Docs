@@ -7,10 +7,6 @@ categories:
 top: 950
 ---
 
-# 秒传矩阵 { lang="zh-CN" }
-
-# Rapid upload matrix { lang="en" }
-
 ::::: zh-CN
 种子系统依赖网盘提供的哈希来避免重复下载。不同网盘提供和需要的哈希各不相同，下面按「列表提供」与「秒传所需」两个维度汇总。
 :::::
@@ -144,17 +140,19 @@ The hash matrix is preflighted against these capabilities: if the drive already 
 ## Notes { lang="en" }
 
 ::::: zh-CN
+
 - **GCID** 为分块 SHA1（40 位），用于 PikPak / 迅雷族 / febbox。
 - 天翼云 189 与百度网盘的分片上传另需逐片 MD5（`slice_md5`）。
 - 阿里云盘族使用 `pre_hash`（文件头 1024 字节 SHA1）触发秒传，命中后补算完整 SHA1。
 - 移动云盘 139 快传使用 SHA256；123 Open 支持 SHA1 复用（`sha1_reuse`）。
 - **注意**：上表为各驱动的原生秒传能力。当前种子「秒传保存」流程仅天翼云 189pc 的 CAS 秒传被完整接入，其余驱动的秒传在普通上传（`Put` / `PutRapid`）路径中生效。
-:::::
+  :::::
 
 ::::: en
+
 - **GCID** is a block SHA1 (40 hex chars), used by PikPak / Thunder family / febbox.
 - 189 and Baidu chunked uploads additionally need per-piece MD5 (`slice_md5`).
 - The Aliyundrive family uses `pre_hash` (SHA1 of the first 1024 bytes) to trigger rapid upload, then computes the full SHA1 on hit.
 - 139 rapid upload uses SHA256; 123 Open supports SHA1 reuse (`sha1_reuse`).
 - **Note**: the table above reflects each drive's native rapid-upload capability. Currently only 189pc CAS rapid upload is wired into the seed "rapid save" flow; other drives' rapid upload takes effect in the normal upload path (`Put` / `PutRapid`).
-:::::
+  :::::

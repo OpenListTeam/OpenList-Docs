@@ -7,10 +7,6 @@ categories:
 top: 940
 ---
 
-# 常见问题 { lang="zh-CN" }
-
-# FAQ { lang="en" }
-
 ## 注意事项 { lang="zh-CN" }
 
 ## Notes { lang="en" }

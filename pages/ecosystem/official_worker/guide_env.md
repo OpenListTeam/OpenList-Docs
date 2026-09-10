@@ -1,3 +1,13 @@
+---
+title:
+  en: Environment Variables
+  zh-CN: 环境变量
+categories:
+  - ecosystem
+  - eco_worker
+top: 972
+---
+
 ## Environment Variables { lang="en" }
 
 ## 配置变量 { lang="zh-CN" }
@@ -39,7 +49,7 @@ In addition to `DB_FORMAT` and `DB_DRIVER`, it is strongly recommended to config
 | `DB_DRIVER` | Supported platform | Description                                                                |
 | ----------- | ------------------ | -------------------------------------------------------------------------- |
 | `auto`      | Universal          | Auto-detect, priority: blob → cfkv → kv → d1 → memory                      |
-| `blob`      | EdgeOne            | Persistence provided by EdgeOne Makers, free                               |
+| `blob`      | EdgeOne / ESA      | Persistence provided by EdgeOne or Alibaba ESA Blob, free                  |
 | `cfkv`      | Universal          | Cloudflare KV REST API, for remote access on platforms without persistence |
 | `kv`        | CF / EO / ESA      | KV database, fast and free                                                 |
 | `d1`        | CF                 | D1 database, Cloudflare only                                               |
@@ -48,21 +58,19 @@ In addition to `DB_FORMAT` and `DB_DRIVER`, it is strongly recommended to config
 
 ### Valid combinations
 
-| `DB_FORMAT` | `DB_DRIVER` | Description                                                         |
-| ----------- | ----------- | ------------------------------------------------------------------- |
-| `map`       | `auto`      | JSON storage, auto-selects blob / kv / d1 based on the platform     |
-| `map`       | `blob`      | JSON storage via Tencent Cloud Blob (recommended)                   |
-| `map`       | `cfkv`      | JSON storage via remote CF KV outside CF Workers                    |
-| `map`       | `kv`        | JSON storage via KV on CF Workers (recommended)                     |
-| `map`       | `d1`        | JSON storage via D1 on CF Workers (not recommended)                 |
-| `map`       | `do`        | JSON storage via DO on CF Workers (not recommended, may incur cost) |
-| `key`       | `kv`        | Key-Value storage via KV on CF Workers (recommended)                |
-| `key`       | `d1`        | Key-Value storage via D1 on CF Workers (recommended)                |
-| `key`       | `mysql`     | Key-Value storage via MySQL on CF Workers (not recommended)         |
-| `sql`       | `d1`        | SQL-Table storage via D1 on CF Workers (recommended)                |
-| `sql`       | `mysql`     | SQL-Table storage via MySQL                                         |
-
-## 配置变量
+| `DB_FORMAT` | `DB_DRIVER` | Description                                                           |
+| ----------- | ----------- | --------------------------------------------------------------------- |
+| `map`       | `auto`      | JSON storage, auto-selects blob / kv / d1 based on the platform       |
+| `map`       | `blob`      | JSON storage via EdgeOne / ESA Blob (recommended for those platforms) |
+| `map`       | `cfkv`      | JSON storage via remote CF KV outside CF Workers                      |
+| `map`       | `kv`        | JSON storage via KV on CF Workers (recommended)                       |
+| `map`       | `d1`        | JSON storage via D1 on CF Workers (not recommended)                   |
+| `map`       | `do`        | JSON storage via DO on CF Workers (not recommended, may incur cost)   |
+| `key`       | `kv`        | Key-Value storage via KV on CF Workers (recommended)                  |
+| `key`       | `d1`        | Key-Value storage via D1 on CF Workers (recommended)                  |
+| `key`       | `mysql`     | Key-Value storage via MySQL on CF Workers (not recommended)           |
+| `sql`       | `d1`        | SQL-Table storage via D1 on CF Workers (recommended)                  |
+| `sql`       | `mysql`     | SQL-Table storage via MySQL                                           |
 
 ### Remote database configuration
 
@@ -121,22 +129,22 @@ If you bound MySQL, set the following variables:
 
 ### 不同存储驱动差异
 
-| `DB_DRIVER` 类型 | 支持平台    | 说明                                                   |
-| ---------------- | ----------- | ------------------------------------------------------ |
-| `auto`           | 通用        | 自动检测，优先级 blob → cfkv → kv → d1 → memory        |
-| `blob`           | EdgeOne     | EdgeOne Makers 提供的持久化工具，免费                  |
-| `cfkv`           | 通用        | Cloudflare KV REST API，适用于没有持久化的平台远程调用 |
-| `kv`             | CF、EO、ESA | KV 数据库，速度快，免费                                |
-| `d1`             | CF          | D1 数据库，仅支持 Cloudflare                           |
-| `do`             | CF          | DO 持久化对象，仅支持 Cloudflare                       |
-| `mysql`          | 通用        | 连接到自己的 MySQL 数据库                              |
+| `DB_DRIVER` 类型 | 支持平台      | 说明                                                   |
+| ---------------- | ------------- | ------------------------------------------------------ |
+| `auto`           | 通用          | 自动检测，优先级 blob → cfkv → kv → d1 → memory        |
+| `blob`           | EdgeOne / ESA | EdgeOne 或阿里云 ESA Blob 提供的持久化工具，免费       |
+| `cfkv`           | 通用          | Cloudflare KV REST API，适用于没有持久化的平台远程调用 |
+| `kv`             | CF、EO、ESA   | KV 数据库，速度快，免费                                |
+| `d1`             | CF            | D1 数据库，仅支持 Cloudflare                           |
+| `do`             | CF            | DO 持久化对象，仅支持 Cloudflare                       |
+| `mysql`          | 通用          | 连接到自己的 MySQL 数据库                              |
 
 ### 可选有效组合变量
 
 | `DB_FORMAT` | `DB_DRIVER` | 说明                                                               |
 | ----------- | ----------- | ------------------------------------------------------------------ |
 | `map`       | `auto`      | 数据存储为 JSON，自动根据部署环境选择 blob、kv、d1                 |
-| `map`       | `blob`      | 数据存储为 JSON，使用腾讯云 blob 持久化存储（推荐）                |
+| `map`       | `blob`      | 数据存储为 JSON，使用 EdgeOne / ESA Blob 持久化存储（推荐）        |
 | `map`       | `cfkv`      | 数据存储为 JSON，在非 CF Worker 环境使用远程 CF KV 存储            |
 | `map`       | `kv`        | 数据存储为 JSON，在 CF Worker 环境使用 KV 存储（推荐）             |
 | `map`       | `d1`        | 数据存储为 JSON，在 CF Worker 环境使用 D1 存储（不推荐）           |

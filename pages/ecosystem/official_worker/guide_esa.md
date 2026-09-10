@@ -1,3 +1,13 @@
+---
+title:
+  en: Deploy to Alibaba Cloud ESA
+  zh-CN: 部署教程 - Alibaba Cloud ESA
+categories:
+  - ecosystem
+  - eco_worker
+top: 965
+---
+
 ## Deploy to Alibaba Cloud ESA { lang="en" }
 
 ## 部署到阿里云 ESA { lang="zh-CN" }
@@ -70,4 +80,10 @@ ESA EdgeKV 是最终一致性的。入口实现了带 TTL（60 秒）的模块�
 :::
 :::
 
-<!--@include: ./guide_env.md -->
+:::en
+For a full list of environment variables and recommended configurations, see [Environment Variables](./guide_env).
+:::
+
+:::zh-CN
+完整的环境变量说明与推荐配置组合，请参阅 [配置变量](./guide_env)。
+:::

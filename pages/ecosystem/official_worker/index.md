@@ -1,11 +1,11 @@
 ---
 title:
-  en: OpenList Worker
-  zh-CN: OpenList Worker
+  en: Intro
+  zh-CN: 项目介绍
 categories:
   - ecosystem
-  - eco_official
-top: 955
+  - eco_worker
+top: 979
 ---
 
 ## What is OpenList Worker { lang="en" }
@@ -18,9 +18,9 @@ top: 955
 [**OpenList Worker**](https://github.com/OpenListTeam/OpenList-Worker) (repo `OpenList-TSWorker`) is the official TypeScript + Serverless port of [OpenList](https://github.com/OpenListTeam/OpenList). The Go backend is rewritten as a TypeScript service running on edge platforms (Cloudflare Workers / EdgeOne Cloud Function / Alibaba Cloud ESA), while the frontend keeps the same interface and interaction as the official OpenList frontend.
 
 - **Backend**: Hono.js, runs on Cloudflare Workers / EdgeOne Functions / Alibaba Cloud ESA
-- **Frontend**: React 19 + TypeScript, Ant Design / Material-UI, built with Vite
-- **Database**: Cloudflare D1 (SQLite), MySQL / MariaDB / PostgreSQL / SQL Server
-- **Cache**: Cloudflare KV / EdgeOne Blob (optional)
+- **Frontend**: SolidJS + TypeScript, Hope UI, built with Vite
+- **Database**: Cloudflare D1 (SQLite), MySQL / MariaDB
+- **Cache**: Cloudflare KV / EdgeOne Blob / ESA EdgeKV (optional)
 - **License**: AGPL-3.0
   :::
 
@@ -28,9 +28,9 @@ top: 955
 [**OpenList Worker**](https://github.com/OpenListTeam/OpenList-Worker)（仓库 `OpenList-TSWorker`）是官方 [OpenList](https://github.com/OpenListTeam/OpenList) 项目的 TypeScript + Serverless 架构移植版。后端由 Go 重写为运行于边缘平台（Cloudflare Workers / EdgeOne 云函数 / 阿里云 ESA）上的 TypeScript 服务，前端保持与官方 OpenList 前端一致的界面与交互。
 
 - **后端**：Hono.js，运行于 Cloudflare Workers / EdgeOne 云函数 / 阿里云 ESA
-- **前端**：React 19 + TypeScript，Ant Design / Material-UI，使用 Vite 构建
-- **数据库**：Cloudflare D1（SQLite）、MySQL / MariaDB / PostgreSQL / SQL Server
-- **缓存**：Cloudflare KV / EdgeOne Blob（可选）
+- **前端**：SolidJS + TypeScript，Hope UI，使用 Vite 构建
+- **数据库**：Cloudflare D1（SQLite）、MySQL / MariaDB
+- **缓存**：Cloudflare KV / EdgeOne Blob / ESA EdgeKV（可选）
 - **许可证**：AGPL-3.0
   :::
 
@@ -43,7 +43,7 @@ top: 955
 ### 存储聚合 { lang="zh-CN" }
 
 :::en
-Built-in **78 storage drivers** to mount various storage backends out of the box:
+Built-in **81 storage drivers** to mount various storage backends out of the box:
 
 - **Domestic drives**: Aliyundrive (Open Platform / share), Quark (Open Platform / UC TV), Baidu (album), 115 (Open Platform / share), 123 (Open Platform / share), Tianyi Cloud, China Mobile Cloud, Xunlei, Tencent Weiyun, Lanzou, PikPak (share), Doubao, Teambition, WPS, Alidoc, etc.
 - **International drives**: Google Drive (album), OneDrive, Dropbox, MEGA, MediaFire, Proton Drive, Yandex Disk, TeraBox, etc.
@@ -56,7 +56,7 @@ In addition to the real storages above, virtual/functional drivers such as `Loca
 :::
 
 :::zh-CN
-内置 **78 个存储驱动**，开箱即用地挂载各类存储后端：
+内置 **81 个存储驱动**，开箱即用地挂载各类存储后端：
 
 - **国内网盘**：阿里云盘（开放平台/分享）、夸克网盘（开放平台/UC TV 版）、百度网盘（相册）、115 网盘（开放平台/分享）、123 云盘（开放平台/分享）、天翼云盘、中国移动云盘、迅雷云盘、腾讯微云、蓝奏云、PikPak（分享）、豆包网盘、Teambition 网盘、WPS 网盘、阿里文档等
 - **国际网盘**：Google Drive（相册）、OneDrive、Dropbox、MEGA、MediaFire、Proton Drive、Yandex Disk、TeraBox 等
@@ -120,18 +120,18 @@ In addition to the real storages above, virtual/functional drivers such as `Loca
 
 :::en
 
-- **Runtime platforms**: Cloudflare Workers, Tencent Cloud EdgeOne Makers, Vercel, Serverless and Node.js container environments.
-- **Data storage**: Cloudflare D1 (SQLite) as primary, with support for MySQL, MariaDB, PostgreSQL, SQL Server.
-- **Persistent cache**: Cloudflare KV / EdgeOne Blob (optional), used for configuration persistence and caching.
-- **One-click deploy**: one-click deploy buttons + initialization for EdgeOne, Cloudflare Workers and other platforms.
+- **Runtime platforms**: Cloudflare Workers, Tencent Cloud EdgeOne Functions, Alibaba Cloud ESA.
+- **Data storage**: Cloudflare D1 (SQLite) as primary, with external MySQL / MariaDB support.
+- **Persistent cache**: Cloudflare KV / EdgeOne Blob / ESA EdgeKV (optional), used for configuration persistence and caching.
+- **One-click deploy**: one-click deploy buttons + initialization for Cloudflare Workers, EdgeOne and Alibaba Cloud ESA.
   :::
 
 :::zh-CN
 
-- **运行平台**：Cloudflare Workers、腾讯云 EdgeOne Makers、Vercel、Serverless 及 Node.js 容器环境。
-- **数据存储**：Cloudflare D1（SQLite）为主，同时支持 MySQL、MariaDB、PostgreSQL、SQL Server。
-- **持久缓存**：Cloudflare KV / EdgeOne Blob（可选），用于配置持久化与缓存。
-- **一键部署**：支持 EdgeOne、Cloudflare Workers 等平台的一键部署按钮 + 初始化。
+- **运行平台**：Cloudflare Workers、腾讯云 EdgeOne 云函数、阿里云 ESA。
+- **数据存储**：Cloudflare D1（SQLite）为主，支持外部 MySQL / MariaDB。
+- **持久缓存**：Cloudflare KV / EdgeOne Blob / ESA EdgeKV（可选），用于配置持久化与缓存。
+- **一键部署**：支持 Cloudflare Workers、EdgeOne、阿里云 ESA 的一键部署按钮 + 初始化。
   :::
 
 ## Documentation { lang="en" }
@@ -141,16 +141,22 @@ In addition to the real storages above, virtual/functional drivers such as `Loca
 :::en
 
 - [Design Architecture](./architecture) — Tech stack, data storage backend and supported platforms
-- [How to Deploy](./deploy) — One-click deploy, Cloudflare / EdgeOne / ESA / local
-- [Configuration Reference](./config) — `wrangler.toml` parameters and environment variables
+- [How to Deploy](./guide) — One-click deploy overview and local development
+  - [Cloudflare Workers](./guide_cfw) — Step-by-step Cloudflare Workers deployment (with screenshots)
+  - [EdgeOne](./guide_eom) — Tencent Cloud EdgeOne deployment
+  - [Alibaba Cloud ESA](./guide_esa) — Alibaba Cloud ESA deployment
+- [Environment Variables](./guide_env) — `DB_FORMAT`, `DB_DRIVER` and all runtime variables
 - [FAQ](./faq) — Common issues and troubleshooting
   :::
 
 :::zh-CN
 
 - [设计架构](./architecture) — 技术栈、数据存储后端与支持平台
-- [部署方法](./deploy) — 一键部署、Cloudflare / EdgeOne / ESA / 本地
-- [参数详解](./config) — `wrangler.toml` 参数与环境变量
+- [部署方法](./guide) — 一键部署入口与本地开发
+  - [Cloudflare Workers](./guide_cfw) — 分步 Cloudflare Workers 部署教程（含截图）
+  - [EdgeOne](./guide_eom) — 腾讯云 EdgeOne 部署
+  - [阿里云 ESA](./guide_esa) — 阿里云 ESA 部署
+- [配置变量](./guide_env) — `DB_FORMAT`、`DB_DRIVER` 及所有运行时变量
 - [常见问题](./faq) — 常见问题与排查
   :::
 

@@ -7,10 +7,6 @@ categories:
 top: 980
 ---
 
-# 设计理念 { lang="zh-CN" }
-
-# Design principles { lang="en" }
-
 ## 设计目标 { lang="zh-CN" }
 
 ## Goals { lang="en" }

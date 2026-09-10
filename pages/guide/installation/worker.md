@@ -20,29 +20,29 @@ tag:
 
 ## OpenList Worker 是什么 { lang="zh-CN" }
 
-::::en
+::: en
 [**OpenList Worker**](https://github.com/OpenListTeam/OpenList-Worker)（仓库 `OpenList-TSWorker`）是 OpenList 官方的 TypeScript + Serverless 移植版。后端由 Go 重写为运行于边缘平台上的 TypeScript 服务，前端复用官方 [OpenList-Frontend](https://github.com/OpenListTeam/OpenList-Frontend)（SolidJS），无需自备服务器即可一键部署。
 
 - **后端**：Hono.js（TypeScript）
 - **运行平台**：Cloudflare Workers / EdgeOne Functions / Alibaba Cloud ESA / Vercel / AWS Lambda
 - **数据库**：Cloudflare D1（SQLite）、MySQL / MariaDB / PostgreSQL / SQL Server、Cloudflare KV
 - **许可证**：AGPL-3.0
-  ::::
+  :::
 
-::::zh-CN
+::: zh-CN
 [**OpenList Worker**](https://github.com/OpenListTeam/OpenList-Worker)（仓库 `OpenList-TSWorker`）是 OpenList 官方的 TypeScript + Serverless 移植版。后端由 Go 重写为运行于边缘平台上的 TypeScript 服务，前端复用官方 [OpenList-Frontend](https://github.com/OpenListTeam/OpenList-Frontend)（SolidJS），无需自备服务器即可一键部署。
 
 - **后端**：Hono.js（TypeScript）
 - **运行平台**：Cloudflare Workers / EdgeOne Functions / 阿里云 ESA / Vercel / AWS Lambda
 - **数据库**：Cloudflare D1（SQLite）、MySQL / MariaDB / PostgreSQL / SQL Server、Cloudflare KV
 - **许可证**：AGPL-3.0
-  ::::
+  :::
 
 ## Supported Platforms { lang="en" }
 
 ## 支持平台 { lang="zh-CN" }
 
-::::en
+::: en
 | Platform | Persistence | One-click | Notes |
 | :--- | :--- | :---: | :--- |
 | Cloudflare Workers | D1 / KV / JSON | ✅ | Recommended, global edge network |
@@ -50,9 +50,9 @@ tag:
 | Alibaba Cloud ESA | EdgeKV | ✅ | Alibaba edge function |
 | Vercel | In-memory（JSON） | — | No persistence by default |
 | AWS Lambda（Serverless Framework） | In-memory（JSON） | — | `serverless.yml` |
-::::
+:::
 
-::::zh-CN
+::: zh-CN
 | 平台 | 持久化 | 一键部署 | 说明 |
 | :--- | :--- | :---: | :--- |
 | Cloudflare Workers | D1 / KV / JSON | ✅ | 推荐，全球边缘网络 |
@@ -60,53 +60,53 @@ tag:
 | 阿里云 ESA | EdgeKV | ✅ | 阿里云边缘函数 |
 | Vercel | 内存（JSON） | — | 默认无持久化 |
 | AWS Lambda（Serverless Framework） | 内存（JSON） | — | `serverless.yml` |
-::::
+:::
 
 ## One-click Deploy { lang="en" }
 
 ## 一键部署 { lang="zh-CN" }
 
-::::en
+::: en
 Click the button below to deploy to the corresponding platform:
-::::
+:::
 
-::::zh-CN
+::: zh-CN
 点击下方按钮，即可将本项目一键部署到对应平台：
-::::
+:::
 
 |                                                                                                                                                                  EdgeOne Makers · 国际站                                                                                                                                                                   |                                                                                                                                                                              EdgeOne Makers · 中国站                                                                                                                                                                              |                                                                         Cloudflare Workers · 全球站                                                                         |
 | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
 | [![使用 EdgeOne 部署](https://cdnstatic.tencentcs.com/edgeone/pages/deploy.svg)](https://edgeone.ai/pages/new?project-name=openlist-tsworker&repository-url=https://github.com/OpenListTeam/OpenList-Worker&install-command=pnpm%20install%20--no-frozen-lockfile&build-command=pnpm%20run%20build&output-directory=dist&env=ENCRYPTION_SECRET,JWT_SECRET) | [![使用 EdgeOne 部署](https://cdnstatic.tencentcs.com/edgeone/pages/deploy.svg)](https://console.cloud.tencent.com/edgeone/pages/new?project-name=openlist-tsworker&repository-url=https://github.com/OpenListTeam/OpenList-Worker&install-command=pnpm%20install%20--no-frozen-lockfile&build-command=pnpm%20run%20build&output-directory=dist&env=ENCRYPTION_SECRET,JWT_SECRET) | [![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/OpenListTeam/OpenList-Worker) |
 
-::::en
+::: en
 
 > If Cloudflare prompts `无法获取存储库内容`（cannot fetch repository content）, fork this project first, then deploy by connecting to the GitHub repository.
-> ::::
+> :::
 
-::::zh-CN
+::: zh-CN
 
 > 若 Cloudflare 提示 `无法获取存储库内容`，则您需要先 Fork 本项目，再通过连接到 GitHub 仓库功能部署。
-> ::::
+> :::
 
 ## Initialization { lang="en" }
 
 ## 部署后初始化 { lang="zh-CN" }
 
-::::en
-::::tip
+::: en
+::: tip
 After deployment, the first visit to the site automatically enters an **installation wizard**. Set the admin account and password in the browser to complete initialization — no pre-configured `ADMIN_PASSWORD` is required.
-::::
+:::
 
-::::zh-CN
-::::tip
+::: zh-CN
+::: tip
 部署完成后，首次访问站点会自动进入**安装向导**，在浏览器中设置管理员账号与密码即可完成初始化，无需预先配置 `ADMIN_PASSWORD`。
-::::
+:::
 
 ## Environment Variables { lang="en" }
 
 ## 环境变量 / Secrets { lang="zh-CN" }
 
-::::en
+::: en
 | Variable | Required | Default | Description |
 | :--- | :--- | :--- | :--- |
 | `ENCRYPTION_SECRET` | Recommended | — | Static encryption key (≥16 chars). Encrypts drive tokens/secrets; stored in plaintext when unset |
@@ -123,9 +123,9 @@ After deployment, the first visit to the site automatically enters an **installa
 | `ADMIN_PASSWORD` | Optional | — | Skip the install wizard and auto-initialize admin with this password |
 | `ALLOWED_ORIGINS` | Optional | — | Comma-separated CORS origin allowlist |
 | `DATABASE_JSON` | Optional | — | In-memory JSON database (test/local only, ephemeral) |
-::::
+:::
 
-::::zh-CN
+::: zh-CN
 | 变量 | 必要 | 默认值 | 说明 |
 | :--- | :--- | :--- | :--- |
 | `ENCRYPTION_SECRET` | 推荐 | — | 静态加密密钥（≥16 字符）。加密网盘 token/secret 等敏感字段；未配置时将以明文落盘 |
@@ -142,13 +142,13 @@ After deployment, the first visit to the site automatically enters an **installa
 | `ADMIN_PASSWORD` | 可选 | — | 跳过安装向导，以该密码自动初始化 admin |
 | `ALLOWED_ORIGINS` | 可选 | — | CORS 允许来源白名单（逗号分隔） |
 | `DATABASE_JSON` | 可选 | — | 内存 JSON 数据库（仅测试/本地调试，重启即失） |
-::::
+:::
 
 ## Data Backend（DB_FORMAT & DB_DRIVER） { lang="en" }
 
 ## 数据存储后端（DB_FORMAT 与 DB_DRIVER） { lang="zh-CN" }
 
-::::en
+::: en
 OpenList Worker separates persistence into two orthogonal layers:
 
 - **`DB_FORMAT`** — how data is serialized and stored
@@ -164,15 +164,15 @@ OpenList Worker separates persistence into two orthogonal layers:
 
 ### `DB_DRIVER`（database driver）
 
-| Value             | Description                                                                                       | Suitable platform         |
-| :---------------- | :------------------------------------------------------------------------------------------------ | :------------------------ |
-| `auto`（default） | Auto-detect available driver（priority: blob → cfkv → kv → d1 → memory）                         | Universal, works anywhere |
-| `blob`            | Tencent EdgeOne Blob / Alibaba ESA Blob                                                           | EdgeOne / ESA             |
-| `cfkv`            | Cloudflare KV REST API（requires `CF_ACCOUNT_ID` / `CF_KV_NAMESPACE_ID` / `CF_API_TOKEN`）       | External / cross-account  |
-| `kv`              | Cloudflare KV binding                                                                             | Cloudflare Workers        |
-| `d1`              | Cloudflare D1 (SQLite)                                                                            | Cloudflare Workers        |
-| `do`              | Cloudflare Durable Objects (SQLite)                                                               | Cloudflare Workers        |
-| `mysql`           | External MySQL                                                                                    | Node.js container runtime |
+| Value             | Description                                                                                | Suitable platform         |
+| :---------------- | :----------------------------------------------------------------------------------------- | :------------------------ |
+| `auto`（default） | Auto-detect available driver（priority: blob → cfkv → kv → d1 → memory）                   | Universal, works anywhere |
+| `blob`            | Tencent EdgeOne Blob / Alibaba ESA Blob                                                    | EdgeOne / ESA             |
+| `cfkv`            | Cloudflare KV REST API（requires `CF_ACCOUNT_ID` / `CF_KV_NAMESPACE_ID` / `CF_API_TOKEN`） | External / cross-account  |
+| `kv`              | Cloudflare KV binding                                                                      | Cloudflare Workers        |
+| `d1`              | Cloudflare D1 (SQLite)                                                                     | Cloudflare Workers        |
+| `do`              | Cloudflare Durable Objects (SQLite)                                                        | Cloudflare Workers        |
+| `mysql`           | External MySQL                                                                             | Node.js container runtime |
 
 ### Recommended combinations
 
@@ -188,20 +188,20 @@ DB_DRIVER=d1
 
 The `sql` format uses columnar tables with the same naming strategy as the Go backend's GORM: snake_case + pluralized table names, plus a configurable prefix.
 
-| Go struct      | Table name        |
-| :------------- | :---------------- |
-| `SettingItem`  | `x_setting_items` |
-| `SharingDB`    | `x_sharing_dbs`   |
-| `Storage`      | `x_storages`      |
-| `User`         | `x_users`         |
-| `Meta`         | `x_metas`         |
-| *(TS only)*    | `x_plugins`       |
+| Go struct     | Table name        |
+| :------------ | :---------------- |
+| `SettingItem` | `x_setting_items` |
+| `SharingDB`   | `x_sharing_dbs`   |
+| `Storage`     | `x_storages`      |
+| `User`        | `x_users`         |
+| `Meta`        | `x_metas`         |
+| _(TS only)_   | `x_plugins`       |
 
 The prefix defaults to `x_` and is controlled by the `TABLE_PREFIX` env var (matching the Go backend). Keep the default to share the same physical database with the Go backend.
 
-::::
+:::
 
-::::zh-CN
+::: zh-CN
 OpenList Worker 将持久化拆分为两个正交的层：
 
 - **`DB_FORMAT`** — 决定数据的序列化与存储方式
@@ -209,23 +209,23 @@ OpenList Worker 将持久化拆分为两个正交的层：
 
 ### `DB_FORMAT`（数据存储格式）
 
-| 值              | 说明                                                    |
-| :------------- | :------------------------------------------------------ |
-| `map`（默认）  | 整对象序列化为单个 JSON 值，适合 KV / Blob 存储         |
-| `key`          | 分 key 存储，每实体一条记录（避免大 JSON）              |
-| `sql`          | 关系表，与 Go 后端完全一致（用于 D1 / MySQL）           |
+| 值            | 说明                                            |
+| :------------ | :---------------------------------------------- |
+| `map`（默认） | 整对象序列化为单个 JSON 值，适合 KV / Blob 存储 |
+| `key`         | 分 key 存储，每实体一条记录（避免大 JSON）      |
+| `sql`         | 关系表，与 Go 后端完全一致（用于 D1 / MySQL）   |
 
 ### `DB_DRIVER`（数据库驱动）
 
-| 值               | 说明                                                                                        | 适用平台                 |
-| :-------------- | :------------------------------------------------------------------------------------------ | :----------------------- |
-| `auto`（默认）  | 自动检测可用驱动（优先级：blob → cfkv → kv → d1 → memory）                                  | 通用，任何平台可用       |
-| `blob`          | 腾讯云 EdgeOne Blob / 阿里云 ESA Blob                                                       | EdgeOne / ESA            |
-| `cfkv`          | Cloudflare KV REST API（需 `CF_ACCOUNT_ID` / `CF_KV_NAMESPACE_ID` / `CF_API_TOKEN`）       | 外部服务 / 跨账号        |
-| `kv`            | Cloudflare KV binding                                                                       | Cloudflare Workers       |
-| `d1`            | Cloudflare D1（SQLite）                                                                     | Cloudflare Workers       |
-| `do`            | Cloudflare Durable Objects（SQLite）                                                        | Cloudflare Workers       |
-| `mysql`         | 外部 MySQL                                                                                  | Node.js 容器运行时       |
+| 值             | 说明                                                                                 | 适用平台           |
+| :------------- | :----------------------------------------------------------------------------------- | :----------------- |
+| `auto`（默认） | 自动检测可用驱动（优先级：blob → cfkv → kv → d1 → memory）                           | 通用，任何平台可用 |
+| `blob`         | 腾讯云 EdgeOne Blob / 阿里云 ESA Blob                                                | EdgeOne / ESA      |
+| `cfkv`         | Cloudflare KV REST API（需 `CF_ACCOUNT_ID` / `CF_KV_NAMESPACE_ID` / `CF_API_TOKEN`） | 外部服务 / 跨账号  |
+| `kv`           | Cloudflare KV binding                                                                | Cloudflare Workers |
+| `d1`           | Cloudflare D1（SQLite）                                                              | Cloudflare Workers |
+| `do`           | Cloudflare Durable Objects（SQLite）                                                 | Cloudflare Workers |
+| `mysql`        | 外部 MySQL                                                                           | Node.js 容器运行时 |
 
 ### 推荐组合
 
@@ -241,24 +241,24 @@ DB_DRIVER=d1
 
 `sql` 格式采用列式表，命名策略与 Go 后端的 GORM 一致：snake_case + 复数表名 + 可配置前缀。
 
-| Go 结构体      | 表名                |
-| :------------- | :------------------ |
-| `SettingItem`  | `x_setting_items` |
-| `SharingDB`    | `x_sharing_dbs`   |
-| `Storage`      | `x_storages`      |
-| `User`         | `x_users`         |
-| `Meta`         | `x_metas`         |
-| *（仅 TS）*    | `x_plugins`       |
+| Go 结构体     | 表名              |
+| :------------ | :---------------- |
+| `SettingItem` | `x_setting_items` |
+| `SharingDB`   | `x_sharing_dbs`   |
+| `Storage`     | `x_storages`      |
+| `User`        | `x_users`         |
+| `Meta`        | `x_metas`         |
+| _（仅 TS）_   | `x_plugins`       |
 
 前缀默认为 `x_`，由 `TABLE_PREFIX` 环境变量控制（与 Go 后端一致）。要与 Go 后端共享同一物理数据库，保持默认值即可。
 
-::::
+:::
 
 ## Deploy to Cloudflare Workers { lang="en" }
 
 ## 部署到 Cloudflare Workers { lang="zh-CN" }
 
-::::en
+::: en
 
 ### Prerequisites
 
@@ -296,9 +296,9 @@ Use Cloudflare's _Automatic resource provisioning_: omit `database_id` in `wrang
 ```
 
 After deployment, configure the KV namespace binding and environment variables in the [Worker dashboard](https://dash.cloudflare.com/).
-::::
+:::
 
-::::zh-CN
+::: zh-CN
 
 ### 前置要求
 
@@ -336,13 +336,13 @@ pnpm run deploy:worker
 ```
 
 部署完成后，请在 [Worker 后台](https://dash.cloudflare.com/) 配置 KV namespace 绑定与环境变量。
-::::
+:::
 
 ## Deploy to EdgeOne { lang="en" }
 
 ## 部署到 EdgeOne { lang="zh-CN" }
 
-::::en
+::: en
 
 ### One-click deploy
 
@@ -374,9 +374,9 @@ EdgeOne supports scheduled refresh via `edgeone.json`. Set `CRON_SECRET` in envi
 }
 ```
 
-::::
+:::
 
-::::zh-CN
+::: zh-CN
 
 ### 一键部署
 
@@ -408,13 +408,13 @@ EdgeOne 通过 `edgeone.json` 支持定时刷新。在环境变量中设置 `CRO
 }
 ```
 
-::::
+:::
 
 ## Deploy to Alibaba Cloud ESA { lang="en" }
 
 ## 部署到阿里云 ESA { lang="zh-CN" }
 
-::::en
+::: en
 OpenList Worker ships a dedicated ESA edge function entry (`esa-entry.ts`), which adapts Alibaba Cloud EdgeKV into the project's KV interface.
 
 ### Build & deploy
@@ -443,12 +443,12 @@ pnpm run build
 
 Configure the EdgeKV namespace via environment variables. The entry auto-detects `KV_NAMESPACE` / `ESA_KV_NAMESPACE` / `EDGEONE_KV_NAME` (default `openlist`).
 
-::::tip
+::: tip
 ESA EdgeKV is eventually consistent. The entry implements a module-level TTL cache (60s) to avoid "saved settings revert after refresh" caused by cross-node sync delay.
-::::
-::::
+:::
+:::
 
-::::zh-CN
+::: zh-CN
 OpenList Worker 内置了专用的 ESA 边缘函数入口（`esa-entry.ts`），将阿里云 EdgeKV 适配为项目的 KV 接口。
 
 ### 构建与部署
@@ -477,16 +477,16 @@ pnpm run build
 
 通过环境变量配置 EdgeKV 命名空间。入口会自动探测 `KV_NAMESPACE` / `ESA_KV_NAMESPACE` / `EDGEONE_KV_NAME`（默认 `openlist`）。
 
-::::tip
+::: tip
 ESA EdgeKV 是最终一致性的。入口实现了带 TTL（60 秒）的模块级缓存，避免跨节点同步延迟导致的「保存设置后刷新复原」问题。
-::::
-::::
+:::
+:::
 
 ## Local Development { lang="en" }
 
 ## 本地开发 { lang="zh-CN" }
 
-::::en
+::: en
 
 ```bash
 # 1. Install backend dependencies
@@ -499,9 +499,9 @@ pnpm run dev:unified
 pnpm run dev:worker
 ```
 
-::::
+:::
 
-::::zh-CN
+::: zh-CN
 
 ```bash
 # 1. 安装后端依赖
@@ -514,61 +514,61 @@ pnpm run dev:unified
 pnpm run dev:worker
 ```
 
-::::
+:::
 
 ## Production Deploy { lang="en" }
 
 ## 生产部署 { lang="zh-CN" }
 
-::::en
+::: en
 
 ```bash
 # One-click deploy (frontend build + backend deploy to Cloudflare Workers)
 pnpm run deploy
 ```
 
-::::
+:::
 
-::::zh-CN
+::: zh-CN
 
 ```bash
 # 一键部署（前端构建 + 后端部署到 Cloudflare Workers）
 pnpm run deploy
 ```
 
-::::
+:::
 
 ## Troubleshooting { lang="en" }
 
 ## 常见问题 { lang="zh-CN" }
 
-::::en
-::::details Cloudflare prompts "cannot fetch repository content"
+::: en
+::: details Cloudflare prompts "cannot fetch repository content"
 Fork the project first, then deploy by connecting to the GitHub repository instead of the direct one-click URL.
-::::
+:::
 
-::::details Settings revert after save (ESA / EdgeOne)
+::: details Settings revert after save (ESA / EdgeOne)
 This is usually a KV/CDN cache consistency issue. The entry already forces `no-cache` on `/api/*` GET responses and implements a module-level KV cache. If it persists, check that your KV namespace is correctly bound and not read-only.
-::::
+:::
 
-::::details How do I reset the admin password?
+::: details How do I reset the admin password?
 The admin password is set during the install wizard. To reset, you can set `ADMIN_PASSWORD` temporarily and redeploy, or clear the persisted config and re-run the wizard.
-::::
-::::
+:::
+:::
 
-::::zh-CN
-::::details Cloudflare 提示「无法获取存储库内容」
+::: zh-CN
+::: details Cloudflare 提示「无法获取存储库内容」
 请先 Fork 本项目，再通过连接到 GitHub 仓库功能部署，而不是直接使用一键部署 URL。
-::::
+:::
 
-::::details 保存设置后刷新又恢复原样（ESA / EdgeOne）
+::: details 保存设置后刷新又恢复原样（ESA / EdgeOne）
 通常是 KV/CDN 缓存一致性问题。入口已对 `/api/*` 的 GET 响应强制 `no-cache`，并实现了模块级 KV 缓存。若仍存在，请检查 KV 命名空间是否正确绑定且非只读。
-::::
+:::
 
-::::details 如何重置管理员密码？
+::: details 如何重置管理员密码？
 管理员密码在安装向导中设置。如需重置，可临时设置 `ADMIN_PASSWORD` 并重新部署，或清空已持久化的配置后重新运行向导。
-::::
-::::
+:::
+:::
 
 ## Repository { lang="en" }
 

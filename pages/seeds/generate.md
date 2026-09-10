@@ -7,10 +7,6 @@ categories:
 top: 970
 ---
 
-# 生成种子 { lang="zh-CN" }
-
-# Generating seeds { lang="en" }
-
 ## 上传时生成 { lang="zh-CN" }
 
 ## Generate on upload { lang="en" }

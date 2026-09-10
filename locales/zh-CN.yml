@@ -39,6 +39,7 @@ category:
   # Ecosystem
   ecosystem: 生态项目
   eco_official: 官方生态项目
+  eco_worker: OpenList Worker
 
 # ! Index page (layout: hero)
 hero:

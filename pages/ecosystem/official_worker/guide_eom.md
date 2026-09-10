@@ -1,8 +1,18 @@
+---
+title:
+  en: Deploy to Tencent EdgeOne
+  zh-CN: 部署教程 - Tencent EdgeOne
+categories:
+  - ecosystem
+  - eco_worker
+top: 966
+---
+
 ## Deploy to EdgeOne { lang="en" }
 
 ## 部署到 EdgeOne { lang="zh-CN" }
 
-:::en
+::: en
 
 ### Prerequisites
 
@@ -24,7 +34,7 @@ Click **New application**, select the forked repository, configure the variables
 
 Required variables (`DB_FORMAT`, `DB_DRIVER`) are described in the [Environment Variables](#environment-variables) section at the end of this page.
 
-:::tip Persistence
+::: tip Persistence
 EdgeOne Makers uses `@edgeone/pages-blob` for persistence. The default `auto` driver auto-detects Blob, so no extra configuration is needed. You can also explicitly set:
 
 - `DB_DRIVER = "blob"` with `DB_FORMAT = "map"` (JSON storage)
@@ -64,12 +74,12 @@ EdgeOne supports scheduled refresh via `edgeone.json`. Set `CRON_SECRET` in the 
 
 ### After deployment
 
-:::tip
+::: tip
 After deployment, the first visit to the site automatically enters an **install wizard**. Set the admin account and password in the browser to complete initialization — no pre-configured `ADMIN_PASSWORD` is required.
 :::
 :::
 
-:::zh-CN
+::: zh-CN
 
 ### 前置要求
 
@@ -91,7 +101,7 @@ After deployment, the first visit to the site automatically enters an **install 
 
 必选变量（`DB_FORMAT`、`DB_DRIVER`），见本页末尾的 [配置变量](#配置变量) 章节。
 
-:::tip 持久化
+::: tip 持久化
 EdgeOne Makers 使用 `@edgeone/pages-blob` 进行持久化。默认的 `auto` 驱动会自动探测 Blob，无需额外配置。你也可以显式设置：
 
 - `DB_DRIVER = "blob"` 配合 `DB_FORMAT = "map"`（JSON 存储）
@@ -131,9 +141,15 @@ EdgeOne 通过 `edgeone.json` 支持定时刷新。在环境变量中设置 `CRO
 
 ### 部署后初始化
 
-:::tip
+::: tip
 部署完成后，首次访问站点会自动进入**安装向导**，在浏览器中设置管理员账号与密码即可完成初始化，无需预先配置 `ADMIN_PASSWORD`。
 :::
 :::
 
-<!--@include: ./guide_env.md -->
+::: en
+For a full list of environment variables and recommended configurations, see [Environment Variables](./guide_env).
+:::
+
+::: zh-CN
+完整的环境变量说明与推荐配置组合，请参阅 [配置变量](./guide_env)。
+:::

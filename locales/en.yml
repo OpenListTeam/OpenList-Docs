@@ -39,6 +39,7 @@ category:
   # Ecosystem
   ecosystem: Ecosystem
   eco_official: Official Ecosystem
+  eco_worker: OpenList Worker
 
 # ! Index page (layout: hero)
 hero:

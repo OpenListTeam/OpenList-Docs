@@ -7,10 +7,6 @@ categories:
 top: 960
 ---
 
-# 使用种子 { lang="zh-CN" }
-
-# Using seeds { lang="en" }
-
 ## 秒传保存 { lang="zh-CN" }
 
 ## Rapid upload { lang="en" }
