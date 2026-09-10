@@ -428,7 +428,7 @@ lib64/libc.so.6: version `GLIBC_2.28' not found (required by ./openlist)
 accept: function not implemented
 ```
 
-When you see the output of `start server @ 0.0.0.0:5244` and no error is reported afterwards, it means that the operation is successful. The initial password will be output when running for the first time. The program listens to port 5244 by default. Now open `http://ip:5244` You can see the login page, please see [WebDav](../webdav.md) for webdav.
+When you see the output of `start server @ 0.0.0.0:5244` and no error is reported afterwards, it means that the operation is successful. The initial password will be output when running for the first time. The program listens to port 5244 by default. Now open `http://ip:5244` You can see the login page, please see [WebDav](../advanced/webdav) for webdav.
 
 **For Flatpak Users**
 
@@ -462,7 +462,7 @@ lib64/libc.so.6: version `GLIBC_2.28' not found (required by ./openlist)
 accept: function not implemented
 ```
 
-当你看到 `start server@0.0.0.0:5244` 的输出，之后没有报错，说明操作成功。 第一次运行时会输出初始密码。程序默认监听 5244 端口。 现在打开 `http://ip:5244` 可以看到登录页面，WebDAV 请参阅 [WebDav](../webdav.md)。
+当你看到 `start server@0.0.0.0:5244` 的输出，之后没有报错，说明操作成功。 第一次运行时会输出初始密码。程序默认监听 5244 端口。 现在打开 `http://ip:5244` 可以看到登录页面，WebDAV 请参阅 [WebDav](../advanced/webdav)。
 
 **Flatpak 用户**
 

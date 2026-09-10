@@ -266,7 +266,7 @@ Please check and disable the relevant scripts on your own.
 
 :::
 
-## What is the difference between the two uploads?\*\* { lang="en" }
+## What is the difference between the two uploads? { lang="en" }
 
 ## 两个上传有什么区别? { lang="zh-CN" }
 
