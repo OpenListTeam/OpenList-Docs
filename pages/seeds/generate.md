@@ -45,6 +45,34 @@ Right-click one or more files and choose "Generate transfer seed" to open the wi
 6. **Trackers**: picked from the system-configured tracker list.
    :::::
 
+## 种子命名 { lang="zh-CN" }
+
+## Seed naming { lang="en" }
+
+::::: zh-CN
+
+种子名可编辑，缺省时按以下优先级自动推导：
+
+1. **单文件**：取文件名（去掉扩展名）。
+2. **多文件同名**：若所有文件去掉扩展名后同名（如同一目录下 `a.mkv`、`a.srt`、`a.ass`），取该公共名。
+3. **否则**：取所有文件的公共父目录名。
+4. **兜底**：`OpenList Seed`。
+
+命名同样受安全检查约束（拒绝空名、`.`、`..`、含 `/` 或 `\` 的名称）。
+:::::
+
+::::: en
+
+The seed name is editable; when empty it is auto-derived in this priority:
+
+1. **Single file**: the file name with its extension removed.
+2. **Multiple files sharing a base name**: if all files share the same name after removing extensions (e.g. `a.mkv`, `a.srt`, `a.ass` in one folder), use that common name.
+3. **Otherwise**: the common parent directory name.
+4. **Fallback**: `OpenList Seed`.
+
+Naming is subject to the same safety checks (rejecting empty names, `.`, `..`, or names containing `/` or `\`).
+:::::
+
 ## 生成方式 { lang="zh-CN" }
 
 ## Generation modes { lang="en" }

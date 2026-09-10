@@ -12,7 +12,7 @@ top: 965
 
 ## 部署到阿里云 ESA { lang="zh-CN" }
 
-:::en
+:::: en
 OpenList Worker ships a dedicated ESA edge function entry (`esa-entry.ts`), which adapts Alibaba Cloud EdgeKV into the project's KV interface.
 
 ### Build & deploy
@@ -44,9 +44,9 @@ Configure the EdgeKV namespace via environment variables. The entry auto-detects
 :::tip
 ESA EdgeKV is eventually consistent. The entry implements a module-level TTL cache (60s) to avoid "saved settings revert after refresh" caused by cross-node sync delay.
 :::
-:::
+::::
 
-:::zh-CN
+:::: zh-CN
 OpenList Worker 内置了专用的 ESA 边缘函数入口（`esa-entry.ts`），将阿里云 EdgeKV 适配为项目的 KV 接口。
 
 ### 部署应用
@@ -78,7 +78,7 @@ pnpm run build
 :::tip
 ESA EdgeKV 是最终一致性的。入口实现了带 TTL（60 秒）的模块级缓存，避免跨节点同步延迟导致的「保存设置后刷新复原」问题。
 :::
-:::
+::::
 
 :::en
 For a full list of environment variables and recommended configurations, see [Environment Variables](./guide_env).

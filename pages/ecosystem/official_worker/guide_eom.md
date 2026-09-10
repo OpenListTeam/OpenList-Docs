@@ -12,7 +12,7 @@ top: 966
 
 ## 部署到 EdgeOne { lang="zh-CN" }
 
-::: en
+:::: en
 
 ### Prerequisites
 
@@ -77,9 +77,9 @@ EdgeOne supports scheduled refresh via `edgeone.json`. Set `CRON_SECRET` in the 
 ::: tip
 After deployment, the first visit to the site automatically enters an **install wizard**. Set the admin account and password in the browser to complete initialization — no pre-configured `ADMIN_PASSWORD` is required.
 :::
-:::
+::::
 
-::: zh-CN
+:::: zh-CN
 
 ### 前置要求
 
@@ -144,7 +144,7 @@ EdgeOne 通过 `edgeone.json` 支持定时刷新。在环境变量中设置 `CRO
 ::: tip
 部署完成后，首次访问站点会自动进入**安装向导**，在浏览器中设置管理员账号与密码即可完成初始化，无需预先配置 `ADMIN_PASSWORD`。
 :::
-:::
+::::
 
 ::: en
 For a full list of environment variables and recommended configurations, see [Environment Variables](./guide_env).

@@ -166,7 +166,7 @@ The hash matrix is preflighted against these capabilities: if the source drive a
 - 阿里云盘族使用 `pre_hash`（文件头 1024 字节 SHA1）触发秒传，命中后补算完整 SHA1。
 - 移动云盘 139 快传使用 SHA256；123 Open 支持 SHA1 复用（`sha1_reuse`）或 MD5 任选其一。
 - **注意**：矩阵反映各驱动的原生秒传能力。当前种子「秒传保存」流程仅天翼云 189pc 的 CAS 秒传被完整接入，其余驱动的秒传在普通上传（`Put` / `PutRapid`）路径中生效。
-  :::::
+  ::::::
 
 :::::: en
 
@@ -175,4 +175,4 @@ The hash matrix is preflighted against these capabilities: if the source drive a
 - The Aliyundrive family uses `pre_hash` (SHA1 of the first 1024 bytes) to trigger rapid upload, then computes the full SHA1 on hit.
 - 139 rapid upload uses SHA256; 123 Open supports either SHA1 reuse (`sha1_reuse`) or MD5.
 - **Note**: the matrix reflects each drive's native rapid-upload capability. Currently only 189pc CAS rapid upload is wired into the seed "rapid save" flow; other drives' rapid upload takes effect in the normal upload path (`Put` / `PutRapid`).
-  :::::
+  ::::::

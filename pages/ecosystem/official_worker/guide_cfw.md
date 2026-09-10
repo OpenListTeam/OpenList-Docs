@@ -12,7 +12,7 @@ top: 967
 
 ## 部署到 Cloudflare Workers { lang="zh-CN" }
 
-::: en
+:::: en
 
 ### Prerequisites
 
@@ -109,9 +109,9 @@ pnpm run deploy
 # or: pnpm run deploy:worker (skip frontend build)
 ```
 
-:::
+::::
 
-::: zh-CN
+:::: zh-CN
 
 ### 前置要求
 
@@ -208,7 +208,7 @@ pnpm run deploy
 # 或：pnpm run deploy:worker（跳过前端构建）
 ```
 
-:::
+::::
 
 ::: en
 For a full list of environment variables and recommended configurations, see [Environment Variables](./guide_env).

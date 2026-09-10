@@ -78,6 +78,10 @@ BT v1 中所有文件共享同一个分片序列。多文件时除最后一个�
 ### `.torrent` 里的 `x-openlist` 是什么？
 
 `x-openlist` 是 OpenList 的无损扩展键，把完整 `.oss` 种子做 bencode 化嵌入标准 torrent 中。OpenList 客户端解析时能据此完整还原 MD5/SHA256、注释、渠道、分享等元数据；解析时还会校验它与 info 字典的一致性，防止伪造。
+
+### 为什么异步种子生成任务在服务重启后会丢失？
+
+超过 1 GiB 的生成请求会转为后台任务，但异步任务不持久化；服务重启后未完成的任务会丢失，需要重新发起生成。小文件（≤ 1 GiB）同步生成，不受影响。
 :::::
 
 ::::: en
@@ -125,4 +129,8 @@ When all six flags (md5/sha1/sha256 × whole/pieces) are `false`, the system tre
 ### What is `x-openlist` inside a `.torrent`?
 
 `x-openlist` is OpenList's lossless extension key that bencode-embeds the full `.oss` seed into a standard torrent. OpenList clients use it to fully reconstruct MD5/SHA256, comments, channels, and shares; parsing also validates its consistency with the info dictionary to prevent forgery.
+
+### Why are background seed-generation tasks lost on restart?
+
+Requests over 1 GiB are queued as background tasks, but those tasks are not persisted; an unfinished task is lost when the service restarts and must be re-triggered. Small files (≤ 1 GiB) are generated synchronously and are unaffected.
 :::::

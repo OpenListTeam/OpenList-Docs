@@ -37,7 +37,18 @@ top: 980
 - `.oss` ⊇ `.torrent`：`.oss` 含 BT 必要信息（SHA-1 完整 + 分片）时可转 `.torrent`；`.torrent` 无论如何都可转 `.oss`。
 - `.oss` ⊇ `.cas`：`.oss` 含完整 + 分片 MD5 时可转 `.cas`；`.cas` 无论如何都可转 `.oss`。
 - 转换前会诊断缺失信息，缺什么就明确提示缺什么。
-  :::::
+
+```mermaid
+graph TD
+    OSS[.oss 最完整可缺省] -->|含 BT 必要信息| TORRENT[.torrent]
+    TORRENT -->|总是可转| OSS
+    OSS -->|含完整 + 分片 MD5| CAS[.cas]
+    CAS -->|总是可转| OSS
+    TORRENT -.->|含 x-cas 扩展| CAS
+    CAS -.->|缺 SHA1 分片，不可直接转| TORRENT
+```
+
+:::::
 
 ::::: en
 The three formats are different projections of the same file metadata. `.oss` is the most complete; `.torrent` and `.cas` are its semantic projections:
@@ -45,7 +56,18 @@ The three formats are different projections of the same file metadata. `.oss` is
 - `.oss` ⊇ `.torrent`: `.oss` converts to `.torrent` when it has the required BT info (SHA-1 whole + pieces); `.torrent` always converts to `.oss`.
 - `.oss` ⊇ `.cas`: `.oss` converts to `.cas` when it has whole + piece MD5; `.cas` always converts to `.oss`.
 - Conversion diagnostics report exactly what is missing.
-  :::::
+
+```mermaid
+graph TD
+    OSS[.oss most complete] -->|has BT-required info| TORRENT[.torrent]
+    TORRENT -->|always convertible| OSS
+    OSS -->|has whole + piece MD5| CAS[.cas]
+    CAS -->|always convertible| OSS
+    TORRENT -.->|has x-cas extension| CAS
+    CAS -.->|missing SHA1 pieces, not directly convertible| TORRENT
+```
+
+:::::
 
 ## 种子设计结构 { lang="zh-CN" }
 
@@ -394,6 +416,16 @@ The `parse` API detects the format by the first character: `{` → `.oss` (JSON)
 
 两套实现共享同一份字段规范与编解码逻辑（bencode 排序、CAS `sliceMd5` 推导、哈希矩阵归一化、一致性校验），保证 `cloudflare worker` 版本与 Go 版本产出的种子互操作。
 
+```mermaid
+graph LR
+    UI[HopeUI 前端] -->|POST /fs/seed/*| GO[Go 后端]
+    UI -->|POST /fs/seed/*| TS[TS Worker 后端]
+    GO --> FMT[pkg/torrent 格式库]
+    TS --> TSFMT[internal/seed codec]
+    GO --> DRV[驱动: 189pc / PutURL / offline]
+    TS --> TSDRV[驱动: rapid / session / stream]
+```
+
 核心组件职责：
 
 - **`HashWriter` / `TorrentPieceHasher`**：流式哈希器，边读边维护「整文件哈希（md5/sha1/sha256）+ 逐片哈希」，避免二次读取文件。
@@ -413,6 +445,16 @@ Seed capability is provided by two equivalent implementations, one per backend:
 
 Both share the same field spec and codec logic (bencode sorting, CAS `sliceMd5` derivation, hash-matrix normalization, consistency validation), so seeds produced by the Cloudflare Worker and Go versions interoperate.
 
+```mermaid
+graph LR
+    UI[HopeUI frontend] -->|POST /fs/seed/*| GO[Go backend]
+    UI -->|POST /fs/seed/*| TS[TS Worker backend]
+    GO --> FMT[pkg/torrent format library]
+    TS --> TSFMT[internal/seed codec]
+    GO --> DRV[drivers: 189pc / PutURL / offline]
+    TS --> TSDRV[drivers: rapid / session / stream]
+```
+
 Core components:
 
 - **`HashWriter` / `TorrentPieceHasher`**: streaming hashers that maintain whole-file hashes (md5/sha1/sha256) plus per-piece hashes in a single pass, avoiding a second read.
@@ -420,3 +462,155 @@ Core components:
 - **Conversion layer**: encode/decode between `.oss` ↔ `.torrent` ↔ `.cas`, with missing-information diagnostics.
 - **Capability preflight**: `capabilities` summarizes per file "hashes available / download needed / streamable", reused by the UI and generation logic.
   :::::
+
+## 数据模型 { lang="zh-CN" }
+
+## Data model { lang="en" }
+
+::::: zh-CN
+
+种子系统在 Go 与 TS 两端共享同一套数据模型，字段命名保持一致，保证两种后端产出的种子可互操作。核心结构体如下：
+
+### `Seed`（种子）
+
+| 字段         | 类型                 | 说明                          |
+| ------------ | -------------------- | ----------------------------- |
+| `format`     | `string`             | 固定 `openlist-sharing-seed`  |
+| `version`    | `number`             | 固定 `1`                      |
+| `name`       | `string`             | 种子名                        |
+| `comment`    | `string`             | 整体注释                      |
+| `created_at` | `string`（ISO 8601） | 创建时间                      |
+| `created_by` | `string`             | 创建者                        |
+| `piece_size` | `number`             | 分片大小（字节），默认 10 MiB |
+| `trackers`   | `string[]`           | Tracker 列表                  |
+| `channels`   | `SeedChannel[]`      | 已成功落盘的渠道              |
+| `files`      | `SeedFile[]`         | 文件数组                      |
+
+### `SeedFile`（文件）
+
+| 字段               | 类型           | 说明                       |
+| ------------------ | -------------- | -------------------------- |
+| `path`             | `string`       | 相对路径                   |
+| `size`             | `number`       | 大小（字节）               |
+| `modified`         | `string`       | 修改时间（ISO 8601）       |
+| `comment`          | `string`       | 每文件注释                 |
+| `hashes`           | `SeedHashes`   | 哈希集合                   |
+| `sources`          | `SeedSource[]` | 公开直链 / 分享链接        |
+| `cas_slice_md5`    | `string`       | CAS 聚合分片 MD5（legacy） |
+| `cas_create_time`  | `string`       | CAS 创建时间（legacy）     |
+| `missing_channels` | `string[]`     | 秒传失败的驱动名           |
+
+### `SeedHashes`（哈希集合）
+
+| 字段     | 类型     | 说明                                         |
+| -------- | -------- | -------------------------------------------- |
+| `md5`    | `string` | 整文件 MD5                                   |
+| `sha1`   | `string` | 整文件 SHA-1                                 |
+| `sha256` | `string` | 整文件 SHA-256                               |
+| `pieces` | `object` | `{ md5[], sha1[], sha256[] }` 逐分片哈希数组 |
+
+### `SeedSource`（下载来源）
+
+| 字段         | 类型     | 说明                                                 |
+| ------------ | -------- | ---------------------------------------------------- |
+| `type`       | `string` | `openlist-direct`（直链）或 `openlist-share`（分享） |
+| `url`        | `string` | 绝对 URL，校验限制在配置的站点 URL                   |
+| `expires_at` | `string` | 过期时间（可选）                                     |
+| `share_id`   | `string` | 分享 ID（`openlist-share` 专用）                     |
+
+### `SeedChannel`（渠道）
+
+| 字段         | 类型     | 说明             |
+| ------------ | -------- | ---------------- |
+| `driver`     | `string` | 驱动名           |
+| `mount_path` | `string` | 挂载路径（可选） |
+
+### `CASPayload`（`.cas` 载荷）
+
+| 字段          | 类型        | 说明                              |
+| ------------- | ----------- | --------------------------------- |
+| `name`        | `string`    | 文件名                            |
+| `size`        | `number`    | 文件大小                          |
+| `md5`         | `string`    | 完整 MD5                          |
+| `sliceMd5`    | `string`    | 聚合分片 MD5                      |
+| `create_time` | `string`    | 创建时间                          |
+| `slice_md5s`  | `string[]`  | 逐片 MD5（可选扩展）              |
+| `slice_size`  | `number`    | 分片大小（可选扩展，默认 10 MiB） |
+| `files`       | `CASFile[]` | 多文件时的文件数组（可选扩展）    |
+
+> 单文件用顶层五字段（`name`/`size`/`md5`/`sliceMd5`/`create_time`），与参考项目字节级兼容；多文件用 `files` 数组；`slice_md5s`/`slice_size` 保存逐片 MD5，供天翼云秒传复用。
+> :::::
+
+::::: en
+
+Both the Go and TS backends share one data model with identical field names, ensuring seeds from either backend interoperate. The core structures are:
+
+### `Seed`
+
+| Field        | Type                | Description                         |
+| ------------ | ------------------- | ----------------------------------- |
+| `format`     | `string`            | fixed `openlist-sharing-seed`       |
+| `version`    | `number`            | fixed `1`                           |
+| `name`       | `string`            | seed name                           |
+| `comment`    | `string`            | overall comment                     |
+| `created_at` | `string` (ISO 8601) | creation time                       |
+| `created_by` | `string`            | creator                             |
+| `piece_size` | `number`            | piece size in bytes, default 10 MiB |
+| `trackers`   | `string[]`          | tracker list                        |
+| `channels`   | `SeedChannel[]`     | channels that saved successfully    |
+| `files`      | `SeedFile[]`        | file array                          |
+
+### `SeedFile`
+
+| Field              | Type           | Description                      |
+| ------------------ | -------------- | -------------------------------- |
+| `path`             | `string`       | relative path                    |
+| `size`             | `number`       | size in bytes                    |
+| `modified`         | `string`       | mtime (ISO 8601)                 |
+| `comment`          | `string`       | per-file comment                 |
+| `hashes`           | `SeedHashes`   | hash collection                  |
+| `sources`          | `SeedSource[]` | public direct / share sources    |
+| `cas_slice_md5`    | `string`       | CAS aggregate slice MD5 (legacy) |
+| `cas_create_time`  | `string`       | CAS creation time (legacy)       |
+| `missing_channels` | `string[]`     | drives that failed rapid upload  |
+
+### `SeedHashes`
+
+| Field    | Type     | Description                                    |
+| -------- | -------- | ---------------------------------------------- |
+| `md5`    | `string` | whole-file MD5                                 |
+| `sha1`   | `string` | whole-file SHA-1                               |
+| `sha256` | `string` | whole-file SHA-256                             |
+| `pieces` | `object` | `{ md5[], sha1[], sha256[] }` per-piece arrays |
+
+### `SeedSource`
+
+| Field        | Type     | Description                                         |
+| ------------ | -------- | --------------------------------------------------- |
+| `type`       | `string` | `openlist-direct` or `openlist-share`               |
+| `url`        | `string` | absolute URL, restricted to the configured site URL |
+| `expires_at` | `string` | expiry time (optional)                              |
+| `share_id`   | `string` | share ID (for `openlist-share`)                     |
+
+### `SeedChannel`
+
+| Field        | Type     | Description           |
+| ------------ | -------- | --------------------- |
+| `driver`     | `string` | driver name           |
+| `mount_path` | `string` | mount path (optional) |
+
+### `CASPayload` (`.cas` payload)
+
+| Field         | Type        | Description                                        |
+| ------------- | ----------- | -------------------------------------------------- |
+| `name`        | `string`    | file name                                          |
+| `size`        | `number`    | file size                                          |
+| `md5`         | `string`    | whole MD5                                          |
+| `sliceMd5`    | `string`    | aggregate slice MD5                                |
+| `create_time` | `string`    | creation time                                      |
+| `slice_md5s`  | `string[]`  | per-piece MD5 (optional extension)                 |
+| `slice_size`  | `number`    | piece size (optional extension, default 10 MiB)    |
+| `files`       | `CASFile[]` | per-file array for multi-file (optional extension) |
+
+> Single file uses the top-level five fields (`name`/`size`/`md5`/`sliceMd5`/`create_time`), byte-compatible with the reference project; multiple files use the `files` array; `slice_md5s`/`slice_size` preserve per-piece MD5 for 189pc rapid upload.
+> :::::
