@@ -25,28 +25,6 @@ top: 990
 3. Generic BT clients can download the files inside a seed through a server proxy over the drive; OSS-compatible clients can rapid-upload or download via the server proxy.
    :::::
 
-## 现状与能力边界 { lang="zh-CN" }
-
-## Current state and boundaries { lang="en" }
-
-::::: zh-CN
-| 已有能力 | 现状 |
-|---|---|
-| 离线下载 | 支持 BT 种子离线下载，上传文件自动生成 BT 文件 |
-| 跨网盘秒传 | 通过不同文件哈希在不同驱动之间秒传 |
-| CAS | 天翼云秒传需要文件分片信息，CAS 专门存储这些信息 |
-| BT 通用客户端 | 支持但不完整，生成的 BT 缺少 DHT 和可用链接 |
-:::::
-
-::::: en
-| Existing capability | Current state |
-|---|---|
-| Offline download | Supports BT-seed offline download; uploads auto-generate a BT file |
-| Cross-drive rapid upload | Rapid uploads between drives using different file hashes |
-| CAS | 189pc rapid upload needs per-piece info; CAS stores exactly that |
-| Generic BT client | Partially supported; generated BT lacks DHT and usable links |
-:::::
-
 ## 术语表 { lang="zh-CN" }
 
 ## Glossary { lang="en" }
