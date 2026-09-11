@@ -259,7 +259,9 @@ Open Platform URL: <https://www.alipan.com/developer/f>
 
 13. In `Internal Upload`, select whether to enable internal upload (optional), default is off. See [Configuration Instructions/Internal Upload](#_3-2-7-internal-upload).
 
-14. Click the `Add` button to complete adding AliYun Drive.
+14. Set `Callback Concurrency` when OpenList will proxy downloads (optional; default: `1`). See [Configuration Instructions/Callback Concurrency](#_3-2-8-callback-concurrency).
+
+15. Click the `Add` button to complete adding AliYun Drive.
 
 :::
 
@@ -315,7 +317,9 @@ Open Platform URL: <https://www.alipan.com/developer/f>
 
 13. 在`内部上传`中，选择是否启用内部上传（可选），默认是关闭。见[配置说明/内部上传](#_3-2-7-内部上传)。
 
-14. 点击`添加`按钮，完成阿里云盘的添加。
+14. OpenList 需要代理下载时，可设置`回调并发数`（可选，默认为 `1`）。见[配置说明/回调并发数](#_3-2-8-回调并发数)。
+
+15. 点击`添加`按钮，完成阿里云盘的添加。
 
 :::
 
@@ -496,6 +500,22 @@ If the server where OpenList is deployed is an AliYun ECS in the Beijing region,
 
 - **内部上传**非北京地区的阿里云ECS可以使用吗？不能，因为阿里云盘在使用北京地区的对象存储
 
+:::
+
+#### 3.2.8. Callback Concurrency { lang="en" }
+
+#### 3.2.8. 回调并发数 { lang="zh-CN" }
+
+::: en
+`Callback Concurrency` limits the number of active AliYun Drive callback downloads opened by OpenList in proxy mode. The default is `1`; missing, zero, or negative values are treated as `1`. Direct `302` downloads do not use this limit.
+
+Mounts that resolve to the same AliYun Drive user share callback capacity. If those mounts have different settings, OpenList uses the smallest positive value. When the limit is full, a new download waits for up to one second. A verified AliYun Drive callback-concurrency rejection is attempted up to three times with exponential jitter starting at 200 ms. If capacity is still unavailable, an S3 proxy download returns the standard `SlowDown` error with HTTP `503` so compatible clients can retry.
+:::
+
+::: zh-CN
+`回调并发数`限制 OpenList 在代理模式下打开的阿里云盘回调下载数量。默认值为 `1`；未设置、零或负数均按 `1` 处理。直接 `302` 下载不受此限制。
+
+解析为同一阿里云盘用户的多个挂载会共享回调容量；如果这些挂载的设置不同，OpenList 使用其中最小的正数值。并发已满时，新下载最多等待一秒。对于已确认的阿里云盘回调并发拒绝，OpenList 最多尝试三次，并从 200 毫秒开始进行带抖动的指数退避。如果容量仍不可用，S3 代理下载会返回标准 `SlowDown` 错误和 HTTP `503`，以便兼容的客户端重试。
 :::
 
 ## 4. Other Instructions { lang="en" }
