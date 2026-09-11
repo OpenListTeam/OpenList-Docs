@@ -74,9 +74,9 @@ Click the button below to deploy to the corresponding platform:
 点击下方按钮，即可将本项目一键部署到对应平台：
 :::
 
-|                                                                                                                                                                  EdgeOne Makers · 国际站                                                                                                                                                                   |                                                                                                                                                                              EdgeOne Makers · 中国站                                                                                                                                                                              |                                                                         Cloudflare Workers · 全球站                                                                         |
-| :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| [![使用 EdgeOne 部署](https://cdnstatic.tencentcs.com/edgeone/pages/deploy.svg)](https://edgeone.ai/pages/new?project-name=openlist-tsworker&repository-url=https://github.com/OpenListTeam/OpenList-Worker&install-command=pnpm%20install%20--no-frozen-lockfile&build-command=pnpm%20run%20build&output-directory=dist&env=ENCRYPTION_SECRET,JWT_SECRET) | [![使用 EdgeOne 部署](https://cdnstatic.tencentcs.com/edgeone/pages/deploy.svg)](https://console.cloud.tencent.com/edgeone/pages/new?project-name=openlist-tsworker&repository-url=https://github.com/OpenListTeam/OpenList-Worker&install-command=pnpm%20install%20--no-frozen-lockfile&build-command=pnpm%20run%20build&output-directory=dist&env=ENCRYPTION_SECRET,JWT_SECRET) | [![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/OpenListTeam/OpenList-Worker) |
+|                                                                                                                                                         EdgeOne Makers · 国际站                                                                                                                                                          |                                                                                                                                                                     EdgeOne Makers · 中国站                                                                                                                                                                     |                                                                         Cloudflare Workers · 全球站                                                                         |
+| :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| [![使用 EdgeOne 部署](https://cdnstatic.tencentcs.com/edgeone/pages/deploy.svg)](https://edgeone.ai/pages/new?project-name=openlist-tsworker&repository-url=https://github.com/OpenListTeam/OpenList-Worker&install-command=pnpm%20install%20--no-frozen-lockfile&build-command=pnpm%20run%20build&output-directory=dist&env=JWT_SECRET) | [![使用 EdgeOne 部署](https://cdnstatic.tencentcs.com/edgeone/pages/deploy.svg)](https://console.cloud.tencent.com/edgeone/pages/new?project-name=openlist-tsworker&repository-url=https://github.com/OpenListTeam/OpenList-Worker&install-command=pnpm%20install%20--no-frozen-lockfile&build-command=pnpm%20run%20build&output-directory=dist&env=JWT_SECRET) | [![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/OpenListTeam/OpenList-Worker) |
 
 ::: en
 
@@ -94,12 +94,12 @@ Click the button below to deploy to the corresponding platform:
 
 ::: en
 ::: tip
-After deployment, the first visit to the site automatically enters an **installation wizard**. Set the admin account and password in the browser to complete initialization — no pre-configured `ADMIN_PASSWORD` is required.
+After deployment, the first visit to the site automatically enters an **installation wizard**. Set the admin account and password in the browser to complete initialization — no pre-configured `ADMIN_PASS` is required.
 :::
 
 ::: zh-CN
 ::: tip
-部署完成后，首次访问站点会自动进入**安装向导**，在浏览器中设置管理员账号与密码即可完成初始化，无需预先配置 `ADMIN_PASSWORD`。
+部署完成后，首次访问站点会自动进入**安装向导**，在浏览器中设置管理员账号与密码即可完成初始化，无需预先配置 `ADMIN_PASS`。
 :::
 
 ## Environment Variables { lang="en" }
@@ -109,39 +109,39 @@ After deployment, the first visit to the site automatically enters an **installa
 ::: en
 | Variable | Required | Default | Description |
 | :--- | :--- | :--- | :--- |
-| `ENCRYPTION_SECRET` | Recommended | — | Static encryption key (≥16 chars). Encrypts drive tokens/secrets; stored in plaintext when unset |
-| `JWT_SECRET` | Recommended | — | JWT signing key. Auto-generated and persisted to KV when unset |
-| `CRON_SECRET` | Optional | — | Auth key for scheduled refresh tasks (EdgeOne Schedules only) |
+| `JWT_SECRET` | Recommended | — | JWT signing key, also used for data encryption and cron task auth. Auto-generated and persisted to KV when unset |
 | `DB_FORMAT` | Optional | `map` | Storage format: `map` (whole JSON) / `key` (per-key) / `sql` (relational, Go-compatible) |
 | `DB_DRIVER` | Optional | `auto` | Database driver: `auto` / `blob` / `cfkv` / `kv` / `d1` / `do` / `mysql` |
-| `KV_NAME` | Optional | — | Custom KV binding name (map/key mode) |
 | `CF_ACCOUNT_ID` | Optional | — | Cloudflare account ID (required for `cfkv` mode) |
 | `CF_KV_NAMESPACE_ID` | Optional | — | Cloudflare KV namespace ID (required for `cfkv` mode) |
 | `CF_API_TOKEN` | Optional | — | Cloudflare API token (required for `cfkv` mode) |
 | `MYSQL_URL` | Optional | — | MySQL connection string (or use `MYSQL_*` fields below) |
 | `MYSQL_HOST` / `MYSQL_PORT` / `MYSQL_USER` / `MYSQL_PASSWORD` / `MYSQL_DATABASE` | Optional | — | MySQL connection fields (`DB_DRIVER = mysql`) |
-| `ADMIN_PASSWORD` | Optional | — | Skip the install wizard and auto-initialize admin with this password |
-| `ALLOWED_ORIGINS` | Optional | — | Comma-separated CORS origin allowlist |
-| `DATABASE_JSON` | Optional | — | In-memory JSON database (test/local only, ephemeral) |
+| `ADMIN_PASS` | Optional | — | Skip the install wizard and auto-initialize admin with this password |
+| `ALLOW_URLS` | Optional | — | Comma-separated CORS allowlist |
+| `MAX_UPLOAD_SIZE` | Optional | `26214400` | Max size (bytes) for a whole upload (`/put`, `/form`) |
+| `MAX_PART_SIZE` | Optional | `16777216` | Max size (bytes) per chunk in multipart upload |
+| `CDN_URL` | Optional | — | Frontend asset CDN base URL, supports the `$version` placeholder |
+| `SEED_SOURCE_ALLOWED_HOSTS` | Optional | — | Allowlist of hosts permitted as seed-data sources |
 :::
 
 ::: zh-CN
 | 变量 | 必要 | 默认值 | 说明 |
 | :--- | :--- | :--- | :--- |
-| `ENCRYPTION_SECRET` | 推荐 | — | 静态加密密钥（≥16 字符）。加密网盘 token/secret 等敏感字段；未配置时将以明文落盘 |
-| `JWT_SECRET` | 推荐 | — | JWT 签名密钥。未配置时自动生成并持久化到 KV |
-| `CRON_SECRET` | 可选 | — | 定时刷新任务鉴权密钥（仅 EdgeOne 定时任务需要） |
+| `JWT_SECRET` | 推荐 | — | JWT 签名密钥，同时用于数据加密与定时任务鉴权。未配置时自动生成并持久化到 KV |
 | `DB_FORMAT` | 可选 | `map` | 数据存储格式：`map`（整对象 JSON）/ `key`（分 key 存储）/ `sql`（关系表，与 Go 后端一致） |
 | `DB_DRIVER` | 可选 | `auto` | 数据库驱动：`auto` / `blob` / `cfkv` / `kv` / `d1` / `do` / `mysql` |
-| `KV_NAME` | 可选 | — | 自定义 KV binding 名（map/key 模式） |
 | `CF_ACCOUNT_ID` | 可选 | — | Cloudflare 账号 ID（`cfkv` 模式必填） |
 | `CF_KV_NAMESPACE_ID` | 可选 | — | Cloudflare KV namespace ID（`cfkv` 模式必填） |
 | `CF_API_TOKEN` | 可选 | — | Cloudflare API token（`cfkv` 模式必填） |
 | `MYSQL_URL` | 可选 | — | MySQL 连接串（或用下方 `MYSQL_*` 分项） |
 | `MYSQL_HOST` / `MYSQL_PORT` / `MYSQL_USER` / `MYSQL_PASSWORD` / `MYSQL_DATABASE` | 可选 | — | MySQL 分项连接配置（`DB_DRIVER = mysql`） |
-| `ADMIN_PASSWORD` | 可选 | — | 跳过安装向导，以该密码自动初始化 admin |
-| `ALLOWED_ORIGINS` | 可选 | — | CORS 允许来源白名单（逗号分隔） |
-| `DATABASE_JSON` | 可选 | — | 内存 JSON 数据库（仅测试/本地调试，重启即失） |
+| `ADMIN_PASS` | 可选 | — | 跳过安装向导，以该密码自动初始化 admin |
+| `ALLOW_URLS` | 可选 | — | CORS 允许白名单（逗号分隔） |
+| `MAX_UPLOAD_SIZE` | 可选 | `26214400` | 单次整体上传（`/put`、`/form`）大小上限（字节） |
+| `MAX_PART_SIZE` | 可选 | `16777216` | 分片上传单片大小上限（字节） |
+| `CDN_URL` | 可选 | — | 前端静态资源 CDN 地址，支持 `$version` 占位符 |
+| `SEED_SOURCE_ALLOWED_HOSTS` | 可选 | — | 允许作为种子数据来源的主机白名单 |
 :::
 
 ## Data Backend（DB_FORMAT & DB_DRIVER） { lang="en" }
@@ -182,11 +182,11 @@ DB_FORMAT=sql
 DB_DRIVER=d1
 ```
 
-> **Backward compatibility:** the legacy `DB_DRIVER=json` auto-converts to `DB_FORMAT=map` + auto-detected driver, and `DB_JSON_BACKEND` is deprecated and auto-mapped to `DB_DRIVER`.
+> **Backward compatibility:** the legacy `DB_DRIVER=json` auto-converts to `DB_FORMAT=map` + auto-detected driver.
 
 #### Table naming (SQL format)
 
-The `sql` format uses columnar tables with the same naming strategy as the Go backend's GORM: snake_case + pluralized table names, plus a configurable prefix.
+The `sql` format uses columnar tables with the same naming strategy as the Go backend's GORM: snake*case + pluralized table names, plus the fixed `x*` prefix.
 
 | Go struct     | Table name        |
 | :------------ | :---------------- |
@@ -197,7 +197,7 @@ The `sql` format uses columnar tables with the same naming strategy as the Go ba
 | `Meta`        | `x_metas`         |
 | _(TS only)_   | `x_plugins`       |
 
-The prefix defaults to `x_` and is controlled by the `TABLE_PREFIX` env var (matching the Go backend). Keep the default to share the same physical database with the Go backend.
+The prefix is fixed to `x_` (matching the Go backend default), so no extra configuration is needed to share the same physical database with the Go backend.
 
 :::
 
@@ -235,11 +235,11 @@ DB_FORMAT=sql
 DB_DRIVER=d1
 ```
 
-> **向后兼容：** 旧的 `DB_DRIVER=json` 会自动转换为 `DB_FORMAT=map` + 自动检测驱动；`DB_JSON_BACKEND` 已废弃，会自动映射为 `DB_DRIVER`。
+> **向后兼容：** 旧的 `DB_DRIVER=json` 会自动转换为 `DB_FORMAT=map` + 自动检测驱动。
 
 #### 表名对齐（SQL 格式）
 
-`sql` 格式采用列式表，命名策略与 Go 后端的 GORM 一致：snake_case + 复数表名 + 可配置前缀。
+`sql` 格式采用列式表，命名策略与 Go 后端的 GORM 一致：snake*case + 复数表名 + 固定前缀 `x*`。
 
 | Go 结构体     | 表名              |
 | :------------ | :---------------- |
@@ -250,7 +250,7 @@ DB_DRIVER=d1
 | `Meta`        | `x_metas`         |
 | _（仅 TS）_   | `x_plugins`       |
 
-前缀默认为 `x_`，由 `TABLE_PREFIX` 环境变量控制（与 Go 后端一致）。要与 Go 后端共享同一物理数据库，保持默认值即可。
+前缀固定为 `x_`（与 Go 后端默认值一致），无需额外配置即可与 Go 后端共享同一物理数据库。
 
 :::
 
@@ -357,7 +357,7 @@ EdgeOne Makers uses `@edgeone/pages-blob` for persistence. The default `auto` dr
 
 ### Scheduled tasks
 
-EdgeOne supports scheduled refresh via `edgeone.json`. Set `CRON_SECRET` in environment variables, and configure the schedule:
+EdgeOne supports scheduled refresh via `edgeone.json`. Set `cron_secret` in the payload to your `JWT_SECRET` value, and configure the schedule:
 
 ```jsonc
 {
@@ -391,7 +391,7 @@ EdgeOne Makers 使用 `@edgeone/pages-blob` 进行持久化。默认的 `auto` �
 
 ### 定时任务
 
-EdgeOne 通过 `edgeone.json` 支持定时刷新。在环境变量中设置 `CRON_SECRET`，并配置定时规则：
+EdgeOne 通过 `edgeone.json` 支持定时刷新。将 payload 中的 `cron_secret` 设为你的 `JWT_SECRET` 值，并配置定时规则：
 
 ```jsonc
 {
@@ -441,7 +441,7 @@ pnpm run build
 
 ### KV namespace
 
-Configure the EdgeKV namespace via environment variables. The entry auto-detects `KV_NAMESPACE` / `ESA_KV_NAMESPACE` / `EDGEONE_KV_NAME` (default `openlist`).
+Configure the EdgeKV namespace via the `KV_NAMESPACE` environment variable (default `openlist`).
 
 ::: tip
 ESA EdgeKV is eventually consistent. The entry implements a module-level TTL cache (60s) to avoid "saved settings revert after refresh" caused by cross-node sync delay.
@@ -475,7 +475,7 @@ pnpm run build
 
 ### KV 命名空间
 
-通过环境变量配置 EdgeKV 命名空间。入口会自动探测 `KV_NAMESPACE` / `ESA_KV_NAMESPACE` / `EDGEONE_KV_NAME`（默认 `openlist`）。
+通过 `KV_NAMESPACE` 环境变量配置 EdgeKV 命名空间（默认 `openlist`）。
 
 ::: tip
 ESA EdgeKV 是最终一致性的。入口实现了带 TTL（60 秒）的模块级缓存，避免跨节点同步延迟导致的「保存设置后刷新复原」问题。
@@ -552,7 +552,7 @@ This is usually a KV/CDN cache consistency issue. The entry already forces `no-c
 :::
 
 ::: details How do I reset the admin password?
-The admin password is set during the install wizard. To reset, you can set `ADMIN_PASSWORD` temporarily and redeploy, or clear the persisted config and re-run the wizard.
+The admin password is set during the install wizard. To reset, you can set `ADMIN_PASS` temporarily and redeploy, or clear the persisted config and re-run the wizard.
 :::
 :::
 
@@ -566,7 +566,7 @@ The admin password is set during the install wizard. To reset, you can set `ADMI
 :::
 
 ::: details 如何重置管理员密码？
-管理员密码在安装向导中设置。如需重置，可临时设置 `ADMIN_PASSWORD` 并重新部署，或清空已持久化的配置后重新运行向导。
+管理员密码在安装向导中设置。如需重置，可临时设置 `ADMIN_PASS` 并重新部署，或清空已持久化的配置后重新运行向导。
 :::
 :::
 

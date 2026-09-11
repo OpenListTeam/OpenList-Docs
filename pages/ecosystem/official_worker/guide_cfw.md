@@ -89,7 +89,7 @@ Add your own domain in **Settings → Domains and Routes**, then create a CNAME 
 ### After deployment
 
 ::: tip
-After deployment, the first visit to the site automatically enters an **install wizard**. Set the admin account and password in the browser to complete initialization — no pre-configured `ADMIN_PASSWORD` is required.
+After deployment, the first visit to the site automatically enters an **install wizard**. Set the admin account and password in the browser to complete initialization — no pre-configured `ADMIN_PASS` is required.
 :::
 
 ### Local / Wrangler deploy (alternative)
@@ -188,7 +188,7 @@ Cloudflare 会构建 Worker 并部署到 `*.workers.dev` 子域名。
 ### 部署后初始化
 
 ::: tip
-部署完成后，首次访问站点会自动进入**安装向导**，在浏览器中设置管理员账号与密码即可完成初始化，无需预先配置 `ADMIN_PASSWORD`。
+部署完成后，首次访问站点会自动进入**安装向导**，在浏览器中设置管理员账号与密码即可完成初始化，无需预先配置 `ADMIN_PASS`。
 :::
 
 ### 本地 / Wrangler 部署（可选）
