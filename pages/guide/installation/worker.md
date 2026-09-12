@@ -112,17 +112,17 @@ After deployment, the first visit to the site automatically enters an **installa
 | `JWT_SECRET` | Recommended | — | JWT signing key, also used for data encryption and cron task auth. Auto-generated and persisted to KV when unset |
 | `DB_FORMAT` | Optional | `map` | Storage format: `map` (whole JSON) / `key` (per-key) / `sql` (relational, Go-compatible) |
 | `DB_DRIVER` | Optional | `auto` | Database driver: `auto` / `blob` / `cfkv` / `kv` / `d1` / `do` / `mysql` |
-| `CF_ACCOUNT_ID` | Optional | — | Cloudflare account ID (required for `cfkv` mode) |
-| `CF_KV_NAMESPACE_ID` | Optional | — | Cloudflare KV namespace ID (required for `cfkv` mode) |
-| `CF_API_TOKEN` | Optional | — | Cloudflare API token (required for `cfkv` mode) |
+| `CF_ACCOUNT` | Optional | — | Cloudflare account ID (required for `cfkv` mode) |
+| `CF_KV_UUID` | Optional | — | Cloudflare KV namespace ID (required for `cfkv` mode) |
+| `CF_API_KEY` | Optional | — | Cloudflare API token (required for `cfkv` mode) |
 | `MYSQL_URL` | Optional | — | MySQL connection string (or use `MYSQL_*` fields below) |
-| `MYSQL_HOST` / `MYSQL_PORT` / `MYSQL_USER` / `MYSQL_PASSWORD` / `MYSQL_DATABASE` | Optional | — | MySQL connection fields (`DB_DRIVER = mysql`) |
+| `MYSQL_HOST` / `MYSQL_PORT` / `MYSQL_USER` / `MYSQL_PASS` / `MYSQL_NAME` | Optional | — | MySQL connection fields (`DB_DRIVER = mysql`) |
 | `ADMIN_PASS` | Optional | — | Skip the install wizard and auto-initialize admin with this password |
 | `ALLOW_URLS` | Optional | — | Comma-separated CORS allowlist |
-| `MAX_UPLOAD_SIZE` | Optional | `26214400` | Max size (bytes) for a whole upload (`/put`, `/form`) |
-| `MAX_PART_SIZE` | Optional | `16777216` | Max size (bytes) per chunk in multipart upload |
-| `CDN_URL` | Optional | — | Frontend asset CDN base URL, supports the `$version` placeholder |
-| `SEED_SOURCE_ALLOWED_HOSTS` | Optional | — | Allowlist of hosts permitted as seed-data sources |
+| `MAX_UPLOAD` | Optional | `26214400` | Max size (bytes) for a whole upload (`/put`, `/form`) |
+| `MAX_UPPART` | Optional | `16777216` | Max size (bytes) per chunk in multipart upload |
+| `ASSET_URLS` | Optional | — | Frontend asset CDN base URL, supports the `$version` placeholder |
+| `ALLOW_SEED` | Optional | — | Allowlist of hosts permitted as seed-data sources |
 :::
 
 ::: zh-CN
@@ -131,17 +131,17 @@ After deployment, the first visit to the site automatically enters an **installa
 | `JWT_SECRET` | 推荐 | — | JWT 签名密钥，同时用于数据加密与定时任务鉴权。未配置时自动生成并持久化到 KV |
 | `DB_FORMAT` | 可选 | `map` | 数据存储格式：`map`（整对象 JSON）/ `key`（分 key 存储）/ `sql`（关系表，与 Go 后端一致） |
 | `DB_DRIVER` | 可选 | `auto` | 数据库驱动：`auto` / `blob` / `cfkv` / `kv` / `d1` / `do` / `mysql` |
-| `CF_ACCOUNT_ID` | 可选 | — | Cloudflare 账号 ID（`cfkv` 模式必填） |
-| `CF_KV_NAMESPACE_ID` | 可选 | — | Cloudflare KV namespace ID（`cfkv` 模式必填） |
-| `CF_API_TOKEN` | 可选 | — | Cloudflare API token（`cfkv` 模式必填） |
+| `CF_ACCOUNT` | 可选 | — | Cloudflare 账号 ID（`cfkv` 模式必填） |
+| `CF_KV_UUID` | 可选 | — | Cloudflare KV namespace ID（`cfkv` 模式必填） |
+| `CF_API_KEY` | 可选 | — | Cloudflare API token（`cfkv` 模式必填） |
 | `MYSQL_URL` | 可选 | — | MySQL 连接串（或用下方 `MYSQL_*` 分项） |
-| `MYSQL_HOST` / `MYSQL_PORT` / `MYSQL_USER` / `MYSQL_PASSWORD` / `MYSQL_DATABASE` | 可选 | — | MySQL 分项连接配置（`DB_DRIVER = mysql`） |
+| `MYSQL_HOST` / `MYSQL_PORT` / `MYSQL_USER` / `MYSQL_PASS` / `MYSQL_NAME` | 可选 | — | MySQL 分项连接配置（`DB_DRIVER = mysql`） |
 | `ADMIN_PASS` | 可选 | — | 跳过安装向导，以该密码自动初始化 admin |
 | `ALLOW_URLS` | 可选 | — | CORS 允许白名单（逗号分隔） |
-| `MAX_UPLOAD_SIZE` | 可选 | `26214400` | 单次整体上传（`/put`、`/form`）大小上限（字节） |
-| `MAX_PART_SIZE` | 可选 | `16777216` | 分片上传单片大小上限（字节） |
-| `CDN_URL` | 可选 | — | 前端静态资源 CDN 地址，支持 `$version` 占位符 |
-| `SEED_SOURCE_ALLOWED_HOSTS` | 可选 | — | 允许作为种子数据来源的主机白名单 |
+| `MAX_UPLOAD` | 可选 | `26214400` | 单次整体上传（`/put`、`/form`）大小上限（字节） |
+| `MAX_UPPART` | 可选 | `16777216` | 分片上传单片大小上限（字节） |
+| `ASSET_URLS` | 可选 | — | 前端静态资源 CDN 地址，支持 `$version` 占位符 |
+| `ALLOW_SEED` | 可选 | — | 允许作为种子数据来源的主机白名单 |
 :::
 
 ## Data Backend（DB_FORMAT & DB_DRIVER） { lang="en" }
@@ -164,15 +164,15 @@ OpenList Worker separates persistence into two orthogonal layers:
 
 ### `DB_DRIVER`（database driver）
 
-| Value             | Description                                                                                | Suitable platform         |
-| :---------------- | :----------------------------------------------------------------------------------------- | :------------------------ |
-| `auto`（default） | Auto-detect available driver（priority: blob → cfkv → kv → d1 → memory）                   | Universal, works anywhere |
-| `blob`            | Tencent EdgeOne Blob / Alibaba ESA Blob                                                    | EdgeOne / ESA             |
-| `cfkv`            | Cloudflare KV REST API（requires `CF_ACCOUNT_ID` / `CF_KV_NAMESPACE_ID` / `CF_API_TOKEN`） | External / cross-account  |
-| `kv`              | Cloudflare KV binding                                                                      | Cloudflare Workers        |
-| `d1`              | Cloudflare D1 (SQLite)                                                                     | Cloudflare Workers        |
-| `do`              | Cloudflare Durable Objects (SQLite)                                                        | Cloudflare Workers        |
-| `mysql`           | External MySQL                                                                             | Node.js container runtime |
+| Value             | Description                                                                   | Suitable platform         |
+| :---------------- | :---------------------------------------------------------------------------- | :------------------------ |
+| `auto`（default） | Auto-detect available driver（priority: blob → cfkv → kv → d1 → memory）      | Universal, works anywhere |
+| `blob`            | Tencent EdgeOne Blob / Alibaba ESA Blob                                       | EdgeOne / ESA             |
+| `cfkv`            | Cloudflare KV REST API（requires `CF_ACCOUNT` / `CF_KV_UUID` / `CF_API_KEY`） | External / cross-account  |
+| `kv`              | Cloudflare KV binding                                                         | Cloudflare Workers        |
+| `d1`              | Cloudflare D1 (SQLite)                                                        | Cloudflare Workers        |
+| `do`              | Cloudflare Durable Objects (SQLite)                                           | Cloudflare Workers        |
+| `mysql`           | External MySQL                                                                | Node.js container runtime |
 
 ### Recommended combinations
 
@@ -217,15 +217,15 @@ OpenList Worker 将持久化拆分为两个正交的层：
 
 ### `DB_DRIVER`（数据库驱动）
 
-| 值             | 说明                                                                                 | 适用平台           |
-| :------------- | :----------------------------------------------------------------------------------- | :----------------- |
-| `auto`（默认） | 自动检测可用驱动（优先级：blob → cfkv → kv → d1 → memory）                           | 通用，任何平台可用 |
-| `blob`         | 腾讯云 EdgeOne Blob / 阿里云 ESA Blob                                                | EdgeOne / ESA      |
-| `cfkv`         | Cloudflare KV REST API（需 `CF_ACCOUNT_ID` / `CF_KV_NAMESPACE_ID` / `CF_API_TOKEN`） | 外部服务 / 跨账号  |
-| `kv`           | Cloudflare KV binding                                                                | Cloudflare Workers |
-| `d1`           | Cloudflare D1（SQLite）                                                              | Cloudflare Workers |
-| `do`           | Cloudflare Durable Objects（SQLite）                                                 | Cloudflare Workers |
-| `mysql`        | 外部 MySQL                                                                           | Node.js 容器运行时 |
+| 值             | 说明                                                                    | 适用平台           |
+| :------------- | :---------------------------------------------------------------------- | :----------------- |
+| `auto`（默认） | 自动检测可用驱动（优先级：blob → cfkv → kv → d1 → memory）              | 通用，任何平台可用 |
+| `blob`         | 腾讯云 EdgeOne Blob / 阿里云 ESA Blob                                   | EdgeOne / ESA      |
+| `cfkv`         | Cloudflare KV REST API（需 `CF_ACCOUNT` / `CF_KV_UUID` / `CF_API_KEY`） | 外部服务 / 跨账号  |
+| `kv`           | Cloudflare KV binding                                                   | Cloudflare Workers |
+| `d1`           | Cloudflare D1（SQLite）                                                 | Cloudflare Workers |
+| `do`           | Cloudflare Durable Objects（SQLite）                                    | Cloudflare Workers |
+| `mysql`        | 外部 MySQL                                                              | Node.js 容器运行时 |
 
 ### 推荐组合
 
