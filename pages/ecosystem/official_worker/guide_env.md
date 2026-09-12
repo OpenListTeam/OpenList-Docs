@@ -35,12 +35,12 @@ In addition to `DB_FORMAT` and `DB_DRIVER`, it is strongly recommended to config
 
 #### Other optional variables
 
-| Variable                    | Default    | Description                                                      |
-| --------------------------- | ---------- | ---------------------------------------------------------------- |
-| `MAX_UPLOAD_SIZE`           | `26214400` | Max size (bytes) for a whole upload (`/put`, `/form`)            |
-| `MAX_PART_SIZE`             | `16777216` | Max size (bytes) per chunk in multipart upload                   |
-| `CDN_URL`                   | —          | Frontend asset CDN base URL, supports the `$version` placeholder |
-| `SEED_SOURCE_ALLOWED_HOSTS` | —          | Allowlist of hosts permitted as seed-data sources                |
+| Variable     | Default    | Description                                                      |
+| ------------ | ---------- | ---------------------------------------------------------------- |
+| `MAX_UPLOAD` | `26214400` | Max size (bytes) for a whole upload (`/put`, `/form`)            |
+| `MAX_UPPART` | `16777216` | Max size (bytes) per chunk in multipart upload                   |
+| `ASSET_URLS` | —          | Frontend asset CDN base URL, supports the `$version` placeholder |
+| `ALLOW_SEED` | —          | Allowlist of hosts permitted as seed-data sources                |
 
 ### Storage format differences
 
@@ -82,22 +82,22 @@ In addition to `DB_FORMAT` and `DB_DRIVER`, it is strongly recommended to config
 
 If you bound `cfkv`, set the following variables:
 
-| Variable             | Description                         |
-| -------------------- | ----------------------------------- |
-| `CF_ACCOUNT_ID`      | Cloudflare account ID               |
-| `CF_KV_NAMESPACE_ID` | Cloudflare KV namespace ID          |
-| `CF_API_TOKEN`       | Cloudflare API token with KV access |
+| Variable     | Description                         |
+| ------------ | ----------------------------------- |
+| `CF_ACCOUNT` | Cloudflare account ID               |
+| `CF_KV_UUID` | Cloudflare KV namespace ID          |
+| `CF_API_KEY` | Cloudflare API token with KV access |
 
 If you bound MySQL, set the following variables:
 
-| Variable         | Description                                                                                      |
-| ---------------- | ------------------------------------------------------------------------------------------------ |
-| `MYSQL_URL`      | Connection string, e.g. `mysql://user:pass@host:3306/db`. When set, the fields below are ignored |
-| `MYSQL_HOST`     | Database host                                                                                    |
-| `MYSQL_PORT`     | Database port (`3306`)                                                                           |
-| `MYSQL_USER`     | Database user                                                                                    |
-| `MYSQL_PASSWORD` | Database password                                                                                |
-| `MYSQL_DATABASE` | Database name                                                                                    |
+| Variable     | Description                                                                                      |
+| ------------ | ------------------------------------------------------------------------------------------------ |
+| `MYSQL_URL`  | Connection string, e.g. `mysql://user:pass@host:3306/db`. When set, the fields below are ignored |
+| `MYSQL_HOST` | Database host                                                                                    |
+| `MYSQL_PORT` | Database port (`3306`)                                                                           |
+| `MYSQL_USER` | Database user                                                                                    |
+| `MYSQL_PASS` | Database password                                                                                |
+| `MYSQL_NAME` | Database name                                                                                    |
 
 :::
 
@@ -124,12 +124,12 @@ If you bound MySQL, set the following variables:
 
 #### 其他可选变量
 
-| 变量                        | 默认值     | 说明                                            |
-| --------------------------- | ---------- | ----------------------------------------------- |
-| `MAX_UPLOAD_SIZE`           | `26214400` | 单次整体上传（`/put`、`/form`）大小上限（字节） |
-| `MAX_PART_SIZE`             | `16777216` | 分片上传单片大小上限（字节）                    |
-| `CDN_URL`                   | —          | 前端静态资源 CDN 地址，支持 `$version` 占位符   |
-| `SEED_SOURCE_ALLOWED_HOSTS` | —          | 允许作为种子数据来源的主机白名单                |
+| 变量         | 默认值     | 说明                                            |
+| ------------ | ---------- | ----------------------------------------------- |
+| `MAX_UPLOAD` | `26214400` | 单次整体上传（`/put`、`/form`）大小上限（字节） |
+| `MAX_UPPART` | `16777216` | 分片上传单片大小上限（字节）                    |
+| `ASSET_URLS` | —          | 前端静态资源 CDN 地址，支持 `$version` 占位符   |
+| `ALLOW_SEED` | —          | 允许作为种子数据来源的主机白名单                |
 
 ### 不同存储格式差异
 
@@ -171,21 +171,21 @@ If you bound MySQL, set the following variables:
 
 如果您绑定了 `cfkv`，则需要设置相关变量：
 
-| 变量                 | 说明                            |
-| -------------------- | ------------------------------- |
-| `CF_ACCOUNT_ID`      | Cloudflare 账号 ID              |
-| `CF_KV_NAMESPACE_ID` | Cloudflare 绑定的 KV ID         |
-| `CF_API_TOKEN`       | Cloudflare 具有 KV 权限的 Token |
+| 变量         | 说明                            |
+| ------------ | ------------------------------- |
+| `CF_ACCOUNT` | Cloudflare 账号 ID              |
+| `CF_KV_UUID` | Cloudflare 绑定的 KV ID         |
+| `CF_API_KEY` | Cloudflare 具有 KV 权限的 Token |
 
 如果您绑定了 MySQL，则需要设置相关变量：
 
-| 变量             | 说明                                                                       |
-| ---------------- | -------------------------------------------------------------------------- |
-| `MYSQL_URL`      | 地址串，例如：`mysql://user:pass@host:3306/db`，配置后则不需要配置下方变量 |
-| `MYSQL_HOST`     | 数据库地址                                                                 |
-| `MYSQL_PORT`     | 数据库端口（3306）                                                         |
-| `MYSQL_USER`     | 数据库用户                                                                 |
-| `MYSQL_PASSWORD` | 数据库密码                                                                 |
-| `MYSQL_DATABASE` | 数据库名称                                                                 |
+| 变量         | 说明                                                                       |
+| ------------ | -------------------------------------------------------------------------- |
+| `MYSQL_URL`  | 地址串，例如：`mysql://user:pass@host:3306/db`，配置后则不需要配置下方变量 |
+| `MYSQL_HOST` | 数据库地址                                                                 |
+| `MYSQL_PORT` | 数据库端口（3306）                                                         |
+| `MYSQL_USER` | 数据库用户                                                                 |
+| `MYSQL_PASS` | 数据库密码                                                                 |
+| `MYSQL_NAME` | 数据库名称                                                                 |
 
 :::
