@@ -27,14 +27,20 @@ The following parameters are required:
 
 In addition to `DB_FORMAT` and `DB_DRIVER`, it is strongly recommended to configure the following security-related variables:
 
-| Variable            | Required    | Description                                                                                             |
-| ------------------- | ----------- | ------------------------------------------------------------------------------------------------------- |
-| `ENCRYPTION_SECRET` | Recommended | Static encryption key (≥16 chars) for encrypting drive tokens / secrets. Stored in plaintext when unset |
-| `JWT_SECRET`        | Recommended | JWT signing key (≥16 chars). Auto-generated and persisted to KV when unset                              |
-| `ADMIN_PASSWORD`    | Optional    | Skip the install wizard and auto-initialize the admin with this password                                |
-| `ALLOWED_ORIGINS`   | Optional    | Comma-separated CORS origin allowlist                                                                   |
-| `TABLE_PREFIX`      | Optional    | SQL table prefix (default `x_`), only effective when `DB_FORMAT = "sql"`                                |
-| `CRON_SECRET`       | Optional    | Auth key for scheduled tasks (EdgeOne Schedules only)                                                   |
+| Variable     | Required    | Description                                                                                                                  |
+| ------------ | ----------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| `JWT_SECRET` | Recommended | JWT signing key (≥16 chars), also used for data encryption and cron task auth. Auto-generated and persisted to KV when unset |
+| `ADMIN_PASS` | Optional    | Skip the install wizard and auto-initialize the admin with this password                                                     |
+| `ALLOW_URLS` | Optional    | Comma-separated CORS allowlist                                                                                               |
+
+#### Other optional variables
+
+| Variable     | Default    | Description                                                      |
+| ------------ | ---------- | ---------------------------------------------------------------- |
+| `MAX_UPLOAD` | `26214400` | Max size (bytes) for a whole upload (`/put`, `/form`)            |
+| `MAX_UPPART` | `16777216` | Max size (bytes) per chunk in multipart upload                   |
+| `ASSET_URLS` | —          | Frontend asset CDN base URL, supports the `$version` placeholder |
+| `ALLOW_SEED` | —          | Allowlist of hosts permitted as seed-data sources                |
 
 ### Storage format differences
 
@@ -76,22 +82,22 @@ In addition to `DB_FORMAT` and `DB_DRIVER`, it is strongly recommended to config
 
 If you bound `cfkv`, set the following variables:
 
-| Variable             | Description                         |
-| -------------------- | ----------------------------------- |
-| `CF_ACCOUNT_ID`      | Cloudflare account ID               |
-| `CF_KV_NAMESPACE_ID` | Cloudflare KV namespace ID          |
-| `CF_API_TOKEN`       | Cloudflare API token with KV access |
+| Variable     | Description                         |
+| ------------ | ----------------------------------- |
+| `CF_ACCOUNT` | Cloudflare account ID               |
+| `CF_KV_UUID` | Cloudflare KV namespace ID          |
+| `CF_API_KEY` | Cloudflare API token with KV access |
 
 If you bound MySQL, set the following variables:
 
-| Variable         | Description                                                                                      |
-| ---------------- | ------------------------------------------------------------------------------------------------ |
-| `MYSQL_URL`      | Connection string, e.g. `mysql://user:pass@host:3306/db`. When set, the fields below are ignored |
-| `MYSQL_HOST`     | Database host                                                                                    |
-| `MYSQL_PORT`     | Database port (`3306`)                                                                           |
-| `MYSQL_USER`     | Database user                                                                                    |
-| `MYSQL_PASSWORD` | Database password                                                                                |
-| `MYSQL_DATABASE` | Database name                                                                                    |
+| Variable     | Description                                                                                      |
+| ------------ | ------------------------------------------------------------------------------------------------ |
+| `MYSQL_URL`  | Connection string, e.g. `mysql://user:pass@host:3306/db`. When set, the fields below are ignored |
+| `MYSQL_HOST` | Database host                                                                                    |
+| `MYSQL_PORT` | Database port (`3306`)                                                                           |
+| `MYSQL_USER` | Database user                                                                                    |
+| `MYSQL_PASS` | Database password                                                                                |
+| `MYSQL_NAME` | Database name                                                                                    |
 
 :::
 
@@ -110,14 +116,20 @@ If you bound MySQL, set the following variables:
 
 除 `DB_FORMAT` 和 `DB_DRIVER` 外，强烈建议配置以下安全相关变量：
 
-| 变量                | 必要 | 说明                                                                               |
-| ------------------- | ---- | ---------------------------------------------------------------------------------- |
-| `ENCRYPTION_SECRET` | 推荐 | 静态加密密钥（≥16 字符），用于加密网盘 token / secret 等敏感字段；未配置时明文落盘 |
-| `JWT_SECRET`        | 推荐 | JWT 签名密钥（≥16 字符）；未配置时自动生成并持久化到 KV                            |
-| `ADMIN_PASSWORD`    | 可选 | 跳过安装向导，以该密码自动初始化 admin                                             |
-| `ALLOWED_ORIGINS`   | 可选 | CORS 允许来源白名单（逗号分隔）                                                    |
-| `TABLE_PREFIX`      | 可选 | SQL 表名前缀（默认 `x_`），仅 `DB_FORMAT = "sql"` 时生效                           |
-| `CRON_SECRET`       | 可选 | 定时任务鉴权密钥（仅 EdgeOne 定时任务需要）                                        |
+| 变量         | 必要 | 说明                                                                                    |
+| ------------ | ---- | --------------------------------------------------------------------------------------- |
+| `JWT_SECRET` | 推荐 | JWT 签名密钥（≥16 字符），同时用于数据加密与定时任务鉴权；未配置时自动生成并持久化到 KV |
+| `ADMIN_PASS` | 可选 | 跳过安装向导，以该密码自动初始化 admin                                                  |
+| `ALLOW_URLS` | 可选 | CORS 允许白名单（逗号分隔）                                                             |
+
+#### 其他可选变量
+
+| 变量         | 默认值     | 说明                                            |
+| ------------ | ---------- | ----------------------------------------------- |
+| `MAX_UPLOAD` | `26214400` | 单次整体上传（`/put`、`/form`）大小上限（字节） |
+| `MAX_UPPART` | `16777216` | 分片上传单片大小上限（字节）                    |
+| `ASSET_URLS` | —          | 前端静态资源 CDN 地址，支持 `$version` 占位符   |
+| `ALLOW_SEED` | —          | 允许作为种子数据来源的主机白名单                |
 
 ### 不同存储格式差异
 
@@ -159,21 +171,21 @@ If you bound MySQL, set the following variables:
 
 如果您绑定了 `cfkv`，则需要设置相关变量：
 
-| 变量                 | 说明                            |
-| -------------------- | ------------------------------- |
-| `CF_ACCOUNT_ID`      | Cloudflare 账号 ID              |
-| `CF_KV_NAMESPACE_ID` | Cloudflare 绑定的 KV ID         |
-| `CF_API_TOKEN`       | Cloudflare 具有 KV 权限的 Token |
+| 变量         | 说明                            |
+| ------------ | ------------------------------- |
+| `CF_ACCOUNT` | Cloudflare 账号 ID              |
+| `CF_KV_UUID` | Cloudflare 绑定的 KV ID         |
+| `CF_API_KEY` | Cloudflare 具有 KV 权限的 Token |
 
 如果您绑定了 MySQL，则需要设置相关变量：
 
-| 变量             | 说明                                                                       |
-| ---------------- | -------------------------------------------------------------------------- |
-| `MYSQL_URL`      | 地址串，例如：`mysql://user:pass@host:3306/db`，配置后则不需要配置下方变量 |
-| `MYSQL_HOST`     | 数据库地址                                                                 |
-| `MYSQL_PORT`     | 数据库端口（3306）                                                         |
-| `MYSQL_USER`     | 数据库用户                                                                 |
-| `MYSQL_PASSWORD` | 数据库密码                                                                 |
-| `MYSQL_DATABASE` | 数据库名称                                                                 |
+| 变量         | 说明                                                                       |
+| ------------ | -------------------------------------------------------------------------- |
+| `MYSQL_URL`  | 地址串，例如：`mysql://user:pass@host:3306/db`，配置后则不需要配置下方变量 |
+| `MYSQL_HOST` | 数据库地址                                                                 |
+| `MYSQL_PORT` | 数据库端口（3306）                                                         |
+| `MYSQL_USER` | 数据库用户                                                                 |
+| `MYSQL_PASS` | 数据库密码                                                                 |
+| `MYSQL_NAME` | 数据库名称                                                                 |
 
 :::

@@ -55,7 +55,7 @@ After deployment, open **Domain management**, add a custom domain, then set up t
 
 ### Step 5: Scheduled tasks
 
-EdgeOne supports scheduled refresh via `edgeone.json`. Set `CRON_SECRET` in the environment variables and configure the schedule:
+EdgeOne supports scheduled refresh via `edgeone.json`. Set `cron_secret` in the payload to your `JWT_SECRET` value and configure the schedule:
 
 ```jsonc
 {
@@ -75,7 +75,7 @@ EdgeOne supports scheduled refresh via `edgeone.json`. Set `CRON_SECRET` in the 
 ### After deployment
 
 ::: tip
-After deployment, the first visit to the site automatically enters an **install wizard**. Set the admin account and password in the browser to complete initialization — no pre-configured `ADMIN_PASSWORD` is required.
+After deployment, the first visit to the site automatically enters an **install wizard**. Set the admin account and password in the browser to complete initialization — no pre-configured `ADMIN_PASS` is required.
 :::
 ::::
 
@@ -122,7 +122,7 @@ EdgeOne Makers 使用 `@edgeone/pages-blob` 进行持久化。默认的 `auto` �
 
 ### 步骤 5：定时任务
 
-EdgeOne 通过 `edgeone.json` 支持定时刷新。在环境变量中设置 `CRON_SECRET`，并配置定时规则：
+EdgeOne 通过 `edgeone.json` 支持定时刷新。将 payload 中的 `cron_secret` 设为你的 `JWT_SECRET` 值，并配置定时规则：
 
 ```jsonc
 {
@@ -142,7 +142,7 @@ EdgeOne 通过 `edgeone.json` 支持定时刷新。在环境变量中设置 `CRO
 ### 部署后初始化
 
 ::: tip
-部署完成后，首次访问站点会自动进入**安装向导**，在浏览器中设置管理员账号与密码即可完成初始化，无需预先配置 `ADMIN_PASSWORD`。
+部署完成后，首次访问站点会自动进入**安装向导**，在浏览器中设置管理员账号与密码即可完成初始化，无需预先配置 `ADMIN_PASS`。
 :::
 ::::
 

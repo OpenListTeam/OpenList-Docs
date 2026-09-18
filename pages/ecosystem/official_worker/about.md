@@ -16,14 +16,14 @@ top: 971
 
 ### The install wizard doesn't appear on first visit
 
-Make sure `ADMIN_PASSWORD` is **not** set — when it is set, the worker auto-initializes and skips the wizard. Clear the variable and redeploy, then revisit the site.
+Make sure `ADMIN_PASS` is **not** set — when it is set, the worker auto-initializes and skips the wizard. Clear the variable and redeploy, then revisit the site.
 :::
 
 :::zh-CN
 
 ### 首次访问没有出现安装向导
 
-确认 `ADMIN_PASSWORD` **未配置**——配置后 Worker 会自动初始化并跳过向导。清除该变量后重新部署，再次访问即可进入向导。
+确认 `ADMIN_PASS` **未配置**——配置后 Worker 会自动初始化并跳过向导。清除该变量后重新部署，再次访问即可进入向导。
 :::
 
 ---
@@ -77,7 +77,7 @@ If you can still log in, go to **Management → Users** to change the password.
 
 If you are locked out:
 
-1. Set the `ADMIN_PASSWORD` environment variable to a new password and redeploy.
+1. Set the `ADMIN_PASS` environment variable to a new password and redeploy.
 2. After logging in, remove the variable and redeploy again to re-enable the install wizard on next cold start (or leave it set as a permanent password).
    :::
 
@@ -89,7 +89,7 @@ If you are locked out:
 
 如果已经被锁定：
 
-1. 将 `ADMIN_PASSWORD` 环境变量设为新密码并重新部署。
+1. 将 `ADMIN_PASS` 环境变量设为新密码并重新部署。
 2. 登录后删除该变量再次部署，下次冷启动时将重新启用安装向导（或保留该变量作为永久密码）。
    :::
 
@@ -99,10 +99,10 @@ If you are locked out:
 
 ### CORS errors when accessing the API from a custom domain
 
-Add `ALLOWED_ORIGINS` as an environment variable with a comma-separated list of allowed origins, e.g.:
+Add `ALLOW_URLS` as an environment variable with a comma-separated list of allowed origins, e.g.:
 
 ```
-ALLOWED_ORIGINS=https://your-domain.com,https://www.your-domain.com
+ALLOW_URLS=https://your-domain.com,https://www.your-domain.com
 ```
 
 :::
@@ -111,10 +111,10 @@ ALLOWED_ORIGINS=https://your-domain.com,https://www.your-domain.com
 
 ### 从自定义域名访问 API 时出现 CORS 错误
 
-添加 `ALLOWED_ORIGINS` 环境变量，值为逗号分隔的允许来源列表，例如：
+添加 `ALLOW_URLS` 环境变量，值为逗号分隔的允许来源列表，例如：
 
 ```
-ALLOWED_ORIGINS=https://your-domain.com,https://www.your-domain.com
+ALLOW_URLS=https://your-domain.com,https://www.your-domain.com
 ```
 
 :::
@@ -151,7 +151,7 @@ D1 表通过 Drizzle 迁移在首次启动时创建。请确认：
 
 ### How do I migrate data from the Go backend to OpenList Worker?
 
-Use `DB_FORMAT=sql` + `DB_DRIVER=d1` (or `mysql`) with the same `TABLE_PREFIX` (`x_` by default). The TS Worker and the Go backend share the same table schema, so you can:
+Use `DB_FORMAT=sql` + `DB_DRIVER=d1` (or `mysql`) with the fixed `x_` table prefix. The TS Worker and the Go backend share the same table schema, so you can:
 
 1. Export the Go backend's SQLite database.
 2. Import it into a Cloudflare D1 database via the Cloudflare dashboard or `wrangler d1 execute`.
@@ -162,7 +162,7 @@ Use `DB_FORMAT=sql` + `DB_DRIVER=d1` (or `mysql`) with the same `TABLE_PREFIX` (
 
 ### 如何将 Go 后端的数据迁移到 OpenList Worker？
 
-使用相同的 `TABLE_PREFIX`（默认 `x_`），配合 `DB_FORMAT=sql` + `DB_DRIVER=d1`（或 `mysql`）。TS Worker 与 Go 后端共享相同的表 schema，因此：
+使用固定的 `x_` 表名前缀，配合 `DB_FORMAT=sql` + `DB_DRIVER=d1`（或 `mysql`）。TS Worker 与 Go 后端共享相同的表 schema，因此：
 
 1. 导出 Go 后端的 SQLite 数据库。
 2. 通过 Cloudflare 控制台或 `wrangler d1 execute` 将其导入 Cloudflare D1 数据库。

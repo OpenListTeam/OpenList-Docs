@@ -150,7 +150,7 @@ When `DB_FORMAT = "sql"`, the TS Worker uses the same table names and schema as 
 | `Meta`        | `x_metas`         |
 | (TS only)     | `x_plugins`       |
 
-The prefix can be changed via the `TABLE_PREFIX` environment variable.
+The prefix is fixed to `x_`, matching the Go backend default.
 :::
 
 :::zh-CN
@@ -165,7 +165,7 @@ The prefix can be changed via the `TABLE_PREFIX` environment variable.
 | `Meta`        | `x_metas`         |
 | （仅 TS）     | `x_plugins`       |
 
-表名前缀可通过 `TABLE_PREFIX` 环境变量修改。
+表名前缀固定为 `x_`，与 Go 后端默认值一致。
 :::
 
 ## Project Structure { lang="en" }

@@ -39,7 +39,7 @@ pnpm run build
 
 ### KV namespace
 
-Configure the EdgeKV namespace via environment variables. The entry auto-detects `KV_NAMESPACE` / `ESA_KV_NAMESPACE` / `EDGEONE_KV_NAME` (default `openlist`).
+Configure the EdgeKV namespace via the `KV_NAMESPACE` environment variable (default `openlist`).
 
 :::tip
 ESA EdgeKV is eventually consistent. The entry implements a module-level TTL cache (60s) to avoid "saved settings revert after refresh" caused by cross-node sync delay.
@@ -73,7 +73,7 @@ pnpm run build
 
 ### KV 命名空间
 
-通过环境变量配置 EdgeKV 命名空间。入口会自动探测 `KV_NAMESPACE` / `ESA_KV_NAMESPACE` / `EDGEONE_KV_NAME`（默认 `openlist`）。
+通过 `KV_NAMESPACE` 环境变量配置 EdgeKV 命名空间（默认 `openlist`）。
 
 :::tip
 ESA EdgeKV 是最终一致性的。入口实现了带 TTL（60 秒）的模块级缓存，避免跨节点同步延迟导致的「保存设置后刷新复原」问题。
