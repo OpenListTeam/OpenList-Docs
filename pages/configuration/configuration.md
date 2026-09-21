@@ -103,6 +103,7 @@ After modifying the configuration file, restart OpenList for changes to take eff
     }
   },
   "delayed_start": 0,
+  "cache_policy": "auto",
   "max_connections": 0,
   "max_concurrency": 64,
   "tls_insecure_skip_verify": true,
@@ -832,6 +833,56 @@ Generally this option is used when OpenList is configured to auto-start. The rea
 **单位：秒**
 
 因为有时候网络连接的慢，导致 OpenList 启动过快后需要网络连接的驱动无法连接导致无法正常打开。
+
+:::
+
+### cache_policy
+
+::: en
+
+Controls whether temporary stream caches use memory or files. Supported values are `auto`, `memory`, and `disk`. The default is `auto`.
+
+| Mode     | Behavior and recommended use                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `auto`   | Automatically uses memory when the known cache workload fits within the effective available memory and the shared cache budget can reserve its complete memory ceiling; otherwise, it uses a file in `temp_dir`. Streams whose size is unknown use disk. Container memory limits are considered when they can be detected. This mode reduces temporary disk I/O when sufficient memory is available while providing best-effort protection against cache-induced OOM. It is recommended for most installations. |
+| `memory` | Forces the complete cache to use memory. The automatic cache budget does not restrict this mode, and memory allocation failures are returned instead of falling back to disk. This can be faster and reduces host disk I/O, but it provides **no OOM guarantee**. Use it only when the host has sufficient memory, and choose upload/download concurrency according to the expected file sizes and available memory.                                                                                            |
+| `disk`   | Forces the complete cache to use files in `temp_dir`. This is recommended for low-memory VPS instances and memory-constrained containers. It substantially reduces memory pressure caused by stream caches, but requires sufficient temporary disk space and increases disk I/O.                                                                                                                                                                                                                                |
+
+`auto` keeps reservations for active memory-backed caches so those caches do not claim the same cache budget concurrently. This is designed to reduce OOM risk for the cache path, but it is not a hard process-wide memory limit. Other OpenList components, the Go runtime, other processes, and the operating system can still consume memory. Likewise, `disk` does not guarantee that the process can never run out of memory; it only avoids retaining the cached payload in process memory.
+
+For production deployments using `auto` or `memory`, configure a process supervisor with automatic restart, such as a systemd restart policy or a Docker restart policy.
+
+The equivalent environment variable is `OPENLIST_CACHE_POLICY`. The official Docker image starts OpenList with `--no-prefix`, so use `CACHE_POLICY` inside the container instead.
+
+```json
+{
+  "cache_policy": "auto"
+}
+```
+
+:::
+
+::: zh-CN
+
+控制临时流缓存使用内存还是文件。支持 `auto`、`memory` 和 `disk`，默认值为 `auto`。
+
+| 模式     | 行为与适用场景                                                                                                                                                                                                                                                                                         |
+| -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `auto`   | 当已知的缓存工作集能够放入有效可用内存，并且共享缓存预算能够完整预留其内存上限时使用内存，否则使用 `temp_dir` 中的临时文件；大小未知的流直接使用磁盘。在能够识别容器内存限制时，会将其纳入判断。内存充足时，该模式可以减少临时磁盘读写并降低宿主机 I/O，同时尽力防止缓存导致 OOM，推荐大多数部署使用。 |
+| `memory` | 强制整个缓存使用内存。此模式不受自动缓存预算限制；若内存分配失败，操作会报错，而不会回退到磁盘。该模式通常更快，也能减少宿主机磁盘 I/O，但**不提供 OOM 保证**。仅建议在机器内存充足时使用，并根据文件大小和可用内存自行评估上传、下载并发数。                                                          |
+| `disk`   | 强制整个缓存使用 `temp_dir` 中的临时文件。推荐低内存 VPS 或内存受限的容器使用，可以显著降低流缓存造成的内存压力，但需要预留足够的临时磁盘空间，并会增加磁盘 I/O。                                                                                                                                      |
+
+`auto` 会在内存缓存的生命周期内保留 reservation，避免多个活跃缓存同时占用同一份缓存预算。该机制旨在降低缓存路径的 OOM 风险，但它不是进程级的硬内存上限。OpenList 的其他组件、Go 运行时、其他进程和操作系统仍会消耗内存。同样，`disk` 也不能保证进程永远不会发生 OOM；它只是不将缓存的数据内容长期保留在进程内存中。
+
+生产环境使用 `auto` 或 `memory` 时，建议配置进程守护和自动重启，例如 systemd 的重启策略或 Docker 的 restart policy。
+
+对应的环境变量为 `OPENLIST_CACHE_POLICY`。官方 Docker 镜像使用 `--no-prefix` 启动 OpenList，因此容器内应使用 `CACHE_POLICY`。
+
+```json
+{
+  "cache_policy": "auto"
+}
+```
 
 :::
 
