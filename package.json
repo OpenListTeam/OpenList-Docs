@@ -14,6 +14,7 @@
     "preview": "vitepress preview",
     "format": "biome check --write && prettier --write --log-level warn \"**/*.{md,yml,yaml}\"",
     "format:check": "biome check && prettier --check --log-level warn \"**/*.{md,yml,yaml}\"",
+    "typecheck": "vue-tsc --noEmit",
     "prepare": "husky"
   },
   "dependencies": {
@@ -30,7 +31,9 @@
     "@types/node": "^24.19.0",
     "husky": "^9.1.7",
     "lint-staged": "^17.6.0",
-    "prettier": "^3.9.9"
+    "prettier": "^3.9.9",
+    "typescript": "^6.0.3",
+    "vue-tsc": "^3.3.11"
   },
   "lint-staged": {
     "*.{js,ts,mts,vue,json,css}": [

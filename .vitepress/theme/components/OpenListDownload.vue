@@ -39,18 +39,19 @@
     </button>
   </div>
 
-  <p v-if="locale == 'zh-CN'">{{ t('download.down_source') }}:</p>
-  <div class="filter-buttons">
-    <button
-      v-if="locale == 'zh-CN'"
-      v-for="source in sources"
-      :key="source.name"
-      :class="{ active: selectedDownSource.name === source.name }"
-      @click="selectedDownSource = source"
-    >
-      {{ source.name }}
-    </button>
-  </div>
+  <template v-if="locale === 'zh-CN'">
+    <p>{{ t('download.down_source') }}:</p>
+    <div class="filter-buttons">
+      <button
+        v-for="source in sources"
+        :key="source.name"
+        :class="{ active: selectedDownSource.name === source.name }"
+        @click="selectedDownSource = source"
+      >
+        {{ source.name }}
+      </button>
+    </div>
+  </template>
 
   <div class="file-list">
     <div v-for="download in filteredDownloads" :key="download.filename" class="file-item">
