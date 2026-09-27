@@ -8,7 +8,9 @@ comment: false
 # rendered by .vitepress/theme/components/HomeHero.vue
 landing:
   name: OpenList
-  tagline: 🗂️ 一个支持多种存储的文件列表程序，使用 Gin 和 SolidJS
+  tagline: |-
+    🗂️ 一个支持多种存储的文件列表程序，
+    由 Gin 和 SolidJS 强力驱动！
   actions:
     - theme: brand
       text: 快速上手

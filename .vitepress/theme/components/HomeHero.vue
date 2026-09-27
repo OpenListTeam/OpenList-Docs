@@ -243,10 +243,14 @@
   .tagline {
     max-width: 760px;
     margin: 20px 0 0;
-    font-size: clamp(20px, 3.2vw, 30px);
+    /* small enough on phones that each line written in the frontmatter fits */
+    font-size: clamp(17px, 4.6vw, 30px);
     font-weight: 800;
     line-height: 1.35;
     color: var(--vp-c-text-1);
+    /* keep line breaks written in the frontmatter */
+    white-space: pre-line;
+    text-wrap: balance;
   }
 
   /* Buttons */
