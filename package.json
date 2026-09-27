@@ -1,53 +1,38 @@
 {
   "name": "openlist-docs",
   "version": "0.0.0",
+  "private": true,
   "type": "module",
-  "packageManager": "pnpm@10.12.1",
+  "packageManager": "bun@1.4.2",
+  "engines": {
+    "node": ">=24"
+  },
   "license": "AGPL-3.0",
   "scripts": {
-    "build": "node utils/ensure-full-git.js && npm run build:ssg",
-    "build:spa": "valaxy build",
-    "build:ssg": "NODE_OPTIONS='--max-old-space-size=8192' valaxy build --ssg",
-    "dev": "valaxy",
-    "rss": "valaxy rss",
-    "serve": "vite preview",
-    "vitepress:dev": "vitepress dev",
-    "vitepress:build": "vitepress build",
-    "vitepress:preview": "vitepress preview",
+    "dev": "vitepress dev",
+    "build": "node utils/ensure-full-git.js && vitepress build",
+    "preview": "vitepress preview",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "prepare": "husky"
   },
   "dependencies": {
     "@giscus/vue": "^3.1.1",
-    "@iconify-json/devicon-plain": "^1.2.31",
-    "@iconify-json/logos": "^1.2.4",
-    "@iconify-json/ri": "^1.2.5",
-    "@iconify-json/vscode-icons": "^1.2.23",
-    "valaxy": "0.25.9",
-    "valaxy-addon-algolia": "0.2.0",
-    "valaxy-addon-components": "0.1.0",
-    "valaxy-addon-git-log": "0.3.2",
-    "valaxy-theme-press": "0.25.9",
-    "vitepress-plugin-group-icons": "^1.6.1"
+    "gray-matter": "^4.0.3",
+    "medium-zoom": "^1.1.0",
+    "mermaid": "^12.0.0",
+    "vitepress": "^1.6.4",
+    "vitepress-plugin-group-icons": "^1.7.6",
+    "vue": "^3.5.43"
   },
   "devDependencies": {
-    "@iconify-json/carbon": "1.2.9",
-    "@iconify-json/devicon": "^1.2.32",
-    "@iconify-json/simple-icons": "1.2.39",
-    "@types/node": "^24.0.15",
+    "@types/node": "^24.19.0",
     "husky": "^9.1.7",
-    "lint-staged": "^16.1.2",
-    "nodemon": "^3.1.10",
-    "prettier": "^3.6.2",
-    "vite": "6.3.5",
-    "vitepress": "1.1.4",
-    "vue": "^3.5.17",
-    "vue-i18n": "^11.1.10",
-    "vue-tsc": "^2.2.12"
+    "lint-staged": "^17.6.0",
+    "prettier": "^3.9.9"
   },
   "lint-staged": {
-    "*.{js,ts,vue,md,json,yml,yaml}": [
+    "*.{js,ts,mts,vue,md,json,yml,yaml}": [
       "prettier --write"
     ]
   }

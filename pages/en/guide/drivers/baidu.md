@@ -1,0 +1,266 @@
+---
+top: 690
+categories:
+  - guide
+  - drivers
+---
+
+# Baidu Netdisk
+
+::: tip
+Due to the limitation of Baidu Disk API, downloading files larger than about 20M needs to carry the header: "User-Agent": "pan.baidu.com", so when downloading files larger than 20M, you need to set the request header yourself, such as using curl:
+
+```bash
+curl -L -X GET 'YOUR_LINK' -H 'User-Agent: pan.baidu.com'
+```
+
+Or use the proxy function in this program to transfer.
+:::
+
+```mermaid
+---
+title: How to Stream from Baidu Cloud?
+---
+flowchart TB
+  a[(Baidu Cloud)]
+  1[Official API]
+  b[Super VIP]
+  c[Modify UA]
+  d[Can Modify UA]
+  e[Cannot Modify UA]
+  f[Local Proxy]
+  g[High Bandwidth]
+  k[Low Bandwidth, Cannot Handle]
+  l[Can Stream]
+  m[End]
+
+  a ==> 1
+  1 ==> b
+  b ==> c
+  b -.-> m
+  c ==> d
+  c -.-> e
+  d ==> l
+  e ==> f
+  f ==> g
+  f -.-> k
+  g ==> l
+  k ==> m
+  click c,e,d,m "#Add-User-Agent-Example"
+```
+
+## Refresh token
+
+**Currently, there are three methods to obtain a Baidu Netdisk refresh token:**
+
+All methods require you to [click here](https://api.oplist.org/) to obtain the refresh token. The **first method** requires developer permissions, while the **latter two** do not.
+
+1. If you have Baidu Netdisk developer permissions, please select **"Baidu Netdisk Auth Login"**, and in the Baidu Netdisk developer app backend, set the callback URL to the one provided on the webpage. After clicking "Get Token," you will automatically receive a refresh token. You can then configure your own `client_id` and `client_secret` in OpenList.
+
+   (Please note: If using Baidu Netdisk's API, ensure the “Use Online API” option is unchecked, otherwise it will prevent connection.)
+
+   ![](/img/drivers/baidu/dev_token.png)
+
+   Want to obtain developer permissions? Please follow the steps below to apply for developer permissions on Baidu Cloud Open Platform:
+
+   (Please note that we do not advocate the abuse of Baidu Netdisk developer permissions. You need to bear the operational risks yourself.)
+   1. Please go to [Baidu Open Platform](https://pan.baidu.com/union).
+
+      ![](/img/drivers/baidu/dev_platform.png)
+
+   2. Log in to your Baidu account.
+
+      ![](/img/drivers/baidu/dev_platform_login.png){width=200px}
+
+   3. Follow the steps to complete the developer certification (supplement account information, such as real-name authentication, email, etc.).
+
+   4. After completion, the system will automatically redirect to the [Baidu Open Platform Console](https://pan.baidu.com/union/console/applist).
+
+      If you cannot access the console, you may not have completed the certification. Please return to step one and try again.
+
+      ![](/img/drivers/baidu/dev_platform_console.png){width=600px}
+
+   5. Create an application using the create button in the console.
+
+      (Please note that individual developers can only create one application. If you have other uses for the application, please use methods two and three. Here we assume you don't have an application and are willing to create one for OpenList.)
+
+      ![](/img/drivers/baidu/dev_app_create_button.png){width=600px}
+
+   6. Select "Software" as the application category, and fill in the application name and description according to your preference. Please note that these three contents cannot be changed once set, so please think carefully before filling them out.
+
+      ![](/img/drivers/baidu/dev_app_create_panel.png){width=600px}
+
+   7. After creation is complete, you'll return to the control panel. Click on the application name to enter the application details page.
+
+      (Please note that you don't need to apply for online review to use it normally.)
+
+      ![](/img/drivers/baidu/dev_app_console.png){width=200px}
+
+   8. Select Security Settings and fill in the application callback URL with the provided callback address and save.
+
+      ![](/img/drivers/baidu/dev_app_info.png){width=600px}
+
+      ```
+      https://api.oplist.org/baiduyun/callback
+      ```
+
+      ![](/img/drivers/baidu/dev_app_settings_safety.png){width=600px}
+
+   9. Return to the application details page and copy the necessary AppKey and SecretKey.
+
+   10. Use the [OpenList Token Acquisition Tool](https://api.oplist.org/) to log in via Baidu Netdisk authentication and fill in the corresponding keys to obtain the token.
+
+   11. Fill in the corresponding parameters and settings according to the image at the beginning of this method to start using it.
+
+2. This method uses a built-in API call via our intermediary server to refresh the access token. It is already available online. Simply check the option to use the parameters provided by OpenList, click "Get Token," and you will receive a refresh token. In the storage configuration page of OpenList, enable the "Use Online API" option, and enter the refresh token to start using it.
+
+   ![](/img/drivers/baidu/non_dev_token.png)
+
+   The basic principle of the online API is illustrated in the diagram below:
+
+   ![](/img/drivers/baidu/openapi.png)
+
+3. If you do not have Baidu Netdisk developer permissions but somehow have access to an app’s `client_id` and `client_secret`, please select **"Baidu Netdisk OOB Authentication"**. By default, this method uses the client parameters from the "ES File Explorer" app, but you can also input your own `client_id` and `client_secret`. After clicking "Get Token," wait patiently as you are redirected to the Baidu authorization page. Log in and authorize the app, then copy the authorization code and return to the original webpage to input the code as instructed to obtain the refresh token. In the storage configuration page of OpenList, fill in the `client_id` and `client_secret` to start using the service.
+
+   ![](/img/drivers/baidu/crack_dev_token.png)
+
+## Root folder path
+
+The root foler to mount, defaults to `/`
+
+- Mount a folder separately, according to the following format, `/` is the root directory, just extend to that directory if you want to mount that directory
+  - /folder_A/....../folder_x
+
+## ~~**Custom crack ua**~~
+
+~~[**UA used when using 【Native Proxy & Crack API】**](https://github.com/alist-org/alist/issues/5602#issuecomment-1831188682)~~ The unofficial interface is no longer available
+
+## Download api
+
+- **Official:** The official interface, very stable, but for larger files, UA needs to be modified and the speed is slow (SVIP speed fast)
+- **Crack:** unofficial interface，**Seems to be no longer available** ~~You must modify the UA and some files may not have a speed limit, but it will be unstable (not guaranteed 100%availability) Need to use a version greater than `3.19.0`~~
+  - ~~Need to change the UA to`netdisk`，Modification method refer to [add-user-agent-user-example](#add-user-agent-usage-example)~~
+  - ~~Or turn on the Web proxy, you do not need to modify the UA (you need a large broadband to use it stably)~~
+  - ~~It is limited to play/download **`video (only tested in the mp4 format other formats are not tested)`**,If it is other format files, such a prompt will appear~~
+  - ~~This is not a mistake, this is a limit, please do not panic.~~
+- **Crack video:** unofficial video interface, dedicated to playing videos, the following errors will occur in non-video formats, which is normal
+  - The browser also needs to modify the UA: `pan.baidu.com` or `netdisk` In short, if it is not the browser User-Agent, the video can be played.
+  - The specific situation is the same as the previous unofficial interface usage
+  - The continuous use time is unknown, and 100% availability is not guaranteed
+
+    ```json{2-4,7-9}
+    {
+      error_code: 31119,
+      error_msg: "hit black userlist , hit illeage dlna",
+      request_id: 541111111111111140
+    },
+    {
+      error_code: 31329,
+      error_msg: "hit black userlist , hit illeage dlna",
+      request_id: 921111381111111100
+    }
+    ```
+
+## Add "User-Agent" usage example
+
+::: danger If you don't know how to set "User-Agent" see here
+The following methods are limited to Baidu super member users
+
+Prompt again The following methods are limited to Baidu super member users
+
+It will only be useful if a member finishes modifying **`"User-Agent"`** (choose official and 302)
+
+If you don’t change **`"User-Agent"`**, you can enable=Web Agent, the disadvantage is that you need to build an OpenList machine for transfer, that is to say, you need a large broadband to help you transfer
+:::
+
+<div class="max-w-4xl mx-auto">
+    <p class="text-center text-lg font-medium mb-6">
+        Tutorial on how to modify UA in web page 302 mode
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="text-center">
+            <div class="text-red-600 font-bold text-lg mb-2">Official</div>
+            <video class="w-full h-auto rounded-md shadow-md" controls>
+                <source src="https://r2.izyt.cc/alist/baidu/%E7%99%BE%E5%BA%A6%E5%AE%98%E6%96%B9%E6%8E%A5%E5%8F%A3.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="text-center">
+            <div class="text-blue-600 font-bold text-lg mb-2">Crack video (unavailable)</div>
+            <video class="w-full h-auto rounded-md shadow-md" controls>
+                <source src="https://r2.izyt.cc/alist/baidu/%E7%99%BE%E5%BA%A6%E9%9D%9E%E5%AE%98%E6%96%B9%E6%8E%A5%E5%8F%A3.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+</div>
+
+### Web plugin
+
+The advantage of using a browser plug-in to modify is that it can be played directly online, of course, downloading is also possible.
+
+Example 1: If you really don’t know it, you can take a look at an example on the web page: **https://www.bilibili.com/video/BV1UA4y1X7J8**
+
+Example 2: Another plugin method covering 360, Chrome, Edge: **https://youtu.be/PP6b0WSzYMc**
+
+![bdUA](/img/drivers/baidu/bdUA.png)
+
+### Aria2
+
+1. First follow the figure below to set the **`user-agent" `**, and then click the button option in the lower right corner, click ** gear ** (local settings) to configure the parameters well
+
+   ![aria2-ua](/img/drivers/baidu/aria2-ua.png)
+
+2. Then open the third button option in the lower right corner (**Open the check box**), and then go to the list to select the file we want to download
+
+3. Select the files we need to download. After selecting, there will be a row of buttons. Select the second option on the right. One is sent to Aria2.
+
+   If you use the webpage to modify the **`user-agent`**, you do not need to configure the `UA` of **Aria2**, and you can download it directly to Aria2
+
+### Motrix
+
+1. First follow the figure below to set the **`user-agent" `**, and then click the button option in the lower right corner, click ** gear ** (local settings) to configure the parameters well
+
+   ![motrix-ua](/img/drivers/baidu/motrix-ua.png)
+
+2. Then open the third button option in the lower right corner (**Open the check box**), and then go to the list to select the file we want to download
+
+3. Select the files we need to download. After selecting, there will be a row of buttons. Select the second option on the right. One is sent to Aria2.
+
+   If you use the webpage to modify the **`user-agent`**, you do not need to configure the `UA` of **Motrix**, and you can download it directly to Aria2
+
+- Motrix Download link：[Motrix Official website](https://motrix.app/)，[Motrix-GitHub](https://github.com/agalwood/Motrix)
+
+## Upload Config
+
+Official Documentation: [百度网盘开放平台 - 上传 - 能力说明](https://pan.baidu.com/union/doc/3ksg0s9ye)
+
+> ~~Baidu Netdisk requires that each slice be uploaded within 30 seconds, so excessively high concurrency during file uploads may result in a significant number of failures.~~  
+> Currently (November 2025), Baidu Netdisk appears to have significantly relaxed the timeout limit for uploading slices.
+> Tests show that uploading single slice is now allowed to exceed 30 minutes.
+> Therefore, after extending the timeout duration, the failure rate for batch uploading large files should be greatly reduced (even if low upload bandwidth).
+
+- Upload Threads: The number of slices to upload concurrently.
+- Upload API: The domain endpoint used for uploading.
+- Use dynamic upload API: Dynamically fetch upload domain, generally can achieve maximum upload speed. When enabled, the `Upload API` setting will be used as a fallback if failed to get online. This is enabled by default.
+- Custom Upload Slice Size: Allows you to specify the size of each slice. Note that there are limitations, and this feature is available to VIPs only.
+- Low Bandwidth Upload Mode: Attempts to address the frequent `Client.Timeout exceeded while awaiting headers` errors encountered in low upload bandwidth scenarios (e.g., residential broadband). When enabled, it uses the smallest possible slice size.
+
+## The default download method used
+
+```mermaid
+---
+title: Which download method is used by default?
+---
+flowchart TB
+    style a1 fill:#bbf,stroke:#f66,stroke-width:2px,color:#fff
+    style a2 fill:#ff7575,stroke:#333,stroke-width:4px
+    subgraph ide1 [ ]
+    a1
+    end
+    a1[local proxy]:::someclass====|default|a2[user equipment]
+    classDef someclass fill:#f96
+    c1[302]-.alternative.->a2[user equipment]
+    b1[Download proxy URL]-.alternative.->a2[user equipment]
+    click a1 "../drivers/common.html#webdav-policy"
+    click b1 "../drivers/common.html#webdav-policy"
+    click c1 "../drivers/common.html#webdav-policy"
+```

@@ -1,9 +1,8 @@
 dist
 node_modules
-.valaxy
-.output
+.vitepress/cache
 coverage
 *.min.js
 *.min.css
-pnpm-lock.yaml
+bun.lock
 CHANGELOG.md
