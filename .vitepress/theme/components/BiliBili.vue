@@ -42,7 +42,7 @@ https://github.com/vuepress-theme-hope/vuepress-theme-hope
 </template>
 
 <script setup lang="ts">
-  import { ref, computed, onMounted, onUnmounted } from 'vue'
+  import { computed, onMounted, onUnmounted, ref } from 'vue'
 
   interface Props {
     /**
@@ -175,7 +175,7 @@ https://github.com/vuepress-theme-hope/vuepress-theme-hope
         return value
       }
       const num = parseFloat(value)
-      return isNaN(num) ? value : `${num}px`
+      return Number.isNaN(num) ? value : `${num}px`
     }
     return '100%'
   }
@@ -220,9 +220,10 @@ https://github.com/vuepress-theme-hope/vuepress-theme-hope
     updateHeight()
 
     // 使用 ResizeObserver 监听尺寸变化
-    if (window.ResizeObserver && iframeRef.value) {
+    const container = iframeRef.value?.parentElement
+    if (window.ResizeObserver && container) {
       resizeObserver = new ResizeObserver(updateHeight)
-      resizeObserver.observe(iframeRef.value.parentElement!)
+      resizeObserver.observe(container)
     }
 
     // 降级方案：监听 window resize 事件

@@ -1,6 +1,6 @@
 import process from 'node:process'
 import { fileURLToPath } from 'node:url'
-import { defineConfigWithTheme, type DefaultTheme } from 'vitepress'
+import { type DefaultTheme, defineConfigWithTheme } from 'vitepress'
 import { groupIconMdPlugin, groupIconVitePlugin } from 'vitepress-plugin-group-icons'
 import { getContributors } from './contributors'
 import { mermaidPlugin } from './plugins/mermaid'

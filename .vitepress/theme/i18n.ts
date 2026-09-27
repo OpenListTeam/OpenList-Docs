@@ -1,5 +1,5 @@
-import { computed } from 'vue'
 import { useData } from 'vitepress'
+import { computed } from 'vue'
 
 const messages = {
   en: {
@@ -52,8 +52,10 @@ export function useI18n() {
   const locale = computed<Locale>(() => (lang.value in messages ? (lang.value as Locale) : 'en'))
 
   function t(key: string): string {
-    let value: any = messages[locale.value]
-    for (const part of key.split('.')) value = value?.[part]
+    let value: unknown = messages[locale.value]
+    for (const part of key.split('.'))
+      value =
+        value && typeof value === 'object' ? (value as Record<string, unknown>)[part] : undefined
     return typeof value === 'string' ? value : key
   }
 

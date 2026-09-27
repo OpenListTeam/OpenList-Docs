@@ -86,7 +86,7 @@
 </template>
 
 <script setup lang="ts">
-  import { ref, computed } from 'vue'
+  import { computed, ref } from 'vue'
   import { useI18n } from '../i18n'
   import releases from './openlist_releases_db.json'
 
@@ -144,7 +144,7 @@
   const filteredDownloads = computed(() => {
     let filtered = releases
 
-    if (selectedVersion.value == 'beta') {
+    if (selectedVersion.value === 'beta') {
       filtered = filtered.filter(download => download.lite === false)
     }
 

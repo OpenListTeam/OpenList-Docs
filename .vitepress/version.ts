@@ -1,5 +1,12 @@
 let openListVersionCache: string | null = null
 
+/** the fields read from the GitHub release / npm package responses */
+interface VersionResponse {
+  tag_name?: string
+  version?: string
+  'dist-tags'?: { latest?: string }
+}
+
 // fetch the OpenList's latest version smartly
 export const fetchOpenListVersion = async (): Promise<string> => {
   if (openListVersionCache) return openListVersionCache
@@ -8,22 +15,22 @@ export const fetchOpenListVersion = async (): Promise<string> => {
     // GitHub Releases
     {
       url: 'https://api.github.com/repos/OpenListTeam/OpenList/releases/latest',
-      handler: (json: any) => json.tag_name,
+      handler: (json: VersionResponse) => json.tag_name,
     },
     // fallback to frontend version number
     // npm registry
     {
       url: 'https://registry.npmjs.org/@openlist-frontend/openlist-frontend/latest',
-      handler: (json: any) => `v${json.version}`,
+      handler: (json: VersionResponse) => `v${json.version}`,
     },
     {
       url: 'https://registry.npmjs.org/@openlist-frontend/openlist-frontend',
-      handler: (json: any) => `v${json['dist-tags'].latest}`,
+      handler: (json: VersionResponse) => `v${json['dist-tags']?.latest}`,
     },
     // unpkg
     {
       url: 'https://unpkg.com/@openlist-frontend/openlist-frontend/package.json',
-      handler: (json: any) => `v${json.version}`,
+      handler: (json: VersionResponse) => `v${json.version}`,
     },
   ]
 
@@ -39,7 +46,8 @@ export const fetchOpenListVersion = async (): Promise<string> => {
       const version = handler(json)
 
       if (typeof version === 'string' && /^v?\d+\.\d+\.\d+$/.test(version)) {
-        return (openListVersionCache = version.startsWith('v') ? version : `v${version}`)
+        openListVersionCache = version.startsWith('v') ? version : `v${version}`
+        return openListVersionCache
       }
     } catch (e) {
       console.warn(`Failed to fetch version from ${url}`, e)

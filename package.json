@@ -12,8 +12,8 @@
     "dev": "vitepress dev",
     "build": "node utils/ensure-full-git.js && vitepress build",
     "preview": "vitepress preview",
-    "format": "prettier --write .",
-    "format:check": "prettier --check .",
+    "format": "biome check --write && prettier --write --log-level warn \"**/*.{md,yml,yaml}\"",
+    "format:check": "biome check && prettier --check --log-level warn \"**/*.{md,yml,yaml}\"",
     "prepare": "husky"
   },
   "dependencies": {
@@ -26,13 +26,17 @@
     "vue": "^3.5.43"
   },
   "devDependencies": {
+    "@biomejs/biome": "^2.5.14",
     "@types/node": "^24.19.0",
     "husky": "^9.1.7",
     "lint-staged": "^17.6.0",
     "prettier": "^3.9.9"
   },
   "lint-staged": {
-    "*.{js,ts,mts,vue,md,json,yml,yaml}": [
+    "*.{js,ts,mts,vue,json,css}": [
+      "biome check --write --no-errors-on-unmatched"
+    ],
+    "*.{md,yml,yaml}": [
       "prettier --write"
     ]
   }
