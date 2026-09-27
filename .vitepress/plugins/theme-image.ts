@@ -4,13 +4,11 @@ import type { MarkdownRenderer } from 'vitepress'
  * Render `![](a.png#light)` + `![](a.png#dark)` pairs as a light/dark switching image.
  */
 export function themeImagePlugin(md: MarkdownRenderer) {
-  const defaultImageRender =
-    md.renderer.rules.image ||
-    function (tokens: any, idx: any, options: any, _env: any, renderer: any) {
-      return renderer.renderToken(tokens, idx, options)
-    }
+  const defaultImageRender: NonNullable<typeof md.renderer.rules.image> =
+    md.renderer.rules.image ??
+    ((tokens, idx, options, _env, renderer) => renderer.renderToken(tokens, idx, options))
 
-  md.renderer.rules.image = function (tokens, idx, options, env, renderer) {
+  md.renderer.rules.image = (tokens, idx, options, env, renderer) => {
     const token = tokens[idx]
     const src = token.attrGet('src') || ''
     const alt = token.content || ''

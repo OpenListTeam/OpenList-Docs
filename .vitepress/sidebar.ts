@@ -35,7 +35,7 @@ function walk(dir: string): string[] {
 }
 
 function toLink(relativePath: string): string {
-  return '/' + relativePath.replace(/(^|\/)index\.md$/, '$1').replace(/\.md$/, '')
+  return `/${relativePath.replace(/(^|\/)index\.md$/, '$1').replace(/\.md$/, '')}`
 }
 
 function readPages(srcDir: string, localePrefix: string, otherLocales: string[]): PageEntry[] {

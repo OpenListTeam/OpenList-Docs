@@ -1,15 +1,15 @@
-import type { Theme } from 'vitepress'
-import DefaultTheme from 'vitepress/theme'
-import { useRoute } from 'vitepress'
 import mediumZoom from 'medium-zoom'
+import type { Theme } from 'vitepress'
+import { useRoute } from 'vitepress'
+import DefaultTheme from 'vitepress/theme'
 import { nextTick, onMounted, watch } from 'vue'
 import 'virtual:group-icons.css'
 import './style.css'
-import Layout from './Layout.vue'
 import BiliBili from './components/BiliBili.vue'
 import Mermaid from './components/Mermaid.vue'
 import OpenListDownload from './components/OpenListDownload.vue'
 import WorkInProgress from './components/WorkInProgress.vue'
+import Layout from './Layout.vue'
 
 export default {
   extends: DefaultTheme,
