@@ -8,7 +8,9 @@ comment: false
 # rendered by .vitepress/theme/components/HomeHero.vue
 landing:
   name: OpenList
-  tagline: 🗂️ A file list program that supports multiple storage, powered by Gin and SolidJS
+  tagline: |-
+    🗂️ A file list program that supports multiple storage,
+    powered by Gin and SolidJS!
   actions:
     - theme: brand
       text: Get Started
