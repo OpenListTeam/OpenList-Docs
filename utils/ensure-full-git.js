@@ -31,7 +31,7 @@ async function checkAndRestoreHistory() {
     console.error('❌ Failed to restore Git history:', error.message)
     // process.exit(1)
     console.warn(
-      '! This may result in incomplete contributor information in `valaxy-addon-git-log`. Consider manually running: git fetch --unshallow'
+      '! This may result in incomplete page contributors and last-updated times. Consider manually running: git fetch --unshallow'
     )
   }
 }

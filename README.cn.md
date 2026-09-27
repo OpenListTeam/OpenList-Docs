@@ -22,16 +22,14 @@ OpenList 是一个现代化的基于 Web 的文件管理解决方案，具有以
 
 ## 📖 文档
 
-这是 OpenList 的新文档。使用 Valaxy 构建。对于旧文档（基于 Alist Docs），请访问 [OpenList Docs Legacy](https://github.com/OpenListTeam/docs)。
+这是 OpenList 的新文档。使用 [VitePress](https://vitepress.dev/zh/) 构建。对于旧文档（基于 Alist Docs），请访问 [OpenList Docs Legacy](https://github.com/OpenListTeam/docs)。
 
 ## 🛠️ 开发
 
-本文档站点使用 [Valaxy](https://github.com/YunYouJun/valaxy) 和 [valaxy-theme-press](https://github.com/YunYouJun/valaxy/tree/main/packages/valaxy-theme-press) 构建。
-
 ### 环境要求
 
-- Node.js 18+
-- pnpm（推荐的包管理器）
+- Node.js 24+
+- [Bun](https://bun.sh/)（包管理器）
 
 ### 本地开发
 
@@ -41,22 +39,24 @@ git clone https://github.com/OpenListTeam/OpenList-Docs.git
 cd OpenList-Docs
 
 # 安装依赖
-pnpm install
+bun install
 
 # 启动开发服务器
-pnpm dev
+bun run dev
 ```
 
-文档站点将在 `http://localhost:4859` 可用。
+文档站点将在 `http://localhost:5173` 可用。
+
+中文页面位于 `pages/`，英文页面位于 `pages/en/`，页面组织方式见[贡献指南](./CONTRIBUTING.md)。
 
 ### 构建
 
 ```bash
-# 生产环境构建
-pnpm build
+# 生产环境构建（输出到 dist/）
+bun run build
 
 # 预览生产构建
-pnpm serve
+bun run preview
 ```
 
 ## 🤝 贡献

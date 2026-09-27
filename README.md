@@ -22,16 +22,14 @@ OpenList is a modern, web-based file management solution that allows you to:
 
 ## 📖 Documentation
 
-This is the new official documentation site for OpenList. It is built with Valaxy. For old documentation(based on Alist Docs) please visit [OpenList Docs Legacy](https://github.com/OpenListTeam/docs).
+This is the new official documentation site for OpenList. It is built with [VitePress](https://vitepress.dev/). For old documentation(based on Alist Docs) please visit [OpenList Docs Legacy](https://github.com/OpenListTeam/docs).
 
 ## 🛠️ Development
 
-This documentation site is built with [Valaxy](https://github.com/YunYouJun/valaxy) and [valaxy-theme-press](https://github.com/YunYouJun/valaxy/tree/main/packages/valaxy-theme-press).
-
 ### Prerequisites
 
-- Node.js 18+
-- pnpm (recommended package manager)
+- Node.js 24+
+- [Bun](https://bun.sh/) (package manager)
 
 ### Local Development
 
@@ -41,22 +39,24 @@ git clone https://github.com/OpenListTeam/OpenList-Docs.git
 cd OpenList-Docs
 
 # Install dependencies
-pnpm install
+bun install
 
 # Start development server
-pnpm dev
+bun run dev
 ```
 
-The documentation site will be available at `http://localhost:4859`.
+The documentation site will be available at `http://localhost:5173`.
+
+Chinese pages are in `pages/`, English pages are in `pages/en/`. See the [Contributing Guide](./CONTRIBUTING.md) for how pages are organized.
 
 ### Building
 
 ```bash
-# Build for production
-pnpm build
+# Build for production (output: dist/)
+bun run build
 
 # Preview production build
-pnpm serve
+bun run preview
 ```
 
 ## 🤝 Contributing
