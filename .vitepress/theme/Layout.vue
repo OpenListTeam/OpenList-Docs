@@ -6,6 +6,7 @@
   import type { ThemeConfig } from '../config.mts'
   import BackToTop from './components/BackToTop.vue'
   import Contributors from './components/Contributors.vue'
+  import HomeHero from './components/HomeHero.vue'
   import { useLanguageRedirect } from './language'
 
   const { Layout } = DefaultTheme
@@ -29,6 +30,9 @@
 
 <template>
   <Layout>
+    <template #home-hero-before>
+      <HomeHero v-if="frontmatter.landing" />
+    </template>
     <template #doc-after>
       <Contributors v-if="frontmatter.contributors !== false" />
       <div v-if="showComments" class="comments-container">
