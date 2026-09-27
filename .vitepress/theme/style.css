@@ -110,3 +110,28 @@ img.theme-image-dark {
 .statement-page .vp-doc h2 {
   color: var(--vp-c-brand-1);
 }
+
+/*
+ * 768–959px: VitePress shows the whole nav menu there, but our seven items do not fit
+ * next to the search box. Collapse the search box to its icon and tighten the items.
+ */
+@media (min-width: 768px) and (max-width: 959px) {
+  .VPNavBar .DocSearch-Button {
+    width: auto !important;
+    padding: 0 10px !important;
+  }
+
+  .VPNavBar .DocSearch-Button .DocSearch-Search-Icon {
+    margin-right: 0 !important;
+  }
+
+  .VPNavBar .DocSearch-Button-Placeholder,
+  .VPNavBar .DocSearch-Button-Keys {
+    display: none !important;
+  }
+
+  .VPNavBarMenu .VPNavBarMenuLink,
+  .VPNavBarMenu .VPFlyout .button {
+    padding: 0 8px !important;
+  }
+}
