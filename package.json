@@ -12,8 +12,9 @@
     "dev": "vitepress dev",
     "build": "node utils/ensure-full-git.js && vitepress build",
     "preview": "vitepress preview",
-    "format": "biome check --write && prettier --write --log-level warn \"**/*.{md,yml,yaml}\"",
-    "format:check": "biome check && prettier --check --log-level warn \"**/*.{md,yml,yaml}\"",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint .",
     "typecheck": "vue-tsc --noEmit",
     "prepare": "husky"
   },
@@ -27,19 +28,26 @@
     "vue": "^3.5.43"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.5.14",
+    "@eslint/js": "^10.0.1",
     "@types/node": "^24.19.0",
+    "eslint": "^10.11.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-vue": "^10.11.1",
+    "globals": "^17.12.0",
     "husky": "^9.1.7",
     "lint-staged": "^17.6.0",
     "prettier": "^3.9.9",
     "typescript": "^6.0.3",
+    "typescript-eslint": "^8.70.1",
+    "vue-eslint-parser": "^10.4.1",
     "vue-tsc": "^3.3.11"
   },
   "lint-staged": {
-    "*.{js,ts,mts,vue,json,css}": [
-      "biome check --write --no-errors-on-unmatched"
+    "*.{js,ts,mts,vue}": [
+      "eslint --fix",
+      "prettier --write"
     ],
-    "*.{md,yml,yaml}": [
+    "*.{json,css,md,yml,yaml}": [
       "prettier --write"
     ]
   }

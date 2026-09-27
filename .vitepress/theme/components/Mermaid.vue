@@ -55,6 +55,7 @@
 </script>
 
 <template>
+  <!-- eslint-disable-next-line vue/no-v-html -- SVG rendered by mermaid (securityLevel: strict) from our own Markdown -->
   <div v-if="svg" ref="container" class="mermaid" v-html="svg" />
   <pre v-else-if="failed" class="mermaid-error"><code>{{ source }}</code></pre>
   <div v-else class="mermaid mermaid-loading" />

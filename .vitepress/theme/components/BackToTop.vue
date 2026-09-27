@@ -3,9 +3,9 @@
     <button
       v-show="isVisible"
       class="back-to-top-btn"
-      @click="scrollToTop"
       :aria-label="t('tooltip.back_to_top')"
       :title="t('tooltip.back_to_top')"
+      @click="scrollToTop"
     >
       <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
         <path

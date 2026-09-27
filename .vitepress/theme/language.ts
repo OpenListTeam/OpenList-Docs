@@ -19,7 +19,9 @@ function read(key: string): string | null {
 function write(key: string, value: string) {
   try {
     localStorage.setItem(key, value)
-  } catch {}
+  } catch {
+    // storage can be unavailable (private mode, blocked cookies): just don't remember
+  }
 }
 
 function asLang(value: string | null): Lang | null {

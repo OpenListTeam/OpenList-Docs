@@ -20,11 +20,11 @@ https://github.com/vuepress-theme-hope/vuepress-theme-hope
 <template>
   <div class="bilibili-wrapper">
     <div class="bilibili-desc">
-      <a class="sr-only" :href="videoLink" v-if="videoLink">{{ title }}</a>
+      <a v-if="videoLink" class="sr-only" :href="videoLink">{{ title }}</a>
     </div>
     <iframe
-      ref="iframeRef"
       v-if="videoLink"
+      ref="iframeRef"
       :src="videoLink"
       :title="title"
       class="bilibili-iframe"
@@ -108,9 +108,13 @@ https://github.com/vuepress-theme-hope/vuepress-theme-hope
   }
 
   const props = withDefaults(defineProps<Props>(), {
+    bvid: undefined,
+    aid: undefined,
+    cid: undefined,
     title: 'A BiliBili video',
     page: 1,
     width: '100%',
+    height: undefined,
     ratio: 16 / 9,
     time: 0,
     autoplay: false,
@@ -132,16 +136,13 @@ https://github.com/vuepress-theme-hope/vuepress-theme-hope
 
     if (!aid && !bvid) return null
 
-    let url = ''
     const params = new URLSearchParams()
 
     if (aid && cid) {
-      url = VIDEO_LINK
       params.set('aid', String(aid))
       params.set('cid', String(cid))
       params.set('p', String(page))
     } else if (bvid) {
-      url = VIDEO_LINK
       params.set('bvid', String(bvid))
       params.set('p', String(page))
     } else {
@@ -159,7 +160,7 @@ https://github.com/vuepress-theme-hope/vuepress-theme-hope
       params.set('danmaku', '0')
     }
 
-    return `${url}?${params.toString()}`
+    return `${VIDEO_LINK}?${params.toString()}`
   })
 
   // 获取数值
