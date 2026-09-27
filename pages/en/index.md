@@ -5,12 +5,10 @@ titleTemplate: OpenList Docs
 description: OpenList is a resilient, community-driven file list program that supports multiple cloud storage platforms. Built as a secure fork of AList with enhanced security and long-term governance.
 comment: false
 
-hero:
+# rendered by .vitepress/theme/components/HomeHero.vue
+landing:
   name: OpenList
   tagline: 🗂️ A file list program that supports multiple storage, powered by Gin and SolidJS
-  image:
-    src: /logo.svg
-    alt: OpenList
   actions:
     - theme: brand
       text: Get Started
@@ -18,13 +16,11 @@ hero:
     - theme: alt
       text: View GitHub
       link: https://github.com/OpenListTeam/OpenList
-    - theme: alt
-      text: Disclaimer
+  links:
+    - text: Disclaimer
       link: /en/terms#disclaimer
-    - theme: alt
-      text: Terms of Service
+    - text: Terms of Service
       link: /en/terms
-    - theme: alt
-      text: Privacy Policy
+    - text: Privacy Policy
       link: /en/privacy
 ---

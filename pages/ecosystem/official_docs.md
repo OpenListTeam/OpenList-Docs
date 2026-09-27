@@ -22,7 +22,7 @@ top: 990
 ### 环境要求
 
 - **Node.js** 24 或更高版本（见 `.nvmrc`）
-- **Bun**：包管理器和脚本运行器
+- **pnpm**：包管理器
 - **Git**：用于版本控制和克隆仓库
 
 1. **克隆仓库**
@@ -35,13 +35,13 @@ top: 990
 2. **安装依赖**
 
    ```bash
-   bun install
+   pnpm install
    ```
 
 3. **启动开发服务器**
 
    ```bash
-   bun run dev
+   pnpm dev
    ```
 
 4. **在浏览器中打开**
@@ -52,10 +52,10 @@ top: 990
 
 ```bash
 # 构建静态站点到 dist/
-bun run build
+pnpm build
 
 # 预览构建结果
-bun run preview
+pnpm preview
 ```
 
 ### 编写提示

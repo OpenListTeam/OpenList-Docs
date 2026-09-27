@@ -29,7 +29,7 @@ This is the new official documentation site for OpenList. It is built with [Vite
 ### Prerequisites
 
 - Node.js 24+
-- [Bun](https://bun.sh/) (package manager)
+- [pnpm](https://pnpm.io/) (package manager)
 
 ### Local Development
 
@@ -39,10 +39,10 @@ git clone https://github.com/OpenListTeam/OpenList-Docs.git
 cd OpenList-Docs
 
 # Install dependencies
-bun install
+pnpm install
 
 # Start development server
-bun run dev
+pnpm dev
 ```
 
 The documentation site will be available at `http://localhost:5173`.
@@ -53,10 +53,10 @@ Chinese pages are in `pages/`, English pages are in `pages/en/`. See the [Contri
 
 ```bash
 # Build for production (output: dist/)
-bun run build
+pnpm build
 
 # Preview production build
-bun run preview
+pnpm preview
 ```
 
 ## 🤝 Contributing

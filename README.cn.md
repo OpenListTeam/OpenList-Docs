@@ -29,7 +29,7 @@ OpenList 是一个现代化的基于 Web 的文件管理解决方案，具有以
 ### 环境要求
 
 - Node.js 24+
-- [Bun](https://bun.sh/)（包管理器）
+- [pnpm](https://pnpm.io/)（包管理器）
 
 ### 本地开发
 
@@ -39,10 +39,10 @@ git clone https://github.com/OpenListTeam/OpenList-Docs.git
 cd OpenList-Docs
 
 # 安装依赖
-bun install
+pnpm install
 
 # 启动开发服务器
-bun run dev
+pnpm dev
 ```
 
 文档站点将在 `http://localhost:5173` 可用。
@@ -53,10 +53,10 @@ bun run dev
 
 ```bash
 # 生产环境构建（输出到 dist/）
-bun run build
+pnpm build
 
 # 预览生产构建
-bun run preview
+pnpm preview
 ```
 
 ## 🤝 贡献

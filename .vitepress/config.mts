@@ -210,42 +210,46 @@ export default defineConfigWithTheme<ThemeConfig>({
     comments: !DOCS_CN,
     footer,
     search: {
-      provider: 'local',
+      provider: 'algolia',
       options: {
-        miniSearch: {
-          options: {
-            // Split Chinese text into words, the same way when indexing (Node) and
-            // searching (browser). Must stay self-contained: VitePress serializes it.
-            tokenize: (text: string) =>
-              Array.from(new Intl.Segmenter('zh-CN', { granularity: 'word' }).segment(text))
-                .filter(segment => segment.isWordLike)
-                .map(segment => segment.segment),
-          },
-          searchOptions: {
-            // single characters from the segmenter would otherwise match almost every page
-            combineWith: 'AND',
-          },
-        },
+        appId: 'I80ZVXR7H9',
+        apiKey: '2a3fe6e1f95a3c8ca60fee55e44c00a1',
+        indexName: 'Document Crawler CN',
         locales: {
           root: {
+            placeholder: '搜索文档',
             translations: {
-              button: {
-                buttonText: '搜索文档',
-                buttonAriaLabel: '搜索文档',
-              },
+              button: { buttonText: '搜索文档', buttonAriaLabel: '搜索文档' },
               modal: {
-                displayDetails: '显示详细列表',
-                resetButtonTitle: '清除查询条件',
-                backButtonTitle: '关闭搜索',
-                noResultsText: '没有找到相关结果',
+                searchBox: {
+                  resetButtonTitle: '清除查询条件',
+                  resetButtonAriaLabel: '清除查询条件',
+                  cancelButtonText: '取消',
+                  cancelButtonAriaLabel: '取消',
+                },
+                startScreen: {
+                  recentSearchesTitle: '搜索历史',
+                  noRecentSearchesText: '没有搜索历史',
+                  saveRecentSearchButtonTitle: '保存至搜索历史',
+                  removeRecentSearchButtonTitle: '从搜索历史中移除',
+                  favoriteSearchesTitle: '收藏',
+                  removeFavoriteSearchButtonTitle: '从收藏中移除',
+                },
+                errorScreen: {
+                  titleText: '无法获取结果',
+                  helpText: '你可能需要检查你的网络连接',
+                },
                 footer: {
                   selectText: '选择',
-                  selectKeyAriaLabel: '回车',
                   navigateText: '切换',
-                  navigateUpKeyAriaLabel: '上方向键',
-                  navigateDownKeyAriaLabel: '下方向键',
                   closeText: '关闭',
-                  closeKeyAriaLabel: 'Esc',
+                  searchByText: '搜索提供者',
+                },
+                noResultsScreen: {
+                  noResultsText: '无法找到相关结果',
+                  suggestedQueryText: '你可以尝试查询',
+                  reportMissingResultsText: '你认为该查询应该有结果？',
+                  reportMissingResultsLinkText: '点击反馈',
                 },
               },
             },

@@ -22,7 +22,7 @@ You can directly access [doc.oplist.org.cn](https://doc.oplist.org.cn/) to view 
 ### Prerequisites
 
 - **Node.js** 24 or later (see `.nvmrc`)
-- **Bun**: package manager and script runner
+- **pnpm**: package manager
 - **Git**: for version control and cloning the repository
 
 1. **Clone the repository**
@@ -35,13 +35,13 @@ You can directly access [doc.oplist.org.cn](https://doc.oplist.org.cn/) to view 
 2. **Install dependencies**
 
    ```bash
-   bun install
+   pnpm install
    ```
 
 3. **Start development server**
 
    ```bash
-   bun run dev
+   pnpm dev
    ```
 
 4. **Open in browser**
@@ -52,10 +52,10 @@ You can directly access [doc.oplist.org.cn](https://doc.oplist.org.cn/) to view 
 
 ```bash
 # Build static site into dist/
-bun run build
+pnpm build
 
 # Preview build
-bun run preview
+pnpm preview
 ```
 
 ### Writing Tips

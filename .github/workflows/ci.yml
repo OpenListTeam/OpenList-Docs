@@ -20,23 +20,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
 
-      # Bun version comes from `packageManager` in package.json
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v2
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v7
+      # pnpm version from `packageManager` in package.json, Node.js from .nvmrc,
+      # then `pnpm install --frozen-lockfile`
+      - name: Setup pnpm and Node.js
+        uses: pnpm/setup@v3
         with:
-          node-version-file: .nvmrc
-
-      - name: Install Deps
-        run: bun install --frozen-lockfile
+          cache: true
+          require-lockfile: true
 
       - name: Format
-        run: bun run format:check
+        run: pnpm format:check
 
       - name: Lint
-        run: bun run lint
+        run: pnpm lint
 
       - name: Typecheck
-        run: bun run typecheck
+        run: pnpm typecheck
