@@ -51,8 +51,10 @@
         />
       </div>
       <footer v-if="hasSidebar && theme.footer" class="doc-site-footer">
+        <!-- eslint-disable vue/no-v-html -- footer HTML comes from our own config -->
         <p v-if="theme.footer.message" v-html="theme.footer.message" />
         <p v-if="theme.footer.copyright" v-html="theme.footer.copyright" />
+        <!-- eslint-enable vue/no-v-html -->
       </footer>
     </template>
     <template #layout-bottom>

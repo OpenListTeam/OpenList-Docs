@@ -26,7 +26,7 @@ let gitLog: Map<string, Map<string, Author>> | undefined
 
 function loadGitLog(): Map<string, Map<string, Author>> {
   const files = new Map<string, Map<string, Author>>()
-  let output = ''
+  let output: string
   try {
     output = execFileSync('git', ['log', '--format=%x1e%an%x1f%ae', '--name-only', '--', 'pages'], {
       encoding: 'utf8',
