@@ -169,6 +169,9 @@ importers:
       '@giscus/vue':
         specifier: ^3.1.1
         version: 3.1.1(vue@3.5.43(typescript@6.0.3))
+      '@vueuse/core':
+        specifier: ^12.8.2
+        version: 12.8.2(typescript@6.0.3)
       gray-matter:
         specifier: ^4.0.3
         version: 4.0.3
