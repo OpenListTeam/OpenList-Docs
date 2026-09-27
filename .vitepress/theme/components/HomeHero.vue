@@ -85,12 +85,13 @@
   }
 
   .home-hero {
-    --home-c1: #14b8a6;
-    --home-c2: #0ea5e9;
-    --home-c3: #6366f1;
-    --home-glow: rgba(14, 165, 233, 0.35);
-    /* the light running through the name, must stay readable on the page background */
-    --home-shine: #22d3ee;
+    /* the old site's brand colors: teal-300, sky-400, teal-200 */
+    --home-c1: #5eead4;
+    --home-c2: #38bdf8;
+    --home-c3: #99f6e4;
+    --home-glow: rgba(56, 189, 248, 0.25);
+    /* the light running through the name, must stay visible on the page background */
+    --home-shine: #67e8f9;
 
     position: relative;
     isolation: isolate;
@@ -105,9 +106,6 @@
   }
 
   .dark .home-hero {
-    --home-c1: #5eead4;
-    --home-c2: #38bdf8;
-    --home-c3: #a5b4fc;
     --home-glow: rgba(56, 189, 248, 0.3);
     --home-shine: #fff;
   }
@@ -332,8 +330,9 @@
   .action.brand .action-inner {
     height: 44px;
     padding: 0 28px;
-    background: linear-gradient(135deg, #0d9488, #0284c7 60%, #4f46e5);
+    background: linear-gradient(to right, #99f6e4, #38bdf8);
     color: #fff;
+    text-shadow: 0 1px 2px rgba(8, 47, 73, 0.25);
   }
 
   /* the old site's hover: the text flies away and the logo flies in */
