@@ -4,6 +4,12 @@ import { computed } from 'vue'
 const messages = {
   en: {
     wip: 'WIP, please stay tuned',
+    appearance: {
+      title: 'Theme',
+      auto: 'System',
+      light: 'Light',
+      dark: 'Dark',
+    },
     tooltip: {
       back_to_top: 'Back to Top',
     },
@@ -24,6 +30,12 @@ const messages = {
   },
   'zh-CN': {
     wip: '编写中，敬请期待',
+    appearance: {
+      title: '主题',
+      auto: '跟随系统',
+      light: '浅色',
+      dark: '深色',
+    },
     tooltip: {
       back_to_top: '回到顶部',
     },

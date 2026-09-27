@@ -170,8 +170,6 @@ export default defineConfigWithTheme<ThemeConfig>({
         returnToTopLabel: '回到顶部',
         sidebarMenuLabel: '菜单',
         darkModeSwitchLabel: '主题',
-        lightModeSwitchTitle: '切换到浅色模式',
-        darkModeSwitchTitle: '切换到深色模式',
         langMenuLabel: '切换语言',
         notFound: {
           title: '页面未找到',
@@ -278,6 +276,17 @@ export default defineConfigWithTheme<ThemeConfig>({
   },
 
   vite: {
+    resolve: {
+      alias: [
+        // three-state appearance switch (system / light / dark) instead of the light/dark toggle
+        {
+          find: /^.*\/VPSwitchAppearance\.vue$/,
+          replacement: fileURLToPath(
+            new URL('./theme/components/ThemeSwitcher.vue', import.meta.url)
+          ),
+        },
+      ],
+    },
     plugins: [
       groupIconVitePlugin({
         customIcon: {
