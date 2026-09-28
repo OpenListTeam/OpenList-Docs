@@ -12,7 +12,7 @@ top: 1000
 
 ### [OpenList Docs ↗](./official_docs)
 
-基于Valaxy的文档，支持多种样式，基于GitHub仓库实时构建。
+基于 VitePress 的文档，基于 GitHub 仓库实时构建。
 
 ---
 
@@ -37,6 +37,8 @@ OpenList中在线API功能的开源实现，可灵活部署至多种服务器，
 ### [OpenList Proxy ↗](./official_proxy)
 
 OpenList流量代理程序，可以利用另一台服务器代理OpenList的流量
+
+---
 
 ### [OpenList Worker ↗](./official_worker/)
 
@@ -178,6 +180,8 @@ QNAP OpenList | OpenList的第三方开源qpkg版本。
 OpenList 专用 CDN 预热工具。搭配 EdgeOne/ESA 回源跟随重定向，高效提升缓存命中率，加速站点下载。
 
 自由开源软件，MPLv2协议
+
+---
 
 ### [MY QNAP's OpenList ↗](https://www.myqnap.org/product/openlist/)
 

@@ -115,6 +115,8 @@ example.com {
 
 ## 教程：宝塔面板设置反向代理
 
+1. 登录宝塔面板，添加站点；
+
 ![bt_new_website](/img/guide/reverse_proxy/bt_new_website.png)
 
 2. 修改站点设置；

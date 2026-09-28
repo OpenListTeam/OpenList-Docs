@@ -12,7 +12,7 @@ This page shows the OpenList ecosystem, including official projects and third-pa
 
 ### [OpenList Docs ↗](./official_docs)
 
-Documentation based on Valaxy, supporting multiple styles and real-time builds from the GitHub repository.
+Documentation based on VitePress, with real-time builds from the GitHub repository.
 
 ---
 
@@ -37,6 +37,8 @@ An open-source implementation of the online API functionality in OpenList, deplo
 ### [OpenList Proxy ↗](./official_proxy)
 
 OpenList traffic proxy program, which can use another server to proxy OpenList traffic.
+
+---
 
 ### [OpenList Worker ↗](./official_worker/)
 
@@ -170,6 +172,16 @@ Free and Open Source Software licensed under the AGPLv3 license.
 An open-source Python client implementing the OpenList API.
 
 Free and Open Source Software licensed under the MIT license.
+
+---
+
+### [jiwangyihao/olist-cdn-preheat ↗](https://github.com/jiwangyihao/olist-cdn-preheat/)
+
+OpenList dedicated CDN preheating tool. When used with EdgeOne/ESA origin-following redirection, it efficiently improves cache hit rates and accelerates site downloads.
+
+Free and Open Source Software licensed under the MPLv2 license.
+
+---
 
 ### [MY QNAP's OpenList ↗](https://www.myqnap.org/product/openlist/)
 
