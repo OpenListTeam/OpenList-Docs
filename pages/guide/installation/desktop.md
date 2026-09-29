@@ -327,7 +327,7 @@ sudo rpm -i OpenList-Desktop_x.x.x_amd64.rpm
 
 ### 首次启动 { lang="zh-CN" }
 
-::: en
+:::: en
 ::: tip
 It is recommended to run OpenList Desktop with Administrator privileges on first launch to ensure proper service installation and configuration.
 :::
@@ -336,9 +336,9 @@ It is recommended to run OpenList Desktop with Administrator privileges on first
 2. **Service Installation**: Install the OpenList service when prompted
 3. **Storage Configuration**: Configure your first cloud storage connection
 
-:::
+::::
 
-::: zh-CN
+:::: zh-CN
 ::: tip
 建议在首次启动时通过管理员权限运行 OpenList Desktop，以确保正确安装和配置服务。
 :::
@@ -347,7 +347,7 @@ It is recommended to run OpenList Desktop with Administrator privileges on first
 2. **服务安装**：在提示时安装 OpenList 服务
 3. **存储配置**：配置您的第一个云存储连接
 
-:::
+::::
 
 ### Basic Operations { lang="en" }
 
