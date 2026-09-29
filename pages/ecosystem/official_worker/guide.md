@@ -31,12 +31,14 @@ For a detailed, step-by-step deployment guide (Cloudflare Workers / EdgeOne / ES
 :::: en
 
 > **Note**: If Cloudflare reports "unable to fetch repository content", [Fork](https://github.com/OpenListTeam/OpenList-Worker/fork) the project first, then deploy via the GitHub repository connection.
-> ::::
+
+::::
 
 :::: zh-CN
 
 > **注意**：若 Cloudflare 提示"无法获取存储库内容"，请先 [Fork](https://github.com/OpenListTeam/OpenList-Worker/fork) 本项目，再通过连接到 GitHub 仓库功能部署。
-> ::::
+
+::::
 
 :::: en
 For platform-specific step-by-step guides, see:
