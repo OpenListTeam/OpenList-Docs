@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ILoveScratch2.github.io/sitemap.xml
