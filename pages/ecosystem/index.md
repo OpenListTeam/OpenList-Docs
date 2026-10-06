@@ -167,6 +167,22 @@ OpenList Magisk 模块将 OpenList 文件服务器集成到 Android 系统中，
 
 ---
 
+### [sorubedo/openlist-magisk-runsv ↗](https://github.com/sorubedo/openlist-magisk-runsv)
+
+::: en
+OpenList as an autostart runsv service for Magisk / KernelSU / APatch — official unmodified core, optional privilege drop, and a volume-key action menu. Tracks upstream OpenList.
+
+Free and Open Source Software licensed under the MIT license.
+:::
+
+::: zh-CN
+把 OpenList 做成 Magisk / KernelSU / APatch 上开机自启的 runsv 服务，用官方原版内核、支持降权，并带音量键操作菜单。版本号跟随 OpenList 官方。
+
+自由开源软件，MIT 协议
+:::
+
+---
+
 ### [qianye216/OpenList-Desktop ↗](https://github.com/qianye216/OpenList-Desktop)
 
 ::: en
