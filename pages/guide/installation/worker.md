@@ -81,12 +81,14 @@ Click the button below to deploy to the corresponding platform:
 ::: en
 
 > If Cloudflare prompts `无法获取存储库内容`（cannot fetch repository content）, fork this project first, then deploy by connecting to the GitHub repository.
-> :::
+
+:::
 
 ::: zh-CN
 
 > 若 Cloudflare 提示 `无法获取存储库内容`，则您需要先 Fork 本项目，再通过连接到 GitHub 仓库功能部署。
-> :::
+
+:::
 
 ## Initialization { lang="en" }
 
@@ -414,7 +416,7 @@ EdgeOne 通过 `edgeone.json` 支持定时刷新。将 payload 中的 `cron_secr
 
 ## 部署到阿里云 ESA { lang="zh-CN" }
 
-::: en
+:::: en
 OpenList Worker ships a dedicated ESA edge function entry (`esa-entry.ts`), which adapts Alibaba Cloud EdgeKV into the project's KV interface.
 
 ### Build & deploy
@@ -446,9 +448,9 @@ Configure the EdgeKV namespace via the `KV_NAMESPACE` environment variable (defa
 ::: tip
 ESA EdgeKV is eventually consistent. The entry implements a module-level TTL cache (60s) to avoid "saved settings revert after refresh" caused by cross-node sync delay.
 :::
-:::
+::::
 
-::: zh-CN
+:::: zh-CN
 OpenList Worker 内置了专用的 ESA 边缘函数入口（`esa-entry.ts`），将阿里云 EdgeKV 适配为项目的 KV 接口。
 
 ### 构建与部署
@@ -480,7 +482,7 @@ pnpm run build
 ::: tip
 ESA EdgeKV 是最终一致性的。入口实现了带 TTL（60 秒）的模块级缓存，避免跨节点同步延迟导致的「保存设置后刷新复原」问题。
 :::
-:::
+::::
 
 ## Local Development { lang="en" }
 
@@ -542,7 +544,7 @@ pnpm run deploy
 
 ## 常见问题 { lang="zh-CN" }
 
-::: en
+:::: en
 ::: details Cloudflare prompts "cannot fetch repository content"
 Fork the project first, then deploy by connecting to the GitHub repository instead of the direct one-click URL.
 :::
@@ -554,9 +556,9 @@ This is usually a KV/CDN cache consistency issue. The entry already forces `no-c
 ::: details How do I reset the admin password?
 The admin password is set during the install wizard. To reset, you can set `ADMIN_PASS` temporarily and redeploy, or clear the persisted config and re-run the wizard.
 :::
-:::
+::::
 
-::: zh-CN
+:::: zh-CN
 ::: details Cloudflare 提示「无法获取存储库内容」
 请先 Fork 本项目，再通过连接到 GitHub 仓库功能部署，而不是直接使用一键部署 URL。
 :::
@@ -568,7 +570,7 @@ The admin password is set during the install wizard. To reset, you can set `ADMI
 ::: details 如何重置管理员密码？
 管理员密码在安装向导中设置。如需重置，可临时设置 `ADMIN_PASS` 并重新部署，或清空已持久化的配置后重新运行向导。
 :::
-:::
+::::
 
 ## Repository { lang="en" }
 

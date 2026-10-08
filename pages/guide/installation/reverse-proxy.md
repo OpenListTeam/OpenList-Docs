@@ -113,9 +113,9 @@ proxy_max_temp_file_size 0; #加上这一行
 
 :::
 
-::: en
+:::: en
 
-::: note Nginx Host Variables Differences
+::: tip Nginx Host Variables Differences
 
 | Variable             | Description                                      | Includes Port | Notes                                                                                                |
 | -------------------- | ------------------------------------------------ | ------------- | ---------------------------------------------------------------------------------------------------- |
@@ -124,8 +124,9 @@ proxy_max_temp_file_size 0; #加上这一行
 | `$host:$server_port` | Server name + port                               | Yes           | Use this combination when you need to use a non-default port (other than 80 or 443)                  |
 
 :::
+::::
 
-::: zh-CN
+:::: zh-CN
 
 ::: tip Nginx 主机变量区别
 
@@ -136,6 +137,7 @@ proxy_max_temp_file_size 0; #加上这一行
 | `$host:$server_port` | 服务器名称 + 端口                 | 是             | 当需要使用非默认 80、443 端口时，请修改为这个组合    |
 
 :::
+::::
 
 ::: en
 If HTTP/3 is needed, the corresponding `Host` line should be modified to:
@@ -236,7 +238,7 @@ example.com {
 
 1. Login to the aaPanel and add a new website.
 
-::
+:::
 
 ::: zh-CN
 

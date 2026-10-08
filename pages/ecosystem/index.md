@@ -109,7 +109,6 @@ Provides LuCI support for OpenList, suitable for OpenWRT-based router systems.
 
 Free and Open Source Software licensed under the MIT license.
 :::
-::::
 
 ::: zh-CN
 为 OpenList 提供 LuCI 支持，适用于基于 OpenWRT 的路由器系统。
@@ -357,6 +356,8 @@ Free and Open Source Software licensed under the MIT license.
 实现了 OpenList API 的 Python 客户端。
 
 自由开源软件，MIT协议
+
+:::
 
 ---
 
