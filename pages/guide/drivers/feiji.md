@@ -1,101 +1,34 @@
 ---
-title:
-  en: FeiJi Cloud
-  zh-CN: 小飞机网盘
-icon: iconfont icon-state
-# This control sidebar order
 top: 686
-# A page can have multiple categories
 categories:
   - guide
   - drivers
-# A page can have multiple tags
-tag:
-  - Storage
-  - Guide
-  - '302'
-# this page is sticky in article list
-sticky: true
-# this page will appear in starred articles
-star: true
 ---
+
+# 小飞机网盘
 
 **https://feijipan.com/**
 
 <!--@include: @/snippets/reverse-tip.md-->
 
-::: en
-::: danger
-Feiji Cloud imposes login restrictions on 3rd-party platforms. Attempting to access its service via OpenList may result in your account being banned. Please proceed with caution!
-:::
-
-::: zh-CN
 ::: danger
 小飞机网盘对第三方平台有登录限制，尝试登录极易封号，请谨慎使用！
 :::
 
-## Root folder ID { lang="en" }
+## 根文件夹ID
 
-## 根文件夹ID { lang="zh-CN" }
-
-::: en
-root folder ID the default is `0`，Other directory ID View the figure below obtaining method
-![](/img/drivers/feiji/feiji.png)
-:::
-::: zh-CN
 根目录ID，默认为`0`，其它目录ID查看下图获取方式
 ![](/img/drivers/feiji/feiji.png)
-:::
 
-## username、password { lang="en" }
+## 账户、密码
 
-## 账户、密码 { lang="zh-CN" }
-
-::: en
-Just fill in your own Feiji Cloud Account Password
-:::
-::: zh-CN
 填写自己的小飞机网盘帐号密码
-:::
 
-## Known issues { lang="en" }
+## 已知问题
 
-## 已知问题 { lang="zh-CN" }
-
-::: en
-The file size returned by iLanZou is in Kilo Bytes, not Bytes. Therefore, you cannot accurately determine if a file has been modified based on its size. Please pay attention to the configuration of your sync software.
-:::
-::: zh-CN
 蓝奏云优享版返回的文件大小非 Bytes，而是 Kilo Bytes，因此无法使用文件大小准确判断一个文件是否被修改，需要注意同步软件的配置。
-:::
 
-## The default download method used { lang="en" }
-
-## 默认使用的下载方式 { lang="zh-CN" }
-
-::: en
-
-```mermaid
----
-title: Which download method is used by default?
----
-flowchart TB
-    style a1 fill:#bbf,stroke:#f66,stroke-width:2px,color:#fff
-    style a2 fill:#ff7575,stroke:#333,stroke-width:4px
-    subgraph ide1 [ ]
-    a1
-    end
-    a1[302]:::someclass====|default|a2[user equipment]
-    classDef someclass fill:#f96
-    c1[local proxy]-.alternative.->a2[user equipment]
-    b1[Download proxy URL]-.alternative.->a2[user equipment]
-    click a1 "../drivers/common.html#webdav-policy"
-    click b1 "../drivers/common.html#webdav-policy"
-    click c1 "../drivers/common.html#webdav-policy"
-```
-
-:::
-::: zh-CN
+## 默认使用的下载方式
 
 ```mermaid
 ---
@@ -115,5 +48,3 @@ flowchart TB
     click b1 "../drivers/common.html#webdav-策略"
     click c1 "../drivers/common.html#webdav-策略"
 ```
-
-:::

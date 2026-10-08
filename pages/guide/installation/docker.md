@@ -1,17 +1,12 @@
 ---
-title:
-  en: Use Docker
-  zh-CN: 使用 Docker
-icon: iconfont icon-geometry
-# This control sidebar order
 top: 50
-# A page can have multiple categories
 categories:
   - guide
   - installation
 ---
 
-::: zh-CN
+# 使用 Docker
+
 ::: warning
 
 - 在 `v4.1.0` 以后的版本中（不包含 `v4.1.0`），OpenList 镜像已经移除了 `PUID`、`PGID`，并借鉴于 MariaDB 的构建方式，使用 `useradd` 增加了用户 `openlist`（UID 1001）和组 `openlist`（GID 1001），并使用该用户运行 `openlist server`。
@@ -23,54 +18,20 @@ categories:
 - **rootless** 模式中的 Docker， `--user 0:0` 代表当前用户的 UID 和 GID。请确保您在运行容器时，正确设置了 `--user` 参数，以确保文件权限的正确性。
   :::
 
-::: en
-::: warning
-
-- In version `v4.1.0` and later (excluding `v4.1.0`), OpenList has removed the `PUID` and `PGID` environment variables in the image, and has adopted a method similar to that of MariaDB, where a user named `openlist` (UID 1001) and a group named `openlist` (GID 1001) are created, and `openlist server` runs under this user.
-
-  This means you need to manually handle the permission issues of the mapped directory, ensuring that the OpenList user (1001) inside the container has access to the mapped directory.
-
-  You can also run the container with the `--user UID:GID` option to specify the user and group under which OpenList runs inside the container, allowing it to access the mapped directory.
-
-- In the **rootless** mode of Docker, `--user 0:0` represents the current user's UID and GID. Please ensure that you set the `--user` parameter correctly when running the container to ensure proper file permissions.
-  :::
-
-## Install { lang="en" }
-
-## 安装 { lang="zh-CN" }
+## 安装
 
 ### Docker CLI
 
-::: en
-Install Docker. And run the command below:
-:::
-
-::: zh-CN
 安装好 Docker 后，执行以下命令：
-:::
 
-#### v4.1.0 以后版本 { lang="zh-CN" }
+#### v4.1.0 以后版本
 
-#### For version after v4.1.0 { lang="en" }
-
-::: zh-CN
 ::: warning
 请注意：`/etc/openlist` 仅为默认映射的目录，您可以根据需要修改为其他目录。
 :::
 
-::: en
-::: warning
-Please note: `/etc/openlist` is just the default mapped directory, you can change it to another directory as needed.
-:::
-
-::: zh-CN
 ::: tip
 如果您希望使用当前用户运行和管理 OpenList 及其配置目录，请使用以下命令：
-:::
-
-::: en
-::: tip
-If you are using the current user to run and manage OpenList and its configuration directory, please use the following command:
 :::
 
 ```bash
@@ -78,14 +39,8 @@ mkdir -p /etc/openlist
 docker run --user $(id -u):$(id -g) -d --restart=unless-stopped -v /etc/openlist:/opt/openlist/data -p 5244:5244 -e UMASK=022 --name="openlist" openlistteam/openlist:latest
 ```
 
-::: zh-CN
 ::: tip
 如果您希望使用 1001，即容器内置的默认 `openlist` 用户运行和管理 OpenList 及其配置目录，请使用以下命令：
-:::
-
-::: en
-::: tip
-If you want to run and manage OpenList and its configuration directory using the default OpenList user (1001) inside the container, please use the following command:
 :::
 
 ```bash
@@ -93,9 +48,7 @@ sudo chown -R 1001:1001 /etc/openlist
 docker run -d --restart=unless-stopped -v /etc/openlist:/opt/openlist/data -p 5244:5244 -e UMASK=022 --name="openlist" openlistteam/openlist:latest
 ```
 
-#### v4.1.0 及以前版本 { lang="zh-CN" }
-
-#### For version v4.1.0 and earlier { lang="en" }
+#### v4.1.0 及以前版本
 
 ```bash
 docker run -d --restart=unless-stopped -v /etc/openlist:/opt/openlist/data -p 5244:5244 -e PUID=0 -e PGID=0 -e UMASK=022 --name="openlist" openlistteam/openlist:latest
@@ -103,12 +56,7 @@ docker run -d --restart=unless-stopped -v /etc/openlist:/opt/openlist/data -p 52
 
 ### Docker Compose
 
-::: en
-Create `docker-compose.yml` file.
-:::
-::: zh-CN
 创建 `docker-compose.yml` 文件。
-:::
 
 ```bash
 mkdir -p /opt/openlist
@@ -116,16 +64,9 @@ cd /opt/openlist
 vim docker-compose.yml
 ```
 
-::: en
-Write the content below. Then save and exit.
-:::
-::: zh-CN
 写入以下内容，然后保存并退出：
-:::
 
-#### For version after v4.1.0 { lang="en" }
-
-#### v4.1.0 以后版本 { lang="zh-CN" }
+#### v4.1.0 以后版本
 
 ```yaml
 # docker-compose.yml
@@ -143,9 +84,7 @@ services:
     restart: unless-stopped
 ```
 
-#### For version v4.1.0 and earlier { lang="en" }
-
-#### v4.1.0 及以前版本 { lang="zh-CN" }
+#### v4.1.0 及以前版本
 
 ```yaml
 # docker-compose.yml
@@ -164,99 +103,31 @@ services:
     restart: unless-stopped
 ```
 
-::: en
-Run commands in the same path of `docker-compose.yml` file:
-:::
-::: zh-CN
 在 `docker-compose.yml` 相同目录下执行：
-:::
 
 ```bash
 docker compose pull
 docker compose up -d
 ```
 
-## Env { lang="en" }
+## 环境变量
 
-## 环境变量 { lang="zh-CN" }
+| 名称                      | 默认值 | 说明                                                                       |
+| :------------------------ | :----- | -------------------------------------------------------------------------- |
+| `PUID`                    | `0`    | 运行身份 UID，在 v4.1.0 以后的版本中废弃                                   |
+| `PGID`                    | `0`    | 运行身份 GID，在 v4.1.0 以后的版本中废弃                                   |
+| `UMASK`                   | `022`  | https://en.wikipedia.org/wiki/Umask                                        |
+| `TZ`                      | `UTC`  | 默认为 UTC 时区，如果你想指定时区，则可以设置此变量，例如：`Asia/Shanghai` |
+| `RUN_ARIA2`               |        | 是否同时运行 ARIA2，当镜像含有 aria2 环境时默认为 `true`，否则为 `false`   |
+| `OPENLIST_ADMIN_PASSWORD` |        | 通过环境变量指定管理员密码                                                 |
 
-::: en
-| Name | Default | Desc |
-|:------------|:--------|----------------------------------------------------------------------------------------------------------------------------|
-| `PUID` | `0` | User UID, Deprecated in v4.1.0 later versions|
-| `PGID` | `0` | User GID, Deprecated in v4.1.0 later versions|
-| `UMASK` | `022` | https://en.wikipedia.org/wiki/Umask |
-| `TZ` | `UTC` | Default is the UTC time zone. If you want to specify a time zone, you can set this variable, for example: `Asia/Shanghai`. |
-| `RUN_ARIA2` | | Whether to run ARIA2 concurrently, default is `true` if aria2 is pre-installed, otherwise it is `false`. |
-| `OPENLIST_ADMIN_PASSWORD` | | Set the password of admin by environment variable |
-:::
-::: zh-CN
-| 名称 | 默认值 | 说明 |
-| :---------- | :----- | -------------------------------------------------------------------------- |
-| `PUID` | `0` | 运行身份 UID，在 v4.1.0 以后的版本中废弃 |
-| `PGID` | `0` | 运行身份 GID，在 v4.1.0 以后的版本中废弃 |
-| `UMASK` | `022` | https://en.wikipedia.org/wiki/Umask |
-| `TZ` | `UTC` | 默认为 UTC 时区，如果你想指定时区，则可以设置此变量，例如：`Asia/Shanghai` |
-| `RUN_ARIA2` | | 是否同时运行 ARIA2，当镜像含有 aria2 环境时默认为 `true`，否则为 `false` |
-| `OPENLIST_ADMIN_PASSWORD` | | 通过环境变量指定管理员密码 |
-:::
-
-::: en
-Additionally, OpenList supports passing [configuration](/configuration/configuration) through environment variables. The OpenList in the Docker image runs by default with the `--no-prefix` flag, so you don't need to add the `OPENLIST_` prefix.
-
-You can view all available environment variables online in Go Packages.
-:::
-::: zh-CN
 此外，OpenList 支持将 [配置](/configuration/configuration) 通过环境变量的方式传入。Docker 镜像中的 OpenList 默认使用 `--no-prefix` 参数运行，因此您无需添加 `OPENLIST_` 前缀。
 
 您可以在 Go Packages 中在线查看所有可以使用的环境变量。
-:::
 
 https://pkg.go.dev/github.com/OpenListTeam/OpenList/v4/internal/conf#Config
 
-## Image Versions { lang="en" }
-
-## 镜像版本 { lang="zh-CN" }
-
-::: en
-
-- Stable version: `openlistteam/openlist:latest` or `openlistteam/openlist:v*.*.*`
-  - Latest image version tag, please refer to https://hub.docker.com/r/openlistteam/openlist/tags
-
-  - Some PaaS platforms do not support images larger than 100MB. Please use the lightweight image `lite`, for example: `openlistteam/openlist:latest-lite`. Otherwise, you may encounter the following error: `Pod ephemeral local storage usage exceeds the total limit of containers 100Mi.`
-
-- Dev version: `openlistteam/openlist:beta`
-
-Pre-installed environment image suffix:
-
-| Suffix   | Desc                                                                    |
-| :------- | ----------------------------------------------------------------------- |
-| `aio`    | An image that includes all of the following pre-installed environments. |
-| `ffmpeg` | Pre-installed FFmpeg image for generating thumbnail for local storage   |
-| `aria2`  | Pre-installed aria2 image for offline downloading.                      |
-
-You can append a suffix using the `-` symbol after any of the mirror tags to switch to an image with the corresponding environment. For example, `openlistteam/openlist:latest-aio` `openlistteam/openlist:latest-aria2` `openlistteam/openlist:latest-ffmpeg`.
-
----
-
-If the thumbnail generation function still does not work when using the pre-installed ffmpeg, please confirm:
-
-- You are using local storage
-- Switched to grid view
-- The thumbnail switch in local storage driver settings is enabled
-- The configuration path for the thumbnail cache folder in local storage is correct, for example, `data/thumbnail`
-
----
-
-When using a pre-installed aria2 mirror, you might see errors like the following in the OpenList logs:
-
-```
-ERRO[2022-11-20 12:05:19] error [unaligned 64-bit atomic operation] while run task  [download http://xxx.com/xxx.png to [/ftp](/)]
-```
-
-The solution is, if the CPU architecture is 64-bit, you can try to manually pull a 64-bit image or rebuild the container. If the CPU architecture is 32-bit, there is currently no available solution.
-:::
-::: zh-CN
+## 镜像版本
 
 - 稳定版：`openlistteam/openlist:latest` or `openlistteam/openlist:v*.*.*`
   - 最新镜像版本 Tag，请参阅：https://hub.docker.com/r/openlistteam/openlist/tags
@@ -293,48 +164,23 @@ ERRO[2022-11-20 12:05:19] error [unaligned 64-bit atomic operation] while run ta
 ```
 
 解决方法是，如果是 CPU 架构是 64 位，可以尝试手动拉取 64 位镜像或重新构建容器。 如果是 CPU 架构是 32 位，目前尚无可用方案。
-:::
 
-## See the admin's info{ lang="en" }
+## 查看管理员信息
 
-## 查看管理员信息 { lang="zh-CN" }
-
-### First run { lang="en" }
-
-### 首次运行 { lang="zh-CN" }
+### 首次运行
 
 ```bash
 docker logs openlist
 ```
 
-::: en
-You will see the admin password in the log.
-:::
-::: zh-CN
 你将在日志中看到密码。
-:::
 
 ```
 Successfully created the admin user and the initial password is: xYZabHGf
 ```
 
-### Not first run { lang="en" }
+### 非首次运行
 
-### 非首次运行 { lang="zh-CN" }
-
-::: en
-You can **randomly generate** or **manually set**
-
-```bash
-# Randomly generate password
-docker exec -it openlist ./openlist admin random
-
-# Manually set password to `NEW_PASSWORD` (replace this)
-docker exec -it openlist ./openlist admin set NEW_PASSWORD
-```
-
-:::
-::: zh-CN
 您可以**重新生成**或**手动设置密码**。
 
 ```bash
@@ -345,53 +191,19 @@ docker exec -it openlist ./openlist admin random
 docker exec -it openlist ./openlist admin set NEW_PASSWORD
 ```
 
-:::
-
-## Update { lang="en" }
-
-## 更新 { lang="zh-CN" }
+## 更新
 
 ### Watchtower
 
-::: en
-If you find it troublesome, you can complete the update with a single line using Watchtower.
-:::
-::: zh-CN
 如果嫌麻烦，可以使用 Watchtower 一键更新。
-:::
 
 ```bash
 docker run --rm -v /var/run/docker.sock:/var/run/docker.sock containrrr/watchtower openlist --cleanup --run-once
 ```
 
-::: en
-If the container name is not named `openlist`, please replace it to the actual one.
-:::
-::: zh-CN
 如果您的容器名不是 `openlist`，请替换为实际的名称。
-:::
 
 ### Docker CLI
-
-::: en
-
-```bash
-# View the container (find the ID of the OpenList container)
-docker ps -a
-
-# Stop running OpenList container instance, otherwise it cannot be deleted (this time the ID of the OpenList container is d429749a6e69, it is different for each installation)
-docker stop ID
-
-# Delete the OpenList container (the data is still there as long as you don't delete it manually)
-docker rm ID
-
-# Pull the latest image of OpenList
-docker pull openlistteam/openlist:latest
-```
-
-:::
-
-::: zh-CN
 
 ```bash
 # 查看容器（查找 OpenList 容器的 ID）
@@ -407,17 +219,8 @@ docker rm ID
 docker pull openlistteam/openlist:latest
 ```
 
-:::
+#### 升级到 v4.1.0 以后版本 （不包括v4.1.0）
 
-#### 升级到 v4.1.0 以后版本 （不包括v4.1.0） { lang="zh-CN" }
-
-#### Upgrade to version v4.1.0 and later (excluding v4.1.0) { lang="en" }
-
-::: en
-::: tip
-If you want to run and manage OpenList and its configuration directory using the default OpenList user (1001) inside the container, please use the following command:
-:::
-::: zh-CN
 ::: tip
 如果您希望使用 1001，即容器内置的默认 `openlist` 用户运行和管理 OpenList 及其配置目录，请使用以下命令：
 :::
@@ -427,11 +230,6 @@ chown -R 1001:1001 /etc/openlist
 docker run -d --restart=unless-stopped -v /etc/openlist:/opt/openlist/data -p 5244:5244 -e UMASK=022 --name="openlist" openlistteam/openlist:latest
 ```
 
-::: en
-::: tip
-If you are using the current user to run and manage OpenList and its configuration directory, please use the following command:
-:::
-::: zh-CN
 ::: tip
 如果您希望使用当前用户运行和管理 OpenList 及其配置目录，请使用以下命令：
 :::
@@ -441,9 +239,7 @@ sudo chown -R $(id -u):$(id -g) /etc/openlist
 docker run --user $(id -u):$(id -g) -d --restart=unless-stopped -v /etc/openlist:/opt/openlist/data -p 5244:5244 -e UMASK=022 --name="openlist" openlistteam/openlist:latest
 ```
 
-#### 升级到 v4.1.0 以前的版本（包括 v4.1.0） { lang="zh-CN" }
-
-#### Upgrade to version v4.1.0 and earlier (including v4.1.0) { lang="en" }
+#### 升级到 v4.1.0 以前的版本（包括 v4.1.0）
 
 ```bash
 docker run -d --restart=unless-stopped -v /etc/openlist:/opt/openlist/data -p 5244:5244 -e PUID=0 -e PGID=0 -e UMASK=022 --name="openlist" openlistteam/openlist:latest
@@ -451,12 +247,7 @@ docker run -d --restart=unless-stopped -v /etc/openlist:/opt/openlist/data -p 52
 
 ### Docker Compose
 
-::: en
-Enter the same path of `docker-compose.yml` file and run:
-:::
-::: zh-CN
 进入 `docker-compose.yml` 相同目录，然后运行：
-:::
 
 ```bash
 docker compose pull
@@ -464,32 +255,18 @@ docker compose down
 docker compose up -d
 ```
 
-## Advanced Docker Compose { lang="en" }
+## 增强版 Docker Compose
 
-## 增强版 Docker Compose { lang="zh-CN" }
-
-::: en
-Create `docker-compose.yml` file.
-:::
-::: zh-CN
 创建 `docker-compose.yml` 文件。
-:::
 
 ```bash
 mkdir -p /opt/openlist
 vim docker-compose.yml
 ```
 
-::: en
-Write the content below. Then save and exit.
-:::
-::: zh-CN
 写入以下内容，然后保存并退出：
-:::
 
-#### For version after v4.1.0 { lang="en" }
-
-#### v4.1.0 以后版本 { lang="zh-CN" }
+#### v4.1.0 以后版本
 
 ```yaml
 # docker-compose.yml
@@ -598,9 +375,7 @@ services:
   #   restart: unless-stopped
 ```
 
-#### For version v4.1.0 and earlier { lang="en" }
-
-#### v4.1.0 及以前版本 { lang="zh-CN" }
+#### v4.1.0 及以前版本
 
 ```yaml
 # docker-compose.yml
@@ -709,12 +484,7 @@ services:
   #   restart: unless-stopped
 ```
 
-::: en
-Create `.env` file.
-:::
-::: zh-CN
 创建 `.env` 文件。
-:::
 
 ```bash
 # =============================================================================
@@ -770,43 +540,14 @@ OPLISTDX_TEMP=./temp
 # OPLISTDX_TRANSMISSION_HOST_WHITELIST=
 ```
 
-::: en
-Run commands in the same path of `docker-compose.yml` file:
-:::
-::: zh-CN
 在 `docker-compose.yml` 相同目录下执行：
-:::
 
 ```bash
 docker compose pull
 docker compose up -d
 ```
 
-### Env { lang="en" }
-
-### 环境变量 { lang="zh-CN" }
-
-::: en
-
-| Name                                   | Default       | Desc                                                                                                                       |
-| :------------------------------------- | :------------ | -------------------------------------------------------------------------------------------------------------------------- |
-| `OPLISTDX_PUID`                        | `0`           | User UID                                                                                                                   |
-| `OPLISTDX_PGID`                        | `0`           | User GID                                                                                                                   |
-| `OPLISTDX_TZ`                          | `UTC`         | Default is the UTC time zone. If you want to specify a time zone, you can set this variable, for example: `Asia/Shanghai`. |
-| `OPLISTDX_DATA`                        | `./data`      | Main data directory.                                                                                                       |
-| `OPLISTDX_TEMP`                        | `./temp`      | Temporary files directory                                                                                                  |
-| `OPLISTDX_DOWNLOADS`                   | `./downloads` | Downloads directory                                                                                                        |
-| `OPLISTDX_TRANSMISSIONWATCH`           | `./watch`     | Transmission watch directory                                                                                               |
-| `OPLISTDX_ARIA2TOKEN`                  |               | Aria2 RPC secret token                                                                                                     |
-| `OPLISTDX_TRANSMISSION_WEB_HOME`       |               | Transmission Web UI theme directory                                                                                        |
-| `OPLISTDX_TRANSMISSION_USER`           |               | Transmission Web UI username                                                                                               |
-| `OPLISTDX_TRANSMISSION_PASS`           |               | Transmission Web UI password                                                                                               |
-| `OPLISTDX_TRANSMISSION_WHITELIST`      |               | IP whitelist (comma separated)                                                                                             |
-| `OPLISTDX_TRANSMISSION_PEERPORT`       |               | Peer port                                                                                                                  |
-| `OPLISTDX_TRANSMISSION_HOST_WHITELIST` |               | Host whitelist                                                                                                             |
-
-:::
-::: zh-CN
+### 环境变量
 
 | 名称                                   | 默认值        | 说明                                                                       |
 | :------------------------------------- | :------------ | -------------------------------------------------------------------------- |
@@ -824,5 +565,3 @@ docker compose up -d
 | `OPLISTDX_TRANSMISSION_WHITELIST`      |               | IP 白名单（逗号分隔）                                                      |
 | `OPLISTDX_TRANSMISSION_PEERPORT`       |               | Peer 端口                                                                  |
 | `OPLISTDX_TRANSMISSION_HOST_WHITELIST` |               | 主机白名单                                                                 |
-
-:::
