@@ -147,7 +147,8 @@ After modifying the configuration file, restart OpenList for changes to take eff
   "s3": {
     "enable": false,
     "port": 5246,
-    "ssl": false
+    "ssl": false,
+    "multipart_ttl": "24h"
   },
   "ftp": {
     "enable": false,
@@ -1079,31 +1080,34 @@ Use it to understand it by yourself, and then configure it. If you do n’t know
   "s3": {
     "enable": false,
     "port": 5246,
-    "ssl": false
+    "ssl": false,
+    "multipart_ttl": "24h"
   }
 ```
 
 - `enable`：Whether the S3 function is enabled, the default is not enabled
 - `port`：port
 - `SSL`：Enable the HTTPS certificate, not enabled by default
+- `multipart_ttl`：Maximum idle time for an unfinished multipart upload before the reaper reclaims its temporary files. Accepts any Go [duration](https://pkg.go.dev/time#ParseDuration) string such as `"24h"`, `"30m"`, or `"1h30m"`. The default is `"24h"`. Leave empty or set an invalid / non-positive value to fall back to the default.
 
 Function introduction: [Click to view](../guide/advanced/s3.md)
 
 :::
-
 ::: zh-CN
 
 ```json
   "s3": {
     "enable": false,
     "port": 5246,
-    "ssl": false
+    "ssl": false,
+    "multipart_ttl": "24h"
   }
 ```
 
 - `enable`：S3功能是否启用，默认未启用
 - `port`：端口号
 - `SSL`：启用HTTPS证书，默认未启用
+- `multipart_ttl`：未完成的多分片上传在被回收器清理前的最大空闲时间（即临时文件保留时长）。接受任意 Go [duration](https://pkg.go.dev/time#ParseDuration) 字符串，例如 `"24h"`、`"30m"`、`"1h30m"`。默认值为 `"24h"`。留空或填写非法/非正数值时会回退到默认值。
 
 功能介绍：[点击查看](../guide/advanced/s3.md)
 
