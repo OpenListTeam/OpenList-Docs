@@ -781,3 +781,34 @@ For Simplified Chinese users, you can fix this issue by setting this value to "*
 
 对于简体中文用户来说，将此项设置为“**GBK**”就可以解决大多数情况下文件名乱码的问题。
 :::
+
+## Why does OpenList consume almost all available memory when uploading? { lang="en" }
+
+## 为什么 OpenList 在上传时几乎占满内存？ { lang="zh-CN" }
+
+::: en
+The stream cache in OpenList is powered by the **HybridCache** component, which tries to keep data in memory first and only falls back to disk when memory is insufficient. The relevant configuration lives under the `min_free_memory` / `auto_memory_limit` / `max_block_limit` fields in `config.json` — see [HybridCache cache strategy](../configuration/configuration.md#auto_memory_limit) for the full decision flow.
+
+If the host's free memory is large enough, the cache can grow without limit on a single allocation up to `max_block_limit`, and it will not be reclaimed until the upload is finished or the stream is closed. That is why an upload can quickly make the process appear to "eat" almost all of the available memory.
+
+If you do not want uploads to consume that much memory, you can:
+
+- Set `auto_memory_limit` to a small value (in MB). Streams no larger than this value stay in Go-managed `[]byte` and are reclaimed by GC, while larger streams skip this tier.
+- Set `min_free_memory` to a value larger than `0`. When the available free memory drops below this threshold the cache falls back to file-backed storage, so the in-memory tier stops growing.
+- Set `max_block_limit` to a smaller value (in MB) to cap the size of any single manually-managed memory block.
+
+For a walkthrough of what each field does, refer to the `auto_memory_limit` / `min_free_memory` / `max_block_limit` sections of [Configuration](../configuration/configuration.md).
+:::
+::: zh-CN
+OpenList 的流式缓存由 **HybridCache** 组件负责，它会优先把数据缓存在内存中，只有当内存不足时才会回退到磁盘。相关的配置项位于 `config.json` 中的 `min_free_memory` / `auto_memory_limit` / `max_block_limit` 字段，完整的策略选择流程可以参考 [HybridCache 缓存策略](../configuration/configuration.md#auto_memory_limit)。
+
+只要宿主机的空闲内存足够，缓存就会一直向手动管理的内存层（Unix `mmap` / Windows `VirtualAlloc`）扩容，单次最大可扩容到 `max_block_limit`，并且在该上传任务结束、流被关闭之前不会被回收。这就是为什么一次大文件上传会很快让进程看起来“吃掉了”几乎所有可用内存。
+
+如果你不希望上传占这么多内存，可以：
+
+- 把 `auto_memory_limit` 设小（单位 MB）。占用内存不超过该值的数据流会停留在 Go 自动管理的 `[]byte` 缓存中，由 GC 回收；超过该值的数据流会跳过这一层。
+- 把 `min_free_memory` 设为大于 `0` 的值。当可用空闲内存低于该阈值时，缓存会回退到文件层，内存层停止增长。
+- 把 `max_block_limit` 设小（单位 MB），限制单次手动管理内存块的最大扩容大小。
+
+每个字段的具体含义可以参考 [配置文件](../configuration/configuration.md) 中的 `auto_memory_limit` / `min_free_memory` / `max_block_limit` 章节。
+:::
