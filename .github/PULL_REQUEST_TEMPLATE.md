@@ -39,8 +39,8 @@ Relates to #XXXX
 
 - [ ] I have read the [CONTRIBUTING](https://github.com/OpenListTeam/OpenList-Docs/blob/main/CONTRIBUTING.md) document.
       我已阅读 [CONTRIBUTING](https://github.com/OpenListTeam/OpenList-Docs/blob/main/CONTRIBUTING.md) 文档。
-- [ ] I have formatted my code or documentation with [prettier](https://prettier.io/) or other appropriate formatter.
-      我已使用 [prettier](https://prettier.io/) 或其他适当的格式化工具格式化提交的代码或文档。
+- [ ] I have formatted my code or documentation with `pnpm format` ([Prettier](https://prettier.io/)) and checked code with `pnpm lint` ([ESLint](https://eslint.org/)).
+      我已使用 `pnpm format`（[Prettier](https://prettier.io/)）格式化提交的代码或文档，并使用 `pnpm lint`（[ESLint](https://eslint.org/)）检查代码。
 - [ ] I have updated all supported languages (including Chinese and English) for documentation. (If it's needed)
       我已为所有支持语言（包括中文和英文）更新文档内容。 (若适用)
 - [ ] I have verified that the written documentation or code is properly formatted, with no syntax errors, spelling mistakes.

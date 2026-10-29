@@ -18,32 +18,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
-          # submodules: true
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v5
+      # pnpm version from `packageManager` in package.json, Node.js from .nvmrc,
+      # then `pnpm install --frozen-lockfile`
+      - name: Setup pnpm and Node.js
+        uses: pnpm/setup@v3
         with:
-          version: 10.12.1
-          run_install: false
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v6
-        with:
-          node-version: 22
-          cache: pnpm
-
-      - name: Install Deps
-        run: pnpm install --frozen-lockfile
+          cache: true
+          require-lockfile: true
 
       - name: Build Docs
-        env:
-          NODE_OPTIONS: --max_old_space_size=8192
-          DEPLOY_PLATFORM: github
-        run: |-
-          pnpm run build
+        run: pnpm build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4

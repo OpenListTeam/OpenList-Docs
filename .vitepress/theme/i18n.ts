@@ -1,0 +1,75 @@
+import { useData } from 'vitepress'
+import { computed } from 'vue'
+
+const messages = {
+  en: {
+    wip: 'WIP, please stay tuned',
+    appearance: {
+      title: 'Theme',
+      auto: 'System',
+      light: 'Light',
+      dark: 'Dark',
+    },
+    tooltip: {
+      back_to_top: 'Back to Top',
+    },
+    post: {
+      contributors: 'Contributors',
+    },
+    download: {
+      all: 'All',
+      os: 'Operating System',
+      cpu: 'CPU Architecture',
+      down_source: 'Download Source',
+      download: 'Download',
+      gh_proxy: 'GhProxy',
+      version: 'Version',
+      beta: 'Beta',
+      latest: 'Latest',
+    },
+  },
+  'zh-CN': {
+    wip: '编写中，敬请期待',
+    appearance: {
+      title: '主题',
+      auto: '跟随系统',
+      light: '浅色',
+      dark: '深色',
+    },
+    tooltip: {
+      back_to_top: '回到顶部',
+    },
+    post: {
+      contributors: '贡献者',
+    },
+    download: {
+      all: '全部',
+      os: '操作系统',
+      cpu: 'CPU 架构',
+      down_source: '下载来源',
+      download: '下载',
+      gh_proxy: '加速下载',
+      version: '版本',
+      beta: '测试版',
+      latest: '最新版',
+    },
+  },
+} as const
+
+type Locale = keyof typeof messages
+
+/** Minimal replacement for vue-i18n's `useI18n`, driven by the VitePress locale. */
+export function useI18n() {
+  const { lang } = useData()
+  const locale = computed<Locale>(() => (lang.value in messages ? (lang.value as Locale) : 'en'))
+
+  function t(key: string): string {
+    let value: unknown = messages[locale.value]
+    for (const part of key.split('.'))
+      value =
+        value && typeof value === 'object' ? (value as Record<string, unknown>)[part] : undefined
+    return typeof value === 'string' ? value : key
+  }
+
+  return { t, locale }
+}

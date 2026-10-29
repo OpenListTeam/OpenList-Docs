@@ -1,24 +1,11 @@
 ---
-title:
-  en: UrlTree
-  zh-CN: 地址树
-icon: iconfont icon-state
-# This control sidebar order
 top: 998
-# A page can have multiple categories
 categories:
   - guide
   - drivers
-# A page can have multiple tags
-tag:
-  - Storage
-  - Guide
-  - '302'
-# this page is sticky in article list
-sticky: true
-# this page will appear in starred articles
-star: true
 ---
+
+# 地址树
 
 :::tip
 **`地址树-UrlTree`** 是什么? 是用来挂载单个文件链接的，详情可以查看 **→→→[原需求说明](https://github.com/alist-org/alist/issues/3268)←←←**

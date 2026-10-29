@@ -1,29 +1,14 @@
 ---
-title:
-  en: Backup&Restore
-  zh-CN: 备份&恢复
 categories:
   - guide
   - advanced
 top: 20
 ---
 
-## Method 1-Built-in { lang="en" }
+# 备份&恢复
 
-## 方法1-内置 { lang="zh-CN" }
+## 方法1-内置
 
-::: en
-Use `OpenList` to manage `Backup/Restore` options
-
-1. Backup: Backup OpenList data (**does not include index**)
-2. Recovery: Backup files before recovery
-3. Override: Select override when recovery, and will override the user information
-4. Encryption Password:Fill in the `ENCRYPTION PASSWORD` Export, the information will be encrypted when exporting.You also need to enter the `ENCRYPTION PASSWORD` first before importing.
-
-   ![](/img/advanced/backup.png)
-
-:::
-::: zh-CN
 使用`OpenList`后台的内置 `备份/恢复`选项
 
 1. 备份：进行 OpenList 数据进行备份（**不包含索引**）
@@ -33,23 +18,8 @@ Use `OpenList` to manage `Backup/Restore` options
 
    ![](/img/advanced/backup.png)
 
-:::
+## 方法2-Sqlite3
 
-## Method 2-Sqlite3 { lang="en" }
-
-## 方法2-Sqlite3 { lang="zh-CN" }
-
-::: en
-Back up the `data/data.db` database in the `OpenList` directory, and wait for the new environment to replace it directly (**contains index data**)
-
-- If there are two files, if there are `data.db-shm` and `data.db-wal`, they must be backup together.
-- It is recommended to stop running OpenList and then backup, so that the two files of `data.db-shm` and`data.db-wal` will be merged with the `data.db`
-
-  ![](/img/advanced/sqlite3.png)
-
-:::
-
-::: zh-CN
 直接将`OpenList`目录下的 data/`data.db`数据库进行备份，等到了新环境直接进行替换即可(**包含索引数据**)
 
 - 现在高版本如果有`data.db-shm`和`data.db-wal`这两个文件也要一起进行备份，恢复时也是一起替换
@@ -57,15 +27,6 @@ Back up the `data/data.db` database in the `OpenList` directory, and wait for th
 
   ![](/img/advanced/sqlite3.png)
 
-:::
+## 方法3-其他数据库
 
-## Method 3-Other database { lang="en" }
-
-## 方法3-其他数据库 { lang="zh-CN" }
-
-::: en
-Other, if you use `mysql, postgres` and other non `sqlite database`, please solve it by yourself (**include indexing data**)
-:::
-::: zh-CN
 其他，如果你使用了 `MySQL，Postgres` 等非`sqlite数据库`，请自行解决(**包含索引数据**)
-:::

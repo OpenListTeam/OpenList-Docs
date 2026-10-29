@@ -1,35 +1,10 @@
-# vite-ssg
-.vite-ssg-dist
-.vite-ssg-temp
-
-temp/
-# temp pages
-pages/temp/
-
 .DS_Store
 *.local
-dist
-dist-ssr
-node_modules
-.idea/
 *.log
-.valaxy
-components.d.ts
+node_modules
+dist
+.idea/
 
-# valaxy fuse
-public/valaxy-fuse-list.json
-
-# valaxy rss
-public/feed.xml
-
-# valaxy rss
-public/feed.json
-
-# valaxy rss
-public/atom.xml
-
-# Git log prebuilt
-public/git-log.json
-
-# rollup-plugin-visualizer
-stats.html
+# VitePress
+.vitepress/cache
+.vitepress/.temp
