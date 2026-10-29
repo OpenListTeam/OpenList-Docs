@@ -202,6 +202,35 @@ Fill in the values obtained in the above process one by one. If you don’t know
 ![onedriveapp](/img/drivers/onedrive_app/onedrive_app_Denmo.png)
 :::
 
+### Mount SharePoint site { lang="en" }
+
+### 挂载 SharePoint 站点 { lang="zh-CN" }
+
+::: en
+If you need to mount SharePoint, enable `Is Sharepoint`, then fill in a site URL or a site ID obtained from [SharePoint site ID](./onedrive#sharepoint-site-id).
+
+Examples:
+
+```text
+https://contoso.sharepoint.com # the site collection's root site (Communication site)
+https://contoso.sharepoint.com/sites/team
+contoso.sharepoint.com,11111111-2222-3333-4444-555555555555,66666666-7777-8888-9999-aaaaaaaaaaaa
+```
+
+:::
+::: zh-CN
+如果需要挂载 SharePoint，确保打开 `是否Sharepoint`，然后输入 SharePoint 链接或者类似从[SharePoint 站点 ID](./onedrive#sharepoint-站点-id)获取到的站点 ID 即可。
+
+示例：
+
+```text
+https://contoso.sharepoint.com # 站点集合根站点（Communication site）
+https://contoso.sharepoint.com/sites/team
+contoso.sharepoint.com,11111111-2222-3333-4444-555555555555,66666666-7777-8888-9999-aaaaaaaaaaaa
+```
+
+:::
+
 <BiliBili bvid="BV1Ro4y1s725" ratio="16:9" low-quality no-danmaku />
 
 ## View all users of the organization { lang="en" }
