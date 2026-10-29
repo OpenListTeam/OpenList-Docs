@@ -99,6 +99,24 @@ Local Storage|-|持久卷
 
 ![](/img/guide/installation/clawcloud-01.png)
 
+## Pethost { lang="en" }
+
+## Pethost { lang="zh-CN" }
+
+### One-click deployment { lang="en" }
+
+### 一键部署 { lang="zh-CN" }
+
+::: en
+Click the button below to [deploy OpenList on Pethost](https://pethost.dev/templates/openlist/). The template asks for an admin password and creates the `admin` user with it at the first start; `/opt/openlist/data` is kept in a volume.
+:::
+
+::: zh-CN
+点击下方按钮[在 Pethost 上部署 OpenList](https://pethost.dev/templates/openlist/)。模板会要求设置管理员密码，并在首次启动时用它创建 `admin` 用户；`/opt/openlist/data` 保存在卷中。
+:::
+
+[![Deploy on Pethost](https://pethost.dev/button.svg)](https://pethost.dev/templates/openlist/)
+
 <!--
 ::: en
 N/A
