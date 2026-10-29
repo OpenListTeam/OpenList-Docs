@@ -339,6 +339,21 @@ onedrive_app:
 <BiliBili bvid="BV1vc411V78S" ratio="16:9" low-quality no-danmaku />
 :::
 
+## Parameters { lang="en" }
+
+## 参数 { lang="zh-CN" }
+
+### Remove way { lang="en" }
+
+### 移除方式 { lang="zh-CN" }
+
+::: en
+`Trash` (or leaving the option unset) keeps the previous behavior: deleted items are moved to the OneDrive recycle bin, which still occupies the drive space but can be restored from the OneDrive website. `Delete` permanently deletes the items without sending them to the recycle bin, releases the space immediately, and deleted items cannot be restored.
+:::
+::: zh-CN
+`Trash`（或不设置该项）保持原有行为：删除的项目会进入 OneDrive 回收站，仍然占用云盘空间，但可以在 OneDrive 官网恢复；`Delete` 会直接彻底删除，不进入回收站，立即释放云盘空间，删除后无法恢复。
+:::
+
 ## The default download method used { lang="en" }
 
 ## 默认使用的下载方式 { lang="zh-CN" }
