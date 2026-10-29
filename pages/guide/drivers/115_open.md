@@ -267,6 +267,8 @@ sequenceDiagram
   115服务器->>OpenList: 返回新的访问令牌+刷新令牌
 ```
 
+:::
+
 ## 4. Notes { lang="en" }
 
 ## 4. 注意事项 { lang="zh-CN" }

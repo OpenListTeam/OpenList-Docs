@@ -539,7 +539,8 @@ Core components:
 | `files`       | `CASFile[]` | 多文件时的文件数组（可选扩展）    |
 
 > 单文件用顶层五字段（`name`/`size`/`md5`/`sliceMd5`/`create_time`），与参考项目字节级兼容；多文件用 `files` 数组；`slice_md5s`/`slice_size` 保存逐片 MD5，供天翼云秒传复用。
-> :::::
+
+:::::
 
 ::::: en
 
@@ -613,4 +614,5 @@ Both the Go and TS backends share one data model with identical field names, ens
 | `files`       | `CASFile[]` | per-file array for multi-file (optional extension) |
 
 > Single file uses the top-level five fields (`name`/`size`/`md5`/`sliceMd5`/`create_time`), byte-compatible with the reference project; multiple files use the `files` array; `slice_md5s`/`slice_size` preserve per-piece MD5 for 189pc rapid upload.
-> :::::
+
+:::::

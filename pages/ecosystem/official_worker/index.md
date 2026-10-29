@@ -140,24 +140,24 @@ In addition to the real storages above, virtual/functional drivers such as `Loca
 
 :::en
 
-- [Design Architecture](./architecture) — Tech stack, data storage backend and supported platforms
-- [How to Deploy](./guide) — One-click deploy overview and local development
-  - [Cloudflare Workers](./guide_cfw) — Step-by-step Cloudflare Workers deployment (with screenshots)
-  - [EdgeOne](./guide_eom) — Tencent Cloud EdgeOne deployment
-  - [Alibaba Cloud ESA](./guide_esa) — Alibaba Cloud ESA deployment
-- [Environment Variables](./guide_env) — `DB_FORMAT`, `DB_DRIVER` and all runtime variables
-- [FAQ](./faq) — Common issues and troubleshooting
+- [Design Architecture](/ecosystem/official_worker/basic) — Tech stack, data storage backend and supported platforms
+- [How to Deploy](/ecosystem/official_worker/guide) — One-click deploy overview and local development
+  - [Cloudflare Workers](/ecosystem/official_worker/guide_cfw) — Step-by-step Cloudflare Workers deployment (with screenshots)
+  - [EdgeOne](/ecosystem/official_worker/guide_eom) — Tencent Cloud EdgeOne deployment
+  - [Alibaba Cloud ESA](/ecosystem/official_worker/guide_esa) — Alibaba Cloud ESA deployment
+- [Environment Variables](/ecosystem/official_worker/guide_env) — `DB_FORMAT`, `DB_DRIVER` and all runtime variables
+- [FAQ](/ecosystem/official_worker/about) — Common issues and troubleshooting
   :::
 
 :::zh-CN
 
-- [设计架构](./architecture) — 技术栈、数据存储后端与支持平台
-- [部署方法](./guide) — 一键部署入口与本地开发
-  - [Cloudflare Workers](./guide_cfw) — 分步 Cloudflare Workers 部署教程（含截图）
-  - [EdgeOne](./guide_eom) — 腾讯云 EdgeOne 部署
-  - [阿里云 ESA](./guide_esa) — 阿里云 ESA 部署
-- [配置变量](./guide_env) — `DB_FORMAT`、`DB_DRIVER` 及所有运行时变量
-- [常见问题](./faq) — 常见问题与排查
+- [设计架构](/ecosystem/official_worker/basic) — 技术栈、数据存储后端与支持平台
+- [部署方法](/ecosystem/official_worker/guide) — 一键部署入口与本地开发
+  - [Cloudflare Workers](/ecosystem/official_worker/guide_cfw) — 分步 Cloudflare Workers 部署教程（含截图）
+  - [EdgeOne](/ecosystem/official_worker/guide_eom) — 腾讯云 EdgeOne 部署
+  - [阿里云 ESA](/ecosystem/official_worker/guide_esa) — 阿里云 ESA 部署
+- [配置变量](/ecosystem/official_worker/guide_env) — `DB_FORMAT`、`DB_DRIVER` 及所有运行时变量
+- [常见问题](/ecosystem/official_worker/about) — 常见问题与排查
   :::
 
 ## License { lang="en" }
