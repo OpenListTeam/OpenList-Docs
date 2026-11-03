@@ -12,7 +12,7 @@ from the deployed machine (depending on the number of files; individual files ty
 :::
 
 ::: zh-CN
-**Strm** 是一种可以将多个不同云盘中的支持的文件转换为strm文件的驱动。
+**Strm** 是一种可以将多个不同云盘中支持的文件转换为strm文件的驱动。
 
 ::: warning 注意事项
 使用前请先了解strm文件作用
