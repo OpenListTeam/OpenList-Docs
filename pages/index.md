@@ -1,36 +1,28 @@
 ---
-style: home
+layout: home
 title: OpenList
-description:
-  en: OpenList is a resilient, community-driven file list program that supports multiple cloud storage platforms. Built as a secure fork of AList with enhanced security and long-term governance.
-  zh-CN: OpenList 是一个支持多种云存储平台的韧性文件列表程序。作为 AList 的安全分支，具有增强的安全性和长期治理保障。
-# titleTemplate: '%s - Next Generation Static Blog Framework'
+titleTemplate: OpenList 文档
+description: OpenList 是一个支持多种云存储平台的韧性文件列表程序。作为 AList 的安全分支，具有增强的安全性和长期治理保障。
+comment: false
 
-hero:
+# rendered by .vitepress/theme/components/HomeHero.vue
+landing:
   name: OpenList
-  text:
+  tagline: |-
+    🗂️ 一个支持多种存储的文件列表程序，
+    由 Gin 和 SolidJS 强力驱动！
   actions:
     - theme: brand
-      text: hero.actions.get-started
-      link: /guide
-      type: fly
+      text: 快速上手
+      link: /guide/
     - theme: alt
-      text: hero.actions.view-github
+      text: 查看 GitHub
       link: https://github.com/OpenListTeam/OpenList
-    - theme: alt
-      external: true
-      text: hero.actions.disclaimer
+  links:
+    - text: 免责声明
       link: /terms#disclaimer
-    - theme: alt
-      external: true
-      text: hero.actions.terms
+    - text: 使用条款
       link: /terms
-    - theme: alt
-      external: true
-      text: hero.actions.privacy
+    - text: 隐私政策
       link: /privacy
-# todo, rewrite with valaxy
-# features:
 ---
-
-<!-- The INDEX page -->

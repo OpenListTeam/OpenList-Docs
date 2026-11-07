@@ -1,80 +1,27 @@
 ---
-title:
-  en: Local storage
-  zh-CN: 本机存储
-icon: iconfont icon-state
-# This control sidebar order
 top: 999
-# A page can have multiple categories
 categories:
   - guide
   - drivers
-# A page can have multiple tags
-tag:
-  - Storage
-  - Guide
-  - '本地代理'
-# this page is sticky in article list
-sticky: true
-# this page will appear in starred articles
-star: true
 ---
 
-::: en
-Support mounting the directory of the local machine.
-:::
-::: zh-CN
+# 本机存储
+
 支持挂载本机的目录。
-:::
 
-## Root folder path { lang="en" }
+## 根文件夹ID
 
-## 根文件夹ID { lang="zh-CN" }
-
-::: en
-The path of folder you wanted to mount. For example:
-
-- Linux: `/root`
-- Windows: `C:`
-
-:::
-::: zh-CN
 您要挂载的文件夹的路径。 例如：
 
 - Linux: `/root`
 - Windows: `C:`
 
-:::
+## 本地存储视频封面
 
-## Local storage video thumbnail { lang="en" }
-
-## 本地存储视频封面 { lang="zh-CN" }
-
-::: en
-You need to use the `ffmpeg` tool to add.
-:::
-
-::: zh-CN
 需要使用 `ffmpeg` 工具来添加.
-:::
 
-## Local storage PDF thumbnail on macOS { lang="en" }
+## macOS 本地存储 PDF 缩略图
 
-## macOS 本地存储 PDF 缩略图 { lang="zh-CN" }
-
-::: en
-On macOS, the Local storage driver can generate thumbnails from the first page of PDF files using the system Quick Look tool.
-
-To enable this feature:
-
-1. Enable `Thumbnail`.
-2. Enable `PDF thumbnail`.
-3. It is recommended to configure `Thumb cache folder` to avoid rendering the same PDF repeatedly.
-
-This feature is disabled by default and is only available when OpenList runs on macOS. Rendering is performed on cache misses and may consume additional CPU and memory.
-:::
-
-::: zh-CN
 在 macOS 上，本机存储驱动可以调用系统 Quick Look 工具，为 PDF 文件生成首页缩略图。
 
 启用方法：
@@ -84,27 +31,9 @@ This feature is disabled by default and is only available when OpenList runs on 
 3. 建议配置 `缩略图缓存目录（Thumb cache folder）`，避免重复渲染同一 PDF 文件。
 
 该功能默认关闭，并且仅在 OpenList 运行于 macOS 时可用。缓存未命中时会执行渲染，可能额外消耗 CPU 和内存。
-:::
 
-## Recycle bin path { lang="en" }
+## 回收站路径
 
-## 回收站路径 { lang="zh-CN" }
-
-::: en
-path to recycle bin, delete permanently if empty or keep 'delete permanently'
-
-If you fill in this path, you will move the file into the folder when deleting the local storage file, so that you have a chance to regret it.
-
-The method of filling in the above -mentioned mounting path is different from different system filling methods.
-
-If you don’t know if you fill in it correctly, you can test it yourself first and then use the production environment to use it yourself.
-
-- Linux: `/root`
-- Windows: `C:`
-
-:::
-
-::: zh-CN
 回收站的路径，如果为空则永久删除或保持“永久删除”
 
 如果填写此路径在删除本地存储文件时会将文件移动到此文件夹內，让你有一次后悔的机会。
@@ -116,33 +45,7 @@ If you don’t know if you fill in it correctly, you can test it yourself first 
 - Linux: `/root`
 - Windows: `C:`
 
-:::
-
-## The default download method used { lang="en" }
-
-## 默认使用的下载方式 { lang="zh-CN" }
-
-::: en
-
-```mermaid
----
-title: Which download method is used by default?
----
-flowchart TB
-    style c1 fill:#bbf,stroke:#f66,stroke-width:2px,color:#fff
-    style a2 fill:#ff7575,stroke:#333,stroke-width:4px
-    subgraph ide1 [ ]
-    c1
-    end
-    c1[local proxy]:::someclass==default===>a2[user equipment]
-    classDef someclass fill:#f96
-    b1[Download proxy URL]-.alternative.->a2[user equipment]
-    click b1 "../drivers/common.html#webdav-policy"
-    click c1 "../drivers/common.html#webdav-policy"
-```
-
-:::
-::: zh-CN
+## 默认使用的下载方式
 
 ```mermaid
 ---
@@ -160,5 +63,3 @@ flowchart TB
     click b1 "../drivers/common.html#webdav-策略"
     click c1 "../drivers/common.html#webdav-策略"
 ```
-
-:::

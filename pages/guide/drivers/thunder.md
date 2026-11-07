@@ -1,41 +1,14 @@
 ---
-title:
-  en: Thunder Cloud Disk
-  zh-CN: 迅雷云盘 / X / 浏览器
-icon: iconfont icon-state
-# This control sidebar order
 top: 685
-# A page can have multiple categories
 categories:
   - guide
   - drivers
 ---
 
+# 迅雷云盘 / X / 浏览器
+
 <!--@include: @/snippets/reverse-tip.md-->
 
-::: en
-::: tip
-Please use `Thunder` directly instead of `ThunderExpert` if you are not good at it.
-
-`ThunderExpert` mainly provides more free settings and realizes more login methods
-
----
-
-`Thunder X` serves overseas users. As of the time of document release, only the Android version is available. Other versions have not yet been released.
-
-- Thunder X has sufficient speed even without membership. Future changes are unknown.
-- Using the APP may require a proxy, but not when mounted on OpenList.
-
----
-
-`Thunder Browser`：Currently only supports mobile phones (Android, iOS)
-
-- **https://x.xunlei.com/**
-- If you log in to OpenList, the mobile phone will be kicked offline. On the contrary, if you log in to OpenList first and then log in to the mobile phone, OpenList will be kicked offline but there will be no prompt
-
-:::
-
-::: zh-CN
 ::: tip
 `迅雷` 前两个是服务**国内用户**
 
@@ -59,72 +32,23 @@ Please use `Thunder` directly instead of `ThunderExpert` if you are not good at 
 
 :::
 
-## 1. Thunder { lang="en" }
+## 1. 迅雷
 
-## 1. 迅雷 { lang="zh-CN" }
+### 用户名
 
-### Username { lang="en" }
-
-### 用户名 { lang="zh-CN" }
-
-::: en
-That is, the mobile phone number, email, and username used for login (there is a probability that you cannot log in, you need to try)
-
-1. Before obtaining the verification code, do not include the `+86` country code when entering the phone number.
-2. After obtaining the verification code, the phone number must include the `+86` country code, for example: +8613722223333.
-
-:::
-
-::: zh-CN
 即用于登陆的手机号,邮箱,用户名(有概率无法登录,需要尝试)
 
 1. 在获取验证码之前填写手机号先不要携带 `+86` 区号
 2. 获取验证码后填写需要携带 `+86` 区号，例如 +8613722223333 这样填写
 
-:::
+### 密码
 
-### Password { lang="en" }
-
-### 密码 { lang="zh-CN" }
-
-::: en
-password for login
-:::
-::: zh-CN
 即用于登陆的密码
-:::
+
 <br/>
 
-### Credit Key { lang="en" }
+### 信用密钥
 
-### 信用密钥 { lang="zh-CN" }
-
-::: en
-After saving for the first time, an error will occur. This is normal. Please go to the storage management interface.
-
-![Storage Error Interface](/img/drivers/xunlei/storage_error.png)
-
-Copy all the content above.
-
-[Click here to enter](https://i.xunlei.com/xlcaptcha/android.html)
-
-After entering, open the developer tools (usually by pressing F12), go to the console, and enter `reviewCb()`. **Paste all the previously copied content, including the curly braces,** inside the parentheses, as shown below:
-
-![Console Input](/img/drivers/xunlei/input.png)
-
-Move the cursor to **after the parentheses** and press Enter.
-
-![SMS Verification](/img/drivers/xunlei/SMS.png)
-
-The webpage will automatically redirect to the mobile number verification page.
-
-After completing the verification, the page **will not** refresh automatically. Please check the console. The `creditkey` shown below is the required key.
-![Console Output](/img/drivers/xunlei/output.png)
-
-Copy it to the storage management, and you can mount it normally.
-
-:::
-::: zh-CN
 在第一次保存后会产生报错，这是正常的，请返回存储管理界面
 
 ![存储报错界面](/img/drivers/xunlei/storage_error.png)
@@ -149,34 +73,7 @@ Copy it to the storage management, and you can mount it normally.
 
 将其复制到存储管理后即可正常挂载
 
-:::
-
-### 默认使用的下载方式 { lang="zh-CN" }
-
-### The default download method used { lang="en" }
-
-::: en
-
-```mermaid
----
-title: Which download method is used by default?
----
-flowchart TB
-    style c1 fill:#bbf,stroke:#f66,stroke-width:2px,color:#fff
-    style a2 fill:#ff7575,stroke:#333,stroke-width:4px
-    subgraph ide1 [ ]
-    c1
-    end
-    c1[local proxy]:::someclass==default===>a2[user equipment]
-    classDef someclass fill:#f96
-    b1[Download proxy URL]-.alternative.->a2[user equipment]
-    click b1 "../drivers/common.html#webdav-policy"
-    click c1 "../drivers/common.html#webdav-policy"
-```
-
-:::
-
-::: zh-CN
+### 默认使用的下载方式
 
 ```mermaid
 ---
@@ -195,65 +92,20 @@ flowchart TB
     click c1 "../drivers/common.html#webdav-策略"
 ```
 
-:::
+## 2. 迅雷专家版
 
-## 2. 迅雷专家版 { lang="zh-CN" }
-
-## 2. ThunderExpert { lang="en" }
-
-::: en
-::: tip
-If Xunlei needs to download, you must specify UserAgent (same as DownUserAgent below). Or use the proxy function in this program to transfer.
-:::
-::: zh-CN
 ::: tip
 迅雷如果需要下载必须指定 UserAgent(同下 DownUserAgent)，或使用本程序中的代理功能进行中转。
 :::
 
-### 登录类型 { lang="zh-CN" }
-
-### Login Type { lang="en" }
-
-::: en
-
-1. When selecting User, you only need to fill in the username and password
-   - User You need to bring the `+86` area code, for example +8613722223333 fill in like this
-2. **RefreshToken**: Just fill in RefreshToken when selecting RefreshToken
-
-:::
-
-::: zh-CN
+### 登录类型
 
 1. 选择 `用户名` 时填用户名和密码
    - 用户名需要携带 `+86` 区号，例如 +8613722223333 这样填写
 2. 选择 `刷新令牌` 时只需填写 `刷新令牌`
 
-:::
+### 签名类型
 
-### 签名类型 { lang="zh-CN" }
-
-### Signature Type { lang="en" }
-
-::: en
-**Algorithms**：When selecting Algorithms, just fill in the Algorithms (it is difficult to obtain, and needs to be reversed)
-
-**Captcha sign**: Only fill in CaptchaSign and Timestamp when selecting CaptchaSign
-
-```
-//signature algorithm
-str = ClientID + ClientVersion + PackageName + DeviceID + Timestamp
-for (Algorithm in Algorithms) {
-    str = md5(str + Algorithm)
-}
-CaptchaSign = "1." + str
-```
-
-Login type and Sign type recommended options
-
-![xunlei](/img/drivers/xunlei/x3.png)
-
-:::
-::: zh-CN
 选择 `算法` 时需填写 `算法`(比较难获取,需要逆向)
 
 选择 `验证码签名` 时只需填写 `验证码签名` 和 `时间戳`
@@ -271,90 +123,25 @@ CaptchaSign = "1." + str
 
 ![xunlei](/img/drivers/xunlei/x3.png)
 
-:::
+### 设备ID
 
-### 设备ID { lang="zh-CN" }
-
-### DeviceID { lang="en" }
-
-::: en
-The value calculated by md5 is used to determine the logged in device
-:::
-
-::: zh-CN
 通过 MD5 计算的值，用于判断登录的设备
-:::
 
-### 客户端ID, 客户端秘钥, 客户端版本, 包名 { lang="zh-CN" }
+### 客户端ID, 客户端秘钥, 客户端版本, 包名
 
-### ClientID, ClientSecret, ClientVersion, PackageName { lang="en" }
-
-::: en
-It is related to the signature, fill in according to the actual situation
-:::
-::: zh-CN
 与签名有关，根据实际情况填写
-:::
 
-### 用户代理 { lang="zh-CN" }
+### 用户代理
 
-### UserAgent { lang="en" }
-
-::: en
-UserAgent used by API requests, may be inaccessible or speed limited if the setting is incorrect
-:::
-::: zh-CN
 API 请求使用的 UserAgent，设置错误可能无法访问或限速
-:::
 
-### 下载用户代理 { lang="zh-CN" }
+### 下载用户代理
 
-### DownUserAgent { lang="en" }
-
-::: en
-The User Agent used for downloading, if the setting is wrong, it will not be downloaded (it will be used when the agent is turned on) Fixed parameters:
-
-`Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36`
-:::
-::: zh-CN
 下载时用到的 User Agent，如果设置错误会无法下载(开启代理会使用) 固定参数：
 
 `Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36`
-:::
 
-### 关键数据获取流程 { lang="zh-CN" }
-
-### Key data acquisition process { lang="en" }
-
-::: en
-Obtain Xunlei request data through network analysis tools (packet capture tools) --- Please read the following information carefully
-
-Open Xunlei and log in to your account (the picture below uses the PC client to operate, and the web terminal is also available)
-
-Included in the request https://xluser-ssl.xunlei.com/v1/shield/captcha/init
-
-CaptchaSign, Timestamp, DeviceID, ClientID, ClientVersion, PackageName, User-Agent
-
-**Note**: After obtaining the information of the two pictures, slowly select the data from the two data captured and fill in it
-
-After logging in to Thunder and opening the packet capture tool, it is possible that the information of **v1/shield/captcha/init** cannot be immediately obtained at this time.
-
-Do not close the Xunlei PC client and the packet capture tool, just wait, it will refresh automatically after **5 minutes**
-
-You will see the parameters as shown in the figure below, and you can fill in it according to the acquisition (if you can't see it clearly, you can right-click to copy the picture and link it to the browser to open a new window)
-
-See **v1/shield/captcha/init** and grab it, please **immediately don't delay for a second** Right-click Xunlei in the taskbar in the lower right corner to exit, exit completely and then reopen to get \* \*Figure II\*\*
-
-![xunlei](/img/drivers/xunlei/x4.png)
-
-Restarting Thunder will refresh the token
-
-The request to https://xluser-ssl.xunlei.com/v1/auth/token contains RefreshToken (please use the returned value), ClientSecret (does not exist on the web side)
-![xunlei](/img/drivers/xunlei/x5.png)
-
-Figure 1 contains **7** parameters | Figure 1 contains **2** parameters | a fixed parameter (Down UserAgent), ten parameters and 3 options and a mount path, just write and save, before saving Remember to check~
-:::
-::: zh-CN
+### 关键数据获取流程
 
 通过网络分析工具(抓包工具)获取迅雷请求数据
 
@@ -383,60 +170,18 @@ CaptchaSign、Timestamp、DeviceID、ClientID、ClientVersion、PackageName、Us
 ![xunlei](/img/drivers/xunlei/x5.png)
 
 图一包含 **7 条** 参数 | 图一包含 \*\*2 条\*\* 参数 | 一条固定参数(Down UserAgent) ，十条参数 和 3 个选项 以及一个挂载路径，写好保存即可，保存前记得检查喔~~
-:::
 
-### 使用视频URL { lang="zh-CN" }
+### 使用视频URL
 
-::: en
-When the `Video URL` option is enabled, it will attempt to replace the original link with the media link returned by the API. Currently, the official platform throttles the download link for **non-members**, but video streaming is not throttled. Therefore, by replacing the link, you can avoid throttling, which applies to both **OpenList** media file downloads and streaming. For regular files, you can also bypass the throttling by renaming the file extension to a media format (e.g., `.mp4`).
-
-The **Expert Edition** does not enable the `Video URL` option by default, as it is intended for users who configure detailed parameters themselves, and they should be aware of the significance of this option. Hence, it is not enabled by default. For **Xunlei X** users, this option is enabled by default, primarily for the convenience of less experienced users.
-:::
-
-::: zh-CN
 `视频URL` 开启后，会尝试使用接口返回的媒体链接进行替换原本的链接。目前官方对 `非会员` 情况下，下载链接进行了限速，但视频播放是不限速的。因此可以通过替换链接的方式来避免限速，这一点对于 `OpenList` 媒体文件下载和在线播放均生效。对于普通文件，也可以采取重命名文件后缀为媒体格式（例如：`.mp4` ）的方式绕过限速。
 
 专家版没默认开启 `视频URL`选项，目的是针对于自行配置详细参数的人群来说，应当知晓该选项的意义，因此默认不启用。对于 `迅雷X` 驱动默认启用该选项，更多的是为了小白用户考虑。
-:::
 
-### 迅雷专家版 完整的参数填演示图 { lang="zh-CN" }
+### 迅雷专家版 完整的参数填演示图
 
-### ThunderExpert complete parameter filling demo: { lang="en" }
-
-::: en
 ![xunlei](/img/drivers/xunlei/x6.png)
-:::
-::: zh-CN
-![xunlei](/img/drivers/xunlei/x6.png)
-:::
 
-### 默认使用的下载方式 { lang="zh-CN" }
-
-### The default download method used { lang="en" }
-
-::: en
-
-```mermaid
----
-title: Which download method is used by default?
----
-flowchart TB
-    style a1 fill:#bbf,stroke:#f66,stroke-width:2px,color:#fff
-    style a2 fill:#ff7575,stroke:#333,stroke-width:4px
-    subgraph ide1 [ ]
-    a1
-    end
-    a1[302]:::someclass====|default|a2[user equipment]
-    classDef someclass fill:#f96
-    c1[local proxy]-.alternative.->a2[user equipment]
-    b1[Download proxy URL]-.alternative.->a2[user equipment]
-    click a1 "../drivers/common.html#webdav-policy"
-    click b1 "../drivers/common.html#webdav-policy"
-    click c1 "../drivers/common.html#webdav-policy"
-```
-
-:::
-::: zh-CN
+### 默认使用的下载方式
 
 ```mermaid
 ---
@@ -457,61 +202,24 @@ flowchart TB
     click c1 "../drivers/common.html#webdav-策略"
 ```
 
-## 3. Thunder X { lang="en" }
+## 3. 迅雷 X
 
-## 3. 迅雷 X { lang="zh-CN" }
-
-::: zh-CN
 ::: danger
 目前官方对于频繁调用接口行为会进行封号处理，请谨慎使用，后果自负。
 :::
-::: en
-::: danger
-At present, the official will ban frequent API calls. Please use with caution and bear the consequences.
-:::
 
-### 用户名、密码 { lang="zh-CN" }
+### 用户名、密码
 
-### username、password { lang="en" }
-
-::: en
-The mailbox and password used for login
-<br/>
-:::
-::: zh-CN
 即用于登陆的邮箱和密码
 <br/>
-:::
 
-### 验证码 { lang="zh-CN" }
+### 验证码
 
-### CaptchaToken { lang="en" }
-
-::: en
-It will be filled automatically without filling in manually
-<br/>
-:::
-::: zh-CN
 会自动填充，不用自己填写
 <br/>
-:::
 
-### 根文件夹ID { lang="zh-CN" }
+### 根文件夹ID
 
-### Root folder id { lang="en" }
-
-::: en
-The default is the full directory of the empty display, If you want to use a subfolder to make the root directory, grab the request to get it
-
-- In the request in the package`https://api-pan.xunleix.com/drive/v1/files?parent_id=&page_token=&filters=`，you can get the following parameters
-  - `文件夹ID（id）`
-  - `文件夹名称（name）`
-  - `父文件夹ID（parent_id）`
-- The `folder ID` obtained in the root directory (for example : `我接收的文件`、`我的云盘`、`高速云下载`), **This will change with different account numbers, there is no the same value, In the request in the package**
-  ![xunlei](/img/drivers/xunlei/xlx_name.jpg)
-
-:::
-::: zh-CN
 默认为空展示全部目录，如果想用子文件夹做根目录请抓包获取
 
 - 抓包请求中的`https://api-pan.xunleix.com/drive/v1/files?parent_id=&page_token=&filters=`，可以得到下面参数
@@ -521,51 +229,13 @@ The default is the full directory of the empty display, If you want to use a sub
 - 根目录下获取的`文件夹ID（Folder id）`（例如：`我接收的文件`、`我的云盘`、`高速云下载`），**这个会随着账号不同而变动，没有通用的值，自己抓包获取**
   ![xunlei](/img/drivers/xunlei/xlx_name.jpg)
 
-:::
+### 使用视频URL
 
-### 使用视频URL { lang="zh-CN" }
-
-### Use video url { lang="en" }
-
-::: en
-When the `Video URL` option is enabled, it will attempt to replace the original link with the media link returned by the API. Currently, the official platform throttles the download link for **non-members**, but video streaming is not throttled. Therefore, by replacing the link, you can avoid throttling, which applies to both **OpenList** media file downloads and streaming. For regular files, you can also bypass the throttling by renaming the file extension to a media format (e.g., `.mp4`).
-
-The **Expert Edition** does not enable the `Video URL` option by default, as it is intended for users who configure detailed parameters themselves, and they should be aware of the significance of this option. Hence, it is not enabled by default. For **Xunlei X** users, this option is enabled by default, primarily for the convenience of less experienced users.
-:::
-
-::: zh-CN
 `视频URL` 开启后，会尝试使用接口返回的媒体链接进行替换原本的链接。目前官方对 `非会员` 情况下，下载链接进行了限速，但视频播放是不限速的。因此可以通过替换链接的方式来避免限速，这一点对于 `OpenList` 媒体文件下载和在线播放均生效。对于普通文件，也可以采取重命名文件后缀为媒体格式（例如：`.mp4` ）的方式绕过限速。
 
 专家版没默认开启 `视频URL`选项，目的是针对于自行配置详细参数的人群来说，应当知晓该选项的意义，因此默认不启用。对于 `迅雷X` 驱动默认启用该选项，更多的是为了小白用户考虑。
-:::
 
-### 默认使用的下载方式 { lang="zh-CN" }
-
-### The default download method used { lang="en" }
-
-::: en
-
-```mermaid
----
-title: Which download method is used by default?
----
-flowchart TB
-    style a1 fill:#bbf,stroke:#f66,stroke-width:2px,color:#fff
-    style a2 fill:#ff7575,stroke:#333,stroke-width:4px
-    subgraph ide1 [ ]
-    a1
-    end
-    a1[302]:::someclass====|default|a2[user equipment]
-    classDef someclass fill:#f96
-    c1[local proxy]-.alternative.->a2[user equipment]
-    b1[Download proxy URL]-.alternative.->a2[user equipment]
-    click a1 "../drivers/common.html#webdav-policy"
-    click b1 "../drivers/common.html#webdav-policy"
-    click c1 "../drivers/common.html#webdav-policy"
-```
-
-:::
-::: zh-CN
+### 默认使用的下载方式
 
 ```mermaid
 ---
@@ -586,63 +256,24 @@ flowchart TB
     click c1 "../drivers/common.html#webdav-策略"
 ```
 
-:::
+## 4. 迅雷 X 专家版
 
-## 4. 迅雷 X 专家版 { lang="zh-CN" }
-
-## 4. Thunder X Expert { lang="en" }
-
-::: en
-::: danger
-At present, the official will ban frequent API calls. Please use with caution and bear the consequences.
-:::
-::: zh-CN
 ::: danger
 目前官方对于频繁调用接口行为会进行封号处理，请谨慎使用，后果自负。
 :::
 
-### 用户名、密码 { lang="zh-CN" }
+### 用户名、密码
 
-### username、password { lang="en" }
-
-::: en
-The mailbox and password used for login
-<br/>
-:::
-::: zh-CN
 即用于登陆的邮箱和密码
 <br/>
-:::
 
-### 验证码 { lang="zh-CN" }
+### 验证码
 
-### CaptchaToken { lang="en" }
-
-::: en
-It will be filled automatically without filling in manually
-<br/>
-:::
-::: zh-CN
 会自动填充，不用自己填写
 <br/>
-:::
 
-### 根文件夹ID { lang="zh-CN" }
+### 根文件夹ID
 
-### Root folder id { lang="en" }
-
-::: en
-The default is the full directory of the empty display, If you want to use a subfolder to make the root directory, grab the request to get it
-
-- In the request in the package`https://api-pan.xunleix.com/drive/v1/files?parent_id=&page_token=&filters=`，you can get the following parameters
-  - `文件夹ID（id）`
-  - `文件夹名称（name）`
-  - `父文件夹ID（parent_id）`
-- The `folder ID` obtained in the root directory (for example : `我接收的文件`、`我的云盘`、`高速云下载`), **This will change with different account numbers, there is no the same value, In the request in the package**
-  ![xunlei](/img/drivers/xunlei/xlx_name.jpg)
-
-:::
-::: zh-CN
 默认为空展示全部目录，如果想用子文件夹做根目录请抓包获取
 
 - 抓包请求中的`https://api-pan.xunleix.com/drive/v1/files?parent_id=&page_token=&filters=`，可以得到下面参数
@@ -652,75 +283,17 @@ The default is the full directory of the empty display, If you want to use a sub
 - 根目录下获取的`文件夹ID（Folder id）`（例如：`我接收的文件`、`我的云盘`、`高速云下载`），**这个会随着账号不同而变动，没有固定一样的值，自己抓包获取**
   ![xunlei](/img/drivers/xunlei/xlx_name.jpg)
 
-:::
-
-### 登录类型 { lang="zh-CN" }
-
-### Login Type { lang="en" }
-
-::: en
-
-- `User`: Only fill in the username and password
-- `Refresh token`: Just fill in`RefreshToken`
-
-:::
-::: zh-CN
+### 登录类型
 
 - `用户`：选择 `用户`时填`用户名和密码`
 - `刷新令牌`：选择 `刷新令牌` 时只需填写 `刷新令牌`
 
-:::
-
-### 签名类型 { lang="zh-CN" }
-
-### Sign Type { lang="en" }
-
-::: en
-
-- `Algorithms`：Choose `Algorithms` Just fill in `Algorithms` (It has been automatically filled. You do n’t have to fill in it yourself. You only need to fill in the username and password.When the algorithm is not invalidated)
-- `Captcha sign`: Choose `Captcha sign` Just fill in `Captcha sign` and `Timestamp`
-
-:::
-
-::: zh-CN
+### 签名类型
 
 - `算法`：选择 `算法（Algorithms）` 时需填写 `算法（Algorithms）`
 - `验证码签名`：选择 `验证码签名（Captcha sign）` 时只需填写 `验证码签名（Captcha sign）` 和 `时间戳（Timestamp）`
 
-:::
-
-### 部分参数抓包说明 { lang="zh-CN" }
-
-### Part of parameter Packet Capture description { lang="en" }
-
-::: en
-
-- `Captcha token`：No need to fill in
-- `Device id`：The value calculated by MD5 is used to judge the login device
-- `Client id`, `Client secret`, `Client version`, `Package name`：It related to the signature, fill in according to the actual situation
-
----
-
-- `User agent`：API requests `User agent`, setting errors may not access or speed limit
-- `Download user agent`：When downloading, use the `user agent `,If the setting error cannot be downloaded (the agent will use it)
-  - `User agent` and `Download user agent`：You can fill it out by yourself. If you don’t know how to fill it out, you can leave it blank and it will be automatically filled in.
-
----
-
-In the request in the package `https://xluser-ssl.xunleix.com/v1/shield/captcha/init`，you can get the following parameters<sup>6</sup>
-
-- `Client id`、`Device id`、`Captcha sign`
-- `Package name`、`Client version`、`Timestamp`
-
-  ![xunlei](/img/drivers/xunlei/xlx_z1.jpg)
-
-  In the request in the package `https://xluser-ssl.xunleix.com/v1/auth/signin`, you can get the following parameters<sup>2</sup>
-  - `Client id`、`Client secret`
-    ![xunlei](/img/drivers/xunlei/xlx_z2.jpg)
-
-:::
-
-::: zh-CN
+### 部分参数抓包说明
 
 - `验证码`：无需填写
 - `设备id`：通过 MD5 计算的值，用于判断登录的设备
@@ -746,51 +319,13 @@ In the request in the package `https://xluser-ssl.xunleix.com/v1/shield/captcha/
 - `客户端ID（Client id）`、`客户端密钥（Client secret）`
   ![xunlei](/img/drivers/xunlei/xlx_z2.jpg)
 
-:::
+### 使用视频URL
 
-### 使用视频URL { lang="zh-CN" }
-
-### Use video url { lang="en" }
-
-::: en
-When the `Video URL` option is enabled, it will attempt to replace the original link with the media link returned by the API. Currently, the official platform throttles the download link for **non-members**, but video streaming is not throttled. Therefore, by replacing the link, you can avoid throttling, which applies to both **OpenList** media file downloads and streaming. For regular files, you can also bypass the throttling by renaming the file extension to a media format (e.g., `.mp4`).
-
-The **Expert Edition** does not enable the `Video URL` option by default, as it is intended for users who configure detailed parameters themselves, and they should be aware of the significance of this option. Hence, it is not enabled by default. For **Xunlei X** users, this option is enabled by default, primarily for the convenience of less experienced users.
-:::
-
-::: zh-CN
 `视频URL` 开启后，会尝试使用接口返回的媒体链接进行替换原本的链接。目前官方对 `非会员` 情况下，下载链接进行了限速，但视频播放是不限速的。因此可以通过替换链接的方式来避免限速，这一点对于 `OpenList` 媒体文件下载和在线播放均生效。对于普通文件，也可以采取重命名文件后缀为媒体格式（例如：`.mp4` ）的方式绕过限速。
 
 专家版没默认开启 `视频URL`选项，目的是针对于自行配置详细参数的人群来说，应当知晓该选项的意义，因此默认不启用。对于 `迅雷X` 驱动默认启用该选项，更多的是为了小白用户考虑。
-:::
 
-### 默认使用的下载方式 { lang="zh-CN" }
-
-### The default download method used { lang="en" }
-
-::: en
-
-```mermaid
----
-title: Which download method is used by default?
----
-flowchart TB
-    style a1 fill:#bbf,stroke:#f66,stroke-width:2px,color:#fff
-    style a2 fill:#ff7575,stroke:#333,stroke-width:4px
-    subgraph ide1 [ ]
-    a1
-    end
-    a1[302]:::someclass====|default|a2[user equipment]
-    classDef someclass fill:#f96
-    c1[local proxy]-.alternative.->a2[user equipment]
-    b1[Download proxy URL]-.alternative.->a2[user equipment]
-    click a1 "../drivers/common.html#webdav-policy"
-    click b1 "../drivers/common.html#webdav-policy"
-    click c1 "../drivers/common.html#webdav-policy"
-```
-
-:::
-::: zh-CN
+### 默认使用的下载方式
 
 ```mermaid
 ---
@@ -811,56 +346,20 @@ flowchart TB
     click c1 "../drivers/common.html#webdav-策略"
 ```
 
-:::
+## 5.迅雷浏览器
 
-## 5.迅雷浏览器 { lang="zh-CN" }
+### 用户名、密码
 
-## 5. Thunder Browser { lang="en" }
-
-### 用户名、密码 { lang="zh-CN" }
-
-### username、password { lang="en" }
-
-::: en
-Mobile phone number, email, username, and password used to log in
-
-- When filling in the mobile phone number, please bring the `+86` area code, for example `+8613822334455`
-
-:::
-::: zh-CN
 即用于登陆的手机号,邮箱,用户名，以及密码
 
 - 填写手机号要携带 `+86` 区号，例如 `+8613822334455`
 
-:::
+### 验证码
 
-### 验证码 { lang="zh-CN" }
-
-### CaptchaToken { lang="en" }
-
-::: en
-It will be filled automatically without filling in manually
-:::
-::: zh-CN
 会自动填充，不用自己填写
-:::
 
-### 根文件夹ID { lang="zh-CN" }
+### 根文件夹ID
 
-### Root folder id { lang="en" }
-
-::: en
-The default is the full directory of the empty display, If you want to use a subfolder to make the root directory, grab the request to get it
-
-- In the request in the package`https://x-api-pan.xunlei.com/drive/v1/files?parent_id&page_token&space=`，you can get the following parameters
-  - `文件夹ID（id）`
-  - `文件夹名称（name）`
-  - `父文件夹ID（parent_id）`
-- The `folder ID` obtained in the root directory (for example : `来自分享`、`超级保险箱`), **This will change with different account numbers, there is no the same value, In the request in the package**
-  ![xunlei](/img/drivers/xunlei/x_br_foled.png)
-
-:::
-::: zh-CN
 默认为空展示全部目录，如果想用子文件夹做根目录请抓包获取
 
 - 抓包请求中的`https://x-api-pan.xunlei.com/drive/v1/files?parent_id&page_token&space=`，可以得到下面参数
@@ -870,82 +369,24 @@ The default is the full directory of the empty display, If you want to use a sub
 - 根目录下获取的`文件夹ID（Folder id）`（例如：`来自分享`、`超级保险箱`），**这个会随着账号不同而变动，没有固定一样的值，自己抓包获取**
   ![xunlei](/img/drivers/xunlei/x_br_foled.png)
 
-:::
+### 保险箱密码
 
-### 保险箱密码 { lang="zh-CN" }
-
-### Safe password { lang="en" }
-
-::: en
-Thunder Browser Safe password
-
-- Files in Safe password can only be deleted directly and cannot be deleted to the recycle bin, so the [**Deletion method**](#remove-way) below has nothing to do with this configuration.
-
-:::
-::: zh-CN
 迅雷浏览器云盘的保险箱密码
 
 - 超级保险箱內文件只能直接删除 无法删除到回收站，所以下方[**删除方式**](#删除方式)与此配置无关
 
-:::
+### 删除方式
 
-### 删除方式 { lang="zh-CN" }
-
-### Remove way { lang="en" }
-
-::: en
-**Trash**：Use OpenList to delete files and then move them to the Recycle Bin. If you delete them accidentally, you can restore them through Thunder Cloud Disk.
-**Delete**：Deleting it directly cannot restore it.
-:::
-
-::: zh-CN
 **回收站**：在OpenList删除后移除到回收站，如果有误删可以通过迅雷云盘恢复
 **删除**：直接删除不可以恢复找回
-:::
 
-### 使用视频URL { lang="zh-CN" }
+### 使用视频URL
 
-### Use video url { lang="en" }
-
-::: en
-When the `Video URL` option is enabled, it will attempt to replace the original link with the media link returned by the API. Currently, the official platform throttles the download link for **non-members**, but video streaming is not throttled. Therefore, by replacing the link, you can avoid throttling, which applies to both **OpenList** media file downloads and streaming. For regular files, you can also bypass the throttling by renaming the file extension to a media format (e.g., `.mp4`).
-
-The **Expert Edition** does not enable the `Video URL` option by default, as it is intended for users who configure detailed parameters themselves, and they should be aware of the significance of this option. Hence, it is not enabled by default. For **Xunlei X** users, this option is enabled by default, primarily for the convenience of less experienced users.
-:::
-
-::: zh-CN
 `视频URL` 开启后，会尝试使用接口返回的媒体链接进行替换原本的链接。目前官方对 `非会员` 情况下，下载链接进行了限速，但视频播放是不限速的。因此可以通过替换链接的方式来避免限速，这一点对于 `OpenList` 媒体文件下载和在线播放均生效。对于普通文件，也可以采取重命名文件后缀为媒体格式（例如：`.mp4` ）的方式绕过限速。
 
 专家版没默认开启 `视频URL`选项，目的是针对于自行配置详细参数的人群来说，应当知晓该选项的意义，因此默认不启用。对于 `迅雷X` 驱动默认启用该选项，更多的是为了小白用户考虑。
-:::
 
-### 默认使用的下载方式 { lang="zh-CN" }
-
-### The default download method used { lang="en" }
-
-::: en
-
-```mermaid
----
-title: Which download method is used by default?
----
-flowchart TB
-    style a1 fill:#bbf,stroke:#f66,stroke-width:2px,color:#fff
-    style a2 fill:#ff7575,stroke:#333,stroke-width:4px
-    subgraph ide1 [ ]
-    a1
-    end
-    a1[302]:::someclass====|default|a2[user equipment]
-    classDef someclass fill:#f96
-    c1[local proxy]-.alternative.->a2[user equipment]
-    b1[Download proxy URL]-.alternative.->a2[user equipment]
-    click a1 "../drivers/common.html#webdav-policy"
-    click b1 "../drivers/common.html#webdav-policy"
-    click c1 "../drivers/common.html#webdav-policy"
-```
-
-:::
-::: zh-CN
+### 默认使用的下载方式
 
 ```mermaid
 ---
@@ -966,59 +407,21 @@ flowchart TB
     click c1 "../drivers/common.html#webdav-策略"
 ```
 
-:::
+## 6. 迅雷浏览器专家版
 
-## 6. 迅雷浏览器专家版 { lang="zh-CN" }
+### 用户名、密码
 
-## 6. Thunder Browser Expert { lang="en" }
-
-### 用户名、密码 { lang="zh-CN" }
-
-### username、password { lang="en" }
-
-::: en
-Mobile phone number, email, username, and password used to log in
-
-- When filling in the mobile phone number, please bring the `+86` area code, for example `+8613822334455`
-
-:::
-::: zh-CN
 即用于登陆的手机号,邮箱,用户名，以及密码
 
 - 填写手机号要携带 `+86` 区号，例如 `+8613822334455`
 
-:::
+### 验证码
 
-### 验证码 { lang="zh-CN" }
-
-### CaptchaToken { lang="en" }
-
-::: en
-It will be filled automatically without filling in manually
-<br/>
-:::
-::: zh-CN
 会自动填充，不用自己填写
 <br/>
-:::
 
-### 根文件夹ID { lang="zh-CN" }
+### 根文件夹ID
 
-### Root folder id { lang="en" }
-
-::: en
-The default is the full directory of the empty display, If you want to use a subfolder to make the root directory, grab the request to get it
-
-- In the request in the package`https://x-api-pan.xunlei.com/drive/v1/files?parent_id&page_token&space=`，you can get the following parameters
-  - `文件夹ID（id）`
-  - `文件夹名称（name）`
-  - `父文件夹ID（parent_id）`
-- The `folder ID` obtained in the root directory (for example : `来自分享`、`超级保险箱`), **This will change with different account numbers, there is no the same value, In the request in the package**
-  ![xunlei](/img/drivers/xunlei/x_br_foled.png)
-
-:::
-
-::: zh-CN
 默认为空展示全部目录，如果想用子文件夹做根目录请抓包获取
 
 - 抓包请求中的`https://x-api-pan.xunlei.com/drive/v1/files?parent_id&page_token&space=`，可以得到下面参数
@@ -1028,104 +431,28 @@ The default is the full directory of the empty display, If you want to use a sub
 - 根目录下获取的`文件夹ID（Folder id）`（例如：`来自分享`、`超级保险箱`），**这个会随着账号不同而变动，没有固定一样的值，自己抓包获取**
   ![xunlei](/img/drivers/xunlei/x_br_foled.png)
 
-:::
+### 保险箱密码
 
-### 保险箱密码 { lang="zh-CN" }
-
-### Safe password { lang="en" }
-
-::: en
-Thunder Browser Safe password
-
-- Files in Safe password can only be deleted directly and cannot be deleted to the recycle bin, so the [**Deletion method**](#remove-way-1) below has nothing to do with this configuration.
-
-:::
-::: zh-CN
 迅雷浏览器云盘的保险箱密码
 
 - 超级保险箱內文件只能直接删除 无法删除到回收站，所以下方[**删除方式**](#删除方式-1)与此配置无关
 
-:::
+### 删除方式
 
-### 删除方式 { lang="zh-CN" }
-
-### Remove way { lang="en" }
-
-::: en
-**Trash**：Use OpenList to delete files and then move them to the Recycle Bin. If you delete them accidentally, you can restore them through Thunder Cloud
-**Delete**：Deleting it directly cannot restore it.
-:::
-::: zh-CN
 **回收站**：在OpenList删除后移除到回收站，如果有误删可以通过迅雷云盘恢复
 **删除**：直接删除不可以恢复找回
-:::
 
-### 登录类型 { lang="zh-CN" }
-
-### Login Type { lang="en" }
-
-::: en
-
-- `User`: Only fill in the username and password
-- `Refresh token`: Just fill in`RefreshToken`
-
-:::
-::: zh-CN
+### 登录类型
 
 - `用户`：选择 `用户`时填`用户名和密码`
 - `刷新令牌`：选择 `刷新令牌` 时只需填写 `刷新令牌`
 
-:::
-
-### 签名类型 { lang="zh-CN" }
-
-### Sign Type { lang="en" }
-
-::: en
-
-- `Algorithms`：Choose `Algorithms` Just fill in `Algorithms` (It has been automatically filled. You do n’t have to fill in it yourself. You only need to fill in the username and password.When the algorithm is not invalidated)
-- `Captcha sign`: Choose `Captcha sign` Just fill in `Captcha sign` and `Timestamp`
-
-:::
-::: zh-CN
+### 签名类型
 
 - `算法`：选择 `算法（Algorithms）` 时需填写 `算法（Algorithms）`
 - `验证码签名`：选择 `验证码签名（Captcha sign）` 时只需填写 `验证码签名（Captcha sign）` 和 `时间戳（Timestamp）`
 
-:::
-
-### 部分参数抓包说明 { lang="zh-CN" }
-
-### Part of parameter Packet Capture description { lang="en" }
-
-::: en
-
-- `Captcha token`：No need to fill in
-- `Device id`：The value calculated by MD5 is used to judge the login device
-- `Client id`, `Client secret`, `Client version`, `Package name`：It related to the signature, fill in according to the actual situation
-
----
-
-- `User agent`：API requests `User agent`, setting errors may not access or speed limit
-- `Download user agent`：When downloading, use the `user agent `,If the setting error cannot be downloaded (the agent will use it)
-  - `User agent` and `Download user agent`：You can fill it out by yourself. If you don’t know how to fill it out, you can leave it blank and it will be automatically filled in.
-
----
-
-In the request in the package `https://xluser-ssl.xunlei.com/v1/shield/captcha/init`，you can get the following parameters<sup>6</sup>
-
-- `Client id`、`Device id`、`Captcha sign`
-- `Package name`、`Client version`、`Timestamp`
-  ![xunlei](/img/drivers/xunlei/x_br_add1.png)
-
-  In the request in the package `https://xluser-ssl.xunlei.com/v1/auth/signin/token`, you can get the following parameters<sup>3</sup>
-  - `Client id`、`Client secret`、`Refresh token`
-
-    ![xunlei](/img/drivers/xunlei/x_br_add2.png)
-
-:::
-
-::: zh-CN
+### 部分参数抓包说明
 
 - `验证码`：无需填写
 - `设备id`：通过 MD5 计算的值，用于判断登录的设备
@@ -1150,29 +477,13 @@ In the request in the package `https://xluser-ssl.xunlei.com/v1/shield/captcha/i
 - `客户端ID（Client id）`、`客户端密钥（Client secret）`、`刷新令牌（Refresh token）`
   ![xunlei](/img/drivers/xunlei/x_br_add2.png)
 
-:::
+### 使用视频URL
 
-### 使用视频URL { lang="zh-CN" }
-
-### Use video url { lang="en" }
-
-::: en
-When the `Video URL` option is enabled, it will attempt to replace the original link with the media link returned by the API. Currently, the official platform throttles the download link for **non-members**, but video streaming is not throttled. Therefore, by replacing the link, you can avoid throttling, which applies to both **OpenList** media file downloads and streaming. For regular files, you can also bypass the throttling by renaming the file extension to a media format (e.g., `.mp4`).
-
-The **Expert Edition** does not enable the `Video URL` option by default, as it is intended for users who configure detailed parameters themselves, and they should be aware of the significance of this option. Hence, it is not enabled by default. For **Xunlei X** users, this option is enabled by default, primarily for the convenience of less experienced users.
-:::
-
-::: zh-CN
 `视频URL` 开启后，会尝试使用接口返回的媒体链接进行替换原本的链接。目前官方对 `非会员` 情况下，下载链接进行了限速，但视频播放是不限速的。因此可以通过替换链接的方式来避免限速，这一点对于 `OpenList` 媒体文件下载和在线播放均生效。对于普通文件，也可以采取重命名文件后缀为媒体格式（例如：`.mp4` ）的方式绕过限速。
 
 专家版没默认开启 `视频URL`选项，目的是针对于自行配置详细参数的人群来说，应当知晓该选项的意义，因此默认不启用。对于 `迅雷X` 驱动默认启用该选项，更多的是为了小白用户考虑。
-:::
 
-### The default download method used { lang="en" }
-
-### 默认使用的下载方式 { lang="zh-CN" }
-
-::: zh-CN
+### 默认使用的下载方式
 
 ```mermaid
 ---
@@ -1192,28 +503,3 @@ flowchart TB
     click b1 "../drivers/common.html#webdav-策略"
     click c1 "../drivers/common.html#webdav-策略"
 ```
-
-:::
-
-::: en
-
-```mermaid
----
-title: Which download method is used by default?
----
-flowchart TB
-    style a1 fill:#bbf,stroke:#f66,stroke-width:2px,color:#fff
-    style a2 fill:#ff7575,stroke:#333,stroke-width:4px
-    subgraph ide1 [ ]
-    a1
-    end
-    a1[302]:::someclass====|default|a2[user equipment]
-    classDef someclass fill:#f96
-    c1[local proxy]-.alternative.->a2[user equipment]
-    b1[Download proxy URL]-.alternative.->a2[user equipment]
-    click a1 "../drivers/common.html#webdav-policy"
-    click b1 "../drivers/common.html#webdav-policy"
-    click c1 "../drivers/common.html#webdav-policy"
-```
-
-:::

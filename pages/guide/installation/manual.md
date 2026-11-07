@@ -1,103 +1,26 @@
 ---
-title:
-  en: Manual installation
-  zh-CN: 手动安装
-icon: iconfont icon-interact
-# This control sidebar order
 top: 60
-# A page can have multiple categories
 categories:
   - guide
   - installation
-# A page can have multiple tags
-tag:
-  - Install
-  - Guide
-# this page is sticky in article list
-sticky: true
-# this page will appear in starred articles
-star: true
 ---
 
-## Get OpenList { lang="en" }
+# 手动安装
 
-## 获取 OpenList { lang="zh-CN" }
+## 获取 OpenList
 
-::: en
-You can download the corresponding binary executable file for the deployment system from [Download](./download) page or [GitHub Release](https://github.com/OpenListTeam/OpenList/releases).
-:::
-
-::: zh-CN
 您可以在 [下载](./download) 页面或 [GitHub Release](https://github.com/OpenListTeam/OpenList/releases) 下载待部署系统对应的二进制可执行文件。
-:::
 
 [![latest version](https://img.shields.io/github/release/OpenListTeam/OpenList)](https://github.com/OpenListTeam/OpenList/releases)
 
-## Install using package manager { lang="en" }
-
-## 使用包管理器安装 { lang="zh-CN" }
+## 使用包管理器安装
 
 ### Linux
 
-::: en
-Debian/Ubuntu can be installed from OpenList's APT repository and PPA repository, and the service (daemon) will be automatically configured.
-:::
-::: zh-CN
 Debian / Ubuntu 可以从 OpenList 的 APT 仓库和 PPA 仓库安装，且会自动配置好服务（守护进程）。
-:::
 
-#### APT Repository { lang="en" }
+#### APT 仓库
 
-#### APT 仓库 { lang="zh-CN" }
-
-::: en
-Recommended - Automatic GPG Setup
-
-```bash
-# One-line install with automatic GPG key setup
-curl -fsSL https://github.com/OpenListTeam/OpenList-APT/releases/latest/download/install-apt.sh | bash
-
-# Then install OpenList
-sudo apt install openlist -y
-```
-
-Manual APT Setup with GPG Verification (Modern systems - Ubuntu 22.04+/Debian 12+)
-
-```bash
-# Download and install GPG keyring
-curl -fsSL https://github.com/OpenListTeam/OpenList-APT/releases/latest/download/openlist-archive-keyring.gpg | \
-  sudo tee /usr/share/keyrings/openlist-archive-keyring.gpg > /dev/null
-
-# Add repository with GPG verification
-echo "Types: deb
-URIs: https://github.com/OpenListTeam/OpenList-APT/releases/latest/download/
-Suites: ./
-Signed-By: /usr/share/keyrings/openlist-archive-keyring.gpg" | \
-  sudo tee /etc/apt/sources.list.d/openlist.sources
-
-# Update and install
-sudo apt update && sudo apt install openlist -y
-```
-
-Manual APT Setup without GPG Verification (Not Recommended)
-
-```bash
-# Modern systems (Ubuntu 22.04+/Debian 12+)
-echo "Types: deb
-URIs: https://github.com/OpenListTeam/OpenList-APT/releases/latest/download/
-Suites: ./
-Trusted: yes" | sudo tee /etc/apt/sources.list.d/openlist.sources
-
-# Legacy systems (Ubuntu <22.04/Debian <12)
-echo "deb [trusted=yes] https://github.com/OpenListTeam/OpenList-APT/releases/latest/download/ ./" | \
-  sudo tee /etc/apt/sources.list.d/openlist.list
-
-# Update and install
-sudo apt update && sudo apt install openlist -y
-```
-
-:::
-::: zh-CN
 推荐 - 自动 GPG 设置
 
 ```bash
@@ -143,26 +66,8 @@ echo "deb [trusted=yes] https://github.com/OpenListTeam/OpenList-APT/releases/la
 sudo apt update && sudo apt install openlist -y
 ```
 
-:::
+#### PPA 仓库
 
-#### PPA Repository { lang="en" }
-
-#### PPA 仓库 { lang="zh-CN" }
-
-::: en
-Alternative - Launchpad
-
-```bash
-# Add PPA repository
-sudo add-apt-repository ppa:openlist/server
-sudo apt update
-
-# Install OpenList
-sudo apt install openlist -y
-```
-
-:::
-::: zh-CN
 备用方法 - Launchpad
 
 ```bash
@@ -174,56 +79,12 @@ sudo apt update
 sudo apt install openlist -y
 ```
 
-:::
+#### Flatpak
 
-#### Flatpak { lang="en" }
-
-#### Flatpak { lang="zh-CN" }
-
-::: en
-OpenList can be installed as a Flatpak package on most Linux distributions. Flatpak provides a sandboxed environment and automatic updates.
-
-:::
-::: zh-CN
 OpenList 可以在大多数 Linux 发行版上作为 Flatpak 软件包安装。Flatpak 提供沙盒环境和自动更新。
-
-:::
 
 [![Flatpak package](https://img.shields.io/badge/dynamic/json?color=4A90E2&label=Flatpak&query=tag_name&url=https%3A%2F%2Fapi.github.com%2Frepos%2FOpenListTeam%2FOpenList-FLATPAK%2Freleases%2Flatest&logo=flatpak)](https://github.com/OpenListTeam/OpenList-FLATPAK/releases)
 
-::: en
-One-line Installation (Recommended)
-
-```bash
-curl -fsSL https://github.com/OpenListTeam/OpenList-FLATPAK/releases/latest/download/install-flatpak.sh | bash
-```
-
-Manual Installation
-
-```bash
-# Install Flatpak (if not already installed)
-# On Ubuntu/Debian
-sudo apt install flatpak
-
-# On Fedora
-sudo dnf install flatpak
-
-# On Arch Linux
-sudo pacman -S flatpak
-
-# Add Flathub repository (required for dependencies)
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-
-# Download and install OpenList Flatpak package
-wget https://github.com/OpenListTeam/OpenList-FLATPAK/releases/latest/download/org.oplist.openlist-linux-x86_64.flatpak
-flatpak install --user --bundle org.oplist.openlist-linux-x86_64.flatpak -y
-
-# Start OpenList
-flatpak run org.oplist.openlist server
-```
-
-:::
-::: zh-CN
 一行命令安装（推荐）
 
 ```bash
@@ -254,16 +115,9 @@ flatpak install --user --bundle org.oplist.openlist-linux-x86_64.flatpak -y
 flatpak run org.oplist.openlist server
 ```
 
-:::
-
 ### Windows
 
-::: en
-OpenList can be installed from package managers Scoop main and WinGet on Windows.
-:::
-::: zh-CN
 Windows 可以从 Scoop main 和 WinGet 安装。
-:::
 
 #### Scoop
 
@@ -283,12 +137,7 @@ openlist server
 
 ### macOS
 
-::: en
-OpenList is available via Homebrew on macOS.
-:::
-::: zh-CN
 macOS 可以从 Homebrew 安装。
-:::
 
 #### Homebrew
 
@@ -300,28 +149,10 @@ $ brew install openlist
 
 ### Android
 
-::: en
-::: tip
-OpenList follows the AGPL 3.0 open-source license, assumes no responsibility for any downstream derivative projects, and reserves the right to pursue their compliance with the same license.
-:::
-
-::: zh-CN
 ::: tip
 OpenList 遵循 AGPL 3.0 开源协议，对任何下游衍生项目概不负责，且保留追究其同样遵守该协议的权利。
 :::
 
-::: en
-There are four ways to choose based on your needs
-
-1. Using **https://github.com/OpenListTeam/OpenList-Mobile**
-2. Using **https://github.com/LeoHaoVIP/AListLiteAndroid**
-3. Using **https://github.com/jing332/AListFlutter** (no longer maintained)
-4. Use `termux` to run
-   - Reference: **https://anwen-anyi.github.io/index/14-android_install.html**
-   - Note: Remember to authorize the APP, set the background running and battery saving policy to unlimited, otherwise it may be killed in the background, causing it to be suddenly interrupted and unusable during background use.
-
-:::
-::: zh-CN
 有四种办法根据自己的需求选择
 
 1. 使用 **https://github.com/OpenListTeam/OpenList-Mobile**
@@ -330,8 +161,6 @@ There are four ways to choose based on your needs
 4. 使用 `termux` 运行
    - 参考：**https://anwen-anyi.github.io/index/14-android_install.html**
    - 注意事项：记得给APP授权，后台运行、电池省电策略设置为无限制，否则可能会被杀后台导致挂在后台使用期间突然中断无法使用
-
-:::
 
 #### Termux
 
@@ -343,47 +172,7 @@ pkg install openlist
 openlist server
 ```
 
-## Running { lang="en" }
-
-## 手动运行 { lang="zh-CN" }
-
-::: en
-
-```bash
-Usage:
-  openlist [command]
-
-Available Commands:
-  admin       Show admin user's info and some operations about admin user's password
-  cancel2fa   Delete 2FA of admin user
-  completion  Generate the autocompletion script for the specified shell
-  crypt       Encrypt or decrypt local file or dir
-  help        Help about any command
-  kill        Force kill openlist server process by daemon/pid file
-  lang        Generate language json file
-  restart     Restart openlist server by daemon/pid file
-  server      Start the server at the specified address
-  start       Silent start openlist server with `--force-bin-dir`
-  stop        Same as the kill command
-  storage     Manage storage
-  version     Show current version of OpenList
-
-Flags:
-      --data string     data folder (default "data")
-      --config string   config file (default "data/config.json")
-      --debug           start with debug mode
-      --dev             start with dev mode
-      --force-bin-dir   Force to use the directory where the binary file is located as data directory
-  -h, --help            help for openlist
-      --log-std         Force to log to std
-      --no-prefix       disable env prefix
-
-Use "openlist [command] --help" for more information about a command.
-```
-
-:::
-
-::: zh-CN
+## 手动运行
 
 ```bash
 使用方法：
@@ -417,43 +206,6 @@ Use "openlist [command] --help" for more information about a command.
 使用 "openlist [命令] --help" 获取更多命令信息。
 ```
 
-:::
-
-::: en
-::: tip
-If there is a prompt as follows：It is because [your GLIBC version is too low](../../faq/why#lib64-libc-so-6-version-glibc-2-28-not-found-required-by-openlist-or-accept-function-not-implemented), it is recommended to download the musl version.
-
-```txt
-lib64/libc.so.6: version `GLIBC_2.28' not found (required by ./openlist)
-accept: function not implemented
-```
-
-When you see the output of `start server @ 0.0.0.0:5244` and no error is reported afterwards, it means that the operation is successful. The initial password will be output when running for the first time. The program listens to port 5244 by default. Now open `http://ip:5244` You can see the login page, please see [WebDav](../advanced/webdav) for webdav.
-
-**For Flatpak Users**
-
-If you installed OpenList via Flatpak, use the following commands instead:
-
-```bash
-# Start server
-flatpak run org.oplist.openlist server
-
-# Show admin info
-flatpak run org.oplist.openlist admin
-
-# Generate random admin password
-flatpak run org.oplist.openlist admin random
-
-# Set admin password
-flatpak run org.oplist.openlist admin set NEW_PASSWORD
-
-# Show version
-flatpak run org.oplist.openlist version
-```
-
-:::
-
-::: zh-CN
 ::: tip
 手动安装如果有如下提示：是因为[你的 GLIBC 版本太低](../../faq/why.md#lib64-libc-so-6-version-glibc-2-28-not-found-required-by-openlist-或者-accept-function-not-implemented)，建议下载 musl 版本。
 
@@ -488,23 +240,11 @@ flatpak run org.oplist.openlist version
 <br/>
 :::
 
-::: en
-::: warning
-Versions above v3.25.0 change the password to an encrypted hash value, and the password cannot be calculated directly. If the password is forgotten, it can only be re-**`randomly generated`** or **`manually set`**.
-:::
-
-::: zh-CN
 ::: warning
 v3.25.0以上版本将密码改成加密方式存储的hash值，无法直接反算出密码，如果忘记了密码只能通过重新 **`随机生成`** 或者 **`手动设置`**。
 :::
 
-::: en
-The `xxxx` refers to the names corresponding to different systems/architectures, generally Linux-x86/64 is openlist-linux-amd64.
-:::
-
-::: zh-CN
 `xxxx` 指的是不同系统/架构对应的名称，一般 Linux-x86/64 为 openlist-linux-amd64。
-:::
 
 ### Linux
 
@@ -538,18 +278,11 @@ Expand-Archive .\openlist-xxxx.zip
 .\openlist.exe admin set NEW_PASSWORD
 ```
 
-## Daemon { lang="en" }
-
-## 守护进程 { lang="zh-CN" }
+## 守护进程
 
 ### Linux
 
-::: en
-`vim /usr/lib/systemd/system/openlist.service` add the following content, where `path_openlist` is the path where openlist is located:
-:::
-::: zh-CN
 使用任意方式编辑 `/usr/lib/systemd/system/openlist.service` 并添加如下内容，其中 `path_openlist` 为 OpenList 所在的路径：
-:::
 
 ```ini
 [Unit]
@@ -564,21 +297,6 @@ Restart=on-failure
 WantedBy=multi-user.target
 ```
 
-::: en
-Then `systemctl daemon-reload`, now you can use these commands to manage the program:
-
-- Start: `systemctl start openlist`
-- Shut down: `systemctl stop openlist`
-- Self-start: `systemctl enable openlist`
-- Cancel Self-start: `systemctl disable openlist`
-- Status: `systemctl status openlist`
-- Restart: `systemctl restart openlist`
-
-Can't configure daemon? [**Video Tutorial**](https://www.bilibili.com/video/BV1rF41197Qv?t=187.0)
-
-:::
-
-::: zh-CN
 然后，执行 `systemctl daemon-reload` 重载配置，现在你可以使用这些命令来管理程序：
 
 - 启动: `systemctl start openlist`
@@ -590,17 +308,9 @@ Can't configure daemon? [**Video Tutorial**](https://www.bilibili.com/video/BV1r
 
 守护进程不会配置? [**视频教程**](https://www.bilibili.com/video/BV1rF41197Qv?t=187.0)
 
-:::
-
 ### macOS
 
-::: en
-Edit `~/Library/LaunchAgents/org.openlist.plist` in any way and add the following content, modify `path_openlist` to be the path where OpenList is located, and `path/to/working/dir` to be the working path of OpenList:
-:::
-
-::: zh-CN
 使用任意方式编辑 `~/Library/LaunchAgents/org.openlist.plist` 并添加如下内容，修改 `path_openlist` 为 OpenList 所在的路径，`path/to/working/dir` 为 OpenList的工作路径:
-:::
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -626,45 +336,15 @@ Edit `~/Library/LaunchAgents/org.openlist.plist` in any way and add the followin
 </plist>
 ```
 
-::: en
-Then, execute `launchctl load ~/Library/LaunchAgents/org.openlist.plist` to load the configuration, now you can use these commands to manage the program:
-
-- Start: `launchctl start ~/Library/LaunchAgents/org.openlist.plist`
-- Close: `launchctl stop ~/Library/LaunchAgents/org.openlist.plist`
-- Unload configuration: `launchctl unload ~/Library/LaunchAgents/org.openlist.plist`
-
-:::
-
-::: zh-CN
 然后，执行 `launchctl load ~/Library/LaunchAgents/org.openlist.plist` 加载配置，现在你可以使用这些命令来管理程序：
 
 - 开启: `launchctl start ~/Library/LaunchAgents/org.openlist.plist`
 - 关闭: `launchctl stop ~/Library/LaunchAgents/org.openlist.plist`
 - 卸载配置: `launchctl unload ~/Library/LaunchAgents/org.openlist.plist`
 
-:::
-
 ### Windows
 
-#### Method One { lang="en" }
-
-#### 方法1 { lang="zh-CN" }
-
-::: en
-
-1.  Download the newest `nssm` from https://nssm.cc/download.
-2.  Unzip the archive and go to the diretory of `nssm.exe`.
-3.  Hold Shift and right click on the blank space, then release and press S or select "powershell here", you should now see a blue window named "Windows PowerShell".
-4.  Type `.\nssm.exe install openlist`.
-5.  Select the path of `openlist.exe` for "Path", e.g. `D:\openlist\openlist.exe`; type `server` for "Argument".
-6.  You can custom "Display Name", "Description" and "Startup Type" in "Details" tab.
-7.  Go to "I/O" tab and select a file for both "Output (stdout)" and "Output (stderr)", e.g. `D:\openlist\stdout.log`. The file itself (`stdout.log`) may not exist, but the folder (`D:\openlist`) must exist.
-8.  Click on "Install Service".
-    You can now start the service from services.msc or task manager.
-
-:::
-
-::: zh-CN
+#### 方法1
 
 1.  在 https://nssm.cc/download 下载最新版本的 `nssm`；
 2.  在解压后的文件夹内按住 Shift 并右击空白处，选择“在此处打开 Powershell 窗口”；
@@ -675,49 +355,11 @@ Then, execute `launchctl load ~/Library/LaunchAgents/org.openlist.plist` to load
 7.  点击“Install Service”即可。
     此后可以直接在服务中启动 `openlist`。
 
-:::
+#### 方法2
 
-#### Method Two { lang="en" }
-
-#### 方法2 { lang="zh-CN" }
-
-::: zh-CN
 用 **`.VBS`** 脚本启动和停止，分别创建两个脚本 分别是 `启动.vbs` 和 `停止.vbs`。
 直接在和 OpenList 启动程序同级文件夹里面双击启动即可，不用担心没有反应 直接去 浏览器访问即可。
-:::
 
-::: en
-Use **`.VBS`** script to start and stop, create two scripts respectively `start.vbs` and `stop.vbs`.
-Just double-click to start it in the folder at the same level as the OpenList startup program, don't worry about no response, just go to the browser to access it.
-:::
-
-::: en
-::: info Two startup scripts
-**start.vbs**
-
-```bash title="vbscript"
-Dim ws
-Set ws = Wscript.CreateObject("Wscript.Shell")
-ws.run "openlist.exe server",vbhide
-Wscript.quit
-```
-
-**stop.vbs**
-
-```bash title="vbscript"
-Dim ws
-Set ws = Wscript.CreateObject("Wscript.Shell")
-ws.run "taskkill /f /im openlist.exe",0
-Wscript.quit
-```
-
-1. If the script will not be created, you can download it yourself: [**Script Download**](https://www.alipan.com/s/DHPMhRtKUzY/folder/63e0961eae317bd4d4d945cda69dbb00f9837fb7)
-2. If the script will not be used, you can watch the video: [**reference video**](https://www.bilibili.com/video/BV1wWYTzdE4B)
-   How to realize Windows startup automatically, you can refer to the script mentioned above to use the video (second).
-
-:::
-
-::: zh-CN
 ::: info 两个启动脚本
 **启动.vbs**
 
@@ -743,19 +385,6 @@ Wscript.quit
 
 :::
 
-::: en
-::: info
-For all platform, you can use follow command to silent start, stop and restart. (v3.4.0 and later)
-
-```bash
-openlist start
-openlist stop
-openlist restart
-```
-
-:::
-
-::: zh-CN
 ::: info
 对于所有平台，您可以使用以下命令来静默启动、停止和重新启动。 （v3.4.0 及更高版本）
 
@@ -767,14 +396,6 @@ openlist restart
 
 :::
 
-## How to update { lang="en" }
+## 如何更新
 
-## 如何更新 { lang="zh-CN" }
-
-::: en
-Download the new version of OpenList and replace the previous one.
-:::
-
-::: zh-CN
 下载新版 OpenList，把之前的替换了即可。
-:::

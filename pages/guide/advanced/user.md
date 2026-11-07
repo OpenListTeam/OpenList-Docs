@@ -1,53 +1,24 @@
 ---
-title:
-  en: User
-  zh-CN: 用户
 categories:
   - guide
   - advanced
 top: 140
 ---
 
-## Add user { lang="en" }
+# 用户
 
-## 添加用户 { lang="zh-CN" }
+## 添加用户
 
-::: en
-::: warning Security Notice
-Adding a user may expose files and server-side capabilities to another account. Use a strong, unique password, grant only the minimum required permissions, and create accounts only for trusted users. Security incidents resulting from improper user or permission management are the administrator's responsibility.
-:::
-::: zh-CN
 ::: warning 安全提醒
 添加用户可能会使其他账户获得文件和服务器侧功能的访问能力。请使用强且唯一的密码，仅授予必要的最小权限，并仅为可信用户创建账户。因用户或权限管理不当而导致的安全事件，由管理员用户承担责任。
 :::
 
-## Username { lang="en" }
+## 用户名
 
-## 用户名 { lang="zh-CN" }
-
-::: en
-Username for login.
-:::
-::: zh-CN
 登录用户名。
-:::
 
-## Password { lang="en" }
+## 密码
 
-## 密码 { lang="zh-CN" }
-
-::: en
-Password for login.
-:::tip
-Password is invalid for guest user.
-
-If you enter an incorrect password 6 times in a row, the current IP will be blocked for 30 minutes and you will not be able to enter your account and password to log in. However, it will not affect other IPs. It will only target IPs that entered 6 incorrect passwords.
-
-- Restarting will immediately remove the 30-minute ban time
-
-:::
-
-::: zh-CN
 登录密码。
 :::tip
 密码对游客是无效的。
@@ -58,53 +29,15 @@ If you enter an incorrect password 6 times in a row, the current IP will be bloc
 
 :::
 
-## Base path { lang="en" }
+## 基本路径
 
-## 基本路径 { lang="zh-CN" }
-
-::: en
-The root path that users see when he/she log in.
-
-Q: **How to allow a user to see multiple folder paths?**
-
-A: You can create a new [alias](alias.md) storage, add all the paths you need to show the user to the alias, and then point to the newly created alias storage in the user path
-:::
-::: zh-CN
 用户登录时看到的根路径。
 
 Q：**如何否允许一个用户可以看到多个文件夹路径?**
 
 A：可以新建一个[别名](alias.md)存储,将你需要给用户展示的路径都添加到别名，然后在用户路径这里指向新建的别名存储。
-:::
 
-## Permission { lang="en" }
-
-## 权限 { lang="zh-CN" }
-
-::: en
-
-- Can see hides: Can see the hides files and folders
-- Access without password: Can access without password
-- Add offline download tasks: Add offline download tasks
-  - ⚠️ Granting a user remote file read/write permissions also grants them the ability to access resources from the server's network context, including internal network addresses. Only grant this permission to fully trusted users. Internal network access resulting from improper permission assignment is not considered a security vulnerability.
-- Mkdir or upload: Can make directory or upload files
-- Rename: Can rename files and folders
-- Move: Can move files and folders
-- Copy: Can copy files and folders
-- Delete: Can delete files and folders
-- Webdav read: Can read files and folders with webdav
-- Webdav manage: Can manage files and folders with webdav
-- FTP read: Can read files and folders with FTP
-- FTP manage: Can manage files and folders with FTP
-- Read archives: Read the contents of the file in the compressed package
-  - After turning on this option, compressed package format files will be previewed by default (as shown in the figure below), which will consume some server traffic, but will not download them all.
-  - If you want to turn off the preferred preview of the compressed format, **Manage => Setting => Preview by default when opening archives**, this option is turned off, and the preference is the download mode
-- Decompress: Decompress compressed package files online
-  ![](/img/advanced/user_read_archives_light.png#light)
-  ![](/img/advanced/user_read_archives_dark.png#dark)
-
-:::
-::: zh-CN
+## 权限
 
 - 可以看到隐藏：可以看到隐藏的文件和文件夹
 - 无密码访问：无需密码即可访问
@@ -126,37 +59,11 @@ A：可以新建一个[别名](alias.md)存储,将你需要给用户展示的路
   ![](/img/advanced/user_read_archives_light.png#light)
   ![](/img/advanced/user_read_archives_dark.png#dark)
 
-:::
+## 停用
 
-## Disabled { lang="en" }
-
-## 停用 { lang="zh-CN" }
-
-::: en
-After checking, this user will stop using it and cannot log in. The guest account is disabled by default. If you want to enable the guest account, please close it manually.
-:::
-::: zh-CN
 勾选后将停止使用此用户，无法登陆，游客账户默认停用，如果要启用游客账户请手动关闭停用。
-:::
 
-## Tips { lang="en" }
-
-## Tips { lang="zh-CN" }
-
-::: en
-
-1. Are you worried that visitors can see all files? [**Click to see how to set it up here**](../../faq/why.md#how-do-i-set-it-so-that-visitors-can-only-see-the-content-after-logging-in)
-2. **`Guest user is disabled, login please`**: In order to protect your OpenList security, the guest access permission is closed, if you need guest access, open it yourself
-   - OpenList Manage --> users --> `guest` --> **Disable** uncheck
-3. Question about **`Copy/Upload`**
-   - If you upload (including offline download and upload) large files, or upload a lot of files (hundreds or thousands), it is not recommended to use OpenList to operate, please go to the corresponding network disk official website to operate directly
-4. Non-admin users can manage offline download, copy, upload and other operations in the background
-   - OpenList needs to be upgraded to <Badge text="v3.39.1" type="info" vertical="middle" /> version, and admin can also view the user's task progress and operations
-     ![](/img/advanced/user_manage.png)
-
-:::
-
-::: zh-CN
+## Tips
 
 1. 你是否在为游客能看到全部文件而发愁？[**点击查看这里如何设置**](../../faq/why.md#%E6%83%B3%E8%AE%A9%E6%B8%B8%E5%AE%A2%E7%99%BB%E5%BD%95%E5%90%8E%E6%89%8D%E8%83%BD%E7%9C%8B%E5%88%B0%E5%86%85%E5%AE%B9%E6%80%8E%E4%B9%88%E8%AE%BE%E7%BD%AE)
 2. **`Guest user is disabled, login please`**：为了保护您的 OpenList 安全，游客访问权限关闭了，若需要游客访问自行打开
@@ -166,5 +73,3 @@ After checking, this user will stop using it and cannot log in. The guest accoun
 4. 非 admin 权限用户在后台管理离线下载、复制、上传等操作
    - 需要OpenList升级到<Badge text="v3.39.1" type="info" vertical="middle" />版本，同时 admin 也可以查看用户的任务进度以及操作
      ![](/img/advanced/user_manage.png)
-
-:::

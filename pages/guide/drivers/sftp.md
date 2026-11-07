@@ -1,24 +1,11 @@
 ---
-title:
-  en: SFTP
-  zh-CN: SFTP
-icon: iconfont icon-state
-# This control sidebar order
 top: 897
-# A page can have multiple categories
 categories:
   - guide
   - drivers
-# A page can have multiple tags
-tag:
-  - Storage
-  - Guide
-  - '本地代理'
-# this page is sticky in article list
-sticky: true
-# this page will appear in starred articles
-star: true
 ---
+
+# SFTP
 
 即通过 SSH 协议访问文件。
 
