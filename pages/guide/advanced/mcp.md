@@ -232,9 +232,9 @@ OpenList 实现了 MCP **Streamable HTTP** 传输。端点接受：
 
 :::
 
-### Authentication {{ lang="en" }}
+### Authentication { lang="en" }
 
-### 认证 {{ lang="zh-CN" }}
+### 认证 { lang="zh-CN" }
 
 ::: en
 
@@ -248,9 +248,9 @@ MCP 端点复用 OpenList 的认证中间件。请求必须在 `Authorization` �
 
 :::
 
-### Session Lifecycle {{ lang="en" }}
+### Session Lifecycle { lang="en" }
 
-### 会话生命周期 {{ lang="zh-CN" }}
+### 会话生命周期 { lang="zh-CN" }
 
 ::: en
 
@@ -272,9 +272,9 @@ MCP 端点复用 OpenList 的认证中间件。请求必须在 `Authorization` �
 
 :::
 
-### Protocol Version {{ lang="en" }}
+### Protocol Version { lang="en" }
 
-### 协议版本 {{ lang="zh-CN" }}
+### 协议版本 { lang="zh-CN" }
 
 ::: en
 
@@ -292,9 +292,9 @@ The server returns its protocol version during `initialize` negotiation. Subsequ
 
 :::
 
-### Error Codes {{ lang="en" }}
+### Error Codes { lang="en" }
 
-### 错误码 {{ lang="zh-CN" }}
+### 错误码 { lang="zh-CN" }
 
 ::: en
 
