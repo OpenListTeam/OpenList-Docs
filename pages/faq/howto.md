@@ -157,10 +157,10 @@ Permissions of this strongest copyleft license are conditioned on making availab
 ## 添加 天翼云盘 云存储时：设备 ID 不存在，需要二次设备验证 { lang="zh-CN" }
 
 :::en
-Open the Tianyi Account website at <https://e.dlife.cn/index.do>, log in, and then disable the Device Lock..
+An SMS code is sent to your bound phone number automatically when the login asks for secondary device verification. Fill the code into the `SMS code` (`sms_code`) field and save again to finish the verification. The driver keeps the DEVICEID issued by the server, so you will not be asked again.
 :::
 :::zh-CN
-打开天翼账号网站 <https://e.dlife.cn/index.do>，登陆后关掉设备锁即可。
+登录提示需要二次设备校验时，驱动会自动向你绑定的手机号发送短信验证码。把验证码填入 `短信验证码（sms_code）` 字段并再次保存即可完成校验。校验通过后驱动会保存服务端下发的 DEVICEID，之后不会再触发校验。
 :::
 
 ## When adding 189 Cloud PC storage: prompt need img validate code: verification code { lang="en" }
